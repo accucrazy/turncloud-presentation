@@ -8,60 +8,79 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@300;400;600;800;900&display=swap');
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:'Noto Sans TC','Inter',sans-serif; background:#0a0a12; color:#e2e8f0; }
+        html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+        body { font-family:'Noto Sans TC','Inter',sans-serif; background:#0a0a12; color:#e2e8f0; overflow-x:hidden; }
 
-        .slide { min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:60px 80px; position:relative; }
-        .slide-num { position:absolute; bottom:30px; right:40px; font-size:14px; font-weight:800; color:rgba(255,255,255,0.1); font-family:'Inter',monospace; }
+        .slide {
+            min-height:100vh; display:flex; flex-direction:column; justify-content:center;
+            padding:5vh 5vw; position:relative; scroll-snap-align:start;
+        }
+        .slide-num { position:absolute; bottom:2vh; right:2.5vw; font-size:1.2vw; font-weight:800; color:rgba(255,255,255,0.1); font-family:'Inter',monospace; }
 
         .transition-slide {
             background: linear-gradient(135deg, #6366f1 0%, #818cf8 30%, #60a5fa 60%, #38bdf8 100%);
-            padding: 60px 120px;
+            padding: 5vh 7vw;
         }
-        .transition-slide h1 { font-size:64px; font-weight:900; color:#fff; line-height:1.3; text-shadow:0 4px 30px rgba(0,0,0,0.15); }
+        .transition-slide h1 { font-size:5.5vw; font-weight:900; color:#fff; line-height:1.3; text-shadow:0 4px 30px rgba(0,0,0,0.15); }
 
         .img-slide {
-            min-height:100vh; padding:0; display:flex; flex-direction:column; justify-content:flex-end; position:relative; overflow:hidden;
+            min-height:100vh; padding:0; display:flex; flex-direction:column; justify-content:flex-end;
+            position:relative; overflow:hidden; scroll-snap-align:start;
         }
         .img-slide img {
             position:absolute; top:0; left:0; width:100%; height:100%; object-fit:contain;
         }
         .img-slide .overlay {
-            position:relative; z-index:2; padding:16px 60px 20px;
+            position:relative; z-index:2; padding:1.5vh 4vw 2vh;
             background:linear-gradient(transparent, rgba(0,0,0,0.8) 50%);
         }
-        .img-slide .overlay p { font-size:15px; color:rgba(255,255,255,0.7); max-width:700px; line-height:1.5; }
+        .img-slide .overlay p { font-size:1.3vw; color:rgba(255,255,255,0.7); max-width:60vw; line-height:1.5; }
 
         .dark { background:#0a0a12; }
         .dark-alt { background:#0f0f1a; }
 
-        .red-tag { display:inline-block; width:6px; height:28px; background:#ef4444; margin-right:16px; vertical-align:middle; border-radius:2px; }
-        h2 { font-size:48px; font-weight:900; line-height:1.2; margin-bottom:20px; }
-        .sub { font-size:20px; color:#94a3b8; font-weight:300; line-height:1.6; }
+        .red-tag { display:inline-block; width:0.4vw; height:2.2vw; background:#ef4444; margin-right:1vw; vertical-align:middle; border-radius:2px; }
+        h2 { font-size:3.8vw; font-weight:900; line-height:1.2; margin-bottom:1.5vh; }
+        .sub { font-size:1.6vw; color:#94a3b8; font-weight:300; line-height:1.6; }
 
         .card {
             background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);
-            border-radius:20px; padding:28px; transition:all 0.3s ease;
+            border-radius:1.2vw; padding:1.8vw; transition:all 0.3s ease;
         }
         .card:hover { transform:translateY(-4px); border-color:rgba(255,255,255,0.12); }
 
-        .footer-sm { position:absolute; bottom:24px; left:80px; right:80px; display:flex; justify-content:space-between; font-size:10px; color:rgba(255,255,255,0.12); letter-spacing:0.15em; font-weight:600; z-index:10; }
+        .footer-sm { position:absolute; bottom:2vh; left:5vw; right:5vw; display:flex; justify-content:space-between; font-size:1vw; color:rgba(255,255,255,0.12); letter-spacing:0.15em; font-weight:600; z-index:10; }
 
-        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-1vh)} }
         .float { display:inline-block; animation:float 3s ease-in-out infinite; }
+
+        #fs-btn {
+            position:fixed; bottom:2vh; left:2vw; z-index:9999;
+            background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15);
+            color:#fff; padding:0.6vw 1.2vw; border-radius:0.6vw; cursor:pointer;
+            font-size:1vw; font-family:'Inter',sans-serif; font-weight:600;
+            backdrop-filter:blur(8px); transition:opacity 0.3s;
+        }
+        #fs-btn:hover { background:rgba(255,255,255,0.15); }
+
+        .speaker-notes { scroll-snap-align:start; }
     </style>
 </head>
 <body>
 
+<!-- Fullscreen toggle -->
+<button id="fs-btn" onclick="toggleFS()">⛶ 全螢幕</button>
+
 <!-- ===== 00 封面 ===== -->
 <section class="img-slide" style="background:#0a0e1a;">
     <img src="./slides/cover_3d.jpg" alt="TPC Cover" style="object-fit:cover;">
-    <div class="overlay" style="padding:16px 60px 40px;background:linear-gradient(transparent, rgba(0,0,0,0.7) 50%);">
-        <div style="font-size:12px;color:rgba(255,255,255,0.35);font-weight:600;letter-spacing:0.2em;margin-bottom:4px;">T COEUS AI OS · 內部分享</div>
-        <h1 style="font-size:38px;font-weight:900;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,0.5);">嘿，我們是 TPC 👋</h1>
-        <p style="font-size:14px;">今天不聊技術規格，聊聊 AI 怎麼讓工作變好玩</p>
+    <div class="overlay" style="padding:2vh 4vw 4vh;background:linear-gradient(transparent, rgba(0,0,0,0.7) 50%);">
+        <div style="font-size:1.1vw;color:rgba(255,255,255,0.35);font-weight:600;letter-spacing:0.2em;margin-bottom:0.5vh;">T COEUS AI OS · 內部分享</div>
+        <h1 style="font-size:3.2vw;font-weight:900;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,0.5);">嘿，我們是 TPC 👋</h1>
+        <p style="font-size:1.3vw;">今天不聊技術規格，聊聊 AI 怎麼讓工作變好玩</p>
     </div>
     <div class="footer-sm">
-        <span style="display:flex;align-items:center;gap:10px;"><img src="./assets/img/turncloud logo.png" style="position:static;width:auto;height:20px;object-fit:contain;" alt="TurnCloud"> × <img src="./assets/img/accucrazylogo.webp" style="position:static;width:auto;height:18px;object-fit:contain;" alt="Accucrazy"></span>
+        <span style="display:flex;align-items:center;gap:0.6vw;"><img src="./assets/img/turncloud logo.png" style="position:static;width:auto;height:2.2vh;object-fit:contain;" alt="TurnCloud"> × <img src="./assets/img/accucrazylogo.webp" style="position:static;width:auto;height:2vh;object-fit:contain;" alt="Accucrazy"></span>
         <span>2026</span>
     </div>
     <div class="slide-num">00</div>
@@ -70,10 +89,10 @@
 <!-- ===== 01 個人自介 ===== -->
 <section class="img-slide" style="background:#e8e8ec;">
     <img src="./assets/ian_intro.jpg" alt="Ian Wu — Founder & CEO, Accucrazy" style="object-fit:contain;">
-    <div style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:2;display:flex;align-items:center;gap:12px;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);padding:10px 24px;border-radius:14px;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        <span style="font-size:18px;font-weight:800;color:#fff;">accucrazy.eth</span>
-        <span style="font-size:13px;color:rgba(255,255,255,0.5);">← 歡迎追蹤！</span>
+    <div style="position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);z-index:2;display:flex;align-items:center;gap:1vw;background:rgba(0,0,0,0.65);backdrop-filter:blur(8px);padding:1.2vh 2vw;border-radius:1vw;">
+        <svg width="2vw" height="2vw" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <span style="font-size:1.5vw;font-weight:800;color:#fff;">accucrazy.eth</span>
+        <span style="font-size:1.1vw;color:rgba(255,255,255,0.5);">← 歡迎追蹤！</span>
     </div>
     <div class="slide-num" style="color:rgba(0,0,0,0.08)">01</div>
 </section>
@@ -81,27 +100,27 @@
 <!-- ===== 02 Built for the NOW ===== -->
 <section class="img-slide" style="background:#0a0a0a;">
     <img src="./assets/accucrazy_hero.jpg" alt="Accucrazy – Built for the NOW" style="object-fit:cover;opacity:0.45;">
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:60px 80px;z-index:2;">
-        <div style="font-size:13px;color:rgba(255,255,255,0.35);font-weight:600;letter-spacing:0.25em;margin-bottom:20px;">OUR PHILOSOPHY</div>
-        <h2 style="font-size:64px;font-weight:900;color:#fff;line-height:1.15;margin-bottom:24px;">
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:5vh 5vw;z-index:2;">
+        <div style="font-size:1.1vw;color:rgba(255,255,255,0.35);font-weight:600;letter-spacing:0.25em;margin-bottom:2vh;">OUR PHILOSOPHY</div>
+        <h2 style="font-size:5vw;font-weight:900;color:#fff;line-height:1.15;margin-bottom:2.5vh;">
             BUILT FOR THE<br>
             <span style="text-decoration:line-through;color:rgba(255,255,255,0.25);">FUTURE</span>
             <span style="color:#ef4444;"> NOW</span>
         </h2>
-        <p style="font-size:18px;color:rgba(255,255,255,0.7);max-width:680px;line-height:1.8;margin-bottom:32px;">
+        <p style="font-size:1.5vw;color:rgba(255,255,255,0.7);max-width:55vw;line-height:1.8;margin-bottom:2.5vh;">
             作為一家科技公司，我們背負著一個使命 —<br>
             <strong style="color:#e2e8f0;">把科技帶給世界，不是未來，是現在。</strong><br>
             這跟我個人、跟騰雲的目標完全對齊。
         </p>
-        <p style="font-size:17px;color:rgba(255,255,255,0.6);max-width:680px;line-height:1.8;margin-bottom:40px;">
+        <p style="font-size:1.4vw;color:rgba(255,255,255,0.6);max-width:55vw;line-height:1.8;margin-bottom:3vh;">
             在 AI 時代，一家公司最重要的事：<br>
             <strong style="color:#fbbf24;">對齊每個人的目標</strong> — 更有效率地工作、好好地生活，<br>
             同時一同見證這個偉大時代的到來。
         </p>
-        <div style="display:inline-flex;align-items:center;gap:16px;">
-            <span style="border:2px solid rgba(239,68,68,0.6);padding:8px 20px;border-radius:8px;font-size:18px;font-weight:900;color:#ef4444;letter-spacing:0.1em;">E/ACC</span>
-            <span style="font-size:15px;color:rgba(255,255,255,0.45);font-style:italic;">Effective Accelerationism</span>
-            <span style="font-size:20px;font-weight:800;color:#fff;margin-left:8px;">— Let's get it 🔥</span>
+        <div style="display:inline-flex;align-items:center;gap:1.2vw;">
+            <span style="border:2px solid rgba(239,68,68,0.6);padding:0.6vh 1.5vw;border-radius:0.5vw;font-size:1.5vw;font-weight:900;color:#ef4444;letter-spacing:0.1em;">E/ACC</span>
+            <span style="font-size:1.2vw;color:rgba(255,255,255,0.45);font-style:italic;">Effective Accelerationism</span>
+            <span style="font-size:1.6vw;font-weight:800;color:#fff;margin-left:0.5vw;">— Let's get it 🔥</span>
         </div>
     </div>
     <div class="slide-num" style="color:rgba(255,255,255,0.1)">02</div>
@@ -127,25 +146,25 @@
 
 <!-- ===== 06 Mission：一起打造 AI OS ===== -->
 <section class="slide dark" style="align-items:center;text-align:center;">
-    <div style="font-size:13px;color:rgba(255,255,255,0.3);font-weight:600;letter-spacing:0.2em;margin-bottom:24px;">OUR MISSION</div>
-    <h2 style="font-size:52px;text-align:center;margin-bottom:32px;">我們跟騰雲<br>要一起打造 <span style="color:#fbbf24;">AI OS</span></h2>
-    <div style="display:grid;grid-template-columns:1fr 60px 1fr 60px 1fr;align-items:center;max-width:1000px;width:100%;">
+    <div style="font-size:1.1vw;color:rgba(255,255,255,0.3);font-weight:600;letter-spacing:0.2em;margin-bottom:2.5vh;">OUR MISSION</div>
+    <h2 style="font-size:4vw;text-align:center;margin-bottom:3vh;">我們跟騰雲<br>要一起打造 <span style="color:#fbbf24;">AI OS</span></h2>
+    <div style="display:grid;grid-template-columns:1fr 4vw 1fr 4vw 1fr;align-items:center;max-width:80vw;width:100%;">
         <div class="card" style="text-align:center;">
-            <div style="margin-bottom:12px;"><img src="./assets/img/turncloud logo.png" style="height:48px;object-fit:contain;" alt="TurnCloud"></div>
-            <h3 style="font-size:18px;">騰雲</h3>
-            <p style="font-size:13px;color:#64748b;">20 年零售客戶<br>POS / CRM / 海量數據<br>品牌決策者關係</p>
+            <div style="margin-bottom:1.5vh;"><img src="./assets/img/turncloud logo.png" style="height:5vh;object-fit:contain;" alt="TurnCloud"></div>
+            <h3 style="font-size:1.5vw;">騰雲</h3>
+            <p style="font-size:1.1vw;color:#64748b;">20 年零售客戶<br>POS / CRM / 海量數據<br>品牌決策者關係</p>
         </div>
-        <div style="text-align:center;font-size:32px;color:#fbbf24;">×</div>
+        <div style="text-align:center;font-size:2.5vw;color:#fbbf24;">×</div>
         <div class="card" style="text-align:center;">
-            <div style="margin-bottom:12px;display:flex;justify-content:center;gap:6px;"><img src="./assets/img/PandoraH.PNG" style="height:40px;width:40px;object-fit:cover;border-radius:50%;" alt="Pandora"><img src="./assets/img/MoanaH.png" style="height:40px;width:40px;object-fit:cover;border-radius:50%;" alt="Moana"><img src="./assets/img/banana.png" style="height:40px;object-fit:contain;" alt="Banana"></div>
-            <h3 style="font-size:18px;">The Pocket Company</h3>
-            <p style="font-size:13px;color:#64748b;">OpenClaw AI 框架<br>Pandora / Moana / Banana<br>實戰 Agent 軍團</p>
+            <div style="margin-bottom:1.5vh;display:flex;justify-content:center;gap:0.5vw;"><img src="./assets/img/PandoraH.PNG" style="height:3.5vw;width:3.5vw;object-fit:cover;border-radius:50%;" alt="Pandora"><img src="./assets/img/MoanaH.png" style="height:3.5vw;width:3.5vw;object-fit:cover;border-radius:50%;" alt="Moana"><img src="./assets/img/banana.png" style="height:3.5vw;object-fit:contain;" alt="Banana"></div>
+            <h3 style="font-size:1.5vw;">The Pocket Company</h3>
+            <p style="font-size:1.1vw;color:#64748b;">OpenClaw AI 框架<br>Pandora / Moana / Banana<br>實戰 Agent 軍團</p>
         </div>
-        <div style="text-align:center;font-size:32px;color:#fbbf24;">=</div>
+        <div style="text-align:center;font-size:2.5vw;color:#fbbf24;">=</div>
         <div class="card" style="text-align:center;border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.03);">
-            <div style="margin-bottom:12px;display:flex;justify-content:center;gap:8px;align-items:center;"><img src="./assets/img/turncloud logo.png" style="height:32px;object-fit:contain;" alt="TurnCloud"><span style="font-size:20px;color:#fbbf24;">+</span><img src="./assets/img/accucrazylogo.webp" style="height:28px;object-fit:contain;" alt="Accucrazy"></div>
-            <h3 style="font-size:18px;color:#fbbf24;">T Coeus AI OS</h3>
-            <p style="font-size:13px;color:#94a3b8;">Sense → Reason → Action<br><strong style="color:#fbbf24;">取代 SaaS 的東西</strong></p>
+            <div style="margin-bottom:1.5vh;display:flex;justify-content:center;gap:0.6vw;align-items:center;"><img src="./assets/img/turncloud logo.png" style="height:3vw;object-fit:contain;" alt="TurnCloud"><span style="font-size:1.6vw;color:#fbbf24;">+</span><img src="./assets/img/accucrazylogo.webp" style="height:2.5vw;object-fit:contain;" alt="Accucrazy"></div>
+            <h3 style="font-size:1.5vw;color:#fbbf24;">T Coeus AI OS</h3>
+            <p style="font-size:1.1vw;color:#94a3b8;">Sense → Reason → Action<br><strong style="color:#fbbf24;">取代 SaaS 的東西</strong></p>
         </div>
     </div>
     <div class="slide-num">06</div>
@@ -165,14 +184,14 @@
 
 <!-- ===== 09 Pandora — 你的品牌聽診器 ===== -->
 <section class="slide dark" style="align-items:center;text-align:center;">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
-        <img src="./assets/img/PandoraH.PNG" style="position:static;width:64px;height:64px;object-fit:cover;border-radius:50%;border:3px solid rgba(239,68,68,0.5);" alt="Pandora">
+    <div style="display:flex;align-items:center;gap:1.2vw;margin-bottom:3vh;">
+        <img src="./assets/img/PandoraH.PNG" style="position:static;width:5vw;height:5vw;object-fit:cover;border-radius:50%;border:3px solid rgba(239,68,68,0.5);" alt="Pandora">
         <div style="text-align:left;">
-            <div style="font-size:28px;font-weight:900;">Pandora</div>
-            <div style="font-size:14px;color:#94a3b8;">Social Intelligence Platform</div>
+            <div style="font-size:2.3vw;font-weight:900;">Pandora</div>
+            <div style="font-size:1.2vw;color:#94a3b8;">Social Intelligence Platform</div>
         </div>
     </div>
-    <h2 style="font-size:40px;text-align:center;">品牌在網路上被講了什麼？<br><span style="color:#ef4444;">她 3 秒就知道。</span></h2>
+    <h2 style="font-size:3.2vw;text-align:center;">品牌在網路上被講了什麼？<br><span style="color:#ef4444;">她 3 秒就知道。</span></h2>
     <div class="slide-num">09</div>
 </section>
 
@@ -181,10 +200,10 @@
     <video style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;background:#000;" controls preload="metadata" playsinline>
         <source src="./assets/videos/pandora-demo.mp4" type="video/mp4">
     </video>
-    <div class="overlay" style="background:linear-gradient(transparent, rgba(0,0,0,0.85) 60%);padding:12px 60px 16px;">
-        <div style="display:flex;align-items:center;gap:10px;">
-            <img src="./assets/img/PandoraH.PNG" style="position:static;width:36px;height:36px;object-fit:cover;border-radius:50%;border:2px solid rgba(239,68,68,0.5);" alt="Pandora">
-            <span style="font-size:14px;font-weight:800;color:#fff;">Pandora — 聲量分析 Demo</span>
+    <div class="overlay" style="background:linear-gradient(transparent, rgba(0,0,0,0.85) 60%);padding:1.5vh 4vw 2vh;">
+        <div style="display:flex;align-items:center;gap:0.8vw;">
+            <img src="./assets/img/PandoraH.PNG" style="position:static;width:3vw;height:3vw;object-fit:cover;border-radius:50%;border:2px solid rgba(239,68,68,0.5);" alt="Pandora">
+            <span style="font-size:1.3vw;font-weight:800;color:#fff;">Pandora — 聲量分析 Demo</span>
         </div>
     </div>
     <div class="slide-num" style="color:rgba(255,255,255,0.15)">10</div>
@@ -192,14 +211,14 @@
 
 <!-- ===== 11 Banana — 你的視覺設計師 ===== -->
 <section class="slide dark" style="align-items:center;text-align:center;">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
-        <img src="./assets/img/banana.png" style="position:static;width:64px;height:64px;object-fit:contain;" alt="Banana" />
+    <div style="display:flex;align-items:center;gap:1.2vw;margin-bottom:3vh;">
+        <img src="./assets/img/banana.png" style="position:static;width:5vw;height:5vw;object-fit:contain;" alt="Banana" />
         <div style="text-align:left;">
-            <div style="font-size:28px;font-weight:900;">Banana Split</div>
-            <div style="font-size:14px;color:#94a3b8;">AI Visual Creative</div>
+            <div style="font-size:2.3vw;font-weight:900;">Banana Split</div>
+            <div style="font-size:1.2vw;color:#94a3b8;">AI Visual Creative</div>
         </div>
     </div>
-    <h2 style="font-size:40px;text-align:center;">社群圖、廣告素材、品牌視覺<br><span style="color:#fbbf24;">一鍵生成到你滿意為止。</span></h2>
+    <h2 style="font-size:3.2vw;text-align:center;">社群圖、廣告素材、品牌視覺<br><span style="color:#fbbf24;">一鍵生成到你滿意為止。</span></h2>
     <div class="slide-num">11</div>
 </section>
 
@@ -208,10 +227,10 @@
     <video style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;background:#000;" controls preload="metadata" playsinline>
         <source src="./assets/videos/banana-demo.mp4" type="video/mp4">
     </video>
-    <div class="overlay" style="background:linear-gradient(transparent, rgba(0,0,0,0.85) 60%);padding:12px 60px 16px;">
-        <div style="display:flex;align-items:center;gap:10px;">
-            <img src="./assets/img/banana.png" style="position:static;width:36px;height:36px;object-fit:contain;" alt="Banana">
-            <span style="font-size:14px;font-weight:800;color:#fff;">Banana Split Demo</span>
+    <div class="overlay" style="background:linear-gradient(transparent, rgba(0,0,0,0.85) 60%);padding:1.5vh 4vw 2vh;">
+        <div style="display:flex;align-items:center;gap:0.8vw;">
+            <img src="./assets/img/banana.png" style="position:static;width:3vw;height:3vw;object-fit:contain;" alt="Banana">
+            <span style="font-size:1.3vw;font-weight:800;color:#fff;">Banana Split Demo</span>
         </div>
     </div>
     <div class="slide-num" style="color:rgba(255,255,255,0.15)">12</div>
@@ -219,8 +238,8 @@
 
 <!-- ===== 13 MCP — Agent 之間怎麼協作 ===== -->
 <section class="slide dark" style="align-items:center;text-align:center;">
-    <h2 style="font-size:40px;text-align:center;">Agent 不是單打獨鬥<br><span style="color:#a5b4fc;">他們會自己分工。</span></h2>
-    <p class="sub" style="margin-top:16px;">Pandora 分析完 → Moana 寫文 → Banana 出圖 → 全自動交接</p>
+    <h2 style="font-size:3.2vw;text-align:center;">Agent 不是單打獨鬥<br><span style="color:#a5b4fc;">他們會自己分工。</span></h2>
+    <p class="sub" style="margin-top:2vh;">Pandora 分析完 → Moana 寫文 → Banana 出圖 → 全自動交接</p>
     <div class="slide-num">13</div>
 </section>
 
@@ -229,8 +248,8 @@
     <video style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;background:#000;" controls preload="metadata" playsinline>
         <source src="./assets/MCP Workflow Demo.mp4" type="video/mp4">
     </video>
-    <div class="overlay" style="background:linear-gradient(transparent, rgba(0,0,0,0.85) 60%);padding:12px 60px 16px;">
-        <span style="font-size:14px;font-weight:800;color:#fff;">MCP Workflow — 多代理人自動協作</span>
+    <div class="overlay" style="background:linear-gradient(transparent, rgba(0,0,0,0.85) 60%);padding:1.5vh 4vw 2vh;">
+        <span style="font-size:1.3vw;font-weight:800;color:#fff;">MCP Workflow — 多代理人自動協作</span>
     </div>
     <div class="slide-num" style="color:rgba(255,255,255,0.15)">14</div>
 </section>
@@ -240,8 +259,8 @@
     <video style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;background:#000;" controls preload="metadata" playsinline>
         <source src="./assets/Pandora - Social Intelligence Platform - Google Chrome 2026-03-06 01-30-45.mp4" type="video/mp4">
     </video>
-    <div class="overlay" style="background:linear-gradient(transparent, rgba(0,0,0,0.85) 60%);padding:12px 60px 16px;">
-        <span style="font-size:14px;font-weight:800;color:#fff;">Agent 分工實錄 — 圖表化展現協作流程</span>
+    <div class="overlay" style="background:linear-gradient(transparent, rgba(0,0,0,0.85) 60%);padding:1.5vh 4vw 2vh;">
+        <span style="font-size:1.3vw;font-weight:800;color:#fff;">Agent 分工實錄 — 圖表化展現協作流程</span>
     </div>
     <div class="slide-num" style="color:rgba(255,255,255,0.15)">15</div>
 </section>
@@ -251,161 +270,175 @@
     <video style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;background:#000;" controls preload="metadata" playsinline>
         <source src="./assets/videos/37772.mp4" type="video/mp4">
     </video>
-    <div class="overlay" style="background:linear-gradient(transparent, rgba(0,0,0,0.85) 60%);padding:12px 60px 16px;">
-        <span style="font-size:14px;font-weight:800;color:#fff;">AI Agent 實際運作 — 一條龍搞定</span>
+    <div class="overlay" style="background:linear-gradient(transparent, rgba(0,0,0,0.85) 60%);padding:1.5vh 4vw 2vh;">
+        <span style="font-size:1.3vw;font-weight:800;color:#fff;">AI Agent 實際運作 — 一條龍搞定</span>
     </div>
     <div class="slide-num" style="color:rgba(255,255,255,0.15)">16</div>
 </section>
 
 <!-- ===== 17 TPC 的想像 ===== -->
-<section class="slide dark" style="align-items:center;text-align:center;">
-    <div style="font-size:13px;color:rgba(255,255,255,0.3);font-weight:600;letter-spacing:0.2em;margin-bottom:16px;">THE POCKET COMPANY · VISION</div>
-    <h2 style="font-size:48px;text-align:center;margin-bottom:16px;">我們的想像</h2>
-    <p class="sub" style="max-width:700px;text-align:center;margin-bottom:40px;">不只是賣工具，而是賣結果。<br>企業不需要再買一堆 SaaS，只需要告訴 AI 你想解決什麼問題。</p>
-    <div style="max-width:800px;width:100%;">
-        <img src="./slides/saas_aaas.jpg" alt="SaaS to AaaS" style="position:static;width:100%;height:auto;border-radius:16px;object-fit:contain;">
+<section class="slide dark" style="align-items:center;text-align:center;padding:2vh 3vw;">
+    <p class="sub" style="max-width:90vw;text-align:center;margin-bottom:1.5vh;font-size:1.4vw;">不只是賣工具，而是賣結果。企業不需要再買一堆 SaaS，只需要告訴 AI 你想解決什麼問題。</p>
+    <div style="width:92vw;flex:1;display:flex;align-items:center;justify-content:center;">
+        <img src="./slides/saas_aaas.jpg" alt="SaaS to AaaS" style="position:static;max-width:92vw;max-height:82vh;border-radius:1vw;object-fit:contain;">
     </div>
     <div class="slide-num">17</div>
 </section>
 
 <!-- ===== 18 過場 — AI 人材 ===== -->
 <section class="slide transition-slide">
-    <h1>學 AI 有多難？<br><span style="font-size:80px;">沒有。</span></h1>
+    <h1>學 AI 有多難？<br><span style="font-size:6.5vw;">沒有。</span></h1>
     <div class="slide-num" style="color:rgba(255,255,255,0.3)">18</div>
 </section>
 
 <!-- ===== 19 重點整理 ===== -->
 <section class="slide dark">
     <h2><span class="red-tag"></span>每個人都能變成 AI 人才</h2>
-    <p class="sub" style="margin-bottom:32px;">帶走這四句話就夠了 👇</p>
-    <div style="max-width:800px;display:flex;flex-direction:column;gap:16px;">
-        <div class="card" style="display:flex;align-items:center;gap:20px;">
-            <div style="width:52px;height:52px;border-radius:16px;background:rgba(251,191,36,0.15);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#fbbf24;flex-shrink:0;">1</div>
+    <p class="sub" style="margin-bottom:3vh;">帶走這四句話就夠了 👇</p>
+    <div style="max-width:75vw;display:flex;flex-direction:column;gap:1.5vh;">
+        <div class="card" style="display:flex;align-items:center;gap:1.5vw;">
+            <div style="width:4.2vw;height:4.2vw;border-radius:1vw;background:rgba(251,191,36,0.15);display:flex;align-items:center;justify-content:center;font-size:2vw;font-weight:900;color:#fbbf24;flex-shrink:0;">1</div>
             <div>
-                <div style="font-size:18px;font-weight:700;">新增 AI 能力 = 寫一份文件 📝</div>
-                <div style="font-size:14px;color:#64748b;">不用寫程式。用白話文描述想讓 AI 做什麼，就像寫 SOP。</div>
+                <div style="font-size:1.5vw;font-weight:700;">新增 AI 能力 = 寫一份文件 📝</div>
+                <div style="font-size:1.2vw;color:#64748b;">不用寫程式。用白話文描述想讓 AI 做什麼，就像寫 SOP。</div>
             </div>
         </div>
-        <div class="card" style="display:flex;align-items:center;gap:20px;">
-            <div style="width:52px;height:52px;border-radius:16px;background:rgba(129,140,248,0.15);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#a5b4fc;flex-shrink:0;">2</div>
+        <div class="card" style="display:flex;align-items:center;gap:1.5vw;">
+            <div style="width:4.2vw;height:4.2vw;border-radius:1vw;background:rgba(129,140,248,0.15);display:flex;align-items:center;justify-content:center;font-size:2vw;font-weight:900;color:#a5b4fc;flex-shrink:0;">2</div>
             <div>
-                <div style="font-size:18px;font-weight:700;">AI 會記住你 🧠</div>
-                <div style="font-size:14px;color:#64748b;">每人有自己的記憶層。用越久越懂你，不是共用一個機器人。</div>
+                <div style="font-size:1.5vw;font-weight:700;">AI 會記住你 🧠</div>
+                <div style="font-size:1.2vw;color:#64748b;">每人有自己的記憶層。用越久越懂你，不是共用一個機器人。</div>
             </div>
         </div>
-        <div class="card" style="display:flex;align-items:center;gap:20px;">
-            <div style="width:52px;height:52px;border-radius:16px;background:rgba(52,211,153,0.15);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#34d399;flex-shrink:0;">3</div>
+        <div class="card" style="display:flex;align-items:center;gap:1.5vw;">
+            <div style="width:4.2vw;height:4.2vw;border-radius:1vw;background:rgba(52,211,153,0.15);display:flex;align-items:center;justify-content:center;font-size:2vw;font-weight:900;color:#34d399;flex-shrink:0;">3</div>
             <div>
-                <div style="font-size:18px;font-weight:700;">像樂高一樣拼你的 AI 辦公室 🧩</div>
-                <div style="font-size:14px;color:#64748b;">需要什麼功能就訂什麼模組。13 個模組全開 = 完整 AI 辦公室。</div>
+                <div style="font-size:1.5vw;font-weight:700;">像樂高一樣拼你的 AI 辦公室 🧩</div>
+                <div style="font-size:1.2vw;color:#64748b;">需要什麼功能就訂什麼模組。13 個模組全開 = 完整 AI 辦公室。</div>
             </div>
         </div>
-        <div class="card" style="display:flex;align-items:center;gap:20px;">
-            <div style="width:52px;height:52px;border-radius:16px;background:rgba(244,114,182,0.15);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#f472b6;flex-shrink:0;">4</div>
+        <div class="card" style="display:flex;align-items:center;gap:1.5vw;">
+            <div style="width:4.2vw;height:4.2vw;border-radius:1vw;background:rgba(244,114,182,0.15);display:flex;align-items:center;justify-content:center;font-size:2vw;font-weight:900;color:#f472b6;flex-shrink:0;">4</div>
             <div>
-                <div style="font-size:18px;font-weight:700;">出問題 AI 自己修 🔧</div>
-                <div style="font-size:14px;color:#64748b;">Agent 遇錯自動修正，真的卡住才回報。不用你盯。</div>
+                <div style="font-size:1.5vw;font-weight:700;">出問題 AI 自己修 🔧</div>
+                <div style="font-size:1.2vw;color:#64748b;">Agent 遇錯自動修正，真的卡住才回報。不用你盯。</div>
             </div>
         </div>
     </div>
     <div class="slide-num">19</div>
 </section>
 
-<!-- ===== 20 團隊 ===== -->
-<section class="slide dark-alt" style="padding-top:40px;padding-bottom:40px;">
-    <h2><span class="red-tag"></span>認識我們這群人 👊</h2>
-    <p class="sub" style="margin-bottom:24px;">每個人都在用 AI 工作，不是在研究 AI。</p>
-
-    <!-- Nick -->
-    <div style="width:100%;border-radius:20px;overflow:hidden;background:#111;position:relative;margin-bottom:14px;">
-        <div style="position:absolute;top:14px;left:20px;z-index:2;">
-            <div style="background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);padding:8px 16px;border-radius:12px;display:flex;align-items:center;gap:10px;">
-                <div style="width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 8px #34d399;"></div>
-                <span style="font-size:16px;font-weight:700;">Nick</span>
-                <span style="font-size:11px;color:#34d399;font-weight:600;">COO — CRM 自動化狠人</span>
-            </div>
-        </div>
-        <div style="position:absolute;top:14px;right:20px;background:#34d399;padding:4px 14px;border-radius:8px;font-size:11px;font-weight:800;color:#000;z-index:2;">🎬 LIVE DEMO</div>
-        <video style="width:100%;max-height:400px;object-fit:contain;display:block;background:#111;" controls preload="metadata" playsinline>
-            <source src="./assets/nick_demo.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <!-- Shelley -->
-    <div style="width:100%;border-radius:20px;overflow:hidden;background:#111;position:relative;margin-bottom:14px;">
-        <div style="position:absolute;top:14px;left:20px;z-index:2;">
-            <div style="background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);padding:8px 16px;border-radius:12px;display:flex;align-items:center;gap:10px;">
-                <div style="width:8px;height:8px;border-radius:50%;background:#c084fc;box-shadow:0 0 8px #c084fc;"></div>
-                <span style="font-size:16px;font-weight:700;">Shelley</span>
-                <span style="font-size:11px;color:#c084fc;font-weight:600;">KINTONE LEAD — NVIDIA 算力推進者</span>
-            </div>
-        </div>
-        <div style="position:absolute;top:14px;right:20px;background:#c084fc;padding:4px 14px;border-radius:8px;font-size:11px;font-weight:800;color:#fff;z-index:2;">🎬 STRATEGY</div>
-        <video style="width:100%;max-height:400px;object-fit:contain;display:block;background:#111;" controls preload="metadata" playsinline>
-            <source src="./assets/shelley_demo.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <!-- Casey -->
-    <div style="width:100%;border-radius:20px;overflow:hidden;background:#111;position:relative;margin-bottom:14px;">
-        <div style="position:absolute;top:14px;left:20px;z-index:2;">
-            <div style="background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);padding:8px 16px;border-radius:12px;display:flex;align-items:center;gap:10px;">
-                <div style="width:8px;height:8px;border-radius:50%;background:#f472b6;box-shadow:0 0 8px #f472b6;"></div>
-                <span style="font-size:16px;font-weight:700;">Casey</span>
-                <span style="font-size:11px;color:#f472b6;font-weight:600;">VISUAL AI — 小怪獸養殖藝術家</span>
-            </div>
-        </div>
-        <div style="position:absolute;top:14px;right:20px;background:#f472b6;padding:4px 14px;border-radius:8px;font-size:11px;font-weight:800;color:#fff;z-index:2;">🎬 PLATFORM</div>
-        <video style="width:100%;max-height:400px;object-fit:contain;display:block;background:#111;" controls preload="metadata" playsinline>
-            <source src="./assets/3e55f3cf-e26f-449f-9124-10618124f695.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <!-- Hsiu + Betty -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-        <div style="border-radius:20px;overflow:hidden;background:#111;position:relative;">
-            <div style="position:absolute;top:14px;left:20px;z-index:2;">
-                <div style="background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);padding:8px 16px;border-radius:12px;display:flex;align-items:center;gap:10px;">
-                    <div style="width:8px;height:8px;border-radius:50%;background:#38bdf8;box-shadow:0 0 8px #38bdf8;"></div>
-                    <span style="font-size:16px;font-weight:700;">Hsiu</span>
-                    <span style="font-size:11px;color:#38bdf8;font-weight:600;">口碑部長</span>
-                </div>
-            </div>
-            <img src="./assets/hsiu_real.jpg" style="width:100%;height:300px;object-fit:cover;display:block;" alt="Hsiu">
-        </div>
-        <div style="border-radius:20px;overflow:hidden;background:#111;position:relative;">
-            <div style="position:absolute;top:14px;left:20px;z-index:2;">
-                <div style="background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);padding:8px 16px;border-radius:12px;display:flex;align-items:center;gap:10px;">
-                    <div style="width:8px;height:8px;border-radius:50%;background:#fbbf24;box-shadow:0 0 8px #fbbf24;"></div>
-                    <span style="font-size:16px;font-weight:700;">Betty</span>
-                    <span style="font-size:11px;color:#fbbf24;font-weight:600;">廣告部長</span>
-                </div>
-            </div>
-            <img src="./assets/betty_real.jpg" style="width:100%;height:300px;object-fit:cover;display:block;" alt="Betty">
-        </div>
-    </div>
+<!-- ===== 20 團隊總覽 ===== -->
+<section class="slide dark-alt" style="align-items:center;text-align:center;">
+    <div style="font-size:1.1vw;color:rgba(255,255,255,0.3);font-weight:600;letter-spacing:0.2em;margin-bottom:2vh;">THE TEAM</div>
+    <h2 style="font-size:4.5vw;text-align:center;margin-bottom:2vh;">認識我們這群人 👊</h2>
+    <p style="font-size:2vw;color:#e2e8f0;max-width:70vw;line-height:1.8;margin-bottom:3vh;">
+        我們不是在研究 AI 的人。<br>
+        我們是<strong style="color:#fbbf24;">學會跟電腦一起工作</strong>的人。
+    </p>
+    <p style="font-size:1.5vw;color:#94a3b8;max-width:65vw;line-height:1.9;">
+        當你開始跟程式碼相處，電腦就不再是從前的電腦。<br>
+        它變成你的<strong style="color:#34d399;">夥伴</strong> — 能幫你寫文案、做設計、跑數據、管客戶。<br>
+        不是效率變快而已，是<strong style="color:#fbbf24;">你能做到的事完全不一樣了</strong>。<br>
+        接下來每一位，都會讓你看到人 + AI 能一起做出什麼。
+    </p>
     <div class="slide-num">20</div>
+</section>
+
+<!-- ===== 20a Nick ===== -->
+<section class="img-slide" style="background:#111;">
+    <video style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;background:#111;" controls preload="metadata" playsinline>
+        <source src="./assets/nick_demo.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;top:2.5vh;left:2.5vw;z-index:2;">
+        <div style="background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);padding:1vh 1.5vw;border-radius:0.8vw;display:flex;align-items:center;gap:0.8vw;">
+            <div style="width:0.7vw;height:0.7vw;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;"></div>
+            <span style="font-size:1.8vw;font-weight:700;color:#fff;">Nick</span>
+            <span style="font-size:1.1vw;color:#34d399;font-weight:600;">COO — CRM 自動化狠人</span>
+        </div>
+    </div>
+    <div style="position:absolute;top:2.5vh;right:2.5vw;background:#34d399;padding:0.6vh 1.2vw;border-radius:0.5vw;font-size:1.1vw;font-weight:800;color:#000;z-index:2;">🎬 LIVE DEMO</div>
+    <div class="slide-num" style="color:rgba(255,255,255,0.15)">20a</div>
+</section>
+
+<!-- ===== 20b Shelley ===== -->
+<section class="img-slide" style="background:#111;">
+    <video style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;background:#111;" controls preload="metadata" playsinline>
+        <source src="./assets/shelley_demo.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;top:2.5vh;left:2.5vw;z-index:2;">
+        <div style="background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);padding:1vh 1.5vw;border-radius:0.8vw;display:flex;align-items:center;gap:0.8vw;">
+            <div style="width:0.7vw;height:0.7vw;border-radius:50%;background:#c084fc;box-shadow:0 0 10px #c084fc;"></div>
+            <span style="font-size:1.8vw;font-weight:700;color:#fff;">Shelley</span>
+            <span style="font-size:1.1vw;color:#c084fc;font-weight:600;">KINTONE LEAD — NVIDIA 算力推進者</span>
+        </div>
+    </div>
+    <div style="position:absolute;top:2.5vh;right:2.5vw;background:#c084fc;padding:0.6vh 1.2vw;border-radius:0.5vw;font-size:1.1vw;font-weight:800;color:#fff;z-index:2;">🎬 STRATEGY</div>
+    <div class="slide-num" style="color:rgba(255,255,255,0.15)">20b</div>
+</section>
+
+<!-- ===== 20c Casey ===== -->
+<section class="img-slide" style="background:#111;">
+    <video style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;background:#111;" controls preload="metadata" playsinline>
+        <source src="./assets/3e55f3cf-e26f-449f-9124-10618124f695.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;top:2.5vh;left:2.5vw;z-index:2;">
+        <div style="background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);padding:1vh 1.5vw;border-radius:0.8vw;display:flex;align-items:center;gap:0.8vw;">
+            <div style="width:0.7vw;height:0.7vw;border-radius:50%;background:#f472b6;box-shadow:0 0 10px #f472b6;"></div>
+            <span style="font-size:1.8vw;font-weight:700;color:#fff;">Casey</span>
+            <span style="font-size:1.1vw;color:#f472b6;font-weight:600;">VISUAL AI — 小怪獸養殖藝術家</span>
+        </div>
+    </div>
+    <div style="position:absolute;top:2.5vh;right:2.5vw;background:#f472b6;padding:0.6vh 1.2vw;border-radius:0.5vw;font-size:1.1vw;font-weight:800;color:#fff;z-index:2;">🎬 PLATFORM</div>
+    <div class="slide-num" style="color:rgba(255,255,255,0.15)">20c</div>
+</section>
+
+<!-- ===== 20d Hsiu & Betty ===== -->
+<section class="slide dark-alt" style="align-items:center;text-align:center;padding:3vh 3vw;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2vw;width:90vw;flex:1;">
+        <div style="border-radius:1.2vw;overflow:hidden;background:#111;position:relative;display:flex;align-items:stretch;">
+            <div style="position:absolute;top:2vh;left:1.5vw;z-index:2;">
+                <div style="background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);padding:1vh 1.5vw;border-radius:0.8vw;display:flex;align-items:center;gap:0.8vw;">
+                    <div style="width:0.7vw;height:0.7vw;border-radius:50%;background:#38bdf8;box-shadow:0 0 10px #38bdf8;"></div>
+                    <span style="font-size:1.8vw;font-weight:700;color:#fff;">Hsiu</span>
+                    <span style="font-size:1.1vw;color:#38bdf8;font-weight:600;">口碑部長</span>
+                </div>
+            </div>
+            <img src="./assets/hsiu_real.jpg" style="width:100%;height:80vh;object-fit:cover;display:block;" alt="Hsiu">
+        </div>
+        <div style="border-radius:1.2vw;overflow:hidden;background:#111;position:relative;display:flex;align-items:stretch;">
+            <div style="position:absolute;top:2vh;left:1.5vw;z-index:2;">
+                <div style="background:rgba(0,0,0,0.6);backdrop-filter:blur(8px);padding:1vh 1.5vw;border-radius:0.8vw;display:flex;align-items:center;gap:0.8vw;">
+                    <div style="width:0.7vw;height:0.7vw;border-radius:50%;background:#fbbf24;box-shadow:0 0 10px #fbbf24;"></div>
+                    <span style="font-size:1.8vw;font-weight:700;color:#fff;">Betty</span>
+                    <span style="font-size:1.1vw;color:#fbbf24;font-weight:600;">廣告部長</span>
+                </div>
+            </div>
+            <img src="./assets/betty_real.jpg" style="width:100%;height:80vh;object-fit:cover;display:block;" alt="Betty">
+        </div>
+    </div>
+    <div class="slide-num">20d</div>
 </section>
 
 <!-- ===== 21 送給騰雲的禮物 ===== -->
 <section class="slide dark" style="align-items:center;text-align:center;">
-    <div style="font-size:13px;color:rgba(255,255,255,0.3);font-weight:600;letter-spacing:0.2em;margin-bottom:16px;">WELCOME GIFT</div>
-    <h2 style="font-size:52px;text-align:center;">送給騰雲夥伴的<br><span style="color:#fbbf24;">兩個禮物</span> 🎁</h2>
-    <p class="sub" style="margin-bottom:48px;text-align:center;">加入就要有感覺 —</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;width:100%;">
-        <div class="card" style="padding:40px 32px;text-align:center;border-color:rgba(251,191,36,0.2);background:rgba(251,191,36,0.03);">
-            <div style="margin-bottom:16px;">
-                <img src="./assets/img/banana.png" style="height:80px;object-fit:contain;" alt="Banana">
+    <div style="font-size:1.1vw;color:rgba(255,255,255,0.3);font-weight:600;letter-spacing:0.2em;margin-bottom:2vh;">WELCOME GIFT</div>
+    <h2 style="font-size:4vw;text-align:center;">送給騰雲夥伴的<br><span style="color:#fbbf24;">兩個禮物</span> 🎁</h2>
+    <p class="sub" style="margin-bottom:4vh;text-align:center;">加入就要有感覺 —</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5vw;max-width:75vw;width:100%;">
+        <div class="card" style="padding:3vh 2.5vw;text-align:center;border-color:rgba(251,191,36,0.2);background:rgba(251,191,36,0.03);">
+            <div style="margin-bottom:2vh;">
+                <img src="./assets/img/banana.png" style="height:7vw;object-fit:contain;" alt="Banana">
             </div>
-            <div style="font-size:14px;color:#fbbf24;font-weight:800;letter-spacing:0.1em;margin-bottom:8px;">GIFT 01</div>
-            <h3 style="font-size:24px;font-weight:900;margin-bottom:12px;">每人 1,000 點<br>Banana 生圖點數</h3>
-            <p style="font-size:15px;color:#94a3b8;line-height:1.7;">想做社群圖、廣告素材、<br>品牌視覺？直接用。<br><strong style="color:#fbbf24;">今天就可以開始玩。</strong></p>
+            <div style="font-size:1.2vw;color:#fbbf24;font-weight:800;letter-spacing:0.1em;margin-bottom:1vh;">GIFT 01</div>
+            <h3 style="font-size:2vw;font-weight:900;margin-bottom:1.5vh;">每人 1,000 點<br>Banana 生圖點數</h3>
+            <p style="font-size:1.3vw;color:#94a3b8;line-height:1.7;">想做社群圖、廣告素材、<br>品牌視覺？直接用。<br><strong style="color:#fbbf24;">今天就可以開始玩。</strong></p>
         </div>
-        <div class="card" style="padding:40px 32px;text-align:center;border-color:rgba(129,140,248,0.2);background:rgba(129,140,248,0.03);">
-            <div style="font-size:64px;margin-bottom:16px;">💻</div>
-            <div style="font-size:14px;color:#a5b4fc;font-weight:800;letter-spacing:0.1em;margin-bottom:8px;">GIFT 02</div>
-            <h3 style="font-size:24px;font-weight:900;margin-bottom:12px;">Vibe Coding<br>Workshop</h3>
-            <p style="font-size:15px;color:#94a3b8;line-height:1.7;">就算你不是工程師，<br>我們也真心希望你學會 Coding。<br><strong style="color:#a5b4fc;">人人都能寫程式的時代到了。</strong></p>
+        <div class="card" style="padding:3vh 2.5vw;text-align:center;border-color:rgba(129,140,248,0.2);background:rgba(129,140,248,0.03);">
+            <div style="font-size:5vw;margin-bottom:2vh;">💻</div>
+            <div style="font-size:1.2vw;color:#a5b4fc;font-weight:800;letter-spacing:0.1em;margin-bottom:1vh;">GIFT 02</div>
+            <h3 style="font-size:2vw;font-weight:900;margin-bottom:1.5vh;">Vibe Coding<br>Workshop</h3>
+            <p style="font-size:1.3vw;color:#94a3b8;line-height:1.7;">就算你不是工程師，<br>我們也真心希望你學會 Coding。<br><strong style="color:#a5b4fc;">人人都能寫程式的時代到了。</strong></p>
         </div>
     </div>
     <div class="slide-num">21</div>
@@ -413,34 +446,34 @@
 
 <!-- ===== 22 結語 ===== -->
 <section class="slide" style="background:linear-gradient(180deg,#0a0a12,#1a1030);align-items:center;text-align:center;">
-    <div style="font-size:80px;margin-bottom:20px;">
+    <div style="font-size:6vw;margin-bottom:2vh;">
         <span class="float" style="animation-delay:0s;">🙋</span>
         <span class="float" style="animation-delay:0.3s;">🤖</span>
         <span class="float" style="animation-delay:0.6s;">🚀</span>
     </div>
-    <h1 style="font-size:52px;font-weight:900;margin-bottom:20px;">
+    <h1 style="font-size:4.2vw;font-weight:900;margin-bottom:2vh;">
         每個人都能成為<br><span style="color:#fbbf24;">AI 人才</span>
     </h1>
-    <p style="font-size:20px;color:#94a3b8;max-width:550px;margin:0 auto 32px;line-height:1.8;">
+    <p style="font-size:1.6vw;color:#94a3b8;max-width:50vw;margin:0 auto 3vh;line-height:1.8;">
         不需要會寫程式。不需要懂機器學習。<br>
         你只需要知道你想解決什麼問題，<br>
         <strong style="color:#e2e8f0;">剩下的，交給 Agent。</strong>
     </p>
-    <div style="padding:20px 40px;border-radius:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);display:inline-flex;align-items:center;gap:14px;">
-        <img src="./assets/img/turncloud logo.png" style="height:48px;object-fit:contain;" alt="TurnCloud">
-        <span style="font-size:22px;font-weight:800;">+</span>
-        <img src="./assets/img/accucrazylogo.webp" style="height:36px;object-fit:contain;" alt="Accucrazy">
-        <span style="font-size:22px;font-weight:800;">= </span>
-        <span style="font-size:22px;font-weight:800;color:#fbbf24;">不是取代你，是讓你變更強 💪</span>
+    <div style="padding:2vh 3vw;border-radius:1.2vw;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);display:inline-flex;align-items:center;gap:1vw;">
+        <img src="./assets/img/turncloud logo.png" style="height:4vh;object-fit:contain;" alt="TurnCloud">
+        <span style="font-size:1.8vw;font-weight:800;">+</span>
+        <img src="./assets/img/accucrazylogo.webp" style="height:3.5vh;object-fit:contain;" alt="Accucrazy">
+        <span style="font-size:1.8vw;font-weight:800;">= </span>
+        <span style="font-size:1.8vw;font-weight:800;color:#fbbf24;">不是取代你，是讓你變更強 💪</span>
     </div>
     <div class="slide-num">22</div>
 </section>
 
 <!-- ===== SPEAKER NOTES ===== -->
-<section class="slide" style="background:#060610;font-size:12px;">
-    <h2 style="font-size:24px;margin-bottom:4px;">🎤 講者備忘錄</h2>
-    <p style="font-size:12px;color:#475569;margin-bottom:20px;">30 分鐘 · 像跟朋友聊天 · 講故事不念稿</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;color:#64748b;line-height:2;">
+<section class="slide speaker-notes" style="background:#060610;">
+    <h2 style="font-size:2vw;margin-bottom:0.5vh;">🎤 講者備忘錄</h2>
+    <p style="font-size:1vw;color:#475569;margin-bottom:2vh;">30 分鐘 · 像跟朋友聊天 · 講故事不念稿</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2vw;color:#64748b;line-height:2.2;font-size:1vw;">
         <div>
             <p><strong style="color:#fbbf24;">0-1 min | 00 封面</strong> — 「大家好我是 Ian，被併購的那個人 😂」</p>
             <p><strong style="color:#fbbf24;">1-2 min | 01 個人自介</strong> — IG: accucrazy.eth，簡單聊聊自己</p>
@@ -462,6 +495,44 @@
         </div>
     </div>
 </section>
+
+<script>
+const slides = document.querySelectorAll('.slide, .img-slide');
+let current = 0;
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+        e.preventDefault();
+        current = Math.min(current + 1, slides.length - 1);
+        slides[current].scrollIntoView({ behavior: 'smooth' });
+    }
+    if (e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        current = Math.max(current - 1, 0);
+        slides[current].scrollIntoView({ behavior: 'smooth' });
+    }
+    if (e.key === 'Home') { e.preventDefault(); current = 0; slides[0].scrollIntoView({ behavior: 'smooth' }); }
+    if (e.key === 'End')  { e.preventDefault(); current = slides.length - 1; slides[current].scrollIntoView({ behavior: 'smooth' }); }
+    if (e.key === 'f' || e.key === 'F') { toggleFS(); }
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            current = [...slides].indexOf(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+slides.forEach(s => observer.observe(s));
+
+function toggleFS() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+    } else {
+        document.exitFullscreen();
+    }
+}
+</script>
 
 </body>
 </html>
