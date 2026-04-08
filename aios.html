@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turn Cloud AI OS — Enterprise AI Ecosystem</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@300;400;600;800;900&display=swap");
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:#0a0a12;color:#e2e8f0;overflow-x:hidden}
+.slide{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:5vh 5vw;position:relative;scroll-snap-align:start}
+.slide-num{position:absolute;bottom:2vh;right:2.5vw;font-size:1.2vw;font-weight:800;color:rgba(255,255,255,0.08);font-family:"Inter",monospace}
+h2{font-size:3.8vw;font-weight:900;line-height:1.2;margin-bottom:1.5vh}
+.sub{font-size:1.5vw;color:#94a3b8;font-weight:300;line-height:1.7}
+.card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:1.2vw;padding:2vw;transition:all .3s ease}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.15)}
+.red-tag{display:inline-block;width:0.4vw;height:2.2vw;background:#ef4444;margin-right:1vw;vertical-align:middle;border-radius:2px}
+.footer-bar{position:absolute;bottom:2vh;left:5vw;right:5vw;display:flex;justify-content:space-between;font-size:0.9vw;color:rgba(255,255,255,0.1);letter-spacing:0.15em;font-weight:600;z-index:10}
+#fs-btn{position:fixed;bottom:2vh;left:2vw;z-index:9999;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;padding:0.6vw 1.2vw;border-radius:0.6vw;cursor:pointer;font-size:1vw;font-family:"Inter",sans-serif;font-weight:600;backdrop-filter:blur(8px)}
+#fs-btn:hover{background:rgba(255,255,255,0.15)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-1vh)}}
+.float{display:inline-block;animation:float 3s ease-in-out infinite}
+@keyframes pulse-glow{0%,100%{opacity:.4}50%{opacity:1}}
+.pulse{animation:pulse-glow 2s ease-in-out infinite}
+@keyframes grid-move{0%{background-position:0 0}100%{background-position:50px 50px}}
+.animated-grid{background-image:linear-gradient(rgba(99,102,241,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,0.07) 1px,transparent 1px);background-size:50px 50px;animation:grid-move 4s linear infinite}
+@keyframes orbit{0%{transform:rotate(0deg) translateX(12vw) rotate(0deg)}100%{transform:rotate(360deg) translateX(12vw) rotate(-360deg)}}
+.orbit-item{position:absolute;animation:orbit 8s linear infinite}
+@keyframes data-flow{0%{transform:translateY(0);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translateY(-15vh);opacity:0}}
+.data-particle{position:absolute;width:4px;height:4px;border-radius:50%;animation:data-flow 3s ease-in-out infinite}
+@keyframes slide-in-left{from{transform:translateX(-5vw);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes slide-in-right{from{transform:translateX(5vw);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes fade-up{from{transform:translateY(3vh);opacity:0}to{transform:translateY(0);opacity:1}}
+.anim-left{animation:slide-in-left .8s ease-out both}
+.anim-right{animation:slide-in-right .8s ease-out both}
+.anim-up{animation:fade-up .8s ease-out both}
+</style>
+</head>
+<body>
+<button id="fs-btn" onclick="toggleFS()">&#x26F6; Full</button>
+
+<!-- ===== SLIDE 00 — COVER ===== -->
+<section class="slide animated-grid" style="align-items:center;text-align:center;background:#0a0a12;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(99,102,241,0.15) 0%,transparent 60%);"></div>
+    <div style="position:relative;z-index:2;">
+        <div style="font-size:1vw;color:rgba(255,255,255,0.3);font-weight:600;letter-spacing:0.3em;margin-bottom:3vh;">TURN CLOUD AI OS · 2026</div>
+        <h1 style="font-size:4.5vw;font-weight:900;color:#fff;line-height:1.2;margin-bottom:2vh;">
+            從內容工具到<br><span style="background:linear-gradient(135deg,#818cf8,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Enterprise AI OS</span>
+        </h1>
+        <p style="font-size:2vw;color:rgba(255,255,255,0.6);max-width:60vw;margin:0 auto 4vh;line-height:1.6;">
+            我們想做的，是一個會一起長大的 AI 生態系
+        </p>
+        <div style="display:inline-flex;align-items:center;gap:1.5vw;padding:1.5vh 2.5vw;border-radius:1vw;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);">
+            <img src="./assets/img/turncloud logo.png" style="height:3.5vh;object-fit:contain;" alt="TurnCloud">
+            <span style="font-size:1.5vw;font-weight:800;color:rgba(255,255,255,0.3);">×</span>
+            <img src="./assets/img/accucrazylogo.webp" style="height:3vh;object-fit:contain;" alt="Accucrazy">
+        </div>
+    </div>
+    <div class="footer-bar"><span>Enterprise AI Ecosystem</span><span>CONFIDENTIAL</span></div>
+    <div class="slide-num">00</div>
+</section>
+
+<!-- ===== SLIDE 01 — THE JOURNEY ===== -->
+<section class="slide" style="background:linear-gradient(180deg,#0a0a12,#0f1029);align-items:center;text-align:center;">
+    <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(251,191,36,0.06) 0%,transparent 50%),radial-gradient(circle at 70% 50%,rgba(56,189,248,0.06) 0%,transparent 50%);"></div>
+    <div style="position:relative;z-index:2;max-width:70vw;">
+        <div style="font-size:1vw;color:rgba(255,255,255,0.25);font-weight:600;letter-spacing:0.25em;margin-bottom:3vh;">THE JOURNEY</div>
+        <h2 style="font-size:3vw;text-align:center;margin-bottom:3vh;">這幾年我們一路做下來，<br>越來越明白一件事</h2>
+        <p style="font-size:1.8vw;color:rgba(255,255,255,0.55);line-height:1.9;margin-bottom:4vh;">
+            從內容生成、圖像生成到輿情分析——
+        </p>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:1.5vw;padding:3vh 3vw;">
+            <p style="font-size:2.2vw;color:#e2e8f0;line-height:1.8;font-weight:500;">
+                企業真正需要的，從來不只是更多 AI 工具，<br>
+                而是一套能把<span style="color:#fbbf24;">資料</span>、<span style="color:#818cf8;">權限</span>、<span style="color:#38bdf8;">記憶</span>與<span style="color:#34d399;">不同能力</span><br>串起來的系統。
+            </p>
+        </div>
+    </div>
+    <div class="slide-num">01</div>
+</section>
+
+<!-- ===== SLIDE 02 — VISION: AI OS ===== -->
+<section class="slide" style="background:#0a0a12;padding:3vh 5vw;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(129,140,248,0.1) 0%,transparent 55%);"></div>
+    <div style="position:relative;z-index:2;">
+        <div style="font-size:1vw;color:rgba(255,255,255,0.25);font-weight:600;letter-spacing:0.25em;margin-bottom:2vh;">VISION</div>
+        <h2 style="font-size:3.5vw;margin-bottom:1vh;">不只是把單一產品做強<br>而是往 <span style="color:#818cf8;">AI OS</span> 的方向走</h2>
+        <p class="sub" style="margin-bottom:4vh;max-width:60vw;">讓內容、數據、工作流、Agent 能夠建立在同一個可管理、可延伸的架構上</p>
+
+        <!-- Architecture Diagram -->
+        <div style="display:flex;flex-direction:column;align-items:center;gap:1.5vh;max-width:75vw;margin:0 auto;">
+            <!-- Top: AI OS -->
+            <div style="width:60vw;padding:2vh 0;text-align:center;background:linear-gradient(135deg,rgba(251,191,36,0.15),rgba(251,191,36,0.05));border:1px solid rgba(251,191,36,0.3);border-radius:1vw;">
+                <div style="font-size:2vw;font-weight:900;color:#fbbf24;">Turn Cloud AI OS</div>
+                <div style="font-size:1.1vw;color:rgba(255,255,255,0.5);margin-top:0.5vh;">Sense → Reason → Action</div>
+            </div>
+            <div style="font-size:1.5vw;color:rgba(255,255,255,0.15);">&#9660;</div>
+            <!-- Middle: Products -->
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5vw;width:60vw;">
+                <div class="card" style="text-align:center;border-color:rgba(239,68,68,0.2);">
+                    <img src="./assets/img/PandoraH.PNG" style="width:3.5vw;height:3.5vw;object-fit:cover;border-radius:50%;margin:0 auto 1vh;display:block;" alt="Pandora">
+                    <div style="font-size:1.3vw;font-weight:700;">Pandora</div>
+                    <div style="font-size:0.9vw;color:#64748b;">Social Intelligence</div>
+                </div>
+                <div class="card" style="text-align:center;border-color:rgba(56,189,248,0.2);">
+                    <img src="./assets/img/MoanaH.png" style="width:3.5vw;height:3.5vw;object-fit:cover;border-radius:50%;margin:0 auto 1vh;display:block;" alt="Moana">
+                    <div style="font-size:1.3vw;font-weight:700;">Moana</div>
+                    <div style="font-size:0.9vw;color:#64748b;">Content Generation</div>
+                </div>
+                <div class="card" style="text-align:center;border-color:rgba(251,191,36,0.2);">
+                    <img src="./assets/img/banana.png" style="width:3.5vw;height:3.5vw;object-fit:contain;margin:0 auto 1vh;display:block;" alt="Banana">
+                    <div style="font-size:1.3vw;font-weight:700;">Banana Split</div>
+                    <div style="font-size:0.9vw;color:#64748b;">Visual Creative</div>
+                </div>
+            </div>
+            <div style="font-size:1.5vw;color:rgba(255,255,255,0.15);">&#9660;</div>
+            <!-- Bottom: MDP -->
+            <div style="width:60vw;padding:2vh 0;text-align:center;background:linear-gradient(135deg,rgba(56,189,248,0.12),rgba(129,140,248,0.08));border:1px solid rgba(56,189,248,0.25);border-radius:1vw;">
+                <div style="font-size:2vw;font-weight:900;color:#38bdf8;">MDP</div>
+                <div style="font-size:1.1vw;color:rgba(255,255,255,0.5);margin-top:0.5vh;">Multi-data Platform — 資料底座</div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num">02</div>
+</section>
+
+<!-- ===== SLIDE 03 — MDP ===== -->
+<section class="slide" style="background:#0a0a12;overflow:hidden;">
+    <div style="position:absolute;inset:0;">
+        <div class="data-particle" style="left:15%;bottom:0;background:#38bdf8;animation-delay:0s;"></div>
+        <div class="data-particle" style="left:25%;bottom:0;background:#818cf8;animation-delay:0.5s;"></div>
+        <div class="data-particle" style="left:40%;bottom:0;background:#fbbf24;animation-delay:1s;"></div>
+        <div class="data-particle" style="left:55%;bottom:0;background:#34d399;animation-delay:1.5s;"></div>
+        <div class="data-particle" style="left:70%;bottom:0;background:#f472b6;animation-delay:2s;"></div>
+        <div class="data-particle" style="left:85%;bottom:0;background:#38bdf8;animation-delay:2.5s;"></div>
+        <div class="data-particle" style="left:20%;bottom:0;background:#fbbf24;animation-delay:0.8s;"></div>
+        <div class="data-particle" style="left:60%;bottom:0;background:#818cf8;animation-delay:1.8s;"></div>
+    </div>
+    <div style="position:relative;z-index:2;">
+        <div style="font-size:1vw;color:rgba(255,255,255,0.25);font-weight:600;letter-spacing:0.25em;margin-bottom:2vh;">DATA FOUNDATION</div>
+        <h2 style="font-size:3.5vw;margin-bottom:1.5vh;"><span style="color:#38bdf8;">MDP</span> — Multi-data Platform</h2>
+        <p class="sub" style="max-width:65vw;margin-bottom:4vh;">企業的資料本來就分散在不同系統、不同部門、不同帳號之間。<br>如果沒有先把資料底座整理好，AI 很難真的進到企業核心流程。</p>
+
+        <!-- Data Sources Grid -->
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1.2vw;max-width:70vw;">
+            <div class="card" style="text-align:center;padding:1.5vw;">
+                <div style="font-size:2vw;margin-bottom:0.5vh;">&#128202;</div>
+                <div style="font-size:1vw;font-weight:700;">CRM</div>
+            </div>
+            <div class="card" style="text-align:center;padding:1.5vw;">
+                <div style="font-size:2vw;margin-bottom:0.5vh;">&#128722;</div>
+                <div style="font-size:1vw;font-weight:700;">POS</div>
+            </div>
+            <div class="card" style="text-align:center;padding:1.5vw;">
+                <div style="font-size:2vw;margin-bottom:0.5vh;">&#127760;</div>
+                <div style="font-size:1vw;font-weight:700;">Social</div>
+            </div>
+            <div class="card" style="text-align:center;padding:1.5vw;">
+                <div style="font-size:2vw;margin-bottom:0.5vh;">&#128200;</div>
+                <div style="font-size:1vw;font-weight:700;">Analytics</div>
+            </div>
+            <div class="card" style="text-align:center;padding:1.5vw;">
+                <div style="font-size:2vw;margin-bottom:0.5vh;">&#128187;</div>
+                <div style="font-size:1vw;font-weight:700;">API</div>
+            </div>
+        </div>
+        <div style="text-align:center;margin:2vh 0;">
+            <svg width="70vw" height="6vh" viewBox="0 0 800 60" style="max-width:70vw;">
+                <defs><linearGradient id="flow-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#818cf8" stop-opacity="0.6"/><stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8"/><stop offset="100%" stop-color="#818cf8" stop-opacity="0.6"/></linearGradient></defs>
+                <line x1="80" y1="5" x2="400" y2="55" stroke="url(#flow-grad)" stroke-width="1.5" opacity="0.4"/>
+                <line x1="240" y1="5" x2="400" y2="55" stroke="url(#flow-grad)" stroke-width="1.5" opacity="0.4"/>
+                <line x1="400" y1="5" x2="400" y2="55" stroke="url(#flow-grad)" stroke-width="1.5" opacity="0.6"/>
+                <line x1="560" y1="5" x2="400" y2="55" stroke="url(#flow-grad)" stroke-width="1.5" opacity="0.4"/>
+                <line x1="720" y1="5" x2="400" y2="55" stroke="url(#flow-grad)" stroke-width="1.5" opacity="0.4"/>
+            </svg>
+        </div>
+        <div style="max-width:70vw;">
+            <div style="padding:2vh 3vw;text-align:center;background:linear-gradient(135deg,rgba(56,189,248,0.1),rgba(129,140,248,0.08));border:2px solid rgba(56,189,248,0.3);border-radius:1.2vw;">
+                <div style="font-size:2.5vw;font-weight:900;color:#38bdf8;">MDP</div>
+                <div style="font-size:1.2vw;color:rgba(255,255,255,0.6);margin-top:0.5vh;">統一資料底座 — 讓 AI 在正確的權限下讀取、理解與協作</div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num">03</div>
+</section>
+
+<!-- ===== SLIDE 04 — USER-LEVEL MEMORY ===== -->
+<section class="slide" style="background:linear-gradient(180deg,#0a0a12,#0d0a1a);align-items:center;text-align:center;">
+    <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(251,191,36,0.08) 0%,transparent 45%);"></div>
+    <div style="position:relative;z-index:2;">
+        <div style="font-size:1vw;color:rgba(251,191,36,0.5);font-weight:600;letter-spacing:0.25em;margin-bottom:2vh;">SELLING POINT 01</div>
+        <h2 style="font-size:3.5vw;text-align:center;margin-bottom:3vh;">User-Level Memory<br><span style="font-size:2.5vw;color:#fbbf24;">每個 Seat 都有自己的記憶</span></h2>
+
+        <p style="font-size:1.6vw;color:rgba(255,255,255,0.6);max-width:60vw;margin:0 auto 4vh;line-height:1.8;">
+            未來企業買的 seat，不只是帳號數，<br>
+            而是每一個帳號都能慢慢累積自己的使用記憶。
+        </p>
+
+        <!-- Memory Items -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5vw;max-width:70vw;margin:0 auto 4vh;">
+            <div class="card" style="text-align:center;border-color:rgba(251,191,36,0.15);">
+                <div style="font-size:2.5vw;margin-bottom:1vh;">&#129504;</div>
+                <div style="font-size:1.2vw;font-weight:700;color:#fbbf24;">習慣</div>
+                <div style="font-size:0.9vw;color:#64748b;margin-top:0.5vh;">使用者的操作模式</div>
+            </div>
+            <div class="card" style="text-align:center;border-color:rgba(251,191,36,0.15);">
+                <div style="font-size:2.5vw;margin-bottom:1vh;">&#9829;</div>
+                <div style="font-size:1.2vw;font-weight:700;color:#fbbf24;">偏好</div>
+                <div style="font-size:0.9vw;color:#64748b;margin-top:0.5vh;">個人化的選擇傾向</div>
+            </div>
+            <div class="card" style="text-align:center;border-color:rgba(251,191,36,0.15);">
+                <div style="font-size:2.5vw;margin-bottom:1vh;">&#128279;</div>
+                <div style="font-size:1.2vw;font-weight:700;color:#fbbf24;">脈絡</div>
+                <div style="font-size:0.9vw;color:#64748b;margin-top:0.5vh;">工作上下文與流程</div>
+            </div>
+            <div class="card" style="text-align:center;border-color:rgba(251,191,36,0.15);">
+                <div style="font-size:2.5vw;margin-bottom:1vh;">&#128172;</div>
+                <div style="font-size:1.2vw;font-weight:700;color:#fbbf24;">互動</div>
+                <div style="font-size:0.9vw;color:#64748b;margin-top:0.5vh;">過去的互動方式</div>
+            </div>
+        </div>
+
+        <div style="background:rgba(251,191,36,0.05);border:1px solid rgba(251,191,36,0.2);border-radius:1.2vw;padding:2.5vh 3vw;max-width:65vw;margin:0 auto;">
+            <p style="font-size:1.5vw;color:#e2e8f0;line-height:1.8;">
+                當一個 seat 可以開始承接使用者記憶，<br>
+                它的價值就不再只是登入系統的權限，<br>
+                而是變成一個<strong style="color:#fbbf24;">會越用越懂人的工作入口</strong>。
+            </p>
+        </div>
+    </div>
+    <div class="slide-num">04</div>
+</section>
+
+<!-- ===== SLIDE 05 — DUAL MEMORY ===== -->
+<section class="slide" style="background:#0a0a12;padding:3vh 5vw;">
+    <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(129,140,248,0.08) 0%,transparent 40%),radial-gradient(circle at 70% 60%,rgba(251,191,36,0.06) 0%,transparent 40%);"></div>
+    <div style="position:relative;z-index:2;">
+        <div style="font-size:1vw;color:rgba(129,140,248,0.5);font-weight:600;letter-spacing:0.25em;margin-bottom:2vh;">SELLING POINT 02</div>
+        <h2 style="font-size:3vw;margin-bottom:3vh;">Enterprise + User Memory<br><span style="font-size:2.2vw;color:#a5b4fc;">兩種記憶並存，才能真正落地</span></h2>
+
+        <div style="display:grid;grid-template-columns:1fr 3vw 1fr;align-items:stretch;gap:0;max-width:75vw;">
+            <!-- Enterprise Memory -->
+            <div style="background:linear-gradient(180deg,rgba(129,140,248,0.08),rgba(129,140,248,0.02));border:1px solid rgba(129,140,248,0.2);border-radius:1.2vw;padding:3vh 2.5vw;">
+                <div style="font-size:1vw;color:#a5b4fc;font-weight:700;letter-spacing:0.15em;margin-bottom:2vh;">ENTERPRISE MEMORY</div>
+                <div style="display:flex;flex-direction:column;gap:1.2vh;">
+                    <div style="display:flex;align-items:center;gap:0.8vw;">
+                        <div style="width:0.5vw;height:0.5vw;border-radius:50%;background:#a5b4fc;flex-shrink:0;"></div>
+                        <span style="font-size:1.2vw;">品牌規範</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:0.8vw;">
+                        <div style="width:0.5vw;height:0.5vw;border-radius:50%;background:#a5b4fc;flex-shrink:0;"></div>
+                        <span style="font-size:1.2vw;">產品資料</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:0.8vw;">
+                        <div style="width:0.5vw;height:0.5vw;border-radius:50%;background:#a5b4fc;flex-shrink:0;"></div>
+                        <span style="font-size:1.2vw;">歷史專案經驗</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:0.8vw;">
+                        <div style="width:0.5vw;height:0.5vw;border-radius:50%;background:#a5b4fc;flex-shrink:0;"></div>
+                        <span style="font-size:1.2vw;">組織共用智慧</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Connector -->
+            <div style="display:flex;align-items:center;justify-content:center;">
+                <div style="font-size:2vw;color:rgba(255,255,255,0.2);">&#8596;</div>
+            </div>
+
+            <!-- User Memory -->
+            <div style="background:linear-gradient(180deg,rgba(251,191,36,0.08),rgba(251,191,36,0.02));border:1px solid rgba(251,191,36,0.2);border-radius:1.2vw;padding:3vh 2.5vw;">
+                <div style="font-size:1vw;color:#fbbf24;font-weight:700;letter-spacing:0.15em;margin-bottom:2vh;">USER MEMORY</div>
+                <div style="display:flex;flex-direction:column;gap:1.2vh;">
+                    <div style="display:flex;align-items:center;gap:0.8vw;">
+                        <div style="width:0.5vw;height:0.5vw;border-radius:50%;background:#fbbf24;flex-shrink:0;"></div>
+                        <span style="font-size:1.2vw;">個人判斷方式</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:0.8vw;">
+                        <div style="width:0.5vw;height:0.5vw;border-radius:50%;background:#fbbf24;flex-shrink:0;"></div>
+                        <span style="font-size:1.2vw;">客戶互動習慣</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:0.8vw;">
+                        <div style="width:0.5vw;height:0.5vw;border-radius:50%;background:#fbbf24;flex-shrink:0;"></div>
+                        <span style="font-size:1.2vw;">工作方法</span>
+                    </div>
+                    <div style="display:flex;align-items:center;gap:0.8vw;">
+                        <div style="width:0.5vw;height:0.5vw;border-radius:50%;background:#fbbf24;flex-shrink:0;"></div>
+                        <span style="font-size:1.2vw;">個人工作脈絡</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin-top:3vh;">
+            <p style="font-size:1.5vw;color:rgba(255,255,255,0.6);max-width:65vw;margin:0 auto;line-height:1.8;">
+                真正能落地的 AI 系統，不是只做其中一種，<br>
+                而是能讓這兩種記憶並存，<br>
+                <strong style="color:#e2e8f0;">既保有組織的共用智慧，也保留每個人的工作脈絡。</strong>
+            </p>
+        </div>
+    </div>
+    <div class="slide-num">05</div>
+</section>
+
+<!-- ===== SLIDE 06 — DATA PERMISSIONS ===== -->
+<section class="slide" style="background:linear-gradient(180deg,#0a0a12,#080d12);align-items:center;text-align:center;">
+    <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(52,211,153,0.08) 0%,transparent 45%);"></div>
+    <div style="position:relative;z-index:2;">
+        <div style="font-size:1vw;color:rgba(52,211,153,0.5);font-weight:600;letter-spacing:0.25em;margin-bottom:2vh;">SELLING POINT 03</div>
+        <h2 style="font-size:3.5vw;text-align:center;margin-bottom:1.5vh;">數據權限管理</h2>
+        <p style="font-size:2vw;color:#34d399;margin-bottom:3vh;">對的權限 × 對的資料 × 對的人</p>
+
+        <!-- Permission Layers -->
+        <div style="max-width:65vw;margin:0 auto;">
+            <div style="display:flex;flex-direction:column;gap:1vh;">
+                <div style="display:flex;align-items:center;gap:1vw;">
+                    <div style="width:8vw;text-align:right;font-size:1vw;color:rgba(255,255,255,0.4);font-weight:600;">ADMIN</div>
+                    <div style="flex:1;height:4vh;background:linear-gradient(90deg,rgba(52,211,153,0.3),rgba(52,211,153,0.08));border:1px solid rgba(52,211,153,0.3);border-radius:0.5vw;display:flex;align-items:center;padding:0 1vw;">
+                        <span style="font-size:0.9vw;color:#34d399;">&#128274; 全部資料 + 設定 + 權限管理</span>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:1vw;">
+                    <div style="width:8vw;text-align:right;font-size:1vw;color:rgba(255,255,255,0.4);font-weight:600;">MANAGER</div>
+                    <div style="flex:1;height:4vh;background:linear-gradient(90deg,rgba(56,189,248,0.25),rgba(56,189,248,0.05));border:1px solid rgba(56,189,248,0.25);border-radius:0.5vw;display:flex;align-items:center;padding:0 1vw;max-width:80%;">
+                        <span style="font-size:0.9vw;color:#38bdf8;">&#128274; 部門資料 + 團隊報表</span>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:1vw;">
+                    <div style="width:8vw;text-align:right;font-size:1vw;color:rgba(255,255,255,0.4);font-weight:600;">MEMBER</div>
+                    <div style="flex:1;height:4vh;background:linear-gradient(90deg,rgba(251,191,36,0.2),rgba(251,191,36,0.04));border:1px solid rgba(251,191,36,0.2);border-radius:0.5vw;display:flex;align-items:center;padding:0 1vw;max-width:60%;">
+                        <span style="font-size:0.9vw;color:#fbbf24;">&#128274; 個人資料 + 授權內容</span>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:1vw;">
+                    <div style="width:8vw;text-align:right;font-size:1vw;color:rgba(255,255,255,0.4);font-weight:600;">GUEST</div>
+                    <div style="flex:1;height:4vh;background:linear-gradient(90deg,rgba(148,163,184,0.15),rgba(148,163,184,0.03));border:1px solid rgba(148,163,184,0.15);border-radius:0.5vw;display:flex;align-items:center;padding:0 1vw;max-width:35%;">
+                        <span style="font-size:0.9vw;color:#94a3b8;">&#128274; 公開資料</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top:4vh;max-width:60vw;margin-left:auto;margin-right:auto;">
+            <p style="font-size:1.4vw;color:rgba(255,255,255,0.55);line-height:1.8;">
+                只有把<strong style="color:#34d399;">權限、記憶、資料治理</strong>都處理好，<br>
+                AI 才有可能從展示型工具，變成企業真的敢用、能長期用的系統。
+            </p>
+        </div>
+    </div>
+    <div class="slide-num">06</div>
+</section>
+
+<!-- ===== SLIDE 07 — AI TOKEN ===== -->
+<section class="slide" style="background:#0a0a12;align-items:center;text-align:center;">
+    <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,rgba(251,191,36,0.1) 0%,transparent 50%);"></div>
+    <div style="position:relative;z-index:2;">
+        <div style="font-size:1vw;color:rgba(251,191,36,0.5);font-weight:600;letter-spacing:0.25em;margin-bottom:2vh;">BUSINESS MODEL</div>
+        <h2 style="font-size:3.5vw;text-align:center;margin-bottom:1.5vh;">AI Token<br><span style="font-size:2.2vw;color:#fbbf24;">讓能力在生態系裡流動</span></h2>
+        <p class="sub" style="margin-bottom:4vh;max-width:60vw;margin-left:auto;margin-right:auto;">未來企業買的，不會只是單一工具的授權，<br>而是整個生態系裡不同能力的使用權。</p>
+
+        <!-- Token Flow -->
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1vw;max-width:75vw;margin:0 auto 3vh;">
+            <div class="card" style="text-align:center;padding:2vh 1vw;border-color:rgba(251,191,36,0.15);">
+                <div style="font-size:2.5vw;margin-bottom:1vh;">&#9997;</div>
+                <div style="font-size:1.1vw;font-weight:700;">內容生成</div>
+                <div style="font-size:2vw;color:#fbbf24;font-weight:900;margin-top:1vh;">&#11044;</div>
+            </div>
+            <div class="card" style="text-align:center;padding:2vh 1vw;border-color:rgba(251,191,36,0.15);">
+                <div style="font-size:2.5vw;margin-bottom:1vh;">&#127912;</div>
+                <div style="font-size:1.1vw;font-weight:700;">圖像生成</div>
+                <div style="font-size:2vw;color:#fbbf24;font-weight:900;margin-top:1vh;">&#11044;</div>
+            </div>
+            <div class="card" style="text-align:center;padding:2vh 1vw;border-color:rgba(251,191,36,0.15);">
+                <div style="font-size:2.5vw;margin-bottom:1vh;">&#128202;</div>
+                <div style="font-size:1.1vw;font-weight:700;">資料分析</div>
+                <div style="font-size:2vw;color:#fbbf24;font-weight:900;margin-top:1vh;">&#11044;</div>
+            </div>
+            <div class="card" style="text-align:center;padding:2vh 1vw;border-color:rgba(251,191,36,0.15);">
+                <div style="font-size:2.5vw;margin-bottom:1vh;">&#129504;</div>
+                <div style="font-size:1.1vw;font-weight:700;">記憶調用</div>
+                <div style="font-size:2vw;color:#fbbf24;font-weight:900;margin-top:1vh;">&#11044;</div>
+            </div>
+            <div class="card" style="text-align:center;padding:2vh 1vw;border-color:rgba(251,191,36,0.15);">
+                <div style="font-size:2.5vw;margin-bottom:1vh;">&#129302;</div>
+                <div style="font-size:1.1vw;font-weight:700;">Startup 能力</div>
+                <div style="font-size:2vw;color:#fbbf24;font-weight:900;margin-top:1vh;">&#11044;</div>
+            </div>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:center;gap:1vw;margin-bottom:3vh;">
+            <div style="height:1px;width:25vw;background:linear-gradient(90deg,transparent,rgba(251,191,36,0.4),transparent);"></div>
+            <span style="font-size:1.5vw;font-weight:900;color:#fbbf24;">AI TOKEN</span>
+            <div style="height:1px;width:25vw;background:linear-gradient(90deg,transparent,rgba(251,191,36,0.4),transparent);"></div>
+        </div>
+
+        <p style="font-size:1.4vw;color:rgba(255,255,255,0.55);max-width:60vw;margin:0 auto;line-height:1.8;">
+            讓企業導入 AI 更有彈性，也更接近實際使用情境。<br>
+            <strong style="color:#fbbf24;">能力不只是被販售，而是能在整個生態系裡流動。</strong>
+        </p>
+    </div>
+    <div class="slide-num">07</div>
+</section>
+
+<!-- ===== SLIDE 08 — ECOSYSTEM ===== -->
+<section class="slide" style="background:linear-gradient(180deg,#0a0a12,#0a0e1a);padding:3vh 5vw;">
+    <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(99,102,241,0.08) 0%,transparent 55%);"></div>
+    <div style="position:relative;z-index:2;">
+        <div style="font-size:1vw;color:rgba(255,255,255,0.25);font-weight:600;letter-spacing:0.25em;margin-bottom:2vh;">ECOSYSTEM</div>
+        <h2 style="font-size:3vw;margin-bottom:1.5vh;">這整件事，不會只靠一家公司完成</h2>
+        <p class="sub" style="margin-bottom:3vh;max-width:65vw;">誰擅長內容、誰擅長圖像、誰擅長數據、誰擅長 workflow，<br>都可以成為這個生態系的一部分。</p>
+
+        <!-- Ecosystem Diagram -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2vw;max-width:80vw;">
+            <!-- Left: Our Products -->
+            <div>
+                <div style="font-size:1vw;color:rgba(255,255,255,0.3);font-weight:600;letter-spacing:0.15em;margin-bottom:1.5vh;">OUR PRODUCTS</div>
+                <div style="display:flex;flex-direction:column;gap:1.2vh;">
+                    <div class="card" style="display:flex;align-items:center;gap:1.2vw;border-color:rgba(239,68,68,0.2);">
+                        <img src="./assets/img/PandoraH.PNG" style="width:3vw;height:3vw;object-fit:cover;border-radius:50%;flex-shrink:0;" alt="Pandora">
+                        <div>
+                            <div style="font-size:1.3vw;font-weight:700;">Pandora</div>
+                            <div style="font-size:0.9vw;color:#64748b;">Social Intelligence — 輿情分析、品牌聽診</div>
+                        </div>
+                    </div>
+                    <div class="card" style="display:flex;align-items:center;gap:1.2vw;border-color:rgba(56,189,248,0.2);">
+                        <img src="./assets/img/MoanaH.png" style="width:3vw;height:3vw;object-fit:cover;border-radius:50%;flex-shrink:0;" alt="Moana">
+                        <div>
+                            <div style="font-size:1.3vw;font-weight:700;">Moana</div>
+                            <div style="font-size:0.9vw;color:#64748b;">Content Generation — AI 內容創作</div>
+                        </div>
+                    </div>
+                    <div class="card" style="display:flex;align-items:center;gap:1.2vw;border-color:rgba(251,191,36,0.2);">
+                        <img src="./assets/img/banana.png" style="width:3vw;height:3vw;object-fit:contain;flex-shrink:0;" alt="Banana">
+                        <div>
+                            <div style="font-size:1.3vw;font-weight:700;">Banana Split</div>
+                            <div style="font-size:0.9vw;color:#64748b;">Visual Creative — AI 圖像生成</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Ecosystem Partners -->
+            <div>
+                <div style="font-size:1vw;color:rgba(255,255,255,0.3);font-weight:600;letter-spacing:0.15em;margin-bottom:1.5vh;">ECOSYSTEM PARTNERS</div>
+                <div style="display:flex;flex-direction:column;gap:1.2vh;">
+                    <div class="card" style="border-color:rgba(52,211,153,0.15);padding:1.5vw;">
+                        <div style="font-size:1.2vw;font-weight:700;color:#34d399;">AI Content Tech Startups</div>
+                        <div style="font-size:0.9vw;color:#64748b;margin-top:0.5vh;">不同的模型能力、不同的應用場景</div>
+                    </div>
+                    <div class="card" style="border-color:rgba(244,114,182,0.15);padding:1.5vw;">
+                        <div style="font-size:1.2vw;font-weight:700;color:#f472b6;">Workflow Specialists</div>
+                        <div style="font-size:0.9vw;color:#64748b;margin-top:0.5vh;">工作流自動化、流程編排</div>
+                    </div>
+                    <div class="card" style="border-color:rgba(251,191,36,0.15);padding:1.5vw;">
+                        <div style="font-size:1.2vw;font-weight:700;color:#fbbf24;">Open-Source AI OS Framework</div>
+                        <div style="font-size:0.9vw;color:#64748b;margin-top:0.5vh;">開源 AIOS 對接框架，讓更多能力被接進來</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin-top:3vh;">
+            <p style="font-size:1.4vw;color:rgba(255,255,255,0.5);">當更多能力被接進來，整個平台的價值就不再只是產品功能，<br>而是來自彼此之間可以<strong style="color:#e2e8f0;">互相連動、共同成長的效應。</strong></p>
+        </div>
+    </div>
+    <div class="slide-num">08</div>
+</section>
+
+<!-- ===== SLIDE 09 — FROM TOOL TO STAGE ===== -->
+<section class="slide" style="background:linear-gradient(135deg,#1a1040 0%,#0a0a12 50%,#0a1520 100%);align-items:center;text-align:center;">
+    <div style="position:absolute;inset:0;overflow:hidden;">
+        <div style="position:absolute;top:20%;left:10%;width:25vw;height:25vw;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.06),transparent 70%);" class="float"></div>
+        <div style="position:absolute;bottom:15%;right:10%;width:30vw;height:30vw;border-radius:50%;background:radial-gradient(circle,rgba(251,191,36,0.05),transparent 70%);" class="float" style="animation-delay:1.5s;"></div>
+    </div>
+    <div style="position:relative;z-index:2;max-width:70vw;">
+        <div style="font-size:1vw;color:rgba(255,255,255,0.25);font-weight:600;letter-spacing:0.25em;margin-bottom:3vh;">TRANSFORMATION</div>
+
+        <div style="display:grid;grid-template-columns:1fr 5vw 1fr;align-items:center;gap:0;margin-bottom:4vh;">
+            <div style="text-align:center;">
+                <div style="font-size:1.2vw;color:rgba(255,255,255,0.3);font-weight:600;margin-bottom:1.5vh;">FROM</div>
+                <div style="font-size:3vw;font-weight:900;color:rgba(255,255,255,0.3);">做工具</div>
+                <div style="font-size:1.2vw;color:rgba(255,255,255,0.2);margin-top:1vh;">提供功能</div>
+            </div>
+            <div style="text-align:center;">
+                <svg width="5vw" height="4vh" viewBox="0 0 60 40"><path d="M5 20 L45 20" stroke="#fbbf24" stroke-width="2" fill="none"/><path d="M40 12 L50 20 L40 28" stroke="#fbbf24" stroke-width="2" fill="none"/></svg>
+            </div>
+            <div style="text-align:center;">
+                <div style="font-size:1.2vw;color:#fbbf24;font-weight:600;margin-bottom:1.5vh;">TO</div>
+                <div style="font-size:3vw;font-weight:900;color:#fbbf24;">打造規則</div>
+                <div style="font-size:1.2vw;color:rgba(251,191,36,0.6);margin-top:1vh;">建立舞台</div>
+            </div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:1.5vw;padding:3vh 3vw;">
+            <p style="font-size:1.8vw;color:#e2e8f0;line-height:1.9;font-weight:400;">
+                從 Content Tech 走到 AI OS，<br>
+                不只是產品升級，而是從做工具，走向打造規則；<br>
+                從提供功能，走向建立一個<br>
+                <strong style="color:#fbbf24;">能讓更多夥伴一起長大的舞台。</strong>
+            </p>
+        </div>
+    </div>
+    <div class="slide-num">09</div>
+</section>
+
+<!-- ===== SLIDE 10 — STRATEGIC GOAL / CTA ===== -->
+<section class="slide" style="background:#0a0a12;align-items:center;text-align:center;overflow:hidden;">
+    <div style="position:absolute;inset:0;">
+        <div class="animated-grid" style="position:absolute;inset:0;opacity:0.5;"></div>
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(99,102,241,0.12) 0%,transparent 55%);"></div>
+    </div>
+    <div style="position:relative;z-index:2;">
+        <div style="font-size:1vw;color:rgba(255,255,255,0.25);font-weight:600;letter-spacing:0.25em;margin-bottom:3vh;">STRATEGIC GOAL</div>
+
+        <h2 style="font-size:3.2vw;text-align:center;margin-bottom:3vh;">
+            建立走向 <span style="background:linear-gradient(135deg,#818cf8,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">AI OS</span> 的市場定位
+        </h2>
+
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.2vw;max-width:75vw;margin:0 auto 4vh;">
+            <div class="card" style="text-align:center;padding:2vh 1.5vw;border-color:rgba(56,189,248,0.2);">
+                <div style="font-size:2.2vw;margin-bottom:1vh;">&#128451;</div>
+                <div style="font-size:1.1vw;font-weight:700;color:#38bdf8;">資料整合</div>
+                <div style="font-size:0.85vw;color:#64748b;margin-top:0.5vh;">MDP 統一底座</div>
+            </div>
+            <div class="card" style="text-align:center;padding:2vh 1.5vw;border-color:rgba(251,191,36,0.2);">
+                <div style="font-size:2.2vw;margin-bottom:1vh;">&#129504;</div>
+                <div style="font-size:1.1vw;font-weight:700;color:#fbbf24;">記憶機制</div>
+                <div style="font-size:0.85vw;color:#64748b;margin-top:0.5vh;">User + Enterprise</div>
+            </div>
+            <div class="card" style="text-align:center;padding:2vh 1.5vw;border-color:rgba(52,211,153,0.2);">
+                <div style="font-size:2.2vw;margin-bottom:1vh;">&#128274;</div>
+                <div style="font-size:1.1vw;font-weight:700;color:#34d399;">權限管理</div>
+                <div style="font-size:0.85vw;color:#64748b;margin-top:0.5vh;">企業級資料治理</div>
+            </div>
+            <div class="card" style="text-align:center;padding:2vh 1.5vw;border-color:rgba(244,114,182,0.2);">
+                <div style="font-size:2.2vw;margin-bottom:1vh;">&#127760;</div>
+                <div style="font-size:1.1vw;font-weight:700;color:#f472b6;">生態系協作</div>
+                <div style="font-size:0.85vw;color:#64748b;margin-top:0.5vh;">開放架構共建</div>
+            </div>
+        </div>
+
+        <div style="background:linear-gradient(135deg,rgba(251,191,36,0.08),rgba(129,140,248,0.05));border:1px solid rgba(251,191,36,0.2);border-radius:1.2vw;padding:3vh 4vw;max-width:65vw;margin:0 auto 3vh;">
+            <p style="font-size:1.6vw;color:#e2e8f0;line-height:1.8;">
+                吸引更多企業客戶與 AI Startup<br>
+                <strong style="color:#fbbf24;">一起加入這個會持續擴張的生態系。</strong>
+            </p>
+        </div>
+
+        <!-- Logos -->
+        <div style="display:inline-flex;align-items:center;gap:1.5vw;padding:1.5vh 3vw;border-radius:1vw;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);">
+            <img src="./assets/img/turncloud logo.png" style="height:3.5vh;object-fit:contain;" alt="TurnCloud">
+            <span style="font-size:1.5vw;font-weight:800;color:rgba(255,255,255,0.2);">×</span>
+            <img src="./assets/img/accucrazylogo.webp" style="height:3vh;object-fit:contain;" alt="Accucrazy">
+            <span style="font-size:1.5vw;font-weight:800;color:rgba(255,255,255,0.2);">×</span>
+            <span style="font-size:1.3vw;font-weight:700;color:#34d399;">AI Startups</span>
+            <span style="font-size:1.5vw;font-weight:800;color:rgba(255,255,255,0.2);">=</span>
+            <span style="font-size:1.5vw;font-weight:900;color:#fbbf24;">AI OS Ecosystem</span>
+        </div>
+    </div>
+    <div class="footer-bar"><span>Turn Cloud AI OS</span><span>2026</span></div>
+    <div class="slide-num">10</div>
+</section>
+
+<!-- ===== NAVIGATION SCRIPT ===== -->
+<script>
+const slides=document.querySelectorAll(".slide");
+let current=0;
+document.addEventListener("keydown",e=>{
+    if(e.key==="ArrowDown"||e.key==="ArrowRight"||e.key==="PageDown"||e.key===" "){e.preventDefault();current=Math.min(current+1,slides.length-1);slides[current].scrollIntoView({behavior:"smooth"})}
+    if(e.key==="ArrowUp"||e.key==="ArrowLeft"||e.key==="PageUp"){e.preventDefault();current=Math.max(current-1,0);slides[current].scrollIntoView({behavior:"smooth"})}
+    if(e.key==="Home"){e.preventDefault();current=0;slides[0].scrollIntoView({behavior:"smooth"})}
+    if(e.key==="End"){e.preventDefault();current=slides.length-1;slides[current].scrollIntoView({behavior:"smooth"})}
+    if(e.key==="f"||e.key==="F"){toggleFS()}
+});
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){current=[...slides].indexOf(entry.target)}})},{threshold:0.5});
+slides.forEach(s=>observer.observe(s));
+function toggleFS(){if(!document.fullscreenElement){document.documentElement.requestFullscreen().catch(()=>{})}else{document.exitFullscreen()}}
+</script>
+</body>
+</html>
