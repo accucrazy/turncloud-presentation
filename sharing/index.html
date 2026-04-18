@@ -98,22 +98,35 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
 <!-- =========================================================== -->
 <!-- 01 Hi 我是 Ian (IG 風個人圖) -->
 <!-- =========================================================== -->
-<section class="slide" style="background:#e8e8ec;padding:0;overflow:hidden;align-items:stretch;">
-  <img src="./assets/ian_intro.jpg" alt="Ian Wu" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#e8e8ec;">
-  <div style="position:absolute;bottom:4vh;left:50%;transform:translateX(-50%);z-index:2;display:flex;align-items:center;gap:1vw;background:rgba(0,0,0,0.72);backdrop-filter:blur(8px);padding:1.4vh 2.2vw;border-radius:1vw;">
-    <svg width="2vw" height="2vw" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-    <span style="font-size:1.5vw;font-weight:800;color:#fff;">accucrazy.eth</span>
-    <span style="color:rgba(255,255,255,0.4);font-size:1.2vw;">·</span>
-    <span style="font-size:1.2vw;color:rgba(255,255,255,0.8);">Ian Wu · Founder</span>
-  </div>
-  <div class="slide-num" style="color:rgba(0,0,0,0.15);z-index:2;">01</div>
+<section class="slide" style="background:radial-gradient(ellipse at 70% 30%,rgba(225,48,108,0.12) 0%,transparent 55%),linear-gradient(135deg,#1a1a2e 0%,#0a0a12 100%);padding:0;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:4vw;">
+    <div style="position:relative;width:min(880px,52vw);aspect-ratio:16/9;border-radius:1.2vw;overflow:hidden;box-shadow:0 2.5vh 8vh rgba(0,0,0,0.6),0 0 0 1px rgba(255,255,255,0.08);">
+      <img src="./assets/ian_intro.jpg" alt="Ian Wu" style="width:100%;height:100%;object-fit:cover;display:block;image-rendering:auto;">
+      <div style="position:absolute;bottom:1.2vh;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:0.8vw;background:rgba(0,0,0,0.75);backdrop-filter:blur(12px);padding:1vh 1.6vw;border-radius:0.8vw;border:1px solid rgba(255,255,255,0.08);">
+        <svg width="1.4vw" height="1.4vw" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <span style="font-size:1vw;font-weight:800;color:#fff;">accucrazy.eth</span>
+      </div>
+    </div>
+
+    <div style="max-width:30vw;">
+      <div style="font-size:0.9vw;color:rgba(255,255,255,0.45);letter-spacing:0.3em;font-weight:800;margin-bottom:1.5vh;">HI · NICE TO MEET YOU</div>
+      <h2 style="font-size:3.6vw;font-weight:900;line-height:1.1;margin-bottom:2vh;color:#fff;">
+        我是 <span style="background:linear-gradient(90deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Ian</span>
+      </h2>
+      <p style="font-size:1.25vw;color:#cbd5e1;line-height:1.75;">
+        Accucrazy 創辦人<br>
+        行銷做了十年，後來一頭栽進 AI<br>
+        <span style="color:rgba(255,255,255,0.5);">去年跟 Turn Cloud 合在一起</span>
+      </p>
+    </div>
+
+  <div class="slide-num" style="color:rgba(255,255,255,0.2);">01</div>
 </section>
 
 <!-- =========================================================== -->
 <!-- 02 Accucrazy 時間軸 (一張圖) -->
 <!-- =========================================================== -->
 <section class="slide" style="background:#fff;padding:0;overflow:hidden;align-items:stretch;">
-  <img src="./assets/timeline.jpg" alt="Accucrazy Timeline" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;">
+  <img src="./assets/timeline.png" alt="Accucrazy Timeline" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;">
   <div style="position:absolute;top:4vh;left:5vw;z-index:2;">
     <div style="font-size:0.9vw;color:rgba(0,0,0,0.4);letter-spacing:0.25em;font-weight:800;margin-bottom:0.8vh;">OUR STORY</div>
     <div style="font-size:1.8vw;font-weight:900;color:#0a0a12;line-height:1.3;">
@@ -224,7 +237,27 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
 </section>
 
 <!-- =========================================================== -->
-<!-- 06 今天不賣產品 -->
+<!-- 06 OUR CLIENTS · 服務過的品牌 -->
+<!-- =========================================================== -->
+<section class="slide" style="background:#fff;padding:0;overflow:hidden;align-items:stretch;">
+  <img src="./assets/clients.png" alt="Accucrazy Clients" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;">
+  <div style="position:absolute;top:4vh;left:5vw;z-index:2;max-width:50vw;">
+    <div style="font-size:0.9vw;color:rgba(0,0,0,0.4);letter-spacing:0.3em;font-weight:800;margin-bottom:0.8vh;">OUR CLIENTS · 服務過的品牌</div>
+    <div style="font-size:1.9vw;font-weight:900;color:#0a0a12;line-height:1.25;">
+      不是 demo，<br>是<span style="color:#ef4444;">這些</span>品牌<span style="color:#fbbf24;">真的在用</span>。
+    </div>
+    <p style="font-size:1.1vw;color:rgba(0,0,0,0.55);margin-top:1.5vh;line-height:1.6;">
+      橫跨 <strong style="color:#0a0a12;">金融 / 零售 / 電信 / 時尚 / 餐飲</strong>
+    </p>
+  </div>
+  <div style="position:absolute;bottom:3vh;right:5vw;z-index:2;font-size:0.95vw;color:rgba(0,0,0,0.35);letter-spacing:0.15em;font-weight:700;">
+    ACCUCRAZY × TURN CLOUD · 10 YEARS OF BRANDS WE'VE BUILT WITH
+  </div>
+  <div class="slide-num" style="color:rgba(0,0,0,0.08);z-index:2;">06</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 07 今天不賣產品 -->
 <!-- =========================================================== -->
 <section class="slide dark">
   <div class="chapter-tag">所以今天這場</div>
@@ -255,7 +288,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
   <p style="margin-top:3.5vh;font-size:1.3vw;color:#94a3b8;max-width:82vw;line-height:1.8;">
     當作我先走過一輪，回頭把<strong style="color:#fbbf24;">路上踩到的幾個地雷</strong>整理給還在桌上的朋友聽。
   </p>
-  <div class="slide-num">06</div>
+  <div class="slide-num">07</div>
 </section>
 
 <!-- =========================================================== -->
@@ -303,7 +336,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
       <div style="font-size:1.3vw;color:#fff;font-weight:700;">台灣的資本市場，<strong style="color:#fbbf24;">願意用乘數幫對的故事買單。</strong></div>
     </div>
   </div>
-  <div class="slide-num">07</div>
+  <div class="slide-num">08</div>
 </section>
 
 <!-- =========================================================== -->
@@ -343,7 +376,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
       是未來 3~5 年，會有越來越多的創辦人跟上市櫃老闆，要一起面對的那張桌子。
     </p>
   </div>
-  <div class="slide-num">08</div>
+  <div class="slide-num">09</div>
 </section>
 
 <!-- =========================================================== -->
@@ -377,7 +410,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
     你家公司裡算出來的「我值 5,000 萬」 — 只有你信。<br>
     上市櫃公司的 PE 20 倍 — <strong style="color:#fff;">是整個市場每天用真金白銀投票出來的。</strong>
   </p>
-  <div class="slide-num">09</div>
+  <div class="slide-num">10</div>
 </section>
 
 <!-- =========================================================== -->
@@ -427,7 +460,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
   <p style="margin-top:4vh;font-size:1.5vw;color:#fff;max-width:85vw;">
     差的不是你有多努力，是這塊獲利<span class="highlight-y" style="color:#0a0a12;font-weight:900;">擺在哪個貨架</span>。
   </p>
-  <div class="slide-num">10</div>
+  <div class="slide-num">11</div>
 </section>
 
 <!-- =========================================================== -->
@@ -445,7 +478,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
     你是在把自己的獲利<strong style="color:#fff;">搬到一個會被市場乘以 25 倍的地方</strong>。<br>
     這是我當時沒完全看清楚、<strong style="color:#ef4444;">希望你比我早看清楚</strong>的事。
   </p>
-  <div class="slide-num">11</div>
+  <div class="slide-num">12</div>
 </section>
 
 <!-- =========================================================== -->
@@ -492,7 +525,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
       </ul>
     </div>
   </div>
-  <div class="slide-num">12</div>
+  <div class="slide-num">13</div>
 </section>
 
 <!-- =========================================================== -->
@@ -545,7 +578,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
       <span style="font-size:1.2vw;color:#cbd5e1;">換股比例、鎖定期、earnout 怎麼算、失敗時怎麼回溯 …… 這些東西比「他說公司值多少」重要太多。</span>
     </p>
   </div>
-  <div class="slide-num">13</div>
+  <div class="slide-num">14</div>
 </section>
 
 <!-- =========================================================== -->
@@ -568,7 +601,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
     </div>
   </div>
   <p style="margin-top:4vh;font-size:1.3vw;color:#94a3b8;max-width:65vw;">以前我把拿 VC 當榮耀、把併購當妥協。後來才發現：<strong style="color:#fff;">兩個都是工具。用錯的時候才痛。</strong></p>
-  <div class="slide-num">14</div>
+  <div class="slide-num">15</div>
 </section>
 
 <!-- =========================================================== -->
@@ -603,7 +636,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
   <p style="margin-top:1vh;font-size:1.8vw;color:#fff;max-width:80vw;line-height:1.5;">
     你身後還有<strong style="color:#fbbf24;">當年相信你的人</strong>，<br>他們也需要一個出場的時間點。
   </p>
-  <div class="slide-num">15</div>
+  <div class="slide-num">16</div>
 </section>
 
 <!-- =========================================================== -->
@@ -631,7 +664,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
       </p>
     </div>
   </div>
-  <div class="slide-num">16</div>
+  <div class="slide-num">17</div>
 </section>
 
 <!-- =========================================================== -->
@@ -650,7 +683,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
     背後那個賣台積電挺我的人，<strong style="color:#fff;">他的錢本來可以在大盤裡複利</strong>。<br><br>
     <span style="font-size:1.6vw;color:#fbbf24;font-weight:700;">讓他出場，有時候比讓他「陪跑」更負責。</span>
   </p>
-  <div class="slide-num">17</div>
+  <div class="slide-num">18</div>
 </section>
 
 <!-- =========================================================== -->
@@ -686,7 +719,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
     </div>
 
   </div>
-  <div class="slide-num">18</div>
+  <div class="slide-num">19</div>
 </section>
 
 <!-- =========================================================== -->
@@ -709,7 +742,7 @@ h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
   <p style="margin-top:3vh;font-size:1.4vw;color:#94a3b8;max-width:60vw;">
     剩下的，Q &amp; A 我們敞開聊 — 想聽哪一段再展開。
   </p>
-  <div class="slide-num">19</div>
+  <div class="slide-num">20</div>
 </section>
 
 <!-- =========================================================== -->
