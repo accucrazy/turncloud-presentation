@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>被併購那天 · CEO 閒聊</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@300;400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+body { font-family:'Noto Sans TC','Inter',sans-serif; background:#0a0a12; color:#e2e8f0; overflow-x:hidden; }
+
+.slide {
+  min-height:100vh; display:flex; flex-direction:column; justify-content:center;
+  padding:5vh 5vw; position:relative; scroll-snap-align:start;
+}
+.slide-num { position:absolute; bottom:2vh; right:2.5vw; font-size:1vw; font-weight:800; color:rgba(255,255,255,0.12); font-family:'Inter',monospace; letter-spacing:0.15em; }
+.chapter-tag { font-size:1vw; color:rgba(255,255,255,0.35); font-weight:600; letter-spacing:0.25em; margin-bottom:1.8vh; }
+
+.transition-slide {
+  background: linear-gradient(135deg, #6366f1 0%, #818cf8 30%, #60a5fa 60%, #38bdf8 100%);
+  padding: 5vh 7vw;
+}
+.transition-slide .chap-no { font-size:1.3vw; color:rgba(255,255,255,0.65); font-weight:800; letter-spacing:0.3em; margin-bottom:2vh; }
+.transition-slide h1 { font-size:6vw; font-weight:900; color:#fff; line-height:1.1; text-shadow:0 4px 30px rgba(0,0,0,0.2); }
+.transition-slide .sub { font-size:1.6vw; color:rgba(255,255,255,0.88); font-weight:300; margin-top:2vh; max-width:70vw; line-height:1.6; }
+
+.chap-red   { background: linear-gradient(135deg,#ef4444 0%,#f97316 50%,#fbbf24 100%); }
+.chap-blue  { background: linear-gradient(135deg,#6366f1 0%,#3b82f6 50%,#06b6d4 100%); }
+.chap-green { background: linear-gradient(135deg,#10b981 0%,#34d399 50%,#a3e635 100%); }
+
+.dark { background:#0a0a12; }
+.dark-alt { background:#0f0f1a; }
+
+.red-tag { display:inline-block; width:0.4vw; height:2.2vw; background:#ef4444; margin-right:1vw; vertical-align:middle; border-radius:2px; }
+h2 { font-size:3.6vw; font-weight:900; line-height:1.25; margin-bottom:1.5vh; }
+.sub { font-size:1.5vw; color:#94a3b8; font-weight:300; line-height:1.7; }
+
+.card {
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+  border-radius:1.2vw; padding:2vw; transition:all 0.3s ease;
+}
+
+.footer-sm { position:absolute; bottom:2vh; left:5vw; right:5vw; display:flex; justify-content:space-between; font-size:0.9vw; color:rgba(255,255,255,0.2); letter-spacing:0.2em; font-weight:600; z-index:10; }
+
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-1vh)} }
+.float { display:inline-block; animation:float 3s ease-in-out infinite; }
+
+.highlight-y { background: linear-gradient(90deg, transparent 0%, rgba(251,191,36,0.28) 50%, transparent 100%); padding: 0 0.4vw; }
+
+.mono { font-family:'JetBrains Mono', monospace; }
+
+#fs-btn {
+  position:fixed; bottom:2vh; left:2vw; z-index:9999;
+  background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15);
+  color:#fff; padding:0.6vw 1.2vw; border-radius:0.6vw; cursor:pointer;
+  font-size:0.95vw; font-family:'Inter',sans-serif; font-weight:600;
+  backdrop-filter:blur(8px); transition:opacity 0.3s;
+}
+#fs-btn:hover { background:rgba(255,255,255,0.15); }
+
+.speaker-notes { scroll-snap-align:start; }
+
+.quote {
+  font-size:2.2vw; line-height:1.5; color:#fff; font-weight:700;
+  border-left:0.4vw solid #fbbf24; padding:1vh 0 1vh 2vw; max-width:80vw;
+}
+</style>
+</head>
+<body>
+
+<button id="fs-btn" onclick="toggleFS()">⛶ 全螢幕</button>
+
+<!-- =========================================================== -->
+<!-- 00 封面 -->
+<!-- =========================================================== -->
+<section class="slide" style="background:radial-gradient(ellipse at 25% 30%,rgba(99,102,241,0.22) 0%,transparent 55%),radial-gradient(ellipse at 75% 75%,rgba(239,68,68,0.18) 0%,transparent 55%),#0a0a12;">
+  <div class="chapter-tag">CEO · PEER SHARING</div>
+  <h1 style="font-size:7vw;font-weight:900;line-height:1.05;margin-bottom:3vh;">
+    被併購那天<br>我<span style="background:linear-gradient(90deg,#fbbf24,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">想通的三件事</span>
+  </h1>
+  <p class="sub" style="max-width:65vw;font-size:1.6vw;">
+    創辦人 · 輕度分享 · 不賣課也不賣產品<br>
+    <span style="color:#fff;">聊一點我自己走完一輪、回頭想把它講清楚的心得。</span>
+  </p>
+  <div class="footer-sm">
+    <span>IAN · ACCUCRAZY × TURN CLOUD</span>
+    <span>OFF THE RECORD</span>
+  </div>
+  <div class="slide-num">00</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 01 Hi 我是 Ian (IG 風個人圖) -->
+<!-- =========================================================== -->
+<section class="slide" style="background:#e8e8ec;padding:0;overflow:hidden;align-items:stretch;">
+  <img src="./assets/ian_intro.jpg" alt="Ian Wu" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#e8e8ec;">
+  <div style="position:absolute;bottom:4vh;left:50%;transform:translateX(-50%);z-index:2;display:flex;align-items:center;gap:1vw;background:rgba(0,0,0,0.72);backdrop-filter:blur(8px);padding:1.4vh 2.2vw;border-radius:1vw;">
+    <svg width="2vw" height="2vw" viewBox="0 0 24 24" fill="none" stroke="#e1306c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    <span style="font-size:1.5vw;font-weight:800;color:#fff;">accucrazy.eth</span>
+    <span style="color:rgba(255,255,255,0.4);font-size:1.2vw;">·</span>
+    <span style="font-size:1.2vw;color:rgba(255,255,255,0.8);">Ian Wu · Founder</span>
+  </div>
+  <div class="slide-num" style="color:rgba(0,0,0,0.15);z-index:2;">01</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 02 Accucrazy 時間軸 (一張圖) -->
+<!-- =========================================================== -->
+<section class="slide" style="background:#fff;padding:0;overflow:hidden;align-items:stretch;">
+  <img src="./assets/timeline.jpg" alt="Accucrazy Timeline" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;">
+  <div style="position:absolute;top:4vh;left:5vw;z-index:2;">
+    <div style="font-size:0.9vw;color:rgba(0,0,0,0.4);letter-spacing:0.25em;font-weight:800;margin-bottom:0.8vh;">OUR STORY</div>
+    <div style="font-size:1.8vw;font-weight:900;color:#0a0a12;line-height:1.3;">
+      Accucrazy —<br>從 <span style="color:#ef4444;">行銷</span> 一路做到 <span style="color:#fbbf24;">AI</span>
+    </div>
+  </div>
+  <div class="slide-num" style="color:rgba(0,0,0,0.1);z-index:2;">02</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 03 三個產品線 (logo 風) -->
+<!-- =========================================================== -->
+<section class="slide dark-alt">
+  <div class="chapter-tag">我們家是做什麼的</div>
+  <h2 style="margin-bottom:2vh;">一家<span style="color:#fbbf24;">行銷 × AI</span> 的公司</h2>
+  <p class="sub" style="max-width:82vw;margin-bottom:4vh;font-size:1.4vw;">
+    一句話：<strong style="color:#fff;">讓品牌被理解</strong>。用內容、也用 AI。
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.8vw;max-width:92vw;">
+    <div class="card" style="text-align:center;border-color:rgba(239,68,68,0.25);">
+      <img src="./assets/pandora.png" style="height:5vw;width:5vw;object-fit:cover;border-radius:50%;margin:0 auto 1.5vh;display:block;" alt="Pandora">
+      <h3 style="font-size:1.6vw;font-weight:900;margin-bottom:0.8vh;">Pandora</h3>
+      <div style="font-size:0.95vw;color:#64748b;letter-spacing:0.15em;font-weight:700;margin-bottom:1vh;">SOCIAL INTELLIGENCE</div>
+      <p style="font-size:1.05vw;color:#94a3b8;line-height:1.7;">品牌在網路上<br>被怎麼講</p>
+    </div>
+    <div class="card" style="text-align:center;border-color:rgba(56,189,248,0.25);">
+      <img src="./assets/moana.png" style="height:5vw;width:5vw;object-fit:cover;border-radius:50%;margin:0 auto 1.5vh;display:block;" alt="Moana">
+      <h3 style="font-size:1.6vw;font-weight:900;margin-bottom:0.8vh;">Moana</h3>
+      <div style="font-size:0.95vw;color:#64748b;letter-spacing:0.15em;font-weight:700;margin-bottom:1vh;">CONTENT AGENT</div>
+      <p style="font-size:1.05vw;color:#94a3b8;line-height:1.7;">讓 AI 幫品牌<br>生出對的內容</p>
+    </div>
+    <div class="card" style="text-align:center;border-color:rgba(251,191,36,0.3);">
+      <img src="./assets/banana.png" style="height:5vw;object-fit:contain;margin:0 auto 1.5vh;display:block;" alt="Banana">
+      <h3 style="font-size:1.6vw;font-weight:900;margin-bottom:0.8vh;">Banana</h3>
+      <div style="font-size:0.95vw;color:#64748b;letter-spacing:0.15em;font-weight:700;margin-bottom:1vh;">VISUAL AGENT</div>
+      <p style="font-size:1.05vw;color:#94a3b8;line-height:1.7;">視覺 / 圖像生成<br>的那雙手</p>
+    </div>
+  </div>
+
+  <p style="margin-top:4vh;font-size:1.25vw;color:#94a3b8;max-width:85vw;">
+    三個產品串起來，加上 Accucrazy 十年的行銷底，去年跟 <strong style="color:#fff;">Turn Cloud</strong> 合併成一間走企業級 AI OS 的公司。
+  </p>
+  <div class="slide-num">03</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 04 Pandora Demo 影片 -->
+<!-- =========================================================== -->
+<section class="slide" style="background:#0a0a12;padding:0;overflow:hidden;align-items:stretch;">
+  <video src="./assets/pandora-demo.mp4"
+         autoplay muted loop playsinline preload="auto"
+         style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#0a0a12;"></video>
+
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,18,0.72) 0%,rgba(10,10,18,0) 25%,rgba(10,10,18,0) 75%,rgba(10,10,18,0.78) 100%);z-index:1;pointer-events:none;"></div>
+
+  <div style="position:absolute;top:4vh;left:5vw;z-index:2;max-width:60vw;">
+    <div style="font-size:0.9vw;color:rgba(255,255,255,0.45);letter-spacing:0.25em;font-weight:800;margin-bottom:0.8vh;">PANDORA · LIVE DEMO</div>
+    <div style="font-size:2vw;font-weight:900;color:#fff;line-height:1.3;">
+      你的品牌<br>現在正被網路上怎麼講 —— <span style="color:#fbbf24;">3 秒告訴你</span>
+    </div>
+  </div>
+
+  <div style="position:absolute;bottom:3vh;left:5vw;z-index:2;font-size:1vw;color:rgba(255,255,255,0.55);">
+    對標意藍資訊 · <strong style="color:#fff;">AI 原生</strong>的社群智能平台
+  </div>
+  <div class="slide-num" style="color:rgba(255,255,255,0.2);z-index:2;">04</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 05 今天不賣產品 -->
+<!-- =========================================================== -->
+<section class="slide dark">
+  <div class="chapter-tag">OK，自介完了</div>
+  <h2>今天<span style="color:#94a3b8;text-decoration:line-through;">不是來推銷產品</span>的。</h2>
+  <p class="sub" style="max-width:82vw;margin-top:2vh;margin-bottom:3.5vh;font-size:1.5vw;">
+    產品有興趣會後再聊。今天想講的是<strong style="color:#fff;">我這幾年比較少跟人分享的事</strong> ——<br>
+    一個創辦人從「守著公司」走到「把公司併進上市體系」的<strong style="color:#fbbf24;">心路轉折</strong>。
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2vw;max-width:85vw;margin-top:2vh;">
+    <div class="card" style="border-color:rgba(239,68,68,0.25);">
+      <div style="font-size:1vw;color:#ef4444;letter-spacing:0.2em;font-weight:800;margin-bottom:1vh;">❌ 今天不聊</div>
+      <ul style="font-size:1.3vw;line-height:2.1;color:#94a3b8;list-style:none;">
+        <li>— 條款金額 / 對方內部考量</li>
+        <li>— 我拿多少錢、繳多少稅</li>
+        <li>— 任何人名與同業八卦</li>
+      </ul>
+    </div>
+    <div class="card" style="border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.04);">
+      <div style="font-size:1vw;color:#fbbf24;letter-spacing:0.2em;font-weight:800;margin-bottom:1vh;">✅ 今天只聊</div>
+      <ul style="font-size:1.3vw;line-height:2.1;color:#fff;list-style:none;">
+        <li>— 上市櫃的 PE/PS 為什麼那麼香</li>
+        <li>— 併購的錢跟 VC 的錢差在哪</li>
+        <li>— 捨不得、放手、投資人出場</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top:3.5vh;font-size:1.3vw;color:#94a3b8;max-width:82vw;line-height:1.8;">
+    當作我先走過一輪，回頭把<strong style="color:#fbbf24;">路上踩到的幾個地雷</strong>整理給還在桌上的朋友聽。
+  </p>
+  <div class="slide-num">05</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 06 先講個冷事實 — 台股世界第六大 -->
+<!-- =========================================================== -->
+<section class="slide dark">
+  <div class="chapter-tag">先講一個大家容易忽略的事實</div>
+  <h2>台股，其實是<br><span style="color:#fbbf24;">世界第 6 大</span>交易市場。</h2>
+  <p class="sub" style="max-width:82vw;margin-top:2vh;margin-bottom:3.5vh;font-size:1.5vw;">
+    我們待久了反而會忘記這件事。<br>
+    VC 每天跟你講「要做海外、海外才有錢」—— 沒錯，但<strong style="color:#fff;">現實是：島上的錢，其實很夠用。</strong>
+  </p>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.2vw;max-width:92vw;margin-top:2vh;">
+    <div class="card" style="text-align:center;padding:2.5vh 1vw;">
+      <div style="font-size:0.8vw;color:#64748b;letter-spacing:0.15em;font-weight:700;margin-bottom:0.6vh;">RANK</div>
+      <div class="mono" style="font-size:2.6vw;font-weight:900;color:#fbbf24;">#6</div>
+      <div style="font-size:0.95vw;color:#94a3b8;margin-top:0.4vh;">全球交易量排名</div>
+    </div>
+    <div class="card" style="text-align:center;padding:2.5vh 1vw;">
+      <div style="font-size:0.8vw;color:#64748b;letter-spacing:0.15em;font-weight:700;margin-bottom:0.6vh;">DAILY TURNOVER</div>
+      <div class="mono" style="font-size:2.6vw;font-weight:900;color:#38bdf8;">千億+</div>
+      <div style="font-size:0.95vw;color:#94a3b8;margin-top:0.4vh;">每日成交金額（NTD）</div>
+    </div>
+    <div class="card" style="text-align:center;padding:2.5vh 1vw;">
+      <div style="font-size:0.8vw;color:#64748b;letter-spacing:0.15em;font-weight:700;margin-bottom:0.6vh;">RETAIL %</div>
+      <div class="mono" style="font-size:2.6vw;font-weight:900;color:#a78bfa;">≈ 60%</div>
+      <div style="font-size:0.95vw;color:#94a3b8;margin-top:0.4vh;">散戶參與比例（世界前段）</div>
+    </div>
+    <div class="card" style="text-align:center;padding:2.5vh 1vw;border-color:rgba(251,191,36,0.3);background:rgba(251,191,36,0.03);">
+      <div style="font-size:0.8vw;color:#fbbf24;letter-spacing:0.15em;font-weight:700;margin-bottom:0.6vh;">HIGH-PE COMPS</div>
+      <div class="mono" style="font-size:2.6vw;font-weight:900;color:#fbbf24;">PE 50+</div>
+      <div style="font-size:0.95vw;color:#94a3b8;margin-top:0.4vh;">AI / SaaS 類股一堆</div>
+    </div>
+  </div>
+
+  <p style="margin-top:3.5vh;font-size:1.3vw;color:#fff;max-width:82vw;line-height:1.8;">
+    翻譯成創辦人聽得懂的話：<strong style="color:#fbbf24;">台灣本地的資本市場，願意用乘數幫「對的故事」買單。</strong>
+  </p>
+  <div class="slide-num">06</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 07 在台灣，併新創還很少 — 但會來 -->
+<!-- =========================================================== -->
+<section class="slide dark-alt">
+  <div class="chapter-tag">接下來會發生的事</div>
+  <h2><span class="red-tag"></span>在台灣，併新創這件事 ——<br>目前還<span style="color:#fbbf24;">很少見</span>。但不會太久。</h2>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2vw;max-width:90vw;margin-top:3.5vh;">
+
+    <div class="card" style="border-color:rgba(148,163,184,0.2);">
+      <div style="font-size:1vw;color:#94a3b8;letter-spacing:0.2em;font-weight:800;margin-bottom:1.5vh;">📉 現況</div>
+      <h3 style="font-size:1.6vw;font-weight:900;margin-bottom:1.5vh;">老闆比較習慣「自己養大」</h3>
+      <ul style="font-size:1.15vw;line-height:2;color:#94a3b8;list-style:none;">
+        <li>→ 台灣上市櫃每年併新創的案例 <strong style="color:#fff;">屈指可數</strong></li>
+        <li>→ 多數人還在 IPO / 業內整併 的思維</li>
+        <li>→ 願意真的用「併購」幫自己長新引擎的 CEO 不多</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-color:rgba(251,191,36,0.35);background:rgba(251,191,36,0.04);">
+      <div style="font-size:1vw;color:#fbbf24;letter-spacing:0.2em;font-weight:800;margin-bottom:1.5vh;">📈 但接下來</div>
+      <h3 style="font-size:1.6vw;font-weight:900;margin-bottom:1.5vh;">市場會把他們推到這張桌子上</h3>
+      <ul style="font-size:1.15vw;line-height:2;color:#94a3b8;list-style:none;">
+        <li>→ AI 衝擊每個產業，<strong style="color:#fff;">成長壓力壓回上市櫃</strong></li>
+        <li>→ 投資人要故事、要新曲線、要說法</li>
+        <li>→ 自己做太慢 → <strong style="color:#fbbf24;">併進來，最快</strong></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div style="margin-top:3.5vh;padding:2.5vh 3vw;background:rgba(56,189,248,0.08);border-left:0.3vw solid #38bdf8;border-radius:0.5vw;max-width:88vw;">
+    <p style="font-size:1.4vw;color:#fff;line-height:1.8;">
+      所以今天這場分享，<strong style="color:#fbbf24;">不是我一個人的特殊經驗</strong> ——<br>
+      是未來 3~5 年，會有越來越多的創辦人跟上市櫃老闆，要一起面對的那張桌子。
+    </p>
+  </div>
+  <div class="slide-num">07</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- CHAPTER 1 · 過場 -->
+<!-- =========================================================== -->
+<section class="slide transition-slide chap-red">
+  <div class="chap-no">第 1 件事</div>
+  <h1>你的獲利<br>值多少錢 ——<br><span style="font-size:4vw;color:#fef3c7;">看它<span style="text-decoration:underline;text-decoration-color:rgba(255,255,255,0.5);">擺在哪個貨架</span>。</span></h1>
+  <p class="sub" style="color:rgba(255,255,255,0.88);">同樣一塊錢獲利，放在你家、放在上市櫃公司、放在美股 —— 市場給的價差很大。</p>
+  <div class="slide-num" style="color:rgba(255,255,255,0.35)">CH·1</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 02 出師表的秘密 -->
+<!-- =========================================================== -->
+<section class="slide dark">
+  <div class="chapter-tag">我的出師表</div>
+  <h2>我寫給股東的那份<span style="color:#fbbf24;">季報</span>，<br>其實是寫給自己看的。</h2>
+  <p class="sub" style="max-width:82vw;margin-top:2vh;margin-bottom:3.5vh;">
+    我在那份報告裡列了一堆<span class="mono" style="color:#fbbf24;">PE / PS 倍數</span>、意藍 52 倍、數位雲端中位數 27 倍……<br>
+    <strong style="color:#fff;">表面是給投資人信心，真正是在逼自己看清楚一件事 —</strong>
+  </p>
+
+  <div class="quote">
+    「我算給自己聽的價格，<br>
+    跟市場願意<span style="color:#fbbf24;">掏錢出來</span>的價格，<br>
+    是兩回事。」
+  </div>
+
+  <p style="margin-top:4vh;font-size:1.4vw;color:#94a3b8;max-width:80vw;line-height:1.8;">
+    你家公司裡算出來的「我值 5,000 萬」 — 只有你信。<br>
+    上市櫃公司的 PE 20 倍 — <strong style="color:#fff;">是整個市場每天用真金白銀投票出來的。</strong>
+  </p>
+  <div class="slide-num">08</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 03 同樣獲利 差很多 -->
+<!-- =========================================================== -->
+<section class="slide dark-alt">
+  <div class="chapter-tag">THE SHELF EFFECT</div>
+  <h2>同樣一年賺 <span class="mono" style="color:#fbbf24;">200 萬</span>，<br>擺在不同地方價差多少？</h2>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.8vw;max-width:92vw;margin-top:4vh;">
+
+    <div class="card" style="text-align:center;">
+      <div style="font-size:1vw;color:#64748b;letter-spacing:0.2em;font-weight:800;margin-bottom:1vh;">擺在自己家</div>
+      <div style="font-size:3vw;margin-bottom:1.5vh;">🏠</div>
+      <div class="mono" style="font-size:2.2vw;color:#64748b;font-weight:900;">≈ 200 萬</div>
+      <p style="font-size:1.05vw;color:#94a3b8;line-height:1.7;margin-top:1.5vh;">
+        你就是<strong style="color:#fff;">真的賺 200 萬</strong>。<br>
+        沒有乘數 · 沒有放大鏡<br>
+        一年看一次、一年爽一次
+      </p>
+    </div>
+
+    <div class="card" style="text-align:center;border-color:rgba(56,189,248,0.3);">
+      <div style="font-size:1vw;color:#38bdf8;letter-spacing:0.2em;font-weight:800;margin-bottom:1vh;">擺在一間上市櫃</div>
+      <div style="font-size:3vw;margin-bottom:1.5vh;">🏢</div>
+      <div class="mono" style="font-size:2.2vw;color:#38bdf8;font-weight:900;">≈ 5,000 萬</div>
+      <p style="font-size:1.05vw;color:#94a3b8;line-height:1.7;margin-top:1.5vh;">
+        上市櫃 <span class="mono" style="color:#fff;">PE ≈ 25</span><br>
+        市場看你是「有流動性的」<br>
+        <strong style="color:#fff;">同一筆獲利 × 25</strong>
+      </p>
+    </div>
+
+    <div class="card" style="text-align:center;border-color:rgba(251,191,36,0.4);background:rgba(251,191,36,0.04);">
+      <div style="font-size:1vw;color:#fbbf24;letter-spacing:0.2em;font-weight:800;margin-bottom:1vh;">擺在 AI 概念的上市</div>
+      <div style="font-size:3vw;margin-bottom:1.5vh;">🚀</div>
+      <div class="mono" style="font-size:2.2vw;color:#fbbf24;font-weight:900;">≈ 1 億+</div>
+      <p style="font-size:1.05vw;color:#94a3b8;line-height:1.7;margin-top:1.5vh;">
+        AI / SaaS 故事<br>
+        <span class="mono" style="color:#fff;">PE 可到 50~200</span><br>
+        <strong style="color:#fff;">同一筆獲利 × 50 以上</strong>
+      </p>
+    </div>
+
+  </div>
+
+  <p style="margin-top:4vh;font-size:1.5vw;color:#fff;max-width:85vw;">
+    差的不是你有多努力，是這塊獲利<span class="highlight-y" style="color:#0a0a12;font-weight:900;">擺在哪個貨架</span>。
+  </p>
+  <div class="slide-num">09</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 04 結論 1 -->
+<!-- =========================================================== -->
+<section class="slide dark" style="align-items:center;text-align:center;">
+  <div class="chapter-tag" style="text-align:center;">TAKE-AWAY 1</div>
+  <h2 style="font-size:4vw;text-align:center;margin-bottom:3vh;line-height:1.3;">
+    如果你的獲利有機會進<br>
+    <span style="color:#fbbf24;">上市櫃公司</span>的財報 ——<br>
+    那件事<strong>本身就是一筆生意</strong>。
+  </h2>
+  <p class="sub" style="max-width:65vw;text-align:center;font-size:1.4vw;">
+    你不是在「賣公司」，<br>
+    你是在把自己的獲利<strong style="color:#fff;">搬到一個會被市場乘以 25 倍的地方</strong>。<br>
+    這是我當時沒完全看清楚、<strong style="color:#ef4444;">希望你比我早看清楚</strong>的事。
+  </p>
+  <div class="slide-num">10</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- CHAPTER 2 · 過場 -->
+<!-- =========================================================== -->
+<section class="slide transition-slide chap-blue">
+  <div class="chap-no">第 2 件事</div>
+  <h1>併購的錢 ≠ VC 的錢<br><span style="font-size:3vw;font-weight:400;opacity:0.9;">長得很像，拿到手完全不一樣。</span></h1>
+  <p class="sub" style="color:rgba(255,255,255,0.88);">同樣是外面進來一筆錢，但兩邊背後的機制、壓力、時間軸 —— 差到可以改變你人生決定。</p>
+  <div class="slide-num" style="color:rgba(255,255,255,0.35)">CH·2</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 05 VC vs 併購 -->
+<!-- =========================================================== -->
+<section class="slide dark">
+  <div class="chapter-tag">VC · M&amp;A · 兩種錢</div>
+  <h2>都是錢，但<span style="color:#fbbf24;">意義完全不一樣</span>。</h2>
+  <p class="sub" style="max-width:82vw;margin-top:2vh;margin-bottom:3vh;">
+    我以前以為：「進來的錢越多越好。」走完一輪才懂，<strong style="color:#fff;">錢的種類比金額還重要</strong>。
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2vw;max-width:88vw;">
+    <div class="card">
+      <div style="font-size:1vw;color:#a78bfa;letter-spacing:0.2em;font-weight:800;margin-bottom:1.5vh;">💭 VC 的錢</div>
+      <h3 style="font-size:1.8vw;font-weight:900;margin-bottom:2vh;color:#fff;">是<span style="color:#a78bfa;">借你的想像力</span></h3>
+      <ul style="font-size:1.2vw;line-height:2.1;color:#94a3b8;list-style:none;">
+        <li>→ 用你的「未來」換現金</li>
+        <li>→ 3–5 年內要 <strong style="color:#fff;">退出</strong> 還他</li>
+        <li>→ 你沒把倍數做出來 = 他沒下一輪</li>
+        <li>→ 錢是<strong style="color:#ef4444;">壓著你跑</strong>的</li>
+        <li>→ 你戶頭沒真的進錢（進公司）</li>
+      </ul>
+    </div>
+    <div class="card" style="border-color:rgba(251,191,36,0.35);background:rgba(251,191,36,0.04);">
+      <div style="font-size:1vw;color:#fbbf24;letter-spacing:0.2em;font-weight:800;margin-bottom:1.5vh;">🤝 併購的錢</div>
+      <h3 style="font-size:1.8vw;font-weight:900;margin-bottom:2vh;color:#fff;">是<span style="color:#fbbf24;">真的在換東西</span></h3>
+      <ul style="font-size:1.2vw;line-height:2.1;color:#94a3b8;list-style:none;">
+        <li>→ 用你的「現在」換現金＋股票</li>
+        <li>→ 交易完那一刻 <strong style="color:#fff;">結一次帳</strong></li>
+        <li>→ 有真的金額進你戶頭、你口袋</li>
+        <li>→ 錢是<strong style="color:#fbbf24;">讓你停下來想</strong>的</li>
+        <li>→ 投資人、員工、創辦人 各自<strong style="color:#fff;">落袋</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-num">11</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 06 VC 沒對錯 但要想清楚 -->
+<!-- =========================================================== -->
+<section class="slide dark-alt" style="align-items:center;text-align:center;">
+  <div class="chapter-tag" style="text-align:center;">NO JUDGMENT</div>
+  <h2 style="font-size:3.5vw;text-align:center;margin-bottom:3vh;line-height:1.35;">
+    我沒有在說哪種錢比較好。<br>
+    我在說 —— <span style="color:#fbbf24;">它們解決的問題不一樣</span>。
+  </h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2vw;max-width:85vw;margin-top:3vh;text-align:left;">
+    <div class="card">
+      <div style="font-size:1.3vw;font-weight:800;color:#a78bfa;margin-bottom:1vh;">如果你還想繼續做大 →</div>
+      <p style="font-size:1.15vw;color:#e2e8f0;line-height:1.8;">VC 能讓你跑快、跑遠。但你要有「<strong style="color:#fff;">倍數兌現</strong>」的底氣。</p>
+    </div>
+    <div class="card" style="border-color:rgba(251,191,36,0.3);">
+      <div style="font-size:1.3vw;font-weight:800;color:#fbbf24;margin-bottom:1vh;">如果你走到一個階段 →</div>
+      <p style="font-size:1.15vw;color:#e2e8f0;line-height:1.8;">併購讓你<strong style="color:#fff;">把這幾年的努力變成可以摸到的東西</strong>，同時把投資人送到港口。</p>
+    </div>
+  </div>
+  <p style="margin-top:4vh;font-size:1.3vw;color:#94a3b8;max-width:65vw;">以前我把拿 VC 當榮耀、把併購當妥協。後來才發現：<strong style="color:#fff;">兩個都是工具。用錯的時候才痛。</strong></p>
+  <div class="slide-num">12</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- CHAPTER 3 · 過場 -->
+<!-- =========================================================== -->
+<section class="slide transition-slide chap-green">
+  <div class="chap-no">第 3 件事</div>
+  <h1>捨不得<br><span style="font-size:3.2vw;font-weight:400;opacity:0.9;">是正常的。只是你還要幫別人出場。</span></h1>
+  <p class="sub" style="color:rgba(255,255,255,0.9);">這一段是最不財務、最軟、也最真的部分。</p>
+  <div class="slide-num" style="color:rgba(255,255,255,0.35)">CH·3</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 07 捨不得很正常 -->
+<!-- =========================================================== -->
+<section class="slide dark">
+  <div class="chapter-tag">FOUNDER FEELING</div>
+  <h2><span class="red-tag"></span>你會捨不得 —— <span style="color:#fbbf24;">就讓它捨不得</span>。</h2>
+  <p class="sub" style="max-width:82vw;margin-top:2vh;margin-bottom:3.5vh;">
+    簽字那一刻很多人會裝瀟灑。「反正我早就想退了。」「反正是戰略選擇啦。」<br>
+    騙別人沒關係，<strong style="color:#fff;">不要騙自己</strong>。
+  </p>
+
+  <div class="quote">
+    公司是你從零養出來的小孩。<br>
+    交出去那一秒，<span style="color:#fbbf24;">一定會有個地方不舒服</span>。
+  </div>
+
+  <p style="margin-top:4vh;font-size:1.35vw;color:#94a3b8;max-width:80vw;line-height:1.8;">
+    但有件更重要的事你不能不看 ——
+  </p>
+  <p style="margin-top:1vh;font-size:1.8vw;color:#fff;max-width:80vw;line-height:1.5;">
+    你身後還有<strong style="color:#fbbf24;">當年相信你的人</strong>，<br>他們也需要一個出場的時間點。
+  </p>
+  <div class="slide-num">13</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 08 台積電小故事 -->
+<!-- =========================================================== -->
+<section class="slide dark-alt">
+  <div class="chapter-tag">A SHORT STORY</div>
+  <h2>我創業中途，<br>有人<span style="color:#fbbf24;">賣了一張台積電</span>支持我。</h2>
+
+  <div style="margin-top:3.5vh;max-width:85vw;">
+    <p style="font-size:1.5vw;color:#e2e8f0;line-height:1.9;margin-bottom:2.5vh;">
+      當下我很感謝 —— 那是真金白銀的信任。<br>
+      我把那筆錢全部投到公司裡，燒成產品、燒成薪水、燒成我的學費。
+    </p>
+
+    <div style="padding:2.5vh 3vw;background:rgba(239,68,68,0.08);border-left:0.3vw solid #ef4444;border-radius:0.5vw;margin-top:2vh;">
+      <p style="font-size:1.5vw;color:#fff;line-height:1.7;font-weight:700;">
+        幾年後回頭看 ——<br>
+        我做的一切，沒追上<span style="color:#ef4444;">台積電這幾年的漲幅</span>。
+      </p>
+      <p style="font-size:1.2vw;color:#e2e8f0;line-height:1.8;margin-top:1.5vh;">
+        那張股票如果留著 → 它自己翻了好幾倍。<br>
+        我用他的信任賭在我身上 → <strong style="color:#fbbf24;">我沒有打贏大盤</strong>。<br>
+        這不是自責，是一個 <strong style="color:#fff;">CEO 要面對的數學題</strong>。
+      </p>
+    </div>
+  </div>
+  <div class="slide-num">14</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 09 Aha -->
+<!-- =========================================================== -->
+<section class="slide dark" style="align-items:center;text-align:center;">
+  <div class="chapter-tag" style="text-align:center;">THE AHA</div>
+  <h2 style="font-size:3.8vw;text-align:center;margin-bottom:3vh;line-height:1.3;">
+    這讓我想通一件事 ——<br>
+    創辦人的捨不得，<br>
+    不只是<span style="color:#fbbf24;">自己的情緒</span>，<br>
+    也是<span style="color:#ef4444;">別人的機會成本</span>。
+  </h2>
+  <p class="sub" style="max-width:70vw;text-align:center;font-size:1.4vw;margin-top:2vh;">
+    我一直守著、一直燒、一直「我覺得再一年就會起來」——<br>
+    背後那個賣台積電挺我的人，<strong style="color:#fff;">他的錢本來可以在大盤裡複利</strong>。<br><br>
+    <span style="font-size:1.6vw;color:#fbbf24;font-weight:700;">讓他出場，有時候比讓他「陪跑」更負責。</span>
+  </p>
+  <div class="slide-num">15</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 10 把獲利搬去貨架 -->
+<!-- =========================================================== -->
+<section class="slide dark-alt">
+  <div class="chapter-tag">CLOSING INSIGHT</div>
+  <h2>把這三件事串起來 ——</h2>
+  <div style="max-width:85vw;margin-top:3vh;display:flex;flex-direction:column;gap:1.5vh;">
+
+    <div class="card" style="display:flex;align-items:center;gap:1.5vw;">
+      <div style="width:4.5vw;height:4.5vw;border-radius:1vw;background:rgba(239,68,68,0.15);display:flex;align-items:center;justify-content:center;font-size:2vw;font-weight:900;color:#ef4444;flex-shrink:0;">1</div>
+      <div>
+        <div style="font-size:1.5vw;font-weight:800;">上市櫃的 PE/PS 是<span style="color:#fbbf24;">真的有人認</span>的。</div>
+        <div style="font-size:1.15vw;color:#94a3b8;margin-top:0.4vh;">你家裡算的「我值多少」只有你信；市場每天掏錢出來投票的才算數。</div>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;gap:1.5vw;">
+      <div style="width:4.5vw;height:4.5vw;border-radius:1vw;background:rgba(129,140,248,0.15);display:flex;align-items:center;justify-content:center;font-size:2vw;font-weight:900;color:#a5b4fc;flex-shrink:0;">2</div>
+      <div>
+        <div style="font-size:1.5vw;font-weight:800;">併購的錢跟 VC 的錢 —— <span style="color:#fbbf24;">別搞混</span>。</div>
+        <div style="font-size:1.15vw;color:#94a3b8;margin-top:0.4vh;">一個是借你的未來，一個是結你的現在。走到哪個階段用哪一個。</div>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;align-items:center;gap:1.5vw;">
+      <div style="width:4.5vw;height:4.5vw;border-radius:1vw;background:rgba(52,211,153,0.15);display:flex;align-items:center;justify-content:center;font-size:2vw;font-weight:900;color:#34d399;flex-shrink:0;">3</div>
+      <div>
+        <div style="font-size:1.5vw;font-weight:800;">捨不得很正常 —— <span style="color:#fbbf24;">但別讓它變成別人的負擔</span>。</div>
+        <div style="font-size:1.15vw;color:#94a3b8;margin-top:0.4vh;">你身邊有人在等你做決定。讓他們出場，有時候比你自己繼續撐著，更像一個好 CEO。</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="slide-num">16</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- 11 一句話收尾 -->
+<!-- =========================================================== -->
+<section class="slide" style="background:linear-gradient(180deg,#0a0a12 0%,#1a1030 70%,#2d1b4e 100%);align-items:center;text-align:center;">
+  <div style="font-size:4.5vw;margin-bottom:2vh;">
+    <span class="float" style="animation-delay:0s;">🏁</span>
+    <span class="float" style="animation-delay:0.3s;">💭</span>
+    <span class="float" style="animation-delay:0.6s;">🤝</span>
+  </div>
+  <h1 style="font-size:4.2vw;font-weight:900;margin-bottom:2vh;line-height:1.3;">
+    如果今天這場你<br>只帶走一句話 ——
+  </h1>
+  <div class="quote" style="font-size:2.6vw;margin:2vh auto;text-align:left;max-width:75vw;">
+    <span style="color:#fbbf24;">你的獲利</span> 值多少，<br>
+    很大一部分不是看你，<br>
+    是看它<span class="highlight-y" style="color:#0a0a12;font-weight:900;padding:0.3vh 1vw;">擺在誰的財報上</span>。
+  </div>
+  <p style="margin-top:3vh;font-size:1.4vw;color:#94a3b8;max-width:60vw;">
+    剩下的，Q &amp; A 我們敞開聊 — 想聽哪一段再展開。
+  </p>
+  <div class="slide-num">17</div>
+</section>
+
+<!-- =========================================================== -->
+<!-- SPEAKER NOTES -->
+<!-- =========================================================== -->
+<section class="slide speaker-notes" style="background:#060610;justify-content:flex-start;padding-top:8vh;">
+  <h2 style="font-size:2vw;margin-bottom:0.5vh;">🎤 講者備忘錄</h2>
+  <p style="font-size:1vw;color:#475569;margin-bottom:2vh;">約 20–25 分鐘 · 像朋友閒聊 · 不念稿 · 結尾留時間 Q&amp;A</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2vw;color:#64748b;line-height:1.9;font-size:0.95vw;">
+    <div>
+      <div style="color:#ef4444;font-weight:800;letter-spacing:0.15em;margin-bottom:1vh;">OPENING · 自介 (0–5 min)</div>
+      <p><strong style="color:#fbbf24;">00 封面</strong> — 不要強調金額。語氣輕鬆：「今天不是來講成功故事，就分享一點我自己的心得。」</p>
+      <p><strong style="color:#fbbf24;">01 Ian IG 圖</strong> — 全圖呈現。輕鬆一句：「這是我本人，IG accucrazy.eth，歡迎追蹤 😂」</p>
+      <p><strong style="color:#fbbf24;">02 時間軸</strong> — 全圖呈現。用手指點圖：「這幾年大概就這樣一路做下來 —— 從行銷做到 AI。」不念時間點。</p>
+      <p><strong style="color:#fbbf24;">03 三個產品</strong> — Pandora、Moana、Banana 一句一個。最後一句帶進：「去年跟 Turn Cloud 合併。」</p>
+      <p><strong style="color:#fbbf24;">04 Pandora Demo 影片</strong> — 影片會自己跑。你只要一句：「這個大家有興趣會後聊，我就不展開。」不要陷進產品介紹。</p>
+      <p><strong style="color:#fbbf24;">05 今天不賣產品</strong> — 把 mic 交給真正要講的事：不講條款、不講金額、只講心得。</p>
+
+      <div style="color:#fbbf24;font-weight:800;letter-spacing:0.15em;margin:2vh 0 1vh 0;">OPENING · 架台 (5–8 min)</div>
+      <p><strong style="color:#fbbf24;">06 台股世界第六</strong> — 語氣：「你們可能每天聽 VC 叫你出海，但先抬頭看看我們腳下這個市場。」這頁是用來打破「台灣市場不夠大」的預設。</p>
+      <p><strong style="color:#fbbf24;">07 併購在台灣還很少</strong> — 接著說：「所以我的故事不是特例，是預告。」把觀眾心情從聽八卦切到「這跟我有關」。</p>
+
+      <div style="color:#ef4444;font-weight:800;letter-spacing:0.15em;margin:2vh 0 1vh 0;">CH1 · 貨架觀 (8–14 min)</div>
+      <p><strong style="color:#fbbf24;">08 出師表的秘密</strong> — 整場最重要的一頁。講你當時寫那份 Q3 報告時的真實感受：表面寫給股東，其實寫給自己看清楚市場怎麼估值。</p>
+      <p><strong style="color:#fbbf24;">09 200 萬擺哪</strong> — 用手指在空中畫三個格子，一個一個指。讓觀眾自己倒吸一口氣。</p>
+      <p><strong style="color:#fbbf24;">10 Take-away 1</strong> — 停三秒，讓觀眾記下：「我的獲利，要搬到會被放大的地方。」</p>
+    </div>
+    <div>
+      <div style="color:#38bdf8;font-weight:800;letter-spacing:0.15em;margin-bottom:1vh;">CH2 · 兩種錢 (14–18 min)</div>
+      <p><strong style="color:#fbbf24;">11 VC vs 併購</strong> — 講你自己的體會。重點在「戶頭有沒有真的進錢」、「誰在追誰」。</p>
+      <p><strong style="color:#fbbf24;">12 沒對錯</strong> — 不要落入「我被併所以我酸 VC」的陷阱。強調兩種都是工具。</p>
+
+      <div style="color:#10b981;font-weight:800;letter-spacing:0.15em;margin:2vh 0 1vh 0;">CH3 · 捨不得 (18–24 min)</div>
+      <p><strong style="color:#fbbf24;">13 捨不得很正常</strong> — 用慢一點的語速。這段是情緒，不是資訊。讓現場的 CEO 自己對號入座。</p>
+      <p><strong style="color:#fbbf24;">14 台積電小故事</strong> — <em>整場的 punchline。</em> 慢慢講，像在酒吧講。不要加戲劇效果，平平實實地講：「我沒追上台積電的漲幅。」這句話殺傷力最大。</p>
+      <p><strong style="color:#fbbf24;">15 Aha</strong> — 「創辦人的捨不得，是別人的機會成本。」講完停兩秒，讓它落地。</p>
+
+      <div style="color:#fbbf24;font-weight:800;letter-spacing:0.15em;margin:2vh 0 1vh 0;">CLOSING (24–28 min)</div>
+      <p><strong>16 三件事串起來</strong> — 快速複習，不要再展開。</p>
+      <p><strong>17 一句話收尾</strong> — 最後一句：「擺在誰的財報上」 — 這是整場的總結，也是你希望別人記 3 年的那一句。</p>
+
+      <div style="color:#94a3b8;font-weight:800;letter-spacing:0.15em;margin:2.5vh 0 1vh 0;">🎯 整場情緒節奏</div>
+      <p style="color:#94a3b8;">自介 —— <strong style="color:#fbbf24;">輕鬆破冰</strong><br>架台 —— <strong style="color:#fbbf24;">把場子拉高</strong>（台股第六、未來會發生）<br>CH1 —— <strong style="color:#38bdf8;">冷靜分析</strong>（貨架觀）<br>CH2 —— <strong style="color:#a78bfa;">經驗對照</strong>（兩種錢）<br>CH3 —— <strong style="color:#10b981;">放軟、真誠</strong>（捨不得 + 台積電）<br>結尾 —— <strong style="color:#ef4444;">一槌定音</strong></p>
+    </div>
+  </div>
+
+  <div style="margin-top:2.5vh;padding:2vh 2vw;background:rgba(251,191,36,0.06);border-left:0.2vw solid #fbbf24;border-radius:0.5vw;font-size:0.95vw;color:#cbd5e1;line-height:1.8;">
+    <strong style="color:#fbbf24;">🛡 自我保護原則：</strong>
+    ① 不主動提成交金額；被問到就輕描淡寫帶過 &nbsp;·&nbsp;
+    ② 不點名對方公司、同業、投資人 &nbsp;·&nbsp;
+    ③ 台積電故事只講結構（「有人賣過一張支持我」），不提是誰 &nbsp;·&nbsp;
+    ④ 被追問細節時：「那段我們場外聊，投影片上不寫。」
+  </div>
+  <div style="margin-top:1.5vh;padding:2vh 2vw;background:rgba(56,189,248,0.06);border-left:0.2vw solid #38bdf8;border-radius:0.5vw;font-size:0.95vw;color:#cbd5e1;line-height:1.8;">
+    <strong style="color:#38bdf8;">⌨️ 操作：</strong>
+    ↑↓ / PageUp · PageDown · Space 翻頁 &nbsp;·&nbsp; F 全螢幕 &nbsp;·&nbsp; Home / End 跳頭尾
+  </div>
+</section>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+
+document.addEventListener('keydown', (e) => {
+  if (['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)) {
+    e.preventDefault();
+    current = Math.min(current + 1, slides.length - 1);
+    slides[current].scrollIntoView({ behavior:'smooth' });
+  }
+  if (['ArrowUp','ArrowLeft','PageUp'].includes(e.key)) {
+    e.preventDefault();
+    current = Math.max(current - 1, 0);
+    slides[current].scrollIntoView({ behavior:'smooth' });
+  }
+  if (e.key === 'Home') { e.preventDefault(); current = 0; slides[0].scrollIntoView({ behavior:'smooth' }); }
+  if (e.key === 'End')  { e.preventDefault(); current = slides.length - 1; slides[current].scrollIntoView({ behavior:'smooth' }); }
+  if (e.key === 'f' || e.key === 'F') { toggleFS(); }
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { current = [...slides].indexOf(entry.target); }
+  });
+}, { threshold: 0.5 });
+slides.forEach(s => observer.observe(s));
+
+function toggleFS() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  } else {
+    document.exitFullscreen();
+  }
+}
+</script>
+
+</body>
+</html>
