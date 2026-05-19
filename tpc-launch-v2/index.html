@@ -1,0 +1,2007 @@
+<!--
+  ⚠ 自動產出 — 請勿直接編輯本檔。
+  改內容請編輯 slides.yaml；改版型請改 templates/；改完跑 `python build.py`。
+-->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pocket Company × TurnCloud — 肖準加入騰雲</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-deep: #eef4fb;
+    --bg: #f3f7fc;
+    --surface: #ffffff;
+    --card: #ffffff;
+    --border: #dde6f2;
+    --border-soft: #eef2f9;
+    --cyan: #06b6d4;
+    --cyan-light: #0ea5e9;
+    --cyan-bg: #ecfeff;
+    --violet: #a855f7;
+    --violet-light: #c084fc;
+    --violet-bg: #faf5ff;
+    --orange: #f59e0b;
+    --orange-light: #fbbf24;
+    --orange-bg: #fffbeb;
+    --green: #10b981;
+    --green-bg: #ecfdf5;
+    --pink: #ec4899;
+    --pink-bg: #fdf2f8;
+    --gold: #eab308;
+    --text: #0f172a;
+    --text-soft: #1e293b;
+    --dim: #475569;
+    --dim-2: #64748b;
+    --dark: #94a3b8;
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.05), 0 10px 30px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 12px 30px rgba(15, 23, 42, 0.08), 0 24px 60px rgba(15, 23, 42, 0.10);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow: hidden; height: 100%; }
+body {
+    font-family: 'Noto Sans TC', -apple-system, sans-serif;
+    background: #e2e8f0;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deck {
+    container-type: size;
+    container-name: deck;
+    width: 177.78vh;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 56.25vw;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-deep);
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.12);
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    display: none;
+    flex-direction: column;
+    padding: 3.5cqh 4.5cqh;
+    overflow: hidden;
+}
+.slide.active { display: flex; }
+
+/* ─── Backgrounds ─── */
+.bg-cover { background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #fef3c7 100%); }
+.bg-dark  { background: linear-gradient(180deg, #ffffff 0%, #f3f7fc 100%); }
+.bg-warm  { background: linear-gradient(180deg, #fffbeb 0%, #ffffff 60%); }
+.bg-violet{ background: linear-gradient(180deg, #faf5ff 0%, #ffffff 60%); }
+.bg-cyan  { background: linear-gradient(180deg, #ecfeff 0%, #ffffff 60%); }
+
+/* ─── Slide image / video (full bleed cover/closing) ─── */
+.bg-image, .bg-video {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    z-index: 0;
+    overflow: hidden;
+}
+.bg-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.bg-image::after, .bg-video::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(95deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.80) 25%, rgba(255,255,255,0.10) 55%, rgba(255,255,255,0) 100%);
+}
+
+.slide-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+/* ─── Tag / chip ─── */
+.tag {
+    display: inline-block;
+    padding: 0.55cqh 1.6cqh;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.3cqh;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-radius: 100px;
+    margin-bottom: 1.3cqh;
+    width: fit-content;
+}
+.tag-cyan   { background: var(--cyan-bg);   color: var(--cyan); }
+.tag-violet { background: var(--violet-bg); color: var(--violet); }
+.tag-orange { background: var(--orange-bg); color: #b45309; }
+.tag-green  { background: var(--green-bg);  color: var(--green); }
+.tag-pink   { background: var(--pink-bg);   color: var(--pink); }
+
+/* ─── Typography ─── */
+h1 { font-size: 6.4cqh; font-weight: 900; line-height: 1.2; letter-spacing: -0.5px; color: var(--text); }
+h2 { font-size: 4.2cqh; font-weight: 900; line-height: 1.25; letter-spacing: -0.3px; margin-bottom: 0.6cqh; color: var(--text); }
+h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
+
+.c   { color: var(--cyan); }
+.v   { color: var(--violet); }
+.o   { color: #d97706; }
+.g   { color: var(--green); }
+.p   { color: var(--pink); }
+
+.sub  { font-size: 2cqh; color: var(--dim); margin-bottom: 1cqh; line-height: 1.55; }
+.sub strong { color: var(--text); font-weight: 700; }
+
+.meta {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-soft);
+    padding-top: 1.4cqh;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25cqh;
+    color: var(--dark);
+    letter-spacing: 1px;
+}
+.meta strong { color: var(--dim); }
+.meta .pg { color: var(--cyan); font-weight: 700; }
+
+/* ─── Two column body ─── */
+.s-body { flex: 1; display: flex; gap: 2.5cqh; min-height: 0; overflow: hidden; }
+.s-col  { flex: 1; display: flex; flex-direction: column; gap: 1.1cqh; min-height: 0; }
+
+.illus-frame {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+.illus-frame img,
+.illus-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ─── Cards / boxes ─── */
+.box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.6cqh 2cqh;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+}
+.box.b-cyan,
+.box.b-violet,
+.box.b-orange,
+.box.b-green,
+.box.b-pink { border-top-width: 3px; }
+.box.b-cyan   { border-top-color: var(--cyan); }
+.box.b-violet { border-top-color: var(--violet); }
+.box.b-orange { border-top-color: var(--orange); }
+.box.b-green  { border-top-color: var(--green); }
+.box.b-pink   { border-top-color: var(--pink); }
+
+.box h4 { font-size: 2cqh; font-weight: 700; margin-bottom: 0.6cqh; color: var(--text); }
+.box.b-cyan   h4 { color: var(--cyan); }
+.box.b-violet h4 { color: var(--violet); }
+.box.b-orange h4 { color: #b45309; }
+.box.b-green  h4 { color: var(--green); }
+.box.b-pink   h4 { color: var(--pink); }
+
+.box p  { font-size: 1.6cqh; color: var(--dim); line-height: 1.55; }
+.box p strong { color: var(--text); font-weight: 600; }
+.box ul { list-style: none; }
+.box li {
+    font-size: 1.55cqh;
+    color: var(--dim);
+    padding: 0.3cqh 0 0.3cqh 1.6cqh;
+    line-height: 1.5;
+    position: relative;
+}
+.box li::before {
+    content: '–';
+    color: var(--dim-2);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 0.3cqh;
+}
+.box.b-cyan   li::before { color: var(--cyan); }
+.box.b-violet li::before { color: var(--violet); }
+.box.b-orange li::before { color: #d97706; }
+.box.b-green  li::before { color: var(--green); }
+.box.b-pink   li::before { color: var(--pink); }
+.box li strong { color: var(--text); font-weight: 600; }
+
+/* ─── Cover slide ─── */
+.cover { padding: 0; }
+.cover .bg-image, .cover .bg-video { opacity: 1; background-position: 75% center; background-size: cover; }
+.cover .bg-image::after, .cover .bg-video::after {
+    background: linear-gradient(95deg, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.98) 38%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.30) 70%, rgba(255,255,255,0) 100%);
+}
+.cover .slide-content { padding: 5cqh 7cqh; justify-content: center; max-width: 56%; }
+
+/* ─── Cover big partnership logos ─── */
+.cover-logos {
+    display: flex;
+    align-items: center;
+    gap: 3.2cqh;
+    margin-bottom: 3cqh;
+    padding-bottom: 2.5cqh;
+    border-bottom: 1px solid var(--border-soft);
+}
+.cover-logo {
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+/* AccuCrazy: source asset is white-on-transparent — invert to dark for white cover */
+.cover-logo-accucrazy {
+    height: 6cqh;
+    filter: brightness(0) saturate(100%);
+}
+/* TurnCloud: source is square (1024×1024) with icon+wordmark only filling ~55% vertically.
+   Use a wrapper-like negative margin so the visible content lines up with AccuCrazy. */
+.cover-logo-turncloud {
+    height: 13cqh;
+    margin: -3.5cqh -1cqh;
+    filter: drop-shadow(0 2px 8px rgba(6, 182, 212, 0.22));
+}
+.cover-logo-x {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 4cqh;
+    font-weight: 200;
+    color: var(--dark);
+    line-height: 1;
+    user-select: none;
+    margin: 0 0.4cqh;
+}
+
+.cover .pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.3cqh;
+    letter-spacing: 5px;
+    color: var(--cyan);
+    margin-bottom: 2cqh;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.cover h1 {
+    font-size: 5.8cqh;
+    margin-bottom: 1.8cqh;
+    color: var(--text);
+    max-width: 100%;
+}
+.cover .lede {
+    font-size: 1.9cqh;
+    color: var(--dim);
+    max-width: 100%;
+    line-height: 1.7;
+    margin-bottom: 2.6cqh;
+}
+.cover .lede strong { color: var(--cyan); font-weight: 700; }
+.cover .signature {
+    display: flex;
+    gap: 2.5cqh;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2cqh;
+    color: var(--dim-2);
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+}
+.cover .signature .sig-block { padding-right: 2.5cqh; border-right: 1px solid var(--border); }
+.cover .signature .sig-block:last-child { border-right: none; padding-right: 0; }
+.cover .signature .sig-block strong { display: block; color: var(--text); font-size: 1.35cqh; letter-spacing: 1px; font-weight: 700; margin-bottom: 0.4cqh; }
+
+/* ─── Layer diagram ─── */
+.layer-stack { display: flex; flex-direction: column; gap: 0.8cqh; padding: 0.4cqh 0; }
+.layer-row {
+    display: grid;
+    grid-template-columns: 17cqh 1fr;
+    align-items: center;
+    gap: 1.5cqh;
+    padding: 1.5cqh 1.8cqh;
+    border-radius: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+.layer-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2cqh;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding: 0.5cqh 1.1cqh;
+    border-radius: 100px;
+    width: fit-content;
+    text-align: center;
+}
+.layer-row.l-runtime .layer-label { background: var(--orange-bg); color: #b45309; }
+.layer-row.l-aios .layer-label    { background: var(--cyan-bg);   color: var(--cyan); }
+.layer-row.l-agents .layer-label  { background: var(--violet-bg); color: var(--violet); }
+
+.layer-row.l-runtime .layer-name { color: #b45309; }
+.layer-row.l-aios .layer-name    { color: var(--cyan); }
+.layer-row.l-agents .layer-name  { color: var(--violet); }
+
+.layer-name { font-size: 2.2cqh; font-weight: 800; margin-bottom: 0.2cqh; }
+.layer-desc { font-size: 1.5cqh; color: var(--dim); line-height: 1.5; }
+.layer-desc strong { color: var(--text); font-weight: 600; }
+
+.layer-conn { text-align: center; font-size: 1.8cqh; color: var(--dark); height: 0.3cqh; line-height: 1; }
+
+/* ─── Agent grid ─── */
+.agent-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5cqh;
+    margin-top: 1cqh;
+}
+.agent-chip {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: 3px solid;
+    border-radius: 12px;
+    padding: 1.5cqh 1.5cqh;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+.agent-chip.a-cyan   { border-top-color: var(--cyan); }
+.agent-chip.a-orange { border-top-color: var(--orange); }
+.agent-chip.a-gold   { border-top-color: var(--gold); }
+.agent-chip.a-violet { border-top-color: var(--violet); }
+.agent-chip.a-green  { border-top-color: var(--green); }
+.agent-chip h5 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.4cqh;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 0.4cqh;
+}
+.agent-chip.a-cyan h5   { color: var(--cyan); }
+.agent-chip.a-orange h5 { color: #d97706; }
+.agent-chip.a-gold h5   { color: #ca8a04; }
+.agent-chip.a-violet h5 { color: var(--violet); }
+.agent-chip.a-green h5  { color: var(--green); }
+.agent-chip .role { font-size: 1.55cqh; color: var(--text); font-weight: 700; margin-bottom: 0.3cqh; }
+.agent-chip .one  { font-size: 1.35cqh; color: var(--dim); line-height: 1.5; }
+
+/* ─── Ecosystem bubbles ─── */
+.eco-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8cqh; margin-top: 0.5cqh; }
+.eco-pill {
+    display: flex;
+    gap: 1cqh;
+    align-items: flex-start;
+    padding: 0.9cqh 1.3cqh;
+    background: var(--card);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+.eco-dot {
+    width: 1cqh;
+    height: 1cqh;
+    border-radius: 50%;
+    margin-top: 0.6cqh;
+    flex-shrink: 0;
+}
+.eco-dot.d1 { background: var(--cyan); color: var(--cyan); }
+.eco-dot.d2 { background: var(--violet); color: var(--violet); }
+.eco-dot.d3 { background: var(--orange); color: var(--orange); }
+.eco-dot.d4 { background: var(--green); color: var(--green); }
+.eco-dot.d5 { background: var(--pink); color: var(--pink); }
+.eco-dot.d6 { background: var(--gold); color: var(--gold); }
+.eco-pill h6 { font-size: 1.55cqh; font-weight: 700; margin-bottom: 0.1cqh; color: var(--text); }
+.eco-pill p { font-size: 1.3cqh; color: var(--dim); line-height: 1.45; }
+
+/* ─── Closing slide ─── */
+.closing .bg-image, .closing .bg-video { opacity: 1; }
+.closing .bg-image::after, .closing .bg-video::after {
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 45%, rgba(255,255,255,0.92) 80%, rgba(255,255,255,0.97) 100%);
+}
+.closing .slide-content { padding: 6cqh 7cqh; justify-content: flex-end; }
+.closing-quote {
+    font-size: 4.4cqh;
+    line-height: 1.45;
+    font-weight: 900;
+    margin-bottom: 2cqh;
+    max-width: 88%;
+    color: var(--text);
+    letter-spacing: -0.3px;
+}
+.closing-quote .c { color: var(--cyan); }
+.closing-quote .v { color: var(--violet); }
+.closing-quote .o { color: #d97706; }
+.closing-sig {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.35cqh;
+    color: var(--dim);
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+/* ─── Navigation ─── */
+.arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    color: var(--dim);
+    width: 5.5cqh;
+    height: 5.5cqh;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3cqh;
+    transition: all 0.2s;
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+}
+.arrow:hover { background: var(--cyan-bg); border-color: var(--cyan); color: var(--cyan); }
+.arr-l { left: 1.5vh; }
+.arr-r { right: 1.5vh; }
+
+.dots {
+    position: fixed;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1vh;
+    z-index: 100;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    padding: 1vh 2vh;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+}
+.dot {
+    width: 1.2vh;
+    height: 1.2vh;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+.dot:hover { background: var(--dark); }
+.dot.on { background: var(--cyan); transform: scale(1.4); }
+
+.brand-corner {
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+    display: flex;
+    align-items: center;
+    gap: 1.5vh;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.15vh;
+    color: var(--dim-2);
+    letter-spacing: 2px;
+    z-index: 50;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    padding: 0.8vh 1.5vh;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    font-weight: 600;
+}
+.brand-corner strong { color: var(--cyan); font-weight: 800; }
+
+
+/* ─── Mobile portrait: ask user to rotate ─── */
+.rotate-prompt {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--bg-deep);
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8vw;
+    color: var(--text);
+    font-family: 'Noto Sans TC', -apple-system, sans-serif;
+}
+.rotate-prompt .icon {
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 28px;
+    display: inline-block;
+    animation: rot-hint 2.4s ease-in-out infinite;
+}
+@keyframes rot-hint {
+    0%, 100% { transform: rotate(0deg); }
+    40%, 60% { transform: rotate(-90deg); }
+}
+.rotate-prompt h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--text);
+    letter-spacing: -0.3px;
+}
+.rotate-prompt p {
+    font-size: 14px;
+    color: var(--dim);
+    line-height: 1.6;
+    max-width: 320px;
+}
+.rotate-prompt .brand {
+    margin-top: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--dim-2);
+    letter-spacing: 2px;
+}
+
+@media (orientation: portrait) and (max-width: 900px) {
+    body { overflow: hidden; }
+    .rotate-prompt { display: flex; }
+    .deck, .arrow, .dots, .brand-corner { display: none !important; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="rotate-prompt">
+    <span class="icon">📱</span>
+    <h2>請將手機轉為橫向</h2>
+    <p>這份簡報採用 16:9 寬螢幕設計，<br>請將裝置旋轉為橫向，或在桌機上開啟以獲得最佳閱讀體驗。</p>
+    <div class="brand">THE POCKET COMPANY × TURNCLOUD · 2026</div>
+</div>
+
+<div class="deck">
+
+<!-- ══════════ SLIDE 01: cover (cover) ══════════ -->
+
+<div class="slide cover active">
+    <div class="bg-image" style="background-image: url('img/01_cover.jpg');"></div>
+
+    <div class="slide-content">
+        
+        <div class="cover-logos">
+            <img src="img/accucrazy-logo.webp" alt="AccuCrazy" class="cover-logo cover-logo-accucrazy">
+            <span class="cover-logo-x" aria-hidden="true">×</span>
+            <img src="img/turncloud-logo.png" alt="TurnCloud" class="cover-logo cover-logo-turncloud">
+        </div>
+        
+        <div class="pre">THE POCKET COMPANY × TURNCLOUD · 2026</div>
+        <h1>肖準加入騰雲，<br>啟動企業<br><span class="c">AI 工作者</span>新時代</h1>
+        <p class="lede">
+            從 <strong>AccuCrazy</strong> 到 <strong>The Pocket Company</strong>，<br>
+我們承接騰雲的 <strong>Physical Space Runtime</strong>，<br>
+在它之上建構 <strong>Enterprise AI OS</strong>，<br>
+並把第一支 <strong>AI Agent 工作團隊</strong> 帶進真實的商業現場。
+        </p>
+        <div class="signature">
+            
+            <div class="sig-block">
+                <strong>The Pocket Company</strong>
+                AccuCrazy 肖準整合
+            </div>
+            
+            <div class="sig-block">
+                <strong>Powered by TurnCloud</strong>
+                T Coeus AI OS 發表會
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 02: merger (two_col) ══════════ -->
+
+<div class="slide bg-dark">
+    <div class="slide-content">
+        <div class="tag tag-cyan">CHAPTER 01 · 一段併購故事</div>
+        <h2>肖準 + 騰雲 = <span class="c">The Pocket Company</span></h2>
+        <p class="sub">這不是一場單純的併購。這是兩種能力，在 AI 時代第一次真正合而為一。</p>
+
+        <div class="s-body">
+            <div class="s-col">
+                <div class="illus-frame"><img src="img/02_merger.jpg" alt="Merger">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-cyan">
+    <h4>騰雲科技 — 二十年企業基礎建設</h4>
+    
+    <ul>
+        <li><strong>TPOS · HOYABOX</strong> 智慧 POS 與行動終端</li><li><strong>TCRM · TCMS</strong> 顧客關係與商業管理</li><li><strong>OLink · iFore · TLife · TShop</strong> 支付、BI、行銷、庫存</li><li>橫跨零售、餐飲、商場、觀光與飯店的<strong>真實人場貨</strong></li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4>肖準（AccuCrazy）— 生產級 AI Agent 能力</h4>
+    
+    <ul>
+        <li><strong>OpenClaw</strong> 開源 Agent 框架（claw3d.ai）</li><li><strong>Pandora / Moana / Banana / Adriana / Stacey</strong> 五位專業 Agent</li><li><strong>User-Level Memory</strong> 三層記憶架構，每個帳號都有專屬 AI</li><li><strong>MDP</strong> 跨產業 AI-Ready 數據平台</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-orange">
+    <h4 class="o">合而為一 → The Pocket Company</h4>
+    
+    <p>騰雲底下、最靠近商業現場的 <strong>AI Agent 應用節點</strong>。<br>
+把企業二十年累積的資料與場域，第一次真正交到 AI 手上。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>The Pocket Company × TurnCloud — 2026</span>
+            <span class="pg">02 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 03: runtime (two_col) ══════════ -->
+
+<div class="slide bg-warm">
+    <div class="slide-content">
+        <div class="tag tag-orange">CHAPTER 02 · 承接董事長 Keynote</div>
+        <h2>董事長剛剛談到 — <span class="o">Physical Space Runtime</span></h2>
+        <p class="sub">下一個運算時代，AI 將不只存在於螢幕裡，而是開始進入<strong>真實的空間</strong>。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.2;">
+                <div class="illus-frame"><img src="img/03_runtime.jpg" alt="Runtime">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-orange">
+    <h4>Runtime 是什麼？</h4>
+    
+    <p>讓 AI 真的<strong>跑得起來、接得上現場、能即時執行</strong>的底層環境。</p>
+    
+</div>
+
+                
+                
+<div class="box">
+    <h4>Runtime 讓空間擁有四種能力</h4>
+    
+    <ul>
+        <li><strong>Sense</strong> &nbsp; 感知 ── 即時看見人、車、貨、能源、風險的每個變化</li><li><strong>Reason</strong> &nbsp; 推論 ── 多模態理解現場發生什麼事</li><li><strong>Decide</strong> &nbsp; 決策 ── 即時做判斷、做調度</li><li><strong>Act</strong> &nbsp; 執行 ── 把決策直接變成行動</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-cyan">
+    <h4 class="c">那麼，這就是我們要承接的問題：</h4>
+    
+    <p>當 AI 已經能夠運行<strong>空間</strong>，企業要怎麼把它變成<br>
+每天可使用、可管理、可擴充的<strong>工作系統</strong>？</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Runtime 是引擎 — 接下來談駕駛艙</span>
+            <span class="pg">03 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 04: problem (two_col) ══════════ -->
+
+<div class="slide bg-dark">
+    <div class="slide-content">
+        <div class="tag tag-pink">CHAPTER 03 · 企業真正的問題</div>
+        <h2>企業<span class="p">缺的不是 AI</span> — 缺的是「<span class="c">系統</span>」</h2>
+        <p class="sub">每個企業現在都在用 AI。問題是 — 這些 AI，從來沒有變成一個系統。</p>
+
+        <div class="s-body">
+            <div class="s-col">
+                <div class="illus-frame"><img src="img/04_problem.jpg" alt="Fragmented AI tools">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-pink">
+    <h4 class="p">今天企業導入 AI 的真實樣貌</h4>
+    
+    <ul>
+        <li>行銷部用一個 AI 寫文案</li><li>客服部用另一個 AI 回訊息</li><li>數據部又自己跑模型</li><li>每個部門都各用各的，互不相通</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box">
+    <h4>結果是 ──</h4>
+    
+    <ul>
+        <li>資料沒有串起來</li><li>Agent 沒有協作</li><li>權限、合規、治理都各做各的</li><li>經驗無法沉澱成<strong>企業資產</strong></li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-cyan">
+    <h4 class="c">核心結論</h4>
+    
+    <p>企業缺的不是更多 AI 工具，<br>
+而是一套能讓 AI 被<strong>管理、被協作、被擴充</strong>的<br>
+<strong>企業作業系統</strong>。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>From scattered tools to a unified OS</span>
+            <span class="pg">04 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 05: aios_concept (two_col) ══════════ -->
+
+<div class="slide bg-cyan">
+    <div class="slide-content">
+        <div class="tag tag-cyan">FROM RUNTIME TO AI OS · 概念定義</div>
+        <h2>什麼是 <span class="c">AI OS</span>？— 給 AI Agent 跑的作業系統</h2>
+        <p class="sub">像 <strong>iOS 是 iPhone 的作業系統</strong>，<strong>AI OS 則是 AI Agent 的作業系統</strong>。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.8;">
+                <div class="illus-frame"><img src="img/04_aios_concept.png" alt="What is AI OS" style="object-fit: contain;">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-cyan">
+    <h4>三大組成</h4>
+    
+    <ul>
+        <li><strong>應用層 / Experience</strong> &nbsp; 用戶實際看到、使用的 AI 服務介面</li><li><strong>Harness 核心引擎</strong> &nbsp; Agent · Skill · Tool · A2A 的調度與協作</li><li><strong>Database / MDP</strong> &nbsp; 統一接入<strong>結構化 + 非結構化</strong>資料</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">三大價值</h4>
+    
+    <ul>
+        <li>不用<strong>每次從零打造</strong></li><li>新場景可<strong>快速重組</strong></li><li>AI 不只回答，更能<strong>行動與協作</strong></li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-orange">
+    <h4 class="o">從工具，升級為基礎建設</h4>
+    
+    <p>擁有一套<strong>長期積累、跨場景重用</strong>的作業系統。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>AI OS = 應用層 + Harness + Database</span>
+            <span class="pg">05 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 06: aios (two_col) ══════════ -->
+
+<div class="slide bg-dark">
+    <div class="slide-content">
+        <div class="tag tag-cyan">CHAPTER 04 · 我們的解答</div>
+        <h2>建構在 Runtime 之上的 <span class="c">Enterprise AI OS</span></h2>
+        <p class="sub">不是聊天機器人，不是 Copilot。是讓企業真正能<strong>擁有並管理 AI 員工</strong>的作業系統。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.1;">
+                <div class="illus-frame"><img src="img/05_aios.jpg" alt="AI OS Cockpit">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-cyan">
+    <h4>AI OS 統一管理八件事</h4>
+    
+    <ul>
+        <li><strong>Data</strong> &nbsp; 企業資料與血緣</li><li><strong>Memory</strong> &nbsp; 個人 + 專案 + 企業三層記憶</li><li><strong>Workflow</strong> &nbsp; 可被宣告的工作流程</li><li><strong>Agents</strong> &nbsp; 註冊化、可治理的 AI 員工</li><li><strong>Permission</strong> &nbsp; RBAC、Tool Policy、稽核</li><li><strong>Governance</strong> &nbsp; 模型治理、ESG、合規</li><li><strong>Dashboard</strong> &nbsp; 看見 AI 做了什麼、改變了什麼</li><li><strong>Decision</strong> &nbsp; 關鍵節點仍由人類介入</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">關鍵：User-Level Memory</h4>
+    
+    <p>每個帳號擁有<strong>獨立的對話、長期記憶與個人檔案</strong>。<br>
+記憶是個人的，不能共享 ── 這是 AI 真正成為「我的 AI」的關鍵，<br>
+也是企業續用、續約、續擴張的<strong>商業護城河</strong>。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>AI OS = 企業擁有並指揮 AI 的作業系統</span>
+            <span class="pg">06 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 07: three_layers (layers) ══════════ -->
+
+<div class="slide bg-dark">
+    <div class="slide-content">
+        <div class="tag tag-violet">CHAPTER 05 · 三層架構</div>
+        <h2>從 <span class="o">Runtime</span> 到 <span class="c">AI OS</span> 到 <span class="v">AI Agents</span></h2>
+        <p class="sub">三層、各司其職、彼此堆疊 ── 這是 The Pocket Company 對「企業 AI 怎麼長」的完整答案。</p>
+
+        <div class="s-body">
+            <div class="s-col">
+                <div class="illus-frame"><img src="img/06_three_layers.jpg" alt="Three layer architecture">
+</div>
+            </div>
+            <div class="s-col">
+                <div class="layer-stack">
+                    
+                    <div class="layer-row l-runtime">
+                        <div>
+                            <div class="layer-label">LAYER 01</div>
+                            <div class="layer-name o">Physical Space Runtime</div>
+                        </div>
+                        <div class="layer-desc">讓 AI 能<strong>進入真實空間</strong>，即時感知、推論、決策、執行。<br>由 <strong>騰雲科技</strong> 所打造的下一代運算底座。</div>
+                    </div>
+                    <div class="layer-conn">↑</div>
+                    
+                    <div class="layer-row l-aios">
+                        <div>
+                            <div class="layer-label">LAYER 02</div>
+                            <div class="layer-name c">Enterprise AI OS</div>
+                        </div>
+                        <div class="layer-desc">讓企業能<strong>管理、編排、治理</strong> AI 與資料、流程、記憶、決策。<br>由 <strong>The Pocket Company</strong> 建構在 Runtime 之上。</div>
+                    </div>
+                    <div class="layer-conn">↑</div>
+                    
+                    <div class="layer-row l-agents">
+                        <div>
+                            <div class="layer-label">LAYER 03</div>
+                            <div class="layer-name v">AI Agent Workforce</div>
+                        </div>
+                        <div class="layer-desc">真正<strong>替企業工作</strong>的數位員工：<br>看見市場、生成內容、創造素材、優化廣告、協作執行。</div>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="box b-cyan" style="margin-top: 1.5vh;">
+                    <p style="font-size: 1.8vh; color: var(--text); text-align: center;"><strong class="o">Runtime 讓 AI 運行空間</strong> ·
+<strong class="c">AI OS 讓企業管理 AI</strong> ·
+<strong class="v">Agents 真正開始工作</strong></p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Runtime · AI OS · Agents — 三層敘事</span>
+            <span class="pg">07 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 08: workforce (workforce) ══════════ -->
+
+<div class="slide bg-violet">
+    <div class="slide-content">
+        <div class="tag tag-violet">CHAPTER 06 · AI Agent Workforce</div>
+        <h2>AI OS 之上 — 是企業的 <span class="v">AI 工作者</span></h2>
+        <p class="sub">企業導入的，不再是一個個工具。是一支會看見、會生成、會行動、會協作的<strong>數位員工團隊</strong>。</p>
+
+        <div class="illus-frame" style="flex: 1; margin-bottom: 1.5vh;"><img src="img/07_workforce.jpg" alt="AI workforce">
+</div>
+
+        <div class="agent-grid">
+            
+            <div class="agent-chip a-cyan">
+                <h5>PANDORA</h5>
+                <div class="role">輿情洞察 Agent</div>
+                <div class="one">看見市場正在發生什麼</div>
+            </div>
+            
+            <div class="agent-chip a-orange">
+                <h5>MOANA</h5>
+                <div class="role">內容生成 Agent</div>
+                <div class="one">把洞察變成有影響力的內容</div>
+            </div>
+            
+            <div class="agent-chip a-gold">
+                <h5>BANANA</h5>
+                <div class="role">視覺生成 Agent</div>
+                <div class="one">高品質創意素材即時產出</div>
+            </div>
+            
+            <div class="agent-chip a-violet">
+                <h5>ADRIANA</h5>
+                <div class="role">廣告優化 Agent</div>
+                <div class="one">即時、精準的廣告決策</div>
+            </div>
+            
+            <div class="agent-chip a-green">
+                <h5>STACEY</h5>
+                <div class="role">總指揮 Agent</div>
+                <div class="one">任務拆解 × 多 Agent 協作</div>
+            </div>
+            
+        </div>
+
+        <div class="meta">
+            <span>5 個 AI 員工 — 企業可以開始招聘的數位團隊</span>
+            <span class="pg">08 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 09: pandora (two_col) ══════════ -->
+
+<div class="slide bg-dark">
+    <div class="slide-content">
+        <div class="tag tag-cyan">AGENT 01 / 05</div>
+        <h2><span class="c">Pandora</span> — 看見市場的 AI</h2>
+        <p class="sub">讓企業從「看不見」變「即時看得到」── 輿情、新聞、社群、競品，全部即時進入決策視野。</p>
+
+        <div class="s-body">
+            <div class="s-col">
+                <div class="illus-frame"><img src="img/08_pandora.jpg" alt="Pandora">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-cyan">
+    <h4>她做什麼</h4>
+    
+    <ul>
+        <li>監測品牌與競品的市場聲量</li><li>判讀情緒、抓出議題、預警危機</li><li>產出策略洞察與行動建議</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box">
+    <h4>能力堆疊</h4>
+    
+    <ul>
+        <li><strong>15</strong> 個 Skills · <strong>46</strong> 個 Tools · <strong>3</strong> 層 Memory</li><li>Threads / PTT / Dcard / FB / IG / 新聞網爬取</li><li>整合 Google Search · BigQuery · LINE / Google Chat</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-green">
+    <h4 class="g">已上線案例</h4>
+    
+    <p><strong>DR.WU</strong> War Room 每小時更新負面留言追蹤；<br>
+<strong>全家 / 7-ELEVEN</strong> 346 家媒體覆蓋率自動掃描。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Pandora — Market Intelligence Agent · MVP LIVE</span>
+            <span class="pg">09 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 10: pandora_demo (two_col) ══════════ -->
+
+<div class="slide bg-dark">
+    <div class="slide-content">
+        <div class="tag tag-cyan">PANDORA · LIVE DEMO</div>
+        <h2><span class="c">Pandora</span> — 自動產出<span class="c">洞察報告</span></h2>
+        <p class="sub">不是給你關鍵字儀表板，而是直接<strong>產出一份可讀、可決策的洞察報告</strong> ──<br>從訊號到結論，<strong>每天醒來就有一份新的</strong>。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.8;">
+                <div class="illus-frame"><video src="img/pandora_demo.mov" style="object-fit: contain;" muted loop playsinline preload="metadata"></video>
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-cyan">
+    <h4>Demo 看點</h4>
+    
+    <ul>
+        <li>自動<strong>產出完整洞察報告</strong>，不只回數字</li><li><strong>跨平台訊號整合</strong>（Threads / PTT / Dcard / FB / IG / 新聞）</li><li>報告含<strong>議題歸納、情緒分析、行動建議</strong>，可直接帶進策略會議</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">為什麼這串重要</h4>
+    
+    <p>傳統輿情工具只給<strong>儀表板</strong>，<br>
+企業還是要請人讀、歸納、寫報告 ──<br>
+Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
+讓決策層不用先讀一份 50 頁的數據才看到重點。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Pandora — Auto Insight Report</span>
+            <span class="pg">10 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 11: moana (two_col) ══════════ -->
+
+<div class="slide bg-warm">
+    <div class="slide-content">
+        <div class="tag tag-orange">AGENT 02 / 05</div>
+        <h2><span class="o">Moana</span> — 從 Social Listening 升級成 <span class="o">Culture Listening</span></h2>
+        <p class="sub">不只是寫文案，而是把<strong>產業、品牌、KOL、時下的梗</strong>全部讀懂，再寫出最有 <strong>Culture Fit</strong> 的內容，直接打通 <strong>Social Commerce</strong>。</p>
+
+        <div class="s-body">
+            <div class="s-col">
+                <div class="illus-frame"><img src="img/09_moana.jpg" alt="Moana">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-orange">
+    <h4>Culture Listening</h4>
+    
+    <ul>
+        <li>看見<strong>產業趨勢</strong>、流行語與次文化變動</li><li>解析<strong>品牌 / 競品 / KOL</strong> 的語境與口吻</li><li>即時捕捉<strong>時下的梗</strong>與正在熱議的話題</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">Culture Fit 內容生成</h4>
+    
+    <ul>
+        <li>內容貼齊<strong>當下正在發生</strong>的對話</li><li>EDM、社群貼文、短影音腳本、KOL 合作稿一次到位</li><li>品牌調性 × 受眾語感<strong>自動對齊</strong></li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-cyan">
+    <h4 class="c">直通 Social Commerce</h4>
+    
+    <p>內容即廣告、廣告即電商 ── 串聯 <strong>IG / FB / TikTok / LINE / Threads</strong> 商店與直播，<br>
+把「被看見」一路接到「直接買」，<strong>從聽見話題到拿下訂單</strong>的最短路徑。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Moana — Culture Listening × Social Commerce Agent · MVP LIVE</span>
+            <span class="pg">11 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 12: moana_culture_flow (two_col) ══════════ -->
+
+<div class="slide bg-warm">
+    <div class="slide-content">
+        <div class="tag tag-orange">MOANA · 多維訊號整合架構</div>
+        <h2>Culture Listening — <span class="o">整合洞察</span></h2>
+        <p class="sub">從多維訊號中萃取文化脈絡，轉化為<strong>可行動的內容與策略</strong>。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.8;">
+                <div class="illus-frame"><img src="img/moana_culture_flow.png" alt="Culture Listening 整合洞察" style="object-fit: contain;">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-orange">
+    <h4>五維訊號來源</h4>
+    
+    <ul>
+        <li><strong>產業</strong> · 市場動態、產業趨勢</li><li><strong>品牌</strong> · 品牌聲量、消費者評價</li><li><strong>競品</strong> · 競品動向、內容策略</li><li><strong>作者</strong> · KOL 觀點、創作者內容</li><li><strong>文化</strong> · 社會議題、流行文化</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">整合引擎做什麼</h4>
+    
+    <ul>
+        <li><strong>語境理解</strong> × <strong>情緒辨識</strong></li><li><strong>趨勢偵測</strong> × <strong>意義萃取</strong></li><li>統整 → 內容靈感、溝通策略、行動方案</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-green">
+    <h4 class="g">以文化為核心</h4>
+    
+    <p>讓內容<strong>更有意義</strong>，讓品牌<strong>更有共鳴</strong>。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Moana — Culture Listening 整合架構</span>
+            <span class="pg">12 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 13: moana_culture_demo (two_col) ══════════ -->
+
+<div class="slide bg-warm">
+    <div class="slide-content">
+        <div class="tag tag-orange">MOANA · CASE STUDY 01 · PART 1</div>
+        <h2><span class="o">猛健樂</span> — Culture Listening 實戰</h2>
+        <p class="sub">Moana 怎麼從次文化訊號裡，找到一個減重藥品牌的內容切角。<br>看見對話 → 解析語境 → 產出 Culture Fit 內容。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.8;">
+                <div class="illus-frame"><video src="img/moana_culture_case.mp4" style="object-fit: contain;" muted loop playsinline preload="metadata"></video>
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-orange">
+    <h4>Demo 看點</h4>
+    
+    <ul>
+        <li>抓出社群裡正在發生的<strong>減重話題</strong>與情緒</li><li>解析<strong>受眾語感</strong>，避開敏感詞、找到對的切角</li><li>產出符合<strong>品牌調性</strong>的內容腳本</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">為什麼這個案例重要</h4>
+    
+    <p>醫療 / 處方藥行銷是<strong>最難做 Culture Fit</strong> 的類別。<br>
+Moana 的 Culture Listening 不只洞察<strong>產品本身</strong>，<br>
+而是結合<strong>台灣整體文化脈絡</strong> ── 台灣人喜歡什麼、<br>
+討厭什麼、生活習慣是什麼，<strong>更宏觀地</strong>思考策略。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Moana — Live Case · 猛健樂 Culture Listening</span>
+            <span class="pg">13 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 14: moana_case_02 (two_col) ══════════ -->
+
+<div class="slide bg-warm">
+    <div class="slide-content">
+        <div class="tag tag-orange">MOANA · CASE STUDY 01 · PART 2</div>
+        <h2><span class="o">猛健樂</span> — 從 Brief 到 <span class="o">文章產出</span></h2>
+        <p class="sub">前一頁看 Moana <strong>怎麼洞察</strong>；這一頁看 Moana <strong>怎麼把洞察變成 Brief、再把 Brief 變成文章</strong>。<br>OFFICIAL × DCARD 兩個通路，<strong>從策略到內容一氣呵成</strong>。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.8;">
+                <div class="illus-frame"><video src="img/moana_case_02.mov" style="object-fit: contain;" muted loop playsinline preload="metadata"></video>
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-orange">
+    <h4>Demo 看點</h4>
+    
+    <ul>
+        <li>Moana 自動生成<strong>完整 marketing brief</strong>（OFFICIAL × DCARD 多通路）</li><li>一份 brief 含：<strong>切角 · 語氣 · 視覺方向 · CTA · 避免事項</strong></li><li>接著直接從 brief 產出對應通路的<strong>實際文章內容</strong></li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">為什麼這串重要</h4>
+    
+    <p>傳統流程：洞察 → 寫 brief → 寫文案 → 多通路適配，<strong>每一步都是斷層</strong>。<br>
+Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同一個 Agent 一氣呵成</strong>。<br>
+不是寫文案的工具，是<strong>策略 + 執行的整合系統</strong>。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Moana — Insight → Brief → Article Pipeline</span>
+            <span class="pg">14 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 15: banana (two_col) ══════════ -->
+
+<div class="slide bg-warm">
+    <div class="slide-content">
+        <div class="tag tag-orange">AGENT 03 / 05</div>
+        <h2><span class="o">Banana</span> — 視覺即時生成的 AI</h2>
+        <p class="sub">從一句話到一張完整的品牌視覺。產品情境圖、社群素材、廣告版型，秒級產出。</p>
+
+        <div class="s-body">
+            <div class="s-col">
+                <div class="illus-frame"><img src="img/10_banana.jpg" alt="Banana">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-orange">
+    <h4>他做什麼</h4>
+    
+    <ul>
+        <li>產品情境圖、社群圖卡、短影音版面</li><li>IG · FB · Threads 多尺寸自動適配</li><li>品牌色系、字型、構圖自動匹配</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box">
+    <h4>能力堆疊</h4>
+    
+    <ul>
+        <li>GPU 即時生成 — 口頭修改、秒出新版</li><li>圖文一體 — 文案 + 視覺同步產出</li><li>品牌規範可被學會、被沿用</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-green">
+    <h4 class="g">與 War Room 的閉環</h4>
+    
+    <p>輿情雷達發現危機 → AI 分析論點 → <strong>Banana 直接產出回應素材</strong>。<br>
+從危機發現到內容產出，<strong>全鏈路 AI 自動化</strong>。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Banana — Visual Design Agent · MVP LIVE</span>
+            <span class="pg">15 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 16: banana_split_system (two_col) ══════════ -->
+
+<div class="slide bg-warm">
+    <div class="slide-content">
+        <div class="tag tag-orange">BANANA · 系統架構</div>
+        <h2><span class="o">Banana Split</span> — 把素材變成可用內容的 <span class="o">AI 創意流程</span></h2>
+        <p class="sub">不只是「生圖」，而是把<strong>素材 → Concept → Creative → 多渠道輸出</strong>串成一條可重複的<strong>創意流程</strong>。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.8;">
+                <div class="illus-frame"><img src="img/banana_split_flow.png" alt="Banana Split 系統 - AI 創意流程" style="object-fit: contain;">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-orange">
+    <h4>五步驟流程</h4>
+    
+    <ul>
+        <li><strong>1. 上傳素材</strong> ── 產品圖 / Brief</li><li><strong>2. AI 理解需求</strong> ── 受眾 / 平台 / 目標</li><li><strong>3. 生成 Concept</strong> ── 主題與方向</li><li><strong>4. 延伸 Creative</strong> ── 圖像 / 文案 / 腳本</li><li><strong>5. 多渠道輸出</strong> ── 社群 / 廣告 / 短影音</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-green">
+    <h4 class="g">三大價值</h4>
+    
+    <ul>
+        <li><strong>更快產出</strong> ── 一次 brief 跑完全流程</li><li><strong>更穩定品質</strong> ── 同一套架構、品牌規範可被沿用</li><li><strong>更容易放大</strong> ── 一個 Concept 自動延伸成多版本素材</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">Banana Split 的精神</h4>
+    
+    <p>創意<strong>不只被生成</strong>，更能<strong>被編排與落地</strong> ──<br>
+從一張產品圖到一條短影音，<strong>用同一套流程</strong>跑完。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Banana Split — 5-Step Creative Pipeline</span>
+            <span class="pg">16 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 17: banana_split_demo (two_col) ══════════ -->
+
+<div class="slide bg-warm">
+    <div class="slide-content">
+        <div class="tag tag-orange">BANANA · LIVE DEMO</div>
+        <h2><span class="o">Banana Split</span> — 視覺生成實戰</h2>
+        <p class="sub">從一段文字到一張可上線的視覺。看 Banana 怎麼把<strong>創意意圖</strong>變成<strong>多版本素材</strong>。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.8;">
+                <div class="illus-frame"><video src="img/banana_split_demo.mp4" style="object-fit: contain;" muted loop playsinline preload="metadata"></video>
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-orange">
+    <h4>Demo 看點</h4>
+    
+    <ul>
+        <li><strong>文字輸入 → 多版本視覺</strong>同步產出</li><li>自動套用<strong>品牌規範</strong>（色彩、字體、構圖）</li><li>口頭迭代 — 秒級出新版</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">為什麼這重要</h4>
+    
+    <p>傳統流程：<strong>一天出三版</strong>。<br>
+Banana 重新定義速度：<strong>一分鐘出三十版</strong>，<br>
+讓<strong>創意決策</strong>的瓶頸，從「等出圖」變成「選方向」。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Banana — Visual Generation Live Demo</span>
+            <span class="pg">17 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 18: banana_video_edit (two_col) ══════════ -->
+
+<div class="slide bg-warm">
+    <div class="slide-content">
+        <div class="tag tag-orange">BANANA · 短影音剪輯 LIVE DEMO</div>
+        <h2><span class="o">Banana</span> — 從一句話到一支<span class="o">短影音</span></h2>
+        <p class="sub">使用者只說「<strong>剪 30 秒，重點是挺立鈣下單攻略</strong>」── Banana 自己<strong>企劃 → 剪片 → 包裝 → 上字</strong>，幾秒產出可投放成品。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.8;">
+                <div class="illus-frame"><video src="img/banana_video_demo.mp4" style="object-fit: contain;" muted loop playsinline preload="metadata"></video>
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-orange">
+    <h4>Demo 看點</h4>
+    
+    <ul>
+        <li>使用者輸入：「<strong>剪 30 秒，重點放在挺立鈣特色與下單攻略</strong>」</li><li><strong>企劃與腳本</strong> ── AI 規劃封面、段落分配、吸睛文字特效</li><li><strong>精準切片</strong> ── 自動定位「挺立鈣特色 / 價格優惠」時間軸，重組成 33 秒</li><li><strong>視覺包裝與上字</strong> ── 加品牌邊框 + 自動燒錄繁中字幕，可直接下載投放</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">為什麼這串重要</h4>
+    
+    <p>短影音是<strong>社群與廣告的核心媒介</strong>，但<strong>剪輯門檻最高</strong>：<br>
+企劃、剪片、上字、出檔 ── 每一步都是專業工作。<br>
+Banana 把整串壓縮到<strong>一句話 + 幾秒</strong>，<br>
+社群素材<strong>從「生產線」變成「水龍頭」</strong>。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Banana — Auto Video Editing Live Demo</span>
+            <span class="pg">18 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 19: adriana (two_col) ══════════ -->
+
+<div class="slide bg-violet">
+    <div class="slide-content">
+        <div class="tag tag-violet">AGENT 04 / 05</div>
+        <h2><span class="v">Adriana</span> — 從廣告分析升級到 <span class="v">千人千面</span></h2>
+        <p class="sub">不只分析數字，還能<strong>生成素材、自動投放、洞察陌生訪客</strong>，<br>把廣告從「投得準」進化到「<strong>為每一位用戶量身做</strong>」。</p>
+
+        <div class="s-body">
+            <div class="s-col">
+                <div class="illus-frame"><img src="img/11_adriana.jpg" alt="Adriana">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-violet">
+    <h4>分析 + 素材生成 + 自動投放</h4>
+    
+    <ul>
+        <li>監測 <strong>Meta / Google / TikTok</strong> 即時表現，異常自動偵測</li><li>透過 <strong>Meta Ads CLI</strong> 自動化開關、調整與重分配預算</li><li>即時<strong>生成廣告素材</strong>，文案 × 視覺 × 受眾一次配齊</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-cyan">
+    <h4 class="c">結合騰雲 CRM × CDP，連陌生訪客都能洞察</h4>
+    
+    <ul>
+        <li>串接騰雲 <strong>TCRM · TCDP</strong> 第一方資料</li><li>對<strong>陌生訪客</strong>即時推估意圖與興趣輪廓</li><li>每位用戶獲得對應自己的<strong>個性化素材</strong> ── 真正的千人千面</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box">
+    <h4>商業模式 × 為什麼重要</h4>
+    
+    <p><strong>掛帳抽成 2–3%</strong> 大客戶 + <strong>月費訂閱</strong> 中小客戶；<br>
+廣告產業「分析 → 行動」延遲最大，Adriana 把它壓到<strong>分鐘級</strong>，<br>
+並讓每一塊預算都對到「<strong>正確的那個人</strong>」。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Adriana — Ad Generation × Personalization Agent · BUILDING</span>
+            <span class="pg">19 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 20: adriana_demo (two_col) ══════════ -->
+
+<div class="slide bg-violet">
+    <div class="slide-content">
+        <div class="tag tag-violet">ADRIANA · LIVE DEMO</div>
+        <h2><span class="v">Adriana</span> — 你的 AI 廣告數據搭檔</h2>
+        <p class="sub">告別手動整理報表的時代。<strong>全中文自然提問</strong>，<strong>30 秒</strong>就能拿到 Meta 廣告成效、報表、與優化建議。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.8;">
+                <div class="illus-frame"><video src="img/adriana_demo.mov" style="object-fit: contain;" muted loop playsinline preload="metadata"></video>
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-violet">
+    <h4>Demo 看點</h4>
+    
+    <ul>
+        <li>💬 <strong>即時數據對話</strong> ── 問「這週哪組廣告 ROAS 最高？」直接回答</li><li>⚡ <strong>30 秒快速回覆</strong> ── 即時從 Meta 帳號提取，免等人工整理</li><li>📊 <strong>自動化報表</strong> ── 用問的就出摘要與圖表</li><li>🧠 <strong>素材優化建議</strong> ── 自動分析成效、給優化方向與替換建議</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-cyan">
+    <h4 class="c">為什麼這串重要</h4>
+    
+    <p>廣告主每天花<strong>大量時間在「整理報表」</strong>，<br>
+而真正的洞察都堵在 Excel 與儀表板之間 ──<br>
+Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
+壓縮到<strong>一句話的時間</strong>。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Adriana — Conversational Ad Intelligence</span>
+            <span class="pg">20 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 21: adriana_crm_capi (two_col) ══════════ -->
+
+<div class="slide bg-violet">
+    <div class="slide-content">
+        <div class="tag tag-violet">ADRIANA · CRM × CAPI 串接示範</div>
+        <h2>遊戲化互動 × <span class="v">AI CRM × Meta CAPI</span></h2>
+        <p class="sub">以<strong>互動式命理流程</strong>為例 ── 從一次廣告點擊，到生成個人化標籤、回傳事件、最後再行銷分眾，<strong>把第一方數據與廣告平台真正串起來</strong>。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.8;">
+                <div class="illus-frame"><img src="img/adriana_crm_capi_flow.png" alt="AI CRM × Meta CAPI 智慧轉換流程" style="object-fit: contain;">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-violet">
+    <h4>五步驟核心流程</h4>
+    
+    <ul>
+        <li><strong>1. 廣告入口</strong> ── 擷取 fbclid / utm / uuid</li><li><strong>2. 遊戲化填寫</strong> ── 透過互動遊戲蒐集第一方資料、建立自定義受眾</li><li><strong>3. AI 產生標籤</strong> ── 互動內容 → 個人化標籤</li><li><strong>4. 事件回傳</strong> ── Conversions API 送回 Meta</li><li><strong>5. 再行銷</strong> ── 自訂受眾 × 相似受眾 × 名單投放</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-cyan">
+    <h4 class="c">為什麼這個示範重要</h4>
+    
+    <p>Cookie 時代結束，<strong>第一方數據成為新黃金</strong>。<br>
+這套架構把<strong>騰雲 TCRM × TCDP × Meta CAPI</strong> 接成完整閉環 ──<br>
+<strong>互動式命理只是切角</strong>，任何遊戲化互動都能套用。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Adriana — AI CRM × Meta Conversions API</span>
+            <span class="pg">21 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 22: adriana_crm_demo (two_col) ══════════ -->
+
+<div class="slide bg-violet">
+    <div class="slide-content">
+        <div class="tag tag-violet">ADRIANA · CRM × CAPI LIVE DEMO</div>
+        <h2>AI CRM × Meta CAPI — <span class="v">實戰 Demo</span></h2>
+        <p class="sub">前一頁看流程圖；這一頁看實際運作 ──<br>從<strong>遊戲互動</strong> → <strong>個人化標籤</strong> → <strong>Conversions API 回傳</strong> → <strong>廣告分眾</strong>，一次跑完。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.8;">
+                <div class="illus-frame"><video src="img/adriana_crm_demo.mov" style="object-fit: contain;" muted loop playsinline preload="metadata"></video>
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-violet">
+    <h4>Demo 看點</h4>
+    
+    <ul>
+        <li><strong>遊戲化互動</strong> ── 使用者邊玩邊填資料</li><li><strong>AI 即時產出個人化結果與標籤</strong>（如星座 × 智慧運分數）</li><li><strong>事件透過 CAPI 回傳 Meta</strong>，<strong>自定義受眾自動成形</strong></li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-cyan">
+    <h4 class="c">為什麼這串重要</h4>
+    
+    <p>這就是「<strong>廣告投放 × 第一方數據</strong>」應該長的樣子 ──<br>
+<strong>一次互動 = 一筆乾淨的第一方資料 = Meta 的精準分眾種子</strong>。<br>
+不需要 cookie，數據主權回到企業手上。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Adriana — AI CRM × Meta CAPI Live</span>
+            <span class="pg">22 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 23: stacey (two_col) ══════════ -->
+
+<div class="slide bg-dark">
+    <div class="slide-content">
+        <div class="tag tag-green">AGENT 05 / 05</div>
+        <h2><span class="g">Stacey</span> — 把 Agent 變成團隊的 AI</h2>
+        <p class="sub">當你有五個 AI 員工，真正稀缺的，不是再多一個 Agent ── 是<strong>能指揮他們的那個</strong>。</p>
+
+        <div class="s-body">
+            <div class="s-col">
+                <div class="illus-frame"><img src="img/12_stacey.jpg" alt="Stacey orchestrator">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-green">
+    <h4>她做什麼</h4>
+    
+    <ul>
+        <li>把使用者的複合需求<strong>拆成子任務</strong></li><li>動態調度合適的 Agent 來執行</li><li>跨 Agent 結果整理 → 給人類一份完整答案</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box">
+    <h4>底層技術</h4>
+    
+    <ul>
+        <li><strong>OpenClaw Orchestrator + MCP Host</strong></li><li><strong>A2A Protocol</strong> &nbsp; Agent 之間像同事一樣交辦</li><li><strong>動態模型路由</strong> &nbsp; 根據複雜度切換模型與工具</li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">她讓 AI 真正成為「團隊」</h4>
+    
+    <p>單一 Agent 是工具；多個 Agent 是團隊。<br>
+Stacey 讓多個 Agent 第一次<strong>像一間公司一樣</strong>運作 ──<br>
+這就是 AI OS 真正的力量。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Stacey — Orchestrator Agent · BUILDING</span>
+            <span class="pg">23 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 24: stacey_demo (two_col) ══════════ -->
+
+<div class="slide bg-dark">
+    <div class="slide-content">
+        <div class="tag tag-green">STACEY · LIVE DEMO</div>
+        <h2><span class="g">Stacey</span> — 從一句話到<span class="g">完整分析報告</span></h2>
+        <p class="sub">用真實案例看 Stacey 怎麼接到指令、<strong>派 Pandora 跑 SQL</strong>、產出趨勢圖與三大主題 ──<br>整段流程 <strong>幾秒鐘</strong> 一氣呵成。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.8;">
+                <div class="illus-frame"><video src="img/stacey_demo.mp4" style="object-fit: contain;" muted loop playsinline preload="metadata"></video>
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-green">
+    <h4>Demo 看點</h4>
+    
+    <ul>
+        <li>使用者輸入：「<strong>分析 Dr.Wu 近兩週熱門話題</strong>」</li><li>Stacey 自動<strong>派 Pandora</strong> 接手，跑 SQL 撈過去 <strong>14 天 92 篇文章 / 6,000+ 字級聲量</strong></li><li>提煉<strong>三大熱門主題</strong>：品牌背景爭議 / 杏仁酸醫美核心 / 醫美 vs 開架選擇拉鋸</li><li>產出<strong>趨勢圖表 + 摘要</strong> ── 撈數據、清洗、做圖、寫重點，<strong>幾秒完成</strong></li>
+    </ul>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">為什麼這串重要</h4>
+    
+    <p>過去這份工作：分析師花<strong>幾小時</strong>跑 SQL、清資料、做圖、寫摘要。<br>
+現在：使用者<strong>一句話 → 完整分析報告</strong>。<br>
+Stacey + Pandora 把「分析」從一份<strong>工作</strong>，變成一段<strong>對話</strong>。</p>
+    
+</div>
+
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Stacey × Pandora — Dr.Wu Sentiment Analysis Live</span>
+            <span class="pg">24 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 25: ecosystem (ecosystem) ══════════ -->
+
+<div class="slide bg-dark">
+    <div class="slide-content">
+        <div class="tag tag-cyan">CHAPTER 07 · 一個開放的生態</div>
+        <h2>AI OS 是<span class="c">開放</span>的 — 歡迎所有 AI 新創<span class="v">一起進來</span></h2>
+        <p class="sub">The Pocket Company 是 AI OS 上的<strong>第一個</strong>應用節點。我們的目標，是接下來還有<strong>十個、一百個</strong>。</p>
+
+        <div class="s-body">
+            <div class="s-col" style="flex: 1.1;">
+                <div class="illus-frame"><img src="img/13_ecosystem.jpg" alt="Open Ecosystem">
+</div>
+            </div>
+            <div class="s-col">
+                
+                
+<div class="box b-cyan">
+    <h4>三個開放標準，三道門</h4>
+    
+    <ul>
+        <li><strong>A2A Protocol</strong> &nbsp; 你的 Agent 可以跟我們的 Agent 對話</li><li><strong>MCP / WebMCP</strong> &nbsp; 你的工具可以被任何 Agent 呼叫</li><li><strong>OpenClaw 開源框架</strong> &nbsp; claw3d.ai，直接拿去做你的 Agent</li>
+    </ul>
+    
+</div>
+
+                
+
+                <div class="eco-list">
+                    
+                    <div class="eco-pill">
+                        <span class="eco-dot d1"></span>
+                        <div>
+                            <h6>數據 / 分析新創</h6>
+                            <p>把專業數據能力接成 AI OS 的 Skill</p>
+                        </div>
+                    </div>
+                    
+                    <div class="eco-pill">
+                        <span class="eco-dot d2"></span>
+                        <div>
+                            <h6>生成式內容新創</h6>
+                            <p>把垂直生成模型變成可調用 Agent</p>
+                        </div>
+                    </div>
+                    
+                    <div class="eco-pill">
+                        <span class="eco-dot d3"></span>
+                        <div>
+                            <h6>產業垂直 SaaS</h6>
+                            <p>用 A2A 對接，成為 AI OS 的延伸節點</p>
+                        </div>
+                    </div>
+                    
+                    <div class="eco-pill">
+                        <span class="eco-dot d4"></span>
+                        <div>
+                            <h6>場域 / IoT 新創</h6>
+                            <p>透過 Runtime 把感知接進來</p>
+                        </div>
+                    </div>
+                    
+                    <div class="eco-pill">
+                        <span class="eco-dot d5"></span>
+                        <div>
+                            <h6>客服 / 業務 Agent</h6>
+                            <p>從 Stacey 接管多 Agent 協作</p>
+                        </div>
+                    </div>
+                    
+                    <div class="eco-pill">
+                        <span class="eco-dot d6"></span>
+                        <div>
+                            <h6>學術 / 研究團隊</h6>
+                            <p>把研究成果直接放上真實商業場景驗證</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                
+                <div class="box b-orange" style="margin-top: 1vh;">
+                    <p style="font-size: 1.7vh; text-align: center;"><strong class="o">我們帶來的</strong>：騰雲二十年的<strong>人、場、貨</strong>真實商業場景。<br>
+<strong class="o">你帶來的</strong>：你最擅長的那一塊 Agent 能力。一起把它<strong>跑出數據、跑出價值</strong>。</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>The Pocket Company is the first node — yours can be the next</span>
+            <span class="pg">25 / 26</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 26: closing (closing) ══════════ -->
+
+<div class="slide closing">
+    <div class="bg-image" style="background-image: url('img/14_closing.jpg');"></div>
+
+    <div class="slide-content">
+        <div class="closing-quote">
+            <span class="o">Runtime</span> 讓 AI 運行空間，<br>
+<span class="c">AI OS</span> 讓企業管理 AI，<br>
+<span class="v">AI Agents</span> 真正開始為企業工作。
+        </div>
+        <p class="lede" style="max-width: 70%; font-size: 2.2vh; line-height: 1.7; color: var(--dim); margin-bottom: 3vh;">
+            這是肖準加入騰雲後的第一個答案 ──<br>
+<strong style="color: var(--text);">The Pocket Company</strong>，
+建構在 Runtime 之上的 AI OS，<br>
+以及第一批已經開始上工的 AI 工作者。
+        </p>
+        <div class="closing-sig">THE POCKET COMPANY × TURNCLOUD — 2026 KEYNOTE</div>
+    </div>
+</div>
+
+</div>
+
+<!-- ─── Nav UI ─── -->
+<button class="arrow arr-l" onclick="prev()">‹</button>
+<button class="arrow arr-r" onclick="next()">›</button>
+<div class="dots" id="dots"></div>
+<div class="brand-corner"><strong>TPC × TURNCLOUD</strong> · KEYNOTE · 2026</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const dotsEl = document.getElementById('dots');
+let cur = 0;
+
+slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'dot' + (i === 0 ? ' on' : '');
+    d.onclick = () => go(i);
+    dotsEl.appendChild(d);
+});
+
+/* ─── Video play / pause on slide change ─── */
+function resetVideos(slide) {
+    slide.querySelectorAll('video').forEach(v => {
+        try { v.pause(); v.currentTime = 0; } catch (e) {}
+    });
+}
+function playVideos(slide) {
+    slide.querySelectorAll('video').forEach(v => {
+        try { v.currentTime = 0; const p = v.play(); if (p && p.catch) p.catch(() => {}); } catch (e) {}
+    });
+}
+if (slides[0]) playVideos(slides[0]);
+
+function go(n) {
+    resetVideos(slides[cur]);
+    slides[cur].classList.remove('active');
+    dotsEl.children[cur].classList.remove('on');
+    cur = Math.max(0, Math.min(n, slides.length - 1));
+    slides[cur].classList.add('active');
+    dotsEl.children[cur].classList.add('on');
+    playVideos(slides[cur]);
+}
+function next() { go(cur + 1); }
+function prev() { go(cur - 1); }
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); next(); }
+    if (e.key === 'ArrowLeft'  || e.key === 'PageUp')                    { e.preventDefault(); prev(); }
+    if (e.key === 'Home')                                                { go(0); }
+    if (e.key === 'End')                                                 { go(slides.length - 1); }
+});
+</script>
+</body>
+</html>
