@@ -135,6 +135,37 @@ body {
 .tag-green  { background: var(--green-bg);  color: var(--green); }
 .tag-pink   { background: var(--pink-bg);   color: var(--pink); }
 
+/* "全新發布" launch tag — emphasised with subtle pulse + glow ring */
+.tag.tag-launch {
+    position: relative;
+    padding: 0.7cqh 2cqh 0.7cqh 3cqh;
+    font-size: 1.45cqh;
+    letter-spacing: 3.5px;
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.45);
+    animation: launch-pulse 2.2s ease-in-out infinite;
+}
+.tag.tag-launch::before {
+    content: '';
+    position: absolute;
+    left: 1.2cqh;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.85cqh;
+    height: 0.85cqh;
+    border-radius: 50%;
+    background: #f59e0b;
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+    animation: launch-dot 1.6s ease-in-out infinite;
+}
+@keyframes launch-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.35); }
+    50%      { box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); }
+}
+@keyframes launch-dot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
+    50%      { box-shadow: 0 0 0 5px rgba(245, 158, 11, 0); }
+}
+
 /* ─── Typography ─── */
 h1 { font-size: 6.4cqh; font-weight: 900; line-height: 1.2; letter-spacing: -0.5px; color: var(--text); }
 h2 { font-size: 4.2cqh; font-weight: 900; line-height: 1.25; letter-spacing: -0.3px; margin-bottom: 0.6cqh; color: var(--text); }
@@ -624,7 +655,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 
 <!-- ══════════ SLIDE 02: merger (two_col) ══════════ -->
 
-<div class="slide bg-dark">
+<div class="slide bg-dark" data-slide="merger">
     <div class="slide-content">
         <div class="tag tag-cyan">CHAPTER 01 · 一段併購故事</div>
         <h2>肖準 + 騰雲 = <span class="c">The Pocket Company</span></h2>
@@ -681,7 +712,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 
 <!-- ══════════ SLIDE 03: runtime (two_col) ══════════ -->
 
-<div class="slide bg-warm">
+<div class="slide bg-warm" data-slide="runtime">
     <div class="slide-content">
         <div class="tag tag-orange">CHAPTER 02 · 承接董事長 Keynote</div>
         <h2>董事長剛剛談到 — <span class="o">Physical Space Runtime</span></h2>
@@ -736,7 +767,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 
 <!-- ══════════ SLIDE 04: problem (two_col) ══════════ -->
 
-<div class="slide bg-dark">
+<div class="slide bg-dark" data-slide="problem">
     <div class="slide-content">
         <div class="tag tag-pink">CHAPTER 03 · 企業真正的問題</div>
         <h2>企業<span class="p">缺的不是 AI</span> — 缺的是「<span class="c">系統</span>」</h2>
@@ -794,7 +825,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 
 <!-- ══════════ SLIDE 05: aios_concept (two_col) ══════════ -->
 
-<div class="slide bg-cyan">
+<div class="slide bg-cyan" data-slide="aios_concept">
     <div class="slide-content">
         <div class="tag tag-cyan">FROM RUNTIME TO AI OS · 概念定義</div>
         <h2>什麼是 <span class="c">AI OS</span>？— 給 AI Agent 跑的作業系統</h2>
@@ -850,7 +881,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 
 <!-- ══════════ SLIDE 06: aios (two_col) ══════════ -->
 
-<div class="slide bg-dark">
+<div class="slide bg-dark" data-slide="aios">
     <div class="slide-content">
         <div class="tag tag-cyan">CHAPTER 04 · 我們的解答</div>
         <h2>建構在 Runtime 之上的 <span class="c">Enterprise AI OS</span></h2>
@@ -1010,7 +1041,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 
 <!-- ══════════ SLIDE 09: pandora (two_col) ══════════ -->
 
-<div class="slide bg-dark">
+<div class="slide bg-dark" data-slide="pandora">
     <div class="slide-content">
         <div class="tag tag-cyan">AGENT 01 / 05</div>
         <h2><span class="c">Pandora</span> — 看見市場的 AI</h2>
@@ -1067,7 +1098,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 
 <!-- ══════════ SLIDE 10: pandora_demo (two_col) ══════════ -->
 
-<div class="slide bg-dark">
+<div class="slide bg-dark" data-slide="pandora_demo">
     <div class="slide-content">
         <div class="tag tag-cyan">PANDORA · LIVE DEMO</div>
         <h2><span class="c">Pandora</span> — 自動產出<span class="c">洞察報告</span></h2>
@@ -1115,7 +1146,7 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
 
 <!-- ══════════ SLIDE 11: moana (two_col) ══════════ -->
 
-<div class="slide bg-warm">
+<div class="slide bg-warm" data-slide="moana">
     <div class="slide-content">
         <div class="tag tag-orange">AGENT 02 / 05</div>
         <h2><span class="o">Moana</span> — 從 Social Listening 升級成 <span class="o">Culture Listening</span></h2>
@@ -1172,7 +1203,7 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
 
 <!-- ══════════ SLIDE 12: moana_culture_flow (two_col) ══════════ -->
 
-<div class="slide bg-warm">
+<div class="slide bg-warm" data-slide="moana_culture_flow">
     <div class="slide-content">
         <div class="tag tag-orange">MOANA · 多維訊號整合架構</div>
         <h2>Culture Listening — <span class="o">整合洞察</span></h2>
@@ -1228,7 +1259,7 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
 
 <!-- ══════════ SLIDE 13: moana_culture_demo (two_col) ══════════ -->
 
-<div class="slide bg-warm">
+<div class="slide bg-warm" data-slide="moana_culture_demo">
     <div class="slide-content">
         <div class="tag tag-orange">MOANA · CASE STUDY 01 · PART 1</div>
         <h2><span class="o">猛健樂</span> — Culture Listening 實戰</h2>
@@ -1276,7 +1307,7 @@ Moana 的 Culture Listening 不只洞察<strong>產品本身</strong>，<br>
 
 <!-- ══════════ SLIDE 14: moana_case_02 (two_col) ══════════ -->
 
-<div class="slide bg-warm">
+<div class="slide bg-warm" data-slide="moana_case_02">
     <div class="slide-content">
         <div class="tag tag-orange">MOANA · CASE STUDY 01 · PART 2</div>
         <h2><span class="o">猛健樂</span> — 從 Brief 到 <span class="o">文章產出</span></h2>
@@ -1323,7 +1354,7 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
 
 <!-- ══════════ SLIDE 15: banana (two_col) ══════════ -->
 
-<div class="slide bg-warm">
+<div class="slide bg-warm" data-slide="banana">
     <div class="slide-content">
         <div class="tag tag-orange">AGENT 03 / 05</div>
         <h2><span class="o">Banana</span> — 視覺即時生成的 AI</h2>
@@ -1380,7 +1411,7 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
 
 <!-- ══════════ SLIDE 16: banana_split_system (two_col) ══════════ -->
 
-<div class="slide bg-warm">
+<div class="slide bg-warm" data-slide="banana_split_system">
     <div class="slide-content">
         <div class="tag tag-orange">BANANA · 系統架構</div>
         <h2><span class="o">Banana Split</span> — 把素材變成可用內容的 <span class="o">AI 創意流程</span></h2>
@@ -1437,7 +1468,7 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
 
 <!-- ══════════ SLIDE 17: banana_split_demo (two_col) ══════════ -->
 
-<div class="slide bg-warm">
+<div class="slide bg-warm" data-slide="banana_split_demo">
     <div class="slide-content">
         <div class="tag tag-orange">BANANA · LIVE DEMO</div>
         <h2><span class="o">Banana Split</span> — 視覺生成實戰</h2>
@@ -1484,11 +1515,11 @@ Banana 重新定義速度：<strong>一分鐘出三十版</strong>，<br>
 
 <!-- ══════════ SLIDE 18: banana_video_edit (two_col) ══════════ -->
 
-<div class="slide bg-warm">
+<div class="slide bg-warm" data-slide="banana_video_edit">
     <div class="slide-content">
-        <div class="tag tag-orange">BANANA · 短影音剪輯 LIVE DEMO</div>
-        <h2><span class="o">Banana</span> — 從一句話到一支<span class="o">短影音</span></h2>
-        <p class="sub">使用者只說「<strong>剪 30 秒，重點是挺立鈣下單攻略</strong>」── Banana 自己<strong>企劃 → 剪片 → 包裝 → 上字</strong>，幾秒產出可投放成品。</p>
+        <div class="tag tag-orange tag-launch">BANANA · 全新發布 · WORLD-FIRST AGENTIC EDITING</div>
+        <h2><span class="o">全新發布</span> · 世界第一 <span class="o">Agentic Editing</span></h2>
+        <p class="sub">不是「AI 輔助剪片」，是把<strong>整條剪輯 pipeline</strong>交給 Agent。<br>使用者只說一句話 ── Banana 自己<strong>企劃 → 切片 → 包裝 → 上字 → 出檔</strong>，幾秒產出可直接投放成品。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.8;">
@@ -1499,10 +1530,10 @@ Banana 重新定義速度：<strong>一分鐘出三十版</strong>，<br>
                 
                 
 <div class="box b-orange">
-    <h4>Demo 看點</h4>
+    <h4>Demo：「剪 30 秒，挺立鈣下單攻略」</h4>
     
     <ul>
-        <li>使用者輸入：「<strong>剪 30 秒，重點放在挺立鈣特色與下單攻略</strong>」</li><li><strong>企劃與腳本</strong> ── AI 規劃封面、段落分配、吸睛文字特效</li><li><strong>精準切片</strong> ── 自動定位「挺立鈣特色 / 價格優惠」時間軸，重組成 33 秒</li><li><strong>視覺包裝與上字</strong> ── 加品牌邊框 + 自動燒錄繁中字幕，可直接下載投放</li>
+        <li><strong>企劃與腳本</strong> ── AI 規劃封面、段落分配、吸睛文字特效</li><li><strong>精準切片</strong> ── 自動定位「挺立鈣特色 / 價格優惠」時間軸，重組成 33 秒</li><li><strong>視覺包裝與上字</strong> ── 加品牌邊框 + 自動燒錄繁中字幕，可直接下載投放</li>
     </ul>
     
 </div>
@@ -1510,12 +1541,12 @@ Banana 重新定義速度：<strong>一分鐘出三十版</strong>，<br>
                 
                 
 <div class="box b-violet">
-    <h4 class="v">為什麼這串重要</h4>
+    <h4 class="v">為什麼這是<span class="v">世界第一</span></h4>
     
-    <p>短影音是<strong>社群與廣告的核心媒介</strong>，但<strong>剪輯門檻最高</strong>：<br>
-企劃、剪片、上字、出檔 ── 每一步都是專業工作。<br>
-Banana 把整串壓縮到<strong>一句話 + 幾秒</strong>，<br>
-社群素材<strong>從「生產線」變成「水龍頭」</strong>。</p>
+    <p>市面上 AI 剪輯工具還停在<strong>「輔助剪輯」</strong> ── 自動切片、AI 字幕、配 BGM。<br>
+Banana 的 <strong>Agentic Editing</strong> 把<strong>整條剪輯 pipeline 交給 Agent</strong>，<br>
+使用者只剩<strong>一句話</strong> ── 真正的「下指令 → 拿成品」。<br>
+短影音生產從「<strong>人 + AI</strong>」進化到「<strong>純 Agent</strong>」的關鍵一步。</p>
     
 </div>
 
@@ -1524,7 +1555,7 @@ Banana 把整串壓縮到<strong>一句話 + 幾秒</strong>，<br>
         </div>
 
         <div class="meta">
-            <span>Banana — Auto Video Editing Live Demo</span>
+            <span>Banana — World-First Agentic Video Editing · NEW LAUNCH</span>
             <span class="pg">18 / 26</span>
         </div>
     </div>
@@ -1532,7 +1563,7 @@ Banana 把整串壓縮到<strong>一句話 + 幾秒</strong>，<br>
 
 <!-- ══════════ SLIDE 19: adriana (two_col) ══════════ -->
 
-<div class="slide bg-violet">
+<div class="slide bg-violet" data-slide="adriana">
     <div class="slide-content">
         <div class="tag tag-violet">AGENT 04 / 05</div>
         <h2><span class="v">Adriana</span> — 從廣告分析升級到 <span class="v">千人千面</span></h2>
@@ -1590,7 +1621,7 @@ Banana 把整串壓縮到<strong>一句話 + 幾秒</strong>，<br>
 
 <!-- ══════════ SLIDE 20: adriana_demo (two_col) ══════════ -->
 
-<div class="slide bg-violet">
+<div class="slide bg-violet" data-slide="adriana_demo">
     <div class="slide-content">
         <div class="tag tag-violet">ADRIANA · LIVE DEMO</div>
         <h2><span class="v">Adriana</span> — 你的 AI 廣告數據搭檔</h2>
@@ -1638,7 +1669,7 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
 
 <!-- ══════════ SLIDE 21: adriana_crm_capi (two_col) ══════════ -->
 
-<div class="slide bg-violet">
+<div class="slide bg-violet" data-slide="adriana_crm_capi">
     <div class="slide-content">
         <div class="tag tag-violet">ADRIANA · CRM × CAPI 串接示範</div>
         <h2>遊戲化互動 × <span class="v">AI CRM × Meta CAPI</span></h2>
@@ -1685,7 +1716,7 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
 
 <!-- ══════════ SLIDE 22: adriana_crm_demo (two_col) ══════════ -->
 
-<div class="slide bg-violet">
+<div class="slide bg-violet" data-slide="adriana_crm_demo">
     <div class="slide-content">
         <div class="tag tag-violet">ADRIANA · CRM × CAPI LIVE DEMO</div>
         <h2>AI CRM × Meta CAPI — <span class="v">實戰 Demo</span></h2>
@@ -1732,7 +1763,7 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
 
 <!-- ══════════ SLIDE 23: stacey (two_col) ══════════ -->
 
-<div class="slide bg-dark">
+<div class="slide bg-dark" data-slide="stacey">
     <div class="slide-content">
         <div class="tag tag-green">AGENT 05 / 05</div>
         <h2><span class="g">Stacey</span> — 把 Agent 變成團隊的 AI</h2>
@@ -1790,7 +1821,7 @@ Stacey 讓多個 Agent 第一次<strong>像一間公司一樣</strong>運作 ─
 
 <!-- ══════════ SLIDE 24: stacey_demo (two_col) ══════════ -->
 
-<div class="slide bg-dark">
+<div class="slide bg-dark" data-slide="stacey_demo">
     <div class="slide-content">
         <div class="tag tag-green">STACEY · LIVE DEMO</div>
         <h2><span class="g">Stacey</span> — 從一句話到<span class="g">完整分析報告</span></h2>
