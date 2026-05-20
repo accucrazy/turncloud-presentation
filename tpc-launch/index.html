@@ -347,6 +347,138 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 .cover .signature .sig-block:last-child { border-right: none; padding-right: 0; }
 .cover .signature .sig-block strong { display: block; color: var(--text); font-size: 1.35cqh; letter-spacing: 1px; font-weight: 700; margin-bottom: 0.4cqh; }
 
+/* ─── AI OS architecture (Agent Orchestrated Space) ─── */
+.aios-arch {
+    background: linear-gradient(180deg, #ffffff 0%, var(--cyan-bg) 100%);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 1.8cqh 2.2cqh;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1cqh;
+    height: 100%;
+    min-height: 0;
+}
+.aios-top {
+    background: white;
+    border: 2px solid var(--cyan);
+    border-radius: 14px;
+    padding: 1.4cqh 1.6cqh;
+    text-align: center;
+    box-shadow: 0 8px 28px rgba(6, 182, 212, 0.10);
+}
+.aios-top-title {
+    font-size: 2.1cqh;
+    font-weight: 900;
+    color: var(--cyan);
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+}
+.aios-top-sub {
+    font-size: 1.2cqh;
+    color: var(--dim);
+    margin-top: 0.4cqh;
+    margin-bottom: 0.9cqh;
+    line-height: 1.4;
+}
+.aios-top-sub strong { color: var(--text); font-weight: 700; }
+.aios-components {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45cqh;
+    justify-content: center;
+}
+.aios-components span {
+    background: var(--cyan-bg);
+    color: var(--cyan);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1cqh;
+    padding: 0.3cqh 0.9cqh;
+    border-radius: 100px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.aios-arrows {
+    text-align: center;
+    font-size: 1.25cqh;
+    color: var(--dim-2);
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 0.1cqh 0;
+}
+.aios-spaces {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1cqh;
+    flex: 1;
+    min-height: 0;
+}
+.aios-space {
+    background: white;
+    border-radius: 12px;
+    padding: 1.2cqh 1.5cqh;
+    border-top: 3px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55cqh;
+    box-shadow: var(--shadow-sm);
+    min-height: 0;
+}
+.aios-space.space-physical { border-top-color: var(--orange); }
+.aios-space.space-virtual  { border-top-color: var(--violet); }
+.space-head { padding-bottom: 0.55cqh; border-bottom: 1px solid var(--border-soft); }
+.space-label { font-size: 1.75cqh; font-weight: 800; line-height: 1.2; }
+.aios-space.space-physical .space-label { color: #b45309; }
+.aios-space.space-virtual  .space-label { color: var(--violet); }
+.space-en {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1cqh;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--dim-2);
+    margin-top: 0.15cqh;
+}
+.aios-space ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2cqh;
+}
+.aios-space li {
+    font-size: 1.4cqh;
+    color: var(--dim);
+    line-height: 1.4;
+    padding-left: 1.1cqh;
+    position: relative;
+}
+.aios-space li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    top: -0.15cqh;
+    font-weight: 900;
+    font-size: 1.8cqh;
+    line-height: 1;
+}
+.aios-space.space-physical li::before { color: var(--orange); }
+.aios-space.space-virtual  li::before { color: var(--violet); }
+.space-via {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.05cqh;
+    color: var(--dim-2);
+    border-top: 1px dashed var(--border);
+    padding-top: 0.55cqh;
+    letter-spacing: 0.8px;
+}
+.aios-space.space-physical .space-via strong { color: #b45309; }
+.aios-space.space-virtual  .space-via strong { color: var(--violet); }
+
 /* ─── Layer diagram ─── */
 .layer-stack { display: flex; flex-direction: column; gap: 0.8cqh; padding: 0.4cqh 0; }
 .layer-row {
@@ -823,38 +955,69 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
     </div>
 </div>
 
-<!-- ══════════ SLIDE 05: aios_concept (two_col) ══════════ -->
+<!-- ══════════ SLIDE 05: aios_concept (aios_split) ══════════ -->
 
 <div class="slide bg-cyan" data-slide="aios_concept">
     <div class="slide-content">
         <div class="tag tag-cyan">FROM RUNTIME TO AI OS · 概念定義</div>
-        <h2>什麼是 <span class="c">AI OS</span>？— <span class="c">AI Orchestrated Space</span></h2>
-        <p class="sub"><strong>AI OS = AI Operating System，也是 AI Orchestrated Space</strong>。<br>像 <strong>iOS 是 iPhone 的作業系統</strong>，<strong>AI OS</strong> 則是 <strong>AI Agent 被編排、協作、運行的工作空間</strong>。</p>
+        <h2>什麼是 <span class="c">AI OS</span>？— <span class="c">Agent Orchestrated Space</span></h2>
+        <p class="sub"><strong>AI OS = AI Operating System，更是 Agent Orchestrated Space</strong>。<br>「空間」可以是<strong>實體</strong>（店、廠、人場貨），也可以是<strong>虛擬</strong>（CRM、廣告、數據）── 同一套 AI OS 把 Agent <strong>編排到任何空間裡執行任務</strong>。</p>
 
         <div class="s-body">
-            <div class="s-col" style="flex: 1.8;">
-                <div class="illus-frame"><img src="img/04_aios_concept.png" alt="What is AI OS" style="object-fit: contain;">
-</div>
+            <div class="s-col" style="flex: 1.55;">
+                <div class="aios-arch">
+                    <div class="aios-top">
+                        <div class="aios-top-title">AI OS · <span class="c">Agent Orchestrated Space</span></div>
+                        <div class="aios-top-sub">AI Operating System · 應用層 + Harness + Database</div>
+                        <div class="aios-components">
+                            
+                            <span>Orchestrator</span>
+                            
+                            <span>A2A</span>
+                            
+                            <span>MCP</span>
+                            
+                            <span>Memory</span>
+                            
+                            <span>Policy</span>
+                            
+                            <span>Governance</span>
+                            
+                        </div>
+                    </div>
+                    <div class="aios-arrows">↓&nbsp;&nbsp;ORCHESTRATES AGENTS ACROSS&nbsp;&nbsp;↓</div>
+                    <div class="aios-spaces">
+                        <div class="aios-space space-physical">
+                            <div class="space-head">
+                                <div class="space-label">實體空間</div>
+                                <div class="space-en">PHYSICAL SPACE</div>
+                            </div>
+                            <ul>
+                                <li>零售店 / POS / HOYABOX</li><li>工廠 · 商場 · 飯店</li><li>IoT · 感測器 · 攝影機</li><li>真實人、場、貨</li>
+                            </ul>
+                            <div class="space-via">via <strong>Physical Space Runtime</strong></div>
+                        </div>
+                        <div class="aios-space space-virtual">
+                            <div class="space-head">
+                                <div class="space-label">虛擬空間</div>
+                                <div class="space-en">VIRTUAL SPACE</div>
+                            </div>
+                            <ul>
+                                <li>TCRM · TCDP · CRM</li><li>MDP · BigQuery · 數據平台</li><li>Meta / Google / TikTok Ads</li><li>SaaS · API · 文件系統</li>
+                            </ul>
+                            <div class="space-via">via <strong>Connectors / MCP</strong></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="s-col">
                 
                 
 <div class="box b-cyan">
-    <h4>三大組成</h4>
+    <h4>AI OS 的<span class="c">雙重身份</span></h4>
     
     <ul>
-        <li><strong>應用層 / Experience</strong> &nbsp; 用戶實際看到、使用的 AI 服務介面</li><li><strong>Harness 核心引擎</strong> &nbsp; Agent · Skill · Tool · A2A 的調度與協作</li><li><strong>Database / MDP</strong> &nbsp; 統一接入<strong>結構化 + 非結構化</strong>資料</li>
-    </ul>
-    
-</div>
-
-                
-                
-<div class="box b-violet">
-    <h4 class="v">三大價值</h4>
-    
-    <ul>
-        <li>不用<strong>每次從零打造</strong></li><li>新場景可<strong>快速重組</strong></li><li>AI 不只回答，更能<strong>行動與協作</strong></li>
+        <li><strong>AI Operating System</strong> ── 像 iOS / Android，給 <strong>AI Agent 運行</strong>的作業系統（應用層 + Harness + Database）</li><li><strong>Agent Orchestrated Space</strong> ── 由<strong>多個 Agent 協作</strong>、被編排與治理的工作空間</li><li>兩個身份是<strong>同一件事的不同側面</strong> ── 技術視角是 OS，協作視角是 Space</li>
     </ul>
     
 </div>
@@ -862,9 +1025,21 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
                 
                 
 <div class="box b-orange">
-    <h4 class="o">從工具，升級為基礎建設</h4>
+    <h4 class="o">同一套 AI OS，<span class="o">編排兩種空間</span></h4>
     
-    <p>擁有一套<strong>長期積累、跨場景重用</strong>的作業系統。</p>
+    <p><strong>實體空間</strong>（via Runtime）── 把 Agent 接進真實的人、場、貨；<br>
+<strong>虛擬空間</strong>（via Connectors / MCP）── 把 Agent 接進 CRM、廣告、數據與 SaaS。<br>
+Agent 不再綁在某一種環境 ── <strong>任何任務都能跨空間執行</strong>。</p>
+    
+</div>
+
+                
+                
+<div class="box b-violet">
+    <h4 class="v">為什麼這個定義<span class="v">重要</span></h4>
+    
+    <p>AI 從「<strong>一個工具</strong>」進化成「<strong>一個會工作的空間</strong>」。<br>
+企業不是買一支模型，而是<strong>擁有一個會自己跑、會被編排的工作系統</strong>。</p>
     
 </div>
 
@@ -873,7 +1048,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
         </div>
 
         <div class="meta">
-            <span>AI OS · AI Orchestrated Space = 應用層 + Harness + Database</span>
+            <span>AI OS · Agent Orchestrated Space — 跨實體與虛擬的編排層</span>
             <span class="pg">05 / 26</span>
         </div>
     </div>
@@ -885,7 +1060,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
     <div class="slide-content">
         <div class="tag tag-cyan">CHAPTER 04 · 我們的解答</div>
         <h2>建構在 Runtime 之上的 <span class="c">Enterprise AI OS</span></h2>
-        <p class="sub">不是聊天機器人，不是 Copilot。是讓企業真正能<strong>擁有並編排 AI 員工</strong>的 <strong>AI Orchestrated Space</strong>。</p>
+        <p class="sub">不是聊天機器人，不是 Copilot。是讓企業真正能<strong>擁有並編排 AI 員工</strong>的 <strong>Agent Orchestrated Space</strong>。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.1;">
@@ -920,7 +1095,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
         </div>
 
         <div class="meta">
-            <span>Enterprise AI OS · AI Orchestrated Space — 企業擁有並指揮 AI 的空間</span>
+            <span>Enterprise AI OS · Agent Orchestrated Space — 企業擁有並指揮 AI 的空間</span>
             <span class="pg">06 / 26</span>
         </div>
     </div>
@@ -954,9 +1129,9 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
                     <div class="layer-row l-aios">
                         <div>
                             <div class="layer-label">LAYER 02</div>
-                            <div class="layer-name c">Enterprise AI OS · AI Orchestrated Space</div>
+                            <div class="layer-name c">Enterprise AI OS · Agent Orchestrated Space</div>
                         </div>
-                        <div class="layer-desc">讓企業能<strong>編排、治理</strong> AI 與資料、流程、記憶、決策的<strong>空間</strong>。<br>由 <strong>The Pocket Company</strong> 建構在 Runtime 之上。</div>
+                        <div class="layer-desc">讓企業能<strong>編排、治理</strong> AI Agent 與資料、流程、記憶、決策的<strong>空間</strong> ── 可以是<strong>實體</strong>（店、廠），也可以是<strong>虛擬</strong>（CRM、數據、廣告）。由 <strong>The Pocket Company</strong> 建構在 Runtime 之上。</div>
                     </div>
                     <div class="layer-conn">↑</div>
                     
