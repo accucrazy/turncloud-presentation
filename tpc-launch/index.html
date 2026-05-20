@@ -120,13 +120,13 @@ body {
 /* ─── Tag / chip ─── */
 .tag {
     display: inline-block;
-    padding: 0.55cqh 1.6cqh;
+    padding: 0.7cqh 1.9cqh;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1.3cqh;
+    font-size: 1.5cqh;
     font-weight: 700;
     letter-spacing: 3px;
     border-radius: 100px;
-    margin-bottom: 1.3cqh;
+    margin-bottom: 1.6cqh;
     width: fit-content;
 }
 .tag-cyan   { background: var(--cyan-bg);   color: var(--cyan); }
@@ -168,8 +168,8 @@ body {
 
 /* ─── Typography ─── */
 h1 { font-size: 6.4cqh; font-weight: 900; line-height: 1.2; letter-spacing: -0.5px; color: var(--text); }
-h2 { font-size: 4.2cqh; font-weight: 900; line-height: 1.25; letter-spacing: -0.3px; margin-bottom: 0.6cqh; color: var(--text); }
-h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
+h2 { font-size: 4.8cqh; font-weight: 900; line-height: 1.2; letter-spacing: -0.3px; margin-bottom: 0.9cqh; color: var(--text); }
+h3 { font-size: 2.8cqh; font-weight: 700; color: var(--text); }
 
 .c   { color: var(--cyan); }
 .v   { color: var(--violet); }
@@ -177,7 +177,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 .g   { color: var(--green); }
 .p   { color: var(--pink); }
 
-.sub  { font-size: 2cqh; color: var(--dim); margin-bottom: 1cqh; line-height: 1.55; }
+.sub  { font-size: 2.35cqh; color: var(--dim); margin-bottom: 1.6cqh; line-height: 1.55; }
 .sub strong { color: var(--text); font-weight: 700; }
 
 .meta {
@@ -186,9 +186,9 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid var(--border-soft);
-    padding-top: 1.4cqh;
+    padding-top: 1.5cqh;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1.25cqh;
+    font-size: 1.45cqh;
     color: var(--dark);
     letter-spacing: 1px;
 }
@@ -196,8 +196,8 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 .meta .pg { color: var(--cyan); font-weight: 700; }
 
 /* ─── Two column body ─── */
-.s-body { flex: 1; display: flex; gap: 2.5cqh; min-height: 0; overflow: hidden; }
-.s-col  { flex: 1; display: flex; flex-direction: column; gap: 1.1cqh; min-height: 0; }
+.s-body { flex: 1; display: flex; gap: 3cqh; min-height: 0; overflow: hidden; }
+.s-col  { flex: 1; display: flex; flex-direction: column; gap: 1.5cqh; min-height: 0; }
 
 .illus-frame {
     flex: 1;
@@ -218,8 +218,8 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 .box {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.6cqh 2cqh;
+    border-radius: 14px;
+    padding: 2cqh 2.4cqh;
     position: relative;
     box-shadow: var(--shadow-sm);
 }
@@ -234,20 +234,20 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 .box.b-green  { border-top-color: var(--green); }
 .box.b-pink   { border-top-color: var(--pink); }
 
-.box h4 { font-size: 2cqh; font-weight: 700; margin-bottom: 0.6cqh; color: var(--text); }
+.box h4 { font-size: 2.4cqh; font-weight: 700; margin-bottom: 0.9cqh; color: var(--text); line-height: 1.3; }
 .box.b-cyan   h4 { color: var(--cyan); }
 .box.b-violet h4 { color: var(--violet); }
 .box.b-orange h4 { color: #b45309; }
 .box.b-green  h4 { color: var(--green); }
 .box.b-pink   h4 { color: var(--pink); }
 
-.box p  { font-size: 1.6cqh; color: var(--dim); line-height: 1.55; }
+.box p  { font-size: 1.95cqh; color: var(--dim); line-height: 1.55; }
 .box p strong { color: var(--text); font-weight: 600; }
 .box ul { list-style: none; }
 .box li {
-    font-size: 1.55cqh;
+    font-size: 1.9cqh;
     color: var(--dim);
-    padding: 0.3cqh 0 0.3cqh 1.6cqh;
+    padding: 0.45cqh 0 0.45cqh 1.9cqh;
     line-height: 1.5;
     position: relative;
 }
@@ -257,7 +257,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
     font-weight: 700;
     position: absolute;
     left: 0;
-    top: 0.3cqh;
+    top: 0.45cqh;
 }
 .box.b-cyan   li::before { color: var(--cyan); }
 .box.b-violet li::before { color: var(--violet); }
@@ -495,10 +495,10 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 
 .layer-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1.2cqh;
+    font-size: 1.4cqh;
     letter-spacing: 2px;
     font-weight: 700;
-    padding: 0.5cqh 1.1cqh;
+    padding: 0.55cqh 1.2cqh;
     border-radius: 100px;
     width: fit-content;
     text-align: center;
@@ -511,8 +511,8 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 .layer-row.l-aios .layer-name    { color: var(--cyan); }
 .layer-row.l-agents .layer-name  { color: var(--violet); }
 
-.layer-name { font-size: 2.2cqh; font-weight: 800; margin-bottom: 0.2cqh; }
-.layer-desc { font-size: 1.5cqh; color: var(--dim); line-height: 1.5; }
+.layer-name { font-size: 2.7cqh; font-weight: 800; margin-bottom: 0.4cqh; }
+.layer-desc { font-size: 1.9cqh; color: var(--dim); line-height: 1.5; }
 .layer-desc strong { color: var(--text); font-weight: 600; }
 
 .layer-conn { text-align: center; font-size: 1.8cqh; color: var(--dark); height: 0.3cqh; line-height: 1; }
@@ -540,18 +540,18 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 .agent-chip.a-green  { border-top-color: var(--green); }
 .agent-chip h5 {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1.4cqh;
+    font-size: 1.65cqh;
     font-weight: 800;
     letter-spacing: 2px;
-    margin-bottom: 0.4cqh;
+    margin-bottom: 0.5cqh;
 }
 .agent-chip.a-cyan h5   { color: var(--cyan); }
 .agent-chip.a-orange h5 { color: #d97706; }
 .agent-chip.a-gold h5   { color: #ca8a04; }
 .agent-chip.a-violet h5 { color: var(--violet); }
 .agent-chip.a-green h5  { color: var(--green); }
-.agent-chip .role { font-size: 1.55cqh; color: var(--text); font-weight: 700; margin-bottom: 0.3cqh; }
-.agent-chip .one  { font-size: 1.35cqh; color: var(--dim); line-height: 1.5; }
+.agent-chip .role { font-size: 1.95cqh; color: var(--text); font-weight: 700; margin-bottom: 0.4cqh; }
+.agent-chip .one  { font-size: 1.7cqh; color: var(--dim); line-height: 1.5; }
 
 /* ─── Ecosystem bubbles ─── */
 .eco-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8cqh; margin-top: 0.5cqh; }
@@ -578,8 +578,8 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 .eco-dot.d4 { background: var(--green); color: var(--green); }
 .eco-dot.d5 { background: var(--pink); color: var(--pink); }
 .eco-dot.d6 { background: var(--gold); color: var(--gold); }
-.eco-pill h6 { font-size: 1.55cqh; font-weight: 700; margin-bottom: 0.1cqh; color: var(--text); }
-.eco-pill p { font-size: 1.3cqh; color: var(--dim); line-height: 1.45; }
+.eco-pill h6 { font-size: 1.9cqh; font-weight: 700; margin-bottom: 0.3cqh; color: var(--text); }
+.eco-pill p { font-size: 1.6cqh; color: var(--dim); line-height: 1.45; }
 
 /* ─── Closing slide ─── */
 .closing .bg-image, .closing .bg-video { opacity: 1; }
@@ -764,10 +764,9 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
         <div class="pre">THE POCKET COMPANY × TURNCLOUD · 2026</div>
         <h1>肖準加入騰雲，<br>啟動企業<br><span class="c">AI 工作者</span>新時代</h1>
         <p class="lede">
-            從 <strong>Accucrazy</strong> 到 <strong>The Pocket Company</strong>，<br>
-我們承接騰雲的 <strong>Physical Space Runtime</strong>，<br>
-在它之上建構 <strong>Enterprise AI OS</strong>，<br>
-並把第一支 <strong>AI Agent 工作團隊</strong> 帶進真實的商業現場。
+            承接騰雲的 <strong>Physical Space Runtime</strong>，<br>
+建構 <strong>Enterprise AI OS</strong>，<br>
+帶來第一支 <strong>AI Agent 工作團隊</strong>。
         </p>
         <div class="signature">
             
@@ -791,7 +790,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
     <div class="slide-content">
         <div class="tag tag-cyan">CHAPTER 01 · 一段併購故事</div>
         <h2>肖準 + 騰雲 = <span class="c">The Pocket Company</span></h2>
-        <p class="sub">這不是一場單純的併購。這是兩種能力，在 AI 時代第一次真正合而為一。</p>
+        <p class="sub">不是單純併購 ── 是兩種能力，在 AI 時代<strong>第一次合而為一</strong>。</p>
 
         <div class="s-body">
             <div class="s-col">
@@ -802,10 +801,10 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
                 
                 
 <div class="box b-cyan">
-    <h4>騰雲科技 — 二十年企業基礎建設</h4>
+    <h4>騰雲 — 二十年企業基建</h4>
     
     <ul>
-        <li><strong>TPOS · HOYABOX</strong> 智慧 POS 與行動終端</li><li><strong>TCRM · TCMS</strong> 顧客關係與商業管理</li><li><strong>OLink · iFore · TLife · TShop</strong> 支付、BI、行銷、庫存</li><li>橫跨零售、餐飲、商場、觀光與飯店的<strong>真實人場貨</strong></li>
+        <li><strong>TPOS · HOYABOX</strong> · 智慧 POS 與行動終端</li><li><strong>TCRM · TCMS</strong> · 顧客關係與商業管理</li><li>橫跨零售、餐飲、商場、飯店的<strong>真實人場貨</strong></li>
     </ul>
     
 </div>
@@ -813,10 +812,10 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
                 
                 
 <div class="box b-violet">
-    <h4>肖準（Accucrazy）— 生產級 AI Agent 能力</h4>
+    <h4>肖準 — 生產級 Agent 能力</h4>
     
     <ul>
-        <li><strong>OpenClaw</strong> 開源 Agent 框架（claw3d.ai）</li><li><strong>Pandora / Moana / Banana / Adriana / Stacey</strong> 五位專業 Agent</li><li><strong>User-Level Memory</strong> 三層記憶架構，每個帳號都有專屬 AI</li><li><strong>MDP</strong> 跨產業 AI-Ready 數據平台</li>
+        <li><strong>OpenClaw</strong> · 開源 Agent 框架</li><li><strong>5 位專業 Agent</strong> · Pandora / Moana / Banana / Adriana / Stacey</li><li><strong>User-Level Memory</strong> · 每個帳號都有專屬 AI</li>
     </ul>
     
 </div>
@@ -826,9 +825,8 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 <div class="box b-orange">
     <h4 class="o">合而為一 → The Pocket Company</h4>
     
-    <p>騰雲底下、最靠近商業現場的 <strong>AI Agent 應用節點</strong> ──<br>
-把企業二十年累積的<strong>場域、資料、人</strong>，第一次真正交到 AI 手上。<br>
-那麼，這件事是<strong>怎麼跑起來</strong>的？董事長剛剛已經給了答案 →</p>
+    <p>騰雲底下、最靠近商業現場的<strong>AI Agent 應用節點</strong> ──<br>
+把二十年累積的<strong>場域、資料、人</strong>，第一次真正交到 AI 手上。</p>
     
 </div>
 
@@ -848,8 +846,8 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 <div class="slide bg-warm" data-slide="runtime">
     <div class="slide-content">
         <div class="tag tag-orange">CHAPTER 02 · 承接董事長 Keynote</div>
-        <h2>董事長剛剛談到 — <span class="o">Physical Space Runtime</span></h2>
-        <p class="sub">下一個運算時代，AI 將不只存在於螢幕裡，而是開始進入<strong>真實的空間</strong>。</p>
+        <h2>董事長剛談到 — <span class="o">Physical Space Runtime</span></h2>
+        <p class="sub">下一個運算時代，AI 不只活在螢幕裡，而是<strong>進入真實的空間</strong>。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.2;">
@@ -862,7 +860,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 <div class="box b-orange">
     <h4>Runtime 是什麼？</h4>
     
-    <p>讓 AI 真的<strong>跑得起來、接得上現場、能即時執行</strong>的底層環境。</p>
+    <p>讓 AI <strong>跑得起來、接得上現場、能即時執行</strong>的底層環境。</p>
     
 </div>
 
@@ -872,7 +870,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
     <h4>Runtime 讓空間擁有四種能力</h4>
     
     <ul>
-        <li><strong>Sense</strong> &nbsp; 感知 ── 即時看見人、車、貨、能源、風險的每個變化</li><li><strong>Reason</strong> &nbsp; 推論 ── 多模態理解現場發生什麼事</li><li><strong>Decide</strong> &nbsp; 決策 ── 即時做判斷、做調度</li><li><strong>Act</strong> &nbsp; 執行 ── 把決策直接變成行動</li>
+        <li><strong>Sense</strong> · 感知人、車、貨的變化</li><li><strong>Reason</strong> · 多模態理解現場</li><li><strong>Decide</strong> · 即時判斷與調度</li><li><strong>Act</strong> · 決策直接變成行動</li>
     </ul>
     
 </div>
@@ -880,12 +878,10 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
                 
                 
 <div class="box b-cyan">
-    <h4 class="c">那麼，這就是我們要承接的<span class="c">挑戰</span>：</h4>
+    <h4 class="c">那麼，我們要承接的<span class="c">挑戰</span>：</h4>
     
-    <p>Runtime 讓 AI 能<strong>進入空間</strong> ── 但企業要的更多。<br>
-怎麼讓 AI 變成每天能<strong>被使用、被管理、被擴充</strong>的<br>
-<strong>工作系統</strong>？<br>
-── 在問這個之前，先看企業現在的真實樣貌。</p>
+    <p>Runtime 讓 AI 能<strong>進入空間</strong> ──<br>
+怎麼讓它變成每天能<strong>被使用、被管理、被擴充</strong>的<strong>工作系統</strong>？</p>
     
 </div>
 
@@ -906,7 +902,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
     <div class="slide-content">
         <div class="tag tag-pink">CHAPTER 03 · 企業真正的問題</div>
         <h2>企業<span class="p">缺的不是 AI</span> — 缺的是「<span class="c">系統</span>」</h2>
-        <p class="sub">每個企業現在都在用 AI。問題是 — 這些 AI，從來沒有變成一個系統。</p>
+        <p class="sub">每個企業都在用 AI。問題是 ── 這些 AI <strong>從來沒變成一個系統</strong>。</p>
 
         <div class="s-body">
             <div class="s-col">
@@ -920,7 +916,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
     <h4 class="p">今天企業導入 AI 的真實樣貌</h4>
     
     <ul>
-        <li>行銷部用一個 AI 寫文案</li><li>客服部用另一個 AI 回訊息</li><li>數據部又自己跑模型</li><li>每個部門都各用各的，互不相通</li>
+        <li>行銷用一個 AI 寫文案</li><li>客服用另一個 AI 回訊息</li><li>數據部又自己跑模型</li><li><strong>各部門各做各的</strong>，互不相通</li>
     </ul>
     
 </div>
@@ -931,7 +927,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
     <h4>結果是 ──</h4>
     
     <ul>
-        <li>資料沒有串起來</li><li>Agent 沒有協作</li><li>權限、合規、治理都各做各的</li><li>經驗無法沉澱成<strong>企業資產</strong></li>
+        <li>資料<strong>沒有串起來</strong></li><li>Agent <strong>沒有協作</strong></li><li>治理 / 合規<strong>各做各的</strong></li><li>經驗無法沉澱成<strong>企業資產</strong></li>
     </ul>
     
 </div>
@@ -943,8 +939,7 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
     
     <p>企業缺的不是更多 AI 工具 ──<br>
 而是一套讓 AI 被<strong>管理、協作、擴充</strong>的<br>
-<strong>企業作業系統</strong>。<br>
-下一頁，我們來定義它 ── <strong class="c">AI OS</strong>。</p>
+<strong>企業作業系統</strong>。</p>
     
 </div>
 
@@ -964,8 +959,8 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
 <div class="slide bg-cyan" data-slide="aios_concept">
     <div class="slide-content">
         <div class="tag tag-cyan">FROM RUNTIME TO AI OS · ONE OS · TWO SPACES</div>
-        <h2>「<span class="c">Space</span>」可以是<span class="o">實體</span>，也可以是<span class="v">虛擬</span> ── 同一套 <span class="c">AI OS</span> 編排兩種空間</h2>
-        <p class="sub"><strong>AI OS = AI Operating System，更是 Agent Orchestrated Space</strong>。<br>「Space」有雙重含義 ── <strong class="o">實體空間</strong>是 AI 走進真實的人、場、貨；<strong class="v">虛擬空間</strong>本身就是 <strong>Agent 之間互相協作的工作空間</strong>。</p>
+        <h2>同一套 <span class="c">AI OS</span>，編排<span class="o">實體</span>與<span class="v">虛擬</span>兩種空間</h2>
+        <p class="sub"><strong>AI OS = AI Operating System，更是 Agent Orchestrated Space</strong>。<br>「Space」<strong class="o">實體</strong>是 AI 走進真實人場貨；<strong class="v">虛擬</strong>是 Agent 互相協作的工作空間。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.85;">
@@ -976,37 +971,33 @@ h3 { font-size: 2.6cqh; font-weight: 700; color: var(--text); }
                 
                 
 <div class="box b-orange">
-    <h4 class="o"><span class="o">實體空間</span> ── AI <span class="o">服務真實世界</span>的場域</h4>
+    <h4 class="o"><span class="o">實體空間</span> ── AI 服務<span class="o">真實世界</span></h4>
     
-    <p>這裡的「空間」是<strong>真實存在的人、場、貨</strong> ──<br>
-零售店、商場、飯店、工廠、POS / HOYABOX、IoT 感測。<br>
-AI 不再只活在雲端，而是<strong>走進門市、走進櫃台、走進現場</strong>，<br>
-直接服務真實的顧客與真實的營運。</p>
+    <p>這裡的「空間」是<strong>真實的人、場、貨</strong> ──<br>
+零售店、工廠、飯店、POS / HOYABOX、IoT。<br>
+AI 不只活在雲端，而是<strong>走進門市、走進現場</strong>。</p>
     
 </div>
 
                 
                 
 <div class="box b-violet">
-    <h4 class="v"><span class="v">虛擬空間</span> ── <span class="v">Agent 互相協作</span>的場域</h4>
+    <h4 class="v"><span class="v">虛擬空間</span> ── <span class="v">Agent 協作</span>的場域</h4>
     
     <p>這裡的「空間」<strong>本身就是 Agent 的工作空間</strong> ──<br>
-<strong>Pandora、Moana、Banana、Adriana、Stacey</strong> 在這個空間裡<br>
-透過 <strong>A2A Protocol</strong> 即時對話、分工、編排，<br>
-動態接上 TCRM / TCDP / BigQuery / Ads / SaaS 完成任務。</p>
+5 位 Agent 透過 <strong>A2A Protocol</strong> 對話、分工、編排，<br>
+動態接上 TCRM / BigQuery / Ads / SaaS。</p>
     
 </div>
 
                 
                 
 <div class="box b-cyan">
-    <h4><span class="c">同一套 AI OS</span>，編排<span class="c">兩種空間</span></h4>
+    <h4>同一套 OS · <span class="c">編排兩種空間</span></h4>
     
-    <p>兩種「空間」<strong>由同一套 AI OS 統一編排</strong>。<br>
-一句指令、跨空間執行 ──<br>
-Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
-再把行動<strong class="o">落地到實體空間</strong>的人、場、貨上。<br>
-這是「<strong>One OS · Two Spaces</strong>」的核心價值。</p>
+    <p>一句指令、跨空間執行 ──<br>
+Agent 從<strong class="v">虛擬空間</strong>協作出策略，<br>
+把行動<strong class="o">落地到實體空間</strong>。</p>
     
 </div>
 
@@ -1015,7 +1006,7 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
         </div>
 
         <div class="meta">
-            <span>AI OS · One OS · Two Spaces — Physical / Virtual</span>
+            <span>AI OS · One OS · Two Spaces</span>
             <span class="pg">05 / 26</span>
         </div>
     </div>
@@ -1027,7 +1018,7 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
     <div class="slide-content">
         <div class="tag tag-cyan">CHAPTER 04 · 我們的解答</div>
         <h2>建構在 Runtime 之上的 <span class="c">Enterprise AI OS</span></h2>
-        <p class="sub">前一頁定義了 AI OS 的<strong>雙重身份</strong> ── 這頁告訴你它<strong>實際在管什麼</strong>。<br>不是聊天機器人，不是 Copilot，是讓企業真正能<strong>擁有並編排 AI 員工</strong>、<strong>跨兩種空間執行任務</strong>的工作系統。</p>
+        <p class="sub">不是聊天機器人，不是 Copilot ── 是企業能真正<strong>擁有、編排 AI 員工</strong>、<strong>跨兩種空間執行任務</strong>的工作系統。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.1;">
@@ -1038,10 +1029,10 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
                 
                 
 <div class="box b-cyan">
-    <h4>AI OS 統一管理八件事</h4>
+    <h4>AI OS 統一管理 8 件事</h4>
     
     <ul>
-        <li><strong>Data</strong> &nbsp; 企業資料與血緣</li><li><strong>Memory</strong> &nbsp; 個人 + 專案 + 企業三層記憶</li><li><strong>Workflow</strong> &nbsp; 可被宣告的工作流程</li><li><strong>Agents</strong> &nbsp; 註冊化、可治理的 AI 員工</li><li><strong>Permission</strong> &nbsp; RBAC、Tool Policy、稽核</li><li><strong>Governance</strong> &nbsp; 模型治理、ESG、合規</li><li><strong>Dashboard</strong> &nbsp; 看見 AI 做了什麼、改變了什麼</li><li><strong>Decision</strong> &nbsp; 關鍵節點仍由人類介入</li>
+        <li><strong>Data</strong> · 企業資料與血緣</li><li><strong>Memory</strong> · 三層記憶（個人 / 專案 / 企業）</li><li><strong>Workflow</strong> · 可宣告的工作流程</li><li><strong>Agents</strong> · 可治理的 AI 員工</li><li><strong>Permission · Governance</strong> · 權限、合規、稽核</li><li><strong>Dashboard · Decision</strong> · 可觀測 × 關鍵節點人機協作</li>
     </ul>
     
 </div>
@@ -1051,9 +1042,10 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
 <div class="box b-violet">
     <h4 class="v">關鍵：User-Level Memory</h4>
     
-    <p>每個帳號擁有<strong>獨立的對話、長期記憶與個人檔案</strong>。<br>
-記憶是個人的，不能共享 ── 這是 AI 真正成為「我的 AI」的關鍵，<br>
-也是企業續用、續約、續擴張的<strong>商業護城河</strong>。</p>
+    <p>每個帳號擁有<strong>獨立的對話與長期記憶</strong> ──<br>
+記憶是個人的，不能共享 ──<br>
+這是 AI 真正成為「我的 AI」的關鍵，<br>
+也是企業<strong>續用、續約、續擴張的商業護城河</strong>。</p>
     
 </div>
 
@@ -1089,7 +1081,7 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
                             <div class="layer-label">LAYER 01</div>
                             <div class="layer-name o">Physical Space Runtime</div>
                         </div>
-                        <div class="layer-desc">讓 AI 能<strong>進入「實體空間」</strong> ── 即時感知、推論、決策、執行。<br>由 <strong>騰雲科技</strong> 所打造的下一代運算底座。</div>
+                        <div class="layer-desc">讓 AI 能進入<strong>實體空間</strong> ── 感知、推論、決策、執行。<br>由 <strong>騰雲科技</strong> 打造的下一代運算底座。</div>
                     </div>
                     <div class="layer-conn">↑</div>
                     
@@ -1098,7 +1090,7 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
                             <div class="layer-label">LAYER 02</div>
                             <div class="layer-name c">Enterprise AI OS · Agent Orchestrated Space</div>
                         </div>
-                        <div class="layer-desc"><strong>跨兩種空間</strong>的編排層 ── 把 Agent 編排到<strong>實體空間</strong>（店、廠、人場貨）與<strong>虛擬空間</strong>（CRM、數據、廣告、SaaS）。由 <strong>The Pocket Company</strong> 建構在 Runtime 之上。</div>
+                        <div class="layer-desc"><strong>跨兩種空間</strong>的編排層 ── 把 Agent 編排到<strong>實體空間</strong>（店、廠、人場貨）與<strong>虛擬空間</strong>（CRM、廣告、數據、SaaS）。</div>
                     </div>
                     <div class="layer-conn">↑</div>
                     
@@ -1107,7 +1099,7 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
                             <div class="layer-label">LAYER 03</div>
                             <div class="layer-name v">AI Agent Workforce</div>
                         </div>
-                        <div class="layer-desc">真正<strong>替企業工作</strong>的數位員工 ── 在<strong>虛擬空間</strong>互相協作，把行動<strong>落地到實體空間</strong>：<br>看見市場、生成內容、創造素材、優化廣告、協作執行。</div>
+                        <div class="layer-desc">替企業工作的<strong>數位員工</strong> ── 在<strong>虛擬空間</strong>協作，把行動<strong>落地到實體空間</strong>。</div>
                     </div>
                     
                     
@@ -1134,8 +1126,8 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
 <div class="slide bg-violet">
     <div class="slide-content">
         <div class="tag tag-violet">CHAPTER 06 · AI Agent Workforce</div>
-        <h2>AI OS 之上 — 是企業的 <span class="v">AI 工作者</span></h2>
-        <p class="sub">企業導入的，不再是一個個工具。是一支會看見、會生成、會行動、會協作的<strong>數位員工團隊</strong>。</p>
+        <h2>AI OS 之上 — 企業的 <span class="v">AI 工作者</span></h2>
+        <p class="sub">不再是一個個工具，而是會看見、生成、行動、協作的<strong>數位員工團隊</strong>。</p>
 
         <div class="illus-frame" style="flex: 1; margin-bottom: 1.5vh;"><img src="img/07_workforce.jpg" alt="AI workforce">
 </div>
@@ -1175,7 +1167,7 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
         </div>
 
         <div class="meta">
-            <span>5 個 AI 員工 — 企業可以開始招聘的數位團隊</span>
+            <span>5 位 AI 員工 — 可以開始招聘的數位團隊</span>
             <span class="pg">08 / 26</span>
         </div>
     </div>
@@ -1187,7 +1179,7 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
     <div class="slide-content">
         <div class="tag tag-cyan">AGENT 01 / 05</div>
         <h2><span class="c">Pandora</span> — 看見市場的 AI</h2>
-        <p class="sub">讓企業從「看不見」變「即時看得到」── 輿情、新聞、社群、競品，全部即時進入決策視野。</p>
+        <p class="sub">從「看不見」變「即時看得到」── 輿情、新聞、社群、競品<strong>即時進入決策視野</strong>。</p>
 
         <div class="s-body">
             <div class="s-col">
@@ -1201,7 +1193,7 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
     <h4>她做什麼</h4>
     
     <ul>
-        <li>監測品牌與競品的市場聲量</li><li>判讀情緒、抓出議題、預警危機</li><li>產出策略洞察與行動建議</li>
+        <li>監測品牌與競品聲量</li><li>判讀情緒、預警危機</li><li>產出策略洞察與行動建議</li>
     </ul>
     
 </div>
@@ -1212,7 +1204,7 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
     <h4>能力堆疊</h4>
     
     <ul>
-        <li><strong>15</strong> 個 Skills · <strong>46</strong> 個 Tools · <strong>3</strong> 層 Memory</li><li>Threads / PTT / Dcard / FB / IG / 新聞網爬取</li><li>整合 Google Search · BigQuery · LINE / Google Chat</li>
+        <li><strong>15</strong> Skills · <strong>46</strong> Tools · <strong>3</strong> 層 Memory</li><li>Threads / PTT / Dcard / FB / IG / 新聞</li><li>Google Search · BigQuery · LINE</li>
     </ul>
     
 </div>
@@ -1222,8 +1214,8 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
 <div class="box b-green">
     <h4 class="g">已上線案例</h4>
     
-    <p><strong>DR.WU</strong> War Room 每小時更新負面留言追蹤；<br>
-<strong>全家 / 7-ELEVEN</strong> 346 家媒體覆蓋率自動掃描。</p>
+    <p><strong>DR.WU</strong> War Room · 每小時負面留言追蹤；<br>
+<strong>全家 / 7-ELEVEN</strong> · 346 家媒體覆蓋率掃描。</p>
     
 </div>
 
@@ -1232,7 +1224,7 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
         </div>
 
         <div class="meta">
-            <span>Pandora — Market Intelligence Agent · MVP LIVE</span>
+            <span>Pandora — Market Intelligence · MVP LIVE</span>
             <span class="pg">09 / 26</span>
         </div>
     </div>
@@ -1244,7 +1236,7 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
     <div class="slide-content">
         <div class="tag tag-cyan">PANDORA · LIVE DEMO</div>
         <h2><span class="c">Pandora</span> — 自動產出<span class="c">洞察報告</span></h2>
-        <p class="sub">不是給你關鍵字儀表板，而是直接<strong>產出一份可讀、可決策的洞察報告</strong> ──<br>從訊號到結論，<strong>每天醒來就有一份新的</strong>。</p>
+        <p class="sub">不是給你儀表板，而是<strong>直接產出可決策的洞察報告</strong> ── 每天醒來就有一份新的。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.8;">
@@ -1258,7 +1250,7 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
     <h4>Demo 看點</h4>
     
     <ul>
-        <li>自動<strong>產出完整洞察報告</strong>，不只回數字</li><li><strong>跨平台訊號整合</strong>（Threads / PTT / Dcard / FB / IG / 新聞）</li><li>報告含<strong>議題歸納、情緒分析、行動建議</strong>，可直接帶進策略會議</li>
+        <li>自動<strong>產出完整洞察報告</strong>，不只回數字</li><li><strong>跨平台訊號整合</strong>（Threads / PTT / Dcard / FB / IG / 新聞）</li><li>含<strong>議題、情緒、行動建議</strong>，可直接進策略會議</li>
     </ul>
     
 </div>
@@ -1266,12 +1258,11 @@ Agent 可以從<strong class="v">虛擬空間</strong>協作出策略，<br>
                 
                 
 <div class="box b-violet">
-    <h4 class="v">為什麼這串重要</h4>
+    <h4 class="v">為什麼這重要</h4>
     
     <p>傳統輿情工具只給<strong>儀表板</strong>，<br>
-企業還是要請人讀、歸納、寫報告 ──<br>
-Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
-讓決策層不用先讀一份 50 頁的數據才看到重點。</p>
+還要請人讀、歸納、寫報告 ──<br>
+Pandora 把整條鏈路<strong>跑到結論</strong>。</p>
     
 </div>
 
@@ -1292,7 +1283,7 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
     <div class="slide-content">
         <div class="tag tag-orange">AGENT 02 / 05</div>
         <h2><span class="o">Moana</span> — 從 Social Listening 升級成 <span class="o">Culture Listening</span></h2>
-        <p class="sub">不只是寫文案，而是把<strong>產業、品牌、KOL、時下的梗</strong>全部讀懂，再寫出最有 <strong>Culture Fit</strong> 的內容，直接打通 <strong>Social Commerce</strong>。</p>
+        <p class="sub">讀懂<strong>產業、品牌、KOL、時下的梗</strong>，寫出最有 <strong>Culture Fit</strong> 的內容，直接打通 <strong>Social Commerce</strong>。</p>
 
         <div class="s-body">
             <div class="s-col">
@@ -1306,7 +1297,7 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
     <h4>Culture Listening</h4>
     
     <ul>
-        <li>看見<strong>產業趨勢</strong>、流行語與次文化變動</li><li>解析<strong>品牌 / 競品 / KOL</strong> 的語境與口吻</li><li>即時捕捉<strong>時下的梗</strong>與正在熱議的話題</li>
+        <li>看見<strong>產業趨勢</strong>與次文化變動</li><li>解析<strong>品牌 / 競品 / KOL</strong> 的語境</li><li>即時捕捉<strong>時下的梗</strong></li>
     </ul>
     
 </div>
@@ -1317,7 +1308,7 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
     <h4 class="v">Culture Fit 內容生成</h4>
     
     <ul>
-        <li>內容貼齊<strong>當下正在發生</strong>的對話</li><li>EDM、社群貼文、短影音腳本、KOL 合作稿一次到位</li><li>品牌調性 × 受眾語感<strong>自動對齊</strong></li>
+        <li>內容貼齊<strong>當下發生</strong>的對話</li><li>EDM / 貼文 / 短影音腳本 / KOL 稿一次到位</li><li>品牌調性 × 受眾語感<strong>自動對齊</strong></li>
     </ul>
     
 </div>
@@ -1327,8 +1318,9 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
 <div class="box b-cyan">
     <h4 class="c">直通 Social Commerce</h4>
     
-    <p>內容即廣告、廣告即電商 ── 串聯 <strong>IG / FB / TikTok / LINE / Threads</strong> 商店與直播，<br>
-把「被看見」一路接到「直接買」，<strong>從聽見話題到拿下訂單</strong>的最短路徑。</p>
+    <p>串聯 <strong>IG / FB / TikTok / LINE</strong> 商店與直播，<br>
+把「被看見」一路接到「直接買」── <br>
+<strong>從聽見話題到拿下訂單</strong>的最短路徑。</p>
     
 </div>
 
@@ -1337,7 +1329,7 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
         </div>
 
         <div class="meta">
-            <span>Moana — Culture Listening × Social Commerce Agent · MVP LIVE</span>
+            <span>Moana — Culture Listening × Social Commerce · MVP LIVE</span>
             <span class="pg">11 / 26</span>
         </div>
     </div>
@@ -1363,7 +1355,7 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
     <h4>五維訊號來源</h4>
     
     <ul>
-        <li><strong>產業</strong> · 市場動態、產業趨勢</li><li><strong>品牌</strong> · 品牌聲量、消費者評價</li><li><strong>競品</strong> · 競品動向、內容策略</li><li><strong>作者</strong> · KOL 觀點、創作者內容</li><li><strong>文化</strong> · 社會議題、流行文化</li>
+        <li><strong>產業</strong> · 市場動態與趨勢</li><li><strong>品牌 / 競品</strong> · 聲量與內容策略</li><li><strong>作者</strong> · KOL 與創作者觀點</li><li><strong>文化</strong> · 社會議題與流行語</li>
     </ul>
     
 </div>
@@ -1374,7 +1366,7 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
     <h4 class="v">整合引擎做什麼</h4>
     
     <ul>
-        <li><strong>語境理解</strong> × <strong>情緒辨識</strong></li><li><strong>趨勢偵測</strong> × <strong>意義萃取</strong></li><li>統整 → 內容靈感、溝通策略、行動方案</li>
+        <li><strong>語境理解</strong> × <strong>情緒辨識</strong></li><li><strong>趨勢偵測</strong> × <strong>意義萃取</strong></li><li>統整 → 內容、策略、行動方案</li>
     </ul>
     
 </div>
@@ -1384,7 +1376,7 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
 <div class="box b-green">
     <h4 class="g">以文化為核心</h4>
     
-    <p>讓內容<strong>更有意義</strong>，讓品牌<strong>更有共鳴</strong>。</p>
+    <p>讓內容<strong>更有意義</strong>，<br>讓品牌<strong>更有共鳴</strong>。</p>
     
 </div>
 
@@ -1405,7 +1397,7 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
     <div class="slide-content">
         <div class="tag tag-orange">MOANA · CASE STUDY 01 · PART 1</div>
         <h2><span class="o">猛健樂</span> — Culture Listening 實戰</h2>
-        <p class="sub">Moana 怎麼從次文化訊號裡，找到一個減重藥品牌的內容切角。<br>看見對話 → 解析語境 → 產出 Culture Fit 內容。</p>
+        <p class="sub">從次文化訊號裡找到減重藥品牌的內容切角 ── <strong>看見對話 → 解析語境 → Culture Fit 內容</strong>。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.8;">
@@ -1419,7 +1411,7 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
     <h4>Demo 看點</h4>
     
     <ul>
-        <li>抓出社群裡正在發生的<strong>減重話題</strong>與情緒</li><li>解析<strong>受眾語感</strong>，避開敏感詞、找到對的切角</li><li>產出符合<strong>品牌調性</strong>的內容腳本</li>
+        <li>抓出社群<strong>減重話題</strong>與情緒</li><li>解析<strong>受眾語感</strong>，避開敏感詞</li><li>產出<strong>品牌調性</strong>的內容腳本</li>
     </ul>
     
 </div>
@@ -1427,12 +1419,11 @@ Pandora 直接把這條鏈路<strong>跑到結論</strong>，<br>
                 
                 
 <div class="box b-violet">
-    <h4 class="v">為什麼這個案例重要</h4>
+    <h4 class="v">為什麼這案例重要</h4>
     
     <p>醫療 / 處方藥行銷是<strong>最難做 Culture Fit</strong> 的類別。<br>
-Moana 的 Culture Listening 不只洞察<strong>產品本身</strong>，<br>
-而是結合<strong>台灣整體文化脈絡</strong> ── 台灣人喜歡什麼、<br>
-討厭什麼、生活習慣是什麼，<strong>更宏觀地</strong>思考策略。</p>
+Moana 結合<strong>台灣整體文化脈絡</strong> ── <br>
+不只洞察產品，<strong>更宏觀地</strong>思考策略。</p>
     
 </div>
 
@@ -1453,7 +1444,7 @@ Moana 的 Culture Listening 不只洞察<strong>產品本身</strong>，<br>
     <div class="slide-content">
         <div class="tag tag-orange">MOANA · CASE STUDY 01 · PART 2</div>
         <h2><span class="o">猛健樂</span> — 從 Brief 到 <span class="o">文章產出</span></h2>
-        <p class="sub">前一頁看 Moana <strong>怎麼洞察</strong>；這一頁看 Moana <strong>怎麼把洞察變成 Brief、再把 Brief 變成文章</strong>。<br>OFFICIAL × DCARD 兩個通路，<strong>從策略到內容一氣呵成</strong>。</p>
+        <p class="sub">前一頁看<strong>怎麼洞察</strong>；這一頁看<strong>洞察 → Brief → 文章一氣呵成</strong>。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.8;">
@@ -1467,7 +1458,7 @@ Moana 的 Culture Listening 不只洞察<strong>產品本身</strong>，<br>
     <h4>Demo 看點</h4>
     
     <ul>
-        <li>Moana 自動生成<strong>完整 marketing brief</strong>（OFFICIAL × DCARD 多通路）</li><li>一份 brief 含：<strong>切角 · 語氣 · 視覺方向 · CTA · 避免事項</strong></li><li>接著直接從 brief 產出對應通路的<strong>實際文章內容</strong></li>
+        <li>自動生成<strong>完整 marketing brief</strong>（OFFICIAL × DCARD）</li><li>Brief 含<strong>切角 · 語氣 · 視覺 · CTA · 避免事項</strong></li><li>直接從 brief 產出對應通路的<strong>實際文章</strong></li>
     </ul>
     
 </div>
@@ -1477,9 +1468,9 @@ Moana 的 Culture Listening 不只洞察<strong>產品本身</strong>，<br>
 <div class="box b-violet">
     <h4 class="v">為什麼這串重要</h4>
     
-    <p>傳統流程：洞察 → 寫 brief → 寫文案 → 多通路適配，<strong>每一步都是斷層</strong>。<br>
-Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同一個 Agent 一氣呵成</strong>。<br>
-不是寫文案的工具，是<strong>策略 + 執行的整合系統</strong>。</p>
+    <p>傳統流程：洞察 → brief → 文案 → 多通路適配，<strong>每步都是斷層</strong>。<br>
+Moana 把整條鏈路<strong>同一個 Agent 跑完</strong> ──<br>
+是<strong>策略 + 執行的整合系統</strong>。</p>
     
 </div>
 
@@ -1500,7 +1491,7 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
     <div class="slide-content">
         <div class="tag tag-orange">AGENT 03 / 05</div>
         <h2><span class="o">Banana</span> — 視覺即時生成的 AI</h2>
-        <p class="sub">從一句話到一張完整的品牌視覺。產品情境圖、社群素材、廣告版型，秒級產出。</p>
+        <p class="sub">從一句話到完整品牌視覺 ── 情境圖、社群素材、廣告版型，<strong>秒級產出</strong>。</p>
 
         <div class="s-body">
             <div class="s-col">
@@ -1514,7 +1505,7 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
     <h4>他做什麼</h4>
     
     <ul>
-        <li>產品情境圖、社群圖卡、短影音版面</li><li>IG · FB · Threads 多尺寸自動適配</li><li>品牌色系、字型、構圖自動匹配</li>
+        <li>產品情境圖、社群圖卡、短影音版面</li><li>IG / FB / Threads <strong>多尺寸自動適配</strong></li><li>品牌色、字型、構圖<strong>自動匹配</strong></li>
     </ul>
     
 </div>
@@ -1525,7 +1516,7 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
     <h4>能力堆疊</h4>
     
     <ul>
-        <li>GPU 即時生成 — 口頭修改、秒出新版</li><li>圖文一體 — 文案 + 視覺同步產出</li><li>品牌規範可被學會、被沿用</li>
+        <li>GPU 即時生成 ── <strong>口頭修改、秒出新版</strong></li><li>圖文一體 ── 文案 + 視覺同步</li><li>品牌規範<strong>可學、可沿用</strong></li>
     </ul>
     
 </div>
@@ -1533,10 +1524,10 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
                 
                 
 <div class="box b-green">
-    <h4 class="g">與 War Room 的閉環</h4>
+    <h4 class="g">與 War Room 閉環</h4>
     
-    <p>輿情雷達發現危機 → AI 分析論點 → <strong>Banana 直接產出回應素材</strong>。<br>
-從危機發現到內容產出，<strong>全鏈路 AI 自動化</strong>。</p>
+    <p>輿情發現危機 → 分析論點 → <strong>Banana 直接產出回應素材</strong>。<br>
+從危機到內容產出，<strong>全鏈路 AI 自動化</strong>。</p>
     
 </div>
 
@@ -1545,7 +1536,7 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
         </div>
 
         <div class="meta">
-            <span>Banana — Visual Design Agent · MVP LIVE</span>
+            <span>Banana — Visual Design · MVP LIVE</span>
             <span class="pg">15 / 26</span>
         </div>
     </div>
@@ -1556,8 +1547,8 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
 <div class="slide bg-warm" data-slide="banana_split_system">
     <div class="slide-content">
         <div class="tag tag-orange">BANANA · 系統架構</div>
-        <h2><span class="o">Banana Split</span> — 把素材變成可用內容的 <span class="o">AI 創意流程</span></h2>
-        <p class="sub">不只是「生圖」，而是把<strong>素材 → Concept → Creative → 多渠道輸出</strong>串成一條可重複的<strong>創意流程</strong>。</p>
+        <h2><span class="o">Banana Split</span> — 把素材變成可用內容的<span class="o">創意流程</span></h2>
+        <p class="sub">不只「生圖」── 把<strong>素材 → Concept → Creative → 多渠道</strong>串成可重複的<strong>創意流程</strong>。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.8;">
@@ -1571,7 +1562,7 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
     <h4>五步驟流程</h4>
     
     <ul>
-        <li><strong>1. 上傳素材</strong> ── 產品圖 / Brief</li><li><strong>2. AI 理解需求</strong> ── 受眾 / 平台 / 目標</li><li><strong>3. 生成 Concept</strong> ── 主題與方向</li><li><strong>4. 延伸 Creative</strong> ── 圖像 / 文案 / 腳本</li><li><strong>5. 多渠道輸出</strong> ── 社群 / 廣告 / 短影音</li>
+        <li><strong>1. 上傳素材</strong> · 產品圖 / Brief</li><li><strong>2. AI 理解需求</strong> · 受眾 / 平台 / 目標</li><li><strong>3. 生成 Concept</strong> · 主題與方向</li><li><strong>4. 延伸 Creative</strong> · 圖像 / 文案 / 腳本</li><li><strong>5. 多渠道輸出</strong> · 社群 / 廣告 / 短影音</li>
     </ul>
     
 </div>
@@ -1582,7 +1573,7 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
     <h4 class="g">三大價值</h4>
     
     <ul>
-        <li><strong>更快產出</strong> ── 一次 brief 跑完全流程</li><li><strong>更穩定品質</strong> ── 同一套架構、品牌規範可被沿用</li><li><strong>更容易放大</strong> ── 一個 Concept 自動延伸成多版本素材</li>
+        <li><strong>更快</strong> · 一次 brief 跑完全流程</li><li><strong>更穩</strong> · 同一架構、品牌規範可沿用</li><li><strong>更易放大</strong> · 一個 Concept → 多版本</li>
     </ul>
     
 </div>
@@ -1592,8 +1583,7 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
 <div class="box b-violet">
     <h4 class="v">Banana Split 的精神</h4>
     
-    <p>創意<strong>不只被生成</strong>，更能<strong>被編排與落地</strong> ──<br>
-從一張產品圖到一條短影音，<strong>用同一套流程</strong>跑完。</p>
+    <p>創意<strong>不只被生成</strong>，更能<strong>被編排與落地</strong>。</p>
     
 </div>
 
@@ -1614,7 +1604,7 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
     <div class="slide-content">
         <div class="tag tag-orange">BANANA · LIVE DEMO</div>
         <h2><span class="o">Banana Split</span> — 視覺生成實戰</h2>
-        <p class="sub">從一段文字到一張可上線的視覺。看 Banana 怎麼把<strong>創意意圖</strong>變成<strong>多版本素材</strong>。</p>
+        <p class="sub">從一段文字到一張可上線的視覺 ── 看 Banana 把<strong>創意意圖變成多版本素材</strong>。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.8;">
@@ -1628,7 +1618,7 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
     <h4>Demo 看點</h4>
     
     <ul>
-        <li><strong>文字輸入 → 多版本視覺</strong>同步產出</li><li>自動套用<strong>品牌規範</strong>（色彩、字體、構圖）</li><li>口頭迭代 — 秒級出新版</li>
+        <li><strong>文字輸入 → 多版本視覺</strong>同步產出</li><li>自動套用<strong>品牌規範</strong>（色彩 / 字體 / 構圖）</li><li>口頭迭代 ── <strong>秒級出新版</strong></li>
     </ul>
     
 </div>
@@ -1638,9 +1628,9 @@ Moana 把整條鏈路接到底 ── <strong>洞察 → Brief → 文章，同�
 <div class="box b-violet">
     <h4 class="v">為什麼這重要</h4>
     
-    <p>傳統流程：<strong>一天出三版</strong>。<br>
-Banana 重新定義速度：<strong>一分鐘出三十版</strong>，<br>
-讓<strong>創意決策</strong>的瓶頸，從「等出圖」變成「選方向」。</p>
+    <p>傳統：<strong>一天出三版</strong>。<br>
+Banana：<strong>一分鐘出三十版</strong>。<br>
+瓶頸從「等出圖」變成「選方向」。</p>
     
 </div>
 
@@ -1661,7 +1651,7 @@ Banana 重新定義速度：<strong>一分鐘出三十版</strong>，<br>
     <div class="slide-content">
         <div class="tag tag-orange tag-launch">BANANA SPLIT · 全新發布 · REELS STUDIO</div>
         <h2><span class="o">Reels Studio</span> — 世界第一 <span class="o">Agentic Editing</span></h2>
-        <p class="sub">Banana Split 全新功能 ── 採用 <strong>A2A 多 Agent 協作</strong>架構：使用者一句話，<strong>多位 Agent</strong> 各司其職，把整條 Reels 製作 pipeline 全部跑完，產出可直接投放的成品。</p>
+        <p class="sub">全新發布 ── <strong>A2A 多 Agent 協作</strong>架構：一句話，多位 Agent 各司其職，把整條 Reels pipeline 跑完。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.8;">
@@ -1675,7 +1665,7 @@ Banana 重新定義速度：<strong>一分鐘出三十版</strong>，<br>
     <h4>A2A 多 Agent 協作流程</h4>
     
     <ul>
-        <li><strong>1. 上下文理解</strong> ── Agent 讀懂影片內容、品牌目標與受眾語感</li><li><strong>2. 字幕整理</strong> ── 自動逐字稿辨識、去冗餘、按節奏分段</li><li><strong>3. 精華片段擷取</strong> ── Agent 判斷高價值片段，重組成完整節奏</li><li><strong>4. 封面圖優化</strong> ── 自動挑最有衝擊力的畫面 + 構圖調整</li><li><strong>5. 字幕特效強化</strong> ── 把重點關鍵字加大、上動態特效</li><li><strong>6. 封面 + 頁尾製作</strong> ── 自動套品牌邊框、CTA、結尾轉場</li>
+        <li><strong>1. 上下文理解</strong> · 讀懂影片內容與品牌語感</li><li><strong>2. 字幕整理</strong> · 逐字稿、去冗餘、節奏分段</li><li><strong>3. 精華擷取</strong> · 重組成完整節奏</li><li><strong>4. 封面 + 字幕特效</strong> · 衝擊畫面 + 關鍵字強化</li><li><strong>5. 品牌邊框 / CTA / 轉場</strong> · 一鍵投放</li>
     </ul>
     
 </div>
@@ -1685,11 +1675,9 @@ Banana 重新定義速度：<strong>一分鐘出三十版</strong>，<br>
 <div class="box b-violet">
     <h4 class="v">為什麼這是<span class="v">世界第一</span></h4>
     
-    <p>市面上 AI 剪輯工具還停在「<strong>輔助剪輯</strong>」── 自動切片、AI 字幕、配 BGM。<br>
-Reels Studio 把<strong>整條剪輯 pipeline 拆給多位 Agent</strong>，<br>
-透過 <strong>A2A Protocol</strong> 像一支內容團隊一樣協作 ──<br>
-短影音生產從「<strong>人 + AI</strong>」進化到「<strong>純 Agent 團隊</strong>」。<br>
-Demo：一句「<strong>剪 30 秒，挺立鈣下單攻略</strong>」，幾秒拿可投放成品。</p>
+    <p>市面上工具停在「<strong>輔助剪輯</strong>」── 自動切片、字幕、配 BGM。<br>
+Reels Studio 把<strong>整條 pipeline 拆給多位 Agent</strong>，<br>
+短影音生產從「人+AI」進化到「<strong>純 Agent 團隊</strong>」。</p>
     
 </div>
 
@@ -1698,7 +1686,7 @@ Demo：一句「<strong>剪 30 秒，挺立鈣下單攻略</strong>」，幾秒�
         </div>
 
         <div class="meta">
-            <span>Banana Split — Reels Studio · World-First Agentic Editing</span>
+            <span>Banana Split — Reels Studio · Agentic Editing</span>
             <span class="pg">18 / 26</span>
         </div>
     </div>
@@ -1710,7 +1698,7 @@ Demo：一句「<strong>剪 30 秒，挺立鈣下單攻略</strong>」，幾秒�
     <div class="slide-content">
         <div class="tag tag-violet">AGENT 04 / 05</div>
         <h2><span class="v">Adriana</span> — 從廣告分析升級到 <span class="v">千人千面</span></h2>
-        <p class="sub">不只分析數字，還能<strong>生成素材、自動投放、洞察陌生訪客</strong>，<br>把廣告從「投得準」進化到「<strong>為每一位用戶量身做</strong>」。</p>
+        <p class="sub"><strong>分析 + 生成 + 投放 + 陌生訪客洞察</strong> ── 廣告從「投得準」進化到「為每位用戶量身做」。</p>
 
         <div class="s-body">
             <div class="s-col">
@@ -1721,10 +1709,10 @@ Demo：一句「<strong>剪 30 秒，挺立鈣下單攻略</strong>」，幾秒�
                 
                 
 <div class="box b-violet">
-    <h4>分析 + 素材生成 + 自動投放</h4>
+    <h4>分析 + 生成 + 自動投放</h4>
     
     <ul>
-        <li>監測 <strong>Meta / Google / TikTok</strong> 即時表現，異常自動偵測</li><li>透過 <strong>Meta Ads CLI</strong> 自動化開關、調整與重分配預算</li><li>即時<strong>生成廣告素材</strong>，文案 × 視覺 × 受眾一次配齊</li>
+        <li><strong>Meta / Google / TikTok</strong> 即時表現監測</li><li><strong>Meta Ads CLI</strong> 自動化開關、調預算</li><li>即時<strong>生成素材</strong>：文案 × 視覺 × 受眾</li>
     </ul>
     
 </div>
@@ -1732,10 +1720,10 @@ Demo：一句「<strong>剪 30 秒，挺立鈣下單攻略</strong>」，幾秒�
                 
                 
 <div class="box b-cyan">
-    <h4 class="c">結合騰雲 CRM × CDP，連陌生訪客都能洞察</h4>
+    <h4 class="c">結合 CRM × CDP，洞察陌生訪客</h4>
     
     <ul>
-        <li>串接騰雲 <strong>TCRM · TCDP</strong> 第一方資料</li><li>對<strong>陌生訪客</strong>即時推估意圖與興趣輪廓</li><li>每位用戶獲得對應自己的<strong>個性化素材</strong> ── 真正的千人千面</li>
+        <li>串接 <strong>TCRM · TCDP</strong> 第一方資料</li><li>對<strong>陌生訪客</strong>即時推估意圖</li><li>每位用戶<strong>個性化素材</strong> ── 真正千人千面</li>
     </ul>
     
 </div>
@@ -1745,9 +1733,9 @@ Demo：一句「<strong>剪 30 秒，挺立鈣下單攻略</strong>」，幾秒�
 <div class="box">
     <h4>商業模式 × 為什麼重要</h4>
     
-    <p><strong>掛帳抽成 2–3%</strong> 大客戶 + <strong>月費訂閱</strong> 中小客戶；<br>
-廣告產業「分析 → 行動」延遲最大，Adriana 把它壓到<strong>分鐘級</strong>，<br>
-並讓每一塊預算都對到「<strong>正確的那個人</strong>」。</p>
+    <p><strong>掛帳抽成 2-3%</strong> + <strong>月費訂閱</strong>。<br>
+廣告產業「分析→行動」延遲最大 ──<br>
+Adriana 把它壓到<strong>分鐘級</strong>。</p>
     
 </div>
 
@@ -1756,7 +1744,7 @@ Demo：一句「<strong>剪 30 秒，挺立鈣下單攻略</strong>」，幾秒�
         </div>
 
         <div class="meta">
-            <span>Adriana — Ad Generation × Personalization Agent · BUILDING</span>
+            <span>Adriana — Personalization Agent · BUILDING</span>
             <span class="pg">19 / 26</span>
         </div>
     </div>
@@ -1768,7 +1756,7 @@ Demo：一句「<strong>剪 30 秒，挺立鈣下單攻略</strong>」，幾秒�
     <div class="slide-content">
         <div class="tag tag-violet">ADRIANA · LIVE DEMO</div>
         <h2><span class="v">Adriana</span> — 你的 AI 廣告數據搭檔</h2>
-        <p class="sub">告別手動整理報表的時代。<strong>全中文自然提問</strong>，<strong>30 秒</strong>就能拿到 Meta 廣告成效、報表、與優化建議。</p>
+        <p class="sub">告別手動報表 ── <strong>全中文自然提問</strong>，30 秒拿到 Meta 廣告成效、報表、優化建議。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.8;">
@@ -1782,7 +1770,7 @@ Demo：一句「<strong>剪 30 秒，挺立鈣下單攻略</strong>」，幾秒�
     <h4>Demo 看點</h4>
     
     <ul>
-        <li>💬 <strong>即時數據對話</strong> ── 問「這週哪組廣告 ROAS 最高？」直接回答</li><li>⚡ <strong>30 秒快速回覆</strong> ── 即時從 Meta 帳號提取，免等人工整理</li><li>📊 <strong>自動化報表</strong> ── 用問的就出摘要與圖表</li><li>🧠 <strong>素材優化建議</strong> ── 自動分析成效、給優化方向與替換建議</li>
+        <li>💬 <strong>即時數據對話</strong> ── 問問題直接回答</li><li>⚡ <strong>30 秒回覆</strong> ── 免等人工整理報表</li><li>🧠 <strong>素材優化建議</strong> ── 給方向與替換建議</li>
     </ul>
     
 </div>
@@ -1792,10 +1780,9 @@ Demo：一句「<strong>剪 30 秒，挺立鈣下單攻略</strong>」，幾秒�
 <div class="box b-cyan">
     <h4 class="c">為什麼這串重要</h4>
     
-    <p>廣告主每天花<strong>大量時間在「整理報表」</strong>，<br>
-而真正的洞察都堵在 Excel 與儀表板之間 ──<br>
-Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
-壓縮到<strong>一句話的時間</strong>。</p>
+    <p>廣告主每天花<strong>大量時間整理報表</strong>，<br>
+洞察都堵在 Excel 與儀表板之間 ──<br>
+Adriana 把「查數據 → 改素材」壓到<strong>一句話的時間</strong>。</p>
     
 </div>
 
@@ -1816,7 +1803,7 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
     <div class="slide-content">
         <div class="tag tag-violet">ADRIANA · CRM × CAPI 串接示範</div>
         <h2>遊戲化互動 × <span class="v">AI CRM × Meta CAPI</span></h2>
-        <p class="sub">以<strong>互動式命理流程</strong>為例 ── 從一次廣告點擊，到生成個人化標籤、回傳事件、最後再行銷分眾，<strong>把第一方數據與廣告平台真正串起來</strong>。</p>
+        <p class="sub">一次廣告點擊 → 個人化標籤 → 事件回傳 → 再行銷分眾。<strong>把第一方數據與廣告平台真正串起來</strong>。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.8;">
@@ -1830,7 +1817,7 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
     <h4>五步驟核心流程</h4>
     
     <ul>
-        <li><strong>1. 廣告入口</strong> ── 擷取 fbclid / utm / uuid</li><li><strong>2. 遊戲化填寫</strong> ── 透過互動遊戲蒐集第一方資料、建立自定義受眾</li><li><strong>3. AI 產生標籤</strong> ── 互動內容 → 個人化標籤</li><li><strong>4. 事件回傳</strong> ── Conversions API 送回 Meta</li><li><strong>5. 再行銷</strong> ── 自訂受眾 × 相似受眾 × 名單投放</li>
+        <li><strong>1. 廣告入口</strong> · fbclid / utm / uuid</li><li><strong>2. 遊戲化填寫</strong> · 蒐集第一方資料</li><li><strong>3. AI 產生標籤</strong> · 互動 → 個人化標籤</li><li><strong>4. CAPI 回傳</strong> · 事件送回 Meta</li><li><strong>5. 再行銷</strong> · 自訂 × 相似 × 名單</li>
     </ul>
     
 </div>
@@ -1838,10 +1825,10 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
                 
                 
 <div class="box b-cyan">
-    <h4 class="c">為什麼這個示範重要</h4>
+    <h4 class="c">為什麼這示範重要</h4>
     
     <p>Cookie 時代結束，<strong>第一方數據成為新黃金</strong>。<br>
-這套架構把<strong>騰雲 TCRM × TCDP × Meta CAPI</strong> 接成完整閉環 ──<br>
+<strong>TCRM × TCDP × Meta CAPI</strong> 接成完整閉環 ──<br>
 <strong>互動式命理只是切角</strong>，任何遊戲化互動都能套用。</p>
     
 </div>
@@ -1863,7 +1850,7 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
     <div class="slide-content">
         <div class="tag tag-violet">ADRIANA · CRM × CAPI LIVE DEMO</div>
         <h2>AI CRM × Meta CAPI — <span class="v">實戰 Demo</span></h2>
-        <p class="sub">前一頁看流程圖；這一頁看實際運作 ──<br>從<strong>遊戲互動</strong> → <strong>個人化標籤</strong> → <strong>Conversions API 回傳</strong> → <strong>廣告分眾</strong>，一次跑完。</p>
+        <p class="sub">前一頁看流程圖；這頁看實際運作 ── <strong>遊戲 → 標籤 → CAPI → 廣告分眾</strong>一次跑完。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.8;">
@@ -1877,7 +1864,7 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
     <h4>Demo 看點</h4>
     
     <ul>
-        <li><strong>遊戲化互動</strong> ── 使用者邊玩邊填資料</li><li><strong>AI 即時產出個人化結果與標籤</strong>（如星座 × 智慧運分數）</li><li><strong>事件透過 CAPI 回傳 Meta</strong>，<strong>自定義受眾自動成形</strong></li>
+        <li><strong>遊戲化互動</strong> · 邊玩邊填資料</li><li><strong>AI 即時產出個人化標籤</strong></li><li><strong>CAPI 回傳 Meta</strong> · 自定義受眾自動成形</li>
     </ul>
     
 </div>
@@ -1887,9 +1874,8 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
 <div class="box b-cyan">
     <h4 class="c">為什麼這串重要</h4>
     
-    <p>這就是「<strong>廣告投放 × 第一方數據</strong>」應該長的樣子 ──<br>
-<strong>一次互動 = 一筆乾淨的第一方資料 = Meta 的精準分眾種子</strong>。<br>
-不需要 cookie，數據主權回到企業手上。</p>
+    <p><strong>一次互動 = 一筆第一方資料 = Meta 的精準分眾種子</strong>。<br>
+不需要 cookie，<strong>數據主權回到企業手上</strong>。</p>
     
 </div>
 
@@ -1910,7 +1896,7 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
     <div class="slide-content">
         <div class="tag tag-green">AGENT 05 / 05</div>
         <h2><span class="g">Stacey</span> — 把 Agent 變成團隊的 AI</h2>
-        <p class="sub">當你有五個 AI 員工，真正稀缺的，不是再多一個 Agent ── 是<strong>能指揮他們的那個</strong>。</p>
+        <p class="sub">有五個 AI 員工後，真正稀缺的是<strong>能指揮他們的那個</strong>。</p>
 
         <div class="s-body">
             <div class="s-col">
@@ -1924,7 +1910,7 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
     <h4>她做什麼</h4>
     
     <ul>
-        <li>把使用者的複合需求<strong>拆成子任務</strong></li><li>動態調度合適的 Agent 來執行</li><li>跨 Agent 結果整理 → 給人類一份完整答案</li>
+        <li>把複合需求<strong>拆成子任務</strong></li><li>動態調度合適的 Agent</li><li>跨 Agent 結果整理 → 完整答案</li>
     </ul>
     
 </div>
@@ -1935,7 +1921,7 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
     <h4>底層技術</h4>
     
     <ul>
-        <li><strong>OpenClaw Orchestrator + MCP Host</strong></li><li><strong>A2A Protocol</strong> &nbsp; Agent 之間像同事一樣交辦</li><li><strong>動態模型路由</strong> &nbsp; 根據複雜度切換模型與工具</li>
+        <li><strong>OpenClaw Orchestrator + MCP Host</strong></li><li><strong>A2A Protocol</strong> · Agent 像同事一樣交辦</li><li><strong>動態模型路由</strong> · 依複雜度切換模型</li>
     </ul>
     
 </div>
@@ -1943,10 +1929,10 @@ Adriana 把「查數據 → 看成效 → 改素材」這條鏈路<br>
                 
                 
 <div class="box b-violet">
-    <h4 class="v">她讓 AI 真正成為「團隊」</h4>
+    <h4 class="v">讓 AI 真正成為「<span class="v">團隊</span>」</h4>
     
     <p>單一 Agent 是工具；多個 Agent 是團隊。<br>
-Stacey 讓多個 Agent 第一次<strong>像一間公司一樣</strong>運作 ──<br>
+Stacey 讓 Agent 第一次<strong>像一間公司一樣</strong>運作 ──<br>
 這就是 AI OS 真正的力量。</p>
     
 </div>
@@ -1956,7 +1942,7 @@ Stacey 讓多個 Agent 第一次<strong>像一間公司一樣</strong>運作 ─
         </div>
 
         <div class="meta">
-            <span>Stacey — Orchestrator Agent · BUILDING</span>
+            <span>Stacey — Orchestrator · BUILDING</span>
             <span class="pg">23 / 26</span>
         </div>
     </div>
@@ -1968,7 +1954,7 @@ Stacey 讓多個 Agent 第一次<strong>像一間公司一樣</strong>運作 ─
     <div class="slide-content">
         <div class="tag tag-green">STACEY · LIVE DEMO</div>
         <h2><span class="g">Stacey</span> — 從一句話到<span class="g">完整分析報告</span></h2>
-        <p class="sub">用真實案例看 Stacey 怎麼接到指令、<strong>派 Pandora 跑 SQL</strong>、產出趨勢圖與三大主題 ──<br>整段流程 <strong>幾秒鐘</strong> 一氣呵成。</p>
+        <p class="sub">看 Stacey <strong>派 Pandora 跑 SQL</strong>、產出趨勢圖與三大主題 ── 全程 <strong>幾秒鐘</strong>。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.8;">
@@ -1982,7 +1968,7 @@ Stacey 讓多個 Agent 第一次<strong>像一間公司一樣</strong>運作 ─
     <h4>Demo 看點</h4>
     
     <ul>
-        <li>使用者輸入：「<strong>分析 Dr.Wu 近兩週熱門話題</strong>」</li><li>Stacey 自動<strong>派 Pandora</strong> 接手，跑 SQL 撈過去 <strong>14 天 92 篇文章 / 6,000+ 字級聲量</strong></li><li>提煉<strong>三大熱門主題</strong>：品牌背景爭議 / 杏仁酸醫美核心 / 醫美 vs 開架選擇拉鋸</li><li>產出<strong>趨勢圖表 + 摘要</strong> ── 撈數據、清洗、做圖、寫重點，<strong>幾秒完成</strong></li>
+        <li>輸入：「<strong>分析 Dr.Wu 近兩週熱門話題</strong>」</li><li>Stacey <strong>派 Pandora</strong> · 14 天 / 92 篇文章 / 6,000+ 字</li><li>提煉<strong>三大熱門主題</strong> + <strong>趨勢圖 + 摘要</strong></li>
     </ul>
     
 </div>
@@ -1992,9 +1978,9 @@ Stacey 讓多個 Agent 第一次<strong>像一間公司一樣</strong>運作 ─
 <div class="box b-violet">
     <h4 class="v">為什麼這串重要</h4>
     
-    <p>過去這份工作：分析師花<strong>幾小時</strong>跑 SQL、清資料、做圖、寫摘要。<br>
-現在：使用者<strong>一句話 → 完整分析報告</strong>。<br>
-Stacey + Pandora 把「分析」從一份<strong>工作</strong>，變成一段<strong>對話</strong>。</p>
+    <p>過去：分析師花<strong>幾小時</strong>跑 SQL、清資料、做圖、寫摘要。<br>
+現在：<strong>一句話 → 完整分析報告</strong>。<br>
+「分析」從一份<strong>工作</strong>變成一段<strong>對話</strong>。</p>
     
 </div>
 
@@ -2014,8 +2000,8 @@ Stacey + Pandora 把「分析」從一份<strong>工作</strong>，變成一段<
 <div class="slide bg-dark">
     <div class="slide-content">
         <div class="tag tag-cyan">CHAPTER 07 · 一個開放的生態</div>
-        <h2>AI OS 是<span class="c">開放</span>的 — 歡迎所有 AI 新創<span class="v">一起進來</span></h2>
-        <p class="sub">The Pocket Company 是 AI OS 上的<strong>第一個</strong>應用節點。我們的目標，是接下來還有<strong>十個、一百個</strong>。</p>
+        <h2>AI OS 是<span class="c">開放</span>的 — 歡迎 AI 新創<span class="v">一起進來</span></h2>
+        <p class="sub">The Pocket Company 是 AI OS 上的<strong>第一個</strong>節點。目標是<strong>十個、一百個</strong>。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.1;">
@@ -2026,10 +2012,10 @@ Stacey + Pandora 把「分析」從一份<strong>工作</strong>，變成一段<
                 
                 
 <div class="box b-cyan">
-    <h4>三個開放標準，三道門</h4>
+    <h4>三個開放標準</h4>
     
     <ul>
-        <li><strong>A2A Protocol</strong> &nbsp; 你的 Agent 可以跟我們的 Agent 對話</li><li><strong>MCP / WebMCP</strong> &nbsp; 你的工具可以被任何 Agent 呼叫</li><li><strong>OpenClaw 開源框架</strong> &nbsp; claw3d.ai，直接拿去做你的 Agent</li>
+        <li><strong>A2A Protocol</strong> · 你的 Agent 跟我們對話</li><li><strong>MCP / WebMCP</strong> · 你的工具被任何 Agent 呼叫</li><li><strong>OpenClaw 開源框架</strong> · claw3d.ai，直接拿去用</li>
     </ul>
     
 </div>
@@ -2042,7 +2028,7 @@ Stacey + Pandora 把「分析」從一份<strong>工作</strong>，變成一段<
                         <span class="eco-dot d1"></span>
                         <div>
                             <h6>數據 / 分析新創</h6>
-                            <p>把專業數據能力接成 AI OS 的 Skill</p>
+                            <p>接成 AI OS 的 Skill</p>
                         </div>
                     </div>
                     
@@ -2050,7 +2036,7 @@ Stacey + Pandora 把「分析」從一份<strong>工作</strong>，變成一段<
                         <span class="eco-dot d2"></span>
                         <div>
                             <h6>生成式內容新創</h6>
-                            <p>把垂直生成模型變成可調用 Agent</p>
+                            <p>垂直生成模型變可調用 Agent</p>
                         </div>
                     </div>
                     
@@ -2058,7 +2044,7 @@ Stacey + Pandora 把「分析」從一份<strong>工作</strong>，變成一段<
                         <span class="eco-dot d3"></span>
                         <div>
                             <h6>產業垂直 SaaS</h6>
-                            <p>用 A2A 對接，成為 AI OS 的延伸節點</p>
+                            <p>用 A2A 對接，成延伸節點</p>
                         </div>
                     </div>
                     
@@ -2082,7 +2068,7 @@ Stacey + Pandora 把「分析」從一份<strong>工作</strong>，變成一段<
                         <span class="eco-dot d6"></span>
                         <div>
                             <h6>學術 / 研究團隊</h6>
-                            <p>把研究成果直接放上真實商業場景驗證</p>
+                            <p>研究成果上真實商業場景驗證</p>
                         </div>
                     </div>
                     
@@ -2090,8 +2076,8 @@ Stacey + Pandora 把「分析」從一份<strong>工作</strong>，變成一段<
 
                 
                 <div class="box b-orange" style="margin-top: 1vh;">
-                    <p style="font-size: 1.7vh; text-align: center;"><strong class="o">我們帶來的</strong>：騰雲二十年的<strong>人、場、貨</strong>真實商業場景。<br>
-<strong class="o">你帶來的</strong>：你最擅長的那一塊 Agent 能力。一起把它<strong>跑出數據、跑出價值</strong>。</p>
+                    <p style="font-size: 1.7vh; text-align: center;"><strong class="o">我們帶來</strong>：騰雲二十年的<strong>人、場、貨</strong>真實場景。<br>
+<strong class="o">你帶來</strong>：你最擅長的 Agent 能力。一起<strong>跑出價值</strong>。</p>
                 </div>
                 
             </div>
