@@ -607,6 +607,243 @@ h3 { font-size: 2.8cqh; font-weight: 700; color: var(--text); }
     font-weight: 700;
 }
 
+/* ═══════════════════════════════════════════════════════════════════
+   ANIMATED OVERVIEW SLIDE — three-layer cinematic synopsis
+   ═══════════════════════════════════════════════════════════════════ */
+.slide.overview { padding: 0; }
+.slide.overview .bg-image { opacity: 1; background-size: cover; background-position: center; }
+.slide.overview .bg-image::after {
+    background: linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.74) 40%, rgba(255,255,255,0.85) 100%);
+}
+.ov-content {
+    padding: 4cqh 6cqh 3cqh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.ov-content .tag { margin-left: auto; margin-right: auto; }
+.ov-title {
+    font-size: 5cqh;
+    font-weight: 900;
+    line-height: 1.18;
+    margin-bottom: 1cqh;
+    color: var(--text);
+    letter-spacing: -0.4px;
+    opacity: 0;
+    transform: translateY(16px);
+}
+.slide.active.overview .ov-title {
+    animation: ov-fadeUp 0.9s ease-out 0.15s forwards;
+}
+.ov-sub {
+    font-size: 2.2cqh;
+    color: var(--dim);
+    margin-bottom: 2.5cqh;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateY(16px);
+    max-width: 78%;
+}
+.slide.active.overview .ov-sub {
+    animation: ov-fadeUp 0.9s ease-out 0.4s forwards;
+}
+.ov-sub strong { color: var(--text); font-weight: 700; }
+
+.ov-stack {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+}
+
+.ov-layer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-soft);
+    border-radius: 22px;
+    padding: 2cqh 2cqh 2.4cqh;
+    margin: 0 1.2cqh;
+    box-shadow: 0 10px 36px rgba(15, 23, 42, 0.08);
+    position: relative;
+    opacity: 0;
+    transform: translateY(60px) scale(0.92);
+}
+.slide.active.overview .ov-layer.ov-step-1 { animation: ov-layerAppear 1.0s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards; }
+.slide.active.overview .ov-layer.ov-step-2 { animation: ov-layerAppear 1.0s cubic-bezier(0.22, 1, 0.36, 1) 1.9s forwards; }
+.slide.active.overview .ov-layer.ov-step-3 { animation: ov-layerAppear 1.0s cubic-bezier(0.22, 1, 0.36, 1) 3.0s forwards; }
+.ov-layer.ov-tone-orange { border-top: 4px solid var(--orange); }
+.ov-layer.ov-tone-cyan   { border-top: 4px solid var(--cyan); }
+.ov-layer.ov-tone-violet { border-top: 4px solid var(--violet); }
+
+.ov-art {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    margin-bottom: 1.4cqh;
+}
+.ov-art img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 8px 18px rgba(15, 23, 42, 0.10));
+}
+.slide.active.overview .ov-layer.ov-step-1 .ov-art img { animation: ov-bobOrange 5s ease-in-out 1.8s infinite; }
+.slide.active.overview .ov-layer.ov-step-2 .ov-art img { animation: ov-bobCyan   5s ease-in-out 2.9s infinite; }
+.slide.active.overview .ov-layer.ov-step-3 .ov-art img { animation: ov-bobViolet 5s ease-in-out 4.0s infinite; }
+
+.ov-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, currentColor 0%, transparent 60%);
+    opacity: 0;
+    border-radius: 50%;
+    pointer-events: none;
+}
+.ov-layer.ov-tone-orange .ov-glow { color: rgba(245, 158, 11, 0.35); }
+.ov-layer.ov-tone-cyan   .ov-glow { color: rgba(6, 182, 212, 0.32); }
+.ov-layer.ov-tone-violet .ov-glow { color: rgba(168, 85, 247, 0.30); }
+.slide.active.overview .ov-layer.ov-step-1 .ov-glow { animation: ov-glowPulse 1.4s ease-out 0.9s; }
+.slide.active.overview .ov-layer.ov-step-2 .ov-glow { animation: ov-glowPulse 1.4s ease-out 2.0s; }
+.slide.active.overview .ov-layer.ov-step-3 .ov-glow { animation: ov-glowPulse 1.4s ease-out 3.1s; }
+
+.ov-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.3cqh;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--dim-2);
+    margin-bottom: 0.3cqh;
+}
+.ov-name {
+    font-size: 2.6cqh;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 0.5cqh;
+    letter-spacing: -0.2px;
+}
+.ov-layer.ov-tone-orange .ov-name { color: #b45309; }
+.ov-layer.ov-tone-cyan   .ov-name { color: var(--cyan); }
+.ov-layer.ov-tone-violet .ov-name { color: var(--violet); }
+.ov-by {
+    font-size: 1.65cqh;
+    color: var(--dim);
+    line-height: 1.4;
+}
+
+.ov-arrow {
+    align-self: center;
+    width: 5cqh;
+    height: 4cqh;
+    flex: 0 0 5cqh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    opacity: 0;
+    position: relative;
+}
+.ov-arrow svg { width: 100%; height: 100%; }
+.slide.active.overview .ov-arrow-1 { animation: ov-arrowAppear 0.7s ease-out 1.6s forwards; }
+.slide.active.overview .ov-arrow-2 { animation: ov-arrowAppear 0.7s ease-out 2.7s forwards; }
+.ov-arrow-dot {
+    position: absolute;
+    width: 0.7cqh;
+    height: 0.7cqh;
+    border-radius: 50%;
+    background: var(--cyan);
+    top: 50%;
+    left: 0;
+    margin-top: -0.35cqh;
+    opacity: 0;
+}
+.slide.active.overview .ov-arrow-1 .ov-arrow-dot:nth-child(1) { animation: ov-dotFlow 1.4s ease-in-out 2.0s infinite; }
+.slide.active.overview .ov-arrow-1 .ov-arrow-dot:nth-child(2) { animation: ov-dotFlow 1.4s ease-in-out 2.35s infinite; }
+.slide.active.overview .ov-arrow-1 .ov-arrow-dot:nth-child(3) { animation: ov-dotFlow 1.4s ease-in-out 2.7s infinite; }
+.ov-arrow-2 .ov-arrow-dot { background: var(--violet); }
+.slide.active.overview .ov-arrow-2 .ov-arrow-dot:nth-child(1) { animation: ov-dotFlow 1.4s ease-in-out 3.1s infinite; }
+.slide.active.overview .ov-arrow-2 .ov-arrow-dot:nth-child(2) { animation: ov-dotFlow 1.4s ease-in-out 3.45s infinite; }
+.slide.active.overview .ov-arrow-2 .ov-arrow-dot:nth-child(3) { animation: ov-dotFlow 1.4s ease-in-out 3.8s infinite; }
+
+.ov-reveal {
+    margin-top: 2cqh;
+    padding: 1.4cqh 2.4cqh;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid var(--border-soft);
+    border-radius: 100px;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    transform: translateY(20px);
+}
+.slide.active.overview .ov-reveal {
+    animation: ov-fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 4.1s forwards;
+}
+.ov-r-line {
+    font-size: 1.95cqh;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.1px;
+}
+.ov-r-line strong { font-weight: 900; }
+.ov-r-line .o { color: #d97706; }
+.ov-r-line .c { color: var(--cyan); }
+.ov-r-line .v { color: var(--violet); }
+
+.slide.overview .meta { width: 100%; margin-top: 1.4cqh; }
+
+/* ─── Keyframes for overview animation ─── */
+@keyframes ov-fadeUp {
+    0%   { opacity: 0; transform: translateY(16px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes ov-layerAppear {
+    0%   { opacity: 0; transform: translateY(60px) scale(0.92); }
+    65%  { opacity: 1; transform: translateY(-4px) scale(1.02); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes ov-glowPulse {
+    0%   { opacity: 0; transform: scale(0.6); }
+    35%  { opacity: 1; transform: scale(1.4); }
+    100% { opacity: 0; transform: scale(2.1); }
+}
+@keyframes ov-arrowAppear {
+    0%   { opacity: 0; transform: translateX(-12px); }
+    100% { opacity: 0.75; transform: translateX(0); }
+}
+@keyframes ov-dotFlow {
+    0%   { opacity: 0; left: 0; }
+    20%  { opacity: 1; }
+    80%  { opacity: 1; }
+    100% { opacity: 0; left: 100%; }
+}
+@keyframes ov-bobOrange {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-6px); }
+}
+@keyframes ov-bobCyan {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-4px) rotate(2deg); }
+}
+@keyframes ov-bobViolet {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-4px) rotate(-2deg); }
+}
+
 /* ─── Navigation ─── */
 .arrow {
     position: fixed;
@@ -836,7 +1073,7 @@ h3 { font-size: 2.8cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>The Pocket Company × TurnCloud — 2026</span>
-            <span class="pg">02 / 26</span>
+            <span class="pg">02 / 27</span>
         </div>
     </div>
 </div>
@@ -891,7 +1128,7 @@ h3 { font-size: 2.8cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>Runtime 是引擎 — 接下來談駕駛艙</span>
-            <span class="pg">03 / 26</span>
+            <span class="pg">03 / 27</span>
         </div>
     </div>
 </div>
@@ -949,12 +1186,87 @@ h3 { font-size: 2.8cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>From scattered tools to a unified OS</span>
-            <span class="pg">04 / 26</span>
+            <span class="pg">04 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 05: aios_concept (two_col) ══════════ -->
+<!-- ══════════ SLIDE 05: overview (overview) ══════════ -->
+
+<div class="slide overview" data-slide="overview">
+    <div class="bg-image ov-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
+    <div class="slide-content ov-content">
+        <div class="tag tag-cyan">INTERMEZZO · 一張圖看懂</div>
+        <h2 class="ov-title">從 <span class="o">Runtime</span> → <span class="c">AI OS</span> → <span class="v">Agents</span></h2>
+        <p class="ov-sub"><strong>三層各司其職、彼此堆疊</strong> ── The Pocket Company 對企業 AI 的完整答案。</p>
+
+        <div class="ov-stack">
+            
+            <div class="ov-layer ov-step-1 ov-tone-orange">
+                <div class="ov-art">
+                    <div class="ov-glow"></div>
+                    <img src="img/anim_runtime_iso.jpg" alt="Physical Space Runtime">
+                </div>
+                <div class="ov-label">LAYER 01</div>
+                <div class="ov-name">Physical Space Runtime</div>
+                <div class="ov-by">by 騰雲科技 · 讓 AI 進入<strong>實體空間</strong></div>
+            </div>
+            
+            <div class="ov-arrow ov-arrow-1">
+                <span class="ov-arrow-dot"></span>
+                <span class="ov-arrow-dot"></span>
+                <span class="ov-arrow-dot"></span>
+                <svg viewBox="0 0 24 24" width="100%" height="100%" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+            </div>
+            
+            
+            <div class="ov-layer ov-step-2 ov-tone-cyan">
+                <div class="ov-art">
+                    <div class="ov-glow"></div>
+                    <img src="img/anim_aios_orb.jpg" alt="Enterprise AI OS">
+                </div>
+                <div class="ov-label">LAYER 02</div>
+                <div class="ov-name">Enterprise AI OS</div>
+                <div class="ov-by">by The Pocket Company · <strong>編排層</strong></div>
+            </div>
+            
+            <div class="ov-arrow ov-arrow-2">
+                <span class="ov-arrow-dot"></span>
+                <span class="ov-arrow-dot"></span>
+                <span class="ov-arrow-dot"></span>
+                <svg viewBox="0 0 24 24" width="100%" height="100%" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+            </div>
+            
+            
+            <div class="ov-layer ov-step-3 ov-tone-violet">
+                <div class="ov-art">
+                    <div class="ov-glow"></div>
+                    <img src="img/anim_agents_ring.jpg" alt="AI Agent Workforce">
+                </div>
+                <div class="ov-label">LAYER 03</div>
+                <div class="ov-name">AI Agent Workforce</div>
+                <div class="ov-by"><strong>5 位 Agent</strong> · A2A 協作</div>
+            </div>
+            
+            
+        </div>
+
+        <div class="ov-reveal">
+            <span class="ov-r-line"><span class="o">Runtime 讓 AI 進入空間</span> · <span class="c">AI OS 讓企業管理 AI</span> · <span class="v">Agents 真正開始工作</span></span>
+        </div>
+
+        <div class="meta">
+            <span>Runtime · AI OS · Agents — 一張圖看懂</span>
+            <span class="pg">05 / 27</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 06: aios_concept (two_col) ══════════ -->
 
 <div class="slide bg-cyan" data-slide="aios_concept">
     <div class="slide-content">
@@ -1007,12 +1319,12 @@ Agent 從<strong class="v">虛擬空間</strong>協作出策略，<br>
 
         <div class="meta">
             <span>AI OS · One OS · Two Spaces</span>
-            <span class="pg">05 / 26</span>
+            <span class="pg">06 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 06: aios (two_col) ══════════ -->
+<!-- ══════════ SLIDE 07: aios (two_col) ══════════ -->
 
 <div class="slide bg-dark" data-slide="aios">
     <div class="slide-content">
@@ -1055,12 +1367,12 @@ Agent 從<strong class="v">虛擬空間</strong>協作出策略，<br>
 
         <div class="meta">
             <span>Enterprise AI OS · 跨兩種空間的編排層</span>
-            <span class="pg">06 / 26</span>
+            <span class="pg">07 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 07: three_layers (layers) ══════════ -->
+<!-- ══════════ SLIDE 08: three_layers (layers) ══════════ -->
 
 <div class="slide bg-dark">
     <div class="slide-content">
@@ -1116,12 +1428,12 @@ Agent 從<strong class="v">虛擬空間</strong>協作出策略，<br>
 
         <div class="meta">
             <span>Runtime · AI OS · Agents — 三層敘事</span>
-            <span class="pg">07 / 26</span>
+            <span class="pg">08 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 08: workforce (workforce) ══════════ -->
+<!-- ══════════ SLIDE 09: workforce (workforce) ══════════ -->
 
 <div class="slide bg-violet">
     <div class="slide-content">
@@ -1168,12 +1480,12 @@ Agent 從<strong class="v">虛擬空間</strong>協作出策略，<br>
 
         <div class="meta">
             <span>5 位 AI 員工 — 可以開始招聘的數位團隊</span>
-            <span class="pg">08 / 26</span>
+            <span class="pg">09 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 09: pandora (two_col) ══════════ -->
+<!-- ══════════ SLIDE 10: pandora (two_col) ══════════ -->
 
 <div class="slide bg-dark" data-slide="pandora">
     <div class="slide-content">
@@ -1225,12 +1537,12 @@ Agent 從<strong class="v">虛擬空間</strong>協作出策略，<br>
 
         <div class="meta">
             <span>Pandora — Market Intelligence · MVP LIVE</span>
-            <span class="pg">09 / 26</span>
+            <span class="pg">10 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 10: pandora_demo (two_col) ══════════ -->
+<!-- ══════════ SLIDE 11: pandora_demo (two_col) ══════════ -->
 
 <div class="slide bg-dark" data-slide="pandora_demo">
     <div class="slide-content">
@@ -1272,12 +1584,12 @@ Pandora 把整條鏈路<strong>跑到結論</strong>。</p>
 
         <div class="meta">
             <span>Pandora — Auto Insight Report</span>
-            <span class="pg">10 / 26</span>
+            <span class="pg">11 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 11: moana (two_col) ══════════ -->
+<!-- ══════════ SLIDE 12: moana (two_col) ══════════ -->
 
 <div class="slide bg-warm" data-slide="moana">
     <div class="slide-content">
@@ -1330,12 +1642,12 @@ Pandora 把整條鏈路<strong>跑到結論</strong>。</p>
 
         <div class="meta">
             <span>Moana — Culture Listening × Social Commerce · MVP LIVE</span>
-            <span class="pg">11 / 26</span>
+            <span class="pg">12 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 12: moana_culture_flow (two_col) ══════════ -->
+<!-- ══════════ SLIDE 13: moana_culture_flow (two_col) ══════════ -->
 
 <div class="slide bg-warm" data-slide="moana_culture_flow">
     <div class="slide-content">
@@ -1386,12 +1698,12 @@ Pandora 把整條鏈路<strong>跑到結論</strong>。</p>
 
         <div class="meta">
             <span>Moana — Culture Listening 整合架構</span>
-            <span class="pg">12 / 26</span>
+            <span class="pg">13 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 13: moana_culture_demo (two_col) ══════════ -->
+<!-- ══════════ SLIDE 14: moana_culture_demo (two_col) ══════════ -->
 
 <div class="slide bg-warm" data-slide="moana_culture_demo">
     <div class="slide-content">
@@ -1433,12 +1745,12 @@ Moana 結合<strong>台灣整體文化脈絡</strong> ── <br>
 
         <div class="meta">
             <span>Moana — Live Case · 猛健樂 Culture Listening</span>
-            <span class="pg">13 / 26</span>
+            <span class="pg">14 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 14: moana_case_02 (two_col) ══════════ -->
+<!-- ══════════ SLIDE 15: moana_case_02 (two_col) ══════════ -->
 
 <div class="slide bg-warm" data-slide="moana_case_02">
     <div class="slide-content">
@@ -1480,12 +1792,12 @@ Moana 把整條鏈路<strong>同一個 Agent 跑完</strong> ──<br>
 
         <div class="meta">
             <span>Moana — Insight → Brief → Article Pipeline</span>
-            <span class="pg">14 / 26</span>
+            <span class="pg">15 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 15: banana (two_col) ══════════ -->
+<!-- ══════════ SLIDE 16: banana (two_col) ══════════ -->
 
 <div class="slide bg-warm" data-slide="banana">
     <div class="slide-content">
@@ -1537,12 +1849,12 @@ Moana 把整條鏈路<strong>同一個 Agent 跑完</strong> ──<br>
 
         <div class="meta">
             <span>Banana — Visual Design · MVP LIVE</span>
-            <span class="pg">15 / 26</span>
+            <span class="pg">16 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 16: banana_split_system (two_col) ══════════ -->
+<!-- ══════════ SLIDE 17: banana_split_system (two_col) ══════════ -->
 
 <div class="slide bg-warm" data-slide="banana_split_system">
     <div class="slide-content">
@@ -1593,12 +1905,12 @@ Moana 把整條鏈路<strong>同一個 Agent 跑完</strong> ──<br>
 
         <div class="meta">
             <span>Banana Split — 5-Step Creative Pipeline</span>
-            <span class="pg">16 / 26</span>
+            <span class="pg">17 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 17: banana_split_demo (two_col) ══════════ -->
+<!-- ══════════ SLIDE 18: banana_split_demo (two_col) ══════════ -->
 
 <div class="slide bg-warm" data-slide="banana_split_demo">
     <div class="slide-content">
@@ -1640,12 +1952,12 @@ Banana：<strong>一分鐘出三十版</strong>。<br>
 
         <div class="meta">
             <span>Banana — Visual Generation Live Demo</span>
-            <span class="pg">17 / 26</span>
+            <span class="pg">18 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 18: banana_video_edit (two_col) ══════════ -->
+<!-- ══════════ SLIDE 19: banana_video_edit (two_col) ══════════ -->
 
 <div class="slide bg-warm" data-slide="banana_video_edit">
     <div class="slide-content">
@@ -1687,12 +1999,12 @@ Reels Studio 把<strong>整條 pipeline 拆給多位 Agent</strong>，<br>
 
         <div class="meta">
             <span>Banana Split — Reels Studio · Agentic Editing</span>
-            <span class="pg">18 / 26</span>
+            <span class="pg">19 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 19: adriana (two_col) ══════════ -->
+<!-- ══════════ SLIDE 20: adriana (two_col) ══════════ -->
 
 <div class="slide bg-violet" data-slide="adriana">
     <div class="slide-content">
@@ -1745,12 +2057,12 @@ Adriana 把它壓到<strong>分鐘級</strong>。</p>
 
         <div class="meta">
             <span>Adriana — Personalization Agent · BUILDING</span>
-            <span class="pg">19 / 26</span>
+            <span class="pg">20 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 20: adriana_demo (two_col) ══════════ -->
+<!-- ══════════ SLIDE 21: adriana_demo (two_col) ══════════ -->
 
 <div class="slide bg-violet" data-slide="adriana_demo">
     <div class="slide-content">
@@ -1792,12 +2104,12 @@ Adriana 把「查數據 → 改素材」壓到<strong>一句話的時間</strong
 
         <div class="meta">
             <span>Adriana — Conversational Ad Intelligence</span>
-            <span class="pg">20 / 26</span>
+            <span class="pg">21 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 21: adriana_crm_capi (two_col) ══════════ -->
+<!-- ══════════ SLIDE 22: adriana_crm_capi (two_col) ══════════ -->
 
 <div class="slide bg-violet" data-slide="adriana_crm_capi">
     <div class="slide-content">
@@ -1839,12 +2151,12 @@ Adriana 把「查數據 → 改素材」壓到<strong>一句話的時間</strong
 
         <div class="meta">
             <span>Adriana — AI CRM × Meta Conversions API</span>
-            <span class="pg">21 / 26</span>
+            <span class="pg">22 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 22: adriana_crm_demo (two_col) ══════════ -->
+<!-- ══════════ SLIDE 23: adriana_crm_demo (two_col) ══════════ -->
 
 <div class="slide bg-violet" data-slide="adriana_crm_demo">
     <div class="slide-content">
@@ -1885,12 +2197,12 @@ Adriana 把「查數據 → 改素材」壓到<strong>一句話的時間</strong
 
         <div class="meta">
             <span>Adriana — AI CRM × Meta CAPI Live</span>
-            <span class="pg">22 / 26</span>
+            <span class="pg">23 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 23: stacey (two_col) ══════════ -->
+<!-- ══════════ SLIDE 24: stacey (two_col) ══════════ -->
 
 <div class="slide bg-dark" data-slide="stacey">
     <div class="slide-content">
@@ -1943,12 +2255,12 @@ Stacey 讓 Agent 第一次<strong>像一間公司一樣</strong>運作 ──<br
 
         <div class="meta">
             <span>Stacey — Orchestrator · BUILDING</span>
-            <span class="pg">23 / 26</span>
+            <span class="pg">24 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 24: stacey_demo (two_col) ══════════ -->
+<!-- ══════════ SLIDE 25: stacey_demo (two_col) ══════════ -->
 
 <div class="slide bg-dark" data-slide="stacey_demo">
     <div class="slide-content">
@@ -1990,12 +2302,12 @@ Stacey 讓 Agent 第一次<strong>像一間公司一樣</strong>運作 ──<br
 
         <div class="meta">
             <span>Stacey × Pandora — Dr.Wu Sentiment Analysis Live</span>
-            <span class="pg">24 / 26</span>
+            <span class="pg">25 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 25: ecosystem (ecosystem) ══════════ -->
+<!-- ══════════ SLIDE 26: ecosystem (ecosystem) ══════════ -->
 
 <div class="slide bg-dark">
     <div class="slide-content">
@@ -2085,12 +2397,12 @@ Stacey 讓 Agent 第一次<strong>像一間公司一樣</strong>運作 ──<br
 
         <div class="meta">
             <span>The Pocket Company is the first node — yours can be the next</span>
-            <span class="pg">25 / 26</span>
+            <span class="pg">26 / 27</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 26: closing (closing) ══════════ -->
+<!-- ══════════ SLIDE 27: closing (closing) ══════════ -->
 
 <div class="slide closing">
     <div class="bg-image" style="background-image: url('img/14_closing.jpg');"></div>
