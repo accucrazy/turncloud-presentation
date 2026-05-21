@@ -608,6 +608,314 @@ h3 { font-size: 2.8cqh; font-weight: 700; color: var(--text); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
+   ANIMATED DUALITY SLIDE — AI OS · One OS, Two Spaces
+   ═══════════════════════════════════════════════════════════════════ */
+.slide.duality { padding: 0; }
+.slide.duality .bg-image { opacity: 1; background-size: cover; background-position: center; }
+.slide.duality .bg-image::after {
+    background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.80) 40%, rgba(255,255,255,0.90) 100%);
+}
+.dual-content {
+    padding: 3.2cqh 4.8cqh 2.4cqh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.slide.duality .tag { margin-left: auto; margin-right: auto; }
+.dual-title {
+    font-size: 4.4cqh;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 0.6cqh;
+    color: var(--text);
+    letter-spacing: -0.4px;
+    opacity: 0;
+    transform: translateY(16px);
+}
+.slide.active.duality .dual-title { animation: dual-fadeUp 0.85s ease-out 0.15s forwards; }
+.dual-sub {
+    font-size: 1.85cqh;
+    color: var(--dim);
+    margin-bottom: 1.4cqh;
+    line-height: 1.5;
+    max-width: 80%;
+    opacity: 0;
+    transform: translateY(16px);
+}
+.dual-sub strong { color: var(--text); font-weight: 700; }
+.slide.active.duality .dual-sub { animation: dual-fadeUp 0.85s ease-out 0.4s forwards; }
+
+.dual-stage {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4cqh;
+    min-height: 0;
+    position: relative;
+}
+
+/* AI OS top orchestrator card */
+.dual-os {
+    width: 84%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, var(--cyan-bg) 100%);
+    border: 2px solid var(--cyan);
+    border-radius: 18px;
+    padding: 1.2cqh 2cqh;
+    box-shadow: 0 14px 40px rgba(6,182,212,0.18);
+    position: relative;
+    opacity: 0;
+    transform: translateY(-30px) scale(0.96);
+}
+.slide.active.duality .dual-os { animation: dual-osDrop 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards; }
+.dual-os-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.4cqh;
+    position: relative;
+    z-index: 1;
+}
+.dual-os-hex {
+    width: 7cqh;
+    height: 7cqh;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 10px rgba(6,182,212,0.35));
+}
+.slide.active.duality .dual-os-hex { animation: dual-hexPulse 3.6s ease-in-out 1.4s infinite; }
+.dual-os-body {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3cqh;
+}
+.dual-os-name {
+    font-size: 2.4cqh;
+    font-weight: 900;
+    color: var(--cyan);
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+}
+.dual-os-sub {
+    font-size: 1.5cqh;
+    color: var(--dim);
+    line-height: 1.4;
+}
+.dual-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5cqh;
+    margin-top: 0.5cqh;
+}
+.dual-chip {
+    background: rgba(6,182,212,0.10);
+    color: var(--cyan);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25cqh;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0.35cqh 1cqh;
+    border-radius: 100px;
+    border: 1px solid rgba(6,182,212,0.25);
+    opacity: 0;
+    transform: scale(0.7);
+}
+.slide.active.duality .dual-chip-1 { animation: dual-chipPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.4s forwards; }
+.slide.active.duality .dual-chip-2 { animation: dual-chipPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s forwards; }
+.slide.active.duality .dual-chip-3 { animation: dual-chipPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.6s forwards; }
+.slide.active.duality .dual-chip-4 { animation: dual-chipPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.7s forwards; }
+.slide.active.duality .dual-chip-5 { animation: dual-chipPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.8s forwards; }
+.slide.active.duality .dual-chip-6 { animation: dual-chipPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1.9s forwards; }
+
+.dual-os-glow {
+    position: absolute;
+    inset: -6cqh;
+    background: radial-gradient(ellipse at center, rgba(6,182,212,0.18) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+}
+.slide.active.duality .dual-os-glow { animation: dual-haloPulse 4s ease-in-out 2s infinite; }
+
+/* Branching arrows */
+.dual-branch {
+    width: 88%;
+    height: 6cqh;
+    margin-top: -0.6cqh;
+    margin-bottom: -0.6cqh;
+}
+.dual-branch-line {
+    stroke-dasharray: 280;
+    stroke-dashoffset: 280;
+}
+.slide.active.duality .dual-branch-l { animation: dual-drawLine 0.9s ease-out 2.1s forwards; }
+.slide.active.duality .dual-branch-r { animation: dual-drawLine 0.9s ease-out 2.1s forwards; }
+
+/* Two space cards */
+.dual-spaces {
+    display: flex;
+    width: 100%;
+    gap: 2.4cqh;
+    flex: 1;
+    min-height: 0;
+}
+.dual-space {
+    flex: 1;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid var(--border-soft);
+    border-radius: 18px;
+    padding: 1.4cqh 1.6cqh 1.6cqh;
+    box-shadow: 0 14px 36px rgba(15,23,42,0.08);
+    display: flex;
+    gap: 1.4cqh;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+}
+.dual-space-physical { border-top: 4px solid var(--orange); transform: translateX(-60px); }
+.dual-space-virtual  { border-top: 4px solid var(--violet); transform: translateX(60px); }
+.slide.active.duality .dual-space-physical { animation: dual-slideInL 0.9s cubic-bezier(0.22, 1, 0.36, 1) 2.6s forwards; }
+.slide.active.duality .dual-space-virtual  { animation: dual-slideInR 0.9s cubic-bezier(0.22, 1, 0.36, 1) 2.6s forwards; }
+
+.dual-space-art {
+    flex: 0.95;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    min-height: 0;
+}
+.dual-space-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.dual-space-body {
+    flex: 1.05;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    min-width: 0;
+}
+.dual-space-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2cqh;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: var(--dim-2);
+    margin-bottom: 0.3cqh;
+}
+.dual-space-physical .dual-space-label { color: #b45309; }
+.dual-space-virtual  .dual-space-label { color: var(--violet); }
+.dual-space-name {
+    font-size: 2.4cqh;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 0.3cqh;
+    letter-spacing: -0.2px;
+}
+.dual-space-physical .dual-space-name { color: #b45309; }
+.dual-space-virtual  .dual-space-name { color: var(--violet); }
+.dual-space-tag {
+    font-size: 1.45cqh;
+    color: var(--dim);
+    margin-bottom: 0.8cqh;
+    font-style: italic;
+    line-height: 1.35;
+}
+.dual-space-body ul { list-style: none; margin: 0.2cqh 0 0.6cqh; }
+.dual-space-body li {
+    font-size: 1.6cqh;
+    color: var(--dim);
+    padding: 0.25cqh 0 0.25cqh 1.4cqh;
+    line-height: 1.45;
+    position: relative;
+}
+.dual-space-body li::before {
+    content: '•';
+    position: absolute;
+    left: 0; top: 0.1cqh;
+    font-weight: 900;
+}
+.dual-space-physical li::before { color: #d97706; }
+.dual-space-virtual  li::before { color: var(--violet); }
+.dual-space-body li strong { color: var(--text); font-weight: 700; }
+.dual-space-via {
+    margin-top: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25cqh;
+    color: var(--dim-2);
+    padding-top: 0.6cqh;
+    border-top: 1px dashed var(--border);
+}
+.dual-space-physical .dual-space-via strong { color: #b45309; }
+.dual-space-virtual  .dual-space-via strong { color: var(--violet); }
+
+.dual-tagline {
+    margin-top: 1.2cqh;
+    padding: 1cqh 2cqh;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid var(--border-soft);
+    border-radius: 100px;
+    box-shadow: var(--shadow-sm);
+    font-size: 1.7cqh;
+    font-weight: 700;
+    color: var(--text);
+    opacity: 0;
+    transform: translateY(20px);
+}
+.dual-tagline strong { font-weight: 900; }
+.dual-tagline .o { color: #d97706; }
+.dual-tagline .v { color: var(--violet); }
+.dual-tagline .c { color: var(--cyan); }
+.slide.active.duality .dual-tagline { animation: dual-fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 3.8s forwards; }
+
+.slide.duality .meta { width: 100%; margin-top: 1cqh; }
+
+/* ─── Duality keyframes ─── */
+@keyframes dual-fadeUp {
+    0%   { opacity: 0; transform: translateY(16px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes dual-osDrop {
+    0%   { opacity: 0; transform: translateY(-30px) scale(0.96); }
+    70%  { opacity: 1; transform: translateY(4px) scale(1.01); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes dual-chipPop {
+    0%   { opacity: 0; transform: scale(0.6); }
+    70%  { opacity: 1; transform: scale(1.12); }
+    100% { opacity: 1; transform: scale(1); }
+}
+@keyframes dual-hexPulse {
+    0%, 100% { filter: drop-shadow(0 4px 10px rgba(6,182,212,0.30)); transform: rotate(0deg); }
+    50%      { filter: drop-shadow(0 6px 18px rgba(6,182,212,0.55)); transform: rotate(180deg); }
+}
+@keyframes dual-haloPulse {
+    0%, 100% { opacity: 0.55; }
+    50%      { opacity: 1; }
+}
+@keyframes dual-drawLine {
+    0%   { stroke-dashoffset: 280; opacity: 0; }
+    20%  { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+}
+@keyframes dual-slideInL {
+    0%   { opacity: 0; transform: translateX(-60px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes dual-slideInR {
+    0%   { opacity: 0; transform: translateX(60px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
    ANIMATED OVERVIEW SLIDE — three-layer cinematic synopsis
    ═══════════════════════════════════════════════════════════════════ */
 .slide.overview { padding: 0; }
@@ -1266,56 +1574,112 @@ h3 { font-size: 2.8cqh; font-weight: 700; color: var(--text); }
     </div>
 </div>
 
-<!-- ══════════ SLIDE 06: aios_concept (two_col) ══════════ -->
+<!-- ══════════ SLIDE 06: aios_concept (duality) ══════════ -->
 
-<div class="slide bg-cyan" data-slide="aios_concept">
-    <div class="slide-content">
+<div class="slide duality" data-slide="aios_concept">
+    <div class="bg-image dual-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
+    <div class="slide-content dual-content">
         <div class="tag tag-cyan">FROM RUNTIME TO AI OS · ONE OS · TWO SPACES</div>
-        <h2>同一套 <span class="c">AI OS</span>，編排<span class="o">實體</span>與<span class="v">虛擬</span>兩種空間</h2>
-        <p class="sub"><strong>AI OS = AI Operating System，更是 Agent Orchestrated Space</strong>。<br>「Space」<strong class="o">實體</strong>是 AI 走進真實人場貨；<strong class="v">虛擬</strong>是 Agent 互相協作的工作空間。</p>
+        <h2 class="dual-title">同一套 <span class="c">AI OS</span>，編排<span class="o">實體</span>與<span class="v">虛擬</span>兩種空間</h2>
+        <p class="dual-sub"><strong>AI OS = AI Operating System</strong> · 更是 <strong class="c">Agent Orchestrated Space</strong> ── 一個能讓 <strong>真實世界</strong>與 <strong>Agent 們</strong>同時被編排的空間。</p>
 
-        <div class="s-body">
-            <div class="s-col" style="flex: 1.85;">
-                <div class="illus-frame"><img src="img/aios_infographic_v4.jpg" alt="AI OS · Agent Orchestrated Space — Physical / Virtual, One OS Two Spaces" style="object-fit: contain;">
-</div>
+        <div class="dual-stage">
+            <!-- TOP: AI OS Orchestrator card -->
+            <div class="dual-os">
+                <div class="dual-os-inner">
+                    <div class="dual-os-hex">
+                        <svg viewBox="0 0 100 100" width="100%" height="100%">
+                            <polygon points="50,8 88,30 88,70 50,92 12,70 12,30"
+                                fill="rgba(6,182,212,0.18)"
+                                stroke="rgba(6,182,212,0.9)"
+                                stroke-width="2.4" stroke-linejoin="round"/>
+                            <polygon points="50,22 78,38 78,62 50,78 22,62 22,38"
+                                fill="rgba(6,182,212,0.35)"
+                                stroke="none"/>
+                        </svg>
+                    </div>
+                    <div class="dual-os-body">
+                        <div class="dual-os-name">AI OS · <span style="color:var(--text);">Agent Orchestrated Space</span></div>
+                        <div class="dual-os-sub">同一套編排層 — Orchestrator · A2A · MCP · Memory · Policy · Governance</div>
+                        <div class="dual-chips">
+                            
+                            <span class="dual-chip dual-chip-1">Orchestrator</span>
+                            
+                            <span class="dual-chip dual-chip-2">A2A</span>
+                            
+                            <span class="dual-chip dual-chip-3">MCP</span>
+                            
+                            <span class="dual-chip dual-chip-4">Memory</span>
+                            
+                            <span class="dual-chip dual-chip-5">Policy</span>
+                            
+                            <span class="dual-chip dual-chip-6">Governance</span>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="dual-os-glow"></div>
             </div>
-            <div class="s-col">
-                
-                
-<div class="box b-orange">
-    <h4 class="o"><span class="o">實體空間</span> ── AI 服務<span class="o">真實世界</span></h4>
-    
-    <p>這裡的「空間」是<strong>真實的人、場、貨</strong> ──<br>
-零售店、工廠、飯店、POS / HOYABOX、IoT。<br>
-AI 不只活在雲端，而是<strong>走進門市、走進現場</strong>。</p>
-    
-</div>
 
-                
-                
-<div class="box b-violet">
-    <h4 class="v"><span class="v">虛擬空間</span> ── <span class="v">Agent 協作</span>的場域</h4>
-    
-    <p>這裡的「空間」<strong>本身就是 Agent 的工作空間</strong> ──<br>
-5 位 Agent 透過 <strong>A2A Protocol</strong> 對話、分工、編排，<br>
-動態接上 TCRM / BigQuery / Ads / SaaS。</p>
-    
-</div>
+            <!-- BRANCHING ARROWS down to two spaces -->
+            <svg class="dual-branch" viewBox="0 0 600 80" preserveAspectRatio="none">
+                <defs>
+                    <marker id="dArrowL" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
+                        <path d="M0,0 L9,4.5 L0,9 Z" fill="rgba(217,119,6,0.85)"/>
+                    </marker>
+                    <marker id="dArrowR" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
+                        <path d="M0,0 L9,4.5 L0,9 Z" fill="rgba(168,85,247,0.85)"/>
+                    </marker>
+                </defs>
+                <path class="dual-branch-line dual-branch-l"
+                    d="M 300 0 C 300 30, 200 40, 130 72"
+                    stroke="rgba(217,119,6,0.85)" stroke-width="2.6"
+                    fill="none" stroke-linecap="round"
+                    marker-end="url(#dArrowL)"/>
+                <path class="dual-branch-line dual-branch-r"
+                    d="M 300 0 C 300 30, 400 40, 470 72"
+                    stroke="rgba(168,85,247,0.85)" stroke-width="2.6"
+                    fill="none" stroke-linecap="round"
+                    marker-end="url(#dArrowR)"/>
+            </svg>
 
-                
-                
-<div class="box b-cyan">
-    <h4>同一套 OS · <span class="c">編排兩種空間</span></h4>
-    
-    <p>一句指令、跨空間執行 ──<br>
-Agent 從<strong class="v">虛擬空間</strong>協作出策略，<br>
-把行動<strong class="o">落地到實體空間</strong>。</p>
-    
-</div>
+            <!-- BOTTOM: two space cards -->
+            <div class="dual-spaces">
+                <!-- PHYSICAL -->
+                <div class="dual-space dual-space-physical">
+                    <div class="dual-space-art">
+                        <img src="img/space_physical.jpg" alt="實體空間 ── AI 走進<strong style="color:#b45309;">真實人場貨</strong>">
+                    </div>
+                    <div class="dual-space-body">
+                        <div class="dual-space-label">SPACE 01 · PHYSICAL</div>
+                        <div class="dual-space-name">實體空間 ── AI 走進<strong style="color:#b45309;">真實人場貨</strong></div>
+                        <div class="dual-space-tag">AI 不再只活在雲端,而是進到門市、工廠、現場服務真實的人。</div>
+                        <ul>
+                            <li><strong>場域</strong>：零售店 · 工廠 · 飯店 · 醫療現場</li><li><strong>裝置</strong>：POS · HOYABOX · IoT 感測 · 攝影機</li><li><strong>價值</strong>：用 AI 服務<strong>每一位顧客</strong></li>
+                        </ul>
+                        <div class="dual-space-via">via <strong>騰雲科技 Runtime</strong></div>
+                    </div>
+                </div>
 
-                
+                <!-- VIRTUAL -->
+                <div class="dual-space dual-space-virtual">
+                    <div class="dual-space-art">
+                        <img src="img/space_virtual.jpg" alt="虛擬空間 ── <strong style="color:var(--violet);">Agent 們協作</strong>的場域">
+                    </div>
+                    <div class="dual-space-body">
+                        <div class="dual-space-label">SPACE 02 · VIRTUAL</div>
+                        <div class="dual-space-name">虛擬空間 ── <strong style="color:var(--violet);">Agent 們協作</strong>的場域</div>
+                        <div class="dual-space-tag">這個「空間」本身,就是 5 位 AI Agent 24/7 一起工作的數位辦公室。</div>
+                        <ul>
+                            <li><strong>成員</strong>：Pandora · Moana · Banana · Adriana · Stacey</li><li><strong>協議</strong>：A2A 互通 · MCP 取資源 · 共享記憶</li><li><strong>價值</strong>：複雜任務<strong>多 Agent 一起完成</strong></li>
+                        </ul>
+                        <div class="dual-space-via">via <strong>The Pocket Company AI OS</strong></div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="dual-tagline"><span class="c">One OS</span> · <span class="o">Two Spaces</span> · <span class="v">Five Agents</span> ── 一句指令、跨空間執行。</div>
 
         <div class="meta">
             <span>AI OS · One OS · Two Spaces</span>
