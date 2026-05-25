@@ -1,0 +1,57 @@
+{% import '_macros.html' as m %}
+<div class="slide bg-{{ bg | default('dark') }}{% if is_first %} active{% endif %}"{% if id %} data-slide="{{ id }}"{% endif %}>
+    <div class="slide-content">
+        {% if tag %}<div class="tag tag-{{ tag.color }}{% if tag.pulse %} tag-launch{% endif %}">{{ tag.text }}</div>{% endif %}
+        <h2>{{ title | safe }}</h2>
+        {% if subtitle %}<p class="sub">{{ subtitle | safe }}</p>{% endif %}
+
+        <div class="s-body">
+            <div class="s-col"{% if media_flex %} style="flex: {{ media_flex }};"{% endif %}>
+                <div class="aios-arch">
+                    <div class="aios-top">
+                        <div class="aios-top-title">{{ aios_diagram.top.title | safe }}</div>
+                        <div class="aios-top-sub">{{ aios_diagram.top.subtitle | safe }}</div>
+                        <div class="aios-components">
+                            {% for chip in aios_diagram.top.chips %}
+                            <span>{{ chip }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="aios-arrows">↓&nbsp;&nbsp;{{ aios_diagram.arrow_label }}&nbsp;&nbsp;↓</div>
+                    <div class="aios-spaces">
+                        <div class="aios-space space-physical">
+                            <div class="space-head">
+                                <div class="space-label">{{ aios_diagram.physical.label }}</div>
+                                <div class="space-en">{{ aios_diagram.physical.label_en }}</div>
+                            </div>
+                            <ul>
+                                {% for item in aios_diagram.physical.bullets %}<li>{{ item | safe }}</li>{% endfor %}
+                            </ul>
+                            <div class="space-via">{{ aios_diagram.physical.via | safe }}</div>
+                        </div>
+                        <div class="aios-space space-virtual">
+                            <div class="space-head">
+                                <div class="space-label">{{ aios_diagram.virtual.label }}</div>
+                                <div class="space-en">{{ aios_diagram.virtual.label_en }}</div>
+                            </div>
+                            <ul>
+                                {% for item in aios_diagram.virtual.bullets %}<li>{{ item | safe }}</li>{% endfor %}
+                            </ul>
+                            <div class="space-via">{{ aios_diagram.virtual.via | safe }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="s-col">
+                {% for box in boxes %}
+                {{ m.render_box(box) }}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>{{ meta_left }}</span>
+            <span class="pg">{{ page }} / {{ total }}</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,795 @@
+# ════════════════════════════════════════════════════════════
+#  The Pocket Company × TurnCloud — Keynote Deck
+#  資料來源檔。改完跑 `python build.py` 重建 index.html
+# ════════════════════════════════════════════════════════════
+#
+#  可用 template：cover / two_col / layers / workforce / ecosystem / closing
+#  可用顏色：cyan / violet / orange / green / pink / gold
+#  media：放圖片或影片路徑（.mp4/.webm/.mov 會自動以 <video> 渲染）
+#  在 HTML 字串中可用：<br> 換行；<strong>粗體；<span class="c|v|o|g|p">著色文字
+#
+# ════════════════════════════════════════════════════════════
+
+meta:
+  title: "The Pocket Company × TurnCloud — 肖準加入騰雲"
+  brand: "TPC × TURNCLOUD"
+  brand_full: "THE POCKET COMPANY × TURNCLOUD · 2026"
+  year: "2026"
+
+slides:
+
+  # ─── SLIDE 1: 封面 ──────────────────────────────────────────
+  - id: cover
+    template: cover
+    media: img/01_cover.jpg
+    logos:
+      left:  { src: "img/accucrazy-logo.webp", alt: "Accucrazy",  brand: "accucrazy" }
+      right: { src: "img/turncloud-logo.png",  alt: "TurnCloud",  brand: "turncloud" }
+    pre: "THE POCKET COMPANY × TURNCLOUD · 2026"
+    title: '肖準加入騰雲，<br>啟動企業<br><span class="c">AI 工作者</span>新時代'
+    lede: |-
+      承接騰雲的 <strong>Physical Space Runtime</strong>，<br>
+      建構 <strong>Enterprise AI OS</strong>，<br>
+      帶來第一支 <strong>AI Agent 工作團隊</strong>。
+    signatures:
+      - { strong: "The Pocket Company",   text: "Accucrazy 肖準整合" }
+      - { strong: "Powered by TurnCloud", text: "T Coeus AI OS 發表會" }
+
+  # ─── SLIDE 2: 一段併購故事 ──────────────────────────────────
+  - id: merger
+    template: stage
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: cyan, text: "CHAPTER 01 · 一段併購故事" }
+    title: '肖準 + 騰雲 = <span class="c">The Pocket Company</span>'
+    subtitle: '不是單純併購 ── 是兩種能力,在 AI 時代<strong>第一次合而為一</strong>。'
+    meta_left: "The Pocket Company × TurnCloud — 2026"
+    arrows: true
+    panels:
+      - tone: orange
+        art: img/icon_legacy_infra.jpg
+        label: "PARTNER 01"
+        name: "騰雲 — 二十年企業基建"
+        bullets:
+          - '<strong>TPOS · HOYABOX</strong> · 智慧 POS · 行動終端'
+          - '<strong>TCRM · TCMS</strong> · 顧客關係與商管'
+          - '橫跨零售、餐飲、商場、飯店的<strong>真實人場貨</strong>'
+      - tone: violet
+        art: img/icon_agent_team.jpg
+        label: "PARTNER 02"
+        name: "肖準 — 生產級 Agent 能力"
+        bullets:
+          - '<strong>OpenClaw</strong> · 開源 Agent 框架'
+          - '<strong>5 位專業 Agent</strong> · 已上線生產'
+          - '<strong>User-Level Memory</strong> · 每人專屬 AI'
+      - tone: cyan
+        art: img/icon_fusion.jpg
+        label: "RESULT"
+        name: "合而為一 → The Pocket Company"
+        body: '騰雲底下、最靠近商業現場的 <strong>AI Agent 應用節點</strong> ── 把二十年累積的<strong>場域、資料、人</strong>,第一次交到 AI 手上。'
+    tagline: '<span class="o">二十年場域</span> + <span class="v">五位 Agent</span> = <span class="c">企業 AI 工作者新時代</span>'
+
+  # ─── SLIDE 3: 承接董事長 Runtime ────────────────────────────
+  - id: runtime
+    template: stage
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: orange, text: "CHAPTER 02 · 承接董事長 Keynote" }
+    title: '董事長剛談到 — <span class="o">Physical Space Runtime</span>'
+    subtitle: '下一個運算時代,AI 不只活在螢幕裡,而是<strong>進入真實的空間</strong>。'
+    meta_left: "Runtime 是引擎 — 接下來談駕駛艙"
+    panels:
+      - tone: orange
+        art: img/icon_runtime_engine.jpg
+        label: "DEFINITION"
+        name: "Runtime 是什麼？"
+        body: '讓 AI <strong>跑得起來、接得上現場、能即時執行</strong>的底層環境 ── 是 AI 進入實體空間的引擎。'
+      - tone: orange
+        art: img/icon_four_abilities.jpg
+        label: "CAPABILITIES"
+        name: "讓空間擁有四種能力"
+        bullets:
+          - '<strong>Sense</strong> · 感知人、車、貨'
+          - '<strong>Reason</strong> · 多模態理解現場'
+          - '<strong>Decide</strong> · 即時判斷與調度'
+          - '<strong>Act</strong> · 決策直接變成行動'
+      - tone: cyan
+        art: img/icon_challenge.jpg
+        label: "OUR CHALLENGE"
+        name: "我們要承接的問題"
+        body: 'Runtime 讓 AI 能<strong>進入空間</strong> ── 怎麼讓它變成每天能<strong>被使用、被管理、被擴充</strong>的<strong>工作系統</strong>？'
+    tagline: 'Runtime 是<strong class="o">引擎</strong>。接下來,我們要打造<strong class="c">駕駛艙</strong>。'
+
+  # ─── SLIDE 4: 企業真正的問題 ────────────────────────────────
+  - id: problem
+    template: stage
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: pink, text: "CHAPTER 03 · 企業真正的問題" }
+    title: '企業<span class="p">缺的不是 AI</span> — 缺的是「<span class="c">系統</span>」'
+    subtitle: '每個企業都在用 AI。問題是 ── 這些 AI <strong>從來沒變成一個系統</strong>。'
+    meta_left: "From scattered tools to a unified OS"
+    arrows: true
+    panels:
+      - tone: pink
+        art: img/icon_scattered_tools.jpg
+        label: "REALITY 01"
+        name: "今天企業 AI 的真實樣貌"
+        bullets:
+          - '行銷用一個 AI 寫文案'
+          - '客服用另一個 AI 回訊息'
+          - '數據部又自己跑模型'
+          - '<strong>各部門各做各的</strong>'
+      - tone: violet
+        art: img/icon_disconnected.jpg
+        label: "RESULT"
+        name: "結果是 ──"
+        bullets:
+          - '資料<strong>沒有串起來</strong>'
+          - 'Agent <strong>沒有協作</strong>'
+          - '治理 / 合規<strong>各做各的</strong>'
+          - '經驗無法沉澱成<strong>企業資產</strong>'
+      - tone: cyan
+        art: img/icon_unify_os.jpg
+        label: "CONCLUSION"
+        name: "核心結論"
+        body: '企業缺的不是更多 AI 工具 ── 而是一套讓 AI 被<strong>管理、協作、擴充</strong>的<strong>企業作業系統</strong>。'
+    tagline: '從<span class="p">碎片化工具</span>,走向<strong class="c">統一的企業作業系統</strong>。'
+
+  # ─── SLIDE 5: 一張圖看懂（動畫綜覽） ───────────────────────
+  - id: overview
+    template: overview
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: cyan, text: "INTERMEZZO · 一張圖看懂" }
+    title: '從 <span class="o">Runtime</span> → <span class="c">AI OS</span> → <span class="v">Agents</span>'
+    subtitle: '<strong>三層各司其職、彼此堆疊</strong> ── The Pocket Company 對企業 AI 的完整答案。'
+    meta_left: "Runtime · AI OS · Agents — 一張圖看懂"
+    tagline: '<span class="o">Runtime 讓 AI 進入空間</span> · <span class="c">AI OS 讓企業管理 AI</span> · <span class="v">Agents 真正開始工作</span>'
+    layers:
+      - tone: orange
+        art: img/anim_runtime_iso.jpg
+        label: "LAYER 01"
+        name: "Physical Space Runtime"
+        by: "by 騰雲科技 · 讓 AI 進入<strong>實體空間</strong>"
+      - tone: cyan
+        art: img/anim_aios_orb.jpg
+        label: "LAYER 02"
+        name: "Enterprise AI OS"
+        by: "by The Pocket Company · <strong>編排層</strong>"
+      - tone: violet
+        art: img/anim_agents_ring.jpg
+        label: "LAYER 03"
+        name: "AI Agent Workforce"
+        by: "<strong>5 位 Agent</strong> · A2A 協作"
+
+  # ─── SLIDE 6: 什麼是 AI OS（動畫揭曉：One OS, Two Spaces） ────────
+  - id: aios_concept
+    template: duality
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: cyan, text: "FROM RUNTIME TO AI OS · ONE OS · TWO SPACES" }
+    title: '同一套 <span class="c">AI OS</span>，編排<span class="o">實體</span>與<span class="v">虛擬</span>兩種空間'
+    subtitle: '<strong>AI OS = AI Operating System</strong> · 更是 <strong class="c">Agent Orchestrated Space</strong> ── 一個能讓 <strong>真實世界</strong>與 <strong>Agent 們</strong>同時被編排的空間。'
+    meta_left: "AI OS · One OS · Two Spaces"
+    os:
+      title: 'AI OS · <span style="color:var(--text);">Agent Orchestrated Space</span>'
+      subtitle: '同一套編排層 — Orchestrator · A2A · MCP · Memory · Policy · Governance'
+      chips: [Orchestrator, A2A, MCP, Memory, Policy, Governance]
+    physical:
+      art: img/space_physical.jpg
+      label: "SPACE 01 · PHYSICAL"
+      name: '實體空間 ── AI 走進<strong style="color:#b45309;">真實人場貨</strong>'
+      tag: "AI 不再只活在雲端,而是進到門市、工廠、現場服務真實的人。"
+      bullets:
+        - '<strong>場域</strong>：零售店 · 工廠 · 飯店 · 醫療現場'
+        - '<strong>裝置</strong>：POS · HOYABOX · IoT 感測 · 攝影機'
+        - '<strong>價值</strong>：用 AI 服務<strong>每一位顧客</strong>'
+      via: 'via <strong>騰雲科技 Runtime</strong>'
+    virtual:
+      art: img/space_virtual.jpg
+      label: "SPACE 02 · VIRTUAL"
+      name: '虛擬空間 ── <strong style="color:var(--violet);">Agent 們協作</strong>的場域'
+      tag: "這個「空間」本身,就是 5 位 AI Agent 24/7 一起工作的數位辦公室。"
+      bullets:
+        - '<strong>成員</strong>：Pandora · Moana · Banana · Adriana · Stacey'
+        - '<strong>協議</strong>：A2A 互通 · MCP 取資源 · 共享記憶'
+        - '<strong>價值</strong>：複雜任務<strong>多 Agent 一起完成</strong>'
+      via: 'via <strong>The Pocket Company AI OS</strong>'
+    tagline: '<span class="c">One OS</span> · <span class="o">Two Spaces</span> · <span class="v">Five Agents</span> ── 一句指令、跨空間執行。'
+
+  # ─── SLIDE 7: AI OS 解答 ────────────────────────────────────
+  - id: aios
+    template: stage
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: cyan, text: "CHAPTER 04 · 我們的解答" }
+    title: '建構在 Runtime 之上的 <span class="c">Enterprise AI OS</span>'
+    subtitle: '不是聊天機器人,不是 Copilot ── 是企業能真正<strong>擁有、編排 AI 員工</strong>、<strong>跨兩種空間執行任務</strong>的工作系統。'
+    meta_left: "Enterprise AI OS · 跨兩種空間的編排層"
+    panels:
+      - tone: cyan
+        art: img/icon_eight_modules.jpg
+        wide: true
+        label: "WHAT IT MANAGES"
+        name: "AI OS 統一管理 8 件事"
+        bullets:
+          - '<strong>Data</strong> · 企業資料與血緣'
+          - '<strong>Memory</strong> · 三層記憶'
+          - '<strong>Workflow</strong> · 可宣告的工作流程'
+          - '<strong>Agents</strong> · 可治理的 AI 員工'
+          - '<strong>Permission · Governance</strong> · 權限、合規、稽核'
+          - '<strong>Dashboard · Decision</strong> · 可觀測 × 人機協作'
+      - tone: violet
+        art: img/icon_user_memory.jpg
+        label: "MOAT"
+        name: "關鍵 — User-Level Memory"
+        body: '每個帳號擁有<strong>獨立的對話與長期記憶</strong>。記憶是個人的、不能共享 ── 這是 AI 成為「我的 AI」的關鍵,也是企業<strong>續用、續約、續擴張的商業護城河</strong>。'
+    tagline: '<span class="c">擁有、編排、治理 AI 員工</span> ── 一套真正的<strong>企業作業系統</strong>。'
+
+  # ─── SLIDE 7: 三層架構 ──────────────────────────────────────
+  - id: three_layers
+    template: layers
+    bg: dark
+    media: img/06_three_layers.jpg
+    media_alt: "Three layer architecture"
+    tag: { color: violet, text: "CHAPTER 05 · 三層架構" }
+    title: '從 <span class="o">Runtime</span> 到 <span class="c">AI OS</span> 到 <span class="v">AI Agents</span>'
+    subtitle: "三層、各司其職、彼此堆疊 ── 這是 The Pocket Company 對「企業 AI 怎麼長」的完整答案。"
+    meta_left: "Runtime · AI OS · Agents — 三層敘事"
+    layers:
+      - kind: runtime
+        label: "LAYER 01"
+        name_class: o
+        name: "Physical Space Runtime"
+        desc: |-
+          讓 AI 能進入<strong>實體空間</strong> ── 感知、推論、決策、執行。<br>由 <strong>騰雲科技</strong> 打造的下一代運算底座。
+      - kind: aios
+        label: "LAYER 02"
+        name_class: c
+        name: "Enterprise AI OS · Agent Orchestrated Space"
+        desc: |-
+          <strong>跨兩種空間</strong>的編排層 ── 把 Agent 編排到<strong>實體空間</strong>（店、廠、人場貨）與<strong>虛擬空間</strong>（CRM、廣告、數據、SaaS）。
+      - kind: agents
+        label: "LAYER 03"
+        name_class: v
+        name: "AI Agent Workforce"
+        desc: |-
+          替企業工作的<strong>數位員工</strong> ── 在<strong>虛擬空間</strong>協作，把行動<strong>落地到實體空間</strong>。
+    footer_box:
+      color: cyan
+      body: |-
+        <strong class="o">Runtime 讓 AI 運行空間</strong> ·
+        <strong class="c">AI OS 讓企業管理 AI</strong> ·
+        <strong class="v">Agents 真正開始工作</strong>
+
+  # ─── SLIDE 8: AI Workforce 登場 ─────────────────────────────
+  - id: workforce
+    template: workforce
+    bg: violet
+    media: img/07_workforce.jpg
+    media_alt: "AI workforce"
+    tag: { color: violet, text: "CHAPTER 06 · AI Agent Workforce" }
+    title: 'AI OS 之上 — 企業的 <span class="v">AI 工作者</span>'
+    subtitle: "不再是一個個工具，而是會看見、生成、行動、協作的<strong>數位員工團隊</strong>。"
+    meta_left: "5 位 AI 員工 — 可以開始招聘的數位團隊"
+    agents:
+      - { code: "PANDORA",  color: cyan,   role: "輿情洞察 Agent", tagline: "看見市場正在發生什麼" }
+      - { code: "MOANA",    color: orange, role: "內容生成 Agent", tagline: "把洞察變成有影響力的內容" }
+      - { code: "BANANA",   color: gold,   role: "視覺生成 Agent", tagline: "高品質創意素材即時產出" }
+      - { code: "ADRIANA",  color: violet, role: "廣告優化 Agent", tagline: "即時、精準的廣告決策" }
+      - { code: "STACEY",   color: green,  role: "總指揮 Agent",   tagline: "任務拆解 × 多 Agent 協作" }
+
+  # ─── SLIDE 9: PANDORA ───────────────────────────────────────
+  - id: pandora
+    template: agent
+    variant: portraitL
+    tone: cyan
+    backdrop: img/anim_backdrop.jpg
+    portrait: img/08_pandora.jpg
+    codename: "AGENT 01 · PANDORA"
+    tag: { color: cyan, text: "AGENT 01 / 05" }
+    title: '<span class="c">Pandora</span> — 看見市場的 AI'
+    subtitle: '輿情、新聞、社群、競品<strong>即時進入決策視野</strong> ── 從「看不見」變「即時看得到」。'
+    meta_left: "Pandora — Market Intelligence · MVP LIVE"
+    stats:
+      - { tone: cyan,   num: "15",   label: "Skills" }
+      - { tone: cyan,   num: "46",   label: "Tools" }
+      - { tone: violet, num: "3",    label: "層 Memory" }
+      - { tone: green,  num: "24/7", label: "市場監測" }
+    blocks:
+      - tone: cyan
+        label: "WHAT SHE DOES"
+        name: "她做什麼"
+        bullets:
+          - '監測<strong>品牌與競品聲量</strong>'
+          - '判讀情緒、<strong>預警危機</strong>'
+          - '產出<strong>策略洞察與行動建議</strong>'
+      - tone: green
+        label: "LIVE CASES"
+        name: "已上線案例"
+        body: '<strong>DR.WU</strong> War Room · 每小時負面追蹤；<strong>全家 / 7-ELEVEN</strong> · 346 家媒體覆蓋率掃描。'
+
+  # ─── SLIDE 10: Pandora — 洞察報告 Demo ─────────────────────
+  - id: pandora_demo
+    template: demo
+    variant: spotL
+    tone: cyan
+    backdrop: img/anim_backdrop.jpg
+    media: img/pandora_demo.mov
+    media_fit: contain
+    media_alt: "Pandora 自動洞察報告 demo"
+    marker: "LIVE DEMO"
+    tag: { color: cyan, text: "PANDORA · LIVE DEMO" }
+    title: '自動產出<span class="c">洞察報告</span>'
+    subtitle: '不是給你儀表板,而是<strong>直接產出可決策的洞察報告</strong> ── 每天醒來就有一份新的。'
+    meta_left: "Pandora — Auto Insight Report"
+    pills:
+      - tone: cyan
+        label: "DEMO 看點"
+        name: "演示重點"
+        bullets:
+          - '自動<strong>產出完整洞察報告</strong>'
+          - '<strong>跨平台訊號整合</strong>'
+          - '含<strong>議題、情緒、行動建議</strong>'
+      - tone: violet
+        label: "WHY IT MATTERS"
+        name: "為什麼這重要"
+        body: '傳統輿情工具只給<strong>儀表板</strong>;Pandora 把整條鏈路<strong>跑到結論</strong>。'
+    tagline: '從訊號到結論 ── <span class="c">一鍵跑完</span>。'
+
+  # ─── SLIDE 11: MOANA ────────────────────────────────────────
+  - id: moana
+    template: agent
+    variant: portraitR
+    tone: orange
+    backdrop: img/anim_backdrop.jpg
+    portrait: img/09_moana.jpg
+    codename: "AGENT 02 · MOANA"
+    tag: { color: orange, text: "AGENT 02 / 05" }
+    title: '<span class="o">Moana</span> — 從 Social 升級成 <span class="o">Culture Listening</span>'
+    subtitle: '讀懂<strong>產業、品牌、KOL、時下的梗</strong>,寫出最有 <strong>Culture Fit</strong> 的內容,直通 <strong>Social Commerce</strong>。'
+    meta_left: "Moana — Culture Listening × Social Commerce · MVP LIVE"
+    blocks:
+      - tone: orange
+        label: "STEP 01"
+        name: "Culture Listening"
+        bullets:
+          - '看見<strong>產業趨勢</strong>與次文化變動'
+          - '解析<strong>品牌 / 競品 / KOL</strong> 語境'
+          - '即時捕捉<strong>時下的梗</strong>'
+      - tone: violet
+        label: "STEP 02"
+        name: "Culture Fit 內容生成"
+        bullets:
+          - '內容貼齊<strong>當下發生</strong>的對話'
+          - 'EDM / 貼文 / 短影音 / KOL 稿一次到位'
+          - '品牌調性 × 受眾語感<strong>自動對齊</strong>'
+      - tone: cyan
+        label: "STEP 03"
+        name: "直通 Social Commerce"
+        body: '串聯 <strong>IG / FB / TikTok / LINE</strong> 商店 ── <strong>從聽見話題到拿下訂單</strong>。'
+
+  # ─── SLIDE 12: Culture Listening 整合架構 ──────────────────
+  - id: moana_culture_flow
+    template: demo
+    variant: stacked
+    tone: orange
+    backdrop: img/anim_backdrop.jpg
+    media: img/moana_culture_flow.png
+    media_fit: contain
+    media_alt: "Culture Listening 整合洞察"
+    marker: "FLOW DIAGRAM"
+    tag: { color: orange, text: "MOANA · 多維訊號整合架構" }
+    title: 'Culture Listening — <span class="o">整合洞察</span>'
+    subtitle: '從多維訊號中萃取文化脈絡,轉化為可行動的內容與策略。'
+    meta_left: "Moana — Culture Listening 整合架構"
+    pills:
+      - tone: orange
+        label: "INPUT"
+        name: "五維訊號來源"
+        bullets:
+          - '<strong>產業</strong> · 市場動態'
+          - '<strong>品牌 / 競品</strong> · 聲量策略'
+          - '<strong>作者 / KOL</strong> · 創作者觀點'
+      - tone: violet
+        label: "ENGINE"
+        name: "整合引擎"
+        bullets:
+          - '<strong>語境理解</strong> × <strong>情緒辨識</strong>'
+          - '<strong>趨勢偵測</strong> × <strong>意義萃取</strong>'
+      - tone: green
+        label: "OUTPUT"
+        name: "可行動策略"
+        body: '統整 → <strong>內容</strong> · <strong>策略</strong> · <strong>行動方案</strong>。'
+
+  # ─── SLIDE 13: Moana Case · 猛健樂 Culture Demo ─────────────
+  - id: moana_culture_demo
+    template: demo
+    variant: cinema
+    tone: orange
+    backdrop: img/anim_backdrop.jpg
+    media: img/moana_culture_case.mp4
+    media_fit: contain
+    media_alt: "Moana Culture Listening demo - 猛健樂"
+    marker: "● LIVE CASE"
+    tag: { color: orange, text: "MOANA · CASE STUDY · PART 1" }
+    title: '<span class="o">猛健樂</span> — Culture Listening 實戰'
+    subtitle: '看 Moana 從次文化訊號裡找到減重藥品牌的內容切角。'
+    meta_left: "Moana — Live Case · 猛健樂 Culture Listening"
+    pills:
+      - tone: orange
+        label: "DEMO 看點"
+        name: "演示重點"
+        bullets:
+          - '抓出社群<strong>減重話題</strong>與情緒'
+          - '解析<strong>受眾語感</strong>,避開敏感詞'
+          - '產出<strong>品牌調性</strong>的內容腳本'
+    tagline: '醫療品牌也能 <span class="o">Culture Fit</span>。'
+
+  # ─── SLIDE 14: 猛健樂 — Brief → 文章 一條龍 ───────────────
+  - id: moana_case_02
+    template: demo
+    variant: spotR
+    tone: orange
+    backdrop: img/anim_backdrop.jpg
+    media: img/moana_case_02.mov
+    media_fit: contain
+    media_alt: "Moana 自動生 Brief 再產出文章"
+    marker: "PIPELINE DEMO"
+    tag: { color: orange, text: "MOANA · CASE · PART 2" }
+    title: '<span class="o">猛健樂</span> — Brief → <span class="o">文章產出</span>'
+    subtitle: '前一頁看<strong>怎麼洞察</strong>;這頁看<strong>洞察 → Brief → 文章一氣呵成</strong>。'
+    meta_left: "Moana — Insight → Brief → Article Pipeline"
+    pills:
+      - tone: orange
+        label: "DEMO 看點"
+        name: "演示重點"
+        bullets:
+          - '自動生成<strong>完整 marketing brief</strong>'
+          - 'Brief 含<strong>切角 · 語氣 · 視覺 · CTA</strong>'
+          - '直接從 brief 產出<strong>實際文章</strong>'
+      - tone: violet
+        label: "WHY"
+        name: "策略 + 執行的整合系統"
+        body: '傳統每步都是斷層;Moana 把整條鏈路<strong>同一個 Agent 跑完</strong>。'
+
+  # ─── SLIDE 15: BANANA ───────────────────────────────────────
+  - id: banana
+    template: agent
+    variant: portraitL
+    tone: gold
+    backdrop: img/anim_backdrop.jpg
+    portrait: img/10_banana.jpg
+    codename: "AGENT 03 · BANANA"
+    tag: { color: orange, text: "AGENT 03 / 05" }
+    title: '<span class="o">Banana</span> — 視覺即時生成的 AI'
+    subtitle: '從一句話到完整品牌視覺 ── 情境圖、社群素材、廣告版型,<strong>秒級產出</strong>。'
+    meta_left: "Banana — Visual Design · MVP LIVE"
+    stats:
+      - { tone: gold,   num: "秒級",    label: "出圖" }
+      - { tone: orange, num: "30x",     label: "產出量提升" }
+      - { tone: violet, num: "Multi",   label: "尺寸適配" }
+    blocks:
+      - tone: gold
+        label: "WHAT HE DOES"
+        name: "他做什麼"
+        bullets:
+          - '產品情境圖、社群圖卡、短影音版面'
+          - 'IG / FB / Threads <strong>多尺寸自動適配</strong>'
+          - '品牌色、字型、構圖<strong>自動匹配</strong>'
+      - tone: green
+        label: "CLOSED LOOP"
+        name: "與 War Room 閉環"
+        body: '輿情發現危機 → 分析論點 → <strong>Banana 直接產出回應素材</strong>。全鏈路 AI 自動化。'
+
+  # ─── SLIDE 16: Banana Split 系統說明 ──────────────────────
+  - id: banana_split_system
+    template: demo
+    variant: stacked
+    tone: gold
+    backdrop: img/anim_backdrop.jpg
+    media: img/banana_split_flow.png
+    media_fit: contain
+    media_alt: "Banana Split 系統 - AI 創意流程"
+    marker: "PIPELINE"
+    tag: { color: orange, text: "BANANA · 系統架構" }
+    title: '<span class="o">Banana Split</span> — 5-Step <span class="o">創意流程</span>'
+    subtitle: '不只「生圖」── 串成可重複的創意流程。'
+    meta_left: "Banana Split — 5-Step Creative Pipeline"
+    pills:
+      - tone: orange
+        label: "STEPS"
+        name: "五步驟流程"
+        bullets:
+          - '<strong>1.</strong> 上傳素材'
+          - '<strong>2.</strong> AI 理解需求'
+          - '<strong>3.</strong> 生成 Concept'
+          - '<strong>4.</strong> 延伸 Creative'
+          - '<strong>5.</strong> 多渠道輸出'
+      - tone: green
+        label: "VALUE"
+        name: "三大價值"
+        bullets:
+          - '<strong>更快</strong> · 一次 brief 跑完'
+          - '<strong>更穩</strong> · 品牌可沿用'
+          - '<strong>更易放大</strong> · 一 Concept → 多版本'
+      - tone: violet
+        label: "SPIRIT"
+        name: "創意系統化"
+        body: '創意不只<strong>被生成</strong>,更能<strong>被編排與落地</strong>。'
+
+  # ─── SLIDE 17: Banana Split Demo ───────────────────────────
+  - id: banana_split_demo
+    template: demo
+    variant: spotL
+    tone: gold
+    backdrop: img/anim_backdrop.jpg
+    media: img/banana_split_demo.mp4
+    media_fit: contain
+    media_alt: "Banana Split visual generation demo"
+    marker: "● LIVE DEMO"
+    tag: { color: orange, text: "BANANA · LIVE DEMO" }
+    title: '<span class="o">Banana Split</span> — 視覺生成實戰'
+    subtitle: '從一段文字到一張可上線的視覺 ── 看 Banana 把<strong>創意意圖變成多版本素材</strong>。'
+    meta_left: "Banana — Visual Generation Live Demo"
+    pills:
+      - tone: gold
+        label: "DEMO 看點"
+        name: "演示重點"
+        bullets:
+          - '<strong>文字 → 多版本視覺</strong>同步產出'
+          - '自動套用<strong>品牌規範</strong>'
+          - '<strong>口頭迭代</strong> ── 秒級出新版'
+      - tone: violet
+        label: "WHY"
+        name: "瓶頸轉移"
+        body: '傳統<strong>一天三版</strong>;Banana <strong>一分鐘三十版</strong>。瓶頸從「等出圖」變成「選方向」。'
+
+  # ─── SLIDE 18: Banana Split 全新發布 — Reels Studio ──────
+  - id: banana_video_edit
+    template: demo
+    variant: cinema
+    tone: orange
+    backdrop: img/anim_backdrop.jpg
+    media: img/banana_video_demo.mp4
+    media_fit: contain
+    media_alt: "Banana Split Reels Studio — 世界第一 Agentic Editing demo"
+    marker: "WORLD FIRST"
+    tag: { color: orange, text: "BANANA SPLIT · 全新發布 · REELS STUDIO", pulse: true }
+    title: '<span class="o">Reels Studio</span><br>世界第一 <span class="o">Agentic Editing</span>'
+    subtitle: '全新發布 — <strong>A2A 多 Agent 協作</strong>架構:一句話,多位 Agent 各司其職,把整條 Reels pipeline 跑完。'
+    meta_left: "Banana Split — Reels Studio · Agentic Editing"
+    pills:
+      - tone: orange
+        label: "PIPELINE"
+        name: "5-Agent 流程"
+        bullets:
+          - '<strong>1.</strong> 讀懂影片與品牌語感'
+          - '<strong>2.</strong> 字幕整理 · 節奏分段'
+          - '<strong>3.</strong> 精華擷取 · 重組節奏'
+          - '<strong>4.</strong> 封面 + 字幕特效'
+          - '<strong>5.</strong> 品牌邊框 / CTA / 轉場'
+      - tone: violet
+        label: "WORLD FIRST"
+        name: "為什麼是世界第一"
+        body: '市面工具停在<strong>輔助剪輯</strong>。Reels Studio 把整條 pipeline 拆給<strong>多位 Agent</strong> ── 短影音從「人+AI」進化到<strong>純 Agent 團隊</strong>。'
+    tagline: '<span class="o">Agentic Editing</span> ── 一句話,一支片。'
+
+  # ─── SLIDE 19: ADRIANA ──────────────────────────────────────
+  - id: adriana
+    template: agent
+    variant: portraitR
+    tone: violet
+    backdrop: img/anim_backdrop.jpg
+    portrait: img/11_adriana.jpg
+    codename: "AGENT 04 · ADRIANA"
+    tag: { color: violet, text: "AGENT 04 / 05" }
+    title: '<span class="v">Adriana</span> — 從廣告分析升級到 <span class="v">千人千面</span>'
+    subtitle: '<strong>分析 + 生成 + 投放 + 陌生訪客洞察</strong> ── 廣告從「投得準」進化到「為每位用戶量身做」。'
+    meta_left: "Adriana — Personalization Agent · BUILDING"
+    stats:
+      - { tone: violet, num: "分鐘級", label: "分析 → 行動" }
+      - { tone: cyan,   num: "1st",    label: "Party Data" }
+      - { tone: green,  num: "2-3%",   label: "掛帳抽成" }
+    blocks:
+      - tone: violet
+        label: "STEP 01"
+        name: "分析 + 生成 + 自動投放"
+        bullets:
+          - '<strong>Meta / Google / TikTok</strong> 即時監測'
+          - '<strong>Meta Ads CLI</strong> 自動化開關、調預算'
+          - '即時<strong>生成素材</strong>:文案 × 視覺 × 受眾'
+      - tone: cyan
+        label: "STEP 02"
+        name: "CRM × CDP 洞察陌生訪客"
+        bullets:
+          - '串接 <strong>TCRM · TCDP</strong> 第一方資料'
+          - '對<strong>陌生訪客</strong>即時推估意圖'
+          - '每位用戶<strong>個性化素材</strong>'
+
+  # ─── SLIDE 20: Adriana — AI 廣告數據對話 ───────────────────
+  - id: adriana_demo
+    template: demo
+    variant: spotR
+    tone: violet
+    backdrop: img/anim_backdrop.jpg
+    media: img/adriana_demo.mov
+    media_fit: contain
+    media_alt: "Adriana AI 廣告數據對話 demo"
+    marker: "● LIVE DEMO"
+    tag: { color: violet, text: "ADRIANA · LIVE DEMO" }
+    title: '你的 <span class="v">AI 廣告數據</span>搭檔'
+    subtitle: '告別手動報表 ── <strong>全中文自然提問</strong>,30 秒拿到 Meta 廣告成效、報表、優化建議。'
+    meta_left: "Adriana — Conversational Ad Intelligence"
+    pills:
+      - tone: violet
+        label: "DEMO 看點"
+        name: "演示重點"
+        bullets:
+          - '<strong>即時數據對話</strong>'
+          - '<strong>30 秒回覆</strong> ── 免等人工'
+          - '<strong>素材優化建議</strong>'
+      - tone: cyan
+        label: "WHY"
+        name: "壓到一句話的時間"
+        body: '從「查數據 → 改素材」壓到<strong>一句話的時間</strong>。'
+
+  # ─── SLIDE 21: AI CRM × Meta CAPI 智慧轉換流程 ─────────────
+  - id: adriana_crm_capi
+    template: demo
+    variant: stacked
+    tone: violet
+    backdrop: img/anim_backdrop.jpg
+    media: img/adriana_crm_capi_flow.png
+    media_fit: contain
+    media_alt: "AI CRM × Meta CAPI 智慧轉換流程"
+    marker: "FLOW DIAGRAM"
+    tag: { color: violet, text: "ADRIANA · CRM × CAPI 串接" }
+    title: '<span class="v">AI CRM × Meta CAPI</span> 智慧轉換'
+    subtitle: '第一方數據與廣告平台真正串起來。'
+    meta_left: "Adriana — AI CRM × Meta Conversions API"
+    pills:
+      - tone: violet
+        label: "PIPELINE"
+        name: "五步驟核心流程"
+        bullets:
+          - '<strong>1.</strong> 廣告入口 · uuid'
+          - '<strong>2.</strong> 遊戲化填寫'
+          - '<strong>3.</strong> AI 產生標籤'
+          - '<strong>4.</strong> CAPI 回傳 Meta'
+          - '<strong>5.</strong> 再行銷 × 名單'
+      - tone: cyan
+        label: "WHY"
+        name: "第一方數據新黃金"
+        bullets:
+          - 'Cookie 時代結束'
+          - '<strong>TCRM × TCDP × CAPI</strong> 完整閉環'
+          - '數據主權回到企業'
+      - tone: green
+        label: "VALUE"
+        name: "為什麼這示範重要"
+        body: '<strong>互動式命理只是切角</strong> ── 任何遊戲化互動都能套用。'
+
+  # ─── SLIDE 22: AI CRM × CAPI 實戰 Demo ─────────────────────
+  - id: adriana_crm_demo
+    template: demo
+    variant: cinema
+    tone: violet
+    backdrop: img/anim_backdrop.jpg
+    media: img/adriana_crm_demo.mov
+    media_fit: contain
+    media_alt: "AI CRM × Meta CAPI 實戰 demo"
+    marker: "● CRM × CAPI LIVE"
+    tag: { color: violet, text: "ADRIANA · CRM × CAPI LIVE DEMO" }
+    title: 'AI CRM × Meta CAPI — <span class="v">實戰 Demo</span>'
+    subtitle: '前一頁看流程圖;這頁看實際運作 ── <strong>遊戲 → 標籤 → CAPI → 廣告分眾</strong>一次跑完。'
+    meta_left: "Adriana — AI CRM × Meta CAPI Live"
+    pills:
+      - tone: violet
+        label: "DEMO 看點"
+        name: "演示重點"
+        bullets:
+          - '<strong>遊戲化互動</strong> · 邊玩邊填資料'
+          - '<strong>AI 即時產出個人化標籤</strong>'
+          - '<strong>CAPI 回傳 Meta</strong> · 自定義受眾'
+    tagline: '一次互動 = 一筆<strong class="v">第一方資料</strong> = Meta 的<strong class="c">精準分眾種子</strong>。'
+
+  # ─── SLIDE 23: STACEY ───────────────────────────────────────
+  - id: stacey
+    template: agent
+    variant: portraitC
+    tone: green
+    backdrop: img/anim_backdrop.jpg
+    portrait: img/12_stacey.jpg
+    codename: "AGENT 05 · STACEY · ORCHESTRATOR"
+    tag: { color: green, text: "AGENT 05 / 05 · ORCHESTRATOR" }
+    title: '<span class="g">Stacey</span> — 把 Agent 變成<span class="g">團隊</span>的 AI'
+    subtitle: '有五個 AI 員工後,真正稀缺的是<strong>能指揮他們的那個</strong>。'
+    meta_left: "Stacey — Orchestrator · BUILDING"
+    blocks:
+      - tone: green
+        label: "WHAT SHE DOES"
+        name: "她做什麼"
+        bullets:
+          - '把複合需求<strong>拆成子任務</strong>'
+          - '動態調度合適的 Agent'
+          - '跨 Agent 結果整理 → 完整答案'
+      - tone: cyan
+        label: "TECH"
+        name: "底層技術"
+        bullets:
+          - '<strong>OpenClaw + MCP Host</strong>'
+          - '<strong>A2A Protocol</strong> · Agent 像同事'
+          - '<strong>動態模型路由</strong>'
+      - tone: violet
+        label: "TEAM"
+        name: '從工具到「<span class="v">團隊</span>」'
+        body: '單一 Agent 是工具;多個 Agent 是團隊。Stacey 讓 Agent 第一次<strong>像一間公司運作</strong>。'
+
+  # ─── SLIDE 24: Stacey × Pandora — Dr.Wu 輿情分析實戰 ───────
+  - id: stacey_demo
+    template: demo
+    variant: spotL
+    tone: green
+    backdrop: img/anim_backdrop.jpg
+    media: img/stacey_demo.mp4
+    media_fit: contain
+    media_alt: "Stacey × Pandora — Dr.Wu 輿情分析 live demo"
+    marker: "● STACEY × PANDORA LIVE"
+    tag: { color: green, text: "STACEY · LIVE DEMO" }
+    title: '<span class="g">一句話</span> → 完整分析報告'
+    subtitle: '看 Stacey <strong>派 Pandora 跑 SQL</strong>、產出趨勢圖與三大主題 ── 全程 <strong>幾秒鐘</strong>。'
+    meta_left: "Stacey × Pandora — Dr.Wu Sentiment Analysis Live"
+    pills:
+      - tone: green
+        label: "DEMO 看點"
+        name: "演示重點"
+        bullets:
+          - '「分析 Dr.Wu 近兩週熱門話題」'
+          - 'Stacey <strong>派 Pandora</strong>'
+          - '<strong>92 篇 / 6,000+ 字</strong> · 趨勢圖 · 摘要'
+      - tone: violet
+        label: "WHY"
+        name: '從<span class="v">工作</span>變成<span class="v">對話</span>'
+        body: '過去分析師要花<strong>幾小時</strong>跑 SQL、清資料、做圖、寫摘要。現在<strong>一句話</strong>跑完。'
+
+  # ─── SLIDE 25: 開放生態系 ──────────────────────────────────
+  - id: ecosystem
+    template: ecosystem
+    bg: dark
+    media: img/13_ecosystem.jpg
+    media_alt: "Open Ecosystem"
+    media_flex: "1.1"
+    tag: { color: cyan, text: "CHAPTER 07 · 一個開放的生態" }
+    title: 'AI OS 是<span class="c">開放</span>的 — 歡迎 AI 新創<span class="v">一起進來</span>'
+    subtitle: 'The Pocket Company 是 AI OS 上的<strong>第一個</strong>節點。目標是<strong>十個、一百個</strong>。'
+    meta_left: "The Pocket Company is the first node — yours can be the next"
+    header_box:
+      color: cyan
+      title: "三個開放標準"
+      bullets:
+        - '<strong>A2A Protocol</strong> · 你的 Agent 跟我們對話'
+        - '<strong>MCP / WebMCP</strong> · 你的工具被任何 Agent 呼叫'
+        - '<strong>OpenClaw 開源框架</strong> · claw3d.ai，直接拿去用'
+    pills:
+      - { title: "數據 / 分析新創",      text: "接成 AI OS 的 Skill" }
+      - { title: "生成式內容新創",      text: "垂直生成模型變可調用 Agent" }
+      - { title: "產業垂直 SaaS",       text: "用 A2A 對接，成延伸節點" }
+      - { title: "場域 / IoT 新創",      text: "透過 Runtime 把感知接進來" }
+      - { title: "客服 / 業務 Agent",    text: "從 Stacey 接管多 Agent 協作" }
+      - { title: "學術 / 研究團隊",      text: "研究成果上真實商業場景驗證" }
+    footer_box:
+      color: orange
+      body: |-
+        <strong class="o">我們帶來</strong>：騰雲二十年的<strong>人、場、貨</strong>真實場景。<br>
+        <strong class="o">你帶來</strong>：你最擅長的 Agent 能力。一起<strong>跑出價值</strong>。
+
+  # ─── SLIDE 26: Closing ─────────────────────────────────────
+  - id: closing
+    template: closing
+    media: img/14_closing.jpg
+    quote: |-
+      <span class="o">Runtime</span> 讓 AI 運行空間，<br>
+      <span class="c">AI OS</span> 讓企業管理 AI，<br>
+      <span class="v">AI Agents</span> 真正開始為企業工作。
+    lede: |-
+      這是肖準加入騰雲後的第一個答案 ──<br>
+      <strong style="color: var(--text);">The Pocket Company</strong>，
+      建構在 Runtime 之上的 AI OS，<br>
+      以及第一批已經開始上工的 AI 工作者。
+    sig: "THE POCKET COMPANY × TURNCLOUD — 2026 KEYNOTE"

@@ -1,0 +1,26 @@
+{% import '_macros.html' as m %}
+<div class="slide cover{% if is_first %} active{% endif %}">
+    {{ m.bg_media(media) }}
+    <div class="slide-content">
+        {% if logos %}
+        <div class="cover-logos">
+            <img src="{{ logos.left.src }}" alt="{{ logos.left.alt }}" class="cover-logo cover-logo-{{ logos.left.brand }}">
+            <span class="cover-logo-x" aria-hidden="true">×</span>
+            <img src="{{ logos.right.src }}" alt="{{ logos.right.alt }}" class="cover-logo cover-logo-{{ logos.right.brand }}">
+        </div>
+        {% endif %}
+        <div class="pre">{{ pre }}</div>
+        <h1>{{ title | safe }}</h1>
+        <p class="lede">
+            {{ lede | safe }}
+        </p>
+        <div class="signature">
+            {% for sig in signatures %}
+            <div class="sig-block">
+                <strong>{{ sig.strong }}</strong>
+                {{ sig.text }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
