@@ -33,11 +33,15 @@ URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generate
 OUT_DIR = ROOT / "img"
 OUT_DIR.mkdir(exist_ok=True)
 
-# ─── Reference library: re-use the existing AIOS infographic + Stacey for style continuity
+# ─── Reference library: 5 Agent characters + style anchors ────────────────
 REFS = {
-    "stacey": OUT_DIR / "12_stacey.jpg",
-    "aios_anchor": OUT_DIR / "aios_infographic_v3.jpg",  # layout & palette discipline
-    "anim_ring": OUT_DIR / "anim_agents_ring.jpg",       # agents-ring composition language
+    "pandora":  OUT_DIR / "08_pandora.jpg",
+    "moana":    OUT_DIR / "09_moana.jpg",
+    "banana":   OUT_DIR / "10_banana.jpg",
+    "adriana":  OUT_DIR / "11_adriana.jpg",
+    "stacey":   OUT_DIR / "12_stacey.jpg",
+    "aios_anchor": OUT_DIR / "aios_infographic_v3.jpg",  # palette discipline
+    "anim_ring":   OUT_DIR / "anim_agents_ring.jpg",     # flow language reference
 }
 
 
