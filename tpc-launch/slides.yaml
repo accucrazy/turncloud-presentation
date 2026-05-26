@@ -794,14 +794,14 @@ slides:
     variant: cinema
     tone: cyan
     backdrop: img/anim_backdrop.jpg
-    media: img/harness_as_llm_input_v3.jpg
+    media: img/harness_as_llm_input_v4.jpg
     media_fit: contain
-    media_alt: "Harness as LLM Input — 5 個 Agent 從 LLM 召喚出來、A2A 協作、再接到資料庫 / POS / 刷卡機等虛擬與實體資料源"
+    media_alt: "Multi-Agent × Harness Engineering 打造的協作架構 — The Pocket Company framework by TSpace"
     marker: "● HARNESS · DEEP DIVE"
-    tag: { color: cyan, text: "WHERE AGENT FRAMEWORKS ARE GOING · 2026" }
-    title: 'Harness 本身,正在<span class="c">變成 LLM 的 Input</span>'
-    subtitle: 'LLM 看完整捆 Harness,自己召喚 5 個 Agent · 用 <strong>A2A 協作</strong> · 再從 Tool 連到 <strong>DataLake、CDP、POS 機、刷卡機</strong> —— 虛擬與實體世界一次到位。'
-    meta_left: "Harness Skill × LLM Input — The new system prompt"
+    tag: { color: cyan, text: "THE POCKET COMPANY FRAMEWORK · by TSpace" }
+    title: 'Multi-Agent × <span class="c">Harness Engineering</span> 打造的協作架構'
+    subtitle: '<strong>Harness = Skill + Tool</strong> 整捆塞進 <strong>SOTA / 地端</strong> 模型 · 召喚 5 個 Agent 用 <strong>A2A 協作</strong> · 再從 Tool 通向 <strong>DataLake、CDP、POS 機、刷卡機</strong> —— 模型可換,Harness 不變。'
+    meta_left: "The Pocket Company framework · by TSpace"
 
   # ─── SLIDE 27: 開放生態系 ──────────────────────────────────
   - id: ecosystem
