@@ -748,7 +748,47 @@ slides:
         name: '從<span class="v">工作</span>變成<span class="v">對話</span>'
         body: '過去分析師要花<strong>幾小時</strong>跑 SQL、清資料、做圖、寫摘要。現在<strong>一句話</strong>跑完。'
 
-  # ─── SLIDE 25: 開放生態系 ──────────────────────────────────
+  # ─── SLIDE 25: Multi-Agent Harness — Stacey demo 背後的架構 ──
+  - id: agent_harness
+    template: layers
+    bg: dark
+    media: img/anim_agents_ring.jpg
+    media_alt: "Multi-Agent Harness architecture — agents 環繞 Stacey 編排核心"
+    tag: { color: violet, text: "DEEP DIVE · MULTI-AGENT HARNESS" }
+    title: '剛剛那 <span class="g">3 秒</span> 背後 ── 是 <span class="v">Multi-Agent Harness</span>'
+    subtitle: '單一 Agent 是工具,<strong>Harness</strong> 把它們綁成<strong>一支會自己協作的隊伍</strong>。'
+    meta_left: "Inside The Pocket Company — Agent Harness × Multi-Agent"
+    layers:
+      - kind: agents
+        label: "LAYER 03 · INTENT"
+        name_class: v
+        name: "Planner — 從一句話拆出任務 DAG"
+        desc: |-
+          使用者只說一句話。Harness 先<strong>切成可執行的子任務</strong> ──
+          哪些先做、哪些可並行、哪些依賴上一步的結果。
+      - kind: aios
+        label: "LAYER 02 · ORCHESTRATION"
+        name_class: c
+        name: '<span class="g">Stacey</span> Harness Core — 派工 · 路由 · A2A'
+        desc: |-
+          根據任務型態<strong>挑合適的 Agent</strong>,串接 <strong>A2A Protocol</strong> 讓 Agent 像同事彼此對話,
+          處理重試、降級、結果合併 —— 整個過程<strong>沒有人類介入</strong>。
+      - kind: runtime
+        label: "LAYER 01 · EXECUTION"
+        name_class: o
+        name: "Multi-Agent Pool — Pandora · Moana · Banana · Adriana"
+        desc: |-
+          四個專業 Agent 各管一塊:<strong>輿情 · 文化洞察 · 視覺生成 · 廣告投放</strong>。
+          各自做完,結果再被 Harness <strong>收回、整合、產出一份完整答案</strong>。
+    footer_box:
+      color: violet
+      body: |-
+        <strong class="v">Planner 拆任務</strong> ·
+        <strong class="g">Stacey 派工</strong> ·
+        <strong class="o">Agents 執行</strong>
+        ── 這就是 <strong>Agent Harness</strong>,讓 5 個 AI 第一次<strong>像一間公司運作</strong>。
+
+  # ─── SLIDE 26: 開放生態系 ──────────────────────────────────
   - id: ecosystem
     template: ecosystem
     bg: dark
