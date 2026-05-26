@@ -791,36 +791,17 @@ slides:
   # ─── SLIDE 26: Harness Skill — 變成 LLM 的 Input ───────────
   - id: harness_skill
     template: demo
-    variant: stacked
+    variant: cinema
     tone: cyan
     backdrop: img/anim_backdrop.jpg
-    media: img/harness_as_llm_input.jpg
+    media: img/harness_as_llm_input_v2.jpg
     media_fit: contain
-    media_alt: "Harness as LLM Input — Skill Bundle 變成 prompt context"
+    media_alt: "Harness as LLM Input — 5 個 Agent 從 LLM orb 召喚出來"
     marker: "● HARNESS · DEEP DIVE"
     tag: { color: cyan, text: "WHERE AGENT FRAMEWORKS ARE GOING · 2026" }
     title: 'Harness 本身,正在<span class="c">變成 LLM 的 Input</span>'
-    subtitle: '<strong>Skill Bundle</strong>(skill.md + tools + examples + scripts)被整捆塞進 LLM context —— 不再是被 call 的 tool,而是<strong>模型今天讀到的 system prompt</strong>。'
+    subtitle: 'LLM 看完整捆 Harness, <strong>自己召喚 5 個 Agent</strong> 完成任務 —— Agent 不再只是被 call 的 tool。'
     meta_left: "Harness Skill × LLM Input — The new system prompt"
-    pills:
-      - tone: orange
-        label: "SKILL BUNDLE"
-        name: "一捆能力, 不是 API"
-        bullets:
-          - 'skill.md / tools / examples / scripts'
-          - '<strong>熱抽換</strong>, 任何 LLM 都讀得懂'
-      - tone: cyan
-        label: "HARNESS"
-        name: "把 Skill 變成 prompt context"
-        bullets:
-          - '檔案 → 結構化 <strong>&lt;skill&gt; / &lt;tools&gt;</strong>'
-          - '不再受 schema 限制'
-      - tone: violet
-        label: "LLM"
-        name: '<span class="v">Harness 就是今天的 Input</span>'
-        bullets:
-          - '看完整捆 Harness 才推理'
-          - '<strong>自己選工具、自己排順序</strong>'
 
   # ─── SLIDE 27: 開放生態系 ──────────────────────────────────
   - id: ecosystem
