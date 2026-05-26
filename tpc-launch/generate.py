@@ -58,7 +58,7 @@ SYSTEM_PROMPT = """你是一份 16:9 企業簡報的內容生成器，使用者�
 - 標題短、力道強、可用色彩 span 點綴重點字
 - subtitle 一句點題，用 <strong> 強調關鍵詞
 - box 標題簡短，items 列點 3-5 條為佳，每條開頭可用 <strong> 強調名詞
-- 全份簡報定位：肖準（AccuCrazy）加入騰雲，發表 Enterprise AI OS 與 5 個 AI Agent
+- 全份簡報定位：Accucrazy 加入騰雲，發表 Enterprise AI OS 與 5 個 AI Agent
 
 # 輸出範例（two_col）
 ```

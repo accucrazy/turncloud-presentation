@@ -11,7 +11,7 @@
 # ════════════════════════════════════════════════════════════
 
 meta:
-  title: "The Pocket Company × TurnCloud — 肖準加入騰雲"
+  title: "The Pocket Company × TurnCloud — Accucrazy 加入騰雲"
   brand: "TPC × TURNCLOUD"
   brand_full: "THE POCKET COMPANY × TURNCLOUD · 2026"
   year: "2026"
@@ -26,13 +26,13 @@ slides:
       left:  { src: "img/accucrazy-logo.webp", alt: "Accucrazy",  brand: "accucrazy" }
       right: { src: "img/turncloud-logo.png",  alt: "TurnCloud",  brand: "turncloud" }
     pre: "THE POCKET COMPANY × TURNCLOUD · 2026"
-    title: '肖準加入騰雲，<br>啟動企業<br><span class="c">AI 工作者</span>新時代'
+    title: 'Accucrazy 加入騰雲，<br>啟動企業<br><span class="c">AI 工作者</span>新時代'
     lede: |-
       承接騰雲的 <strong>Physical Space Runtime</strong>，<br>
       建構 <strong>Enterprise AI OS</strong>，<br>
       帶來第一支 <strong>AI Agent 工作團隊</strong>。
     signatures:
-      - { strong: "The Pocket Company",   text: "Accucrazy 肖準整合" }
+      - { strong: "The Pocket Company",   text: "Accucrazy × TurnCloud 整合" }
       - { strong: "Powered by TurnCloud", text: "T Coeus AI OS 發表會" }
 
   # ─── SLIDE 2: 一段併購故事 ──────────────────────────────────
@@ -40,7 +40,7 @@ slides:
     template: stage
     backdrop: img/anim_backdrop.jpg
     tag: { color: cyan, text: "CHAPTER 01 · 一段併購故事" }
-    title: '肖準 + 騰雲 = <span class="c">The Pocket Company</span>'
+    title: 'Accucrazy + 騰雲 = <span class="c">The Pocket Company</span>'
     subtitle: '不是單純併購 ── 是兩種能力,在 AI 時代<strong>第一次合而為一</strong>。'
     meta_left: "The Pocket Company × TurnCloud — 2026"
     arrows: true
@@ -56,7 +56,7 @@ slides:
       - tone: violet
         art: img/icon_agent_team.jpg
         label: "PARTNER 02"
-        name: "肖準 — 生產級 Agent 能力"
+        name: "Accucrazy — 生產級 Agent 能力"
         bullets:
           - '<strong>OpenClaw</strong> · 開源 Agent 框架'
           - '<strong>5 位專業 Agent</strong> · 已上線生產'
@@ -788,7 +788,7 @@ slides:
       <span class="c">AI OS</span> 讓企業管理 AI，<br>
       <span class="v">AI Agents</span> 真正開始為企業工作。
     lede: |-
-      這是肖準加入騰雲後的第一個答案 ──<br>
+      這是 Accucrazy 加入騰雲後的第一個答案 ──<br>
       <strong style="color: var(--text);">The Pocket Company</strong>，
       建構在 Runtime 之上的 AI OS，<br>
       以及第一批已經開始上工的 AI 工作者。
