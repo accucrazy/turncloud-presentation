@@ -640,89 +640,101 @@ slides:
         <strong class="o">Agents 執行</strong>
         ── 這就是 <strong>Agent Harness</strong>,讓 5 個 AI 第一次<strong>像一間公司運作</strong>。
 
-  # ─── SLIDE 26: Raccoon AI 首發夥伴 — 私域對話 → 輿情升級 ───
+  # ─── SLIDE 26: 首發夥伴 #1 · Raccoon AI ──────────────────────
   - id: raccoon_partnership
-    template: stage
+    template: demo
+    variant: stacked
     backdrop: img/anim_backdrop.jpg
-    tag: { color: cyan, text: "ECOSYSTEM · 首發夥伴 #1 · Raccoon AI × The Pocket Company" }
-    title: '私域對話 × Raccoon AI ── 把<span class="c">第一手客戶聲音</span>變成<span class="v">輿情</span>'
-    subtitle: '我們的 AI 客服在 App 裡收集真實對話 ─ Raccoon 把對話跑得更深 ─ 數據再回到 <strong>Pandora</strong>,讓<strong>私域</strong>跟<strong>公開市場</strong>同時被看見。'
-    arrows: true
-    meta_left: "First ecosystem partner — Raccoon AI × The Pocket Company"
-    panels:
+    tone: cyan
+    tag: { color: cyan, text: "ECOSYSTEM · 首發夥伴 #1 · Raccoon AI" }
+    title: '<span class="c">Raccoon AI</span> ── 把 AI 客服嵌入<span class="o">品牌 App</span>,真實對話<span class="v">回到 Pandora</span>'
+    media: img/partner_raccoon_hero.png
+    media_alt: "Raccoon AI — 把 AI 客服嵌入你的品牌 App"
+    media_fit: contain
+    meta_left: "First ecosystem partner — Raccoon AI · Conversation Agent specialist"
+    pills:
       - tone: cyan
-        art: img/icon_ai_cs_app.jpg
-        art_fit: contain
         label: "STEP 01 · OUR SIDE"
-        name: 'AI 客服在<span class="c">品牌 App</span> 裡上工'
-        tagline: '收集第一線<strong>真實對話</strong>'
+        name: 'AI 客服在<span class="c">品牌 App</span> 上工'
         bullets:
-          - "真實使用者意圖 · 情緒 · 痛點"
-          - "百貨 / 零售 / 服務業 App 即時上線"
-          - "第一方資料主權留在企業"
+          - "百貨 / 零售 / 服務業即時上線"
+          - "收集第一線<strong>真實對話</strong>"
       - tone: orange
-        art: img/icon_raccoon_partner.jpg
-        art_fit: contain
-        label: "STEP 02 · FIRST PARTNER"
-        name: '<span class="o">Raccoon AI</span> ── 對話型 Agent 專家'
-        tagline: '100+ 企業客戶 · 60–90% 對話<strong>自動化</strong>'
+        label: "STEP 02 · RACCOON AI"
+        name: '對話 Agent <span class="o">專家</span>'
         bullets:
-          - "智能腳本 · 模型編排 · AI Summary"
-          - "Zendesk · LINE · Omnichat 整合"
+          - "100+ 企業 · 60–90% <strong>自動化</strong>"
           - "用 <strong>A2A Protocol</strong> 接進我們"
       - tone: violet
-        art: img/icon_voc_fusion.jpg
-        art_fit: contain
         label: "STEP 03 · BACK TO PANDORA"
         name: '私域對話 → <span class="v">輿情升級</span>'
-        tagline: '<strong>內部 VoC</strong> × <strong>外部市場</strong> 一起看見'
         bullets:
           - "真實對話 → 議題 / 情緒 / 趨勢"
-          - "Pandora 整合外部聲量做雙視角"
-          - "一手客戶聲音 → 商業決策"
-    tagline: '<strong>首發夥伴 #1</strong> ── 一個夥伴,讓 Pandora 看得更深。'
+          - "<strong>內部 VoC × 外部市場</strong> 一起看"
 
-  # ─── SLIDE 27: Luna AI 首發夥伴 #2 — 作者口吻 × 爆文公式 ─────
-  - id: luna_partnership
-    template: stage
+  # ─── SLIDE 27: 首發夥伴 #2 · Rytho × Accucrazy (Music Agent OS) ──
+  - id: rytho_partnership
+    template: demo
+    variant: stacked
     backdrop: img/anim_backdrop.jpg
-    tag: { color: orange, text: "ECOSYSTEM · 首發夥伴 #2 · Luna AI × The Pocket Company" }
-    title: '<span class="o">Luna AI</span> ── <span class="c">作者口吻</span> × <span class="v">爆文公式</span>'
-    subtitle: '不是「AI 風格」── 是 <strong>那位作者本人的口吻</strong>。Luna 把你的<strong>真實聲音</strong>套上<strong>驗證過的爆文結構</strong>,60 秒產 30 篇都像你寫的爆文。'
-    arrows: true
-    meta_left: "Second ecosystem partner — Luna AI × The Pocket Company"
-    panels:
+    tone: orange
+    tag: { color: orange, text: "ECOSYSTEM · 首發夥伴 #2 · Rytho × Accucrazy · Music Agent OS" }
+    title: '<span class="o">Rytho</span> × <span class="c">Pandora 情資</span> ── 30 秒寫出<span class="v">唱新光的饒舌</span>'
+    media: img/rytho_demo.mp4
+    media_alt: "Rytho × Accucrazy · 30 秒生成饒舌 Demo"
+    marker: "LIVE DEMO · 黑卡逃亡 — 唱新光三越 14 秒"
+    meta_left: "Second ecosystem partner — Rytho × Accucrazy · Music Agent OS · Rhyme Engine"
+    pills:
       - tone: cyan
-        art: img/icon_luna_brief_in.jpg
-        art_fit: contain
-        label: "STEP 01 · VOICE + BRIEF"
-        name: '<span class="c">作者語料</span> + Moana Brief'
-        tagline: '把<strong>你的聲音</strong>跟<strong>品牌資料</strong>一起餵給 Luna'
+        label: "STEP 01 · DATA IN"
+        name: '<span class="c">Accucrazy 情資</span>'
         bullets:
-          - "作者過往貼文 · 用字 · 節奏"
-          - "品牌痛點 · 粉絲偏好 · 主題"
-          - "Culture Listening 抓到的當下語感"
+          - "Pandora 爬到的<strong>新光三越情境</strong>"
+          - "品牌議題 · 場景 · 受眾語感"
       - tone: orange
-        art: img/icon_luna_character.jpg
-        art_fit: contain
-        label: "STEP 02 · LUNA ENGINE"
-        name: '<span class="o">Luna</span> ── 模仿口吻 × 套爆文公式'
-        tagline: '不是「像 AI」,是<strong>像那個人</strong>'
+        label: "STEP 02 · RYTHO ENGINE"
+        name: '<span class="o">押韻引擎</span>跑主歌副歌'
         bullets:
-          - "深度模仿<strong>特定作者</strong>口吻 / 語氣 / 節奏"
-          - "套用驗證過的<strong>爆文結構</strong>公式"
-          - "30 篇 Threads · 都像同一個人寫的"
+          - "Music Agent OS · <strong>Rhyme Engine</strong>"
+          - "30 秒寫完 · <strong>14 秒</strong> demo 直出"
       - tone: violet
-        art: img/icon_luna_output.jpg
-        art_fit: contain
-        label: "STEP 03 · SOCIAL COMMERCE"
-        name: '連發爆文 → <span class="v">直通生意</span>'
-        tagline: '<strong>協作成本砍 80%</strong> · 上線即生效'
+        label: "STEP 03 · BRAND RAP"
+        name: '第一個會<span class="v">寫饒舌</span>的 AI OS'
         bullets:
-          - "Threads / IG / LINE 同步上線"
-          - "Adriana 接著做廣告 · Banana 接著出視覺"
-          - "從<strong>內容</strong>直接走到<strong>訂單</strong>"
-    tagline: '<strong>首發夥伴 #2</strong> ── 你的聲音 × 爆文公式 = <strong>規模化的真誠</strong>。'
+          - "《黑卡逃亡》── 唱新光三越"
+          - "情資 → 旋律 → 直接上社群"
+
+  # ─── SLIDE 28: 首發夥伴 #3 · Luna AI ──────────────────────────
+  - id: luna_partnership
+    template: demo
+    variant: stacked
+    backdrop: img/anim_backdrop.jpg
+    tone: orange
+    tag: { color: orange, text: "ECOSYSTEM · 首發夥伴 #3 · Luna AI" }
+    title: '<span class="o">Luna AI</span> ── <span class="c">爆文機器人</span>,模仿作者口吻 + 套<span class="v">爆文公式</span>'
+    media: img/partner_luna_hero.png
+    media_alt: "Luna AI — 爆文機器人 · AI 內容生成引擎"
+    media_fit: contain
+    meta_left: "Third ecosystem partner — Luna AI · Viral Content Engine"
+    pills:
+      - tone: cyan
+        label: "VOICE CLONING"
+        name: '<span class="c">作者本人的口吻</span>'
+        bullets:
+          - "深度模仿用字 / 語氣 / 節奏"
+          - "不是 AI 風格 ── 是<strong>那個人</strong>"
+      - tone: orange
+        label: "VIRAL FORMULA"
+        name: '驗證過的<span class="o">爆文結構</span>'
+        bullets:
+          - "內建多種<strong>爆文公式</strong>架構"
+          - "60 秒產出 <strong>30 篇</strong> Threads"
+      - tone: violet
+        label: "SOCIAL COMMERCE"
+        name: '連發爆文 → <span class="v">直通訂單</span>'
+        bullets:
+          - "<strong>協作成本砍 80%</strong>"
+          - "Adriana + Banana 接力放大"
 
   # ─── SLIDE 28: 開放生態系 ──────────────────────────────────
   - id: ecosystem
@@ -733,8 +745,8 @@ slides:
     media_flex: "1.1"
     tag: { color: cyan, text: "CHAPTER 07 · 一個開放的生態" }
     title: 'AI OS 是<span class="c">開放</span>的 — 歡迎 AI 新創<span class="v">一起進來</span>'
-    subtitle: '<strong>Raccoon AI</strong> 跟 <strong>Luna AI</strong> 是<strong>首批節點</strong>。下一個可以是<strong>你</strong>。'
-    meta_left: "Raccoon AI · Luna AI are the first nodes — yours can be the next"
+    subtitle: '<strong>Raccoon</strong> · <strong>Rytho</strong> · <strong>Luna</strong> ── 三家首發夥伴已經接進來。下一個可以是<strong>你</strong>。'
+    meta_left: "Raccoon · Rytho · Luna are the first three nodes — yours can be next"
     header_box:
       color: cyan
       title: "三個開放標準"
@@ -744,8 +756,8 @@ slides:
         - '<strong>OpenClaw 開源框架</strong> · claw3d.ai，直接拿去用'
     pills:
       - { title: "Raccoon AI · 對話 Agent",  text: "★ 首發夥伴 · 私域對話 → 輿情" }
+      - { title: "Rytho · Music Agent OS",   text: "★ 首發夥伴 · 情資 × 押韻引擎 → 饒舌" }
       - { title: "Luna AI · 爆文機器人",     text: "★ 首發夥伴 · 作者口吻 × 爆文公式" }
-      - { title: "數據 / 分析新創",      text: "接成 AI OS 的 Skill" }
       - { title: "產業垂直 SaaS",       text: "用 A2A 對接，成延伸節點" }
       - { title: "場域 / IoT 新創",      text: "透過 Runtime 把感知接進來" }
       - { title: "學術 / 研究團隊",      text: "研究成果上真實商業場景驗證" }
