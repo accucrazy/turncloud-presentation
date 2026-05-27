@@ -647,7 +647,7 @@ slides:
     backdrop: img/anim_backdrop.jpg
     tone: cyan
     tag: { color: cyan, text: "ECOSYSTEM · 首發夥伴 #1 · Raccoon AI" }
-    title: '<span class="c">Raccoon AI</span> ── 把 AI 客服嵌入<span class="o">品牌 App</span>,真實對話<span class="v">回到 Pandora</span>'
+    title: 'AI 客服上線<span class="o">品牌 App</span>,對話<span class="v">回到 Pandora</span>'
     media: img/partner_raccoon_hero.png
     media_alt: "Raccoon AI — 把 AI 客服嵌入你的品牌 App"
     media_fit: contain
@@ -678,11 +678,12 @@ slides:
     variant: stacked
     backdrop: img/anim_backdrop.jpg
     tone: orange
-    tag: { color: orange, text: "ECOSYSTEM · 首發夥伴 #2 · Rytho × Accucrazy · Music Agent OS" }
-    title: '<span class="o">Rytho</span> × <span class="c">Pandora 情資</span> ── 30 秒寫出<span class="v">唱新光的饒舌</span>'
+    tag: { color: orange, text: "ECOSYSTEM · 首發夥伴 #2 · Rytho × Accucrazy" }
+    title: '30 秒寫出<span class="v">唱新光的饒舌</span>'
     media: img/rytho_demo.mp4
     media_alt: "Rytho × Accucrazy · 30 秒生成饒舌 Demo"
-    marker: "LIVE DEMO · 黑卡逃亡 — 唱新光三越 14 秒"
+    audio: true
+    marker: "LIVE DEMO · 黑卡逃亡 — 14 秒"
     meta_left: "Second ecosystem partner — Rytho × Accucrazy · Music Agent OS · Rhyme Engine"
     pills:
       - tone: cyan
@@ -711,7 +712,7 @@ slides:
     backdrop: img/anim_backdrop.jpg
     tone: orange
     tag: { color: orange, text: "ECOSYSTEM · 首發夥伴 #3 · Luna AI" }
-    title: '<span class="o">Luna AI</span> ── <span class="c">爆文機器人</span>,模仿作者口吻 + 套<span class="v">爆文公式</span>'
+    title: '<span class="c">爆文機器人</span> ── 你的口吻 × <span class="v">爆文公式</span>'
     media: img/partner_luna_hero.png
     media_alt: "Luna AI — 爆文機器人 · AI 內容生成引擎"
     media_fit: contain

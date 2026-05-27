@@ -17,13 +17,14 @@
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 {% if is_video %}
-                <video src="{{ media }}" autoplay loop muted playsinline></video>
+                <video src="{{ media }}" autoplay loop {% if not audio %}muted{% endif %} playsinline {% if audio %}controls{% endif %}></video>
                 {% else %}
                 <img src="{{ media }}" alt="{{ media_alt | default('') }}">
                 {% endif %}
             </div>
             {% if v == 'cinema' %}<div class="demo-media-scrim"></div>{% endif %}
             {% if marker %}<div class="demo-marker">● {{ marker }}</div>{% endif %}
+            {% if audio %}<div class="demo-audio-hint" data-audio-hint>♪ 點影片開聲</div>{% endif %}
         </div>
 
         {# ── TEXT HEADER ── #}

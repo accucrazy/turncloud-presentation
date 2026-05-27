@@ -975,6 +975,32 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     opacity: 0.55;
     pointer-events: none;
 }
+/* Native video controls — only visible when slide explicitly opts into audio */
+.demo-media-frame video[controls]::-webkit-media-controls-panel {
+    background: linear-gradient(0deg, rgba(15,23,42,0.92), rgba(15,23,42,0.65));
+}
+/* Sound-on hint that pulses gently until user clicks play */
+.demo-audio-hint {
+    position: absolute;
+    top: 1.6cqh;
+    right: 1.6cqh;
+    z-index: 4;
+    background: rgba(245, 158, 11, 0.95);
+    color: #1f2937;
+    padding: 0.8cqh 1.6cqh;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.55cqh;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    box-shadow: 0 6px 24px rgba(245,158,11,0.45);
+    animation: demo-audioBeat 1.8s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes demo-audioBeat {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50%      { transform: translateY(-2px); opacity: 0.82; }
+}
 .demo-tone-orange .demo-media-halo { background: radial-gradient(ellipse, rgba(245,158,11,0.55), transparent 65%); }
 .demo-tone-cyan   .demo-media-halo { background: radial-gradient(ellipse, rgba(6,182,212,0.55),  transparent 65%); }
 .demo-tone-violet .demo-media-halo { background: radial-gradient(ellipse, rgba(168,85,247,0.55), transparent 65%); }
@@ -2556,6 +2582,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             </div>
             
             <div class="demo-marker">● HARNESS · DEEP DIVE</div>
+            
         </div>
 
         
@@ -2678,11 +2705,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <video src="img/pandora_demo.mov" autoplay loop muted playsinline></video>
+                <video src="img/pandora_demo.mov" autoplay loop muted playsinline ></video>
                 
             </div>
             
             <div class="demo-marker">● LIVE DEMO</div>
+            
         </div>
 
         
@@ -2821,6 +2849,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             </div>
             
             <div class="demo-marker">● FLOW DIAGRAM</div>
+            
         </div>
 
         
@@ -2889,11 +2918,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <video src="img/moana_culture_case.mp4" autoplay loop muted playsinline></video>
+                <video src="img/moana_culture_case.mp4" autoplay loop muted playsinline ></video>
                 
             </div>
             <div class="demo-media-scrim"></div>
             <div class="demo-marker">● ● LIVE CASE</div>
+            
         </div>
 
         
@@ -2946,11 +2976,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <video src="img/moana_case_02.mov" autoplay loop muted playsinline></video>
+                <video src="img/moana_case_02.mov" autoplay loop muted playsinline ></video>
                 
             </div>
             
             <div class="demo-marker">● PIPELINE DEMO</div>
+            
         </div>
 
         
@@ -3095,6 +3126,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             </div>
             
             <div class="demo-marker">● PIPELINE</div>
+            
         </div>
 
         
@@ -3163,11 +3195,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <video src="img/banana_split_demo.mp4" autoplay loop muted playsinline></video>
+                <video src="img/banana_split_demo.mp4" autoplay loop muted playsinline ></video>
                 
             </div>
             
             <div class="demo-marker">● ● LIVE DEMO</div>
+            
         </div>
 
         
@@ -3225,11 +3258,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <video src="img/banana_video_demo.mp4" autoplay loop muted playsinline></video>
+                <video src="img/banana_video_demo.mp4" autoplay loop muted playsinline ></video>
                 
             </div>
             <div class="demo-media-scrim"></div>
             <div class="demo-marker">● WORLD FIRST</div>
+            
         </div>
 
         
@@ -3375,11 +3409,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <video src="img/adriana_demo.mov" autoplay loop muted playsinline></video>
+                <video src="img/adriana_demo.mov" autoplay loop muted playsinline ></video>
                 
             </div>
             
             <div class="demo-marker">● ● LIVE DEMO</div>
+            
         </div>
 
         
@@ -3442,6 +3477,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             </div>
             
             <div class="demo-marker">● FLOW DIAGRAM</div>
+            
         </div>
 
         
@@ -3510,11 +3546,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <video src="img/adriana_crm_demo.mov" autoplay loop muted playsinline></video>
+                <video src="img/adriana_crm_demo.mov" autoplay loop muted playsinline ></video>
                 
             </div>
             <div class="demo-media-scrim"></div>
             <div class="demo-marker">● ● CRM × CAPI LIVE</div>
+            
         </div>
 
         
@@ -3641,11 +3678,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <video src="img/stacey_demo.mp4" autoplay loop muted playsinline></video>
+                <video src="img/stacey_demo.mp4" autoplay loop muted playsinline ></video>
                 
             </div>
             
             <div class="demo-marker">● ● STACEY × PANDORA LIVE</div>
+            
         </div>
 
         
@@ -3773,12 +3811,13 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             </div>
             
             
+            
         </div>
 
         
         <div class="demo-info">
             <div class="tag tag-cyan">ECOSYSTEM · 首發夥伴 #1 · Raccoon AI</div>
-            <h2 class="demo-title"><span class="c">Raccoon AI</span> ── 把 AI 客服嵌入<span class="o">品牌 App</span>,真實對話<span class="v">回到 Pandora</span></h2>
+            <h2 class="demo-title">AI 客服上線<span class="o">品牌 App</span>,對話<span class="v">回到 Pandora</span></h2>
             
         </div>
 
@@ -3845,17 +3884,18 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <video src="img/rytho_demo.mp4" autoplay loop muted playsinline></video>
+                <video src="img/rytho_demo.mp4" autoplay loop  playsinline controls></video>
                 
             </div>
             
-            <div class="demo-marker">● LIVE DEMO · 黑卡逃亡 — 唱新光三越 14 秒</div>
+            <div class="demo-marker">● LIVE DEMO · 黑卡逃亡 — 14 秒</div>
+            <div class="demo-audio-hint" data-audio-hint>♪ 點影片開聲</div>
         </div>
 
         
         <div class="demo-info">
-            <div class="tag tag-orange">ECOSYSTEM · 首發夥伴 #2 · Rytho × Accucrazy · Music Agent OS</div>
-            <h2 class="demo-title"><span class="o">Rytho</span> × <span class="c">Pandora 情資</span> ── 30 秒寫出<span class="v">唱新光的饒舌</span></h2>
+            <div class="tag tag-orange">ECOSYSTEM · 首發夥伴 #2 · Rytho × Accucrazy</div>
+            <h2 class="demo-title">30 秒寫出<span class="v">唱新光的饒舌</span></h2>
             
         </div>
 
@@ -3927,12 +3967,13 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             </div>
             
             
+            
         </div>
 
         
         <div class="demo-info">
             <div class="tag tag-orange">ECOSYSTEM · 首發夥伴 #3 · Luna AI</div>
-            <h2 class="demo-title"><span class="o">Luna AI</span> ── <span class="c">爆文機器人</span>,模仿作者口吻 + 套<span class="v">爆文公式</span></h2>
+            <h2 class="demo-title"><span class="c">爆文機器人</span> ── 你的口吻 × <span class="v">爆文公式</span></h2>
             
         </div>
 
@@ -4132,7 +4173,27 @@ function resetVideos(slide) {
 }
 function playVideos(slide) {
     slide.querySelectorAll('video').forEach(v => {
-        try { v.currentTime = 0; const p = v.play(); if (p && p.catch) p.catch(() => {}); } catch (e) {}
+        try {
+            v.currentTime = 0;
+            const wantsAudio = v.hasAttribute('controls') && !v.dataset.audioFallback;
+            const p = v.play();
+            if (p && p.catch) {
+                p.catch(() => {
+                    if (wantsAudio) {
+                        v.muted = true;
+                        v.dataset.audioFallback = '1';
+                        v.play().catch(() => {});
+                    }
+                });
+            }
+        } catch (e) {}
+    });
+    /* Dismiss the audio hint as soon as user clicks play */
+    slide.querySelectorAll('video[controls]').forEach(v => {
+        const hint = slide.querySelector('[data-audio-hint]');
+        const dismiss = () => { if (hint) hint.style.display = 'none'; };
+        v.addEventListener('play', dismiss, { once: true });
+        v.addEventListener('volumechange', () => { if (!v.muted) dismiss(); });
     });
 }
 if (slides[0]) playVideos(slides[0]);

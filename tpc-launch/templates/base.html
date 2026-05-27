@@ -971,6 +971,32 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     opacity: 0.55;
     pointer-events: none;
 }
+/* Native video controls — only visible when slide explicitly opts into audio */
+.demo-media-frame video[controls]::-webkit-media-controls-panel {
+    background: linear-gradient(0deg, rgba(15,23,42,0.92), rgba(15,23,42,0.65));
+}
+/* Sound-on hint that pulses gently until user clicks play */
+.demo-audio-hint {
+    position: absolute;
+    top: 1.6cqh;
+    right: 1.6cqh;
+    z-index: 4;
+    background: rgba(245, 158, 11, 0.95);
+    color: #1f2937;
+    padding: 0.8cqh 1.6cqh;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.55cqh;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    box-shadow: 0 6px 24px rgba(245,158,11,0.45);
+    animation: demo-audioBeat 1.8s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes demo-audioBeat {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50%      { transform: translateY(-2px); opacity: 0.82; }
+}
 .demo-tone-orange .demo-media-halo { background: radial-gradient(ellipse, rgba(245,158,11,0.55), transparent 65%); }
 .demo-tone-cyan   .demo-media-halo { background: radial-gradient(ellipse, rgba(6,182,212,0.55),  transparent 65%); }
 .demo-tone-violet .demo-media-halo { background: radial-gradient(ellipse, rgba(168,85,247,0.55), transparent 65%); }
@@ -2289,7 +2315,27 @@ function resetVideos(slide) {
 }
 function playVideos(slide) {
     slide.querySelectorAll('video').forEach(v => {
-        try { v.currentTime = 0; const p = v.play(); if (p && p.catch) p.catch(() => {}); } catch (e) {}
+        try {
+            v.currentTime = 0;
+            const wantsAudio = v.hasAttribute('controls') && !v.dataset.audioFallback;
+            const p = v.play();
+            if (p && p.catch) {
+                p.catch(() => {
+                    if (wantsAudio) {
+                        v.muted = true;
+                        v.dataset.audioFallback = '1';
+                        v.play().catch(() => {});
+                    }
+                });
+            }
+        } catch (e) {}
+    });
+    /* Dismiss the audio hint as soon as user clicks play */
+    slide.querySelectorAll('video[controls]').forEach(v => {
+        const hint = slide.querySelector('[data-audio-hint]');
+        const dismiss = () => { if (hint) hint.style.display = 'none'; };
+        v.addEventListener('play', dismiss, { once: true });
+        v.addEventListener('volumechange', () => { if (!v.muted) dismiss(); });
     });
 }
 if (slides[0]) playVideos(slides[0]);
