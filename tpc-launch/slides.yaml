@@ -41,7 +41,7 @@ slides:
     backdrop: img/anim_backdrop.jpg
     tag: { color: cyan, text: "CHAPTER 01 · The Pocket Company" }
     title: '從 <span class="o">Physical Runtime</span> → <span class="c">AI OS</span> → <span class="v">AI Agents</span>'
-    subtitle: '<strong class="c">AI OS</strong> 是 <strong>Operating System</strong>,也是 <strong>Agent Orchestrated Space</strong> ── 同時編排 <strong class="o">實體空間</strong> 與 <strong class="v">虛擬空間</strong>。'
+    subtitle: '<strong class="c">AI OS</strong> 是 <strong>Operating System</strong>,也是 <strong>Agent Orchestrated Space</strong> ── 同時編排 <strong class="o">實體空間</strong> 與 <strong class="v">數位空間</strong>。'
     meta_left: "The Pocket Company — 三層架構,一張圖看懂"
     tagline: '<span class="o">Runtime 進入實體空間</span> · <span class="c">AI OS 編排兩種空間</span> · <span class="v">5 位 Agent 真正開始工作</span>'
     layers:
@@ -61,7 +61,41 @@ slides:
         name: "AI Agent Workforce"
         by: "<strong>5 位 Agent</strong> · A2A 協作 · 像一間公司運作"
 
-  # ─── SLIDE 3: AI Workforce 登場 ─────────────────────────────
+  # ─── SLIDE 3: One OS · Two Spaces ─────────────────────────
+  - id: aios_concept
+    template: duality
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: cyan, text: "ONE OS · TWO SPACES" }
+    title: '同一套 <span class="c">AI OS</span>，編排 <span class="o">實體</span> 與 <span class="v">數位</span> 兩種空間'
+    subtitle: '<strong>AI OS = AI Operating System</strong> · 更是 <strong class="c">Agent Orchestrated Space</strong> ── 讓 <strong>真實世界</strong> 與 <strong>Agent 們</strong> 同時被編排的空間。'
+    meta_left: "AI OS · One OS · Two Spaces"
+    os:
+      title: 'AI OS · <span style="color:var(--text);">Agent Orchestrated Space</span>'
+      subtitle: '同一套編排層 — Orchestrator · A2A · MCP · Memory · Policy · Governance'
+      chips: [Orchestrator, A2A, MCP, Memory, Policy, Governance]
+    physical:
+      art: img/space_physical.jpg
+      label: "SPACE 01 · PHYSICAL"
+      name: '實體空間 ── AI 走進 <strong style="color:#b45309;">真實人場貨</strong>'
+      tag: "AI 不再只活在雲端,而是進到門市、工廠、現場,服務真實的人。"
+      bullets:
+        - '<strong>場域</strong>：零售店 · 工廠 · 飯店 · 醫療現場'
+        - '<strong>裝置</strong>：POS · HOYABOX · IoT 感測 · 攝影機'
+        - '<strong>價值</strong>：用 AI 服務 <strong>每一位顧客</strong>'
+      via: 'via <strong>騰雲科技 Runtime</strong>'
+    virtual:
+      art: img/space_virtual.jpg
+      label: "SPACE 02 · DIGITAL"
+      name: '數位空間 ── <strong style="color:var(--violet);">Agent 們協作</strong> 的場域'
+      tag: "這個「空間」本身,就是 5 位 AI Agent 24/7 一起工作的數位辦公室。"
+      bullets:
+        - '<strong>成員</strong>：Pandora · Moana · Banana · Adriana · Stacey'
+        - '<strong>協議</strong>：A2A 互通 · MCP 取資源 · 共享記憶'
+        - '<strong>價值</strong>：複雜任務 <strong>多 Agent 一起完成</strong>'
+      via: 'via <strong>The Pocket Company AI OS</strong>'
+    tagline: '<span class="c">One OS</span> · <span class="o">Two Spaces</span> · <span class="v">Five Agents</span> ── 一句指令,跨空間執行。'
+
+  # ─── SLIDE 4: AI Workforce 登場 ─────────────────────────────
   - id: workforce
     template: workforce
     bg: violet
