@@ -1292,6 +1292,192 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
+   CHAPTER / SECTION-BREAK SLIDE — monumental type + accent bullets
+   ═══════════════════════════════════════════════════════════════════ */
+.slide.chapter { padding: 0; }
+.slide.chapter .bg-image { opacity: 1; }
+.slide.chapter .bg-image::after {
+    background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.78) 50%, rgba(255,255,255,0.9) 100%);
+}
+.chapter-aura {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+.chapter-aura-1 { top: -10cqh; left: -10cqh; width: 50cqh; height: 50cqh; }
+.chapter-aura-2 { bottom: -12cqh; right: -8cqh; width: 44cqh; height: 44cqh; }
+.chapter-tone-cyan   .chapter-aura-1 { background: radial-gradient(circle, rgba(6,182,212,0.55), transparent 70%); }
+.chapter-tone-cyan   .chapter-aura-2 { background: radial-gradient(circle, rgba(168,85,247,0.45), transparent 70%); }
+.chapter-tone-violet .chapter-aura-1 { background: radial-gradient(circle, rgba(168,85,247,0.55), transparent 70%); }
+.chapter-tone-violet .chapter-aura-2 { background: radial-gradient(circle, rgba(245,158,11,0.45), transparent 70%); }
+.chapter-tone-orange .chapter-aura-1 { background: radial-gradient(circle, rgba(245,158,11,0.55), transparent 70%); }
+.chapter-tone-orange .chapter-aura-2 { background: radial-gradient(circle, rgba(6,182,212,0.45),  transparent 70%); }
+.slide.active.chapter .chapter-aura-1 { animation: chapter-auraIn 1.2s ease-out 0.05s forwards, chapter-auraFloat 11s ease-in-out 1.4s infinite; }
+.slide.active.chapter .chapter-aura-2 { animation: chapter-auraIn 1.2s ease-out 0.30s forwards, chapter-auraFloat 13s ease-in-out 1.8s infinite reverse; }
+@keyframes chapter-auraIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes chapter-auraFloat {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(20px, -15px); }
+}
+
+.chapter-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding: 4.5cqh 11cqh 5cqh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.3cqh;
+}
+
+.chapter-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.8cqh;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: var(--dim-2);
+    opacity: 0;
+    transform: translateY(-12px);
+}
+.chapter-tone-cyan   .chapter-eyebrow { color: var(--cyan); }
+.chapter-tone-violet .chapter-eyebrow { color: var(--violet); }
+.chapter-tone-orange .chapter-eyebrow { color: #b45309; }
+
+.chapter-pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.9cqh;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--dim);
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.chapter-title {
+    font-size: 9cqh;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    color: var(--text);
+    margin: 1cqh 0 1.4cqh;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.chapter-title .c { color: var(--cyan); }
+.chapter-title .v { color: var(--violet); }
+.chapter-title .o { color: #d97706; }
+.chapter-title .g { color: var(--green); }
+
+.chapter-lede {
+    font-size: 2.5cqh;
+    font-weight: 500;
+    color: var(--dim);
+    line-height: 1.6;
+    max-width: 85%;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.chapter-lede strong { color: var(--text); font-weight: 800; }
+.chapter-lede em {
+    font-style: normal;
+    background: linear-gradient(180deg, transparent 60%, rgba(245,158,11,0.25) 60%);
+    padding: 0 4px;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.chapter-bullets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5cqh;
+    margin-top: 2cqh;
+    width: 100%;
+}
+.chapter-bullet {
+    position: relative;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 1.4cqh 1.6cqh 1.5cqh 2cqh;
+    box-shadow: 0 12px 30px rgba(15,23,42,0.09);
+    opacity: 0;
+    transform: translateY(24px);
+}
+.chapter-bullet::before {
+    content: '';
+    position: absolute;
+    top: 1cqh; bottom: 1cqh; left: 0;
+    width: 4px;
+    border-radius: 4px;
+}
+.chapter-bullet-cyan::before   { background: linear-gradient(180deg, var(--cyan),   var(--cyan-light)); }
+.chapter-bullet-violet::before { background: linear-gradient(180deg, var(--violet), var(--violet-light)); }
+.chapter-bullet-orange::before { background: linear-gradient(180deg, var(--orange), var(--orange-light)); }
+.chapter-bullet-green::before  { background: linear-gradient(180deg, var(--green),  #34d399); }
+.chapter-bullet-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.35cqh;
+    font-weight: 800;
+    letter-spacing: 2.4px;
+    color: var(--dim-2);
+    margin-bottom: 0.4cqh;
+}
+.chapter-bullet-cyan   .chapter-bullet-label { color: var(--cyan); }
+.chapter-bullet-violet .chapter-bullet-label { color: var(--violet); }
+.chapter-bullet-orange .chapter-bullet-label { color: #b45309; }
+.chapter-bullet-text {
+    font-size: 1.95cqh;
+    color: var(--text);
+    line-height: 1.4;
+}
+.chapter-bullet-text strong { color: var(--text); font-weight: 800; }
+
+.chapter-tagline {
+    margin-top: 2cqh;
+    font-size: 2.05cqh;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.45;
+    opacity: 0;
+    transform: translateY(16px);
+    max-width: 80%;
+}
+
+.chapter-meta {
+    position: absolute;
+    bottom: 1.6cqh;
+    left: 11cqh;
+    right: 11cqh;
+    z-index: 4;
+}
+
+/* ─── stagger animations when slide becomes active ─── */
+.slide.active.chapter .chapter-eyebrow { animation: chapter-fadeUp 0.7s ease-out 0.25s forwards; }
+.slide.active.chapter .chapter-pre     { animation: chapter-fadeUp 0.7s ease-out 0.40s forwards; }
+.slide.active.chapter .chapter-title   { animation: chapter-fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.55s forwards; }
+.slide.active.chapter .chapter-lede    { animation: chapter-fadeUp 0.8s ease-out 0.85s forwards; }
+.slide.active.chapter .chapter-bullet-1 { animation: chapter-fadeUp 0.7s ease-out 1.10s forwards; }
+.slide.active.chapter .chapter-bullet-2 { animation: chapter-fadeUp 0.7s ease-out 1.25s forwards; }
+.slide.active.chapter .chapter-bullet-3 { animation: chapter-fadeUp 0.7s ease-out 1.40s forwards; }
+.slide.active.chapter .chapter-tagline  { animation: chapter-fadeUp 0.8s ease-out 1.70s forwards; }
+@keyframes chapter-fadeUp {
+    0%   { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
    AGENT INTRO SLIDE — big portrait + asymmetric type, variants
    ═══════════════════════════════════════════════════════════════════ */
 .slide.agent { padding: 0; }

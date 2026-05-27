@@ -1296,6 +1296,192 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
+   CHAPTER / SECTION-BREAK SLIDE — monumental type + accent bullets
+   ═══════════════════════════════════════════════════════════════════ */
+.slide.chapter { padding: 0; }
+.slide.chapter .bg-image { opacity: 1; }
+.slide.chapter .bg-image::after {
+    background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.78) 50%, rgba(255,255,255,0.9) 100%);
+}
+.chapter-aura {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+.chapter-aura-1 { top: -10cqh; left: -10cqh; width: 50cqh; height: 50cqh; }
+.chapter-aura-2 { bottom: -12cqh; right: -8cqh; width: 44cqh; height: 44cqh; }
+.chapter-tone-cyan   .chapter-aura-1 { background: radial-gradient(circle, rgba(6,182,212,0.55), transparent 70%); }
+.chapter-tone-cyan   .chapter-aura-2 { background: radial-gradient(circle, rgba(168,85,247,0.45), transparent 70%); }
+.chapter-tone-violet .chapter-aura-1 { background: radial-gradient(circle, rgba(168,85,247,0.55), transparent 70%); }
+.chapter-tone-violet .chapter-aura-2 { background: radial-gradient(circle, rgba(245,158,11,0.45), transparent 70%); }
+.chapter-tone-orange .chapter-aura-1 { background: radial-gradient(circle, rgba(245,158,11,0.55), transparent 70%); }
+.chapter-tone-orange .chapter-aura-2 { background: radial-gradient(circle, rgba(6,182,212,0.45),  transparent 70%); }
+.slide.active.chapter .chapter-aura-1 { animation: chapter-auraIn 1.2s ease-out 0.05s forwards, chapter-auraFloat 11s ease-in-out 1.4s infinite; }
+.slide.active.chapter .chapter-aura-2 { animation: chapter-auraIn 1.2s ease-out 0.30s forwards, chapter-auraFloat 13s ease-in-out 1.8s infinite reverse; }
+@keyframes chapter-auraIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes chapter-auraFloat {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(20px, -15px); }
+}
+
+.chapter-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding: 4.5cqh 11cqh 5cqh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.3cqh;
+}
+
+.chapter-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.8cqh;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: var(--dim-2);
+    opacity: 0;
+    transform: translateY(-12px);
+}
+.chapter-tone-cyan   .chapter-eyebrow { color: var(--cyan); }
+.chapter-tone-violet .chapter-eyebrow { color: var(--violet); }
+.chapter-tone-orange .chapter-eyebrow { color: #b45309; }
+
+.chapter-pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.9cqh;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--dim);
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.chapter-title {
+    font-size: 9cqh;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    color: var(--text);
+    margin: 1cqh 0 1.4cqh;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.chapter-title .c { color: var(--cyan); }
+.chapter-title .v { color: var(--violet); }
+.chapter-title .o { color: #d97706; }
+.chapter-title .g { color: var(--green); }
+
+.chapter-lede {
+    font-size: 2.5cqh;
+    font-weight: 500;
+    color: var(--dim);
+    line-height: 1.6;
+    max-width: 85%;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.chapter-lede strong { color: var(--text); font-weight: 800; }
+.chapter-lede em {
+    font-style: normal;
+    background: linear-gradient(180deg, transparent 60%, rgba(245,158,11,0.25) 60%);
+    padding: 0 4px;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.chapter-bullets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5cqh;
+    margin-top: 2cqh;
+    width: 100%;
+}
+.chapter-bullet {
+    position: relative;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 1.4cqh 1.6cqh 1.5cqh 2cqh;
+    box-shadow: 0 12px 30px rgba(15,23,42,0.09);
+    opacity: 0;
+    transform: translateY(24px);
+}
+.chapter-bullet::before {
+    content: '';
+    position: absolute;
+    top: 1cqh; bottom: 1cqh; left: 0;
+    width: 4px;
+    border-radius: 4px;
+}
+.chapter-bullet-cyan::before   { background: linear-gradient(180deg, var(--cyan),   var(--cyan-light)); }
+.chapter-bullet-violet::before { background: linear-gradient(180deg, var(--violet), var(--violet-light)); }
+.chapter-bullet-orange::before { background: linear-gradient(180deg, var(--orange), var(--orange-light)); }
+.chapter-bullet-green::before  { background: linear-gradient(180deg, var(--green),  #34d399); }
+.chapter-bullet-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.35cqh;
+    font-weight: 800;
+    letter-spacing: 2.4px;
+    color: var(--dim-2);
+    margin-bottom: 0.4cqh;
+}
+.chapter-bullet-cyan   .chapter-bullet-label { color: var(--cyan); }
+.chapter-bullet-violet .chapter-bullet-label { color: var(--violet); }
+.chapter-bullet-orange .chapter-bullet-label { color: #b45309; }
+.chapter-bullet-text {
+    font-size: 1.95cqh;
+    color: var(--text);
+    line-height: 1.4;
+}
+.chapter-bullet-text strong { color: var(--text); font-weight: 800; }
+
+.chapter-tagline {
+    margin-top: 2cqh;
+    font-size: 2.05cqh;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.45;
+    opacity: 0;
+    transform: translateY(16px);
+    max-width: 80%;
+}
+
+.chapter-meta {
+    position: absolute;
+    bottom: 1.6cqh;
+    left: 11cqh;
+    right: 11cqh;
+    z-index: 4;
+}
+
+/* ─── stagger animations when slide becomes active ─── */
+.slide.active.chapter .chapter-eyebrow { animation: chapter-fadeUp 0.7s ease-out 0.25s forwards; }
+.slide.active.chapter .chapter-pre     { animation: chapter-fadeUp 0.7s ease-out 0.40s forwards; }
+.slide.active.chapter .chapter-title   { animation: chapter-fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.55s forwards; }
+.slide.active.chapter .chapter-lede    { animation: chapter-fadeUp 0.8s ease-out 0.85s forwards; }
+.slide.active.chapter .chapter-bullet-1 { animation: chapter-fadeUp 0.7s ease-out 1.10s forwards; }
+.slide.active.chapter .chapter-bullet-2 { animation: chapter-fadeUp 0.7s ease-out 1.25s forwards; }
+.slide.active.chapter .chapter-bullet-3 { animation: chapter-fadeUp 0.7s ease-out 1.40s forwards; }
+.slide.active.chapter .chapter-tagline  { animation: chapter-fadeUp 0.8s ease-out 1.70s forwards; }
+@keyframes chapter-fadeUp {
+    0%   { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
    AGENT INTRO SLIDE — big portrait + asymmetric type, variants
    ═══════════════════════════════════════════════════════════════════ */
 .slide.agent { padding: 0; }
@@ -2392,7 +2578,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>The Pocket Company — 三層架構,一張圖看懂</span>
-            <span class="pg">02 / 27</span>
+            <span class="pg">02 / 26</span>
         </div>
     </div>
 </div>
@@ -2506,7 +2692,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>AI OS · One OS · Two Spaces</span>
-            <span class="pg">03 / 27</span>
+            <span class="pg">03 / 26</span>
         </div>
     </div>
 </div>
@@ -2558,7 +2744,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>5 位 AI 員工 — 可以開始招聘的數位團隊</span>
-            <span class="pg">04 / 27</span>
+            <span class="pg">04 / 26</span>
         </div>
     </div>
 </div>
@@ -2600,7 +2786,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>The Pocket Company framework · by TSpace</span>
-        <span class="pg">05 / 27</span>
+        <span class="pg">05 / 26</span>
     </div>
 </div>
 
@@ -2687,7 +2873,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Pandora — Market Intelligence · MVP LIVE</span>
-        <span class="pg">06 / 27</span>
+        <span class="pg">06 / 26</span>
     </div>
 </div>
 
@@ -2752,7 +2938,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Pandora — Auto Insight Report</span>
-        <span class="pg">07 / 27</span>
+        <span class="pg">07 / 26</span>
     </div>
 </div>
 
@@ -2826,7 +3012,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Moana — Culture Listening × Social Commerce · MVP LIVE</span>
-        <span class="pg">08 / 27</span>
+        <span class="pg">08 / 26</span>
     </div>
 </div>
 
@@ -2900,7 +3086,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening 整合架構</span>
-        <span class="pg">09 / 27</span>
+        <span class="pg">09 / 26</span>
     </div>
 </div>
 
@@ -2958,7 +3144,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Live Case · 猛健樂 Culture Listening</span>
-        <span class="pg">10 / 27</span>
+        <span class="pg">10 / 26</span>
     </div>
 </div>
 
@@ -3021,7 +3207,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Insight → Brief → Article Pipeline</span>
-        <span class="pg">11 / 27</span>
+        <span class="pg">11 / 26</span>
     </div>
 </div>
 
@@ -3103,85 +3289,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Banana — Visual Design · MVP LIVE</span>
-        <span class="pg">12 / 27</span>
+        <span class="pg">12 / 26</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 13: banana_split_system (demo) ══════════ -->
-
-
-
-
-<div class="slide demo demo-stacked demo-tone-gold" data-slide="banana_split_system">
-    <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
-
-    
-    <div class="demo-stage">
-        <div class="demo-media demo-media-contain">
-            <div class="demo-media-halo"></div>
-            <div class="demo-media-frame">
-                
-                <img src="img/banana_split_flow.png" alt="Banana Split 系統 - AI 創意流程">
-                
-            </div>
-            
-            <div class="demo-marker">● PIPELINE</div>
-            
-        </div>
-
-        
-        <div class="demo-info">
-            <div class="tag tag-orange">BANANA · 系統架構</div>
-            <h2 class="demo-title"><span class="o">Banana Split</span> — 5-Step <span class="o">創意流程</span></h2>
-            <p class="demo-sub">不只「生圖」── 串成可重複的創意流程。</p>
-        </div>
-
-        
-        
-        <div class="demo-pills">
-            
-            <div class="demo-pill demo-pill-1 demo-pill-orange">
-                <div class="demo-pill-label">STEPS</div>
-                <div class="demo-pill-name">五步驟流程</div>
-                
-                <ul class="demo-pill-bullets">
-                    <li><strong>1.</strong> 上傳素材</li><li><strong>2.</strong> AI 理解需求</li><li><strong>3.</strong> 生成 Concept</li><li><strong>4.</strong> 延伸 Creative</li><li><strong>5.</strong> 多渠道輸出</li>
-                </ul>
-                
-                
-            </div>
-            
-            <div class="demo-pill demo-pill-2 demo-pill-green">
-                <div class="demo-pill-label">VALUE</div>
-                <div class="demo-pill-name">三大價值</div>
-                
-                <ul class="demo-pill-bullets">
-                    <li><strong>更快</strong> · 一次 brief 跑完</li><li><strong>更穩</strong> · 品牌可沿用</li><li><strong>更易放大</strong> · 一 Concept → 多版本</li>
-                </ul>
-                
-                
-            </div>
-            
-            <div class="demo-pill demo-pill-3 demo-pill-violet">
-                <div class="demo-pill-label">SPIRIT</div>
-                <div class="demo-pill-name">創意系統化</div>
-                
-                <p class="demo-pill-body">創意不只<strong>被生成</strong>,更能<strong>被編排與落地</strong>。</p>
-            </div>
-            
-        </div>
-        
-
-        
-    </div>
-
-    <div class="meta demo-meta">
-        <span>Banana Split — 5-Step Creative Pipeline</span>
-        <span class="pg">13 / 27</span>
-    </div>
-</div>
-
-<!-- ══════════ SLIDE 14: banana_split_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 13: banana_split_demo (demo) ══════════ -->
 
 
 
@@ -3240,11 +3352,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Banana — Visual Generation Live Demo</span>
-        <span class="pg">14 / 27</span>
+        <span class="pg">13 / 26</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 15: banana_video_edit (demo) ══════════ -->
+<!-- ══════════ SLIDE 14: banana_video_edit (demo) ══════════ -->
 
 
 
@@ -3305,11 +3417,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Banana Split — Reels Studio · Agentic Editing</span>
-        <span class="pg">15 / 27</span>
+        <span class="pg">14 / 26</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 16: adriana (agent) ══════════ -->
+<!-- ══════════ SLIDE 15: adriana (agent) ══════════ -->
 
 
 
@@ -3333,8 +3445,8 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
         
         <div class="agent-info">
             <div class="tag tag-violet">AGENT 04 / 05</div>
-            <h2 class="agent-title"><span class="v">Adriana</span> — 從廣告分析升級到 <span class="v">千人千面</span></h2>
-            <p class="agent-sub"><strong>分析 + 生成 + 投放 + 陌生訪客洞察</strong> ── 廣告從「投得準」進化到「為每位用戶量身做」。</p>
+            <h2 class="agent-title"><span class="v">Adriana</span> — 廣告升級到<br><span class="v">千人千面</span></h2>
+            <p class="agent-sub">分析 + 生成 + 投放 + 陌生訪客洞察 ── 為<strong>每位用戶</strong>量身做廣告。</p>
 
             
             <div class="agent-stats">
@@ -3350,8 +3462,8 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                 </div>
                 
                 <div class="agent-stat agent-stat-green">
-                    <div class="agent-stat-num">2-3%</div>
-                    <div class="agent-stat-label">掛帳抽成</div>
+                    <div class="agent-stat-num">千人</div>
+                    <div class="agent-stat-label">千面素材</div>
                 </div>
                 
             </div>
@@ -3361,19 +3473,19 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="agent-blocks">
                 
                 <div class="agent-block agent-block-violet">
-                    <div class="agent-block-label">STEP 01</div>
-                    <div class="agent-block-name">分析 + 生成 + 自動投放</div>
+                    <div class="agent-block-label">STEP 01 · ACT</div>
+                    <div class="agent-block-name">自動分析 + 投放</div>
                     
                     <ul class="agent-block-bullets">
-                        <li><strong>Meta / Google / TikTok</strong> 即時監測</li><li><strong>Meta Ads CLI</strong> 自動化開關、調預算</li><li>即時<strong>生成素材</strong>:文案 × 視覺 × 受眾</li>
+                        <li><strong>Meta / Google / TikTok</strong> 即時監測</li><li><strong>Meta Ads CLI</strong> 自動化調預算</li><li>即時<strong>生成素材</strong> × 文案 × 受眾</li>
                     </ul>
                     
                     
                 </div>
                 
                 <div class="agent-block agent-block-cyan">
-                    <div class="agent-block-label">STEP 02</div>
-                    <div class="agent-block-name">CRM × CDP 洞察陌生訪客</div>
+                    <div class="agent-block-label">STEP 02 · PERSONALIZE</div>
+                    <div class="agent-block-name">陌生訪客 × 千人千面</div>
                     
                     <ul class="agent-block-bullets">
                         <li>串接 <strong>TCRM · TCDP</strong> 第一方資料</li><li>對<strong>陌生訪客</strong>即時推估意圖</li><li>每位用戶<strong>個性化素材</strong></li>
@@ -3391,11 +3503,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Adriana — Personalization Agent · BUILDING</span>
-        <span class="pg">16 / 27</span>
+        <span class="pg">15 / 26</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 17: adriana_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 16: adriana_demo (demo) ══════════ -->
 
 
 
@@ -3454,11 +3566,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Adriana — Conversational Ad Intelligence</span>
-        <span class="pg">17 / 27</span>
+        <span class="pg">16 / 26</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 18: adriana_crm_capi (demo) ══════════ -->
+<!-- ══════════ SLIDE 17: adriana_crm_capi (demo) ══════════ -->
 
 
 
@@ -3528,11 +3640,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Adriana — AI CRM × Meta Conversions API</span>
-        <span class="pg">18 / 27</span>
+        <span class="pg">17 / 26</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 19: adriana_crm_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 18: adriana_crm_demo (demo) ══════════ -->
 
 
 
@@ -3586,11 +3698,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Adriana — AI CRM × Meta CAPI Live</span>
-        <span class="pg">19 / 27</span>
+        <span class="pg">18 / 26</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 20: stacey (agent) ══════════ -->
+<!-- ══════════ SLIDE 19: stacey (agent) ══════════ -->
 
 
 
@@ -3660,11 +3772,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Stacey — Orchestrator · BUILDING</span>
-        <span class="pg">20 / 27</span>
+        <span class="pg">19 / 26</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 21: stacey_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 20: stacey_demo (demo) ══════════ -->
 
 
 
@@ -3723,76 +3835,58 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Stacey × Pandora — Dr.Wu Sentiment Analysis Live</span>
-        <span class="pg">21 / 27</span>
+        <span class="pg">20 / 26</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 22: agent_harness (layers) ══════════ -->
+<!-- ══════════ SLIDE 21: ecosystem_chapter (chapter) ══════════ -->
 
-<div class="slide bg-dark">
-    <div class="slide-content">
-        <div class="tag tag-violet">DEEP DIVE · MULTI-AGENT HARNESS</div>
-        <h2>剛剛那 <span class="g">3 秒</span> 背後 ── 是 <span class="v">Multi-Agent Harness</span></h2>
-        <p class="sub">單一 Agent 是工具,<strong>Harness</strong> 把它們綁成<strong>一支會自己協作的隊伍</strong>。</p>
 
-        <div class="s-body">
-            <div class="s-col">
-                <div class="illus-frame"><img src="img/anim_agents_ring.jpg" alt="Multi-Agent Harness architecture — agents 環繞 Stacey 編排核心">
-</div>
+<div class="slide chapter chapter-tone-cyan" data-slide="ecosystem_chapter">
+    <div class="bg-image chapter-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
+
+    <div class="chapter-aura chapter-aura-1"></div>
+    <div class="chapter-aura chapter-aura-2"></div>
+
+    <div class="chapter-stage">
+        <div class="chapter-eyebrow">PART · 02</div>
+        <div class="chapter-pre">從 內部 AI 工作者  →  開放給整個生態系</div>
+
+        <h2 class="chapter-title">一個 <span class="c">開放</span> 的生態系<br>正在<span class="v">長出來</span></h2>
+
+        <p class="chapter-lede">AI OS 不是只有<strong>我們</strong>的 Agent ── 把 <strong>A2A</strong> 開出來,把 <strong>MCP</strong> 開出來,把 <strong>OpenClaw</strong> 開源,讓所有 AI 新創都能接上來。</p>
+
+        
+        <div class="chapter-bullets">
+            
+            <div class="chapter-bullet chapter-bullet-1 chapter-bullet-cyan">
+                <div class="chapter-bullet-label">STANDARD</div>
+                <div class="chapter-bullet-text"><strong>A2A Protocol</strong> · Agent 互通</div>
             </div>
-            <div class="s-col">
-                <div class="layer-stack">
-                    
-                    <div class="layer-row l-agents">
-                        <div>
-                            <div class="layer-label">LAYER 03 · INTENT</div>
-                            <div class="layer-name v">Planner — 從一句話拆出任務 DAG</div>
-                        </div>
-                        <div class="layer-desc">使用者只說一句話。Harness 先<strong>切成可執行的子任務</strong> ──
-哪些先做、哪些可並行、哪些依賴上一步的結果。</div>
-                    </div>
-                    <div class="layer-conn">↑</div>
-                    
-                    <div class="layer-row l-aios">
-                        <div>
-                            <div class="layer-label">LAYER 02 · ORCHESTRATION</div>
-                            <div class="layer-name c"><span class="g">Stacey</span> Harness Core — 派工 · 路由 · A2A</div>
-                        </div>
-                        <div class="layer-desc">根據任務型態<strong>挑合適的 Agent</strong>,串接 <strong>A2A Protocol</strong> 讓 Agent 像同事彼此對話,
-處理重試、降級、結果合併 —— 整個過程<strong>沒有人類介入</strong>。</div>
-                    </div>
-                    <div class="layer-conn">↑</div>
-                    
-                    <div class="layer-row l-runtime">
-                        <div>
-                            <div class="layer-label">LAYER 01 · EXECUTION</div>
-                            <div class="layer-name o">Multi-Agent Pool — Pandora · Moana · Banana · Adriana</div>
-                        </div>
-                        <div class="layer-desc">四個專業 Agent 各管一塊:<strong>輿情 · 文化洞察 · 視覺生成 · 廣告投放</strong>。
-各自做完,結果再被 Harness <strong>收回、整合、產出一份完整答案</strong>。</div>
-                    </div>
-                    
-                    
-                </div>
-                
-                <div class="box b-violet" style="margin-top: 1cqh;">
-                    <p style="font-size: 2cqh; color: var(--text); text-align: center; line-height: 1.4;"><strong class="v">Planner 拆任務</strong> ·
-<strong class="g">Stacey 派工</strong> ·
-<strong class="o">Agents 執行</strong>
-── 這就是 <strong>Agent Harness</strong>,讓 5 個 AI 第一次<strong>像一間公司運作</strong>。</p>
-                </div>
-                
+            
+            <div class="chapter-bullet chapter-bullet-2 chapter-bullet-orange">
+                <div class="chapter-bullet-label">INTERFACE</div>
+                <div class="chapter-bullet-text"><strong>MCP / WebMCP</strong> · 工具被任何 Agent 呼叫</div>
             </div>
+            
+            <div class="chapter-bullet chapter-bullet-3 chapter-bullet-violet">
+                <div class="chapter-bullet-label">OPEN SOURCE</div>
+                <div class="chapter-bullet-text"><strong>OpenClaw</strong> · claw3d.ai 直接拿去用</div>
+            </div>
+            
         </div>
+        
 
-        <div class="meta">
-            <span>Inside The Pocket Company — Agent Harness × Multi-Agent</span>
-            <span class="pg">22 / 27</span>
-        </div>
+        
+    </div>
+
+    <div class="meta chapter-meta">
+        <span>Part 02 — From the AI Workforce to an Open Ecosystem</span>
+        <span class="pg">21 / 26</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 23: raccoon_partnership (demo) ══════════ -->
+<!-- ══════════ SLIDE 22: raccoon_partnership (demo) ══════════ -->
 
 
 
@@ -3866,11 +3960,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>First ecosystem partner — Raccoon AI · Conversation Agent specialist</span>
-        <span class="pg">23 / 27</span>
+        <span class="pg">22 / 26</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 24: rytho_partnership (demo) ══════════ -->
+<!-- ══════════ SLIDE 23: rytho_partnership (demo) ══════════ -->
 
 
 
@@ -3944,16 +4038,16 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Second ecosystem partner — Rytho × Accucrazy · Music Agent OS · Rhyme Engine</span>
-        <span class="pg">24 / 27</span>
+        <span class="pg">23 / 26</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 25: luna_partnership (demo) ══════════ -->
+<!-- ══════════ SLIDE 24: luna_partnership (demo) ══════════ -->
 
 
 
 
-<div class="slide demo demo-stacked demo-tone-orange" data-slide="luna_partnership">
+<div class="slide demo demo-spotR demo-tone-orange" data-slide="luna_partnership">
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
 
     
@@ -3962,7 +4056,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <img src="img/partner_luna_hero.png" alt="Luna AI — 爆文機器人 · AI 內容生成引擎">
+                <img src="img/luna_character.png" alt="Luna AI — 爆文機器人角色">
                 
             </div>
             
@@ -3973,8 +4067,8 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
         
         <div class="demo-info">
             <div class="tag tag-orange">ECOSYSTEM · 首發夥伴 #3 · Luna AI</div>
-            <h2 class="demo-title"><span class="c">爆文機器人</span> ── 你的口吻 × <span class="v">爆文公式</span></h2>
-            
+            <h2 class="demo-title"><span class="c">爆文機器人</span><br>你的口吻 × <span class="v">爆文公式</span></h2>
+            <p class="demo-sub">Luna 鑽進<strong>作者本人的腦袋</strong>,寫出像你本人寫的爆文 ── 一次 30 篇。</p>
         </div>
 
         
@@ -3997,7 +4091,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                 <div class="demo-pill-name">驗證過的<span class="o">爆文結構</span></div>
                 
                 <ul class="demo-pill-bullets">
-                    <li>內建多種<strong>爆文公式</strong>架構</li><li>60 秒產出 <strong>30 篇</strong> Threads</li>
+                    <li>內建多種<strong>爆文公式</strong></li><li>60 秒產出 <strong>30 篇</strong> Threads</li>
                 </ul>
                 
                 
@@ -4022,7 +4116,54 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Third ecosystem partner — Luna AI · Viral Content Engine</span>
-        <span class="pg">25 / 27</span>
+        <span class="pg">24 / 26</span>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 25: gfmc_academic (chapter) ══════════ -->
+
+
+<div class="slide chapter chapter-tone-violet" data-slide="gfmc_academic">
+    <div class="bg-image chapter-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
+
+    <div class="chapter-aura chapter-aura-1"></div>
+    <div class="chapter-aura chapter-aura-2"></div>
+
+    <div class="chapter-stage">
+        <div class="chapter-eyebrow">★ ACADEMIC PROOF · 2026 GFMC · MADRID</div>
+        <div class="chapter-pre">我們的 AI 邏輯  →  國際學術論文</div>
+
+        <h2 class="chapter-title">從<span class="o">戰場</span>到<br><span class="v">馬德里</span></h2>
+
+        <p class="chapter-lede">與<strong>香港中文大學 吳世家教授</strong>合作的研究 ── <strong>2026 GFMC</strong> (Global Fashion Management Conference · Madrid) 正式接受發表。<br>用嚴謹的學術框架,驗證我們這套 <strong>AI 原生口碑生成系統</strong>在消費者心理與行銷管理上的真實影響力。</p>
+
+        
+        <div class="chapter-bullets">
+            
+            <div class="chapter-bullet chapter-bullet-1 chapter-bullet-violet">
+                <div class="chapter-bullet-label">PAPER</div>
+                <div class="chapter-bullet-text">"<strong>AI 生成消費者口碑內容</strong>" ── 戰場數據變學術論文</div>
+            </div>
+            
+            <div class="chapter-bullet chapter-bullet-2 chapter-bullet-cyan">
+                <div class="chapter-bullet-label">PARTNER</div>
+                <div class="chapter-bullet-text"><strong>CUHK</strong> · 吳世家教授團隊 · 嚴謹學術框架</div>
+            </div>
+            
+            <div class="chapter-bullet chapter-bullet-3 chapter-bullet-orange">
+                <div class="chapter-bullet-label">STAGE</div>
+                <div class="chapter-bullet-text"><strong>GFMC 2026 · Madrid</strong> · 國際學術論壇</div>
+            </div>
+            
+        </div>
+        
+
+        <div class="chapter-tagline"><em>不只是 PPT 上的 AI startup bullshit ── 是被同儕審查過的真實 Contribution。</em></div>
+    </div>
+
+    <div class="meta chapter-meta">
+        <span>Academic validation — CUHK × Accucrazy paper accepted by 2026 GFMC Madrid</span>
+        <span class="pg">25 / 26</span>
     </div>
 </div>
 
@@ -4030,9 +4171,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
 <div class="slide bg-dark">
     <div class="slide-content">
-        <div class="tag tag-cyan">CHAPTER 07 · 一個開放的生態</div>
-        <h2>AI OS 是<span class="c">開放</span>的 — 歡迎 AI 新創<span class="v">一起進來</span></h2>
-        <p class="sub"><strong>Raccoon</strong> · <strong>Rytho</strong> · <strong>Luna</strong> ── 三家首發夥伴已經接進來。下一個可以是<strong>你</strong>。</p>
+        <div class="tag tag-cyan">FINALE · 一個開放的生態</div>
+        <h2>AI OS 是<span class="c">開放</span>的 — <span class="v">下一個</span> 可以是<strong>你</strong></h2>
+        <p class="sub"><strong>Raccoon</strong> · <strong>Rytho</strong> · <strong>Luna</strong> 已經接進來;<strong>CUHK</strong> 把我們送上馬德里。<br>The Pocket Company 不是終點 ── 是<strong>整個生態系的起點</strong>。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.1;">
@@ -4067,7 +4208,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                         <span class="eco-dot d2"></span>
                         <div>
                             <h6>Rytho · Music Agent OS</h6>
-                            <p>★ 首發夥伴 · 情資 × 押韻引擎 → 饒舌</p>
+                            <p>★ 首發夥伴 · 情資 × 押韻引擎</p>
                         </div>
                     </div>
                     
@@ -4099,7 +4240,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                         <span class="eco-dot d6"></span>
                         <div>
                             <h6>學術 / 研究團隊</h6>
-                            <p>研究成果上真實商業場景驗證</p>
+                            <p>★ CUHK 已驗證 · 你的研究上真實場景</p>
                         </div>
                     </div>
                     
@@ -4115,30 +4256,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
         </div>
 
         <div class="meta">
-            <span>Raccoon · Rytho · Luna are the first three nodes — yours can be next</span>
-            <span class="pg">26 / 27</span>
+            <span>Open ecosystem — 3 startup partners + CUHK academic validation, yours can be next</span>
+            <span class="pg">26 / 26</span>
         </div>
-    </div>
-</div>
-
-<!-- ══════════ SLIDE 27: closing (closing) ══════════ -->
-
-<div class="slide closing">
-    <div class="bg-image" style="background-image: url('img/14_closing.jpg');"></div>
-
-    <div class="slide-content">
-        <div class="closing-quote">
-            <span class="o">Runtime</span> 讓 AI 運行空間，<br>
-<span class="c">AI OS</span> 讓企業管理 AI，<br>
-<span class="v">AI Agents</span> 真正開始為企業工作。
-        </div>
-        <p class="lede" style="max-width: 70%; font-size: 2.2vh; line-height: 1.7; color: var(--dim); margin-bottom: 3vh;">
-            這是 Accucrazy 加入騰雲後的第一個答案 ──<br>
-<strong style="color: var(--text);">The Pocket Company</strong>，
-建構在 Runtime 之上的 AI OS，<br>
-以及第一批已經開始上工的 AI 工作者。
-        </p>
-        <div class="closing-sig">THE POCKET COMPANY × TURNCLOUD — 2026 KEYNOTE</div>
     </div>
 </div>
 

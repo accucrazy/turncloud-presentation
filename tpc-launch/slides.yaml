@@ -329,43 +329,7 @@ slides:
         name: "與 War Room 閉環"
         body: '輿情發現危機 → 分析論點 → <strong>Banana 直接產出回應素材</strong>。全鏈路 AI 自動化。'
 
-  # ─── SLIDE 16: Banana Split 系統說明 ──────────────────────
-  - id: banana_split_system
-    template: demo
-    variant: stacked
-    tone: gold
-    backdrop: img/anim_backdrop.jpg
-    media: img/banana_split_flow.png
-    media_fit: contain
-    media_alt: "Banana Split 系統 - AI 創意流程"
-    marker: "PIPELINE"
-    tag: { color: orange, text: "BANANA · 系統架構" }
-    title: '<span class="o">Banana Split</span> — 5-Step <span class="o">創意流程</span>'
-    subtitle: '不只「生圖」── 串成可重複的創意流程。'
-    meta_left: "Banana Split — 5-Step Creative Pipeline"
-    pills:
-      - tone: orange
-        label: "STEPS"
-        name: "五步驟流程"
-        bullets:
-          - '<strong>1.</strong> 上傳素材'
-          - '<strong>2.</strong> AI 理解需求'
-          - '<strong>3.</strong> 生成 Concept'
-          - '<strong>4.</strong> 延伸 Creative'
-          - '<strong>5.</strong> 多渠道輸出'
-      - tone: green
-        label: "VALUE"
-        name: "三大價值"
-        bullets:
-          - '<strong>更快</strong> · 一次 brief 跑完'
-          - '<strong>更穩</strong> · 品牌可沿用'
-          - '<strong>更易放大</strong> · 一 Concept → 多版本'
-      - tone: violet
-        label: "SPIRIT"
-        name: "創意系統化"
-        body: '創意不只<strong>被生成</strong>,更能<strong>被編排與落地</strong>。'
-
-  # ─── SLIDE 17: Banana Split Demo ───────────────────────────
+  # ─── SLIDE 13: Banana Split Demo ───────────────────────────
   - id: banana_split_demo
     template: demo
     variant: spotL
@@ -431,24 +395,24 @@ slides:
     portrait: img/11_adriana.jpg
     codename: "AGENT 04 · ADRIANA"
     tag: { color: violet, text: "AGENT 04 / 05" }
-    title: '<span class="v">Adriana</span> — 從廣告分析升級到 <span class="v">千人千面</span>'
-    subtitle: '<strong>分析 + 生成 + 投放 + 陌生訪客洞察</strong> ── 廣告從「投得準」進化到「為每位用戶量身做」。'
+    title: '<span class="v">Adriana</span> — 廣告升級到<br><span class="v">千人千面</span>'
+    subtitle: '分析 + 生成 + 投放 + 陌生訪客洞察 ── 為<strong>每位用戶</strong>量身做廣告。'
     meta_left: "Adriana — Personalization Agent · BUILDING"
     stats:
       - { tone: violet, num: "分鐘級", label: "分析 → 行動" }
       - { tone: cyan,   num: "1st",    label: "Party Data" }
-      - { tone: green,  num: "2-3%",   label: "掛帳抽成" }
+      - { tone: green,  num: "千人",   label: "千面素材" }
     blocks:
       - tone: violet
-        label: "STEP 01"
-        name: "分析 + 生成 + 自動投放"
+        label: "STEP 01 · ACT"
+        name: "自動分析 + 投放"
         bullets:
           - '<strong>Meta / Google / TikTok</strong> 即時監測'
-          - '<strong>Meta Ads CLI</strong> 自動化開關、調預算'
-          - '即時<strong>生成素材</strong>:文案 × 視覺 × 受眾'
+          - '<strong>Meta Ads CLI</strong> 自動化調預算'
+          - '即時<strong>生成素材</strong> × 文案 × 受眾'
       - tone: cyan
-        label: "STEP 02"
-        name: "CRM × CDP 洞察陌生訪客"
+        label: "STEP 02 · PERSONALIZE"
+        name: "陌生訪客 × 千人千面"
         bullets:
           - '串接 <strong>TCRM · TCDP</strong> 第一方資料'
           - '對<strong>陌生訪客</strong>即時推估意圖'
@@ -600,47 +564,22 @@ slides:
         name: '從<span class="v">工作</span>變成<span class="v">對話</span>'
         body: '過去分析師要花<strong>幾小時</strong>跑 SQL、清資料、做圖、寫摘要。現在<strong>一句話</strong>跑完。'
 
-  # ─── SLIDE 25: Multi-Agent Harness — Stacey demo 背後的架構 ──
-  - id: agent_harness
-    template: layers
-    bg: dark
-    media: img/anim_agents_ring.jpg
-    media_alt: "Multi-Agent Harness architecture — agents 環繞 Stacey 編排核心"
-    tag: { color: violet, text: "DEEP DIVE · MULTI-AGENT HARNESS" }
-    title: '剛剛那 <span class="g">3 秒</span> 背後 ── 是 <span class="v">Multi-Agent Harness</span>'
-    subtitle: '單一 Agent 是工具,<strong>Harness</strong> 把它們綁成<strong>一支會自己協作的隊伍</strong>。'
-    meta_left: "Inside The Pocket Company — Agent Harness × Multi-Agent"
-    layers:
-      - kind: agents
-        label: "LAYER 03 · INTENT"
-        name_class: v
-        name: "Planner — 從一句話拆出任務 DAG"
-        desc: |-
-          使用者只說一句話。Harness 先<strong>切成可執行的子任務</strong> ──
-          哪些先做、哪些可並行、哪些依賴上一步的結果。
-      - kind: aios
-        label: "LAYER 02 · ORCHESTRATION"
-        name_class: c
-        name: '<span class="g">Stacey</span> Harness Core — 派工 · 路由 · A2A'
-        desc: |-
-          根據任務型態<strong>挑合適的 Agent</strong>,串接 <strong>A2A Protocol</strong> 讓 Agent 像同事彼此對話,
-          處理重試、降級、結果合併 —— 整個過程<strong>沒有人類介入</strong>。
-      - kind: runtime
-        label: "LAYER 01 · EXECUTION"
-        name_class: o
-        name: "Multi-Agent Pool — Pandora · Moana · Banana · Adriana"
-        desc: |-
-          四個專業 Agent 各管一塊:<strong>輿情 · 文化洞察 · 視覺生成 · 廣告投放</strong>。
-          各自做完,結果再被 Harness <strong>收回、整合、產出一份完整答案</strong>。
-    footer_box:
-      color: violet
-      body: |-
-        <strong class="v">Planner 拆任務</strong> ·
-        <strong class="g">Stacey 派工</strong> ·
-        <strong class="o">Agents 執行</strong>
-        ── 這就是 <strong>Agent Harness</strong>,讓 5 個 AI 第一次<strong>像一間公司運作</strong>。
+  # ─── SLIDE 21: 章節分隔 · OPEN ECOSYSTEM ─────────────────────
+  - id: ecosystem_chapter
+    template: chapter
+    backdrop: img/anim_backdrop.jpg
+    tone: cyan
+    eyebrow: "PART · 02"
+    pre: "從 內部 AI 工作者  →  開放給整個生態系"
+    title: '一個 <span class="c">開放</span> 的生態系<br>正在<span class="v">長出來</span>'
+    lede: 'AI OS 不是只有<strong>我們</strong>的 Agent ── 把 <strong>A2A</strong> 開出來,把 <strong>MCP</strong> 開出來,把 <strong>OpenClaw</strong> 開源,讓所有 AI 新創都能接上來。'
+    bullets:
+      - { tone: cyan,   label: "STANDARD",   text: '<strong>A2A Protocol</strong> · Agent 互通' }
+      - { tone: orange, label: "INTERFACE",  text: '<strong>MCP / WebMCP</strong> · 工具被任何 Agent 呼叫' }
+      - { tone: violet, label: "OPEN SOURCE", text: '<strong>OpenClaw</strong> · claw3d.ai 直接拿去用' }
+    meta_left: "Part 02 — From the AI Workforce to an Open Ecosystem"
 
-  # ─── SLIDE 26: 首發夥伴 #1 · Raccoon AI ──────────────────────
+  # ─── SLIDE 22: 首發夥伴 #1 · Raccoon AI ──────────────────────
   - id: raccoon_partnership
     template: demo
     variant: stacked
@@ -705,16 +644,17 @@ slides:
           - "《黑卡逃亡》── 唱新光三越"
           - "情資 → 旋律 → 直接上社群"
 
-  # ─── SLIDE 28: 首發夥伴 #3 · Luna AI ──────────────────────────
+  # ─── SLIDE 24: 首發夥伴 #3 · Luna AI ──────────────────────────
   - id: luna_partnership
     template: demo
-    variant: stacked
+    variant: spotR
     backdrop: img/anim_backdrop.jpg
     tone: orange
     tag: { color: orange, text: "ECOSYSTEM · 首發夥伴 #3 · Luna AI" }
-    title: '<span class="c">爆文機器人</span> ── 你的口吻 × <span class="v">爆文公式</span>'
-    media: img/partner_luna_hero.png
-    media_alt: "Luna AI — 爆文機器人 · AI 內容生成引擎"
+    title: '<span class="c">爆文機器人</span><br>你的口吻 × <span class="v">爆文公式</span>'
+    subtitle: 'Luna 鑽進<strong>作者本人的腦袋</strong>,寫出像你本人寫的爆文 ── 一次 30 篇。'
+    media: img/luna_character.png
+    media_alt: "Luna AI — 爆文機器人角色"
     media_fit: contain
     meta_left: "Third ecosystem partner — Luna AI · Viral Content Engine"
     pills:
@@ -728,7 +668,7 @@ slides:
         label: "VIRAL FORMULA"
         name: '驗證過的<span class="o">爆文結構</span>'
         bullets:
-          - "內建多種<strong>爆文公式</strong>架構"
+          - "內建多種<strong>爆文公式</strong>"
           - "60 秒產出 <strong>30 篇</strong> Threads"
       - tone: violet
         label: "SOCIAL COMMERCE"
@@ -737,17 +677,33 @@ slides:
           - "<strong>協作成本砍 80%</strong>"
           - "Adriana + Banana 接力放大"
 
-  # ─── SLIDE 28: 開放生態系 ──────────────────────────────────
+  # ─── SLIDE 25: GFMC Madrid — 學術驗證 ─────────────────────────
+  - id: gfmc_academic
+    template: chapter
+    backdrop: img/anim_backdrop.jpg
+    tone: violet
+    eyebrow: "★ ACADEMIC PROOF · 2026 GFMC · MADRID"
+    pre: "我們的 AI 邏輯  →  國際學術論文"
+    title: '從<span class="o">戰場</span>到<br><span class="v">馬德里</span>'
+    lede: '與<strong>香港中文大學 吳世家教授</strong>合作的研究 ── <strong>2026 GFMC</strong> (Global Fashion Management Conference · Madrid) 正式接受發表。<br>用嚴謹的學術框架,驗證我們這套 <strong>AI 原生口碑生成系統</strong>在消費者心理與行銷管理上的真實影響力。'
+    bullets:
+      - { tone: violet, label: "PAPER",      text: '"<strong>AI 生成消費者口碑內容</strong>" ── 戰場數據變學術論文' }
+      - { tone: cyan,   label: "PARTNER",    text: '<strong>CUHK</strong> · 吳世家教授團隊 · 嚴謹學術框架' }
+      - { tone: orange, label: "STAGE",      text: '<strong>GFMC 2026 · Madrid</strong> · 國際學術論壇' }
+    tagline: '<em>不只是 PPT 上的 AI startup bullshit ── 是被同儕審查過的真實 Contribution。</em>'
+    meta_left: "Academic validation — CUHK × Accucrazy paper accepted by 2026 GFMC Madrid"
+
+  # ─── SLIDE 26: 開放生態系（結尾）─────────────────────────────
   - id: ecosystem
     template: ecosystem
     bg: dark
     media: img/13_ecosystem.jpg
     media_alt: "Open Ecosystem"
     media_flex: "1.1"
-    tag: { color: cyan, text: "CHAPTER 07 · 一個開放的生態" }
-    title: 'AI OS 是<span class="c">開放</span>的 — 歡迎 AI 新創<span class="v">一起進來</span>'
-    subtitle: '<strong>Raccoon</strong> · <strong>Rytho</strong> · <strong>Luna</strong> ── 三家首發夥伴已經接進來。下一個可以是<strong>你</strong>。'
-    meta_left: "Raccoon · Rytho · Luna are the first three nodes — yours can be next"
+    tag: { color: cyan, text: "FINALE · 一個開放的生態" }
+    title: 'AI OS 是<span class="c">開放</span>的 — <span class="v">下一個</span> 可以是<strong>你</strong>'
+    subtitle: '<strong>Raccoon</strong> · <strong>Rytho</strong> · <strong>Luna</strong> 已經接進來;<strong>CUHK</strong> 把我們送上馬德里。<br>The Pocket Company 不是終點 ── 是<strong>整個生態系的起點</strong>。'
+    meta_left: "Open ecosystem — 3 startup partners + CUHK academic validation, yours can be next"
     header_box:
       color: cyan
       title: "三個開放標準"
@@ -757,28 +713,13 @@ slides:
         - '<strong>OpenClaw 開源框架</strong> · claw3d.ai，直接拿去用'
     pills:
       - { title: "Raccoon AI · 對話 Agent",  text: "★ 首發夥伴 · 私域對話 → 輿情" }
-      - { title: "Rytho · Music Agent OS",   text: "★ 首發夥伴 · 情資 × 押韻引擎 → 饒舌" }
+      - { title: "Rytho · Music Agent OS",   text: "★ 首發夥伴 · 情資 × 押韻引擎" }
       - { title: "Luna AI · 爆文機器人",     text: "★ 首發夥伴 · 作者口吻 × 爆文公式" }
       - { title: "產業垂直 SaaS",       text: "用 A2A 對接，成延伸節點" }
       - { title: "場域 / IoT 新創",      text: "透過 Runtime 把感知接進來" }
-      - { title: "學術 / 研究團隊",      text: "研究成果上真實商業場景驗證" }
+      - { title: "學術 / 研究團隊",      text: "★ CUHK 已驗證 · 你的研究上真實場景" }
     footer_box:
       color: orange
       body: |-
         <strong class="o">我們帶來</strong>：騰雲十年的<strong>人、場、貨</strong>真實場景。<br>
         <strong class="o">你帶來</strong>：你最擅長的 Agent 能力。一起<strong>跑出價值</strong>。
-
-  # ─── SLIDE 26: Closing ─────────────────────────────────────
-  - id: closing
-    template: closing
-    media: img/14_closing.jpg
-    quote: |-
-      <span class="o">Runtime</span> 讓 AI 運行空間，<br>
-      <span class="c">AI OS</span> 讓企業管理 AI，<br>
-      <span class="v">AI Agents</span> 真正開始為企業工作。
-    lede: |-
-      這是 Accucrazy 加入騰雲後的第一個答案 ──<br>
-      <strong style="color: var(--text);">The Pocket Company</strong>，
-      建構在 Runtime 之上的 AI OS，<br>
-      以及第一批已經開始上工的 AI 工作者。
-    sig: "THE POCKET COMPANY × TURNCLOUD — 2026 KEYNOTE"
