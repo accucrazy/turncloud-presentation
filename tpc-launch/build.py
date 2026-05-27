@@ -9,12 +9,16 @@ build.py — 從 slides.yaml + templates/ 產出 index.html
 from __future__ import annotations
 
 import argparse
+import io
 import sys
 import time
 from pathlib import Path
 
 import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined, Undefined
+
+if hasattr(sys.stdout, "buffer"):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 ROOT = Path(__file__).parent
 TEMPLATES_DIR = ROOT / "templates"

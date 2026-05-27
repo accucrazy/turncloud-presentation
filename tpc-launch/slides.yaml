@@ -35,229 +35,33 @@ slides:
       - { strong: "The Pocket Company",   text: "Accucrazy × TurnCloud 整合" }
       - { strong: "Powered by TurnCloud", text: "T Coeus AI OS 發表會" }
 
-  # ─── SLIDE 2: 一段併購故事 ──────────────────────────────────
-  - id: merger
-    template: stage
-    backdrop: img/anim_backdrop.jpg
-    tag: { color: cyan, text: "CHAPTER 01 · 一段併購故事" }
-    title: 'Accucrazy + 騰雲 = <span class="c">The Pocket Company</span>'
-    subtitle: '不是單純併購 ── 是兩種能力,在 AI 時代<strong>第一次合而為一</strong>。'
-    meta_left: "The Pocket Company × TurnCloud — 2026"
-    arrows: true
-    panels:
-      - tone: orange
-        art: img/icon_legacy_infra.jpg
-        label: "PARTNER 01"
-        name: "騰雲 — 二十年企業基建"
-        bullets:
-          - '<strong>TPOS · HOYABOX</strong> · 智慧 POS · 行動終端'
-          - '<strong>TCRM · TCMS</strong> · 顧客關係與商管'
-          - '橫跨零售、餐飲、商場、飯店的<strong>真實人場貨</strong>'
-      - tone: violet
-        art: img/icon_agent_team.jpg
-        label: "PARTNER 02"
-        name: "Accucrazy — 生產級 Agent 能力"
-        bullets:
-          - '<strong>OpenClaw</strong> · 開源 Agent 框架'
-          - '<strong>5 位專業 Agent</strong> · 已上線生產'
-          - '<strong>User-Level Memory</strong> · 每人專屬 AI'
-      - tone: cyan
-        art: img/icon_fusion.jpg
-        label: "RESULT"
-        name: "合而為一 → The Pocket Company"
-        body: '騰雲底下、最靠近商業現場的 <strong>AI Agent 應用節點</strong> ── 把二十年累積的<strong>場域、資料、人</strong>,第一次交到 AI 手上。'
-    tagline: '<span class="o">二十年場域</span> + <span class="v">五位 Agent</span> = <span class="c">企業 AI 工作者新時代</span>'
-
-  # ─── SLIDE 3: 承接董事長 Runtime ────────────────────────────
-  - id: runtime
-    template: stage
-    backdrop: img/anim_backdrop.jpg
-    tag: { color: orange, text: "CHAPTER 02 · 承接董事長 Keynote" }
-    title: '董事長剛談到 — <span class="o">Physical Space Runtime</span>'
-    subtitle: '下一個運算時代,AI 不只活在螢幕裡,而是<strong>進入真實的空間</strong>。'
-    meta_left: "Runtime 是引擎 — 接下來談駕駛艙"
-    panels:
-      - tone: orange
-        art: img/icon_runtime_engine.jpg
-        label: "DEFINITION"
-        name: "Runtime 是什麼？"
-        body: '讓 AI <strong>跑得起來、接得上現場、能即時執行</strong>的底層環境 ── 是 AI 進入實體空間的引擎。'
-      - tone: orange
-        art: img/icon_four_abilities.jpg
-        label: "CAPABILITIES"
-        name: "讓空間擁有四種能力"
-        bullets:
-          - '<strong>Sense</strong> · 感知人、車、貨'
-          - '<strong>Reason</strong> · 多模態理解現場'
-          - '<strong>Decide</strong> · 即時判斷與調度'
-          - '<strong>Act</strong> · 決策直接變成行動'
-      - tone: cyan
-        art: img/icon_challenge.jpg
-        label: "OUR CHALLENGE"
-        name: "我們要承接的問題"
-        body: 'Runtime 讓 AI 能<strong>進入空間</strong> ── 怎麼讓它變成每天能<strong>被使用、被管理、被擴充</strong>的<strong>工作系統</strong>？'
-    tagline: 'Runtime 是<strong class="o">引擎</strong>。接下來,我們要打造<strong class="c">駕駛艙</strong>。'
-
-  # ─── SLIDE 4: 企業真正的問題 ────────────────────────────────
-  - id: problem
-    template: stage
-    backdrop: img/anim_backdrop.jpg
-    tag: { color: pink, text: "CHAPTER 03 · 企業真正的問題" }
-    title: '企業<span class="p">缺的不是 AI</span> — 缺的是「<span class="c">系統</span>」'
-    subtitle: '每個企業都在用 AI。問題是 ── 這些 AI <strong>從來沒變成一個系統</strong>。'
-    meta_left: "From scattered tools to a unified OS"
-    arrows: true
-    panels:
-      - tone: pink
-        art: img/icon_scattered_tools.jpg
-        label: "REALITY 01"
-        name: "今天企業 AI 的真實樣貌"
-        bullets:
-          - '行銷用一個 AI 寫文案'
-          - '客服用另一個 AI 回訊息'
-          - '數據部又自己跑模型'
-          - '<strong>各部門各做各的</strong>'
-      - tone: violet
-        art: img/icon_disconnected.jpg
-        label: "RESULT"
-        name: "結果是 ──"
-        bullets:
-          - '資料<strong>沒有串起來</strong>'
-          - 'Agent <strong>沒有協作</strong>'
-          - '治理 / 合規<strong>各做各的</strong>'
-          - '經驗無法沉澱成<strong>企業資產</strong>'
-      - tone: cyan
-        art: img/icon_unify_os.jpg
-        label: "CONCLUSION"
-        name: "核心結論"
-        body: '企業缺的不是更多 AI 工具 ── 而是一套讓 AI 被<strong>管理、協作、擴充</strong>的<strong>企業作業系統</strong>。'
-    tagline: '從<span class="p">碎片化工具</span>,走向<strong class="c">統一的企業作業系統</strong>。'
-
-  # ─── SLIDE 5: 一張圖看懂（動畫綜覽） ───────────────────────
+  # ─── SLIDE 2: The Pocket Company 三層架構（一張圖看懂） ───────
   - id: overview
     template: overview
     backdrop: img/anim_backdrop.jpg
-    tag: { color: cyan, text: "INTERMEZZO · 一張圖看懂" }
-    title: '從 <span class="o">Runtime</span> → <span class="c">AI OS</span> → <span class="v">Agents</span>'
-    subtitle: '<strong>三層各司其職、彼此堆疊</strong> ── The Pocket Company 對企業 AI 的完整答案。'
-    meta_left: "Runtime · AI OS · Agents — 一張圖看懂"
-    tagline: '<span class="o">Runtime 讓 AI 進入空間</span> · <span class="c">AI OS 讓企業管理 AI</span> · <span class="v">Agents 真正開始工作</span>'
+    tag: { color: cyan, text: "CHAPTER 01 · The Pocket Company" }
+    title: '從 <span class="o">Physical Runtime</span> → <span class="c">AI OS</span> → <span class="v">AI Agents</span>'
+    subtitle: '<strong class="c">AI OS</strong> 是 <strong>Operating System</strong>,也是 <strong>Agent Orchestrated Space</strong> ── 同時編排 <strong class="o">實體空間</strong> 與 <strong class="v">虛擬空間</strong>。'
+    meta_left: "The Pocket Company — 三層架構,一張圖看懂"
+    tagline: '<span class="o">Runtime 進入實體空間</span> · <span class="c">AI OS 編排兩種空間</span> · <span class="v">5 位 Agent 真正開始工作</span>'
     layers:
       - tone: orange
         art: img/anim_runtime_iso.jpg
-        label: "LAYER 01"
+        label: "LAYER 01 · RUNTIME"
         name: "Physical Space Runtime"
-        by: "by 騰雲科技 · 讓 AI 進入<strong>實體空間</strong>"
+        by: "by 騰雲科技 · 讓 AI 進入<strong>實體空間</strong> ── 感知、推論、決策、執行"
       - tone: cyan
         art: img/anim_aios_orb.jpg
-        label: "LAYER 02"
+        label: "LAYER 02 · AI OS"
         name: "Enterprise AI OS"
-        by: "by The Pocket Company · <strong>編排層</strong>"
+        by: "<strong>跨兩種空間</strong>的編排層 · Data · Memory · Workflow · Governance"
       - tone: violet
         art: img/anim_agents_ring.jpg
-        label: "LAYER 03"
+        label: "LAYER 03 · AGENTS"
         name: "AI Agent Workforce"
-        by: "<strong>5 位 Agent</strong> · A2A 協作"
+        by: "<strong>5 位 Agent</strong> · A2A 協作 · 像一間公司運作"
 
-  # ─── SLIDE 6: 什麼是 AI OS（動畫揭曉：One OS, Two Spaces） ────────
-  - id: aios_concept
-    template: duality
-    backdrop: img/anim_backdrop.jpg
-    tag: { color: cyan, text: "FROM RUNTIME TO AI OS · ONE OS · TWO SPACES" }
-    title: '同一套 <span class="c">AI OS</span>，編排<span class="o">實體</span>與<span class="v">虛擬</span>兩種空間'
-    subtitle: '<strong>AI OS = AI Operating System</strong> · 更是 <strong class="c">Agent Orchestrated Space</strong> ── 一個能讓 <strong>真實世界</strong>與 <strong>Agent 們</strong>同時被編排的空間。'
-    meta_left: "AI OS · One OS · Two Spaces"
-    os:
-      title: 'AI OS · <span style="color:var(--text);">Agent Orchestrated Space</span>'
-      subtitle: '同一套編排層 — Orchestrator · A2A · MCP · Memory · Policy · Governance'
-      chips: [Orchestrator, A2A, MCP, Memory, Policy, Governance]
-    physical:
-      art: img/space_physical.jpg
-      label: "SPACE 01 · PHYSICAL"
-      name: '實體空間 ── AI 走進<strong style="color:#b45309;">真實人場貨</strong>'
-      tag: "AI 不再只活在雲端,而是進到門市、工廠、現場服務真實的人。"
-      bullets:
-        - '<strong>場域</strong>：零售店 · 工廠 · 飯店 · 醫療現場'
-        - '<strong>裝置</strong>：POS · HOYABOX · IoT 感測 · 攝影機'
-        - '<strong>價值</strong>：用 AI 服務<strong>每一位顧客</strong>'
-      via: 'via <strong>騰雲科技 Runtime</strong>'
-    virtual:
-      art: img/space_virtual.jpg
-      label: "SPACE 02 · VIRTUAL"
-      name: '虛擬空間 ── <strong style="color:var(--violet);">Agent 們協作</strong>的場域'
-      tag: "這個「空間」本身,就是 5 位 AI Agent 24/7 一起工作的數位辦公室。"
-      bullets:
-        - '<strong>成員</strong>：Pandora · Moana · Banana · Adriana · Stacey'
-        - '<strong>協議</strong>：A2A 互通 · MCP 取資源 · 共享記憶'
-        - '<strong>價值</strong>：複雜任務<strong>多 Agent 一起完成</strong>'
-      via: 'via <strong>The Pocket Company AI OS</strong>'
-    tagline: '<span class="c">One OS</span> · <span class="o">Two Spaces</span> · <span class="v">Five Agents</span> ── 一句指令、跨空間執行。'
-
-  # ─── SLIDE 7: AI OS 解答 ────────────────────────────────────
-  - id: aios
-    template: stage
-    backdrop: img/anim_backdrop.jpg
-    tag: { color: cyan, text: "CHAPTER 04 · 我們的解答" }
-    title: '建構在 Runtime 之上的 <span class="c">Enterprise AI OS</span>'
-    subtitle: '不是聊天機器人,不是 Copilot ── 是企業能真正<strong>擁有、編排 AI 員工</strong>、<strong>跨兩種空間執行任務</strong>的工作系統。'
-    meta_left: "Enterprise AI OS · 跨兩種空間的編排層"
-    panels:
-      - tone: cyan
-        art: img/icon_eight_modules.jpg
-        wide: true
-        label: "WHAT IT MANAGES"
-        name: "AI OS 統一管理 8 件事"
-        bullets:
-          - '<strong>Data</strong> · 企業資料與血緣'
-          - '<strong>Memory</strong> · 三層記憶'
-          - '<strong>Workflow</strong> · 可宣告的工作流程'
-          - '<strong>Agents</strong> · 可治理的 AI 員工'
-          - '<strong>Permission · Governance</strong> · 權限、合規、稽核'
-          - '<strong>Dashboard · Decision</strong> · 可觀測 × 人機協作'
-      - tone: violet
-        art: img/icon_user_memory.jpg
-        label: "MOAT"
-        name: "關鍵 — User-Level Memory"
-        body: '每個帳號擁有<strong>獨立的對話與長期記憶</strong>。記憶是個人的、不能共享 ── 這是 AI 成為「我的 AI」的關鍵,也是企業<strong>續用、續約、續擴張的商業護城河</strong>。'
-    tagline: '<span class="c">擁有、編排、治理 AI 員工</span> ── 一套真正的<strong>企業作業系統</strong>。'
-
-  # ─── SLIDE 7: 三層架構 ──────────────────────────────────────
-  - id: three_layers
-    template: layers
-    bg: dark
-    media: img/06_three_layers.jpg
-    media_alt: "Three layer architecture"
-    tag: { color: violet, text: "CHAPTER 05 · 三層架構" }
-    title: '從 <span class="o">Runtime</span> 到 <span class="c">AI OS</span> 到 <span class="v">AI Agents</span>'
-    subtitle: "三層、各司其職、彼此堆疊 ── 這是 The Pocket Company 對「企業 AI 怎麼長」的完整答案。"
-    meta_left: "Runtime · AI OS · Agents — 三層敘事"
-    layers:
-      - kind: runtime
-        label: "LAYER 01"
-        name_class: o
-        name: "Physical Space Runtime"
-        desc: |-
-          讓 AI 能進入<strong>實體空間</strong> ── 感知、推論、決策、執行。<br>由 <strong>騰雲科技</strong> 打造的下一代運算底座。
-      - kind: aios
-        label: "LAYER 02"
-        name_class: c
-        name: "Enterprise AI OS · Agent Orchestrated Space"
-        desc: |-
-          <strong>跨兩種空間</strong>的編排層 ── 把 Agent 編排到<strong>實體空間</strong>（店、廠、人場貨）與<strong>虛擬空間</strong>（CRM、廣告、數據、SaaS）。
-      - kind: agents
-        label: "LAYER 03"
-        name_class: v
-        name: "AI Agent Workforce"
-        desc: |-
-          替企業工作的<strong>數位員工</strong> ── 在<strong>虛擬空間</strong>協作，把行動<strong>落地到實體空間</strong>。
-    footer_box:
-      color: cyan
-      body: |-
-        <strong class="o">Runtime 讓 AI 運行空間</strong> ·
-        <strong class="c">AI OS 讓企業管理 AI</strong> ·
-        <strong class="v">Agents 真正開始工作</strong>
-
-  # ─── SLIDE 8: AI Workforce 登場 ─────────────────────────────
+  # ─── SLIDE 3: AI Workforce 登場 ─────────────────────────────
   - id: workforce
     template: workforce
     bg: violet
@@ -831,7 +635,7 @@ slides:
     footer_box:
       color: orange
       body: |-
-        <strong class="o">我們帶來</strong>：騰雲二十年的<strong>人、場、貨</strong>真實場景。<br>
+        <strong class="o">我們帶來</strong>：騰雲十年的<strong>人、場、貨</strong>真實場景。<br>
         <strong class="o">你帶來</strong>：你最擅長的 Agent 能力。一起<strong>跑出價值</strong>。
 
   # ─── SLIDE 26: Closing ─────────────────────────────────────
