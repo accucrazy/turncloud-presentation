@@ -1299,6 +1299,60 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .slide.chapter .bg-image::after {
     background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.78) 50%, rgba(255,255,255,0.9) 100%);
 }
+
+/* When chapter slide has a hero illustration, swap to full-bleed image with
+   a soft left-to-right white veil so the upper-left text stays readable */
+.slide.chapter.chapter-hero .bg-image { opacity: 1; }
+.slide.chapter.chapter-hero .bg-image::after { background: transparent; }
+.slide.chapter.chapter-hero .chapter-aura { display: none; }
+.chapter-hero-veil {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 28%, rgba(255,255,255,0.55) 48%, rgba(255,255,255,0) 70%),
+        linear-gradient(180deg, rgba(255,255,255,0.18) 0%, transparent 30%, rgba(255,255,255,0.5) 100%);
+    pointer-events: none;
+}
+.slide.chapter.chapter-hero .chapter-stage {
+    align-items: flex-start;
+    max-width: 62%;
+    padding-right: 4cqh;
+}
+.slide.chapter.chapter-hero .chapter-lede {
+    max-width: 100%;
+}
+.slide.chapter.chapter-hero .chapter-bullets {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 100%;
+}
+.slide.chapter.chapter-hero .chapter-bullet {
+    background: rgba(255,255,255,0.96);
+    box-shadow: 0 14px 36px rgba(15,23,42,0.16);
+}
+
+/* Sound-on hint that pulses gently on chapter slide while audio is muted */
+.chapter-audio-hint {
+    position: absolute;
+    top: 2.6cqh;
+    right: 3cqh;
+    z-index: 6;
+    background: rgba(168, 85, 247, 0.96);
+    color: #fff;
+    padding: 0.9cqh 1.8cqh;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.65cqh;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    box-shadow: 0 8px 28px rgba(168, 85, 247, 0.45);
+    animation: chapter-audioBeat 1.8s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes chapter-audioBeat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50%      { transform: translateY(-2px) scale(1.04); }
+}
 .chapter-aura {
     position: absolute;
     border-radius: 50%;
@@ -2493,10 +2547,13 @@ slides.forEach((_, i) => {
     dotsEl.appendChild(d);
 });
 
-/* ─── Video play / pause on slide change ─── */
+/* ─── Video / slide-audio play / pause on slide change ─── */
 function resetVideos(slide) {
     slide.querySelectorAll('video').forEach(v => {
         try { v.pause(); v.currentTime = 0; } catch (e) {}
+    });
+    slide.querySelectorAll('audio[data-slide-audio]').forEach(a => {
+        try { a.pause(); a.currentTime = 0; } catch (e) {}
     });
 }
 function playVideos(slide) {
@@ -2522,6 +2579,40 @@ function playVideos(slide) {
         const dismiss = () => { if (hint) hint.style.display = 'none'; };
         v.addEventListener('play', dismiss, { once: true });
         v.addEventListener('volumechange', () => { if (!v.muted) dismiss(); });
+    });
+    /* Slide-level background audio (chapter pages etc) — attempt to autoplay
+       unmuted; if blocked, prime on next user gesture and keep the hint visible. */
+    slide.querySelectorAll('audio[data-slide-audio]').forEach(a => {
+        const hint = slide.querySelector('[data-audio-hint]');
+        const tryUnmuted = () => {
+            a.muted = false;
+            a.volume = 0.85;
+            const p = a.play();
+            if (p && p.catch) {
+                p.catch(() => {
+                    /* Browser blocked — wait for a user gesture, then play */
+                    const onGesture = () => {
+                        a.muted = false;
+                        a.play().then(() => {
+                            if (hint) hint.style.display = 'none';
+                        }).catch(() => {});
+                        document.removeEventListener('click', onGesture);
+                        document.removeEventListener('keydown', onGesture);
+                        document.removeEventListener('touchstart', onGesture);
+                    };
+                    document.addEventListener('click', onGesture, { once: true });
+                    document.addEventListener('keydown', onGesture, { once: true });
+                    document.addEventListener('touchstart', onGesture, { once: true });
+                });
+            } else {
+                if (hint) hint.style.display = 'none';
+            }
+        };
+        try {
+            a.currentTime = 0;
+            tryUnmuted();
+            a.addEventListener('playing', () => { if (hint) hint.style.display = 'none'; }, { once: true });
+        } catch (e) {}
     });
 }
 if (slides[0]) playVideos(slides[0]);

@@ -1,9 +1,14 @@
 {% import '_macros.html' as m %}
 {# Chapter / Section break slide — large eyebrow + monumental title + lede + bullets row.
    Used for narrative pivots (e.g. moving from internal product into open ecosystem)
-   and for spotlight/achievement reveals (e.g. Madrid paper acceptance). #}
-<div class="slide chapter chapter-tone-{{ tone | default('cyan') }}{% if is_first %} active{% endif %}"{% if id %} data-slide="{{ id }}"{% endif %}>
-    <div class="bg-image chapter-bg" style="background-image: url('{{ backdrop | default('img/anim_backdrop.jpg') }}');"></div>
+   and for spotlight/achievement reveals (e.g. Madrid paper acceptance).
+   Optional fields:
+     hero_image   — full-bleed background illustration (text overlaid left)
+     audio        — path to audio (mp4 / mp3) that auto-plays only on this slide
+#}
+<div class="slide chapter chapter-tone-{{ tone | default('cyan') }}{% if hero_image %} chapter-hero{% endif %}{% if is_first %} active{% endif %}"{% if id %} data-slide="{{ id }}"{% endif %}>
+    <div class="bg-image chapter-bg" style="background-image: url('{{ hero_image | default(backdrop | default('img/anim_backdrop.jpg')) }}');"></div>
+    {% if hero_image %}<div class="chapter-hero-veil"></div>{% endif %}
 
     <div class="chapter-aura chapter-aura-1"></div>
     <div class="chapter-aura chapter-aura-2"></div>
@@ -29,6 +34,13 @@
 
         {% if tagline %}<div class="chapter-tagline">{{ tagline | safe }}</div>{% endif %}
     </div>
+
+    {% if audio %}
+    <audio data-slide-audio preload="auto" loop>
+        <source src="{{ audio }}" type="video/mp4">
+    </audio>
+    <div class="chapter-audio-hint" data-audio-hint>♪ 點一下開聲 · Tap for sound</div>
+    {% endif %}
 
     <div class="meta chapter-meta">
         <span>{{ meta_left }}</span>

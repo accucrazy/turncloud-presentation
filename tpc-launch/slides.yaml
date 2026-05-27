@@ -568,16 +568,18 @@ slides:
   - id: ecosystem_chapter
     template: chapter
     backdrop: img/anim_backdrop.jpg
+    hero_image: img/ecosystem_chapter_hero.jpg
+    audio: img/rytho_demo.mp4
     tone: cyan
     eyebrow: "PART · 02"
     pre: "從 內部 AI 工作者  →  開放給整個生態系"
-    title: '一個 <span class="c">開放</span> 的生態系<br>正在<span class="v">長出來</span>'
-    lede: 'AI OS 不是只有<strong>我們</strong>的 Agent ── 把 <strong>A2A</strong> 開出來,把 <strong>MCP</strong> 開出來,把 <strong>OpenClaw</strong> 開源,讓所有 AI 新創都能接上來。'
+    title: '<span class="c">Pandora</span> 跟新創夥伴<br>一起<span class="v">玩起來</span>'
+    lede: '<strong>Luna · Raccoon · Rytho</strong> ── 三家首發夥伴用 <strong>A2A · MCP · OpenClaw</strong> 接進來,跟 Pandora 同台演出。AI OS 開放,生態系才會<strong>活起來</strong>。'
     bullets:
       - { tone: cyan,   label: "STANDARD",   text: '<strong>A2A Protocol</strong> · Agent 互通' }
       - { tone: orange, label: "INTERFACE",  text: '<strong>MCP / WebMCP</strong> · 工具被任何 Agent 呼叫' }
       - { tone: violet, label: "OPEN SOURCE", text: '<strong>OpenClaw</strong> · claw3d.ai 直接拿去用' }
-    meta_left: "Part 02 — From the AI Workforce to an Open Ecosystem"
+    meta_left: "Part 02 — Pandora jams with Luna · Raccoon · Rytho"
 
   # ─── SLIDE 22: 首發夥伴 #1 · Raccoon AI ──────────────────────
   - id: raccoon_partnership
@@ -621,7 +623,6 @@ slides:
     title: '30 秒寫出<span class="v">唱新光的饒舌</span>'
     media: img/rytho_demo.mp4
     media_alt: "Rytho × Accucrazy · 30 秒生成饒舌 Demo"
-    audio: true
     marker: "LIVE DEMO · 黑卡逃亡 — 14 秒"
     meta_left: "Second ecosystem partner — Rytho × Accucrazy · Music Agent OS · Rhyme Engine"
     pills:
