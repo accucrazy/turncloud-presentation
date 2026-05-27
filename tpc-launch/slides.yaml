@@ -112,6 +112,20 @@ slides:
       - { code: "ADRIANA",  color: violet, role: "廣告優化 Agent", tagline: "即時、精準的廣告決策" }
       - { code: "STACEY",   color: green,  role: "總指揮 Agent",   tagline: "任務拆解 × 多 Agent 協作" }
 
+  # ─── SLIDE 5: Harness Engineering — 框架圖 ───────────────────
+  - id: harness_skill
+    template: demo
+    variant: stacked
+    tone: cyan
+    backdrop: img/anim_backdrop.jpg
+    media: img/harness_as_llm_input_v4.jpg
+    media_fit: contain
+    media_alt: "Multi-Agent × Harness Engineering 打造的協作架構 — The Pocket Company framework by TSpace"
+    marker: "HARNESS · DEEP DIVE"
+    tag: { color: cyan, text: "THE POCKET COMPANY FRAMEWORK · by TSpace" }
+    title: 'Multi-Agent × <span class="c">Harness Engineering</span> 打造的協作架構'
+    meta_left: "The Pocket Company framework · by TSpace"
+
   # ─── SLIDE 9: PANDORA ───────────────────────────────────────
   - id: pandora
     template: agent
@@ -625,20 +639,6 @@ slides:
         <strong class="g">Stacey 派工</strong> ·
         <strong class="o">Agents 執行</strong>
         ── 這就是 <strong>Agent Harness</strong>,讓 5 個 AI 第一次<strong>像一間公司運作</strong>。
-
-  # ─── SLIDE 26: Harness Skill — 變成 LLM 的 Input ───────────
-  - id: harness_skill
-    template: demo
-    variant: stacked
-    tone: cyan
-    backdrop: img/anim_backdrop.jpg
-    media: img/harness_as_llm_input_v4.jpg
-    media_fit: contain
-    media_alt: "Multi-Agent × Harness Engineering 打造的協作架構 — The Pocket Company framework by TSpace"
-    marker: "HARNESS · DEEP DIVE"
-    tag: { color: cyan, text: "THE POCKET COMPANY FRAMEWORK · by TSpace" }
-    title: 'Multi-Agent × <span class="c">Harness Engineering</span> 打造的協作架構'
-    meta_left: "The Pocket Company framework · by TSpace"
 
   # ─── SLIDE 27: 開放生態系 ──────────────────────────────────
   - id: ecosystem
