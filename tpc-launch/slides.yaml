@@ -682,47 +682,47 @@ slides:
           - "一手客戶聲音 → 商業決策"
     tagline: '<strong>首發夥伴 #1</strong> ── 一個夥伴,讓 Pandora 看得更深。'
 
-  # ─── SLIDE 27: Luna AI 首發夥伴 #2 — Brand Brief → Threads 爆文 ─
+  # ─── SLIDE 27: Luna AI 首發夥伴 #2 — 作者口吻 × 爆文公式 ─────
   - id: luna_partnership
     template: stage
     backdrop: img/anim_backdrop.jpg
     tag: { color: orange, text: "ECOSYSTEM · 首發夥伴 #2 · Luna AI × The Pocket Company" }
-    title: '<span class="o">Luna AI</span> ── 把<span class="c">品牌 Brief</span> 60 秒變成<span class="v">連發爆文</span>'
-    subtitle: 'Moana 拿出 Brand Brief ─ Luna 60 秒跑完 30 篇 Threads 文 ─ 直通社群 <strong>Social Commerce</strong>,協作成本砍 80%。'
+    title: '<span class="o">Luna AI</span> ── <span class="c">作者口吻</span> × <span class="v">爆文公式</span>'
+    subtitle: '不是「AI 風格」── 是 <strong>那位作者本人的口吻</strong>。Luna 把你的<strong>真實聲音</strong>套上<strong>驗證過的爆文結構</strong>,60 秒產 30 篇都像你寫的爆文。'
     arrows: true
     meta_left: "Second ecosystem partner — Luna AI × The Pocket Company"
     panels:
       - tone: cyan
         art: img/icon_luna_brief_in.jpg
         art_fit: contain
-        label: "STEP 01 · MOANA BRIEF"
-        name: '<span class="c">Moana</span> 出 Brand Brief'
-        tagline: '把品牌的<strong>每一面</strong>餵給 Luna'
+        label: "STEP 01 · VOICE + BRIEF"
+        name: '<span class="c">作者語料</span> + Moana Brief'
+        tagline: '把<strong>你的聲音</strong>跟<strong>品牌資料</strong>一起餵給 Luna'
         bullets:
-          - "品牌痛點 · 粉絲偏好"
-          - "客製化主題 · 爆文公式"
+          - "作者過往貼文 · 用字 · 節奏"
+          - "品牌痛點 · 粉絲偏好 · 主題"
           - "Culture Listening 抓到的當下語感"
       - tone: orange
         art: img/icon_luna_character.jpg
         art_fit: contain
         label: "STEP 02 · LUNA ENGINE"
-        name: '<span class="o">Luna</span> ── 60 秒爆文機器人'
-        tagline: '<strong>深度調教</strong>的客製化品牌語氣'
+        name: '<span class="o">Luna</span> ── 模仿口吻 × 套爆文公式'
+        tagline: '不是「像 AI」,是<strong>像那個人</strong>'
         bullets:
-          - "輸入指令 → 30 篇 Threads 一次出"
-          - "內建多種<strong>爆文公式</strong>架構"
-          - "即買即用 · 透過 A2A 跟我們協作"
+          - "深度模仿<strong>特定作者</strong>口吻 / 語氣 / 節奏"
+          - "套用驗證過的<strong>爆文結構</strong>公式"
+          - "30 篇 Threads · 都像同一個人寫的"
       - tone: violet
         art: img/icon_luna_output.jpg
         art_fit: contain
         label: "STEP 03 · SOCIAL COMMERCE"
-        name: '一條 Brief → <span class="v">連發爆文</span>'
-        tagline: '<strong>協作成本砍 80%</strong> · 直通生意'
+        name: '連發爆文 → <span class="v">直通生意</span>'
+        tagline: '<strong>協作成本砍 80%</strong> · 上線即生效'
         bullets:
           - "Threads / IG / LINE 同步上線"
           - "Adriana 接著做廣告 · Banana 接著出視覺"
           - "從<strong>內容</strong>直接走到<strong>訂單</strong>"
-    tagline: '<strong>首發夥伴 #2</strong> ── 另一個夥伴,讓內容速度<strong>變一個量級</strong>。'
+    tagline: '<strong>首發夥伴 #2</strong> ── 你的聲音 × 爆文公式 = <strong>規模化的真誠</strong>。'
 
   # ─── SLIDE 28: 開放生態系 ──────────────────────────────────
   - id: ecosystem
@@ -744,7 +744,7 @@ slides:
         - '<strong>OpenClaw 開源框架</strong> · claw3d.ai，直接拿去用'
     pills:
       - { title: "Raccoon AI · 對話 Agent",  text: "★ 首發夥伴 · 私域對話 → 輿情" }
-      - { title: "Luna AI · 爆文機器人",     text: "★ 首發夥伴 · Threads 文案 60 秒產出" }
+      - { title: "Luna AI · 爆文機器人",     text: "★ 首發夥伴 · 作者口吻 × 爆文公式" }
       - { title: "數據 / 分析新創",      text: "接成 AI OS 的 Skill" }
       - { title: "產業垂直 SaaS",       text: "用 A2A 對接，成延伸節點" }
       - { title: "場域 / IoT 新創",      text: "透過 Runtime 把感知接進來" }
