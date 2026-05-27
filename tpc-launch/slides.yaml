@@ -644,7 +644,7 @@ slides:
   - id: raccoon_partnership
     template: stage
     backdrop: img/anim_backdrop.jpg
-    tag: { color: cyan, text: "ECOSYSTEM · 首發夥伴 · Raccoon AI × The Pocket Company" }
+    tag: { color: cyan, text: "ECOSYSTEM · 首發夥伴 #1 · Raccoon AI × The Pocket Company" }
     title: '私域對話 × Raccoon AI ── 把<span class="c">第一手客戶聲音</span>變成<span class="v">輿情</span>'
     subtitle: '我們的 AI 客服在 App 裡收集真實對話 ─ Raccoon 把對話跑得更深 ─ 數據再回到 <strong>Pandora</strong>,讓<strong>私域</strong>跟<strong>公開市場</strong>同時被看見。'
     arrows: true
@@ -680,9 +680,51 @@ slides:
           - "真實對話 → 議題 / 情緒 / 趨勢"
           - "Pandora 整合外部聲量做雙視角"
           - "一手客戶聲音 → 商業決策"
-    tagline: '<strong>第一個生態系夥伴</strong> ── AI OS 因為<strong>夥伴</strong>而變更強。'
+    tagline: '<strong>首發夥伴 #1</strong> ── 一個夥伴,讓 Pandora 看得更深。'
 
-  # ─── SLIDE 27: 開放生態系 ──────────────────────────────────
+  # ─── SLIDE 27: Luna AI 首發夥伴 #2 — Brand Brief → Threads 爆文 ─
+  - id: luna_partnership
+    template: stage
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: orange, text: "ECOSYSTEM · 首發夥伴 #2 · Luna AI × The Pocket Company" }
+    title: '<span class="o">Luna AI</span> ── 把<span class="c">品牌 Brief</span> 60 秒變成<span class="v">連發爆文</span>'
+    subtitle: 'Moana 拿出 Brand Brief ─ Luna 60 秒跑完 30 篇 Threads 文 ─ 直通社群 <strong>Social Commerce</strong>,協作成本砍 80%。'
+    arrows: true
+    meta_left: "Second ecosystem partner — Luna AI × The Pocket Company"
+    panels:
+      - tone: cyan
+        art: img/icon_luna_brief_in.jpg
+        art_fit: contain
+        label: "STEP 01 · MOANA BRIEF"
+        name: '<span class="c">Moana</span> 出 Brand Brief'
+        tagline: '把品牌的<strong>每一面</strong>餵給 Luna'
+        bullets:
+          - "品牌痛點 · 粉絲偏好"
+          - "客製化主題 · 爆文公式"
+          - "Culture Listening 抓到的當下語感"
+      - tone: orange
+        art: img/icon_luna_character.jpg
+        art_fit: contain
+        label: "STEP 02 · LUNA ENGINE"
+        name: '<span class="o">Luna</span> ── 60 秒爆文機器人'
+        tagline: '<strong>深度調教</strong>的客製化品牌語氣'
+        bullets:
+          - "輸入指令 → 30 篇 Threads 一次出"
+          - "內建多種<strong>爆文公式</strong>架構"
+          - "即買即用 · 透過 A2A 跟我們協作"
+      - tone: violet
+        art: img/icon_luna_output.jpg
+        art_fit: contain
+        label: "STEP 03 · SOCIAL COMMERCE"
+        name: '一條 Brief → <span class="v">連發爆文</span>'
+        tagline: '<strong>協作成本砍 80%</strong> · 直通生意'
+        bullets:
+          - "Threads / IG / LINE 同步上線"
+          - "Adriana 接著做廣告 · Banana 接著出視覺"
+          - "從<strong>內容</strong>直接走到<strong>訂單</strong>"
+    tagline: '<strong>首發夥伴 #2</strong> ── 另一個夥伴,讓內容速度<strong>變一個量級</strong>。'
+
+  # ─── SLIDE 28: 開放生態系 ──────────────────────────────────
   - id: ecosystem
     template: ecosystem
     bg: dark
