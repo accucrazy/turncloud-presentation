@@ -651,6 +651,8 @@ slides:
     meta_left: "First ecosystem partner — Raccoon AI × The Pocket Company"
     panels:
       - tone: cyan
+        art: img/icon_ai_cs_app.jpg
+        art_fit: contain
         label: "STEP 01 · OUR SIDE"
         name: 'AI 客服在<span class="c">品牌 App</span> 裡上工'
         tagline: '收集第一線<strong>真實對話</strong>'
@@ -659,6 +661,8 @@ slides:
           - "百貨 / 零售 / 服務業 App 即時上線"
           - "第一方資料主權留在企業"
       - tone: orange
+        art: img/icon_raccoon_partner.jpg
+        art_fit: contain
         label: "STEP 02 · FIRST PARTNER"
         name: '<span class="o">Raccoon AI</span> ── 對話型 Agent 專家'
         tagline: '100+ 企業客戶 · 60–90% 對話<strong>自動化</strong>'
@@ -667,6 +671,8 @@ slides:
           - "Zendesk · LINE · Omnichat 整合"
           - "用 <strong>A2A Protocol</strong> 接進我們"
       - tone: violet
+        art: img/icon_voc_fusion.jpg
+        art_fit: contain
         label: "STEP 03 · BACK TO PANDORA"
         name: '私域對話 → <span class="v">輿情升級</span>'
         tagline: '<strong>內部 VoC</strong> × <strong>外部市場</strong> 一起看見'
