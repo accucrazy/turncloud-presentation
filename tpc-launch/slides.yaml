@@ -691,8 +691,8 @@ slides:
     media_flex: "1.1"
     tag: { color: cyan, text: "CHAPTER 07 · 一個開放的生態" }
     title: 'AI OS 是<span class="c">開放</span>的 — 歡迎 AI 新創<span class="v">一起進來</span>'
-    subtitle: '<strong>Raccoon AI</strong> 是<strong>第一個</strong>節點。下一個可以是<strong>你</strong>。'
-    meta_left: "Raccoon AI is the first node — yours can be the next"
+    subtitle: '<strong>Raccoon AI</strong> 跟 <strong>Luna AI</strong> 是<strong>首批節點</strong>。下一個可以是<strong>你</strong>。'
+    meta_left: "Raccoon AI · Luna AI are the first nodes — yours can be the next"
     header_box:
       color: cyan
       title: "三個開放標準"
@@ -702,8 +702,8 @@ slides:
         - '<strong>OpenClaw 開源框架</strong> · claw3d.ai，直接拿去用'
     pills:
       - { title: "Raccoon AI · 對話 Agent",  text: "★ 首發夥伴 · 私域對話 → 輿情" }
+      - { title: "Luna AI · 爆文機器人",     text: "★ 首發夥伴 · Threads 文案 60 秒產出" }
       - { title: "數據 / 分析新創",      text: "接成 AI OS 的 Skill" }
-      - { title: "生成式內容新創",      text: "垂直生成模型變可調用 Agent" }
       - { title: "產業垂直 SaaS",       text: "用 A2A 對接，成延伸節點" }
       - { title: "場域 / IoT 新創",      text: "透過 Runtime 把感知接進來" }
       - { title: "學術 / 研究團隊",      text: "研究成果上真實商業場景驗證" }
