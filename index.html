@@ -266,13 +266,62 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .box.b-pink   li::before { color: var(--pink); }
 .box li strong { color: var(--text); font-weight: 600; }
 
-/* ─── Cover slide ─── */
-.cover { padding: 0; }
-.cover .bg-image, .cover .bg-video { opacity: 1; background-position: 75% center; background-size: cover; }
-.cover .bg-image::after, .cover .bg-video::after {
-    background: linear-gradient(95deg, rgba(255,255,255,0.99) 0%, rgba(255,255,255,0.98) 38%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.30) 70%, rgba(255,255,255,0) 100%);
+/* ─── Cover slide — split layout: text left, big SQUARE image right ─── */
+.cover { padding: 0; background: linear-gradient(135deg, #fafbfc 0%, #f4f0ff 100%); overflow: hidden; }
+.cover .cover-bg {
+    position: absolute; inset: 0;
+    background:
+        radial-gradient(ellipse 70% 60% at 18% 35%, rgba(6,182,212,0.07), transparent 65%),
+        radial-gradient(ellipse 70% 60% at 82% 70%, rgba(168,85,247,0.08), transparent 65%);
+    pointer-events: none;
+    z-index: 0;
 }
-.cover .slide-content { padding: 5cqh 7cqh; justify-content: center; max-width: 56%; }
+.cover .cover-split {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4cqh;
+    align-items: center;
+    height: 100%;
+    padding: 4cqh 5cqh;
+}
+.cover .cover-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+.cover-image-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    height: 88cqh;
+    max-height: 88cqh;
+    max-width: 50cqw;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cover-image-glow {
+    position: absolute;
+    inset: -6cqh;
+    background: radial-gradient(circle at 50% 50%, rgba(6,182,212,0.18), rgba(168,85,247,0.10) 45%, transparent 70%);
+    filter: blur(20px);
+    z-index: 0;
+}
+.cover-image-square {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    box-shadow:
+        0 24px 70px rgba(15,23,42,0.18),
+        0 12px 30px rgba(168,85,247,0.18),
+        inset 0 0 0 1px rgba(255,255,255,0.4);
+}
 
 /* ─── Cover big partnership logos ─── */
 .cover-logos {
@@ -312,41 +361,39 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
 .cover .pre {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1.55cqh;
-    letter-spacing: 5px;
+    font-size: 1.4cqh;
+    letter-spacing: 3.5px;
     color: var(--cyan);
-    margin-bottom: 2cqh;
+    margin-bottom: 1.8cqh;
     font-weight: 700;
-    white-space: nowrap;
 }
 .cover h1 {
-    font-size: 6.8cqh;
-    margin-bottom: 2cqh;
+    font-size: 5.6cqh;
+    margin-bottom: 1.8cqh;
     color: var(--text);
     max-width: 100%;
     line-height: 1.18;
 }
 .cover .lede {
-    font-size: 2.3cqh;
+    font-size: 1.95cqh;
     color: var(--dim);
     max-width: 100%;
-    line-height: 1.65;
-    margin-bottom: 2.6cqh;
+    line-height: 1.62;
+    margin-bottom: 2.4cqh;
 }
 .cover .lede strong { color: var(--cyan); font-weight: 700; }
 .cover .signature {
     display: flex;
-    gap: 2.5cqh;
+    gap: 2cqh;
     align-items: center;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1.45cqh;
+    font-size: 1.35cqh;
     color: var(--dim-2);
-    letter-spacing: 1.5px;
-    white-space: nowrap;
+    letter-spacing: 1.2px;
 }
-.cover .signature .sig-block { padding-right: 2.5cqh; border-right: 1px solid var(--border); }
+.cover .signature .sig-block { padding-right: 2cqh; border-right: 1px solid var(--border); }
 .cover .signature .sig-block:last-child { border-right: none; padding-right: 0; }
-.cover .signature .sig-block strong { display: block; color: var(--text); font-size: 1.65cqh; letter-spacing: 1px; font-weight: 700; margin-bottom: 0.4cqh; }
+.cover .signature .sig-block strong { display: block; color: var(--text); font-size: 1.55cqh; letter-spacing: 1px; font-weight: 700; margin-bottom: 0.35cqh; }
 
 /* ─── AI OS architecture (Agent Orchestrated Space) ─── */
 .aios-arch {
@@ -1142,18 +1189,19 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .demo-pill-cyan   .demo-pill-name { color: var(--cyan); }
 .demo-pill-violet .demo-pill-name { color: var(--violet); }
 .demo-pill-green  .demo-pill-name { color: var(--green); }
-.demo-pill-bullets { list-style: none; margin: 0.3cqh 0 0; padding: 0; }
+.demo-pill-bullets { list-style: none; margin: 0.55cqh 0 0; padding: 0; }
 .demo-pill-bullets li {
     font-size: 1.95cqh;
     color: var(--dim);
-    padding: 0.2cqh 0 0.2cqh 1.2cqh;
-    line-height: 1.4;
+    padding: 0.35cqh 0 0.35cqh 1.85cqh;
+    line-height: 1.45;
     position: relative;
 }
+.demo-pill-bullets li + li { margin-top: 0.15cqh; }
 .demo-pill-bullets li::before {
     content: '·';
     position: absolute;
-    left: 0.2cqh;
+    left: 0.4cqh;
     top: -0.2cqh;
     font-weight: 900;
     font-size: 2cqh;
@@ -1795,6 +1843,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .slide.active.chapter .chapter-bullet-1 { animation: chapter-fadeUp 0.7s ease-out 1.10s forwards; }
 .slide.active.chapter .chapter-bullet-2 { animation: chapter-fadeUp 0.7s ease-out 1.25s forwards; }
 .slide.active.chapter .chapter-bullet-3 { animation: chapter-fadeUp 0.7s ease-out 1.40s forwards; }
+.slide.active.chapter .chapter-bullet-4 { animation: chapter-fadeUp 0.7s ease-out 1.55s forwards; }
+.slide.active.chapter .chapter-bullet-5 { animation: chapter-fadeUp 0.7s ease-out 1.70s forwards; }
+.slide.active.chapter .chapter-bullet-6 { animation: chapter-fadeUp 0.7s ease-out 1.85s forwards; }
 .slide.active.chapter .chapter-tagline  { animation: chapter-fadeUp 0.8s ease-out 1.70s forwards; }
 @keyframes chapter-fadeUp {
     0%   { opacity: 0; transform: translateY(20px); }
@@ -2012,18 +2063,19 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .agent-block-cyan   .agent-block-name { color: var(--cyan); }
 .agent-block-violet .agent-block-name { color: var(--violet); }
 .agent-block-green  .agent-block-name { color: var(--green); }
-.agent-block-bullets { list-style: none; margin: 0.3cqh 0 0; padding: 0; }
+.agent-block-bullets { list-style: none; margin: 0.55cqh 0 0; padding: 0; }
 .agent-block-bullets li {
     font-size: 1.95cqh;
     color: var(--dim);
-    padding: 0.2cqh 0 0.2cqh 1.2cqh;
-    line-height: 1.4;
+    padding: 0.35cqh 0 0.35cqh 1.85cqh;
+    line-height: 1.45;
     position: relative;
 }
+.agent-block-bullets li + li { margin-top: 0.15cqh; }
 .agent-block-bullets li::before {
     content: '·';
     position: absolute;
-    left: 0.2cqh;
+    left: 0.4cqh;
     top: -0.2cqh;
     font-weight: 900;
     font-size: 2cqh;
@@ -2795,35 +2847,36 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 <!-- ══════════ SLIDE 01: cover (cover) ══════════ -->
 
 <div class="slide cover active">
-    <div class="bg-image" style="background-image: url('img/01_cover.jpg');"></div>
-
-    <div class="slide-content">
-        
-        <div class="cover-logos">
-            <img src="img/accucrazy-logo.webp" alt="Accucrazy" class="cover-logo cover-logo-accucrazy">
-            <span class="cover-logo-x" aria-hidden="true">×</span>
-            <img src="img/turncloud-logo.png" alt="TurnCloud" class="cover-logo cover-logo-turncloud">
+    <div class="cover-bg"></div>
+    <div class="cover-split">
+        <div class="cover-text">
+            
+            <div class="cover-logos">
+                <img src="img/accucrazy-logo.webp" alt="Accucrazy" class="cover-logo cover-logo-accucrazy">
+                <span class="cover-logo-x" aria-hidden="true">×</span>
+                <img src="img/turncloud-logo.png" alt="TurnCloud" class="cover-logo cover-logo-turncloud">
+            </div>
+            
+            <div class="pre">THE POCKET COMPANY × TURNCLOUD · 2026</div>
+            <h1><span class="c">Enterprise AIOS</span><br>我們想要<strong>一起長大</strong>的生態系</h1>
+            <p class="lede">
+                承接騰雲的 <strong>Physical Space Runtime</strong>,
+建構 <strong>Enterprise AIOS</strong>,
+帶來第一支 <strong>AI Agent 工作團隊</strong> ──
+在這個 AI 時代,<strong>跟整個生態系一起長大</strong>。
+            </p>
+            <div class="signature">
+                
+                <div class="sig-block">
+                    <strong>Ian Wu</strong>
+                    CEO · Accucrazy
+                </div>
+                
+            </div>
         </div>
-        
-        <div class="pre">THE POCKET COMPANY × TURNCLOUD · 2026</div>
-        <h1>Accucrazy 加入騰雲，<br>啟動企業<br><span class="c">AI 工作者</span>新時代</h1>
-        <p class="lede">
-            承接騰雲的 <strong>Physical Space Runtime</strong>，<br>
-建構 <strong>Enterprise AI OS</strong>，<br>
-帶來第一支 <strong>AI Agent 工作團隊</strong>。
-        </p>
-        <div class="signature">
-            
-            <div class="sig-block">
-                <strong>The Pocket Company</strong>
-                Accucrazy × TurnCloud 整合
-            </div>
-            
-            <div class="sig-block">
-                <strong>Powered by TurnCloud</strong>
-                T Coeus AI OS 發表會
-            </div>
-            
+        <div class="cover-image-wrap">
+            <div class="cover-image-glow"></div>
+            <img src="img/cover_hero_square.jpg" alt="" class="cover-image-square">
         </div>
     </div>
 </div>
@@ -2898,7 +2951,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>The Pocket Company — 三層架構,一張圖看懂</span>
-            <span class="pg">02 / 23</span>
+            <span class="pg">02 / 22</span>
         </div>
     </div>
 </div>
@@ -3012,7 +3065,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>AI OS · One OS · Two Spaces</span>
-            <span class="pg">03 / 23</span>
+            <span class="pg">03 / 22</span>
         </div>
     </div>
 </div>
@@ -3064,7 +3117,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>5 位 AI 員工 — 可以開始招聘的數位團隊</span>
-            <span class="pg">04 / 23</span>
+            <span class="pg">04 / 22</span>
         </div>
     </div>
 </div>
@@ -3079,7 +3132,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     
     <div class="meta fullbleed-meta">
         <span>The Pocket Company Framework · powered by TSpace · Turncloud VIN</span>
-        <span class="pg">05 / 23</span>
+        <span class="pg">05 / 22</span>
     </div>
     
 </div>
@@ -3143,7 +3196,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Pandora — AI Native Social Listening Agent · quant → qual</span>
-        <span class="pg">06 / 23</span>
+        <span class="pg">06 / 22</span>
     </div>
 </div>
 
@@ -3211,7 +3264,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Pandora — Auto Insight Report</span>
-        <span class="pg">07 / 23</span>
+        <span class="pg">07 / 22</span>
     </div>
 </div>
 
@@ -3285,7 +3338,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Moana — Culture Listening × Fine-tuned Generation · MVP LIVE</span>
-        <span class="pg">08 / 23</span>
+        <span class="pg">08 / 22</span>
     </div>
 </div>
 
@@ -3331,7 +3384,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening 整合架構</span>
-        <span class="pg">09 / 23</span>
+        <span class="pg">09 / 22</span>
     </div>
 </div>
 
@@ -3352,19 +3405,19 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <video src="img/moana_culture_case.mp4" autoplay loop muted playsinline ></video>
+                <video src="img/culture_listening.mp4" autoplay loop muted playsinline ></video>
                 
             </div>
             <div class="demo-media-scrim"></div>
-            <div class="demo-marker">● ● LIVE CASE</div>
+            <div class="demo-marker">● ● LIVE DEMO</div>
             
         </div>
 
         
         <div class="demo-info">
-            <div class="tag tag-orange">MOANA · CASE STUDY · PART 1</div>
-            <h2 class="demo-title"><span class="o">猛健樂</span> — Culture Listening 實戰</h2>
-            <p class="demo-sub">看 Moana 從次文化訊號裡找到減重藥品牌的內容切角。</p>
+            <div class="tag tag-orange">MOANA · CULTURE LISTENING LIVE</div>
+            <h2 class="demo-title"><span class="o">Culture Listening</span> — 實戰 Demo</h2>
+            <p class="demo-sub">看 Moana 從<strong>次文化訊號</strong> → 拆解語境 → 產出<strong>有 Culture Fit 的內容腳本</strong>。</p>
         </div>
 
         
@@ -3376,7 +3429,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                 <div class="demo-pill-name">演示重點</div>
                 
                 <ul class="demo-pill-bullets">
-                    <li>抓出社群<strong>減重話題</strong>與情緒</li><li>解析<strong>受眾語感</strong>,避開敏感詞</li><li>產出<strong>品牌調性</strong>的內容腳本</li>
+                    <li>抓出<strong>社群話題</strong>與真實情緒</li><li>解析<strong>受眾語感</strong>與品牌調性</li><li>產出<strong>可上線的內容腳本</strong></li>
                 </ul>
                 
                 
@@ -3386,83 +3439,17 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
         
 
         
-        <div class="demo-tagline">醫療品牌也能 <span class="o">Culture Fit</span>。</div>
+        <div class="demo-tagline">從聽見話題到拿下訂單 ── <span class="o">Culture Fit</span> 真的可以閉環。</div>
         
     </div>
 
     <div class="meta demo-meta">
-        <span>Moana — Live Case · 猛健樂 Culture Listening</span>
-        <span class="pg">10 / 23</span>
+        <span>Moana — Culture Listening Live Demo</span>
+        <span class="pg">10 / 22</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 11: moana_case_02 (demo) ══════════ -->
-
-
-
-
-<div class="slide demo demo-spotR demo-tone-orange" data-slide="moana_case_02">
-    <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
-
-    
-    
-
-    
-    <div class="demo-stage">
-        <div class="demo-media demo-media-contain">
-            <div class="demo-media-halo"></div>
-            <div class="demo-media-frame">
-                
-                <video src="img/moana_case_02.mov" autoplay loop muted playsinline ></video>
-                
-            </div>
-            
-            <div class="demo-marker">● PIPELINE DEMO</div>
-            
-        </div>
-
-        
-        <div class="demo-info">
-            <div class="tag tag-orange">MOANA · CASE · PART 2</div>
-            <h2 class="demo-title"><span class="o">猛健樂</span> — Brief → <span class="o">文章產出</span></h2>
-            <p class="demo-sub">前一頁看<strong>怎麼洞察</strong>;這頁看<strong>洞察 → Brief → 文章一氣呵成</strong>。</p>
-        </div>
-
-        
-        
-        <div class="demo-pills">
-            
-            <div class="demo-pill demo-pill-1 demo-pill-orange">
-                <div class="demo-pill-label">DEMO 看點</div>
-                <div class="demo-pill-name">演示重點</div>
-                
-                <ul class="demo-pill-bullets">
-                    <li>自動生成<strong>完整 marketing brief</strong></li><li>Brief 含<strong>切角 · 語氣 · 視覺 · CTA</strong></li><li>直接從 brief 產出<strong>實際文章</strong></li>
-                </ul>
-                
-                
-            </div>
-            
-            <div class="demo-pill demo-pill-2 demo-pill-violet">
-                <div class="demo-pill-label">WHY</div>
-                <div class="demo-pill-name">策略 + 執行的整合系統</div>
-                
-                <p class="demo-pill-body">傳統每步都是斷層;Moana 把整條鏈路<strong>同一個 Agent 跑完</strong>。</p>
-            </div>
-            
-        </div>
-        
-
-        
-    </div>
-
-    <div class="meta demo-meta">
-        <span>Moana — Insight → Brief → Article Pipeline</span>
-        <span class="pg">11 / 23</span>
-    </div>
-</div>
-
-<!-- ══════════ SLIDE 12: banana (agent) ══════════ -->
+<!-- ══════════ SLIDE 11: banana (agent) ══════════ -->
 
 
 
@@ -3524,13 +3511,6 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                     
                 </div>
                 
-                <div class="agent-block agent-block-green">
-                    <div class="agent-block-label">CLOSED LOOP</div>
-                    <div class="agent-block-name">與 War Room 閉環</div>
-                    
-                    <p class="agent-block-body">輿情發現危機 → 分析論點 → <strong>Banana 直接產出回應素材</strong>。全鏈路 AI 自動化。</p>
-                </div>
-                
             </div>
             
 
@@ -3540,11 +3520,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Banana — Visual Design · MVP LIVE</span>
-        <span class="pg">12 / 23</span>
+        <span class="pg">11 / 22</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 13: banana_split_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 12: banana_split_demo (demo) ══════════ -->
 
 
 
@@ -3561,19 +3541,19 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <video src="img/banana_split_demo.mp4" autoplay loop muted playsinline ></video>
+                <video src="img/motion_lab.mp4" autoplay loop  playsinline controls></video>
                 
             </div>
             
             <div class="demo-marker">● ● LIVE DEMO</div>
-            
+            <div class="demo-audio-hint" data-audio-hint>♪ 點影片開聲</div>
         </div>
 
         
         <div class="demo-info">
-            <div class="tag tag-orange">BANANA · LIVE DEMO</div>
-            <h2 class="demo-title"><span class="o">Banana Split</span> — 視覺生成實戰</h2>
-            <p class="demo-sub">從一段文字到一張可上線的視覺 ── 看 Banana 把<strong>創意意圖變成多版本素材</strong>。</p>
+            <div class="tag tag-orange">BANANA · LIVE DEMO · MOTION LAB</div>
+            <h2 class="demo-title"><span class="o">Motion Lab</span> — 短影音生成實戰</h2>
+            <p class="demo-sub">從一段文字到一支可上線的短影音 ── 看 Banana 把<strong>創意意圖直接變成動態素材</strong>。</p>
         </div>
 
         
@@ -3585,7 +3565,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                 <div class="demo-pill-name">演示重點</div>
                 
                 <ul class="demo-pill-bullets">
-                    <li><strong>文字 → 多版本視覺</strong>同步產出</li><li>自動套用<strong>品牌規範</strong></li><li><strong>口頭迭代</strong> ── 秒級出新版</li>
+                    <li><strong>文字 → 短影音</strong>一鍵生成</li><li>自動套用<strong>品牌規範</strong></li><li><strong>口頭迭代</strong> ── 秒級出新版</li>
                 </ul>
                 
                 
@@ -3605,12 +3585,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
 
     <div class="meta demo-meta">
-        <span>Banana — Visual Generation Live Demo</span>
-        <span class="pg">13 / 23</span>
+        <span>Banana — Motion Lab · Video Generation Live</span>
+        <span class="pg">12 / 22</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 14: banana_video_edit (demo) ══════════ -->
+<!-- ══════════ SLIDE 13: banana_video_edit (demo) ══════════ -->
 
 
 
@@ -3674,11 +3654,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Banana Split — Reels Studio · Agentic Editing</span>
-        <span class="pg">14 / 23</span>
+        <span class="pg">13 / 22</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 15: adriana (agent) ══════════ -->
+<!-- ══════════ SLIDE 14: adriana (agent) ══════════ -->
 
 
 
@@ -3760,11 +3740,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Adriana — Personalization Agent · BUILDING</span>
-        <span class="pg">15 / 23</span>
+        <span class="pg">14 / 22</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 16: adriana_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 15: adriana_demo (demo) ══════════ -->
 
 
 
@@ -3826,11 +3806,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Adriana — Conversational Ad Intelligence</span>
-        <span class="pg">16 / 23</span>
+        <span class="pg">15 / 22</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 17: stacey (agent) ══════════ -->
+<!-- ══════════ SLIDE 16: stacey (agent) ══════════ -->
 
 
 
@@ -3900,11 +3880,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Stacey — Orchestrator · BUILDING</span>
-        <span class="pg">17 / 23</span>
+        <span class="pg">16 / 22</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 18: stacey_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 17: stacey_demo (demo) ══════════ -->
 
 
 
@@ -3966,11 +3946,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Stacey × Pandora — Dr.Wu Sentiment Analysis Live</span>
-        <span class="pg">18 / 23</span>
+        <span class="pg">17 / 22</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 19: ecosystem_chapter (chapter) ══════════ -->
+<!-- ══════════ SLIDE 18: ecosystem_chapter (chapter) ══════════ -->
 
 
 
@@ -3983,29 +3963,34 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     <div class="chapter-aura chapter-aura-2"></div>
 
     <div class="chapter-stage">
-        <div class="chapter-eyebrow">PART · 02</div>
+        <div class="chapter-eyebrow">PART · 02 · 我們的 AIOS 生態系</div>
         <div class="chapter-pre">從 內部 AI 工作者  →  開放給整個生態系</div>
 
         <h2 class="chapter-title"><span class="c">Pandora</span> 跟新創夥伴<br>一起<span class="v">玩起來</span></h2>
 
-        <p class="chapter-lede"><strong>Luna · Raccoon · Rytho</strong> ── 三家首發夥伴用 <strong>A2A · MCP · OpenClaw</strong> 接進來,跟 Pandora 同台演出。AI OS 開放,生態系才會<strong>活起來</strong>。</p>
+        <p class="chapter-lede">三家首發新創 + 一個學術夥伴用 <strong>A2A · MCP · OpenClaw</strong> 接進來,跟 Pandora 同台演出。AI OS 開放,生態系才會<strong>活起來</strong>。</p>
 
         
         <div class="chapter-bullets">
             
             <div class="chapter-bullet chapter-bullet-1 chapter-bullet-cyan">
-                <div class="chapter-bullet-label">STANDARD</div>
-                <div class="chapter-bullet-text"><strong>A2A Protocol</strong> · Agent 互通</div>
+                <div class="chapter-bullet-label">RACCOON AI</div>
+                <div class="chapter-bullet-text">對話 Agent · <strong>私域對話 → 輿情</strong></div>
             </div>
             
             <div class="chapter-bullet chapter-bullet-2 chapter-bullet-orange">
-                <div class="chapter-bullet-label">INTERFACE</div>
-                <div class="chapter-bullet-text"><strong>MCP / WebMCP</strong> · 工具被任何 Agent 呼叫</div>
+                <div class="chapter-bullet-label">RYTHO</div>
+                <div class="chapter-bullet-text">Music Agent OS · <strong>情資 × 押韻引擎</strong></div>
             </div>
             
             <div class="chapter-bullet chapter-bullet-3 chapter-bullet-violet">
-                <div class="chapter-bullet-label">OPEN SOURCE</div>
-                <div class="chapter-bullet-text"><strong>OpenClaw</strong> · claw3d.ai 直接拿去用</div>
+                <div class="chapter-bullet-label">LUNA AI</div>
+                <div class="chapter-bullet-text">爆文機器人 · <strong>作者口吻 × 爆文公式</strong></div>
+            </div>
+            
+            <div class="chapter-bullet chapter-bullet-4 chapter-bullet-green">
+                <div class="chapter-bullet-label">CUHK</div>
+                <div class="chapter-bullet-text">吳世家教授團隊 · <strong>★ 2026 GFMC Madrid · AI 口碑論文 accepted</strong></div>
             </div>
             
         </div>
@@ -4022,19 +4007,19 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     
 
     
-    <audio data-slide-audio preload="auto" loop>
-        <source src="img/rytho_demo.mp4" type="video/mp4">
-    </audio>
+    
+    <video data-slide-audio src="img/rytho_demo.mp4" preload="auto" loop playsinline
+           style="position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; left:0; top:0;"></video>
     <div class="chapter-audio-hint" data-audio-hint>♪ 點一下開聲 · Tap for sound</div>
     
 
     <div class="meta chapter-meta">
-        <span>Part 02 — Pandora jams with Luna · Raccoon · Rytho</span>
-        <span class="pg">19 / 23</span>
+        <span>Part 02 — Our AIOS ecosystem · Raccoon · Rytho · Luna · CUHK</span>
+        <span class="pg">18 / 22</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 20: raccoon_partnership (demo) ══════════ -->
+<!-- ══════════ SLIDE 19: raccoon_partnership (demo) ══════════ -->
 
 
 
@@ -4111,11 +4096,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>First ecosystem partner — Raccoon AI · Conversation Agent specialist</span>
-        <span class="pg">20 / 23</span>
+        <span class="pg">19 / 22</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 21: rytho_partnership (demo) ══════════ -->
+<!-- ══════════ SLIDE 20: rytho_partnership (demo) ══════════ -->
 
 
 
@@ -4192,11 +4177,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Second ecosystem partner — Rytho × Accucrazy · Music Agent OS · Rhyme Engine</span>
-        <span class="pg">21 / 23</span>
+        <span class="pg">20 / 22</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 22: luna_partnership (demo) ══════════ -->
+<!-- ══════════ SLIDE 21: luna_partnership (demo) ══════════ -->
 
 
 
@@ -4273,17 +4258,17 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Third ecosystem partner — Luna AI · Viral Content Engine</span>
-        <span class="pg">22 / 23</span>
+        <span class="pg">21 / 22</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 23: ecosystem (ecosystem) ══════════ -->
+<!-- ══════════ SLIDE 22: ecosystem (ecosystem) ══════════ -->
 
 <div class="slide bg-dark">
     <div class="slide-content">
-        <div class="tag tag-cyan">FINALE · IAN WU · CEO ACCUCRAZY · ★ 2026 GFMC MADRID</div>
-        <h2>Enterprise <span class="c">AIOS</span><br>我們想要<strong>一起長大</strong>的生態系</h2>
-        <p class="sub"><span class="v">★ 2026 GFMC Madrid</span> 接受 <strong>CUHK × Accucrazy</strong> AI 口碑論文 ── 戰場邏輯變成學術 Contribution。<br><strong>Raccoon · Rytho · Luna</strong> 已經接進來。The Pocket Company 不是終點 ── 是<strong>整個生態系的起點</strong>。</p>
+        <div class="tag tag-cyan">FINALE · IAN WU · CEO ACCUCRAZY</div>
+        <h2>在這個 <span class="c">AI 時代</span>,<br><strong>一起長大</strong>的<span class="v">生態系</span></h2>
+        <p class="sub">回到開場的那句話 ── <strong>Enterprise AIOS</strong> 不是一個產品,是一個我們想跟所有人<strong>一起長大</strong>的生態系。<br>The Pocket Company 不是終點 ── 是<strong>整個生態系的起點</strong>。</p>
 
         <div class="s-body">
             <div class="s-col" style="flex: 1.1;">
@@ -4294,10 +4279,10 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                 
                 
 <div class="box b-cyan">
-    <h4>我們的 AIOS 生態系 · 三家首發夥伴</h4>
+    <h4>下一個一起長大的,可以是你</h4>
     
     <ul>
-        <li><strong>Raccoon AI</strong> ── 客服 AI 專家</li><li><strong>Rytho</strong> ── 懂寫台灣饒舌的 rapper AI</li><li><strong>Luna AI</strong> ── 複製你靈魂的自媒體爆文專家</li>
+        <li><strong>Raccoon · Rytho · Luna</strong> 已經接進來,跟 Pandora 同台演出</li><li><strong>CUHK</strong> 把我們的 AI 口碑邏輯送上 <strong>2026 GFMC Madrid</strong></li><li><strong>A2A · MCP · OpenClaw</strong> 全開放,你的 Agent 可以是下一個</li>
     </ul>
     
 </div>
@@ -4359,15 +4344,15 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                 
                 <div class="box b-orange" style="margin-top: 0.7cqh;">
                     <p style="font-size: 1.85cqh; text-align: center; line-height: 1.4;"><strong class="o">我們帶來</strong>:騰雲十年的<strong>人、場、貨</strong>真實場景 + <strong>CUHK</strong> 學術背書。<br>
-<strong class="o">你帶來</strong>:你最擅長的 Agent 能力。一起<strong>跑出價值</strong>。</p>
+<strong class="o">你帶來</strong>:你最擅長的 Agent 能力。<strong>在 AI 時代,一起長大。</strong></p>
                 </div>
                 
             </div>
         </div>
 
         <div class="meta">
-            <span>Ian Wu · CEO Accucrazy — Enterprise AIOS · ecosystem we want to grow with · GFMC Madrid academic proof</span>
-            <span class="pg">23 / 23</span>
+            <span>Ian Wu · CEO Accucrazy — Enterprise AIOS · the ecosystem we grow up together</span>
+            <span class="pg">22 / 22</span>
         </div>
     </div>
 </div>
@@ -4377,7 +4362,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 <!-- ─── Nav UI ─── -->
 <button class="arrow arr-l" onclick="prev()">‹</button>
 <button class="arrow arr-r" onclick="next()">›</button>
-<div class="dots" id="dots"></div>
+<div class="dots" id="dots" style="display:none;"></div>
 <div class="brand-corner"><strong>TPC × TURNCLOUD</strong> · KEYNOTE · 2026</div>
 
 <script>
@@ -4397,15 +4382,14 @@ slides.forEach((_, i) => {
 
 /* ─── Video / slide-audio play / pause on slide change ─── */
 function resetVideos(slide) {
-    slide.querySelectorAll('video').forEach(v => {
+    slide.querySelectorAll('video, audio').forEach(v => {
         try { v.pause(); v.currentTime = 0; } catch (e) {}
-    });
-    slide.querySelectorAll('audio[data-slide-audio]').forEach(a => {
-        try { a.pause(); a.currentTime = 0; } catch (e) {}
     });
 }
 function playVideos(slide) {
-    slide.querySelectorAll('video').forEach(v => {
+    /* Regular videos (demo/agent/etc.) — skip the hidden chapter-audio video,
+       it's handled separately below so it can autoplay UNMUTED. */
+    slide.querySelectorAll('video:not([data-slide-audio])').forEach(v => {
         try {
             v.currentTime = 0;
             const wantsAudio = v.hasAttribute('controls') && !v.dataset.audioFallback;
@@ -4421,24 +4405,27 @@ function playVideos(slide) {
             }
         } catch (e) {}
     });
-    /* Dismiss the audio hint as soon as user clicks play */
+    /* Dismiss the audio hint only when the demo video is actually UNMUTED
+       (muted autoplay fallback should keep the hint pulsing so the speaker
+       knows to click into the video for sound). */
     slide.querySelectorAll('video[controls]').forEach(v => {
         const hint = slide.querySelector('[data-audio-hint]');
-        const dismiss = () => { if (hint) hint.style.display = 'none'; };
-        v.addEventListener('play', dismiss, { once: true });
-        v.addEventListener('volumechange', () => { if (!v.muted) dismiss(); });
+        const maybeDismiss = () => { if (hint && !v.muted) hint.style.display = 'none'; };
+        v.addEventListener('play', maybeDismiss);
+        v.addEventListener('volumechange', maybeDismiss);
     });
-    /* Slide-level background audio (chapter pages etc) — attempt to autoplay
-       unmuted; if blocked, prime on next user gesture and keep the hint visible. */
-    slide.querySelectorAll('audio[data-slide-audio]').forEach(a => {
+    /* Slide-level background audio (chapter pages etc.) — try unmuted; if
+       the browser blocks autoplay, queue play on the next user gesture and
+       keep the hint visible until sound is heard. Works for both <audio>
+       and hidden <video> elements that carry [data-slide-audio]. */
+    slide.querySelectorAll('[data-slide-audio]').forEach(a => {
         const hint = slide.querySelector('[data-audio-hint]');
         const tryUnmuted = () => {
             a.muted = false;
-            a.volume = 0.85;
+            a.volume = 0.9;
             const p = a.play();
             if (p && p.catch) {
                 p.catch(() => {
-                    /* Browser blocked — wait for a user gesture, then play */
                     const onGesture = () => {
                         a.muted = false;
                         a.play().then(() => {
@@ -4468,21 +4455,57 @@ if (slides[0]) playVideos(slides[0]);
 function go(n) {
     resetVideos(slides[cur]);
     slides[cur].classList.remove('active');
-    dotsEl.children[cur].classList.remove('on');
+    if (dotsEl && dotsEl.children[cur]) dotsEl.children[cur].classList.remove('on');
     cur = Math.max(0, Math.min(n, slides.length - 1));
     slides[cur].classList.add('active');
-    dotsEl.children[cur].classList.add('on');
+    if (dotsEl && dotsEl.children[cur]) dotsEl.children[cur].classList.add('on');
     playVideos(slides[cur]);
 }
 function next() { go(cur + 1); }
 function prev() { go(cur - 1); }
 
+/* ─── Black-screen overlay (presenter-remote 'B' / '.') ─── */
+let blackOn = false;
+function toggleBlack() {
+    blackOn = !blackOn;
+    let overlay = document.getElementById('black-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'black-overlay';
+        overlay.style.cssText = 'position:fixed; inset:0; background:#000; z-index:99999; transition:opacity .15s;';
+        overlay.addEventListener('click', toggleBlack);
+        document.body.appendChild(overlay);
+    }
+    overlay.style.opacity = blackOn ? '1' : '0';
+    overlay.style.pointerEvents = blackOn ? 'auto' : 'none';
+}
+
+/* ─── Keyboard / presenter-remote navigation ─────────────────
+   Common clickers (Logitech R400/Spotlight, Kensington, etc.) emit
+   PageUp/PageDown, ArrowLeft/Right, F5, Esc, "." (black) and "B".
+   We cover all of them plus normal keyboard. */
 document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); next(); }
-    if (e.key === 'ArrowLeft'  || e.key === 'PageUp')                    { e.preventDefault(); prev(); }
-    if (e.key === 'Home')                                                { go(0); }
-    if (e.key === 'End')                                                 { go(slides.length - 1); }
+    const k = e.key;
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown'
+        || k === ' ' || k === 'Spacebar' || k === 'Enter') {
+        e.preventDefault(); next(); return;
+    }
+    if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp'
+        || k === 'Backspace') {
+        e.preventDefault(); prev(); return;
+    }
+    if (k === 'Home')        { e.preventDefault(); go(0); return; }
+    if (k === 'End')         { e.preventDefault(); go(slides.length - 1); return; }
+    if (k === '.' || k === 'b' || k === 'B') { e.preventDefault(); toggleBlack(); return; }
+    /* F5 = enter fullscreen, Esc handled natively by browser */
+    if (k === 'F5') {
+        e.preventDefault();
+        if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen().catch(() => {});
+        }
+    }
 });
+
 </script>
 </body>
 </html>
