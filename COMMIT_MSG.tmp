@@ -1,8 +1,0 @@
-﻿feat(harness): TSpace foundation-model launch banner
-
-- Add TSpace logo launch banner at top of Harness slide announcing:
-  專屬大模型 · 客戶可用騰雲自產 Token · 結合 NVIDIA × VIN
-- Demo template gains optional launch_logo / launch_eyebrow /
-  launch_tagline fields and animated cyan-gradient announcement pill
-- Harness diagram enlarged to fill the rest of the slide (no pills),
-  per "改大圖 把畫面佔滿" request
