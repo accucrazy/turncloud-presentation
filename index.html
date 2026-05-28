@@ -997,6 +997,167 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
+   TRAILER SLIDE — cinematic full-screen teaser video w/ sound
+   ═══════════════════════════════════════════════════════════════════ */
+.slide.trailer {
+    padding: 0;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, #0a0c14 0%, #000 70%);
+}
+.slide.trailer .trailer-stage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slide.trailer .trailer-frame {
+    position: relative;
+    width: min(96cqw, 170cqh);
+    aspect-ratio: 16 / 9;
+    border-radius: 1.4cqh;
+    overflow: hidden;
+    background: #000;
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.06),
+        0 4cqh 8cqh rgba(0,0,0,0.65),
+        0 0 8cqh rgba(56, 189, 248, 0.10);
+}
+.slide.trailer .trailer-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+    display: block;
+}
+.slide.trailer .trailer-vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 8cqh rgba(0,0,0,0.55);
+}
+.slide.trailer .trailer-badge {
+    position: absolute;
+    top: 3cqh;
+    left: 3.2cqh;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7cqh;
+    padding: 0.9cqh 1.5cqh;
+    background: rgba(8, 10, 16, 0.65);
+    border: 1px solid rgba(56, 189, 248, 0.32);
+    border-radius: 999px;
+    color: #cbd5e1;
+    font-size: 1.55cqh;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 3;
+    animation: trailer-badge-fade 8s ease-out forwards;
+    animation-play-state: paused;
+}
+.slide.trailer.active .trailer-badge { animation-play-state: running; }
+.slide.trailer .trailer-badge-dot {
+    color: #f43f5e;
+    font-size: 1.7cqh;
+    line-height: 1;
+    animation: trailer-pulse 1.6s ease-in-out infinite;
+}
+@keyframes trailer-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+}
+@keyframes trailer-badge-fade {
+    0% { opacity: 0; transform: translateY(-0.6cqh); }
+    10% { opacity: 1; transform: translateY(0); }
+    85% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0.4; transform: translateY(0); }
+}
+.slide.trailer .trailer-headline {
+    position: absolute;
+    left: 50%;
+    bottom: 8cqh;
+    transform: translateX(-50%);
+    max-width: 84cqw;
+    text-align: center;
+    z-index: 3;
+    opacity: 0;
+    animation: trailer-headline 5.5s ease-out forwards;
+    animation-play-state: paused;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.85);
+}
+.slide.trailer.active .trailer-headline { animation-play-state: running; }
+@keyframes trailer-headline {
+    0% { opacity: 0; transform: translate(-50%, 1.5cqh); }
+    10% { opacity: 1; transform: translate(-50%, 0); }
+    70% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -0.6cqh); }
+}
+.slide.trailer .trailer-eyebrow {
+    color: #38bdf8;
+    font-size: 1.65cqh;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1.2cqh;
+}
+.slide.trailer .trailer-title {
+    color: #fff;
+    font-size: 5.4cqh;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+.slide.trailer .trailer-sub {
+    color: rgba(226, 232, 240, 0.85);
+    font-size: 2.1cqh;
+    line-height: 1.45;
+    margin: 1.2cqh 0 0;
+    font-weight: 400;
+}
+.slide.trailer .trailer-hint {
+    position: absolute;
+    bottom: 3.4cqh;
+    right: 3.2cqh;
+    padding: 0.8cqh 1.4cqh;
+    background: rgba(8, 10, 16, 0.65);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 999px;
+    color: #cbd5e1;
+    font-size: 1.4cqh;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 3;
+    animation: trailer-hint-pulse 2.4s ease-in-out infinite;
+}
+@keyframes trailer-hint-pulse {
+    0%, 100% { opacity: 0.55; }
+    50%      { opacity: 1; }
+}
+.slide.trailer .trailer-meta {
+    position: absolute;
+    left: 2.2cqh;
+    right: 2.2cqh;
+    bottom: 1.4cqh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(203, 213, 225, 0.5);
+    font-size: 1.35cqh;
+    letter-spacing: 0.05em;
+    z-index: 2;
+    pointer-events: none;
+}
+.slide.trailer .trailer-meta .pg {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
    DEMO SLIDE — video/image as the hero, multiple cinematic variants
    ═══════════════════════════════════════════════════════════════════ */
 .slide.demo { padding: 0; }
@@ -2881,7 +3042,39 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
 </div>
 
-<!-- ══════════ SLIDE 02: overview (overview) ══════════ -->
+<!-- ══════════ SLIDE 02: trailer (trailer) ══════════ -->
+
+<div class="slide trailer" data-slide="trailer">
+    <div class="trailer-stage">
+        <div class="trailer-frame">
+            <video
+                class="trailer-video"
+                src="img/trailer.mov"
+                playsinline
+                preload="auto"
+                controls
+                >
+            </video>
+            <div class="trailer-vignette"></div>
+        </div>
+
+        <div class="trailer-badge">
+            <span class="trailer-badge-dot">●</span>
+            <span class="trailer-badge-text">TRAILER · 預告片</span>
+        </div>
+
+        
+
+        <div class="trailer-hint" data-audio-hint>♪ 點影片開聲 · Tap for sound</div>
+    </div>
+
+    <div class="meta trailer-meta">
+        <span>Preview · The Pocket Company × TurnCloud · 2026</span>
+        <span class="pg">02 / 23</span>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 03: overview (overview) ══════════ -->
 
 <div class="slide overview" data-slide="overview">
     <div class="bg-image ov-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
@@ -2951,12 +3144,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>The Pocket Company — 三層架構,一張圖看懂</span>
-            <span class="pg">02 / 22</span>
+            <span class="pg">03 / 23</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 03: aios_concept (duality) ══════════ -->
+<!-- ══════════ SLIDE 04: aios_concept (duality) ══════════ -->
 
 <div class="slide duality" data-slide="aios_concept">
     <div class="bg-image dual-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
@@ -3065,12 +3258,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>AI OS · One OS · Two Spaces</span>
-            <span class="pg">03 / 22</span>
+            <span class="pg">04 / 23</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 04: workforce (workforce) ══════════ -->
+<!-- ══════════ SLIDE 05: workforce (workforce) ══════════ -->
 
 <div class="slide bg-violet">
     <div class="slide-content">
@@ -3117,12 +3310,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>5 位 AI 員工 — 可以開始招聘的數位團隊</span>
-            <span class="pg">04 / 22</span>
+            <span class="pg">05 / 23</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 05: harness_skill (fullbleed) ══════════ -->
+<!-- ══════════ SLIDE 06: harness_skill (fullbleed) ══════════ -->
 
 <div class="slide fullbleed" data-slide="harness_skill">
     
@@ -3132,12 +3325,12 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     
     <div class="meta fullbleed-meta">
         <span>The Pocket Company Framework · powered by TSpace · Turncloud VIN</span>
-        <span class="pg">05 / 22</span>
+        <span class="pg">06 / 23</span>
     </div>
     
 </div>
 
-<!-- ══════════ SLIDE 06: pandora (agent) ══════════ -->
+<!-- ══════════ SLIDE 07: pandora (agent) ══════════ -->
 
 
 
@@ -3196,11 +3389,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Pandora — AI Native Social Listening Agent · quant → qual</span>
-        <span class="pg">06 / 22</span>
+        <span class="pg">07 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 07: pandora_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 08: pandora_demo (demo) ══════════ -->
 
 
 
@@ -3264,11 +3457,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Pandora — Auto Insight Report</span>
-        <span class="pg">07 / 22</span>
+        <span class="pg">08 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 08: moana (agent) ══════════ -->
+<!-- ══════════ SLIDE 09: moana (agent) ══════════ -->
 
 
 
@@ -3338,11 +3531,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Moana — Culture Listening × Fine-tuned Generation · MVP LIVE</span>
-        <span class="pg">08 / 22</span>
+        <span class="pg">09 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 09: moana_culture_flow (demo) ══════════ -->
+<!-- ══════════ SLIDE 10: moana_culture_flow (demo) ══════════ -->
 
 
 
@@ -3384,11 +3577,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening 整合架構</span>
-        <span class="pg">09 / 22</span>
+        <span class="pg">10 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 10: moana_culture_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 11: moana_culture_demo (demo) ══════════ -->
 
 
 
@@ -3445,11 +3638,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening Live Demo</span>
-        <span class="pg">10 / 22</span>
+        <span class="pg">11 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 11: banana (agent) ══════════ -->
+<!-- ══════════ SLIDE 12: banana (agent) ══════════ -->
 
 
 
@@ -3520,11 +3713,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Banana — Visual Design · MVP LIVE</span>
-        <span class="pg">11 / 22</span>
+        <span class="pg">12 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 12: banana_split_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 13: banana_split_demo (demo) ══════════ -->
 
 
 
@@ -3586,11 +3779,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Banana — Motion Lab · Video Generation Live</span>
-        <span class="pg">12 / 22</span>
+        <span class="pg">13 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 13: banana_video_edit (demo) ══════════ -->
+<!-- ══════════ SLIDE 14: banana_video_edit (demo) ══════════ -->
 
 
 
@@ -3654,11 +3847,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Banana Split — Reels Studio · Agentic Editing</span>
-        <span class="pg">13 / 22</span>
+        <span class="pg">14 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 14: adriana (agent) ══════════ -->
+<!-- ══════════ SLIDE 15: adriana (agent) ══════════ -->
 
 
 
@@ -3740,11 +3933,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Adriana — Personalization Agent · BUILDING</span>
-        <span class="pg">14 / 22</span>
+        <span class="pg">15 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 15: adriana_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 16: adriana_demo (demo) ══════════ -->
 
 
 
@@ -3806,11 +3999,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Adriana — Conversational Ad Intelligence</span>
-        <span class="pg">15 / 22</span>
+        <span class="pg">16 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 16: stacey (agent) ══════════ -->
+<!-- ══════════ SLIDE 17: stacey (agent) ══════════ -->
 
 
 
@@ -3880,11 +4073,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Stacey — Orchestrator · BUILDING</span>
-        <span class="pg">16 / 22</span>
+        <span class="pg">17 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 17: stacey_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 18: stacey_demo (demo) ══════════ -->
 
 
 
@@ -3946,11 +4139,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Stacey × Pandora — Dr.Wu Sentiment Analysis Live</span>
-        <span class="pg">17 / 22</span>
+        <span class="pg">18 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 18: ecosystem_chapter (chapter) ══════════ -->
+<!-- ══════════ SLIDE 19: ecosystem_chapter (chapter) ══════════ -->
 
 
 
@@ -4010,11 +4203,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta chapter-meta">
         <span>Part 02 — Our AIOS ecosystem · Raccoon · Rytho · Luna · CUHK</span>
-        <span class="pg">18 / 22</span>
+        <span class="pg">19 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 19: raccoon_partnership (demo) ══════════ -->
+<!-- ══════════ SLIDE 20: raccoon_partnership (demo) ══════════ -->
 
 
 
@@ -4091,11 +4284,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>First ecosystem partner — Raccoon AI · Conversation Agent specialist</span>
-        <span class="pg">19 / 22</span>
+        <span class="pg">20 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 20: rytho_partnership (demo) ══════════ -->
+<!-- ══════════ SLIDE 21: rytho_partnership (demo) ══════════ -->
 
 
 
@@ -4172,11 +4365,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Second ecosystem partner — Rytho × Accucrazy · Music Agent OS · Rhyme Engine</span>
-        <span class="pg">20 / 22</span>
+        <span class="pg">21 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 21: luna_partnership (demo) ══════════ -->
+<!-- ══════════ SLIDE 22: luna_partnership (demo) ══════════ -->
 
 
 
@@ -4253,11 +4446,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Third ecosystem partner — Luna AI · Viral Content Engine</span>
-        <span class="pg">21 / 22</span>
+        <span class="pg">22 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 22: ecosystem (ecosystem) ══════════ -->
+<!-- ══════════ SLIDE 23: ecosystem (ecosystem) ══════════ -->
 
 <div class="slide bg-dark">
     <div class="slide-content">
@@ -4347,7 +4540,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>Ian Wu · CEO Accucrazy — Enterprise AIOS · the ecosystem we grow up together</span>
-            <span class="pg">22 / 22</span>
+            <span class="pg">23 / 23</span>
         </div>
     </div>
 </div>
