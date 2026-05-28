@@ -917,6 +917,39 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
+   FULLBLEED SLIDE — the hero image (or video) covers the entire slide.
+   Used for content where the artwork already carries the title/typo.
+   ═══════════════════════════════════════════════════════════════════ */
+.slide.fullbleed { padding: 0; overflow: hidden; background: #050608; }
+.slide.fullbleed .fullbleed-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    z-index: 0;
+}
+.slide.fullbleed .fullbleed-meta {
+    position: absolute;
+    left: 2.2cqh;
+    right: 2.2cqh;
+    bottom: 1.6cqh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(20,22,28,0.55);
+    font-size: 1.45cqh;
+    letter-spacing: 0.05em;
+    z-index: 2;
+    pointer-events: none;
+}
+.slide.fullbleed .fullbleed-meta .pg {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
    DEMO SLIDE — video/image as the hero, multiple cinematic variants
    ═══════════════════════════════════════════════════════════════════ */
 .slide.demo { padding: 0; }
@@ -2865,7 +2898,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>The Pocket Company — 三層架構,一張圖看懂</span>
-            <span class="pg">02 / 25</span>
+            <span class="pg">02 / 23</span>
         </div>
     </div>
 </div>
@@ -2979,7 +3012,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>AI OS · One OS · Two Spaces</span>
-            <span class="pg">03 / 25</span>
+            <span class="pg">03 / 23</span>
         </div>
     </div>
 </div>
@@ -3031,60 +3064,24 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>5 位 AI 員工 — 可以開始招聘的數位團隊</span>
-            <span class="pg">04 / 25</span>
+            <span class="pg">04 / 23</span>
         </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 05: harness_skill (demo) ══════════ -->
+<!-- ══════════ SLIDE 05: harness_skill (fullbleed) ══════════ -->
 
-
-
-
-<div class="slide demo demo-stacked demo-tone-cyan demo-has-launch" data-slide="harness_skill">
-    <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
+<div class="slide fullbleed" data-slide="harness_skill">
+    
+    <img class="fullbleed-media" src="img/harness_as_llm_input_v11b_final.jpg" alt="Multi-Agent × Harness Engineering — The Pocket Company Framework powered by TSpace · LLM-agnostic with Gemini Pro / Claude Opus / Turncloud VIN">
+    
 
     
-    
-    <div class="demo-launch-banner">
-        <div class="demo-launch-pulse">●</div>
-        <div class="demo-launch-eyebrow">PRODUCT LAUNCH · 全新發布</div>
-        <img class="demo-launch-logo" src="img/tspace_logo.png" alt="TSpace">
-        <div class="demo-launch-tagline"><strong>Turncloud VIN</strong> — 騰雲基於 <strong>NVIDIA Nemotron</strong> 為 <strong>TSpace</strong> 架構優化的地端模型</div>
+    <div class="meta fullbleed-meta">
+        <span>The Pocket Company Framework · powered by TSpace · Turncloud VIN</span>
+        <span class="pg">05 / 23</span>
     </div>
     
-
-    
-    <div class="demo-stage">
-        <div class="demo-media demo-media-contain">
-            <div class="demo-media-halo"></div>
-            <div class="demo-media-frame">
-                
-                <img src="img/harness_as_llm_input_v11b_final.jpg" alt="Multi-Agent × Harness Engineering 打造的協作架構 — The Pocket Company Framework by TSpace, powered by TSpace, LLM-agnostic with Gemini Pro / Claude Opus / Turncloud VIN">
-                
-            </div>
-            
-            <div class="demo-marker">● HARNESS · DEEP DIVE</div>
-            
-        </div>
-
-        
-        <div class="demo-info">
-            <div class="tag tag-cyan">THE POCKET COMPANY FRAMEWORK · by TSpace</div>
-            <h2 class="demo-title">Multi-Agent × <span class="c">Harness</span> · Powered by <span class="c">TSpace</span></h2>
-            
-        </div>
-
-        
-        
-
-        
-    </div>
-
-    <div class="meta demo-meta">
-        <span>The Pocket Company Framework · by TSpace · Powered by TSpace · Turncloud VIN launch</span>
-        <span class="pg">05 / 25</span>
-    </div>
 </div>
 
 <!-- ══════════ SLIDE 06: pandora (agent) ══════════ -->
@@ -3112,32 +3109,8 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
         <div class="agent-info">
             <div class="tag tag-cyan">AGENT 01 / 05</div>
             <h2 class="agent-title"><span class="c">Pandora</span> — 看見市場的 AI</h2>
-            <p class="agent-sub"><strong>AI 原生情緒判斷</strong> × <strong>品牌相關性過濾</strong> ── 從<strong>量化</strong>走進<strong>質化</strong>,看見訊號背後的意義。</p>
+            <p class="agent-sub"><strong>AI Native Social Listening Agent</strong> ── 原生情緒判斷 × 品牌相關性過濾,從<strong>量化</strong>走進<strong>質化</strong>。</p>
 
-            
-            <div class="agent-stats">
-                
-                <div class="agent-stat agent-stat-cyan">
-                    <div class="agent-stat-num">15</div>
-                    <div class="agent-stat-label">Skills</div>
-                </div>
-                
-                <div class="agent-stat agent-stat-cyan">
-                    <div class="agent-stat-num">46</div>
-                    <div class="agent-stat-label">Tools</div>
-                </div>
-                
-                <div class="agent-stat agent-stat-violet">
-                    <div class="agent-stat-num">3</div>
-                    <div class="agent-stat-label">層 Memory</div>
-                </div>
-                
-                <div class="agent-stat agent-stat-green">
-                    <div class="agent-stat-num">24/7</div>
-                    <div class="agent-stat-label">市場監測</div>
-                </div>
-                
-            </div>
             
 
             
@@ -3158,7 +3131,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                     <div class="agent-block-label">LIVE CASES</div>
                     <div class="agent-block-name">已上線案例</div>
                     
-                    <p class="agent-block-body"><strong>DR.WU</strong> War Room · 每小時負面追蹤；<strong>全家 / 7-ELEVEN</strong> · 346 家媒體覆蓋率掃描。</p>
+                    <p class="agent-block-body"><strong>全家便利商店</strong> × <strong>全國電子</strong> ── 每日輿情、議題追蹤、媒體覆蓋率掃描,即時進入決策視野。</p>
                 </div>
                 
             </div>
@@ -3169,8 +3142,8 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
 
     <div class="meta agent-meta">
-        <span>Pandora — AI-native sentiment × brand-relevance · quant → qual</span>
-        <span class="pg">06 / 25</span>
+        <span>Pandora — AI Native Social Listening Agent · quant → qual</span>
+        <span class="pg">06 / 23</span>
     </div>
 </div>
 
@@ -3238,7 +3211,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Pandora — Auto Insight Report</span>
-        <span class="pg">07 / 25</span>
+        <span class="pg">07 / 23</span>
     </div>
 </div>
 
@@ -3287,10 +3260,10 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                 
                 <div class="agent-block agent-block-violet">
                     <div class="agent-block-label">STEP 02</div>
-                    <div class="agent-block-name">Culture Fit 內容生成</div>
+                    <div class="agent-block-name">精選語料 × Fine-tune</div>
                     
                     <ul class="agent-block-bullets">
-                        <li>內容貼齊<strong>當下發生</strong>的對話</li><li>EDM / 貼文 / 短影音 / KOL 稿一次到位</li><li>品牌調性 × 受眾語感<strong>自動對齊</strong></li>
+                        <li><strong>精選數據</strong> ── 我們自己策展的高品質語料</li><li><strong>語料訓練 × Fine-tune</strong> ── 不是套通用模型</li><li>品牌調性 × 受眾語感<strong>學進模型本體</strong></li>
                     </ul>
                     
                     
@@ -3298,9 +3271,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                 
                 <div class="agent-block agent-block-cyan">
                     <div class="agent-block-label">STEP 03</div>
-                    <div class="agent-block-name">直通 Social Commerce</div>
+                    <div class="agent-block-name">Culture Fit 內容直通 Social Commerce</div>
                     
-                    <p class="agent-block-body">串聯 <strong>IG / FB / TikTok / LINE</strong> 商店 ── <strong>從聽見話題到拿下訂單</strong>。</p>
+                    <p class="agent-block-body">EDM / 貼文 / 短影音 / KOL 稿一次到位,串聯 <strong>IG / FB / TikTok / LINE</strong> 商店 ── <strong>從聽見話題到拿下訂單</strong>。</p>
                 </div>
                 
             </div>
@@ -3311,8 +3284,8 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
 
     <div class="meta agent-meta">
-        <span>Moana — Culture Listening × Social Commerce · MVP LIVE</span>
-        <span class="pg">08 / 25</span>
+        <span>Moana — Culture Listening × Fine-tuned Generation · MVP LIVE</span>
+        <span class="pg">08 / 23</span>
     </div>
 </div>
 
@@ -3358,7 +3331,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening 整合架構</span>
-        <span class="pg">09 / 25</span>
+        <span class="pg">09 / 23</span>
     </div>
 </div>
 
@@ -3419,7 +3392,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Live Case · 猛健樂 Culture Listening</span>
-        <span class="pg">10 / 25</span>
+        <span class="pg">10 / 23</span>
     </div>
 </div>
 
@@ -3485,7 +3458,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Insight → Brief → Article Pipeline</span>
-        <span class="pg">11 / 25</span>
+        <span class="pg">11 / 23</span>
     </div>
 </div>
 
@@ -3567,7 +3540,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Banana — Visual Design · MVP LIVE</span>
-        <span class="pg">12 / 25</span>
+        <span class="pg">12 / 23</span>
     </div>
 </div>
 
@@ -3633,7 +3606,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Banana — Visual Generation Live Demo</span>
-        <span class="pg">13 / 25</span>
+        <span class="pg">13 / 23</span>
     </div>
 </div>
 
@@ -3701,7 +3674,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Banana Split — Reels Studio · Agentic Editing</span>
-        <span class="pg">14 / 25</span>
+        <span class="pg">14 / 23</span>
     </div>
 </div>
 
@@ -3787,7 +3760,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Adriana — Personalization Agent · BUILDING</span>
-        <span class="pg">15 / 25</span>
+        <span class="pg">15 / 23</span>
     </div>
 </div>
 
@@ -3853,149 +3826,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Adriana — Conversational Ad Intelligence</span>
-        <span class="pg">16 / 25</span>
+        <span class="pg">16 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 17: adriana_crm_capi (demo) ══════════ -->
-
-
-
-
-<div class="slide demo demo-stacked demo-tone-violet" data-slide="adriana_crm_capi">
-    <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
-
-    
-    
-
-    
-    <div class="demo-stage">
-        <div class="demo-media demo-media-contain">
-            <div class="demo-media-halo"></div>
-            <div class="demo-media-frame">
-                
-                <img src="img/adriana_crm_capi_flow.png" alt="AI CRM × Meta CAPI 智慧轉換流程">
-                
-            </div>
-            
-            <div class="demo-marker">● FLOW DIAGRAM</div>
-            
-        </div>
-
-        
-        <div class="demo-info">
-            <div class="tag tag-violet">ADRIANA · CRM × CAPI 串接</div>
-            <h2 class="demo-title"><span class="v">AI CRM × Meta CAPI</span> 智慧轉換</h2>
-            <p class="demo-sub">第一方數據與廣告平台真正串起來。</p>
-        </div>
-
-        
-        
-        <div class="demo-pills">
-            
-            <div class="demo-pill demo-pill-1 demo-pill-violet">
-                <div class="demo-pill-label">PIPELINE</div>
-                <div class="demo-pill-name">五步驟核心流程</div>
-                
-                <ul class="demo-pill-bullets">
-                    <li><strong>1.</strong> 廣告入口 · uuid</li><li><strong>2.</strong> 遊戲化填寫</li><li><strong>3.</strong> AI 產生標籤</li><li><strong>4.</strong> CAPI 回傳 Meta</li><li><strong>5.</strong> 再行銷 × 名單</li>
-                </ul>
-                
-                
-            </div>
-            
-            <div class="demo-pill demo-pill-2 demo-pill-cyan">
-                <div class="demo-pill-label">WHY</div>
-                <div class="demo-pill-name">第一方數據新黃金</div>
-                
-                <ul class="demo-pill-bullets">
-                    <li>Cookie 時代結束</li><li><strong>TCRM × TCDP × CAPI</strong> 完整閉環</li><li>數據主權回到企業</li>
-                </ul>
-                
-                
-            </div>
-            
-            <div class="demo-pill demo-pill-3 demo-pill-green">
-                <div class="demo-pill-label">VALUE</div>
-                <div class="demo-pill-name">為什麼這示範重要</div>
-                
-                <p class="demo-pill-body"><strong>互動式命理只是切角</strong> ── 任何遊戲化互動都能套用。</p>
-            </div>
-            
-        </div>
-        
-
-        
-    </div>
-
-    <div class="meta demo-meta">
-        <span>Adriana — AI CRM × Meta Conversions API</span>
-        <span class="pg">17 / 25</span>
-    </div>
-</div>
-
-<!-- ══════════ SLIDE 18: adriana_crm_demo (demo) ══════════ -->
-
-
-
-
-<div class="slide demo demo-cinema demo-tone-violet" data-slide="adriana_crm_demo">
-    <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
-
-    
-    
-
-    
-    <div class="demo-stage">
-        <div class="demo-media demo-media-contain">
-            <div class="demo-media-halo"></div>
-            <div class="demo-media-frame">
-                
-                <video src="img/adriana_crm_demo.mov" autoplay loop muted playsinline ></video>
-                
-            </div>
-            <div class="demo-media-scrim"></div>
-            <div class="demo-marker">● ● CRM × CAPI LIVE</div>
-            
-        </div>
-
-        
-        <div class="demo-info">
-            <div class="tag tag-violet">ADRIANA · CRM × CAPI LIVE DEMO</div>
-            <h2 class="demo-title">AI CRM × Meta CAPI — <span class="v">實戰 Demo</span></h2>
-            <p class="demo-sub">前一頁看流程圖;這頁看實際運作 ── <strong>遊戲 → 標籤 → CAPI → 廣告分眾</strong>一次跑完。</p>
-        </div>
-
-        
-        
-        <div class="demo-pills">
-            
-            <div class="demo-pill demo-pill-1 demo-pill-violet">
-                <div class="demo-pill-label">DEMO 看點</div>
-                <div class="demo-pill-name">演示重點</div>
-                
-                <ul class="demo-pill-bullets">
-                    <li><strong>遊戲化互動</strong> · 邊玩邊填資料</li><li><strong>AI 即時產出個人化標籤</strong></li><li><strong>CAPI 回傳 Meta</strong> · 自定義受眾</li>
-                </ul>
-                
-                
-            </div>
-            
-        </div>
-        
-
-        
-        <div class="demo-tagline">一次互動 = 一筆<strong class="v">第一方資料</strong> = Meta 的<strong class="c">精準分眾種子</strong>。</div>
-        
-    </div>
-
-    <div class="meta demo-meta">
-        <span>Adriana — AI CRM × Meta CAPI Live</span>
-        <span class="pg">18 / 25</span>
-    </div>
-</div>
-
-<!-- ══════════ SLIDE 19: stacey (agent) ══════════ -->
+<!-- ══════════ SLIDE 17: stacey (agent) ══════════ -->
 
 
 
@@ -4065,11 +3900,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Stacey — Orchestrator · BUILDING</span>
-        <span class="pg">19 / 25</span>
+        <span class="pg">17 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 20: stacey_demo (demo) ══════════ -->
+<!-- ══════════ SLIDE 18: stacey_demo (demo) ══════════ -->
 
 
 
@@ -4131,11 +3966,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Stacey × Pandora — Dr.Wu Sentiment Analysis Live</span>
-        <span class="pg">20 / 25</span>
+        <span class="pg">18 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 21: ecosystem_chapter (chapter) ══════════ -->
+<!-- ══════════ SLIDE 19: ecosystem_chapter (chapter) ══════════ -->
 
 
 
@@ -4195,11 +4030,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta chapter-meta">
         <span>Part 02 — Pandora jams with Luna · Raccoon · Rytho</span>
-        <span class="pg">21 / 25</span>
+        <span class="pg">19 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 22: raccoon_partnership (demo) ══════════ -->
+<!-- ══════════ SLIDE 20: raccoon_partnership (demo) ══════════ -->
 
 
 
@@ -4276,11 +4111,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>First ecosystem partner — Raccoon AI · Conversation Agent specialist</span>
-        <span class="pg">22 / 25</span>
+        <span class="pg">20 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 23: rytho_partnership (demo) ══════════ -->
+<!-- ══════════ SLIDE 21: rytho_partnership (demo) ══════════ -->
 
 
 
@@ -4301,14 +4136,14 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                 
             </div>
             
-            <div class="demo-marker">● LIVE DEMO · 黑卡逃亡 — 14 秒</div>
+            <div class="demo-marker">● LIVE DEMO · 14 秒成品</div>
             
         </div>
 
         
         <div class="demo-info">
             <div class="tag tag-orange">ECOSYSTEM · 首發夥伴 #2 · Rytho × Accucrazy</div>
-            <h2 class="demo-title">30 秒寫出<span class="v">唱新光的饒舌</span></h2>
+            <h2 class="demo-title">30 秒寫出<span class="v">會押韻的品牌饒舌</span></h2>
             
         </div>
 
@@ -4321,7 +4156,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                 <div class="demo-pill-name"><span class="c">Accucrazy 情資</span></div>
                 
                 <ul class="demo-pill-bullets">
-                    <li>Pandora 爬到的<strong>新光三越情境</strong></li><li>品牌議題 · 場景 · 受眾語感</li>
+                    <li>Pandora 爬到的<strong>品牌情境</strong></li><li>議題 · 場景 · 受眾語感</li>
                 </ul>
                 
                 
@@ -4343,7 +4178,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                 <div class="demo-pill-name">第一個會<span class="v">寫饒舌</span>的 AI OS</div>
                 
                 <ul class="demo-pill-bullets">
-                    <li>《黑卡逃亡》── 唱新光三越</li><li>情資 → 旋律 → 直接上社群</li>
+                    <li>情資 → <strong>主歌副歌</strong> → 直接上社群</li><li>品牌敘事改用<strong>節奏</strong>說話</li>
                 </ul>
                 
                 
@@ -4357,11 +4192,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Second ecosystem partner — Rytho × Accucrazy · Music Agent OS · Rhyme Engine</span>
-        <span class="pg">23 / 25</span>
+        <span class="pg">21 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 24: luna_partnership (demo) ══════════ -->
+<!-- ══════════ SLIDE 22: luna_partnership (demo) ══════════ -->
 
 
 
@@ -4378,7 +4213,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <img src="img/luna_character.png" alt="Luna AI — 爆文機器人角色">
+                <img src="img/luna_hero_composite.jpg" alt="Luna AI — 爆文機器人 · 人型 × 產品 UI 合成">
                 
             </div>
             
@@ -4438,11 +4273,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Third ecosystem partner — Luna AI · Viral Content Engine</span>
-        <span class="pg">24 / 25</span>
+        <span class="pg">22 / 23</span>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 25: ecosystem (ecosystem) ══════════ -->
+<!-- ══════════ SLIDE 23: ecosystem (ecosystem) ══════════ -->
 
 <div class="slide bg-dark">
     <div class="slide-content">
@@ -4459,10 +4294,10 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                 
                 
 <div class="box b-cyan">
-    <h4>三個開放標準</h4>
+    <h4>我們的 AIOS 生態系 · 三家首發夥伴</h4>
     
     <ul>
-        <li><strong>A2A Protocol</strong> · 你的 Agent 跟我們對話</li><li><strong>MCP / WebMCP</strong> · 你的工具被任何 Agent 呼叫</li><li><strong>OpenClaw 開源框架</strong> · claw3d.ai，直接拿去用</li>
+        <li><strong>Raccoon AI</strong> ── 客服 AI 專家</li><li><strong>Rytho</strong> ── 懂寫台灣饒舌的 rapper AI</li><li><strong>Luna AI</strong> ── 複製你靈魂的自媒體爆文專家</li>
     </ul>
     
 </div>
@@ -4474,24 +4309,24 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                     <div class="eco-pill">
                         <span class="eco-dot d1"></span>
                         <div>
-                            <h6>Raccoon AI · 對話 Agent</h6>
-                            <p>★ 首發夥伴 · 私域對話 → 輿情</p>
+                            <h6>Raccoon AI</h6>
+                            <p>客服 AI 專家 · 私域對話 → 回流給 Pandora</p>
                         </div>
                     </div>
                     
                     <div class="eco-pill">
                         <span class="eco-dot d2"></span>
                         <div>
-                            <h6>Rytho · Music Agent OS</h6>
-                            <p>★ 首發夥伴 · 情資 × 押韻引擎</p>
+                            <h6>Rytho</h6>
+                            <p>懂寫台灣饒舌的 rapper AI · 押韻引擎跑主副歌</p>
                         </div>
                     </div>
                     
                     <div class="eco-pill">
                         <span class="eco-dot d3"></span>
                         <div>
-                            <h6>Luna AI · 爆文機器人</h6>
-                            <p>★ 首發夥伴 · 作者口吻 × 爆文公式</p>
+                            <h6>Luna AI</h6>
+                            <p>複製你靈魂的自媒體爆文專家 · 一次 30 篇</p>
                         </div>
                     </div>
                     
@@ -4507,7 +4342,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
                         <span class="eco-dot d5"></span>
                         <div>
                             <h6>產業垂直 SaaS</h6>
-                            <p>用 A2A 對接，成延伸節點</p>
+                            <p>用 A2A 對接,成延伸節點</p>
                         </div>
                     </div>
                     
@@ -4523,8 +4358,8 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
                 
                 <div class="box b-orange" style="margin-top: 0.7cqh;">
-                    <p style="font-size: 1.85cqh; text-align: center; line-height: 1.4;"><strong class="o">我們帶來</strong>：騰雲十年的<strong>人、場、貨</strong>真實場景 + <strong>CUHK</strong> 學術背書。<br>
-<strong class="o">你帶來</strong>：你最擅長的 Agent 能力。一起<strong>跑出價值</strong>。</p>
+                    <p style="font-size: 1.85cqh; text-align: center; line-height: 1.4;"><strong class="o">我們帶來</strong>:騰雲十年的<strong>人、場、貨</strong>真實場景 + <strong>CUHK</strong> 學術背書。<br>
+<strong class="o">你帶來</strong>:你最擅長的 Agent 能力。一起<strong>跑出價值</strong>。</p>
                 </div>
                 
             </div>
@@ -4532,7 +4367,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>Ian Wu · CEO Accucrazy — Enterprise AIOS · ecosystem we want to grow with · GFMC Madrid academic proof</span>
-            <span class="pg">25 / 25</span>
+            <span class="pg">23 / 23</span>
         </div>
     </div>
 </div>
