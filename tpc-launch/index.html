@@ -1276,6 +1276,20 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .demo-stacked .demo-title { font-size: 4.2cqh; flex: 1; min-width: 0; margin: 0; }
 .demo-stacked .demo-sub   { display: none; }
 .demo-stacked .demo-media { grid-area: media; min-height: 0; }
+
+/* When there is no pills row, let media fill all remaining space */
+.demo-stacked .demo-stage:not(:has(.demo-pills)) {
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "info"
+        "media";
+    padding-bottom: 4cqh;
+}
+/* Slightly tighten the title row so the diagram gets the maximum stage */
+.demo-has-launch.demo-stacked .demo-info {
+    margin-top: 0.4cqh;
+}
+.demo-has-launch.demo-stacked .demo-title { font-size: 3.5cqh; }
 .demo-stacked .demo-pills {
     grid-area: pills;
     flex-direction: row;
@@ -1284,6 +1298,91 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 }
 .demo-stacked .demo-pills .demo-pill { flex: 1; min-width: 0; }
 .demo-stacked .demo-tagline { display: none; }
+
+/* ─── LAUNCH ANNOUNCEMENT BANNER (top of demo slide) ─── */
+.demo-launch-banner {
+    position: absolute;
+    top: 1.6cqh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    gap: 1.4cqh;
+    padding: 0.7cqh 1.6cqh 0.7cqh 1.1cqh;
+    background: linear-gradient(95deg, #06b6d4 0%, #22d3ee 45%, #a5f3fc 100%);
+    color: #ffffff;
+    border-radius: 100px;
+    box-shadow:
+        0 14px 36px rgba(6, 182, 212, 0.32),
+        0 4px 12px rgba(15, 23, 42, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 88%;
+}
+.demo-launch-pulse {
+    flex: none;
+    font-size: 1.1cqh;
+    color: #ffffff;
+    line-height: 1;
+    animation: demo-launchPulse 1.6s ease-in-out infinite;
+    text-shadow: 0 0 8px rgba(255,255,255,0.9);
+}
+@keyframes demo-launchPulse {
+    0%, 100% { opacity: 1;   transform: scale(1); }
+    50%      { opacity: 0.55; transform: scale(1.3); }
+}
+.demo-launch-eyebrow {
+    flex: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25cqh;
+    font-weight: 800;
+    letter-spacing: 2.6px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding-right: 1.2cqh;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+.demo-launch-logo {
+    flex: none;
+    height: 3.4cqh;
+    width: auto;
+    filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(15, 23, 42, 0.25));
+}
+.demo-launch-tagline {
+    flex: 1;
+    min-width: 0;
+    font-size: 1.55cqh;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.3;
+    letter-spacing: 0.2px;
+}
+.demo-launch-tagline strong { font-weight: 900; color: #ffffff; }
+.demo-launch-tagline em {
+    font-style: normal;
+    font-weight: 800;
+    background: rgba(255,255,255,0.22);
+    padding: 0 6px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+/* push demo content down when launch banner is present */
+.demo-has-launch .demo-stage { padding-top: 7.5cqh; }
+.demo-has-launch.demo-stacked .demo-stage { padding-top: 7.8cqh; }
+
+/* slide-in animation when the slide becomes active */
+.demo-launch-banner {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-12px);
+}
+.slide.active.demo .demo-launch-banner {
+    animation: demo-launchIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+}
+@keyframes demo-launchIn {
+    0%   { opacity: 0; transform: translateX(-50%) translateY(-12px); }
+    100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
 
 /* ─── keyframes ─── */
 @keyframes demo-mediaIn {
@@ -1569,7 +1668,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     align-items: flex-start;
     justify-content: center;
     max-width: 56%;
-    padding: 5cqh 4cqh 5.5cqh 7cqh;
+    padding: 5cqh 4cqh 5.5cqh 9.5cqh;
     gap: 1.2cqh;
 }
 .slide.chapter.chapter-side-hero .chapter-title {
@@ -2942,8 +3041,18 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
 
 
-<div class="slide demo demo-stacked demo-tone-cyan" data-slide="harness_skill">
+<div class="slide demo demo-stacked demo-tone-cyan demo-has-launch" data-slide="harness_skill">
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
+
+    
+    
+    <div class="demo-launch-banner">
+        <div class="demo-launch-pulse">●</div>
+        <div class="demo-launch-eyebrow">PRODUCT LAUNCH · 全新發布</div>
+        <img class="demo-launch-logo" src="img/tspace_logo.png" alt="TSpace">
+        <div class="demo-launch-tagline"><strong>專屬大模型</strong> · 客戶可用<strong>騰雲自產 Token</strong> · 結合 <strong>NVIDIA × VIN</strong></div>
+    </div>
+    
 
     
     <div class="demo-stage">
@@ -2961,8 +3070,8 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         
         <div class="demo-info">
-            <div class="tag tag-cyan">THE POCKET COMPANY FRAMEWORK · by TSpace</div>
-            <h2 class="demo-title">Multi-Agent × <span class="c">Harness Engineering</span> 打造的協作架構</h2>
+            <div class="tag tag-cyan">THE POCKET COMPANY FRAMEWORK</div>
+            <h2 class="demo-title">Multi-Agent × <span class="c">Harness</span> 打造的協作架構</h2>
             
         </div>
 
@@ -2973,7 +3082,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
 
     <div class="meta demo-meta">
-        <span>The Pocket Company framework · by TSpace</span>
+        <span>The Pocket Company framework · by TSpace · TSpace Foundation Model launch</span>
         <span class="pg">05 / 26</span>
     </div>
 </div>
@@ -3072,6 +3181,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
 <div class="slide demo demo-spotL demo-tone-cyan" data-slide="pandora_demo">
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
+
+    
+    
 
     
     <div class="demo-stage">
@@ -3213,6 +3325,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
 
     
+    
+
+    
     <div class="demo-stage">
         <div class="demo-media demo-media-contain">
             <div class="demo-media-halo"></div>
@@ -3287,6 +3402,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
 
     
+    
+
+    
     <div class="demo-stage">
         <div class="demo-media demo-media-contain">
             <div class="demo-media-halo"></div>
@@ -3343,6 +3461,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
 <div class="slide demo demo-spotR demo-tone-orange" data-slide="moana_case_02">
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
+
+    
+    
 
     
     <div class="demo-stage">
@@ -3490,6 +3611,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
 
     
+    
+
+    
     <div class="demo-stage">
         <div class="demo-media demo-media-contain">
             <div class="demo-media-halo"></div>
@@ -3551,6 +3675,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
 <div class="slide demo demo-cinema demo-tone-orange" data-slide="banana_video_edit">
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
+
+    
+    
 
     
     <div class="demo-stage">
@@ -3704,6 +3831,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
 
     
+    
+
+    
     <div class="demo-stage">
         <div class="demo-media demo-media-contain">
             <div class="demo-media-halo"></div>
@@ -3765,6 +3895,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
 <div class="slide demo demo-stacked demo-tone-violet" data-slide="adriana_crm_capi">
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
+
+    
+    
 
     
     <div class="demo-stage">
@@ -3839,6 +3972,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
 <div class="slide demo demo-cinema demo-tone-violet" data-slide="adriana_crm_demo">
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
+
+    
+    
 
     
     <div class="demo-stage">
@@ -3973,6 +4109,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
 
     
+    
+
+    
     <div class="demo-stage">
         <div class="demo-media demo-media-contain">
             <div class="demo-media-halo"></div>
@@ -4100,6 +4239,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
 
     
+    
+
+    
     <div class="demo-stage">
         <div class="demo-media demo-media-contain">
             <div class="demo-media-halo"></div>
@@ -4178,6 +4320,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
 
     
+    
+
+    
     <div class="demo-stage">
         <div class="demo-media">
             <div class="demo-media-halo"></div>
@@ -4254,6 +4399,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
 <div class="slide demo demo-spotR demo-tone-orange" data-slide="luna_partnership">
     <div class="bg-image demo-bg" style="background-image: url('img/anim_backdrop.jpg');"></div>
+
+    
+    
 
     
     <div class="demo-stage">
