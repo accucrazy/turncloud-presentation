@@ -1158,6 +1158,202 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
+   REDEEM SLIDE — "one more thing" CTA with scannable QR poster
+   ═══════════════════════════════════════════════════════════════════ */
+.slide.redeem {
+    padding: 0;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 30% 40%, #0f172a 0%, #050608 70%);
+}
+.slide.redeem .redeem-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 70% 50%, rgba(56, 189, 248, 0.18), transparent 55%),
+        radial-gradient(circle at 22% 78%, rgba(168, 85, 247, 0.14), transparent 55%),
+        radial-gradient(circle at 78% 12%, rgba(251, 191, 36, 0.10), transparent 55%);
+    pointer-events: none;
+}
+.slide.redeem .redeem-stage {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4cqh;
+    padding: 6cqh 6cqh 5cqh;
+}
+.slide.redeem .redeem-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #e2e8f0;
+    z-index: 2;
+}
+.slide.redeem .redeem-eyebrow {
+    display: inline-flex;
+    width: max-content;
+    align-items: center;
+    gap: 0.7cqh;
+    padding: 0.7cqh 1.4cqh;
+    background: rgba(8, 10, 16, 0.55);
+    border: 1px solid rgba(251, 191, 36, 0.5);
+    border-radius: 999px;
+    color: #fbbf24;
+    font-size: 1.7cqh;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    margin-bottom: 2.5cqh;
+}
+.slide.redeem .redeem-title {
+    font-size: 6.2cqh;
+    line-height: 1.18;
+    font-weight: 800;
+    margin: 0 0 2cqh;
+    letter-spacing: -0.01em;
+    color: #fff;
+}
+.slide.redeem .redeem-title .c    { color: #38bdf8; }
+.slide.redeem .redeem-title .v    { color: #c084fc; }
+.slide.redeem .redeem-title .o    { color: #fbbf24; }
+.slide.redeem .redeem-title strong { font-weight: 800; }
+.slide.redeem .redeem-sub {
+    font-size: 2.2cqh;
+    line-height: 1.55;
+    color: rgba(226, 232, 240, 0.78);
+    margin: 0 0 3cqh;
+    font-weight: 400;
+}
+.slide.redeem .redeem-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6cqh;
+}
+.slide.redeem .redeem-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5cqh;
+}
+.slide.redeem .redeem-step-num {
+    flex-shrink: 0;
+    width: 4.5cqh;
+    height: 4.5cqh;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.1cqh;
+    font-weight: 800;
+    color: #050608;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    box-shadow: 0 0.3cqh 1cqh rgba(251, 191, 36, 0.35);
+}
+.slide.redeem .redeem-step-body {
+    padding-top: 0.4cqh;
+}
+.slide.redeem .redeem-step-title {
+    font-size: 2cqh;
+    font-weight: 700;
+    color: #f1f5f9;
+    line-height: 1.25;
+}
+.slide.redeem .redeem-step-sub {
+    font-size: 1.65cqh;
+    line-height: 1.45;
+    color: rgba(203, 213, 225, 0.7);
+    margin-top: 0.3cqh;
+}
+.slide.redeem .redeem-footnote {
+    margin-top: 2.5cqh;
+    font-size: 1.5cqh;
+    color: rgba(148, 163, 184, 0.7);
+    letter-spacing: 0.05em;
+}
+.slide.redeem .redeem-qr-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.slide.redeem .redeem-qr-glow {
+    position: absolute;
+    inset: -5cqh;
+    background: radial-gradient(circle at center, rgba(56, 189, 248, 0.28), transparent 60%);
+    filter: blur(2.5cqh);
+    pointer-events: none;
+}
+.slide.redeem .redeem-qr {
+    position: relative;
+    max-height: 84cqh;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 1.4cqh;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 3cqh 6cqh rgba(0, 0, 0, 0.55),
+        0 0 6cqh rgba(56, 189, 248, 0.18);
+    animation: redeem-qr-float 6s ease-in-out infinite;
+}
+@keyframes redeem-qr-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-0.8cqh); }
+}
+.slide.redeem .redeem-scan-hint {
+    position: absolute;
+    bottom: -3cqh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7cqh;
+    padding: 0.9cqh 1.6cqh;
+    background: rgba(8, 10, 16, 0.7);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 999px;
+    color: #cbd5e1;
+    font-size: 1.55cqh;
+    letter-spacing: 0.1em;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    white-space: nowrap;
+}
+.slide.redeem .redeem-scan-dot {
+    color: #38bdf8;
+    font-size: 1.7cqh;
+    animation: redeem-scan-pulse 1.6s ease-in-out infinite;
+}
+@keyframes redeem-scan-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.4; transform: scale(0.85); }
+}
+.slide.redeem .redeem-meta {
+    position: absolute;
+    left: 2.2cqh;
+    right: 2.2cqh;
+    bottom: 1.4cqh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(148, 163, 184, 0.55);
+    font-size: 1.35cqh;
+    letter-spacing: 0.05em;
+    z-index: 2;
+    pointer-events: none;
+}
+.slide.redeem .redeem-meta .pg {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
    DEMO SLIDE — video/image as the hero, multiple cinematic variants
    ═══════════════════════════════════════════════════════════════════ */
 .slide.demo { padding: 0; }
@@ -3070,7 +3266,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta trailer-meta">
         <span>Preview · The Pocket Company × TurnCloud · 2026</span>
-        <span class="pg">02 / 23</span>
+        <span class="pg">02 / 24</span>
     </div>
 </div>
 
@@ -3144,7 +3340,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>The Pocket Company — 三層架構,一張圖看懂</span>
-            <span class="pg">03 / 23</span>
+            <span class="pg">03 / 24</span>
         </div>
     </div>
 </div>
@@ -3258,7 +3454,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>AI OS · One OS · Two Spaces</span>
-            <span class="pg">04 / 23</span>
+            <span class="pg">04 / 24</span>
         </div>
     </div>
 </div>
@@ -3310,7 +3506,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>5 位 AI 員工 — 可以開始招聘的數位團隊</span>
-            <span class="pg">05 / 23</span>
+            <span class="pg">05 / 24</span>
         </div>
     </div>
 </div>
@@ -3325,7 +3521,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     
     <div class="meta fullbleed-meta">
         <span>The Pocket Company Framework · powered by TSpace · Turncloud VIN</span>
-        <span class="pg">06 / 23</span>
+        <span class="pg">06 / 24</span>
     </div>
     
 </div>
@@ -3389,7 +3585,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Pandora — AI Native Social Listening Agent · quant → qual</span>
-        <span class="pg">07 / 23</span>
+        <span class="pg">07 / 24</span>
     </div>
 </div>
 
@@ -3457,7 +3653,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Pandora — Auto Insight Report</span>
-        <span class="pg">08 / 23</span>
+        <span class="pg">08 / 24</span>
     </div>
 </div>
 
@@ -3531,7 +3727,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Moana — Culture Listening × Fine-tuned Generation · MVP LIVE</span>
-        <span class="pg">09 / 23</span>
+        <span class="pg">09 / 24</span>
     </div>
 </div>
 
@@ -3577,7 +3773,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening 整合架構</span>
-        <span class="pg">10 / 23</span>
+        <span class="pg">10 / 24</span>
     </div>
 </div>
 
@@ -3638,7 +3834,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening Live Demo</span>
-        <span class="pg">11 / 23</span>
+        <span class="pg">11 / 24</span>
     </div>
 </div>
 
@@ -3713,7 +3909,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Banana — Visual Design · MVP LIVE</span>
-        <span class="pg">12 / 23</span>
+        <span class="pg">12 / 24</span>
     </div>
 </div>
 
@@ -3779,7 +3975,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Banana — Motion Lab · Video Generation Live</span>
-        <span class="pg">13 / 23</span>
+        <span class="pg">13 / 24</span>
     </div>
 </div>
 
@@ -3847,7 +4043,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Banana Split — Reels Studio · Agentic Editing</span>
-        <span class="pg">14 / 23</span>
+        <span class="pg">14 / 24</span>
     </div>
 </div>
 
@@ -3933,7 +4129,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Adriana — Personalization Agent · BUILDING</span>
-        <span class="pg">15 / 23</span>
+        <span class="pg">15 / 24</span>
     </div>
 </div>
 
@@ -3999,7 +4195,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Adriana — Conversational Ad Intelligence</span>
-        <span class="pg">16 / 23</span>
+        <span class="pg">16 / 24</span>
     </div>
 </div>
 
@@ -4073,7 +4269,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Stacey — Orchestrator · BUILDING</span>
-        <span class="pg">17 / 23</span>
+        <span class="pg">17 / 24</span>
     </div>
 </div>
 
@@ -4139,7 +4335,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Stacey × Pandora — Dr.Wu Sentiment Analysis Live</span>
-        <span class="pg">18 / 23</span>
+        <span class="pg">18 / 24</span>
     </div>
 </div>
 
@@ -4203,7 +4399,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta chapter-meta">
         <span>Part 02 — Our AIOS ecosystem · Raccoon · Rytho · Luna · CUHK</span>
-        <span class="pg">19 / 23</span>
+        <span class="pg">19 / 24</span>
     </div>
 </div>
 
@@ -4284,7 +4480,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>First ecosystem partner — Raccoon AI · Conversation Agent specialist</span>
-        <span class="pg">20 / 23</span>
+        <span class="pg">20 / 24</span>
     </div>
 </div>
 
@@ -4365,7 +4561,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Second ecosystem partner — Rytho × Accucrazy · Music Agent OS · Rhyme Engine</span>
-        <span class="pg">21 / 23</span>
+        <span class="pg">21 / 24</span>
     </div>
 </div>
 
@@ -4446,7 +4642,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Third ecosystem partner — Luna AI · Viral Content Engine</span>
-        <span class="pg">22 / 23</span>
+        <span class="pg">22 / 24</span>
     </div>
 </div>
 
@@ -4540,8 +4736,70 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         <div class="meta">
             <span>Ian Wu · CEO Accucrazy — Enterprise AIOS · the ecosystem we grow up together</span>
-            <span class="pg">23 / 23</span>
+            <span class="pg">23 / 24</span>
         </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 24: redeem (redeem) ══════════ -->
+
+<div class="slide redeem" data-slide="redeem">
+    <div class="redeem-bg"></div>
+
+    <div class="redeem-stage">
+        <div class="redeem-text">
+            <div class="redeem-eyebrow">ONE MORE THING · 現場限定</div>
+            <h2 class="redeem-title">送給今天到場的你 ── <br><span class="o">100 點</span> <span class="c">Banana Split</span> 試用點數</h2>
+            <p class="redeem-sub">用最快的方式進到我們的世界 ── 直接用 Banana 產一張屬於你品牌的視覺,把今天聽到的概念<strong>立刻變成自己的素材</strong>。</p>
+
+            
+            <ol class="redeem-steps">
+                
+                <li class="redeem-step">
+                    <span class="redeem-step-num">1</span>
+                    <div class="redeem-step-body">
+                        <div class="redeem-step-title">掃描右邊 QR Code</div>
+                        <div class="redeem-step-sub">相機 / 微信 / LINE 都可以,自動帶你進入 Banana Split。</div>
+                    </div>
+                </li>
+                
+                <li class="redeem-step">
+                    <span class="redeem-step-num">2</span>
+                    <div class="redeem-step-body">
+                        <div class="redeem-step-title">註冊 / 登入帳號</div>
+                        <div class="redeem-step-sub">一封 email 完成,點數自動入帳。</div>
+                    </div>
+                </li>
+                
+                <li class="redeem-step">
+                    <span class="redeem-step-num">3</span>
+                    <div class="redeem-step-body">
+                        <div class="redeem-step-title">輸入 <strong>100 點</strong></div>
+                        <div class="redeem-step-sub">開始用文字 → 視覺,玩 Banana 整套 Agentic 生成。</div>
+                    </div>
+                </li>
+                
+            </ol>
+            
+
+            <div class="redeem-footnote">限今日到場貴賓 · 兌換期間至活動結束後 7 天</div>
+        </div>
+
+        <div class="redeem-qr-wrap">
+            <div class="redeem-qr-glow"></div>
+            <img class="redeem-qr" src="img/banana_redeem_qr.png" alt="Scan to redeem 100 Banana Split credits">
+            
+            <div class="redeem-scan-hint">
+                <span class="redeem-scan-dot">●</span>
+                <span>SCAN ME · 掃我兌換</span>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="meta redeem-meta">
+        <span>Exclusive for live audience · Banana Split × The Pocket Company</span>
+        <span class="pg">24 / 24</span>
     </div>
 </div>
 
