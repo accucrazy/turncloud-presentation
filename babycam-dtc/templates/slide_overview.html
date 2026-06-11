@@ -1,0 +1,42 @@
+{% import '_macros.html' as m %}
+<div class="slide overview{% if is_first %} active{% endif %}"{% if id %} data-slide="{{ id }}"{% endif %}>
+    <div class="bg-image ov-bg" style="background-image: url('{{ backdrop }}');"></div>
+    <div class="slide-content ov-content">
+        {% if tag %}<div class="tag tag-{{ tag.color }}">{{ tag.text }}</div>{% endif %}
+        <h2 class="ov-title">{{ title | safe }}</h2>
+        {% if subtitle %}<p class="ov-sub">{{ subtitle | safe }}</p>{% endif %}
+
+        <div class="ov-stack">
+            {% for layer in layers %}
+            <div class="ov-layer ov-step-{{ loop.index }} ov-tone-{{ layer.tone }}">
+                <div class="ov-art">
+                    <div class="ov-glow"></div>
+                    <img src="{{ layer.art }}" alt="{{ layer.name }}">
+                </div>
+                <div class="ov-label">{{ layer.label }}</div>
+                <div class="ov-name">{{ layer.name | safe }}</div>
+                <div class="ov-by">{{ layer.by | safe }}</div>
+            </div>
+            {% if not loop.last %}
+            <div class="ov-arrow ov-arrow-{{ loop.index }}">
+                <span class="ov-arrow-dot"></span>
+                <span class="ov-arrow-dot"></span>
+                <span class="ov-arrow-dot"></span>
+                <svg viewBox="0 0 24 24" width="100%" height="100%" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="ov-reveal">
+            <span class="ov-r-line">{{ tagline | safe }}</span>
+        </div>
+
+        <div class="meta">
+            <span>{{ meta_left }}</span>
+            <span class="pg">{{ page }} / {{ total }}</span>
+        </div>
+    </div>
+</div>

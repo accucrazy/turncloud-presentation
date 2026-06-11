@@ -1,0 +1,5 @@
+﻿# secrets & local
+.env
+gen.log
+__pycache__/
+*.pyc

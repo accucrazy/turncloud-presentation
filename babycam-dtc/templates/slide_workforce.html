@@ -1,0 +1,25 @@
+{% import '_macros.html' as m %}
+<div class="slide bg-{{ bg | default('violet') }}{% if is_first %} active{% endif %}">
+    <div class="slide-content">
+        {% if tag %}<div class="tag tag-{{ tag.color }}">{{ tag.text }}</div>{% endif %}
+        <h2>{{ title | safe }}</h2>
+        {% if subtitle %}<p class="sub">{{ subtitle | safe }}</p>{% endif %}
+
+        <div class="illus-frame" style="flex: 1; margin-bottom: 1.5vh;">{{ m.media_tag(media, media_alt | default(''), media_fit | default('cover')) }}</div>
+
+        <div class="agent-grid">
+            {% for agent in agents %}
+            <div class="agent-chip a-{{ agent.color }}">
+                <h5>{{ agent.code }}</h5>
+                <div class="role">{{ agent.role }}</div>
+                <div class="one">{{ agent.tagline }}</div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="meta">
+            <span>{{ meta_left }}</span>
+            <span class="pg">{{ page }} / {{ total }}</span>
+        </div>
+    </div>
+</div>

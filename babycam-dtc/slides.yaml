@@ -1,0 +1,471 @@
+# ════════════════════════════════════════════════════════════════════
+#  Guardian Halo × DTC 上市計畫（繁體中文版）
+#  Direct-to-Consumer strategy for the AI WiFi BabyCam by Jet Opto
+#  Powered by The Pocket Company (Accucrazy × Turncloud)
+#  說明文字：繁體中文 ｜ mockup 圖內文字：英文（產品實際語系）
+#  改完跑 `python build.py`
+# ════════════════════════════════════════════════════════════════════
+
+meta:
+  title: "Guardian Halo — DTC 上市計畫 · 2026"
+  brand: "GUARDIAN HALO × THE POCKET COMPANY"
+  brand_full: "GUARDIAN HALO × THE POCKET COMPANY · DTC PLAN · 2026"
+  year: "2026"
+
+slides:
+
+  # ─── 01 · 封面 ─────────────────────────────────────────────────────
+  - id: cover
+    template: cover
+    media: assets/brand_hero.jpg
+    logos:
+      left:  { src: "img/accucrazy-logo.webp", alt: "Accucrazy", brand: "accucrazy" }
+      right: { src: "img/turncloud-logo.png",  alt: "TurnCloud", brand: "turncloud" }
+    pre: "DTC 上市計畫 · GUARDIAN HALO · 2026"
+    title: 'Guardian Halo<br><span class="c">直接面對消費者</span><br>品牌上市計畫'
+    lede: |-
+      把全球第一台<strong>車內 AI 嬰兒攝影機</strong>，
+      從一份規格書，變成父母會愛上的品牌。<br>
+      <strong>官網 · Shopify · 社群行銷 · AI 品牌運營</strong>，一套打完。
+    signatures:
+      - { strong: "操刀",   text: "The Pocket Company · Accucrazy × Turncloud" }
+      - { strong: "提案對象", text: "Jet Opto · Guardian Halo · 2026 夏季上市" }
+
+  # ─── 02 · 產品 ─────────────────────────────────────────────────────
+  - id: product
+    template: demo
+    variant: stacked
+    tone: green
+    media: assets/brand_hero.jpg
+    media_fit: cover
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: green, text: "★ 產品 · GUARDIAN HALO" }
+    title: '一台<span class="c">住在車裡</span>、卻不擋路的嬰兒攝影機'
+    pills:
+      - tone: cyan
+        label: "安全"
+        name: '兒童遺留偵測'
+        body: '對齊 NHTSA 兒童在場警示，永遠不會把寶寶留在車上。'
+      - tone: orange
+        label: "智慧"
+        name: 'AI 寶寶感知'
+        body: '情緒偵測、睡眠狀態、寶寶置中構圖；1080p / 2K HDR 廣角。'
+      - tone: violet
+        label: "連線"
+        name: '三螢幕直播'
+        body: '低延遲同步到手機、車機、中央螢幕；iOS + Android。'
+    meta_left: "★ 產品 · 卡進 RAV4 閱讀燈座，5 分鐘安裝、免走線"
+
+  # ─── 03 · 為什麼先做 DTC ────────────────────────────────────────────
+  - id: why_dtc
+    template: chapter
+    tone: orange
+    eyebrow: "策略 · 為什麼先走 DTC"
+    title: '硬體要的是<span class="c">品牌</span>，不只是<span class="v">通路</span>。'
+    lede: '走 OEM 衝量、卻交出了品牌與客戶；先走 DTC，建立<strong>定價權、第一方數據、社群</strong>——之後再回頭談 Toyota，是站著談。'
+    bullets:
+      - tone: cyan
+        label: "01 · 毛利留在自己手上"
+        text: 'OEM 通路吃掉 <strong>5–7 成</strong>；DTC 自己賣，單台貢獻毛利約是經銷 SKU 的 <strong>2.5 倍</strong>。'
+      - tone: orange
+        label: "02 · 客戶是自己的"
+        text: 'OEM 從不告訴你誰買了。DTC 拿到 <strong>email · 車型 · 寶寶月齡 · 郵遞區</strong>——讓 Meta / Google 投放真正精準。'
+      - tone: violet
+        label: "03 · 品牌大於 SKU"
+        text: 'Owlet、Nanit 都是<strong>先 DTC 建品牌</strong>、再進 Target。車內這個品類沒有對手，<strong>我們定義它</strong>。'
+    tagline: 'DTC 是<strong>護城河</strong>，OEM 是之後賺到的<strong>上檔</strong>。'
+    meta_left: "★ 為什麼先做 DTC"
+
+  # ─── 04 · 客群 ─────────────────────────────────────────────────────
+  - id: persona
+    template: two_col
+    bg: dark
+    tag: { color: cyan, text: "客群 · 我們賣給誰" }
+    title: '<span class="c">RAV4 父母</span>——焦慮、懂科技、願意為安心付費'
+    subtitle: '光是美加就有 <strong>350 萬+</strong> RAV4 車主，而且這個客群特別好觸及。'
+    media: assets/brand_hero.jpg
+    media_fit: cover
+    boxes:
+      - color: cyan
+        title: "他們是誰"
+        bullets:
+          - "<strong>30–42 歲</strong>、第一或第二胎、雙薪"
+          - "已經在付 Owlet / Snoo / Nanit"
+          - "iPhone 家庭、追 3–5 個育兒帳號"
+      - color: violet
+        title: "他們怕什麼"
+        bullets:
+          - "開車時看不到寶寶，紅燈才偷瞄後照鏡"
+          - "高溫車內新聞看了就心驚"
+          - "想跟另一半<strong>共享即時畫面</strong>"
+      - color: green
+        title: "他們怎麼買"
+        bullets:
+          - "靠 <strong>IG Reels · TikTok · 爸爸部落客</strong>發現"
+          - "上 Reddit / 評論區查證"
+          - "手機 <strong>Shop Pay / Apple Pay</strong> 一鍵下單"
+    meta_left: "★ 客群 · 美 / 加 / 日 / 台 首發市場"
+
+  # ─── 05 · MOCKUP 1 · 品牌識別 ───────────────────────────────────────
+  - id: brand_identity
+    template: demo
+    variant: stacked
+    tone: green
+    media: assets/brand_identity.jpg
+    media_fit: contain
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: green, text: "★ MOCKUP 1 · 品牌識別系統" }
+    title: 'Guardian Halo · <span class="c">給移動中父母的安心科技</span>'
+    pills:
+      - tone: cyan
+        label: "設計理念"
+        name: '安心，不是恐懼'
+        body: '訴求「安全＝自由」，不用警報式語氣嚇人。'
+      - tone: orange
+        label: "視覺"
+        name: 'Halo Sage 鼠尾草綠'
+        body: '綠 + 暖奶油 + 蜜桃，光環 logo，Inter 字體。'
+      - tone: violet
+        label: "語氣"
+        name: '像過來人朋友'
+        body: '父母對父母說話，不用術語、不嚇唬。'
+    meta_left: "★ Mockup 1 · 一套系統打所有接觸點"
+
+  # ─── 06 · MOCKUP 2 · 品牌實體／開箱 ─────────────────────────────────
+  - id: packaging
+    template: demo
+    variant: spotR
+    tone: orange
+    media: assets/packaging.jpg
+    media_fit: cover
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: orange, text: "★ MOCKUP 2 · 包裝與開箱" }
+    title: '開箱<br>就是<span class="c">第一支廣告</span>'
+    subtitle: '禮盒、歡迎卡、安裝卡、貼紙、布袋——每個實體細節都在說同一句話。'
+    pills:
+      - tone: cyan
+        label: "開箱即內容"
+        name: '值得拍上 IG'
+        body: '父母自然會分享，包裝本身就是 UGC 素材。'
+      - tone: green
+        label: "安裝無痛"
+        name: '三步驟卡片'
+        body: '拔線 → 卡上 → 開 App，5 分鐘搞定。'
+    meta_left: "★ Mockup 2 · 包裝與開箱套組"
+
+  # ─── 07 · MOCKUP 3 · 官網 ──────────────────────────────────────────
+  - id: website
+    template: demo
+    variant: stacked
+    tone: cyan
+    media: assets/website.jpg
+    media_fit: contain
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: cyan, text: "★ MOCKUP 3 · 官網 guardianhalo.com" }
+    title: '<span class="c">單一產品官網</span>，只為了轉換'
+    pills:
+      - tone: cyan
+        label: "首屏"
+        name: '鉤子 + 安裝實證'
+        body: '一句承諾、60 秒影片、評分、單一 CTA。'
+      - tone: orange
+        label: "故事"
+        name: '怎麼運作 · 怎麼裝'
+        body: '三步安裝動畫、RAV4 車型選擇、AI 功能卡。'
+      - tone: violet
+        label: "信任"
+        name: '真實父母影片'
+        body: '嵌入 TikTok / Reels、退換貨保固、媒體背書。'
+    meta_left: "★ Mockup 3 · 行動優先、為 Reels 流量設計"
+
+  # ─── 08 · MOCKUP 4 · Shopify 展示 ──────────────────────────────────
+  - id: shopify
+    template: demo
+    variant: stacked
+    tone: violet
+    media: assets/shopify.jpg
+    media_fit: contain
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: violet, text: "★ MOCKUP 4 · Shopify 商品頁" }
+    title: '為<span class="v">一鍵下單的父母</span>調校的商品頁'
+    pills:
+      - tone: violet
+        label: "上市定價"
+        name: '$299（原 $349）'
+        body: '前 1,000 台限時價，「省 $50」比「打折」更有效。'
+      - tone: cyan
+        label: "一鍵結帳"
+        name: 'Shop Pay · Apple Pay'
+        body: 'RAV4 世代當變體，行動結帳秒過。'
+      - tone: green
+        label: "購後"
+        name: '推薦 + 雲端訂閱'
+        body: '推薦得 $30、moment 雲端 $3.99/月，墊高 LTV。'
+    meta_left: "★ Mockup 4 · Shopify 商品詳情頁"
+
+  # ─── 09 · Shopify 規劃（加厚）───────────────────────────────────────
+  - id: shopify_plan
+    template: stage
+    tone: violet
+    backdrop: img/anim_backdrop.jpg
+    arrows: false
+    tag: { color: violet, text: "★ 電商規劃 · SHOPIFY 怎麼搭" }
+    title: '不只是上架——一套<span class="v">會長大的電商系統</span>'
+    subtitle: 'Shopify Plus 為底，從速度、結帳、訂閱到數據回流，每一塊都為「父母手機下單 + 長期 LTV」設計。'
+    panels:
+      - tone: cyan
+        label: "01 · 技術棧"
+        name: 'Plus + Hydrogen'
+        bullets:
+          - "Hydrogen 前台、首屏 < 1 秒"
+          - "Klaviyo 跑 Email + SMS"
+          - "Junip 收實名評論"
+        body: '<strong>速度與評論</strong>是轉換命脈。'
+      - tone: orange
+        label: "02 · 結帳體驗"
+        name: '一鍵 · 零阻力'
+        bullets:
+          - "Shop Pay / Apple Pay 一鍵"
+          - "RAV4 5 代 / 6 代當變體"
+          - "行動優先、三步完成"
+        body: '<strong>≥35%</strong> 行動結帳走 Shop Pay。'
+      - tone: green
+        label: "03 · 訂閱與推薦"
+        name: '墊高終身價值'
+        bullets:
+          - "Recharge 跑 moment 雲端訂閱"
+          - "$3.99/月 無限雲端片段"
+          - "推薦一位父母得 $30"
+        body: 'LTV 從 $299 → 約 <strong>$520</strong>。'
+      - tone: violet
+        label: "04 · 數據回流"
+        name: '購買事件接 CAPI'
+        bullets:
+          - "購買即時送進 Meta CAPI"
+          - "TikTok Pixel 同步"
+          - "最佳客群 → 類似受眾"
+        body: '第一方種子 → <strong>3–5×</strong> ROAS。'
+    tagline: '目標：<strong>≥1.8%</strong> 轉換 · <strong>≤$72</strong> CAC · 90 天 <strong>≥18%</strong> LTV/CAC。'
+    meta_left: "★ 電商規劃 · Shopify 技術與營運藍圖"
+
+  # ─── 10 · MOCKUP 5 · App × 社群廣告 ────────────────────────────────
+  - id: app_social
+    template: demo
+    variant: spotR
+    tone: orange
+    media: assets/app.jpg
+    media_fit: cover
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: orange, text: "★ MOCKUP 5 · App × 社群廣告" }
+    title: '產品<span class="c">就是</span>廣告，<br>App <span class="v">就是</span>留存'
+    subtitle: '每個顧客都是 App 週活躍；每段存下的「Moment」都是下一則自然分享。'
+    pills:
+      - tone: cyan
+        label: "App"
+        name: 'Live · Moments · Insights'
+        body: 'AI 洞察貼心不毛骨悚然，順手一鍵分享。'
+      - tone: orange
+        label: "社群廣告"
+        name: 'Reels 原生創意'
+        body: '同一句 slogan 貫穿官網、廣告、Email、包裝。'
+    meta_left: "★ Mockup 5 · 伴隨 App 與 Meta 廣告"
+
+  # ─── 11 · MOCKUP 6 · Email / CRM ───────────────────────────────────
+  - id: email
+    template: demo
+    variant: spotL
+    tone: cyan
+    media: assets/email.jpg
+    media_fit: cover
+    backdrop: img/anim_backdrop.jpg
+    tag: { color: cyan, text: "★ MOCKUP 6 · Email / SMS 生命週期" }
+    title: '一封封自動信，<br>把<span class="c">買過的人</span>變回頭客'
+    subtitle: 'Klaviyo 自動流：歡迎 → 安裝 → 評論 → 推薦，全程同一個品牌語氣。'
+    pills:
+      - tone: cyan
+        label: "歡迎 / 安裝"
+        name: '降低退貨'
+        body: '寄出即引導安裝影片，裝得好就不退。'
+      - tone: orange
+        label: "評論 / 推薦"
+        name: '養出飛輪'
+        body: '請評論、給 $30 推薦碼，老客帶新客。'
+    meta_left: "★ Mockup 6 · CRM 生命週期訊息"
+
+  # ─── 12 · 行銷 × AI ────────────────────────────────────────────────
+  - id: marketing_chapter
+    template: chapter
+    tone: cyan
+    eyebrow: "策略 · 由 AI 驅動的品牌行銷"
+    title: '三具行銷引擎，<span class="c">一顆 AI 大腦</span>'
+    lede: '多數 DTC 把六成營收燒在代理商。Guardian Halo 把<strong>口碑、網紅、付費投放</strong>跑成一套——5 個 AI agent 執行、2–3 人監督。'
+    bullets:
+      - tone: cyan
+        label: "引擎 01 · 口碑"
+        text: '出現在父母<strong>本來就在聊</strong>的地方：Reddit、BabyCenter、RAV4 車主群。Pandora 監聽、Moana 寫文。'
+      - tone: orange
+        label: "引擎 02 · 網紅 × UGC"
+        text: '20 位微網紅父母真裝實測，Banana 把每段影片重剪成 8 支廣告——<strong>同一品牌語氣、規模化</strong>。'
+      - tone: violet
+        label: "引擎 03 · 付費 · CAPI"
+        text: 'Meta / TikTok / Shorts。Adriana 把 Shopify 購買即時接 CAPI、做類似受眾；Stacey 每天重分配預算。'
+    tagline: '<strong>3 引擎 · 5 agent · 2–3 人</strong>——月營運成本壓到約 $8K，速度卻更快。'
+    meta_left: "★ 行銷策略總覽"
+
+  # ─── 13 · 5 個 AI Agent ────────────────────────────────────────────
+  - id: agents
+    template: stage
+    tone: cyan
+    backdrop: img/anim_backdrop.jpg
+    arrows: false
+    tag: { color: cyan, text: "★ 團隊 · 5 個 AI Agent 跑整個品牌" }
+    title: '五個 <span class="c">AI Agent</span>，各自是一個部門'
+    subtitle: '建在 The Pocket Company 框架上，每個 agent 都有記憶、技能、工具。Stacey 統籌，四位專才執行。'
+    panels:
+      - tone: cyan
+        art: img/08_pandora.jpg
+        art_fit: cover
+        label: "01 · PANDORA"
+        name: '洞察與監聽'
+        bullets:
+          - "掃 Reddit · BabyCenter · TikTok"
+          - "找出當週育兒痛點"
+        body: '<strong>「父母這週在擔心什麼？」</strong>'
+      - tone: orange
+        art: img/09_moana.jpg
+        art_fit: cover
+        label: "02 · MOANA"
+        name: '父母語氣內容'
+        bullets:
+          - "貼文 · 圖說 · Email 序列"
+          - "部落格 SEO 每週 4 篇"
+        body: '<strong>像過來人朋友說話。</strong>'
+      - tone: violet
+        art: img/10_banana.jpg
+        art_fit: cover
+        label: "03 · BANANA"
+        name: '視覺與影片'
+        bullets:
+          - "UGC 重剪成 8 支廣告"
+          - "情境 + 產品主視覺"
+        body: '<strong>一種語氣、無數版型。</strong>'
+      - tone: green
+        art: img/11_adriana.jpg
+        art_fit: cover
+        label: "04 · ADRIANA"
+        name: 'CRM 與 CAPI'
+        bullets:
+          - "Shopify ↔ Meta CAPI"
+          - "高 LTV 客群做類似受眾"
+        body: '<strong>自有數據 → 3–5× ROAS。</strong>'
+      - tone: cyan
+        art: img/12_stacey.jpg
+        art_fit: cover
+        label: "05 · STACEY"
+        name: '統籌與日報'
+        bullets:
+          - "每日重分配預算 / LTV / CAC"
+          - "Slack 推日報給創辦人"
+        body: '<strong>永不睡覺的營運長。</strong>'
+    tagline: '<strong>5 agent · 2–3 人 · 月 $8K</strong>——精實 DTC 品牌引擎。'
+    meta_left: "★ AI 團隊 · 5 個 agent、一個品牌"
+
+  # ─── 14 · 顧客旅程 ─────────────────────────────────────────────────
+  - id: journey
+    template: stage
+    tone: cyan
+    backdrop: img/anim_backdrop.jpg
+    arrows: true
+    tag: { color: cyan, text: "★ 旅程 · 父母如何變成鐵粉" }
+    title: '從一支 <span class="c">Reel</span> 到一次 <span class="v">推薦</span>，閉成一圈'
+    subtitle: '每一站都<strong>收數據</strong>、都讓<strong>下一站更準</strong>。三個月後，系統在對「跟你最開心的客戶幾乎一樣的人」投放。'
+    panels:
+      - tone: cyan
+        label: "01 · 發現"
+        name: '口碑 + Reels'
+        bullets:
+          - "Reddit / 論壇種子"
+          - "20 位父母創作者"
+        body: '<em>「等等，這東西存在？」</em>'
+      - tone: orange
+        label: "02 · 互動"
+        name: '育兒風格測驗'
+        bullets:
+          - "60 秒遊戲化測驗"
+          - "順手收 email + 月齡"
+        body: '完成率 <strong>30–60%</strong>。'
+      - tone: violet
+        label: "03 · 貼標"
+        name: 'CDP + AI 標籤'
+        bullets:
+          - "每位父母 5–15 個標籤"
+          - "接上 Shopify · Klaviyo"
+        body: '<strong>行為 → 可運算</strong>數據。'
+      - tone: green
+        label: "04 · 啟動"
+        name: 'Meta CAPI'
+        bullets:
+          - "伺服端購買事件"
+          - "高 LTV 做類似受眾"
+        body: '第一方種子 → <strong>3–5× ROAS</strong>。'
+      - tone: cyan
+        label: "05 · 循環"
+        name: '推薦 + Moment'
+        bullets:
+          - "$30 推薦金"
+          - "App 一鍵分享到 IG"
+        body: '<strong>自己把圈閉起來。</strong>'
+    tagline: '與 Siam Paragon · Pandora AIOS · TSpace <span class="c">同一套架構</span>——可攜、自有、複利。'
+    meta_left: "★ 顧客旅程 · 五站、一個數據迴圈"
+
+  # ─── 15 · 90 天上市 ────────────────────────────────────────────────
+  - id: rollout
+    template: two_col
+    bg: dark
+    tag: { color: orange, text: "執行 · 90 天上市節奏" }
+    title: '三階段、<span class="c">一次上市</span>，2026 夏季'
+    subtitle: '階段設關卡，<strong>不行的就砍、行的就加碼</strong>，每階段都有「停或衝」檢核。'
+    media: img/anim_agents_ring.jpg
+    media_fit: cover
+    boxes:
+      - color: cyan
+        title: "Phase 1 · 第 1–30 天 · 建置"
+        bullets:
+          - "品牌系統 + 官網上線"
+          - "Shopify Plus + Hydrogen 商店"
+          - "iOS / Android App 上架"
+          - "20 位微網紅出貨 + 5 個 agent 接好"
+          - "關卡：<strong>3 支真實父母 UGC 上線</strong>"
+      - color: orange
+        title: "Phase 2 · 第 31–60 天 · 點火"
+        bullets:
+          - "軟上市 — 1,000 台、$299"
+          - "Meta / TikTok 廣告開（CAPI live）"
+          - "測驗式落地頁 A/B（3 版）"
+          - "首 50 則評論進站"
+          - "關卡：<strong>≥1.8% 轉換 · ≤$72 CAC</strong>"
+      - color: green
+        title: "Phase 3 · 第 61–90 天 · 放大"
+        bullets:
+          - "回到 $349 定價"
+          - "贏家創意 10× 加碼投放"
+          - "推薦計畫上線"
+          - "媒體投放：TechCrunch · Verge · Babylist"
+          - "關卡：<strong>≥2,500 台 · ≥18% LTV/CAC</strong>"
+    meta_left: "★ 上市 · 90 天分階段關卡計畫"
+
+  # ─── 16 · 收尾 ─────────────────────────────────────────────────────
+  - id: closing
+    template: cover
+    media: img/14_closing.jpg
+    pre: "DTC 上市計畫 · GUARDIAN HALO · 2026 · CONFIDENTIAL"
+    title: '是<span class="c">品牌</span>，不只是 SKU。<br>是<span class="v">AI 團隊</span>，不只是代理商。<br>是<span class="g">顧客迴圈</span>，不只是一檔活動。'
+    lede: |-
+      Guardian Halo 不需要被推銷，
+      它需要被<strong>理解</strong>。<br>
+      官網、Shopify、App、廣告、agent——
+      都在用不同的聲音說同一句話：<br>
+      <strong>Eyes on the road. Heart on your baby.</strong>
+    signatures:
+      - { strong: "操刀",   text: "The Pocket Company · Accucrazy × Turncloud" }
+      - { strong: "準備好",  text: "Jet Opto · Guardian Halo · 2026 夏季" }
