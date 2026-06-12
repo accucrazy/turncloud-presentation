@@ -1,6 +1,6 @@
 # TurnCloud × The Pocket Company — Launch Presentation
 
-這個 repo 是 **The Pocket Company（Accucrazy 肖準）加入騰雲 TurnCloud** 發表會的線上簡報與相關案例資料的 **唯一正式來源（canonical source）**。
+這個 repo 是 **The Pocket Company（Accucrazy）加入騰雲 TurnCloud** 發表會的線上簡報與相關案例資料的 **唯一正式來源（canonical source）**。
 
 > 規矩一句話：**GitHub 上的這份 repo 就是正確版本。** 任何地方（網域、VM、其他 repo）如果跟這裡不一致，以這裡為準，並把那邊同步回來。
 
@@ -29,8 +29,9 @@
 
 | 路徑 | 內容 |
 |---|---|
-| `index.html` | ⭐ 主發表會 deck（正確版本，自動產生 — 勿直接手改，見第 4 節） |
+| `index.html` | ⭐ 主發表會 deck（正確版本，24 頁 — 目前為**手動維護**，小改可直接編輯，大改見第 4 節） |
 | `BRIEFING.md` | ⭐ 規矩 / 戰情手冊 ── 內容定位、敘事結構、講稿、商業模式、競品、CTA。建 deck 前先讀這份。 |
+| `SLIDE_FRAMEWORK.md` | ⭐ Slide framework onboarding（Harness）── 給接手的 AI Agent / 工程師：版本規矩、template 參考、slides.yaml 語法、Gemini 生圖、部署 recipes。**動框架前先讀這份。** |
 | `tpc-launch/` | deck 的建置專案：`slides.yaml`、`templates/`、`build.py`、`generate_*.py`。`tpc-launch/index.html` 已對齊根目錄正確版（資產以 `../img/` 指回根目錄）。 |
 | `tpc-launch-en/` | 英文版發表會 deck（English version，內容同步自正確版）。 |
 | `tengyun-report/` | 騰雲發表會 × Computex 口碑成效戰報（破百萬次觀看、含 Pandora 聲量轉位頁）。 |
@@ -41,18 +42,10 @@
 
 ## 4. 怎麼改、怎麼建（建置規矩）
 
-主 deck（`index.html`）是 **自動產生** 的，**請勿直接手改**。
+完整的框架說明（template 參考、`slides.yaml` 語法、Gemini 生圖、所有 recipes）都在 **[`SLIDE_FRAMEWORK.md`](./SLIDE_FRAMEWORK.md)** — 這裡只講最重要的兩條：
 
-```bash
-cd tpc-launch
-# 1) 改內容 → 編輯 slides.yaml
-# 2) 改版型 → 編輯 templates/
-# 3) 重新產圖（需要時）→ python generate_*.py
-# 4) 重建 HTML
-python build.py
-```
-
-> ⚠️ 已知結構待辦：`tpc-launch/` 內的 `slides.yaml` 仍是較舊的版本，與目前根目錄正確 deck 尚未完全對齊。若要用 `build.py` 重建根目錄 deck，需先把建置來源（`slides.yaml` / `templates/`）校正到正確版本，否則會覆蓋出舊內容。
+1. **小改（改字、換圖）**：根目錄 `index.html` 與 `tpc-launch-en/index.html` 目前是手動維護，可直接編輯後 push + 同步 VM。
+2. **大改 / 走 build 流程**：⚠️ `tpc-launch/slides.yaml` 仍是 5/28 較舊版本，與根目錄正確 deck 尚未對齊 ── **直接 `python build.py` 會產出舊內容**。要走 build 流程前，先把建置來源（`slides.yaml` / `templates/`）校正到正確版本（commit `8aba57a` 的內容）。
 
 ---
 
