@@ -4,14 +4,13 @@
 > 它本身就是一份 **Harness** — 整捆 `memory + skills + tools` 塞進 LLM 的 input，
 > 你看完就有能力直接動工：在我們的 framework 上加 slide、改內容、出新 deck、生成新的 hero image。
 >
-> **TL;DR**
+> **TL;DR**（2026-06-23 校時）
 > - **這個 repo 就是唯一正式來源（canonical source）**。版本規矩見 [§0](#0-版本規矩-version-rules) 與 `README.md`。
-> - 正式發表 deck = **repo 根目錄 `index.html`**（基準 commit `8aba57a`，24 頁，含 trailer + redeem/QR）；英文版在 `tpc-launch-en/`。
-> - Build framework 本體在 `tpc-launch/`：執行 `python build.py`，讀 `slides.yaml` + `templates/` → 產出 `index.html`
-> - **改內容請編輯 `slides.yaml`**，**不要直接動產出的 `index.html`**（每次 build 都會覆蓋）
-> - ⚠ 已知落差：`tpc-launch/slides.yaml` 仍是 5/28 舊版，**直接 rebuild 會蓋掉正確內容** — 要重建根目錄 deck 前需先把建置來源校正到 `8aba57a` 的內容
-> - 影片 / 圖片素材集中放在 repo 根目錄 `img/`（30 個被主 deck 引用）與 `tpc-launch/img/`（框架素材庫）；衍生 deck 可用 NTFS junction 或 `../img/` 相對路徑重用
-> - 要生新 infographic / hero image：寫一個 `generate_*.py`，呼叫 Gemini `nano-banana-pro-preview`（model 寫死在腳本）
+> - 正式發表 deck = **repo 根目錄 `index.html`**，**目前 24 頁**（cover → trailer → … → redeem/QR）。最新版逐頁清單見 [§1.5 最新版投影片進度](#15-memory-最新版投影片進度current-deck-inventory)。英文版 `tpc-launch-en/`（也是 24 頁，內容同步）。
+> - Build framework 本體在 `tpc-launch/`：執行 `python build.py`，讀 `slides.yaml` + `templates/` → 產出 `index.html`（13 個 Jinja2 templates，`SilentUndefined` 哲學）。
+> - **🔴 最重要的現實落差（比舊版更嚴重）**：repo 內**沒有任何一份 `slides.yaml` 與目前 canonical `index.html` 對得起來**。`tpc-launch/slides.yaml`（26 頁、缺 trailer/redeem）與被棄用的 `tpc-launch-deck/v2/slides.yaml`（27 頁、merger/runtime/problem/closing）**都不符合**。canonical deck 雖然頂部還掛著「自動產出」橫幅，但**實際上已是手動維護的單檔 HTML，build pipeline 已與它脫鉤**。→ **改正式 deck 請直接編輯根目錄 `index.html`**；**千萬不要 `python build.py` 蓋過去**（會用舊內容覆蓋）。這正是 `CODYML_PLAN.md` Phase 0 要修的第一個技術債。
+> - 影片 / 圖片素材集中放在 repo 根目錄 `img/`（主 deck 引用）與 `tpc-launch/img/`（框架素材庫）；衍生 deck 可用 NTFS junction 或 `../img/` 相對路徑重用。
+> - 要生新 infographic / hero image：寫一個 `generate_*.py`，呼叫 Gemini `nano-banana-pro-preview`（model 寫死在腳本）。目前主圖 harness 已演進到 **`harness_as_llm_input_v11b_final.jpg`**（slide 06 fullbleed 用的就是這張）。
 > - **環境**：`pip install -r tpc-launch/requirements.txt requests` · API key 放在各 deck 自己的 `.env`（檔案不入 git）→ 詳見 [§8.0 Setup](#80-setup-環境準備-python-api-key-env)
 > - **部署**：push `main` → GitHub Pages 自動發佈；自訂網域 `turncloud.thepocket.company` 在 GCP VM（nginx），要手動同步 → 詳見 [§12 Deploy 層](#12-quirks-已知陷阱與注意事項)
 
@@ -21,6 +20,7 @@
 
 0. [版本規矩 (Version Rules)](#0-版本規矩-version-rules)
 1. [Memory · 這份 repo 的 context](#1-memory-這份-repo-的-context)
+1.5. [Memory · 最新版投影片進度（Current Deck Inventory）](#15-memory-最新版投影片進度current-deck-inventory)
 2. [Memory · Brand Glossary（詞彙表）](#2-memory-brand-glossary詞彙表)
 3. [Memory · Narrative Principles（敘事原則）](#3-memory-narrative-principles敘事原則)
 4. [Skills · 怎麼加一個 slide](#4-skills-怎麼加一個-slide)
@@ -33,6 +33,7 @@
 11. [Tools · generate\_\*.py 圖片生成腳本](#11-tools-generate_py-圖片生成腳本)
 12. [Quirks · 已知陷阱與注意事項](#12-quirks-已知陷阱與注意事項)
 13. [Recipes · 常見工作流](#13-recipes-常見工作流)
+14. [衍生 deck · `ai-talk-deck`（AI 演講合併版）](#14-衍生-deck-ai-talk-deckai-演講合併版)
 
 ---
 
@@ -41,10 +42,14 @@
 > 這節是 2026-06 版本對齊後新增的，**優先級最高**，違反會直接造成線上版本錯誤。
 
 1. **這個 repo（`github.com/accucrazy/turncloud-presentation`）= 唯一正式來源。** 任何地方（網域、VM、其他 repo、本機資料夾）與這裡不一致，以這裡為準。
-2. **正式發表 deck = repo 根目錄 `index.html`**，內容基準是 commit **`8aba57a`**（"Add 'one more thing' redeem slide with QR…"）— 含 trailer 片頭、redeem/QR 兌換頁、Raccoon / Rytho / Luna / CUHK 生態系內容，共 24 頁。
-3. **歷史教訓**：曾有另一個 repo（`turncloudlaunch` / `tpc-launch-deck/v2`）的舊分支被誤部署到 `turncloud.thepocket.company`（缺 trailer + redeem）。**不要再從那個 repo 部署任何東西。**
+2. **正式發表 deck = repo 根目錄 `index.html`**，目前 **24 頁**（cover → trailer → … → 生態系 finale → redeem/QR）。歷史基準是 commit **`8aba57a`**（"Add 'one more thing' redeem slide with QR…"），之後又經多次內容/影片更新，**最新 commit `35950a9`（2026-06-23）**換上新的 Culture Listening / Motion Lab / Reels Studio demo `.mov`。逐頁內容見 [§1.5](#15-memory-最新版投影片進度current-deck-inventory)。
+3. **歷史教訓**：曾有另一個 repo（`turncloudlaunch` / `tpc-launch-deck/v2`）的舊分支被誤部署到 `turncloud.thepocket.company`（缺 trailer + redeem）。**不要再從那個 repo 部署任何東西。** 那份 `tpc-launch-deck/v2/` 仍在工作機根目錄（含一個本 repo 沒有的 `slide_voc_compare.html` template 與 `pandora-case.html`），但**不是正式來源**。
 4. 兩個部署（GitHub Pages + GCP VM 網域）**內容必須一致**，更新流程見 `README.md` §5 與本檔 §12。
-5. ⚠ `tpc-launch/slides.yaml` 仍停在 5/28 舊版，與根目錄正確 deck **尚未對齊** — 在校正建置來源之前，**不要用 `build.py` 的產出覆蓋根目錄 `index.html`**。
+5. 🔴 **建置來源與正式 deck 已脫鉤（升級版警告）**：經 2026-06-23 重新核對，**repo 內沒有任何一份 `slides.yaml` 能重建出目前的 canonical `index.html`**：
+   - `tpc-launch/slides.yaml` = 26 頁（`cover / overview / aios_concept / workforce / harness_skill / 5 agents+demo / moana_case_02 / adriana_crm_capi / adriana_crm_demo / gfmc_academic / ecosystem`），**沒有 trailer、沒有 redeem**。
+   - 棄用的 `tpc-launch-deck/v2/slides.yaml` = 27 頁（多了 `merger / runtime / problem / three_layers / closing`），同樣**沒有 trailer/redeem**，且 agent demo 編排不同。
+   - canonical `index.html` 的內嵌註解（`<!-- SLIDE 02: trailer -->`…）顯示它**曾是 build 產物**，但來源那份 `slides.yaml`（含 trailer+redeem 的 24 頁版）目前**不在本 repo 內**（推測在 `turncloudlaunch` 那台機器或從未 commit）。
+   - **結論**：目前**改正式 deck = 直接編輯根目錄 `index.html`**；`python build.py` 只用於 `tpc-launch/` 內的框架實驗，**產物絕不可覆蓋根目錄 deck**。把建置來源校正回 canonical（或改用 CodyML）是 `CODYML_PLAN.md` Phase 0 的前置工作。
 
 ---
 
@@ -93,6 +98,69 @@ turncloud-presentation/             # Git repo: github.com/accucrazy/turncloud-p
 |---|---|---|
 | 自訂網域 | https://turncloud.thepocket.company/ （`/en/`、`/tengyun-report/`） | GCP VM `reel-studio` · nginx · `/var/www/deck/` · **手動同步** |
 | GitHub Pages | https://accucrazy.github.io/turncloud-presentation/ | push `main` 自動發佈 |
+
+---
+
+## 1.5 · Memory · 最新版投影片進度（Current Deck Inventory）
+
+> 這節記錄 **canonical `index.html` 此刻的實際內容**（2026-06-23 核對），讓接手的 agent 不必把 4000 多行 HTML 讀過一遍就知道「現在這份 deck 到底長怎樣、講什麼、用哪些素材」。
+> 來源：repo 根目錄 `index.html`（HEAD = `35950a9`）。**這是手動維護的真實狀態，不是 `slides.yaml` 的內容**（見 §0.5）。
+
+### 整份 deck 的敘事弧（一句話）
+
+> **Cover（一起長大的生態系）→ Trailer 預告 → 三層架構（Runtime→AI OS→Agents）→ One OS·Two Spaces → 5 位 AI 員工總覽 → Harness Engineering 主圖 → 五位 Agent 逐一登場（每位「人物頁 + live demo」）→ 開放生態系（Raccoon/Rytho/Luna/CUHK）→ Finale（一起長大）→ One More Thing：送 100 點 Banana Split。**
+
+### 逐頁清單（24 頁）
+
+| # | id (`data-slide`) | template / variant | tone | 標題 / 重點 | 主要素材 |
+|---|---|---|---|---|---|
+| 01 | *(cover)* | `cover` | cyan | **Enterprise AIOS — 我們想要一起長大的生態系**；署名 **Ian Wu · CEO Accucrazy** | `cover_hero_santamonica.jpg` · accucrazy×turncloud logo |
+| 02 | `trailer` | `trailer`（特製） | — | 全幅預告片，點擊開聲 | `trailer.mov` |
+| 03 | `overview` | `overview` | cyan | **Physical Runtime → AI OS → AI Agents** 三層架構一圖看懂（CHAPTER 01） | `anim_runtime_iso` / `anim_aios_orb` / `anim_agents_ring` |
+| 04 | `aios_concept` | `duality` | cyan | **One OS · Two Spaces**：同一套 AI OS 編排「實體」與「數位」兩種空間 | `space_physical.jpg` · `space_virtual.jpg` |
+| 05 | *(workforce)* | `bg-violet`（workforce grid） | violet | **AI OS 之上 — 企業的 AI 工作者**：5 位 Agent chip 一字排開 | `07_workforce.jpg` |
+| 06 | `harness_skill` | `fullbleed` | — | **Multi-Agent × Harness Engineering** 主圖（powered by TSpace · Turncloud VIN） | `harness_as_llm_input_v11b_final.jpg` |
+| 07 | `pandora` | `agent` / `portraitL` | cyan | **Pandora — 看見市場的 AI**（AGENT 01） | `08_pandora.jpg` |
+| 08 | `pandora_demo` | `demo` / `spotL` | cyan | Pandora 自動洞察 live demo | `pandora_demo.mov` |
+| 09 | `moana` | `agent` / `portraitR` | orange | **Moana — 內容生成 · Culture Listening**（AGENT 02） | `09_moana.jpg` |
+| 10 | `moana_culture_flow` | `demo` / `stacked` | orange | Moana Culture Listening 架構流程 | `moana_culture_flow.png` |
+| 11 | `moana_culture_demo` | `demo` / `cinema` | orange | Culture Listening live demo　**🆕 6/23 換新片** | `culture_listening.mov` |
+| 12 | `banana` | `agent` / `portraitL` | gold | **Banana — 視覺生成 AI**（AGENT 03） | `10_banana.jpg` |
+| 13 | `banana_split_demo` | `demo` / `spotL` | gold | Banana Split / Motion Lab demo　**🆕 6/23 換新片** | `motion_lab.mov` |
+| 14 | `banana_video_edit` | `demo` / `cinema` | orange | Reels Studio agentic 影片剪輯 demo　**🆕 6/23 換新片** | `reels_studio_demo.mov` |
+| 15 | `adriana` | `agent` / `portraitR` | violet | **Adriana — 廣告優化 · CRM × CAPI**（AGENT 04） | `11_adriana.jpg` |
+| 16 | `adriana_demo` | `demo` / `spotR` | violet | Adriana AI 廣告數據對話 demo | `adriana_demo.mov` |
+| 17 | `stacey` | `agent` / `portraitC` | green | **Stacey — 總指揮 Orchestrator**（AGENT 05） | `12_stacey.jpg` |
+| 18 | `stacey_demo` | `demo` / `spotL` | green | Stacey 多 Agent 調度 demo | `stacey_demo.mp4` |
+| 19 | `ecosystem_chapter` | `chapter` / `side-hero` | cyan | 章節破題：**開放生態系** | `ecosystem_chapter_hero*` |
+| 20 | `raccoon_partnership` | `demo` / `stacked` | cyan | Raccoon AI — 客服 AI 專家（私域對話回流 Pandora） | partner hero |
+| 21 | `rytho_partnership` | `demo` / `stacked` | orange | Rytho — 懂台灣饒舌的 rapper AI | `rytho_demo.mp4` |
+| 22 | `luna_partnership` | `demo` / `spotR` | orange | Luna AI — 複製靈魂的自媒體爆文專家 | `partner_luna_hero.png` |
+| 23 | *(finale)* | `bg-dark` | cyan | **Finale — 在 AI 時代，一起長大的生態系**（Raccoon/Rytho/Luna + CUHK 2026 GFMC Madrid） | `finale_santamonica.jpg` |
+| 24 | `redeem` | `redeem`（特製） | orange/cyan | **One More Thing**：送現場貴賓 **100 點 Banana Split 試用點數** + QR | `banana_redeem_qr.png` |
+
+> 註：第 01 / 05 / 23 頁沒有 `data-slide` 屬性（cover / workforce / finale 是版型特製頁）；頁碼以 deck 內 `NN / 24` 為準。
+
+### 與舊版 `slides.yaml` 的差異（為什麼不能直接 rebuild）
+
+canonical `index.html`（24 頁）**比 `tpc-launch/slides.yaml`（26 頁）多了**：`trailer`(02)、`redeem`(24)、三個 partner 頁的具體編排、finale 改寫。
+**少了**（被砍 / 合併）：`moana_case_02`、`adriana_crm_capi`、`adriana_crm_demo`、`gfmc_academic`（併進 finale）、舊 `ecosystem` 頁。
+→ 任何一邊直接 build 都會把對方的差異洗掉。**改正式 deck 一律直接編 `index.html`。**
+
+### 近期更新軌跡（git log 摘要）
+
+| commit | 日期 | 內容 |
+|---|---|---|
+| `35950a9` | **2026-06-23** | 換上新的 Culture Listening / Motion Lab / Reels Studio demo `.mov`（slide 11/13/14） |
+| `b6ba37f` | 2026-06-13 | 新增本 `SLIDE_FRAMEWORK.md` + 修 README |
+| `161bb0c` | 2026-06 | 新增英文版 `tpc-launch-en/` |
+| `0637a09` | 2026-06 | repo 根目錄加 `BRIEFING.md` |
+| `95a801e` | 2026-06 | 把 `tpc-launch/` 內 deck 對齊到根目錄正確版（資產改 `../img/`） |
+| `8aba57a` | 2026-05 | redeem/QR「one more thing」頁（版本規矩的歷史基準） |
+| `bf29f8c` | 2026-05 | trailer 片頭頁 |
+| `dcbc278` | 2026-05 | harness diagram v11b（agent 用官方肖像 + Digital World） |
+
+> 另有一條 `tengyun-report/` 的更新線（騰雲 × Computex 口碑戰報：Pandora 聲量轉位頁、Facebook 跨平台、量價圖嵌貼文小截圖），與主 deck 平行維護。
 
 ---
 
@@ -796,17 +864,22 @@ python build.py
 
 ### Demo 影片
 
-| File | Size | 用途 |
+> ★ = canonical `index.html`（24 頁）**目前實際引用中**的影片，對應頁碼見 §1.5。🆕 = 2026-06-23 commit `35950a9` 換上的新錄影。
+
+| File | 用在哪頁 | 用途 |
 |---|---|---|
-| `pandora_demo.mov` | 42 MB | Pandora 自動洞察報告 demo |
-| `moana_culture_case.mp4` | 28 MB | Moana culture listening · 猛健樂 case |
-| `moana_case_02.mov` | 69 MB | Moana case 2（較大檔） |
-| `banana_split_demo.mp4` | 10 MB | Banana Split 互動 demo |
-| `banana_video_demo.mp4` | 36 MB | Banana 短影片 demo |
-| `adriana_demo.mov` | 15 MB | Adriana AI 廣告數據對話 demo |
-| `adriana_crm_demo.mov` | 30 MB | Adriana AI CRM × Meta CAPI 實戰 demo |
-| `stacey_demo.mp4` | 13 MB | Stacey orchestration demo |
-| `rytho_demo.mp4` | 0.8 MB | Rytho（機器人 partner）demo |
+| `trailer.mov` ★ | 02 trailer | 全幅預告片（點擊開聲） |
+| `pandora_demo.mov` ★ | 08 | Pandora 自動洞察報告 demo |
+| `culture_listening.mov` ★ 🆕 | 11 moana_culture_demo | Moana Culture Listening 錄影（31 MB） |
+| `motion_lab.mov` ★ 🆕 | 13 banana_split_demo | Banana / Motion Lab demo（53 MB） |
+| `reels_studio_demo.mov` ★ 🆕 | 14 banana_video_edit | Reels Studio agentic 剪輯 demo（50 MB） |
+| `adriana_demo.mov` ★ | 16 | Adriana AI 廣告數據對話 demo |
+| `stacey_demo.mp4` ★ | 18 | Stacey orchestration demo |
+| `rytho_demo.mp4` ★ | 21 | Rytho（rapper AI partner）demo |
+| `moana_culture_case.mp4` | （舊版/備用） | Moana culture listening · 猛健樂 case |
+| `moana_case_02.mov` | （舊版/未引用） | Moana case 2（69 MB，舊 slides.yaml 才有的 `moana_case_02` 頁） |
+| `banana_split_demo.mp4` / `banana_video_demo.mp4` | （舊版/備用） | 早期 Banana demo，已被上面的新 `.mov` 取代 |
+| `adriana_crm_demo.mov` | （舊版/未引用） | Adriana CRM × CAPI demo（舊 `adriana_crm_demo` 頁，現已砍） |
 
 ### Chapter / Cover heroes
 
@@ -897,7 +970,7 @@ python generate_harness_diagram_v4.py   # 跑哪支看你要重跑哪張
 
 | Quirk | 怎麼處理 |
 |---|---|
-| ⚠ `tpc-launch/slides.yaml` 是 5/28 舊版，**rebuild 會產出舊內容** | 校正建置來源前，不要把 build 產物覆蓋到根目錄正式 deck（見 §0.5） |
+| 🔴 **repo 內沒有任何 `slides.yaml` 對得起目前的 24 頁 canonical deck**（`tpc-launch/`=26 頁、棄用的 `tpc-launch-deck/v2/`=27 頁，皆缺 trailer/redeem） | **改正式 deck 直接編根目錄 `index.html`**；`build.py` 產物絕不可覆蓋它（見 §0.5、§1.5） |
 | 根目錄 `index.html` 與 `tpc-launch-en/index.html` 目前是**手動維護**，不是 build 產物 | 小改可直接編輯這兩份；大改建議先把 slides.yaml 校正回來再走 build 流程 |
 | `tpc-launch/index.html` 是自動產出的 | **不要直接編輯**。改 `slides.yaml` 跑 build |
 | `SilentUndefined` 不報錯 | 欄位名拼錯只會變空，找問題看產出 HTML |
@@ -1067,6 +1140,52 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 ---
 
+## 14 · 衍生 deck · `ai-talk-deck`（AI 演講合併版）
+
+> **這是另一份獨立的合併型 deck，不在 `turncloud-presentation` repo 內**，位於工作機根目錄 `ai-talk-deck/`。
+> 用途：一場「AI 演講 + 騰雲集團介紹 + The Pocket Company 介紹」三合一的對外簡報。
+> 線上位置：**`https://turncloud.thepocket.company/ai-talk/`**（GCP VM `reel-studio` 的 `/var/www/deck/ai-talk/`，手動同步，做法同 [Recipe 9](#recipe-9-同步到-vmturncloudthepocketcompany)）。
+
+### 結構（`ai-talk-deck/index.html` 是唯一進入點）
+
+它是一個**純前端播放器**：所有頁面在 `index.html` 的 `SLIDES` 陣列中組裝，分三段、目前共 **44 頁**：
+
+| 段 | 來源陣列 | 型別 | 內容 |
+| --- | --- | --- | --- |
+| AI 演講 | `TALK`（19 張） | `image` → `img/talk/*.png` | 原始演講 PPT 的精選頁（雨傘 → 滑鼠 → Transformer → 訓練/湧現 → 口碑成效 → 商業模式 → 市場/漏斗）。完整 56 頁清單留在 `TALK_FULL` 註解裡，要加回某張就把名字複製上來。 |
+| 騰雲集團介紹（2 頁） | `slides/tc-02.html` + `TC`（1 張） | `html` + `image` | ① **投資亮點**用 HTML 版 `slides/tc-02.html`（建構 AI 代理即服務生態系 · 續約率>95% · 海外營收>41%）；② **國際市場開拓**海外版圖用原始 PPTX 截圖 `img/tc/s4.png`（亞洲 HUB 地圖 + 海外營收 35%→41%）。其他頁 HTML 版在 `slides/tc-*.html`、截圖在 `img/tc/s1..s17.png`，換頁改 `TC` 陣列或對應的 `SLIDES.push`。<br>（沿革：原 10 頁 HTML → 一度簡化成單張截圖 `s2` → 現在亮點頁回到 HTML `tc-02`、海外頁用截圖 `s4`。） |
+| The Pocket Company | `pocket-intro` + `POCKET`（22 張） | `html` / `pocket` | `slides/pocket-intro.html` 是章節過場（背景圖 `img/pocket_chapter_bg.jpg` 由 `generate_pocket_bg.py` 用 Banana/Gemini 生成）；其餘是從正式 deck 拆出來的單頁，放在 `pocket/p*.html`。 |
+
+**Pocket 段的資產解析**：`pocket/p*.html` 以 `srcdoc` 載入，並在 `<head>` 注入 `<base href="https://turncloud.thepocket.company/">`，因此它們內部的 `img/*.mov` 等資產**直接吃線上正式 deck 的素材**，不需重複上傳。改 `POCKET_BASE` 常數即可切換來源。
+
+### 🔊 媒體播放規則（聲音/影片只在「當前頁」）
+
+> **背景**：每張 `pocket/p*.html` 內嵌一段 `// single-slide embed: force active + best-effort autoplay`，會在 iframe 一載入就 `play()`。因為 `index.html` 會**預載前後鄰頁**，若不控管，影片（尤其 RYTHO 的饒舌 `rytho_demo.mp4`，帶 `controls`、不 muted）會**還沒翻到就先出聲，而且翻過去後不會停**。
+
+`index.html` 的 `syncMedia()` 由父層統一控管（在 `show()` 切頁時、以及每個 iframe `load` 後各呼叫一次）：
+
+- **非當前頁**：所有 `<video>/<audio>` 一律 `pause()` 並 `currentTime=0`（歸零，下次從頭）。
+- **當前頁**：只有「**靜音背景循環**」(`muted` 且無 `controls`，如 `culture_listening` / `pandora_demo`) 會自動續播；
+  **含聲音的 demo**（有 `controls`，如 **RYTHO 饒舌**、Reels Studio / Motion Lab）到站時保持暫停，**交給簡報者點擊 play**（投影片上有「♪ 點影片開聲」提示）。
+
+> 結果：RAP 音樂只會在 RYTHO 那頁、且由簡報者主動播放；任何頁離開後聲音立即停止。改 deck 時若新增帶聲影片，沿用「有 `controls` = 手動、`muted` 無 `controls` = 自動循環」這個約定即可，不必再改 `syncMedia()`。
+
+### 部署（同 Recipe 9，但目標是子目錄）
+
+```bash
+# 1. 打包（排除 dev 腳本與暫存檔）
+tar -czf ../ai-talk-deck.tar.gz --exclude="*.py" --exclude="_*" --exclude="*.pptx" .
+# 2. 上傳 + 解壓到子目錄
+gcloud compute scp ../ai-talk-deck.tar.gz reel-studio:/tmp/ --zone=asia-east1-b --project=the-pocket-banana-f8811
+gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f8811 \
+  --command="sudo rm -rf /var/www/deck/ai-talk && sudo mkdir -p /var/www/deck/ai-talk && sudo tar xzf /tmp/ai-talk-deck.tar.gz -C /var/www/deck/ai-talk && sudo chown -R www-data:www-data /var/www/deck/ai-talk"
+# 3. 驗證 https://turncloud.thepocket.company/ai-talk/?v=<隨機>  → 44 頁、資產 200、聲音只在 RYTHO
+```
+
+> 只改 `index.html`（例如調整 `TALK`/`TC` 陣列或 `syncMedia()`）時，可只 scp 單檔到 `/tmp/` 再 `sudo cp` 進 `/var/www/deck/ai-talk/index.html`，不必整包重傳。
+
+---
+
 ## 附錄 · 給 LLM Agent 的 onboarding cheat sheet
 
 如果你是剛被叫進來的新 agent，**讀完這份就可以動工**。五件最重要的事：
@@ -1096,4 +1215,4 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 ---
 
-*Last updated · 2026-06-13 · Version-rules aligned (canonical = repo root, base commit `8aba57a`) · This document is the Harness for the slide framework.*
+*Last updated · 2026-06-24 · 新增 §14 衍生 deck `ai-talk-deck`（AI 演講合併版 44 頁 · 媒體只在當前頁播放規則 · 騰雲段＝投資亮點 HTML `tc-02` ＋ 海外版圖截圖 `s4` · `/ai-talk/` 部署）。先前：§1.5 最新版投影片進度（24 頁逐頁清單）+ 校正 build 來源脫鉤現實（canonical = 手動維護的根目錄 `index.html`，HEAD `35950a9`）· This document is the Harness for the slide framework.*

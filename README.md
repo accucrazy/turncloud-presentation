@@ -17,11 +17,13 @@
 
 ---
 
-## 2. 正確版本（很重要）
+## 2. 正確版本與最新進度（很重要）
 
-- **主視覺發表會 deck = repo 根目錄的 `index.html`**（標題：`Enterprise AIOS — 我們想要一起長大的生態系`）。
-- 這份 deck 的「正確基準」是 commit **`8aba57a`**（`Add 'one more thing' redeem slide with QR…`）── 含 **trailer 片頭**、**redeem / QR 兌換頁**、以及 Raccoon / Rytho / Luna / CUHK GFMC 生態系內容。
+- **主視覺發表會 deck = repo 根目錄的 `index.html`**（標題：`Enterprise AIOS — 我們想要一起長大的生態系`，署名 Ian Wu · CEO Accucrazy）。
+- **目前 24 頁**，敘事弧：Cover → Trailer 預告 → 三層架構（Runtime→AI OS→Agents）→ One OS·Two Spaces → 5 位 AI 員工總覽 → Harness 主圖 → 五位 Agent 逐一登場（人物頁＋live demo）→ 開放生態系（Raccoon/Rytho/Luna/CUHK）→ Finale → One More Thing（送 100 點 Banana Split）。**逐頁清單見 [`SLIDE_FRAMEWORK.md` §1.5](./SLIDE_FRAMEWORK.md#15-memory-最新版投影片進度current-deck-inventory)。**
+- 「正確基準」歷史起點是 commit **`8aba57a`**（`Add 'one more thing' redeem slide with QR…`，含 trailer 片頭、redeem/QR 頁、生態系內容），之後又經多次更新；**最新 commit `35950a9`（2026-06-23）**換上新的 Culture Listening / Motion Lab / Reels Studio demo `.mov`。英文版 `tpc-launch-en/` 同為 24 頁，內容同步。
 - 過去曾有一份 **不同 repo（`turncloudlaunch` / `tpc-launch-deck/v2`）的舊分支** 被誤部署到網域上（缺 trailer + redeem）。**那份不是正確版本**，已被本 repo 的版本取代。
+- 🔴 **建置來源已與正式 deck 脫鉤**：經 2026-06-23 核對，repo 內**沒有任何一份 `slides.yaml` 能重建出目前這份 24 頁 `index.html`**（`tpc-launch/slides.yaml`=26 頁、棄用的 `tpc-launch-deck/v2/`=27 頁，皆缺 trailer/redeem）。**正式 deck 目前是手動維護的單檔 HTML** ── 細節與修復計畫見 `SLIDE_FRAMEWORK.md` §0.5 與 §1.5。
 
 ---
 
@@ -42,10 +44,10 @@
 
 ## 4. 怎麼改、怎麼建（建置規矩）
 
-完整的框架說明（template 參考、`slides.yaml` 語法、Gemini 生圖、所有 recipes）都在 **[`SLIDE_FRAMEWORK.md`](./SLIDE_FRAMEWORK.md)** — 這裡只講最重要的兩條：
+完整的框架說明（template 參考、`slides.yaml` 語法、Gemini 生圖、所有 recipes、**24 頁逐頁清單**）都在 **[`SLIDE_FRAMEWORK.md`](./SLIDE_FRAMEWORK.md)** — 這裡只講最重要的兩條：
 
-1. **小改（改字、換圖）**：根目錄 `index.html` 與 `tpc-launch-en/index.html` 目前是手動維護，可直接編輯後 push + 同步 VM。
-2. **大改 / 走 build 流程**：⚠️ `tpc-launch/slides.yaml` 仍是 5/28 較舊版本，與根目錄正確 deck 尚未對齊 ── **直接 `python build.py` 會產出舊內容**。要走 build 流程前，先把建置來源（`slides.yaml` / `templates/`）校正到正確版本（commit `8aba57a` 的內容）。
+1. **改正式 deck（含小改/大改）**：根目錄 `index.html` 與 `tpc-launch-en/index.html` 目前都是**手動維護的單檔 HTML**，請**直接編輯這兩份**，再 push + 同步 VM。
+2. **🔴 不要用 `python build.py` 蓋正式 deck**：repo 內沒有任何 `slides.yaml` 對得起目前的 24 頁 canonical deck（`tpc-launch/slides.yaml`=26 頁、棄用的 `tpc-launch-deck/v2/`=27 頁，皆缺 trailer/redeem）。`build.py` 只用於 `tpc-launch/` 內的框架實驗，**產物絕不可覆蓋根目錄 `index.html`**。把建置來源校正回 canonical（或改用 CodyML）是 `CODYML_PLAN.md` Phase 0 的前置工作。
 
 ---
 
@@ -63,4 +65,8 @@
 ## 6. 一句話總結
 
 > **Runtime 讓 AI 運行空間，AI OS 讓企業管理 AI，AI Agents 真正開始為企業工作。**
-> 詳細敘事與所有數字、講稿，see **[`BRIEFING.md`](./BRIEFING.md)**。
+> 詳細敘事與所有數字、講稿，see **[`BRIEFING.md`](./BRIEFING.md)**；簡報系統、template、24 頁逐頁清單，see **[`SLIDE_FRAMEWORK.md`](./SLIDE_FRAMEWORK.md)**。
+
+---
+
+*Last updated · 2026-06-23 · canonical deck = 根目錄 `index.html`（24 頁，HEAD `35950a9`，手動維護）· build 來源已脫鉤，詳見 `SLIDE_FRAMEWORK.md` §0.5 / §1.5。*
