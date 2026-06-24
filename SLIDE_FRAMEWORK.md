@@ -1142,7 +1142,7 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 ## 14 · 衍生 deck · `ai-talk-deck`（AI 演講合併版）
 
-> **這是另一份獨立的合併型 deck，不在 `turncloud-presentation` repo 內**，位於工作機根目錄 `ai-talk-deck/`。
+> **這是一份合併型 deck，就放在本 repo 的 `ai-talk-deck/` 子資料夾**（與正式 deck 同 repo、各自獨立）。
 > 用途：一場「AI 演講 + 騰雲集團介紹 + The Pocket Company 介紹」三合一的對外簡報。
 > 線上位置：**`https://turncloud.thepocket.company/ai-talk/`**（GCP VM `reel-studio` 的 `/var/www/deck/ai-talk/`，手動同步，做法同 [Recipe 9](#recipe-9-同步到-vmturncloudthepocketcompany)）。
 
