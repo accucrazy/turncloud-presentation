@@ -68,11 +68,10 @@ const TALK = ["t02","bio","t03","t12","t13","t14","t15","t16","t17","t18","t32",
 /* 完整原始清單（要加回某幾張時，從這裡複製 slide 名稱回上面的陣列即可）：
 const TALK_FULL = ["t02","bio","t03","t05","t07","t08","t10","t12","t13","t14","t15","t16","t17","t18","t19","t20","t23","t24","t25","t26","t27","t28","t32","t33","t34","cot-training","t35","t36","t37","ad-case","ad-results","ad-results2","t39","t45","t46","t47","t48","t49","t50","t55","t56","t57","t58","t65","t66","t67","t68","t69","t71","t72","t73","t74","market-tam","funnel","t75","t76"]; */
 
-/* 騰雲集團介紹（兩頁）：
-   1) 「投資亮點」改回 HTML 版 slides/tc-02.html（建構 AI 代理即服務生態系）── 取代先前的 s2 截圖；
-   2) 「國際市場開拓」海外版圖用原始 PPTX 截圖 img/tc/s4.png。
-   其餘頁 HTML 版仍留在 slides/tc-*.html、截圖在 img/tc/s1..s17.png，要換頁改下面陣列即可。 */
-const TC = ["s4"];   // 海外版圖（要換頁改這裡，如財務頁 s3）；投資亮點頁見下方 tc-02.html
+/* 騰雲集團介紹（兩頁，都用原始 PPTX 截圖）：
+   s2 =「6870 亮點」總覽、s4 =「國際市場開拓」海外版圖。
+   舊的 10 頁 HTML 版仍留在 slides/tc-*.html；其他頁截圖在 img/tc/s1..s17.png，要換頁改下面陣列即可。 */
+const TC = ["s2","s4"];   // s2 = 6870 亮點；s4 = 海外版圖（想換財務頁改成 s3 等）
 
 const POCKET = ["p02_overview","p03_aios_concept","p04_s4","p05_harness_skill","p06_pandora","p07_pandora_demo","p08_moana","p09_moana_culture_flow","p10_moana_culture_demo","p11_banana","p12_banana_split_demo","p13_banana_video_edit","p14_adriana","p15_adriana_demo","p16_stacey","p17_stacey_demo","p18_ecosystem_chapter","p19_raccoon_partnership","p20_rytho_partnership","p21_luna_partnership","p22_s22","p23_redeem"];
 
@@ -81,8 +80,7 @@ const POCKET_BASE = 'https://turncloud.thepocket.company/';
 
 const SLIDES = [];
 TALK.forEach(n => SLIDES.push({ type:'image', src:'img/talk/'+n+'.png', chap:'AI 演講 · The Pocket Company' }));
-SLIDES.push({ type:'html', src:'slides/tc-02.html', chap:'騰雲集團介紹 · 6870.TW' });   // 投資亮點（HTML 版）
-TC.forEach(n => SLIDES.push({ type:'image', src:'img/tc/'+n+'.png', chap:'騰雲集團介紹 · 6870.TW' }));   // 海外版圖（PPTX 截圖）
+TC.forEach(n => SLIDES.push({ type:'image', src:'img/tc/'+n+'.png', chap:'騰雲集團介紹 · 6870.TW' }));   // 6870 亮點 + 海外版圖（PPTX 截圖）
 SLIDES.push({ type:'html', src:'slides/pocket-intro.html', chap:'The Pocket Company · AI Agent 工作團隊' });
 POCKET.forEach(n => SLIDES.push({ type:'pocket', src:'pocket/'+n+'.html', chap:'The Pocket Company · AI Agent 工作團隊' }));
 

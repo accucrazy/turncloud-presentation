@@ -1153,7 +1153,7 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 | 段 | 來源陣列 | 型別 | 內容 |
 | --- | --- | --- | --- |
 | AI 演講 | `TALK`（19 張） | `image` → `img/talk/*.png` | 原始演講 PPT 的精選頁（雨傘 → 滑鼠 → Transformer → 訓練/湧現 → 口碑成效 → 商業模式 → 市場/漏斗）。完整 56 頁清單留在 `TALK_FULL` 註解裡，要加回某張就把名字複製上來。 |
-| 騰雲集團介紹（2 頁） | `slides/tc-02.html` + `TC`（1 張） | `html` + `image` | ① **投資亮點**用 HTML 版 `slides/tc-02.html`（建構 AI 代理即服務生態系 · 續約率>95% · 海外營收>41%）；② **國際市場開拓**海外版圖用原始 PPTX 截圖 `img/tc/s4.png`（亞洲 HUB 地圖 + 海外營收 35%→41%）。其他頁 HTML 版在 `slides/tc-*.html`、截圖在 `img/tc/s1..s17.png`，換頁改 `TC` 陣列或對應的 `SLIDES.push`。<br>（沿革：原 10 頁 HTML → 一度簡化成單張截圖 `s2` → 現在亮點頁回到 HTML `tc-02`、海外頁用截圖 `s4`。） |
+| 騰雲集團介紹（2 頁） | `TC`（2 張） | `image` → `img/tc/*.png` | 都用原始 PPTX 截圖：`s2` =「6870 亮點」總覽、`s4` =「**國際市場開拓**」海外版圖（亞洲 HUB 地圖 + 海外營收 35%→41%）。其他頁截圖在 `img/tc/s1..s17.png`，換頁只要改 `TC` 陣列。舊的 10 頁 HTML 版仍留在 `slides/tc-*.html`（曾短暫用 `tc-02` 當亮點頁，現已回到 `s2` 截圖）。 |
 | The Pocket Company | `pocket-intro` + `POCKET`（22 張） | `html` / `pocket` | `slides/pocket-intro.html` 是章節過場（背景圖 `img/pocket_chapter_bg.jpg` 由 `generate_pocket_bg.py` 用 Banana/Gemini 生成）；其餘是從正式 deck 拆出來的單頁，放在 `pocket/p*.html`。 |
 
 **Pocket 段的資產解析**：`pocket/p*.html` 以 `srcdoc` 載入，並在 `<head>` 注入 `<base href="https://turncloud.thepocket.company/">`，因此它們內部的 `img/*.mov` 等資產**直接吃線上正式 deck 的素材**，不需重複上傳。改 `POCKET_BASE` 常數即可切換來源。
@@ -1215,4 +1215,4 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 ---
 
-*Last updated · 2026-06-24 · 新增 §14 衍生 deck `ai-talk-deck`（AI 演講合併版 44 頁 · 媒體只在當前頁播放規則 · 騰雲段＝投資亮點 HTML `tc-02` ＋ 海外版圖截圖 `s4` · `/ai-talk/` 部署）。先前：§1.5 最新版投影片進度（24 頁逐頁清單）+ 校正 build 來源脫鉤現實（canonical = 手動維護的根目錄 `index.html`，HEAD `35950a9`）· This document is the Harness for the slide framework.*
+*Last updated · 2026-06-24 · 新增 §14 衍生 deck `ai-talk-deck`（AI 演講合併版 44 頁 · 媒體只在當前頁播放規則 · 騰雲段＝「6870 亮點」截圖 `s2` ＋ 海外版圖截圖 `s4` · `/ai-talk/` 部署）。先前：§1.5 最新版投影片進度（24 頁逐頁清單）+ 校正 build 來源脫鉤現實（canonical = 手動維護的根目錄 `index.html`，HEAD `35950a9`）· This document is the Harness for the slide framework.*
