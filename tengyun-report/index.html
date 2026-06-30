@@ -2599,6 +2599,79 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     body:not(.force-desktop) .brand-corner { display: none !important; }
 }
 
+/* ══════════ 列印 / 另存 PDF：每張投影片各一頁、16:9（快捷鍵 P 或 Ctrl/⌘+P）══════════ */
+@media print {
+    @page { size: 297mm 167mm; margin: 0; }
+
+    /* 確保背景色、漸層、底圖一律印出 */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    html, body {
+        overflow: visible !important;
+        height: auto !important;
+        background: #fff !important;
+        display: block !important;
+    }
+
+    /* 隱藏所有導覽 / 互動 chrome */
+    .rotate-prompt,
+    .arrow,
+    .dots,
+    .brand-corner,
+    [data-audio-hint] { display: none !important; }
+
+    /* deck 不再是縮放容器，改為單純區塊 */
+    .deck {
+        width: auto !important;
+        height: auto !important;
+        max-width: none !important;
+        max-height: none !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        background: none !important;
+        display: block !important;
+        container-type: normal !important;
+    }
+
+    /* 每張投影片：固定 16:9、各占一頁、自身成為 cqh 容器 */
+    .slide {
+        display: flex !important;
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 297mm !important;
+        height: 167mm !important;
+        container-type: size !important;
+        container-name: deck !important;
+        overflow: hidden !important;
+        break-inside: avoid !important;
+        break-after: page !important;
+        page-break-after: always !important;
+    }
+    .slide:last-child {
+        break-after: auto !important;
+        page-break-after: auto !important;
+    }
+
+    /* 凍結進場動畫，並讓所有靠動畫才現身的內容呈現「最終可見狀態」 */
+    .slide,
+    .slide *,
+    .slide *::before,
+    .slide *::after {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+    }
+    /* 重置進場位移（translate/scale 等），讓元素回到動畫結束時的定位 */
+    .slide * { transform: none !important; }
+    /* SVG 連線動畫：印出完整線段，而非被 dashoffset 藏起來 */
+    .slide svg path,
+    .slide svg line { stroke-dashoffset: 0 !important; }
+}
+
 </style>
 </head>
 <body>
@@ -4338,11 +4411,20 @@ function go(n) {
 function next() { go(cur + 1); }
 function prev() { go(cur - 1); }
 
+/* 列印 / 另存 PDF：列印 CSS（@media print）會把每張投影片攤成獨立的一頁，
+   並強制顯示靠進場動畫才現身的內容。 */
+function exportPDF() {
+    /* 暫停所有影片，避免列印時擷取到播放中的畫面 */
+    document.querySelectorAll('video').forEach(v => { try { v.pause(); } catch (e) {} });
+    window.print();
+}
+
 document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); next(); }
     if (e.key === 'ArrowLeft'  || e.key === 'PageUp')                    { e.preventDefault(); prev(); }
     if (e.key === 'Home')                                                { go(0); }
     if (e.key === 'End')                                                 { go(slides.length - 1); }
+    if (e.key === 'p' || e.key === 'P')                                  { e.preventDefault(); exportPDF(); }
 });
 </script>
 </body>
