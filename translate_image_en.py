@@ -146,9 +146,84 @@ Do NOT misspell "Moana" (it is NOT "Mcana"). Double-check every label.
 """
 
 
+LUNA = """
+TEXT MAPPING (Traditional Chinese -> English), keep each in the SAME position,
+same orange colour, same fonts and sizes:
+
+TOP-LEFT heading (orange bold): "爆文機器人"  ->  "Viral-Post Bot"
+TOP-LEFT sub (slate): "AI 內容生成引擎"  ->  "AI Content Engine"
+
+Four orange pills (centre, top to bottom):
+  "品牌痛點"    ->  "Brand pain points"
+  "粉絲偏好"    ->  "Fan preferences"
+  "客製化主題"  ->  "Custom topics"
+  "爆文公式"    ->  "Viral formula"
+
+Orange circle badge (two lines):
+  "AI 處理"  ->  "AI in"
+  "/ 60 秒"  ->  "/ 60 sec"
+
+Bottom orange pill (centred):
+  "30 秒產出 · 客製化 · 即買即用"  ->  "30-sec output · customized · ready to use"
+
+Keep the 3D woman mascot (Luna) holding a coffee cup with the "CREATOR SUMMIT 2025 / LUNA"
+lanyard EXACTLY the same. Keep the phone mockup on the right (its "Threads post / Preview"
+UI stays as-is). Keep the confetti, background and all colours identical. Only the
+Chinese text becomes English.
+"""
+
+
+RACCOON = """
+TEXT MAPPING (Traditional Chinese -> English), keep each in the SAME position,
+same colours, same layout, same fonts/sizes. Keep it concise so text fits.
+
+RIGHT SIDE:
+  Pill tag: "AI 智能客服解決方案"  ->  "AI CUSTOMER-SERVICE SOLUTION"
+  Big heading (two lines):
+     "把 AI 客服嵌入"   ->  "Embed AI customer service"
+     "你的品牌 App"     ->  "into your brand App"
+  Sub (two lines, grey):
+     "消費者問什麼，AI 都答得出來──"    ->  "Whatever shoppers ask, the AI answers ──"
+     "精品推薦、樓層導覽、促銷活動，一次搞定。" -> "product picks, floor guide, promos — all in one."
+  Three bullets (bold title + grey caption):
+     "自然語言理解" / "懂中文語境，能理解模糊問法與意圖"
+        -> "Natural-language understanding" / "Grasps context, handles vague questions & intent"
+     "即時商品與樓層查詢" / "連結後台資料，推薦精準且即時更新"
+        -> "Real-time product & floor lookup" / "Linked to backend data, accurate & always current"
+     "串接任何 App 或平台" / "透過 API 快速整合，一週即可上線"
+        -> "Connects to any App or platform" / "Fast API integration, live in a week"
+  "Powered by  Raccoon AI"  -> keep as-is (Raccoon AI is a brand name)
+
+LEFT PHONE CHAT MOCKUP (translate every bubble, keep the same bubble layout/colours):
+  Header title: "精品百貨 AI 客服"  ->  "Department Store AI Concierge"
+  Header status (green): "線上服務中"  ->  "Online now"
+  Date divider: "今天"  ->  "Today"
+  User bubble 1 (blue): "媽媽節快到了，想送禮給媽媽，有推薦嗎？"
+     -> "Mother's Day is near — any gift ideas for mom?"
+  AI label: "AI 客服助理"  ->  "AI Assistant"
+  AI bubble 1 (grey): "您好！幫您精選母親節熱門禮品，以下是本週百貨推薦 🎁"
+     -> "Hi! Here are this week's top Mother's Day picks 🎁"
+  (keep the two small product image thumbnails)
+  User bubble 2 (blue): "SK-II 的禮盒在哪？現在有優惠嗎？"
+     -> "Where are the SK-II gift sets? Any deals now?"
+  AI bubble 2 (grey): "SK-II 專櫃位於 B2 美妝區，今日營業至 21:30"
+     -> "SK-II counter is on B2 (Beauty), open till 21:30 today"
+  Promo card (orange): "母親節限定優惠" / "滿 $3,000 樓層量販券，並累積點數回饋 5%"
+     -> "Mother's Day special" / "Spend $3,000 for a floor voucher + 5% points back"
+  Input placeholder: "輸入您的問題..."  ->  "Type your question..."
+  Bottom brand label "Raccoon AI" stays as-is.
+
+Keep the raccoon mascot, the phone frame ("9:41" time, signal/wifi icons), the blue
+gradient background and ALL colours EXACTLY the same. Only the text becomes English.
+Every English word must be spelled correctly.
+"""
+
+
 JOBS = {
     "culture": ("moana_culture_flow_v2.jpg", "moana_culture_flow_v2_en", CULTURE),
     "harness": ("harness_as_llm_input_v11b_final.jpg", "harness_as_llm_input_v11b_final_en", HARNESS),
+    "luna": ("luna_hero_composite.jpg", "luna_hero_composite_en", LUNA),
+    "raccoon": ("partner_raccoon_hero.png", "partner_raccoon_hero_en", RACCOON),
 }
 
 
