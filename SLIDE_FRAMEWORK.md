@@ -1193,13 +1193,13 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 > 結論收在「**把雲端服務落到地端 = 商機**」。
 > 線上位置：**`https://turncloud.thepocket.company/rtx-talk/`**（VM `/var/www/deck/rtx-talk/`，手動同步，同 Recipe 9）。
 
-### 結構（`rtx-talk-deck/index.html` 是唯一進入點，共 23 頁 = 12 + 6 + 5）
+### 結構（`rtx-talk-deck/index.html` 是唯一進入點，共 25 頁 = 12 + 6 + 7）
 
 | 段 | 來源陣列 | 型別 | 內容 |
 | --- | --- | --- | --- |
 | NemoClaw × Nemotron | `NEMO`（精選 12 頁） | `image` → `img/nemo/p*.png` | 源檔 `Nemoclaw (1).pdf` 完整 33 頁**都已轉圖存在 `img/nemo/`**，但 `NEMO` 陣列只挑演講主線 12 頁：`p01`(封面) `p02`(歷程/加入騰雲) `p03`(客戶牆) `p04`(agent 陣容) `p06`(為何 fine-tune) `p09`(Pandora 6,148) `p14`(Culture Listening) `p16`(小模型夠用·30B=550B) `p18`(任務分工:多大模型) `p19`(NVIDIA SLM 論文) `p21`(搬回地端·RTX 5090·93.5) `p32`(一句話驅動整套系統)。**要加回被砍的頁**：把頁號塞回 `NEMO` 陣列即可（圖檔都在）。換整份 PDF：丟進 `_convert_nemo1.py`（parent repo 根）重轉覆蓋。 |
 | 騰雲發表會精選 | `POCKET`（6 張） | `pocket` | 從 `ai-talk-deck/pocket/` 複製的拆頁：`p02_overview / p03_aios_concept / p06_pandora / p11_banana / p13_banana_video_edit / p18_ecosystem_chapter`。同樣以 `srcdoc` + `<base href=POCKET_BASE>` 吃線上正式 deck 素材。增減頁：從 `ai-talk-deck/pocket/` 再複製對應檔案進來並改 `POCKET` 陣列。 |
-| 地端多模態工作流 | `LOCAL`（5 張） | `html` → `slides/local-*.html` | 全新手刻（深色 + NVIDIA 綠，共用 `slides/local.css`）：`local-intro`（章節過場）→ `local-pipeline`（4 步工作流圖）→ `local-demo-a`（商品照→實穿，用 NEARBY 素材 `img/local/`）→ `local-demo-b`（實穿→影片，**影片版位佔位**）→ `local-conclusion`（雲端 vs 地端對照 + 商機結論）。※ 原 `local-demo-c`（狗血故事）已依需求移除。 |
+| 地端多模態工作流 | `LOCAL`（7 張） | `html` → `slides/local-*.html` | 全新手刻（深色 + NVIDIA 綠，共用 `slides/local.css`）：`local-intro`（章節過場）→ `local-pipeline`（4 步工作流圖）→ `local-demo-a`（商品照→實穿，用 NEARBY 素材 `img/local/`）→ `local-demo-b`（實穿→影片，**影片版位佔位**）→ `local-control`（雲端 vs 地端影音生成**控制性對比**：OpenPose/Face ID/ControlNet/LoRA）→ `local-sovereignty`（**算力主權**：資料/成本/能力三支柱，RTX 5090 = 主權最小單位）→ `local-conclusion`（雲端 vs 地端對照 + 商機結論）。※ 原 `local-demo-c`（狗血故事）已移除。 |
 
 **Demo B 素材佔位約定**：素材就緒後放進 `img/local/` —— Demo B 影片命名 `tryon_video.mp4`，再把該頁 `.slot` 區塊換成 `<video>`（HTML 內有註解示範）。帶聲 demo 記得加 `controls`（= 簡報者手動播），靜音循環用 `muted loop` 無 `controls`（= 自動播）。
 
@@ -1210,7 +1210,7 @@ cd rtx-talk-deck && tar -czf ../../rtx-talk.tar.gz .
 gcloud compute scp rtx-talk.tar.gz reel-studio:/tmp/ --zone=asia-east1-b --project=the-pocket-banana-f8811
 gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f8811 \
   --command="sudo rm -rf /var/www/deck/rtx-talk && sudo mkdir -p /var/www/deck/rtx-talk && sudo tar xzf /tmp/rtx-talk.tar.gz -C /var/www/deck/rtx-talk && sudo chown -R www-data:www-data /var/www/deck/rtx-talk"
-# 驗證 https://turncloud.thepocket.company/rtx-talk/?v=<隨機> → 23 頁、nemo 圖 200、pocket 段影片可播
+# 驗證 https://turncloud.thepocket.company/rtx-talk/?v=<隨機> → 25 頁、nemo 圖 200、pocket 段影片可播
 ```
 
 ---
@@ -1244,4 +1244,4 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 ---
 
-*Last updated · 2026-07-22 · §15 `rtx-talk-deck` 濃縮為 23 頁（NemoClaw × Nemotron 由完整 33 頁精選 12 頁 + 騰雲發表會精選 6 頁 + 地端多模態工作流 5 頁；33 頁圖檔全留在 `img/nemo/`，加回頁面只需改 `NEMO` 陣列）· `/rtx-talk/` 已重部署 · Demo B 素材佔位約定）。先前：§14 `ai-talk-deck`（44 頁 · 媒體只在當前頁播放規則 · `/ai-talk/` 部署）· §1.5 最新版投影片進度（24 頁逐頁清單）· This document is the Harness for the slide framework.*
+*Last updated · 2026-07-22 · §15 `rtx-talk-deck` 更新為 25 頁（NemoClaw × Nemotron 精選 12 頁 + 騰雲發表會精選 6 頁 + 地端多模態工作流 7 頁；第三章新增「控制性對比 `local-control`」與「算力主權 `local-sovereignty`」兩頁論述帶入商機結論；33 頁 nemo 圖檔全留在 `img/nemo/`）· `/rtx-talk/` 已重部署 · Demo B 素材佔位約定）。先前：§14 `ai-talk-deck`（44 頁 · 媒體只在當前頁播放規則 · `/ai-talk/` 部署）· §1.5 最新版投影片進度（24 頁逐頁清單）· This document is the Harness for the slide framework.*

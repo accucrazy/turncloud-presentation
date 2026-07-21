@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px;}
+.col{border-radius:20px;padding:30px 32px;border:1px solid var(--line-soft);}
+.col.cloud{background:var(--panel);}
+.col.local{background:linear-gradient(160deg,rgba(118,185,0,.14),rgba(118,185,0,.04));border-color:var(--line);}
+.col .h{font-size:24px;font-weight:900;margin-bottom:8px;display:flex;align-items:center;gap:12px;color:#fff;}
+.col .hh{font-size:16px;color:var(--dim-2);margin-bottom:18px;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;}
+.col ul{list-style:none;}
+.col li{font-size:19px;color:var(--dim);line-height:1.5;padding-left:28px;position:relative;margin-bottom:13px;}
+.col li b{color:var(--ink);}
+.col.cloud li::before{content:'—';position:absolute;left:0;color:var(--dim-2);}
+.col.local li::before{content:'✓';position:absolute;left:0;color:var(--nv-light);font-weight:900;}
+.chips{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;}
+.chips .cp{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;padding:9px 18px;border-radius:999px;
+  background:rgba(118,185,0,.12);color:var(--nv-light);border:1px solid var(--line);}
+.chips .cp span{color:var(--dim);font-weight:400;}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+
+  <div class="kicker">Why Local · 影音生成的控制權</div>
+  <h1>雲端只能<span class="c">「求」</span>它，地端可以<span class="g">「指揮」</span>它</h1>
+  <p class="sub">同樣是生圖生片，雲端服務多半只吃一句 prompt、其餘全靠運氣；地端工作流能<b>把每一個變因抓在手上</b>——這正是商用素材能不能上線的關鍵。</p>
+
+  <div class="compare">
+    <div class="col cloud">
+      <div class="h">☁️ 雲端影音生成</div>
+      <div class="hh">Sora / Runway / Kling / Veo …</div>
+      <ul>
+        <li>基本上<b>只有 prompt</b>，構圖、姿勢、人物全憑抽卡</li>
+        <li>要指定<b>同一張臉、同一個動作</b>幾乎做不到</li>
+        <li>結果不可複現，<b>換一次就重抽一次</b></li>
+        <li>敏感品類、素材上傳<b>直接被審核卡住</b></li>
+      </ul>
+    </div>
+    <div class="col local">
+      <div class="h">⚡ 地端 ComfyUI 工作流</div>
+      <div class="hh">ControlNet · IPAdapter · LoRA …</div>
+      <ul>
+        <li><b>OpenPose 骨架</b>鎖姿勢與走位，動作照你畫的來</li>
+        <li><b>人臉參考（Face ID）</b>綁定同一位模特兒，換衣不換人</li>
+        <li>Depth / Canny 控構圖，<b>Seed 固定可複現、可微調</b></li>
+        <li>LoRA 綁品牌風格與角色，<b>素材留在自己機器</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="chips">
+    <div class="cp">OpenPose <span>· 姿勢/走位</span></div>
+    <div class="cp">Face ID <span>· 人臉一致</span></div>
+    <div class="cp">Depth / Canny <span>· 構圖</span></div>
+    <div class="cp">LoRA <span>· 風格/角色</span></div>
+    <div class="cp">Inpaint <span>· 局部重繪</span></div>
+    <div class="cp">Seed Lock <span>· 可複現</span></div>
+  </div>
+
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · CONTROL</span></div>
+</div></body></html>

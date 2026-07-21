@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:38px;}
+.pillar{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px 32px;position:relative;overflow:hidden;}
+.pillar::after{content:'';position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--nv),transparent);}
+.pillar .no{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;color:var(--nv-light);letter-spacing:.14em;}
+.pillar h3{font-size:30px;font-weight:900;color:#fff;margin:12px 0 14px;}
+.pillar p{font-size:19px;color:var(--dim);line-height:1.6;}
+.pillar p b{color:var(--ink);}
+.pillar .old{font-size:16px;color:var(--dim-2);margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft);}
+.punch{margin-top:36px;background:linear-gradient(100deg,rgba(118,185,0,.16),rgba(34,211,238,.08));border:1px solid var(--line);border-radius:20px;padding:32px 40px;display:flex;align-items:center;gap:32px;}
+.punch .big{font-size:34px;font-weight:900;color:#fff;line-height:1.3;flex:1;}
+.punch .big .g{color:var(--nv-light);}
+.punch .unit{flex:0 0 auto;text-align:center;font-family:'JetBrains Mono',monospace;}
+.punch .unit .u{font-size:30px;font-weight:800;color:var(--nv-light);}
+.punch .unit .d{font-size:15px;color:var(--dim);margin-top:6px;letter-spacing:.06em;}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+
+  <div class="kicker">Big Picture · 算力主權</div>
+  <h1>真正在意的不是省錢，是<span class="g">算力主權</span></h1>
+  <p class="sub">當生成式 AI 變成產線核心，把「模型、資料、產能」交在別人雲上，等於把公司命脈租給平台。<b>算力主權</b>＝這三件事都握在自己手裡。</p>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="no">01 · DATA</div>
+      <h3>資料主權</h3>
+      <p>客戶素材、品牌人設、投放紀錄<b>不出機房</b>，敏感品類也能做，沒有上傳合規風險。</p>
+      <div class="old">雲端：素材先交給別人的伺服器</div>
+    </div>
+    <div class="pillar">
+      <div class="no">02 · COST</div>
+      <h3>成本主權</h3>
+      <p>算力是<b>一次性硬體</b>，跑越多越划算；不再被 token 計費與漲價綁架。</p>
+      <div class="old">雲端：永遠繳不完、說漲就漲的月費</div>
+    </div>
+    <div class="pillar">
+      <div class="no">03 · CAPABILITY</div>
+      <h3>能力主權</h3>
+      <p>模型版本自己釘、流程自己版本化，<b>能力不會被平台一夕收回或停用</b>。</p>
+      <div class="old">雲端：模型/額度/規則說改就改</div>
+    </div>
+  </div>
+
+  <div class="punch">
+    <div class="big">一張消費級 GPU，<br>就是<span class="g">算力主權的最小單位</span>。</div>
+    <div class="unit"><div class="u">RTX 5090</div><div class="d">32GB · 一台就起步</div></div>
+  </div>
+
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · SOVEREIGNTY</span></div>
+</div></body></html>
