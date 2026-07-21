@@ -1,31 +1,44 @@
 <!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
 <style>
-.flow{margin-top:44px;}
-.legend{display:flex;gap:26px;margin-top:34px;}
-.legend .card{flex:1;}
+.slide{justify-content:center;}
+.kick{font-size:20px;font-weight:700;letter-spacing:.24em;color:var(--nv-light);text-transform:uppercase;font-family:'JetBrains Mono',monospace;}
+h1.big{font-size:100px;line-height:1.08;margin-top:22px;font-weight:900;letter-spacing:-.02em;color:#fff;}
+h1.big .g{background:linear-gradient(100deg,var(--nv-light),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.map{margin-top:56px;display:flex;flex-direction:column;gap:18px;}
+.row{display:grid;grid-template-columns:1fr 90px 1fr;align-items:center;gap:0;}
+.cell{border-radius:18px;padding:24px 30px;display:flex;align-items:center;gap:18px;}
+.cell .who{font-size:28px;font-weight:900;color:#fff;}
+.cell .what{font-size:19px;color:var(--dim);margin-top:4px;}
+.cell.cloud{background:var(--panel);border:1px solid var(--line-soft);}
+.cell.prem{background:linear-gradient(160deg,rgba(118,185,0,.16),rgba(118,185,0,.04));border:1px solid var(--line);}
+.cell.prem .who{color:var(--nv-light);}
+.cell .ic{font-size:40px;flex:0 0 auto;}
+.arr{text-align:center;font-size:36px;font-weight:900;color:var(--nv);}
+.punch{margin-top:52px;font-size:40px;font-weight:900;color:#fff;line-height:1.4;}
+.punch .g{color:var(--nv-light);}
 </style></head>
 <body><div class="slide">
   <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
 
-  <div class="kicker">Our Move · 那就把產線搬回家</div>
-  <h1><span class="g">商品照</span> 進，<span class="c">成片</span> 出，全程在這台機器</h1>
-  <p class="sub">以<b>商品圖與品牌風格為約束</b>，每一站的輸出都是下一站的輸入 ── 沒有上傳、沒有審核、沒有月費。</p>
+  <div>
+    <div class="kick">Our Move · 那就把整條產線搬回家</div>
+    <h1 class="big">第二章的 Agent，<span class="g">一位一位落地</span>。</h1>
 
-  <div class="flow">
-    <div class="stage"><div class="n">STEP 1</div><div class="h">擷取商品素材</div><div class="p">商品頁單品照、假人照、官網實穿照與風格參考圖。</div></div>
-    <div class="arr">→</div>
-    <div class="stage"><div class="n">STEP 2</div><div class="h">生成模特兒實穿</div><div class="p">reference edit / 低重繪保衣服，套用品牌人設與台灣網拍語感。</div></div>
-    <div class="arr">→</div>
-    <div class="stage"><div class="n">STEP 3</div><div class="h">實穿圖 → 影片</div><div class="p">image-to-video，靜態實穿變成會動的商品短片。</div></div>
-    <div class="arr">→</div>
-    <div class="stage"><div class="n">STEP 4</div><div class="h">上架 / 投放</div><div class="p">成圖、成片齊備，接回上一章的 Agent 產線發佈。</div></div>
+    <div class="map">
+      <div class="row">
+        <div class="cell cloud"><span class="ic">📡</span><div><div class="who">Pandora</div><div class="what">輿情監聽 · 市場在聊什麼</div></div></div>
+        <div class="arr">→</div>
+        <div class="cell prem"><span class="ic">🧠</span><div><div class="who">Turncloud VIN / Nemotron</div><div class="what">地端 LLM · 跑在 RTX 5090</div></div></div>
+      </div>
+      <div class="row">
+        <div class="cell cloud"><span class="ic">🍌</span><div><div class="who">Banana</div><div class="what">視覺專家 · 生圖生片</div></div></div>
+        <div class="arr">→</div>
+        <div class="cell prem"><span class="ic">⚙️</span><div><div class="who">ComfyUI Workflow</div><div class="what">地端多模態 · 同一張卡</div></div></div>
+      </div>
+    </div>
+
+    <div class="punch">同一組 Agent 產線，<span class="g">雲端一套，地端一套</span>。</div>
   </div>
 
-  <div class="legend">
-    <div class="card"><h3><span class="hl">引擎</span> · ComfyUI</h3><p>node-based 工作流，<b>模型、參數、流程全部版本化</b>，可複製、可調校、可交接。</p></div>
-    <div class="card"><h3><span class="hl">算力</span> · RTX 5090</h3><p>32GB VRAM + Blackwell 世代算力，圖生圖、圖生影、本地 LLM <b>同一張卡全包</b>。</p></div>
-    <div class="card"><h3><span class="hl">模型</span> · 可替換</h3><p>Flux2 Klein / NemoClaw × Nemotron nano ── 模型演進時<b>換節點不換流程</b>。</p></div>
-  </div>
-
-  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · PIPELINE</span></div>
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · THE MOVE</span></div>
 </div></body></html>
