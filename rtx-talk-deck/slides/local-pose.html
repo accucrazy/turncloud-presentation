@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;flex:1;min-height:0;margin-top:34px;}
+.row .shot{min-height:0;}
+.shot .box video{object-fit:cover;}
+.shot.driver{border-color:var(--gold);}
+.shot.driver .cap b{color:var(--gold);}
+.arrow-note{font-size:22px;color:var(--dim);margin-top:22px;}
+.arrow-note b{color:var(--nv-light);}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+
+  <div class="kicker">Proof · 指揮，是這個意思</div>
+  <h1>給它一支舞，<span class="g">全員照跳</span></h1>
+
+  <div class="row">
+    <div class="shot driver">
+      <div class="cap"><span>DRIVER · 指定舞步</span><b>SDPose 骨架</b></div>
+      <div class="box"><video src="../img/local/driver_reel.mp4" poster="../img/local/driver_reel.jpg" muted loop playsinline></video></div>
+    </div>
+    <div class="shot">
+      <div class="cap"><span>Vivian · 跟隨舞步</span><b>pose-driven</b></div>
+      <div class="box"><video src="../img/local/pose_vivian.mp4" poster="../img/local/pose_vivian.jpg" muted loop playsinline></video></div>
+    </div>
+    <div class="shot">
+      <div class="cap"><span>Beryl · 姿勢轉移</span><b>pose-driven</b></div>
+      <div class="box"><video src="../img/local/pose_beryl.mp4" poster="../img/local/pose_beryl.jpg" muted loop playsinline></video></div>
+    </div>
+  </div>
+
+  <div class="arrow-note">不同模特兒、不同服裝，跟著同一支 driver <b>逐拍對齊</b> ── 雲端用文字許願，<b>地端用骨架指揮</b>。</div>
+
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · POSE-DRIVEN</span></div>
+</div></body></html>

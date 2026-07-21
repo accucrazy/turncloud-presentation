@@ -1193,15 +1193,15 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 > 結論收在「**把雲端服務落到地端 = 商機**」。
 > 線上位置：**`https://turncloud.thepocket.company/rtx-talk/`**（VM `/var/www/deck/rtx-talk/`，手動同步，同 Recipe 9）。
 
-### 結構（`rtx-talk-deck/index.html` 是唯一進入點，共 29 頁 = 12 + 7 + 10）
+### 結構（`rtx-talk-deck/index.html` 是唯一進入點，共 31 頁 = 12 + 7 + 12）
 
 | 段 | 來源陣列 | 型別 | 內容 |
 | --- | --- | --- | --- |
 | NemoClaw × Nemotron | `NEMO`（精選 12 頁） | `image` → `img/nemo/p*.png` | 源檔 `Nemoclaw (1).pdf` 完整 33 頁**都已轉圖存在 `img/nemo/`**，但 `NEMO` 陣列只挑演講主線 12 頁：`p01`(封面) `p02`(歷程/加入騰雲) `p03`(客戶牆) `p04`(agent 陣容) `p06`(為何 fine-tune) `p09`(Pandora 6,148) `p14`(Culture Listening) `p16`(小模型夠用·30B=550B) `p18`(任務分工:多大模型) `p19`(NVIDIA SLM 論文) `p21`(搬回地端·RTX 5090·93.5) `p32`(一句話驅動整套系統)。**要加回被砍的頁**：把頁號塞回 `NEMO` 陣列即可（圖檔都在）。換整份 PDF：丟進 `_convert_nemo1.py`（parent repo 根）重轉覆蓋。 |
 | 騰雲發表會精選 | `POCKET`（7 張） | `pocket` | 從 `ai-talk-deck/pocket/` 複製的拆頁：`p02_overview / p03_aios_concept / p05_harness_skill（VIN 伏筆：LLM-agnostic，Gemini/Claude ⇄ Turncloud VIN）/ p06_pandora / p11_banana / p13_banana_video_edit / p18_ecosystem_chapter`。同樣以 `srcdoc` + `<base href=POCKET_BASE>` 吃線上正式 deck 素材。增減頁：從 `ai-talk-deck/pocket/` 再複製對應檔案進來並改 `POCKET` 陣列。 |
-| 地端多模態工作流 | `LOCAL`（10 張） | `html` → `slides/local-*.html` | **單一敘事線（大字、少字、故事驅動）——「內衣品牌被雲端擋 → VIN 伏筆回收 → Agent 逐位落地 → Content Tech」**：`local-intro`（故事開場：內衣品牌想出一批素材）→ `local-blocked`（雲端說 NO：敏感品類審核紅線）→ `local-vin`（伏筆回收：TSpace 的腦可以換 —— Gemini/Claude ⇄ **Turncloud VIN**，Harness 不動、換腦就落地）→ `local-pipeline`（第二章的 Agent 一位一位落地：Pandora→VIN/Nemotron、Banana→ComfyUI 對照地圖）→ `local-pandora`（**Pandora 落地**：30B=550B 同分、93.5 品質不掉、$0 API）→ `local-demo-a`（**Banana 落地 I**：單品照→實穿，NEARBY 素材）→ `local-demo-b`（**Banana 落地 II**：實穿→影片，**影片版位佔位**）→ `local-control`（用求的 vs 用指揮的）→ `local-sovereignty`（算力主權：三個「是我的」）→ `local-conclusion`（**Content Tech** = 內容 × 工程）。 |
+| 地端多模態工作流 | `LOCAL`（12 張） | `html` → `slides/local-*.html` | **單一敘事線（大字、少字、故事驅動）——「內衣品牌被雲端擋 → VIN 伏筆回收 → Agent 逐位落地 → Content Tech」**：`local-intro`（故事開場：內衣品牌想出一批素材）→ `local-blocked`（雲端說 NO：**真實實測** 5/5 試穿圖輸入端被擋，`PrivacyInformation` / `OutputVideoSensitiveContentDetected`）→ `local-vin`（伏筆回收：TSpace 的腦可以換 —— Gemini/Claude ⇄ **Turncloud VIN**）→ `local-pipeline`（Agent 落地對照地圖：Pandora→VIN、Banana→ComfyUI）→ `local-pandora`（**Pandora 落地**：30B=550B、93.5、$0 API）→ `local-demo-a`（**Banana 落地 I**：單品照→實穿）→ `local-demo-b`（**Banana 落地 II**：實穿→影片，**真實影片** `tryon_video.mp4`）→ `local-control`（用求的 vs 用指揮的）→ `local-pose`（**指定舞步實證**：driver + Vivian/Beryl 跟跳，SDPose 骨架，3 支 muted loop 影片）→ `local-vs-cloud`(**同一件旗袍實測對照**：地端 LTX-2.3 vs 雲端 Seedance r2v vs 雲端 editorial 廣告，結論=混合是正解) → `local-sovereignty`（算力主權）→ `local-conclusion`（**Content Tech**）。影片素材來源：使用者提供的 `video-package.zip`（地端 LTX-2.3 + 雲端 Seedance 實測，NEARBY 商品），選用檔已複製進 `img/local/`（driver_reel / pose_* / tryon_video / vs_*，皆 muted loop 自動播）。 |
 
-**Demo B 素材佔位約定**：素材就緒後放進 `img/local/` —— Demo B 影片命名 `tryon_video.mp4`，再把該頁 `.slot` 區塊換成 `<video>`（HTML 內有註解示範）。帶聲 demo 記得加 `controls`（= 簡報者手動播），靜音循環用 `muted loop` 無 `controls`（= 自動播）。
+**影片素材規則**：所有 demo 影片放 `img/local/`，`muted loop playsinline` 無 `controls` = 當頁自動循環播放（引擎 `syncMedia()` 控管，翻頁即停）；要出聲的 demo 加 `controls` 改為簡報者手動播。Demo B 已接上真實影片 `tryon_video.mp4`（2026-07-22，來自 video-package.zip）。
 
 ### 部署（同 ai-talk-deck，目標子目錄 `/var/www/deck/rtx-talk/`）
 
@@ -1210,7 +1210,7 @@ cd rtx-talk-deck && tar -czf ../../rtx-talk.tar.gz .
 gcloud compute scp rtx-talk.tar.gz reel-studio:/tmp/ --zone=asia-east1-b --project=the-pocket-banana-f8811
 gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f8811 \
   --command="sudo rm -rf /var/www/deck/rtx-talk && sudo mkdir -p /var/www/deck/rtx-talk && sudo tar xzf /tmp/rtx-talk.tar.gz -C /var/www/deck/rtx-talk && sudo chown -R www-data:www-data /var/www/deck/rtx-talk"
-# 驗證 https://turncloud.thepocket.company/rtx-talk/?v=<隨機> → 29 頁、nemo 圖 200、pocket 段影片可播
+# 驗證 https://turncloud.thepocket.company/rtx-talk/?v=<隨機> → 31 頁、nemo 圖 200、pocket 段影片可播、img/local/*.mp4 200
 ```
 
 ---
@@ -1244,4 +1244,4 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 ---
 
-*Last updated · 2026-07-22 · §15 `rtx-talk-deck` 敘事線納入 VIN 概念共 29 頁（第二章加 `p05_harness_skill` 埋 VIN 伏筆；第三章 `local-vin`（換腦就落地）+ `local-pandora`（Pandora 落地）新頁、pipeline 改為 Agent 落地對照地圖、Demo A/B 改為 Banana 落地 I/II；33 頁 nemo 圖檔全留在 `img/nemo/`）· `/rtx-talk/` 已重部署 · Demo B 素材佔位約定）。先前：§14 `ai-talk-deck`（44 頁 · 媒體只在當前頁播放規則 · `/ai-talk/` 部署）· §1.5 最新版投影片進度（24 頁逐頁清單）· This document is the Harness for the slide framework.*
+*Last updated · 2026-07-22 · §15 `rtx-talk-deck` 接上 video-package.zip 真實影片共 31 頁（Demo B 換真實 tryon 影片；新增 `local-pose`（指定舞步實證）與 `local-vs-cloud`（同旗袍地端/雲端實測對照）；blocked 頁改用真實錯誤碼 5/5 數據；33 頁 nemo 圖檔全留在 `img/nemo/`）· `/rtx-talk/` 已重部署）。先前：§14 `ai-talk-deck`（44 頁 · 媒體只在當前頁播放規則 · `/ai-talk/` 部署）· §1.5 最新版投影片進度（24 頁逐頁清單）· This document is the Harness for the slide framework.*
