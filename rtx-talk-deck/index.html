@@ -59,11 +59,12 @@ html,body{height:100%;overflow:hidden;background:#0b1220;font-family:'Noto Sans 
    SLIDE MANIFEST — RTX 演講版
    type: 'image' (src) | 'html' (src=iframe url) | 'pocket' (srcdoc + base 注入)
    章節：
-   1) NemoClaw × Nemotron — Nemoclaw.pdf 33 頁截圖（img/nemo/）
+   1) NemoClaw × Nemotron — Nemoclaw.pdf 精選頁截圖（img/nemo/ 內含完整 p01..p33，此處挑精華）
    2) 騰雲產品發表會精選 — 正式 deck 拆頁（pocket/，素材吃線上 POCKET_BASE）
    3) 地端多模態工作流 — 全新手刻（slides/local-*.html）
    ────────────────────────────────────────────── */
-const NEMO = ["p01","p02","p03","p04","p05","p06","p07","p08","p09","p10","p11","p12","p13","p14","p15","p16","p17","p18","p19","p20","p21","p22","p23","p24","p25","p26","p27","p28","p29","p30","p31","p32","p33"];
+/* 精華 12 頁（完整 33 頁圖仍在 img/nemo/，要加回某頁把頁號塞回陣列即可） */
+const NEMO = ["p01","p02","p03","p04","p06","p09","p14","p16","p18","p19","p21","p32"];
 
 /* 騰雲發表會精選（要增減頁面：從 ai-talk-deck/pocket/ 複製對應 p*.html 進本 deck 的 pocket/ 再加進陣列）
    完整清單：p02_overview p03_aios_concept p04_s4 p05_harness_skill p06_pandora p07_pandora_demo
