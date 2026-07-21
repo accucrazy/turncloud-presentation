@@ -1186,6 +1186,35 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 ---
 
+## 15 · 衍生 deck · `rtx-talk-deck`（RTX 演講版）
+
+> **與 `ai-talk-deck` 同款外殼**（同一個播放器引擎 + `syncMedia()` 規則），放在本 repo 的 `rtx-talk-deck/` 子資料夾。
+> 用途：RTX / NVIDIA 場合的演講 ——「NemoClaw × Nemotron + 騰雲發表會精選 + 地端多模態工作流」，
+> 結論收在「**把雲端服務落到地端 = 商機**」。
+> 線上位置：**`https://turncloud.thepocket.company/rtx-talk/`**（VM `/var/www/deck/rtx-talk/`，手動同步，同 Recipe 9）。
+
+### 結構（`rtx-talk-deck/index.html` 是唯一進入點，共 26 頁）
+
+| 段 | 來源陣列 | 型別 | 內容 |
+| --- | --- | --- | --- |
+| NemoClaw × Nemotron | `NEMO`（14 張） | `image` → `img/nemo/p01..p14.png` | `Nemoclaw.pdf`（源檔在使用者 Downloads）整份 200dpi 截圖：cover → Accucrazy 歷程 → 客戶牆 → TPC agents → 從貼文到系統 → fine-tune 論述 → Pandora 6,148 篇 → Culture Listening。 |
+| 騰雲發表會精選 | `POCKET`（6 張） | `pocket` | 從 `ai-talk-deck/pocket/` 複製的拆頁：`p02_overview / p03_aios_concept / p06_pandora / p11_banana / p13_banana_video_edit / p18_ecosystem_chapter`。同樣以 `srcdoc` + `<base href=POCKET_BASE>` 吃線上正式 deck 素材。增減頁：從 `ai-talk-deck/pocket/` 再複製對應檔案進來並改 `POCKET` 陣列。 |
+| 地端多模態工作流 | `LOCAL`（6 張） | `html` → `slides/local-*.html` | 全新手刻（深色 + NVIDIA 綠，共用 `slides/local.css`）：`local-intro`（章節過場）→ `local-pipeline`（5 步工作流圖）→ `local-demo-a`（商品照→實穿，用 NEARBY 素材 `img/local/`）→ `local-demo-b`（實穿→影片，**影片版位佔位**）→ `local-demo-c`（狗血故事工作流，**成品版位佔位**）→ `local-conclusion`（雲端 vs 地端對照 + 商機結論）。 |
+
+**Demo B/C 素材佔位約定**：素材就緒後放進 `img/local/` —— Demo B 影片命名 `tryon_video.mp4`、Demo C 成品 `story_video.mp4` 或 `story_case.png`，再把該頁 `.slot` 區塊換成 `<video>`/`<img>`（HTML 內有註解示範）。帶聲 demo 記得加 `controls`（= 簡報者手動播），靜音循環用 `muted loop` 無 `controls`（= 自動播）。
+
+### 部署（同 ai-talk-deck，目標子目錄 `/var/www/deck/rtx-talk/`）
+
+```bash
+cd rtx-talk-deck && tar -czf ../../rtx-talk.tar.gz .
+gcloud compute scp rtx-talk.tar.gz reel-studio:/tmp/ --zone=asia-east1-b --project=the-pocket-banana-f8811
+gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f8811 \
+  --command="sudo rm -rf /var/www/deck/rtx-talk && sudo mkdir -p /var/www/deck/rtx-talk && sudo tar xzf /tmp/rtx-talk.tar.gz -C /var/www/deck/rtx-talk && sudo chown -R www-data:www-data /var/www/deck/rtx-talk"
+# 驗證 https://turncloud.thepocket.company/rtx-talk/?v=<隨機> → 26 頁、nemo 圖 200、pocket 段影片可播
+```
+
+---
+
 ## 附錄 · 給 LLM Agent 的 onboarding cheat sheet
 
 如果你是剛被叫進來的新 agent，**讀完這份就可以動工**。五件最重要的事：
@@ -1215,4 +1244,4 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 ---
 
-*Last updated · 2026-06-24 · 新增 §14 衍生 deck `ai-talk-deck`（AI 演講合併版 44 頁 · 媒體只在當前頁播放規則 · 騰雲段＝「6870 亮點」截圖 `s2` ＋ 海外版圖截圖 `s4` · `/ai-talk/` 部署）。先前：§1.5 最新版投影片進度（24 頁逐頁清單）+ 校正 build 來源脫鉤現實（canonical = 手動維護的根目錄 `index.html`，HEAD `35950a9`）· This document is the Harness for the slide framework.*
+*Last updated · 2026-07-21 · 新增 §15 衍生 deck `rtx-talk-deck`（RTX 演講版 26 頁：NemoClaw × Nemotron 截圖 + 騰雲發表會精選 6 頁 + 地端多模態工作流手刻 6 頁 · `/rtx-talk/` 部署 · Demo B/C 素材佔位約定）。先前：§14 `ai-talk-deck`（44 頁 · 媒體只在當前頁播放規則 · `/ai-talk/` 部署）· §1.5 最新版投影片進度（24 頁逐頁清單）· This document is the Harness for the slide framework.*

@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:26px;flex:1;min-height:0;margin-top:36px;}
+.storybox{background:var(--panel);border:1px solid var(--line-soft);border-radius:20px;padding:18px;display:flex;flex-direction:column;min-height:0;}
+.storybox .cap{font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.14em;color:var(--dim);margin-bottom:14px;display:flex;justify-content:space-between;}
+.storybox .cap b{color:var(--nv-light);}
+.side{display:flex;flex-direction:column;gap:20px;min-height:0;}
+.side .card{flex:1;display:flex;flex-direction:column;justify-content:center;}
+.beats{display:flex;flex-direction:column;gap:12px;margin-top:2px;}
+.beat{display:flex;gap:14px;align-items:baseline;background:var(--panel-2);border:1px solid var(--line-soft);border-radius:12px;padding:13px 16px;}
+.beat .n{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--nv-light);flex:0 0 auto;}
+.beat .x{font-size:17px;color:var(--dim);line-height:1.5;}
+.beat .x b{color:var(--ink);}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+
+  <div class="kicker">Demo C · 狗血故事工作流</div>
+  <h1>同一台機器，連 <span class="g">狗血劇本</span> 都寫好了</h1>
+  <p class="sub">地端 LLM 吃進商品與人設，直接產出<b>戲劇化敘事腳本</b> ── 配上 Demo B 的影片，一支帶劇情的商品短片就完成了。</p>
+
+  <div class="wrap">
+    <div class="storybox">
+      <div class="cap"><span>OUTPUT · 成品展示版位</span><b>local LLM</b></div>
+      <!-- 素材到位後：影片放 img/local/story_video.mp4（帶聲 demo 請加 controls）、
+           或截圖放 img/local/story_case.png，換掉下面的 .slot 即可 -->
+      <div class="slot">
+        <div class="ic">💔</div>
+        <div class="t">狗血故事成品版位 · 現場 demo</div>
+        <div class="f">img/local/story_video.mp4 或 story_case.png</div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="card">
+        <h3>什麼是狗血工作流</h3>
+        <div class="beats">
+          <div class="beat"><span class="n">01</span><span class="x">給定<b>商品 + 人設 + 平台</b>（如 Reels / Threads）</span></div>
+          <div class="beat"><span class="n">02</span><span class="x">地端 LLM 產出<b>衝突 → 轉折 → 帶貨</b>的三幕劇</span></div>
+          <div class="beat"><span class="n">03</span><span class="x">腳本回頭驅動<b>圖與影片</b>的分鏡生成</span></div>
+        </div>
+      </div>
+      <div class="card"><h3>為什麼有效</h3><p>狗血 = <b>停留時間</b>。劇情鉤子讓商品內容從「廣告」變「連續劇」，完播率與轉發都跟著上來。</p></div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · DEMO C</span></div>
+</div></body></html>

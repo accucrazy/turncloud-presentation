@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.wrap{display:grid;grid-template-columns:2fr 1fr;gap:26px;flex:1;min-height:0;margin-top:36px;}
+.pair{min-height:0;}
+.side{display:flex;flex-direction:column;gap:20px;min-height:0;}
+.side .card{flex:1;display:flex;flex-direction:column;justify-content:center;}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+
+  <div class="kicker">Demo A · 商品照 → 模特兒實穿</div>
+  <h1>純單品照進去，<span class="g">台灣網拍實穿圖</span> 出來</h1>
+
+  <div class="wrap">
+    <div class="pair">
+      <div class="shot">
+        <div class="cap"><span>INPUT · 純單品照</span><b>reference</b></div>
+        <div class="box"><img src="../img/local/beryl_single.webp" alt="單品照 reference"></div>
+      </div>
+      <div class="shot">
+        <div class="cap"><span>OUTPUT · 地端生成實穿</span><b>RTX 5090</b></div>
+        <div class="box"><img src="../img/local/beryl_young_hot_tryon.png" alt="地端生成實穿圖"></div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="card"><h3>風格是約束來的</h3><p>先觀察品牌官網模特兒風格，把<b>人設、妝髮、鏡頭語言</b>寫進 prompt ── 生成的是「這個品牌的人」。</p></div>
+      <div class="card"><h3>難衣服 = 低重繪</h3><p>蕾絲、馬甲這類容易跑偏的結構，改用<b>低重繪幅度</b>保留原衣服，只換模特兒氣質與畫面質感。</p></div>
+      <div class="card"><h3>整批可複製</h3><p>同一條 workflow 換商品圖就能重跑，<b>一晚可出整個商品線</b>的實穿圖。</p></div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · DEMO A</span></div>
+</div></body></html>

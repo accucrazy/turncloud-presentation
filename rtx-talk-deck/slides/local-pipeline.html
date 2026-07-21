@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.flow{margin-top:44px;}
+.legend{display:flex;gap:26px;margin-top:34px;}
+.legend .card{flex:1;}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+
+  <div class="kicker">Pipeline · 一路在本機</div>
+  <h1>工作流圖解：<span class="g">商品照</span> 進，<span class="c">成片與故事</span> 出</h1>
+  <p class="sub">不是單純文字生圖 ── 以<b>商品圖與品牌風格為約束</b>，每一站的輸出都是下一站的輸入，全程不離開這台機器。</p>
+
+  <div class="flow">
+    <div class="stage"><div class="n">STEP 1</div><div class="h">擷取商品素材</div><div class="p">商品頁單品照、假人照、官網實穿照與風格參考圖。</div></div>
+    <div class="arr">→</div>
+    <div class="stage"><div class="n">STEP 2</div><div class="h">生成模特兒實穿</div><div class="p">reference edit / 低重繪保衣服，套用品牌人設與台灣網拍語感。</div></div>
+    <div class="arr">→</div>
+    <div class="stage"><div class="n">STEP 3</div><div class="h">實穿圖 → 影片</div><div class="p">image-to-video，靜態實穿變成會動的商品短片。</div></div>
+    <div class="arr">→</div>
+    <div class="stage"><div class="n">STEP 4</div><div class="h">狗血故事腳本</div><div class="p">地端 LLM 依商品與人設生成戲劇化敘事，直接配上短影音。</div></div>
+    <div class="arr">→</div>
+    <div class="stage"><div class="n">STEP 5</div><div class="h">上架 / 投放</div><div class="p">成圖、成片、腳本齊備，接回上一章的 Agent 產線發佈。</div></div>
+  </div>
+
+  <div class="legend">
+    <div class="card"><h3><span class="hl">引擎</span> · ComfyUI</h3><p>node-based 工作流，<b>模型、參數、流程全部版本化</b>，可複製、可調校、可交接。</p></div>
+    <div class="card"><h3><span class="hl">算力</span> · RTX 5090</h3><p>32GB VRAM + Blackwell 世代算力，圖生圖、圖生影、本地 LLM <b>同一張卡全包</b>。</p></div>
+    <div class="card"><h3><span class="hl">模型</span> · 可替換</h3><p>Flux2 Klein / NemoClaw × Nemotron nano ── 模型演進時<b>換節點不換流程</b>。</p></div>
+  </div>
+
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · PIPELINE</span></div>
+</div></body></html>
