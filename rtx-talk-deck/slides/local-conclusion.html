@@ -1,52 +1,37 @@
 <!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
 <style>
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:38px;}
-.col{border-radius:20px;padding:32px 34px;border:1px solid var(--line-soft);}
-.col.cloud{background:var(--panel);}
-.col.local{background:linear-gradient(160deg,rgba(118,185,0,.14),rgba(118,185,0,.04));border-color:var(--line);}
-.col .h{font-size:24px;font-weight:900;margin-bottom:18px;display:flex;align-items:center;gap:12px;color:#fff;}
-.col ul{list-style:none;}
-.col li{font-size:19px;color:var(--dim);line-height:1.55;padding-left:28px;position:relative;margin-bottom:13px;}
-.col li b{color:var(--ink);}
-.col.cloud li::before{content:'—';position:absolute;left:0;color:var(--dim-2);}
-.col.local li::before{content:'✓';position:absolute;left:0;color:var(--nv-light);font-weight:900;}
-.punch{margin-top:38px;background:linear-gradient(100deg,rgba(118,185,0,.16),rgba(34,211,238,.08));border:1px solid var(--line);border-radius:20px;padding:34px 40px;}
-.punch .t{font-size:40px;font-weight:900;color:#fff;line-height:1.3;}
-.punch .t .g{color:var(--nv-light);}
-.punch .s{font-size:20px;color:var(--dim);margin-top:12px;line-height:1.6;}
-.punch .s b{color:var(--ink);}
+.slide{justify-content:center;}
+.kick{font-size:20px;font-weight:700;letter-spacing:.24em;color:var(--nv-light);text-transform:uppercase;font-family:'JetBrains Mono',monospace;}
+h1.big{font-size:96px;line-height:1.12;margin-top:22px;font-weight:900;letter-spacing:-.02em;color:#fff;}
+h1.big .g{background:linear-gradient(100deg,var(--nv-light),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.eq{display:flex;align-items:center;gap:26px;margin-top:56px;flex-wrap:wrap;}
+.eq .box{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 34px;font-size:30px;font-weight:900;color:#fff;}
+.eq .box small{display:block;font-size:16px;font-weight:400;color:var(--dim-2);margin-top:6px;font-family:'JetBrains Mono',monospace;letter-spacing:.08em;}
+.eq .op{font-size:40px;font-weight:900;color:var(--nv);}
+.eq .box.out{background:linear-gradient(160deg,rgba(118,185,0,.18),rgba(118,185,0,.05));border-color:var(--nv);color:var(--nv-light);}
+.punch{margin-top:56px;font-size:46px;font-weight:900;color:#fff;line-height:1.4;}
+.punch .g{color:var(--nv-light);}
+.sub2{font-size:26px;color:var(--dim);margin-top:20px;}
+.sub2 b{color:var(--ink);}
 </style></head>
 <body><div class="slide">
   <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
 
-  <div class="kicker">Conclusion · 商機在哪裡</div>
-  <h1>很多商機，會出現在<span class="g">把雲端服務落到地端</span></h1>
+  <div>
+    <div class="kick">Conclusion · 我研究的東西</div>
+    <h1 class="big">這門學問，叫 <span class="g">Content Tech</span>。</h1>
 
-  <div class="compare">
-    <div class="col cloud">
-      <div class="h">☁️ 雲端訂閱</div>
-      <ul>
-        <li>素材要<b>上傳到別人的機器</b>，敏感品類直接卡關</li>
-        <li>審核規則、額度、價格<b>說變就變</b></li>
-        <li>量大之後是<b>永遠繳不完的月費</b></li>
-        <li>流程綁平台，<b>搬不走、複製不了</b></li>
-      </ul>
+    <div class="eq">
+      <div class="box">內容<small>CONTENT · 會賣的素材</small></div>
+      <div class="op">×</div>
+      <div class="box">工程<small>TECH · 可複製的產線</small></div>
+      <div class="op">=</div>
+      <div class="box out">一晚出完一條商品線</div>
     </div>
-    <div class="col local">
-      <div class="h">⚡ 地端工作流</div>
-      <ul>
-        <li>素材、模型、prompt <b>全部留在自己機器</b></li>
-        <li>模型版本自己釘，<b>流程可複製、可交接</b></li>
-        <li>成本 = <b>一次性硬體</b>，跑愈多愈划算</li>
-        <li>模型更強就<b>換節點</b>，產線照跑</li>
-      </ul>
-    </div>
+
+    <div class="punch">每一個被雲端說「NO」的需求，<br>都是一門<span class="g">等著落地的生意</span>。</div>
+    <div class="sub2">內衣只是開始 ── 換成醫美、保健、金融…… <b>每落地一條產線，就是一個市場。</b></div>
   </div>
 
-  <div class="punch">
-    <div class="t">每一個習以為常的雲端服務，<br>都值得<span class="g">在地端重做一次</span>。</div>
-    <div class="s">今天示範的只是 marketing 一條產線 ── 從輿情、生圖到生片。把它換成客服、設計、剪輯、資料分析…… <b>每落地一條，就是一門生意。</b></div>
-  </div>
-
-  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · CONCLUSION</span></div>
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · CONTENT TECH</span></div>
 </div></body></html>
