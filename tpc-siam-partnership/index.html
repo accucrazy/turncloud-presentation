@@ -3219,9 +3219,13 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .sp-insight.i-gold { border-top-color: var(--gold); }
 .sp-insight.i-orange { border-top-color: var(--orange); }
 .sp-insight.i-violet { border-top-color: var(--violet); }
-.sp-insight { justify-content: center; gap: 1.2cqh; }
-.sp-insight .where { font-family: 'JetBrains Mono', monospace; font-size: 1.7cqh; letter-spacing: 1.5px; color: var(--dim-2); }
-.sp-insight .stat { font-size: 4.4cqh; font-weight: 900; color: var(--text); line-height: 1.18; }
+.sp-insight { flex-direction: row; gap: 2cqh; align-items: stretch; padding: 1.6cqh; }
+.sp-insight .pshot { flex: 0 0 30%; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: #fff; position: relative; min-height: 0; }
+.sp-insight .pshot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.sp-insight .pshot .pb { position: absolute; left: 0.8cqh; bottom: 0.8cqh; background: rgba(15,23,42,.85); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 1.25cqh; letter-spacing: 1px; padding: 0.45cqh 0.9cqh; border-radius: 999px; }
+.sp-insight .ptext { flex: 1; display: flex; flex-direction: column; gap: 1cqh; justify-content: center; min-width: 0; }
+.sp-insight .where { font-family: 'JetBrains Mono', monospace; font-size: 1.6cqh; letter-spacing: 1.5px; color: var(--dim-2); }
+.sp-insight .stat { font-size: 3.6cqh; font-weight: 900; color: var(--text); line-height: 1.18; }
 .sp-insight .stat em { font-style: normal; color: var(--cyan); }
 .sp-insight.i-gold .stat em { color: #b45309; }
 .sp-insight.i-orange .stat em { color: #d97706; }
@@ -3816,28 +3820,40 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
         <div class="sp-insightgrid">
             <div class="sp-insight i-gold">
-                <div class="where">ICONSIAM · TOP POST 83,075 LIKES</div>
-                <div class="stat">A <em>฿100 fridge magnet</em> beat every ad</div>
-                <div class="what">One handmade souvenir reel = the <strong>#1 post in your whole ecosystem</strong>.</div>
-                <div class="so">→ Make <strong>"must-buy" content</strong> a series, not a one-off.</div>
+                <div class="pshot"><img src="img/post_magnet.jpg" alt="Thai-tea fridge magnet reel"><div class="pb">REAL POST · 83K ♥</div></div>
+                <div class="ptext">
+                    <div class="where">ICONSIAM · TOP POST 83,075 LIKES</div>
+                    <div class="stat">A <em>฿100 fridge magnet</em> beat every ad</div>
+                    <div class="what">One handmade souvenir reel = the <strong>#1 post in your whole ecosystem</strong>.</div>
+                    <div class="so">→ Make <strong>"must-buy" content</strong> a series, not a one-off.</div>
+                </div>
             </div>
             <div class="sp-insight i-orange">
-                <div class="where">MANGO STICKY RICE · 1.06M VOLUME · 86% THREADS</div>
-                <div class="stat">The <em>cultural icon</em> talks 2× louder than ICONSIAM</div>
-                <div class="what">Tourists start with <strong>a craving</strong>, not a mall — and it happens on Threads.</div>
-                <div class="so">→ Lead the <strong>craving → to your doors</strong>.</div>
+                <div class="pshot"><img src="img/post_mango.jpg" alt="Mango sticky rice reel"><div class="pb">REAL POST · 20K ♥</div></div>
+                <div class="ptext">
+                    <div class="where">MANGO STICKY RICE · 1.06M VOLUME · 86% THREADS</div>
+                    <div class="stat">The <em>cultural icon</em> talks 2× louder than ICONSIAM</div>
+                    <div class="what">Tourists start with <strong>a craving</strong>, not a mall.</div>
+                    <div class="so">→ Lead the <strong>craving → to your doors</strong>.</div>
+                </div>
             </div>
             <div class="sp-insight">
-                <div class="where">SIAM CENTER · SÚNDALO PERFUME · 4,028 COMMENTS</div>
-                <div class="stat"><em>Thai local brands</em> are your engagement engine</div>
-                <div class="what">One local perfume post = <strong>100× normal engagement</strong>.</div>
-                <div class="so">→ Own <strong>"Thai brands you can't get at home"</strong>.</div>
+                <div class="pshot"><img src="img/post_perfume.jpg" alt="SUNDALO perfume reel"><div class="pb">REAL POST · SÚNDALO</div></div>
+                <div class="ptext">
+                    <div class="where">SIAM CENTER · SÚNDALO PERFUME · TOP 4,028 COMMENTS</div>
+                    <div class="stat"><em>Thai local brands</em> are your engagement engine</div>
+                    <div class="what">"$390 a bottle, I bought five" — <strong>local brands drive the talk</strong>.</div>
+                    <div class="so">→ Own <strong>"Thai brands you can't get at home"</strong>.</div>
+                </div>
             </div>
             <div class="sp-insight i-violet">
-                <div class="where">NEXTOPIA · 39.6K VOLUME IN 5 MONTHS · FROM ZERO</div>
-                <div class="stat">Visitors already call it a <em>"future city"</em></div>
-                <div class="what">Unprompted — real posts say <strong>"sustainability as a lifestyle"</strong>.</div>
-                <div class="so">→ Let <strong>their words</strong> write the campaign.</div>
+                <div class="pshot"><img src="img/post_nextopia.jpg" alt="NEXTOPIA sustainability reel"><div class="pb">REAL POST · NEXTOPIA</div></div>
+                <div class="ptext">
+                    <div class="where">NEXTOPIA · 39.6K VOLUME IN 5 MONTHS · FROM ZERO</div>
+                    <div class="stat">Visitors already call it a <em>"future city"</em></div>
+                    <div class="what">Unprompted — real posts say <strong>"sustainability as a lifestyle"</strong>.</div>
+                    <div class="so">→ Let <strong>their words</strong> write the campaign.</div>
+                </div>
             </div>
         </div>
 

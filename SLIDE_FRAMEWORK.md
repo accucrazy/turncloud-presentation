@@ -1229,7 +1229,7 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 | 01 封面 | （cover） | 改為 Content Tech 提案：`Content Tech — Turning great places into compounding stories`，lede 直接點出 2.18M conversations。封面圖換成 **Banana（GenerateImage）生成的曼谷版團隊圖** `img/cover_hero_bangkok.jpg`（以 santamonica 版當 reference，背景換昭披耶河 + ICONSIAM + 鄭王廟） |
 | 09（新增） | `siam_proof` | **Pandora 已在監聽的實證**：4 張統計卡（2.18M volume / 3,298 curated / 12 keywords / 83K top post）+ 5 列關鍵字排行（芒果糯米 1.06M 置頂、ICONSIAM 577K、Paragon 248K、Siam Center 193K、體驗層合計）。數據來自 pandora.thepocket.company 的 12 組監聽報告 |
 | 10（新增） | `siam_reports` | **真實報告牆**：3 張微傾斜的 Pandora 報告截圖（ICONSIAM 聲量報告 hero+統計 / 芒果糯米 AI 情緒分析滿版文字 / 分級排行文章列表含 83,075 讚置頂）＋標語 `Not slides. Real reports.`。截圖存 `img/report_*.jpg`（另有 mango_hero 樹狀圖與 mango_monthly 逐月敘事兩張備用檔已一併部署），要換截圖：開 report-view 頁 → CDP 設 1440 寬 viewport → 捲到該區塊再 captureScreenshot（內容是虛擬渲染，沒捲到會截到空白） |
-| 10（新增） | `siam_insight` | **4 個 decision-ready 洞察卡**：冰箱磁鐵 83,075 讚（souvenir economy）、芒果糯米 1.06M · 86% Threads（文化 icon > 商場）、SÚNDALO 香水 4,028 留言（泰國在地品牌）、NEXTOPIA 被自發稱「未來城市」。每卡附 `→ 建議行動` |
+| 11（新增） | `siam_insight` | **4 個圖文洞察卡（左＝真實貼文截圖 30% 寬，右＝洞察）**：冰箱磁鐵 83,075 讚（souvenir economy）、芒果糯米 20K 讚吃播（craving 入口）、SÚNDALO 香水 $390（泰國在地品牌）、NEXTOPIA 永續 reel（「未來城市」）。每卡附 `→ 建議行動`。貼文截圖 `img/post_*.jpg` 是 **Instagram embed 頁**（`instagram.com/reel/<code>/embed/captioned/`，免登入）以 560 寬 viewport（dsf=1，dsf=2 會出現內容重複 bug）截的；貼文連結全部從 Pandora report-view 的文章列表 `a[href]` 挖出 |
 | 26（新增） | `siam_framework` | **Content Tech flywheel**：LISTEN(Pandora)→CREATE(Moana×Banana)→ACTIVATE(Adriana×Stacey)→COMPOUND(自有 intelligence asset)＋三條合作軌（Destination Intelligence / Content Engine / Ecosystem Play）＋ 90-day pilot 收尾條 |
 | 27 redeem | `redeem` | 對象改成 Siam Piwat team（footnote 同步改） |
 
@@ -1276,4 +1276,4 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 ---
 
-*Last updated · 2026-07-22 · §16 `tpc-siam-partnership` 更新至 28 頁：新增 Pandora 真實報告截圖牆（`siam_reports`）、Banana 生成曼谷版封面、全 deck 英文文案精簡（字少字大）· `/siam-partnership/` 已重部署。先前：§15 `rtx-talk-deck` 接上 video-package.zip 真實影片共 31 頁（Demo B 換真實 tryon 影片；新增 `local-pose`（指定舞步實證）與 `local-vs-cloud`（同旗袍地端/雲端實測對照）；blocked 頁改用真實錯誤碼 5/5 數據；33 頁 nemo 圖檔全留在 `img/nemo/`）· `/rtx-talk/` 已重部署）。先前：§14 `ai-talk-deck`（44 頁 · 媒體只在當前頁播放規則 · `/ai-talk/` 部署）· §1.5 最新版投影片進度（24 頁逐頁清單）· This document is the Harness for the slide framework.*
+*Last updated · 2026-07-23 · §16 `tpc-siam-partnership` 洞察頁改圖文並茂：4 張洞察卡各嵌入 Pandora 分析過的真實貼文截圖（IG embed 截圖法）· `/siam-partnership/` 已重部署。先前：28 頁版（報告截圖牆＋曼谷版封面＋文案精簡）。先前：§15 `rtx-talk-deck` 接上 video-package.zip 真實影片共 31 頁（Demo B 換真實 tryon 影片；新增 `local-pose`（指定舞步實證）與 `local-vs-cloud`（同旗袍地端/雲端實測對照）；blocked 頁改用真實錯誤碼 5/5 數據；33 頁 nemo 圖檔全留在 `img/nemo/`）· `/rtx-talk/` 已重部署）。先前：§14 `ai-talk-deck`（44 頁 · 媒體只在當前頁播放規則 · `/ai-talk/` 部署）· §1.5 最新版投影片進度（24 頁逐頁清單）· This document is the Harness for the slide framework.*
