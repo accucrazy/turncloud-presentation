@@ -1219,7 +1219,7 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 > 對象已從 Siam Piwat 改為 **Bureau of Wonders（BOW，tbowonders.com）**——曼谷 PR / 精品體驗 agency（客戶：Chaumet、Loro Piana、LV、CASIO、AIA…，辦公室在 Siam Piwat Tower）。deck 資料夾名沿用 `tpc-siam-partnership` 不改。
 
-> **`index.html`（複製自 `tpc-launch-en` 再改）＋自帶 `img/`（Pandora 報告截圖 ×5 + Banana 生成曼谷版封面 + Accucrazy 自介圖 + 泰國實績圖），共 34 頁**。共用素材仍吃線上根網域 `/img/`。
+> **`index.html`（複製自 `tpc-launch-en` 再改）＋自帶 `img/`（Pandora 報告截圖 ×5 + Banana 生成曼谷版封面 + Accucrazy 自介圖 + 泰國實績圖），共 32 頁**。共用素材仍吃線上根網域 `/img/`。
 > 文案原則：**對方英文非母語 → 字少、字大**；洞察卡與 flywheel 都是一行一句。
 > 定位：**Content Tech × Siam Piwat partnership proposal** —— 用「我們早就在監聽你的世界」當開場證據，收在 partnership framework + 90-day pilot。
 > 線上位置：**`https://turncloud.thepocket.company/siam-partnership/`**（VM `/var/www/deck/siam-partnership/`）。
@@ -1231,14 +1231,14 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 | 02–05（新增） | `intro_bio / intro_nvidia / intro_about / intro_brands` | **Accucrazy 開場自介 ×4，全英文**：02 = HTML bio（左＝英文經歷 bullets＋3 顆 pill，右＝Google Cloud Startup 演講照 `intro_google.jpg`，CSS `sp-bio`）；03 = NVIDIA 照片牆 ×4（`sp-photowall`：GTC keynote 合作牆 `intro_gtc.jpg`、Inception 攤位合照 `intro_booth.jpg`、NVIDIA meetup 滿場 `intro_talk.jpg`、NVIDIA 立牌趣味照 `intro_dance.jpg`）；04 = fullbleed 英文版時間軸 `intro_about.jpg`（Banana 把 t03 中文小字全英譯）；05 = HTML 品牌牆（英文標題＋裁掉中文標題的 t05 logo 牆 `intro_brands.jpg`，CSS `sp-brandwall`）。手機截圖類照片先 PIL 裁掉手機 UI；燒錄中文字幕的 2 張 reels 用 Banana（GenerateImage）去字幕＋去 UI 重建 |
 | 01 封面 | （cover） | 改為 Content Tech 提案：`Content Tech — Turning great places into compounding stories`，lede 直接點出 2.18M conversations。封面圖換成 **Banana（GenerateImage）生成的曼谷版團隊圖** `img/cover_hero_bangkok.jpg`（以 santamonica 版當 reference，背景換昭披耶河 + ICONSIAM + 鄭王廟） |
 | 06（新增） | `intro_thailand` | **Accucrazy Thailand 實績**（`sp-thwall` 兩圖＋一影片）：Oriental Princess「Beauty Intelligence」AI 膚質檢測 campaign（`th_op.jpg`）＋ Meitu 2019 Thailand review（In-App media campaigns × Lazada LazLIVE，`th_meitu.jpg`）＋ **泰國商務處（Thai Trade & Economic Office, Taipei）AI 影片 `th_tteo.mp4`**（720×1280 · 15s · loop muted，我們幫他做的，現為平台 user）。訊息：2019 曼谷落地 AI beauty tech → 今天泰國官方單位是平台用戶 |
-| 31（新增） | `siam_cobuild` | **高格局收斂頁（放在 flywheel 前）**：`Let's build Thailand's Content Tech business — together` · 左卡 WE BRING THE TECHNOLOGY（Agent workforce / 300+ brands / 2.18M conversations）× 右卡 YOU BRING THE CULTURE（BOW 的精品敘事、媒體 KOL 網絡、文化直覺），底條 `Our engines × your instincts = the Content Tech standard for Thailand — then Southeast Asia`（CSS `sp-cobuild`） |
+| 29（新增） | `siam_cobuild` | **高格局收斂頁（放在 flywheel 前）**：`Let's build Thailand's Content Tech business — together` · 左卡 WE BRING THE TECHNOLOGY（頂部插圖 `../img/anim_agents_ring.jpg`）× 右卡 YOU BRING THE CULTURE（頂部插圖 `img/bow_event.jpg`＝從 BOW PDF p28 Lancaster 遊船晚宴裁的），底條 `Our engines × your instincts = the Content Tech standard for Thailand — then Southeast Asia`（CSS `sp-cobuild`，卡片 `.pic` 佔 34% 高） |
 | 14（新增） | `siam_proof` | **Pandora 已在監聽的實證**：4 張統計卡（2.18M volume / 3,298 curated / 12 keywords / 83K top post）+ 5 列關鍵字排行（芒果糯米 1.06M 置頂、ICONSIAM 577K、Paragon 248K、Siam Center 193K、體驗層合計）。數據來自 pandora.thepocket.company 的 12 組監聽報告 |
 | 15（新增） | `siam_reports` | **真實報告牆**：3 張微傾斜的 Pandora 報告截圖（ICONSIAM 聲量報告 hero+統計 / 芒果糯米 AI 情緒分析滿版文字 / 分級排行文章列表含 83,075 讚置頂）＋標語 `Not slides. Real reports.`。截圖存 `img/report_*.jpg`（另有 mango_hero 樹狀圖與 mango_monthly 逐月敘事兩張備用檔已一併部署），要換截圖：開 report-view 頁 → CDP 設 1440 寬 viewport → 捲到該區塊再 captureScreenshot（內容是虛擬渲染，沒捲到會截到空白） |
 | 16（新增） | `siam_insight` | **4 個圖文洞察卡（左＝真實貼文截圖 30% 寬，右＝洞察）**：冰箱磁鐵 83,075 讚（souvenir economy）、芒果糯米 20K 讚吃播（craving 入口）、SÚNDALO 香水 $390（泰國在地品牌）、NEXTOPIA 永續 reel（「未來城市」）。每卡附 `→ 建議行動`。貼文截圖 `img/post_*.jpg` 是 **Instagram embed 頁**（`instagram.com/reel/<code>/embed/captioned/`，免登入）以 560 寬 viewport（dsf=1，dsf=2 會出現內容重複 bug）截的；貼文連結全部從 Pandora report-view 的文章列表 `a[href]` 挖出 |
-| 32（新增） | `siam_framework` | **Content Tech flywheel**：LISTEN(Pandora)→CREATE(Moana×Banana)→ACTIVATE(Adriana×Stacey)→COMPOUND(自有 intelligence asset)＋三條合作軌（Destination Intelligence / Content Engine / Ecosystem Play）＋ 90-day pilot 收尾條 |
-| 34 redeem | `redeem` | 對象改成 Siam Piwat team（footnote 同步改） |
+| 30（新增） | `siam_framework` | **Content Tech flywheel**：LISTEN(Pandora)→CREATE(Moana×Banana)→ACTIVATE(Adriana×Stacey)→COMPOUND(自有 intelligence asset)＋三條合作軌（Destination Intelligence / Content Engine / Ecosystem Play）＋ 90-day pilot 收尾條 |
+| 32 redeem | `redeem` | 對象改成 Siam Piwat team（footnote 同步改） |
 
-新增 CSS 全部集中在 `</style>` 前的 `sp-*` 區塊（`sp-statgrid / sp-rows / sp-insightgrid / sp-flywheel`）。頁碼用 `_renumber_pg.py`（parent repo 根）重編為 `02..34 / 34`（封面無頁碼）。
+新增 CSS 全部集中在 `</style>` 前的 `sp-*` 區塊（`sp-statgrid / sp-rows / sp-insightgrid / sp-flywheel`）。頁碼用 `_renumber_pg.py`（parent repo 根）重編為 `02..32 / 32`（封面無頁碼）。
 
 ### 部署（只有一個檔案，素材吃線上根目錄 `/img/`）
 
@@ -1247,7 +1247,7 @@ cd tpc-siam-partnership && tar -czf ../../siam-partnership.tar.gz .
 gcloud compute scp siam-partnership.tar.gz reel-studio:/tmp/ --zone=asia-east1-b --project=the-pocket-banana-f8811
 gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f8811 \
   --command="sudo rm -rf /var/www/deck/siam-partnership && sudo mkdir -p /var/www/deck/siam-partnership && sudo tar xzf /tmp/siam-partnership.tar.gz -C /var/www/deck/siam-partnership && sudo chown -R www-data:www-data /var/www/deck/siam-partnership"
-# 驗證 https://turncloud.thepocket.company/siam-partnership/?v=<隨機> → 34 頁、../img/ 素材全 200
+# 驗證 https://turncloud.thepocket.company/siam-partnership/?v=<隨機> → 32 頁、../img/ 素材全 200
 ```
 
 ---
@@ -1281,4 +1281,4 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 ---
 
-*Last updated · 2026-07-23 · §16 `tpc-siam-partnership` `intro_thailand` 加入泰國商務處 AI 影片 `th_tteo.mp4`（seedance 生成 · 三欄 grid 0.95/1.5/0.62）。先前：對象改為 Bureau of Wonders（BOW）：新增 `intro_thailand`（Accucrazy Thailand 2019 · Oriental Princess AI 膚檢＋Meitu×Lazada）與 `siam_cobuild`（我們的技術 × BOW 的文化＝共建泰國 Content Tech）兩頁 → 34 頁；GTC 照片改 object-fit:contain 保住 ACCUCRAZY logo；封面/framework/redeem 措辭全面改 agency 對象 · `/siam-partnership/` 已重部署。先前：自介四頁改全英文版：bio 改 HTML＋Google 演講照、NVIDIA 頁改 4 張真實照片牆（手機截圖 PIL 去 UI、燒錄中文字幕用 Banana 修掉）、時間軸 Banana 英譯、品牌牆裁掉中文標題改英文 HTML 標題 → 全 deck 32 頁 · `/siam-partnership/` 已重部署。先前：封面後新增 Accucrazy 自介 ×4。先前：洞察頁改圖文並茂：4 張洞察卡各嵌入 Pandora 分析過的真實貼文截圖（IG embed 截圖法）· `/siam-partnership/` 已重部署。先前：28 頁版（報告截圖牆＋曼谷版封面＋文案精簡）。先前：§15 `rtx-talk-deck` 接上 video-package.zip 真實影片共 31 頁（Demo B 換真實 tryon 影片；新增 `local-pose`（指定舞步實證）與 `local-vs-cloud`（同旗袍地端/雲端實測對照）；blocked 頁改用真實錯誤碼 5/5 數據；33 頁 nemo 圖檔全留在 `img/nemo/`）· `/rtx-talk/` 已重部署）。先前：§14 `ai-talk-deck`（44 頁 · 媒體只在當前頁播放規則 · `/ai-talk/` 部署）· §1.5 最新版投影片進度（24 頁逐頁清單）· This document is the Harness for the slide framework.*
+*Last updated · 2026-07-23 · §16 `tpc-siam-partnership` 刪除 raccoon / luna partnership 兩頁（rytho 保留）→ 32 頁；`siam_insight` 版面修正（grid 固定 2×2 行高、字級縮小防溢出）；`siam_cobuild` 加兩張卡頂插圖、`siam_framework` flywheel 加 agent 頭像＋報告縮圖。先前：`intro_thailand` 加入泰國商務處 AI 影片 `th_tteo.mp4`（seedance 生成 · 三欄 grid 0.95/1.5/0.62）。先前：對象改為 Bureau of Wonders（BOW）：新增 `intro_thailand`（Accucrazy Thailand 2019 · Oriental Princess AI 膚檢＋Meitu×Lazada）與 `siam_cobuild`（我們的技術 × BOW 的文化＝共建泰國 Content Tech）兩頁 → 34 頁；GTC 照片改 object-fit:contain 保住 ACCUCRAZY logo；封面/framework/redeem 措辭全面改 agency 對象 · `/siam-partnership/` 已重部署。先前：自介四頁改全英文版：bio 改 HTML＋Google 演講照、NVIDIA 頁改 4 張真實照片牆（手機截圖 PIL 去 UI、燒錄中文字幕用 Banana 修掉）、時間軸 Banana 英譯、品牌牆裁掉中文標題改英文 HTML 標題 → 全 deck 32 頁 · `/siam-partnership/` 已重部署。先前：封面後新增 Accucrazy 自介 ×4。先前：洞察頁改圖文並茂：4 張洞察卡各嵌入 Pandora 分析過的真實貼文截圖（IG embed 截圖法）· `/siam-partnership/` 已重部署。先前：28 頁版（報告截圖牆＋曼谷版封面＋文案精簡）。先前：§15 `rtx-talk-deck` 接上 video-package.zip 真實影片共 31 頁（Demo B 換真實 tryon 影片；新增 `local-pose`（指定舞步實證）與 `local-vs-cloud`（同旗袍地端/雲端實測對照）；blocked 頁改用真實錯誤碼 5/5 數據；33 頁 nemo 圖檔全留在 `img/nemo/`）· `/rtx-talk/` 已重部署）。先前：§14 `ai-talk-deck`（44 頁 · 媒體只在當前頁播放規則 · `/ai-talk/` 部署）· §1.5 最新版投影片進度（24 頁逐頁清單）· This document is the Harness for the slide framework.*
