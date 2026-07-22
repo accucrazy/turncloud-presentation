@@ -1215,6 +1215,36 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 ---
 
+## 16 · 衍生 deck · `tpc-siam-partnership`（泰國 Siam Piwat 合作提案 · 英文）
+
+> **單一 `index.html`（複製自 `tpc-launch-en` 再改），共 27 頁**，沿用發表會引擎與 `../img/` 共用素材（線上吃根網域 `/img/`，所以只需部署 index.html）。
+> 定位：**Content Tech × Siam Piwat partnership proposal** —— 用「我們早就在監聽你的世界」當開場證據，收在 partnership framework + 90-day pilot。
+> 線上位置：**`https://turncloud.thepocket.company/siam-partnership/`**（VM `/var/www/deck/siam-partnership/`）。
+
+### 相對 `tpc-launch-en` 的差異（其餘 24 頁原封不動）
+
+| 頁 | data-slide | 內容 |
+| --- | --- | --- |
+| 01 封面 | （cover） | 改為 Content Tech 提案：`Content Tech — Turning great places into compounding stories`，lede 直接點出 2.18M conversations |
+| 09（新增） | `siam_proof` | **Pandora 已在監聽的實證**：4 張統計卡（2.18M volume / 3,298 curated / 12 keywords / 83K top post）+ 5 列關鍵字排行（芒果糯米 1.06M 置頂、ICONSIAM 577K、Paragon 248K、Siam Center 193K、體驗層合計）。數據來自 pandora.thepocket.company 的 12 組監聽報告 |
+| 10（新增） | `siam_insight` | **4 個 decision-ready 洞察卡**：冰箱磁鐵 83,075 讚（souvenir economy）、芒果糯米 1.06M · 86% Threads（文化 icon > 商場）、SÚNDALO 香水 4,028 留言（泰國在地品牌）、NEXTOPIA 被自發稱「未來城市」。每卡附 `→ 建議行動` |
+| 26（新增） | `siam_framework` | **Content Tech flywheel**：LISTEN(Pandora)→CREATE(Moana×Banana)→ACTIVATE(Adriana×Stacey)→COMPOUND(自有 intelligence asset)＋三條合作軌（Destination Intelligence / Content Engine / Ecosystem Play）＋ 90-day pilot 收尾條 |
+| 27 redeem | `redeem` | 對象改成 Siam Piwat team（footnote 同步改） |
+
+新增 CSS 全部集中在 `</style>` 前的 `sp-*` 區塊（`sp-statgrid / sp-rows / sp-insightgrid / sp-flywheel`）。頁碼用 `_renumber_pg.py`（parent repo 根）重編為 `02..27 / 27`（封面無頁碼）。
+
+### 部署（只有一個檔案，素材吃線上根目錄 `/img/`）
+
+```bash
+cd tpc-siam-partnership && tar -czf ../../siam-partnership.tar.gz .
+gcloud compute scp siam-partnership.tar.gz reel-studio:/tmp/ --zone=asia-east1-b --project=the-pocket-banana-f8811
+gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f8811 \
+  --command="sudo rm -rf /var/www/deck/siam-partnership && sudo mkdir -p /var/www/deck/siam-partnership && sudo tar xzf /tmp/siam-partnership.tar.gz -C /var/www/deck/siam-partnership && sudo chown -R www-data:www-data /var/www/deck/siam-partnership"
+# 驗證 https://turncloud.thepocket.company/siam-partnership/?v=<隨機> → 27 頁、../img/ 素材全 200
+```
+
+---
+
 ## 附錄 · 給 LLM Agent 的 onboarding cheat sheet
 
 如果你是剛被叫進來的新 agent，**讀完這份就可以動工**。五件最重要的事：
@@ -1244,4 +1274,4 @@ gcloud compute ssh reel-studio --zone=asia-east1-b --project=the-pocket-banana-f
 
 ---
 
-*Last updated · 2026-07-22 · §15 `rtx-talk-deck` 接上 video-package.zip 真實影片共 31 頁（Demo B 換真實 tryon 影片；新增 `local-pose`（指定舞步實證）與 `local-vs-cloud`（同旗袍地端/雲端實測對照）；blocked 頁改用真實錯誤碼 5/5 數據；33 頁 nemo 圖檔全留在 `img/nemo/`）· `/rtx-talk/` 已重部署）。先前：§14 `ai-talk-deck`（44 頁 · 媒體只在當前頁播放規則 · `/ai-talk/` 部署）· §1.5 最新版投影片進度（24 頁逐頁清單）· This document is the Harness for the slide framework.*
+*Last updated · 2026-07-22 · §16 新增 `tpc-siam-partnership`（Content Tech × Siam Piwat 提案 · 英文 27 頁 · `/siam-partnership/` 已部署）。先前：§15 `rtx-talk-deck` 接上 video-package.zip 真實影片共 31 頁（Demo B 換真實 tryon 影片；新增 `local-pose`（指定舞步實證）與 `local-vs-cloud`（同旗袍地端/雲端實測對照）；blocked 頁改用真實錯誤碼 5/5 數據；33 頁 nemo 圖檔全留在 `img/nemo/`）· `/rtx-talk/` 已重部署）。先前：§14 `ai-talk-deck`（44 頁 · 媒體只在當前頁播放規則 · `/ai-talk/` 部署）· §1.5 最新版投影片進度（24 頁逐頁清單）· This document is the Harness for the slide framework.*
