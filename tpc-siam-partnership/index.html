@@ -3270,6 +3270,25 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .sp-phase h5 { font-size: 2.7cqh; font-weight: 800; color: var(--text); margin: 0.4cqh 0; }
 .sp-phase p { font-size: 1.85cqh; color: var(--dim); line-height: 1.45; }
 .sp-phase p strong { color: var(--text); }
+
+/* ── intro (Accucrazy self-intro) ── */
+.sp-bio { display: flex; gap: 3cqh; flex: 1; min-height: 0; margin-top: 1.6cqh; align-items: stretch; }
+.sp-bio .bl { flex: 1.15; display: flex; flex-direction: column; gap: 1.8cqh; min-width: 0; justify-content: center; }
+.sp-bio .bl ul { list-style: none; display: flex; flex-direction: column; gap: 1.5cqh; }
+.sp-bio .bl li { font-size: 2.55cqh; color: var(--dim); line-height: 1.4; padding-left: 2.6cqh; position: relative; }
+.sp-bio .bl li::before { content: '▸'; position: absolute; left: 0; color: var(--cyan); font-weight: 900; }
+.sp-bio .bl li strong { color: var(--text); }
+.sp-bio .pills { display: flex; gap: 1.4cqh; flex-wrap: wrap; }
+.sp-bio .pill { font-family: 'JetBrains Mono', monospace; font-size: 1.55cqh; letter-spacing: 1px; font-weight: 700; color: var(--cyan); background: var(--cyan-bg); border-radius: 999px; padding: 1cqh 1.8cqh; }
+.sp-bio .br { flex: 0.85; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); position: relative; min-height: 0; background: #0b1220; }
+.sp-bio .br img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.sp-bio .br .cap { position: absolute; left: 1.4cqh; bottom: 1.2cqh; background: rgba(15,23,42,.85); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 1.35cqh; letter-spacing: 1px; padding: 0.5cqh 1cqh; border-radius: 999px; }
+.sp-photowall { display: grid; grid-template-columns: 1.15fr 1fr 0.9fr 0.9fr; gap: 1.8cqh; flex: 1; min-height: 0; margin-top: 1.8cqh; }
+.sp-photowall .ph { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); position: relative; min-height: 0; background: #0b1220; }
+.sp-photowall .ph img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.sp-photowall .ph .lbl { position: absolute; left: 1.2cqh; bottom: 1cqh; right: 1.2cqh; background: rgba(15,23,42,.85); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 1.3cqh; letter-spacing: 1px; padding: 0.5cqh 0.9cqh; border-radius: 8px; text-align: center; }
+.sp-brandwall { flex: 1; min-height: 0; margin-top: 1.8cqh; border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 1.5cqh; }
+.sp-brandwall img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
 </style>
 </head>
 <body>
@@ -3321,21 +3340,60 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
 <!-- ══════════ SLIDE 1a: intro_bio — Ian Wu / Accucrazy ══════════ -->
 
-<div class="slide fullbleed" data-slide="intro_bio">
-    <img class="fullbleed-media" src="img/intro_bio.jpg" alt="Ian Wu — Founder & CEO, Accucrazy · The Pocket Company · worked with 300+ brands · recognized by NVIDIA, AWS, CHT">
-    <div class="meta fullbleed-meta">
-        <span>Who's talking — Ian Wu · Founder & CEO · Accucrazy</span>
-        <span class="pg">02 / 32</span>
+<div class="slide bg-cyan" data-slide="intro_bio">
+    <div class="slide-content">
+        <div class="tag tag-cyan">WHO'S TALKING</div>
+        <h2>Ian Wu — <span class="c">Founder & CEO, Accucrazy</span></h2>
+        <p class="sub">The Pocket Company · now part of <strong>TurnCloud (TWSE:6870)</strong> · Build for the NOW.</p>
+
+        <div class="sp-bio">
+            <div class="bl">
+                <ul>
+                    <li>Closed <strong>Musica.ly's (now TikTok) first US deal</strong> — where Content Tech began</li>
+                    <li>VP of Global Business Development, <strong>Meitu</strong></li>
+                    <li>Head of Strategic Partnerships, <strong>Cheetah Mobile</strong></li>
+                    <li>Product Manager, <strong>ASUS · HTC</strong></li>
+                    <li>AI speaker — <strong>NVIDIA · Google · TVBS · AI Taiwan</strong></li>
+                </ul>
+                <div class="pills">
+                    <div class="pill">300+ BRANDS SERVED</div>
+                    <div class="pill">RECOGNIZED BY NVIDIA · AWS · CHT</div>
+                    <div class="pill">1ST TIKTOK DEAL IN THE US</div>
+                </div>
+            </div>
+            <div class="br">
+                <img src="img/intro_google.jpg" alt="Ian Wu speaking at Google Cloud Startup event, Taipei">
+                <div class="cap">GOOGLE CLOUD STARTUP · TAIPEI</div>
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>Who's talking — Ian Wu · Founder & CEO · Accucrazy</span>
+            <span class="pg">02 / 32</span>
+        </div>
     </div>
 </div>
 
-<!-- ══════════ SLIDE 1b: intro_nvidia — NVIDIA GTC moment ══════════ -->
+<!-- ══════════ SLIDE 1b: intro_nvidia — NVIDIA moments photo wall ══════════ -->
 
-<div class="slide fullbleed" data-slide="intro_nvidia">
-    <img class="fullbleed-media" src="img/intro_nvidia.jpg" alt="Accucrazy on the NVIDIA GTC keynote partner wall · NVIDIA Inception Startup · Business Weekly coverage">
-    <div class="meta fullbleed-meta">
-        <span>NVIDIA GTC keynote partner wall · NVIDIA Inception Startup · Business Weekly</span>
-        <span class="pg">03 / 32</span>
+<div class="slide bg-dark" data-slide="intro_nvidia">
+    <div class="slide-content">
+        <div class="tag tag-green">RECOGNIZED BY NVIDIA</div>
+        <h2>On the <span class="c">GTC keynote wall</span> — and on the ground.</h2>
+
+        <div class="sp-photowall">
+            <div class="ph"><img src="img/intro_gtc.jpg" alt="Accucrazy on the NVIDIA GTC keynote partner wall"><div class="lbl">GTC KEYNOTE · PARTNER WALL</div></div>
+            <div class="ph"><img src="img/intro_booth.jpg" alt="Accucrazy team at the NVIDIA Inception Startup booth"><div class="lbl">NVIDIA INCEPTION STARTUP</div></div>
+            <div class="ph"><img src="img/intro_talk.jpg" alt="Ian Wu presenting The Pocket Company at an NVIDIA event"><div class="lbl">FULL HOUSE · NVIDIA MEETUP</div></div>
+            <div class="ph"><img src="img/intro_dance.jpg" alt="Ian Wu having fun next to an NVIDIA banner"><div class="lbl">…AND WE HAVE FUN</div></div>
+        </div>
+
+        <div class="sp-wall-note">Featured in <strong>Business Weekly</strong> · NVIDIA Inception Startup</div>
+
+        <div class="meta">
+            <span>Recognized by NVIDIA — Inception Startup · GTC keynote partner wall</span>
+            <span class="pg">03 / 32</span>
+        </div>
     </div>
 </div>
 
@@ -3351,11 +3409,20 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
 <!-- ══════════ SLIDE 1d: intro_brands — brand wall ══════════ -->
 
-<div class="slide fullbleed" data-slide="intro_brands">
-    <img class="fullbleed-media" src="img/intro_brands.jpg" alt="Brands already using our services — Shin Kong Mitsukoshi, GAP, Lexus, FamilyMart, foodpanda, LG, dentsu, PUMA, OPPO, Nestle and more">
-    <div class="meta fullbleed-meta">
-        <span>Brands already on board — retail · beauty · F&B · tech · insurance</span>
-        <span class="pg">05 / 32</span>
+<div class="slide bg-cyan" data-slide="intro_brands">
+    <div class="slide-content">
+        <div class="tag tag-cyan">TRACK RECORD</div>
+        <h2><span class="c">These brands</span> already run on our services.</h2>
+        <p class="sub">Retail · beauty · F&B · tech · insurance — across Taiwan and beyond.</p>
+
+        <div class="sp-brandwall">
+            <img src="img/intro_brands.jpg" alt="Brands already using our services — Shin Kong Mitsukoshi, GAP, Lexus, FamilyMart, foodpanda, LG, dentsu, PUMA, OPPO, Nestle and more">
+        </div>
+
+        <div class="meta">
+            <span>Brands already on board — retail · beauty · F&B · tech · insurance</span>
+            <span class="pg">05 / 32</span>
+        </div>
     </div>
 </div>
 
