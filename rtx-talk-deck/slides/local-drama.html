@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.wrap{display:grid;grid-template-columns:1fr 1.7fr;gap:26px;flex:1;min-height:0;margin-top:30px;}
+.videobox{background:var(--panel);border:1px solid var(--line-soft);border-radius:20px;padding:18px;display:flex;flex-direction:column;min-height:0;}
+.videobox .cap{font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.14em;color:var(--dim);margin-bottom:14px;display:flex;justify-content:space-between;}
+.videobox .cap b{color:var(--gold);}
+.videobox .box{flex:1;border-radius:14px;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center;min-height:0;}
+.videobox .box video{width:100%;height:100%;object-fit:contain;display:block;}
+.side{display:flex;flex-direction:column;gap:16px;min-height:0;}
+.side .card{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;}
+.side .card .who{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--nv-light);margin-bottom:8px;}
+.side .card.cl .who{color:var(--cyan);}
+.timebar{margin-top:16px;background:linear-gradient(160deg,rgba(118,185,0,.16),rgba(118,185,0,.04));border:1px solid var(--line);border-radius:14px;padding:16px 24px;font-size:22px;font-weight:800;color:#fff;text-align:center;}
+.timebar b{color:var(--nv-light);}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+
+  <div class="kicker">Level Up · 「混合」跑起來的樣子</div>
+  <h1>一條指令，<span class="g">30 秒短劇</span>一集。</h1>
+
+  <div class="wrap">
+    <div class="videobox">
+      <div class="cap"><span>《重生之我不當棄婦》EP1 · 含配音字幕</span><b>🔊 點擊播放</b></div>
+      <div class="box"><video src="../img/local/douyin_ep1.mp4" poster="../img/local/douyin_ep1.jpg" controls playsinline preload="metadata"></video></div>
+    </div>
+    <div class="side">
+      <div class="card"><div class="who">地端 · 出「腦」</div><h3>故事 → 分鏡 → 口白</h3><p>抖音公式：鉤子→穿越→反擊→打臉→反轉→懸念。每鏡 prompt 重複<b>角色錨定</b>，不靠參考圖。</p></div>
+      <div class="card cl"><div class="who">雲端 · 出「手」</div><h3>Seedance t2v ×6 平行</h3><p>六鏡同時送出，總時長 ≈ 最慢一鏡。真人參考圖被審查擋 → <b>全面改純文字 t2v</b>。</p></div>
+      <div class="card"><div class="who">地端 · 收「聲」</div><h3>Qwen3-TTS ＋ FFmpeg 對位</h3><p>RTX 5090 本地配音，去靜音→量實長→<b>變速 1.37x</b> 對位→字幕燒錄→混音，3 秒合成。</p></div>
+      <div class="timebar">端到端實測：影像 5.5 分＋配音 2.4 分＋合成 3 秒 ≈ <b>12 分鐘／集</b></div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · STORY DRAMA</span></div>
+</div></body></html>

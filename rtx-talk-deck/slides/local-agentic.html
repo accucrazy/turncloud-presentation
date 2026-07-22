@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.wrap{display:grid;grid-template-columns:1fr 1.7fr;gap:26px;flex:1;min-height:0;margin-top:30px;}
+.videobox{background:var(--panel);border:1px solid var(--line-soft);border-radius:20px;padding:18px;display:flex;flex-direction:column;min-height:0;}
+.videobox .cap{font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.14em;color:var(--dim);margin-bottom:14px;display:flex;justify-content:space-between;}
+.videobox .cap b{color:var(--gold);}
+.videobox .box{flex:1;border-radius:14px;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center;min-height:0;}
+.videobox .box video{width:100%;height:100%;object-fit:contain;display:block;}
+.side{display:flex;flex-direction:column;gap:16px;min-height:0;}
+.loop{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 24px;}
+.loop .step{font-family:'JetBrains Mono',monospace;font-size:19px;font-weight:700;color:#fff;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:8px 16px;}
+.loop .step.hot{color:var(--nv-light);border-color:var(--nv);}
+.loop .a{color:var(--nv);font-weight:900;font-size:20px;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.stats .st{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;text-align:center;}
+.stats .st .n{font-size:40px;font-weight:900;color:var(--nv-light);font-family:'JetBrains Mono',monospace;}
+.stats .st .l{font-size:16px;color:var(--dim);margin-top:6px;line-height:1.4;}
+.side .card{flex:1;display:flex;flex-direction:column;justify-content:center;}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+
+  <div class="kicker">Final Form · Agentic Workflow</div>
+  <h1>Agent 不只會做，還會<span class="g">自我驗證、自我修復</span>。</h1>
+
+  <div class="wrap">
+    <div class="videobox">
+      <div class="cap"><span>《穿越者的資本江湖》EP1 · 五集完結</span><b>🔊 點擊播放</b></div>
+      <div class="box"><video src="../img/local/wuxia_ep1.mp4" poster="../img/local/wuxia_ep1.jpg" controls playsinline preload="metadata"></video></div>
+    </div>
+    <div class="side">
+      <div class="loop">
+        <span class="step">SENSE 讀規格</span><span class="a">→</span>
+        <span class="step hot">GATE 花錢前預檢</span><span class="a">→</span>
+        <span class="step">ACT 平行生成</span><span class="a">→</span>
+        <span class="step hot">VERIFY 量測產出</span><span class="a">→</span>
+        <span class="step">FIX 自動修正</span><span class="a">→</span>
+        <span class="step">SHIP 交付記錄</span>
+      </div>
+      <div class="card"><h3>踩過的坑，固化成護欄</h3><p>審查擋真人→改 t2v；聲線漂移→首句定調當參考；口白溢出→量長變速重排；改一句台詞→<b>只重跑那一句</b>（內容 hash 快取）。</p></div>
+      <div class="stats">
+        <div class="st"><div class="n">5 集</div><div class="l">同一條管線<br>完結實測</div></div>
+        <div class="st"><div class="n">9 條</div><div class="l">自癒護欄<br>全部寫回程式</div></div>
+        <div class="st"><div class="n">NT$133</div><div class="l">30 秒成片<br>單集雲端成本</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · AGENTIC</span></div>
+</div></body></html>

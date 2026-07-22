@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.wrap{display:grid;grid-template-columns:1.55fr 1fr;gap:26px;flex:1;min-height:0;margin-top:34px;}
+.videobox{background:var(--panel);border:1px solid var(--line-soft);border-radius:20px;padding:18px;display:flex;flex-direction:column;min-height:0;}
+.videobox .cap{font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.14em;color:var(--dim);margin-bottom:14px;display:flex;justify-content:space-between;}
+.videobox .cap b{color:var(--nv-light);}
+.videobox .box{flex:1;border-radius:14px;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center;min-height:0;}
+.videobox .box video{width:100%;height:100%;object-fit:contain;display:block;}
+.side{display:flex;flex-direction:column;gap:18px;min-height:0;}
+.side .card{flex:1;display:flex;flex-direction:column;justify-content:center;}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+
+  <div class="kicker">Proof II · 同一條 workflow，再加一件事</div>
+  <h1>一邊跳舞，一邊<span class="g">對嘴</span>。</h1>
+
+  <div class="wrap">
+    <div class="videobox">
+      <div class="cap"><span>左＝DRIVER 範例 ｜ 右＝AI 生成 Beryl · 19s</span><b>Wan 2.2 Animate 14B</b></div>
+      <div class="box"><video src="../img/local/lipsync_sbs.mp4" poster="../img/local/lipsync_sbs.jpg" muted loop playsinline></video></div>
+    </div>
+    <div class="side">
+      <div class="card"><h3>原生能力，不用外掛</h3><p>driver 一次驅動<b>身體＋手勢＋嘴型</b>，身份由參考圖鎖定，配樂沿用原音軌 ── <b>一條 workflow 全包</b>。</p></div>
+      <div class="card"><h3>嘴真的跟著動</h3><p>逐格比對：嘴跟著 driver 開合，「張嘴＋舉手」<b>同一拍對上</b> ── 短影音等級夠用。</p></div>
+      <div class="card"><h3>誠實成本</h3><p>14B 權重 17.5GB 溢出 24GB VRAM → CPU offload <b>183s/步</b>。是預期慢速路徑，<b>不是不能跑</b>。</p></div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · LIPSYNC DANCE</span></div>
+</div></body></html>
