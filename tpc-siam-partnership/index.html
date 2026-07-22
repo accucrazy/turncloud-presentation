@@ -3219,18 +3219,37 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .sp-insight.i-gold { border-top-color: var(--gold); }
 .sp-insight.i-orange { border-top-color: var(--orange); }
 .sp-insight.i-violet { border-top-color: var(--violet); }
-.sp-insight .where { font-family: 'JetBrains Mono', monospace; font-size: 1.55cqh; letter-spacing: 1.5px; color: var(--dim-2); }
-.sp-insight .stat { font-size: 3.2cqh; font-weight: 900; color: var(--text); line-height: 1.15; }
+.sp-insight { justify-content: center; gap: 1.2cqh; }
+.sp-insight .where { font-family: 'JetBrains Mono', monospace; font-size: 1.7cqh; letter-spacing: 1.5px; color: var(--dim-2); }
+.sp-insight .stat { font-size: 4.4cqh; font-weight: 900; color: var(--text); line-height: 1.18; }
 .sp-insight .stat em { font-style: normal; color: var(--cyan); }
 .sp-insight.i-gold .stat em { color: #b45309; }
 .sp-insight.i-orange .stat em { color: #d97706; }
 .sp-insight.i-violet .stat em { color: var(--violet); }
-.sp-insight .what { font-size: 1.85cqh; color: var(--dim); line-height: 1.45; }
+.sp-insight .what { font-size: 2.4cqh; color: var(--dim); line-height: 1.45; }
 .sp-insight .what strong { color: var(--text); }
-.sp-insight .so { font-size: 1.7cqh; color: var(--text-soft); background: var(--cyan-bg); border-radius: 8px; padding: 0.8cqh 1.2cqh; line-height: 1.4; margin-top: auto; }
+.sp-insight .so { font-size: 2.2cqh; color: var(--text-soft); background: var(--cyan-bg); border-radius: 10px; padding: 1.1cqh 1.5cqh; line-height: 1.4; margin-top: auto; }
 .sp-insight.i-gold .so { background: var(--orange-bg); }
 .sp-insight.i-orange .so { background: var(--orange-bg); }
 .sp-insight.i-violet .so { background: var(--violet-bg); }
+.sp-wall { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.05fr 1fr 1fr; gap: 2.6cqh; align-items: stretch; padding: 1.5cqh 1cqh 0.5cqh; }
+.sp-shot {
+    position: relative; border-radius: 12px; overflow: hidden; background: #fff;
+    border: 1px solid var(--border); box-shadow: 0 18px 44px rgba(15,23,42,.18);
+    min-height: 0;
+}
+.sp-shot img { width: 100%; height: 100%; object-fit: cover; object-position: left top; display: block; }
+.sp-shot .lbl {
+    position: absolute; left: 1.2cqh; bottom: 1.2cqh; z-index: 2;
+    background: rgba(15,23,42,.85); color: #fff; font-family: 'JetBrains Mono', monospace;
+    font-size: 1.45cqh; letter-spacing: 1px; padding: 0.6cqh 1.2cqh; border-radius: 999px;
+}
+.sp-shot.r1 { transform: rotate(-1.6deg); }
+.sp-shot.r2 { transform: rotate(1.1deg) translateY(1cqh); }
+.sp-shot.r3 { transform: rotate(2deg); }
+.sp-shot::after { content:''; position:absolute; inset:auto 0 0 0; height: 9cqh; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.92) 100%); pointer-events:none; }
+.sp-wall-note { text-align: center; font-size: 2.1cqh; color: var(--dim); margin-top: 1.6cqh; }
+.sp-wall-note strong { color: var(--text); }
 .sp-flywheel { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8cqh; margin: 1.4cqh 0; flex: 1; min-height: 0; }
 .sp-phase {
     background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
@@ -3276,10 +3295,9 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="pre">THE POCKET COMPANY × SIAM PIWAT · CONTENT TECH PARTNERSHIP · 2026</div>
             <h1><span class="c">Content Tech</span><br>Turning great places into <strong>compounding stories</strong></h1>
             <p class="lede">
-                Siam Piwat builds <strong>world-class destinations</strong>.
-We build an <strong>Enterprise AIOS</strong> with an <strong>AI Agent workforce</strong>
-that listens, creates and activates ──
-and it is <strong>already listening to your world</strong>: 2.18M conversations across ICONSIAM, Siam Paragon and beyond.
+                You build <strong>world-class destinations</strong>.
+We build the <strong>AI Agent workforce</strong> that listens, creates and activates ──
+and it is <strong>already listening to your world</strong>: 2.18M conversations and counting.
             </p>
             <div class="signature">
                 
@@ -3292,7 +3310,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
         </div>
         <div class="cover-image-wrap">
             <div class="cover-image-glow"></div>
-            <img src="../img/cover_hero_santamonica.jpg" alt="" class="cover-image-square">
+            <img src="img/cover_hero_bangkok.jpg" alt="" class="cover-image-square">
         </div>
     </div>
 </div>
@@ -3325,7 +3343,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta trailer-meta">
         <span>Preview · The Pocket Company × TurnCloud · 2026</span>
-        <span class="pg">02 / 27</span>
+        <span class="pg">02 / 28</span>
     </div>
 </div>
 
@@ -3399,7 +3417,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
         <div class="meta">
             <span>The Pocket Company — three layers, one picture</span>
-            <span class="pg">03 / 27</span>
+            <span class="pg">03 / 28</span>
         </div>
     </div>
 </div>
@@ -3513,7 +3531,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
         <div class="meta">
             <span>AI OS · One OS · Two Spaces</span>
-            <span class="pg">04 / 27</span>
+            <span class="pg">04 / 28</span>
         </div>
     </div>
 </div>
@@ -3565,7 +3583,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
         <div class="meta">
             <span>5 AI employees — a digital team ready to hire</span>
-            <span class="pg">05 / 27</span>
+            <span class="pg">05 / 28</span>
         </div>
     </div>
 </div>
@@ -3580,7 +3598,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
     
     <div class="meta fullbleed-meta">
         <span>The Pocket Company Framework · powered by TSpace · Turncloud VIN</span>
-        <span class="pg">06 / 27</span>
+        <span class="pg">06 / 28</span>
     </div>
     
 </div>
@@ -3644,7 +3662,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta agent-meta">
         <span>Pandora — AI Native Social Listening Agent · quant → qual</span>
-        <span class="pg">07 / 27</span>
+        <span class="pg">07 / 28</span>
     </div>
 </div>
 
@@ -3712,7 +3730,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta demo-meta">
         <span>Pandora — Auto Insight Report</span>
-        <span class="pg">08 / 27</span>
+        <span class="pg">08 / 28</span>
     </div>
 </div>
 
@@ -3720,9 +3738,9 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
 <div class="slide bg-cyan" data-slide="siam_proof">
     <div class="slide-content">
-        <div class="tag tag-cyan">PANDORA · LIVE ON YOUR WORLD — NOT A PITCH, A RUNNING SYSTEM</div>
-        <h2>We didn't wait for this meeting ──<br>Pandora is <span class="c">already listening to Siam Piwat's world</span></h2>
-        <p class="sub">For the past 6 months, Pandora has tracked <strong>12 keywords across your ecosystem</strong> on Threads · Instagram · Dcard · PTT — every number below links to a <strong>live, shareable insight report</strong>.</p>
+        <div class="tag tag-cyan">PANDORA · LIVE ON YOUR WORLD</div>
+        <h2>We are <span class="c">already listening</span> to your world.</h2>
+        <p class="sub"><strong>6 months · 12 keywords</strong> · Threads / Instagram / Dcard / PTT — all real, all live.</p>
 
         <div class="sp-statgrid">
             <div class="sp-stat"><div class="n">2.18M</div><div class="k">Conversation volume</div><div class="d">Dec 2025 – Jun 2026 · Chinese-speaking social</div></div>
@@ -3733,35 +3751,57 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
         <div class="sp-rows">
             <div class="sp-row hot">
-                <div class="nm">Mango Sticky Rice <small>cultural icon · benchmark</small></div>
+                <div class="nm">Mango Sticky Rice <small>cultural icon</small></div>
                 <div class="vol">1,055,093 <small>volume · 1,923 posts</small></div>
-                <div class="note"><strong>The food icon out-earns every mall</strong> — 86% on Threads. Culture is your biggest top-of-funnel.</div>
+                <div class="note"><strong>The food icon beats every mall</strong> — 86% on Threads.</div>
             </div>
             <div class="sp-row">
                 <div class="nm">ICONSIAM <small>destination flagship</small></div>
                 <div class="vol">577,136 <small>volume · 618 posts</small></div>
-                <div class="note">Narrated as a <strong>must-visit destination</strong> — souvenirs, riverside, "not just a mall".</div>
+                <div class="note">A <strong>must-visit destination</strong> — "not just a mall".</div>
             </div>
             <div class="sp-row">
                 <div class="nm">Siam Paragon <small>luxury anchor</small></div>
                 <div class="vol">248,466 <small>volume · 393 posts</small></div>
-                <div class="note">Celebrity moments, boutique openings & queue-free foodie guides drive the spikes.</div>
+                <div class="note">Celebrities · luxury openings · foodie guides.</div>
             </div>
             <div class="sp-row">
                 <div class="nm">Siam Center <small>Thai designer hub</small></div>
                 <div class="vol">193,370 <small>volume · 142 posts</small></div>
-                <div class="note">Highest engagement rate — <strong>36.4 comments avg</strong>. Thai local brands are conversation gold.</div>
+                <div class="note"><strong>36.4 comments per post</strong> — highest engagement.</div>
             </div>
             <div class="sp-row">
                 <div class="nm">NEXTOPIA · MELAND · SookSiam · SEA LIFE… <small>experience layer</small></div>
                 <div class="vol">104,270 <small>combined volume</small></div>
-                <div class="note">Emerging story-lines already forming — "future city", family day-trips, indoor floating market.</div>
+                <div class="note">New stories forming — "future city" · family trips.</div>
             </div>
         </div>
 
         <div class="meta">
             <span>Pandora × Siam Piwat keyword monitor · live report links available on request</span>
-            <span class="pg">09 / 27</span>
+            <span class="pg">09 / 28</span>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════ SLIDE 8a2: siam_reports — real report screenshots ══════════ -->
+
+<div class="slide bg-dark" data-slide="siam_reports">
+    <div class="slide-content">
+        <div class="tag tag-cyan">PANDORA · THE ACTUAL PRODUCT</div>
+        <h2>Not slides. <span class="c">Real reports.</span></h2>
+
+        <div class="sp-wall">
+            <div class="sp-shot r1"><img src="img/report_iconsiam.jpg" alt="ICONSIAM volume report"><div class="lbl">ICONSIAM · VOLUME</div></div>
+            <div class="sp-shot r2"><img src="img/report_mango_sentiment.jpg" alt="AI sentiment analysis"><div class="lbl">AI SENTIMENT ANALYSIS</div></div>
+            <div class="sp-shot r3"><img src="img/report_articles.jpg" alt="Ranked top posts"><div class="lbl">TOP POSTS · RANKED</div></div>
+        </div>
+
+        <div class="sp-wall-note">Auto-generated every morning · <strong>one link, share with anyone</strong></div>
+
+        <div class="meta">
+            <span>pandora.thepocket.company — live report links</span>
+            <span class="pg">10 / 28</span>
         </div>
     </div>
 </div>
@@ -3770,40 +3810,40 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
 <div class="slide bg-dark" data-slide="siam_insight">
     <div class="slide-content">
-        <div class="tag tag-cyan">PANDORA · FROM VOLUME TO INSIGHT — THIS IS THE DIFFERENCE</div>
-        <h2>Dashboards count mentions. <span class="c">Pandora tells you what to do next.</span></h2>
-        <p class="sub">Four insights pulled straight from the live monitor — each one is a <strong>campaign brief waiting to happen</strong>.</p>
+        <div class="tag tag-cyan">PANDORA · FROM DATA TO ACTION</div>
+        <h2>Others count mentions. <span class="c">Pandora tells you what to do.</span></h2>
+        <p class="sub">Four insights from the live monitor.</p>
 
         <div class="sp-insightgrid">
             <div class="sp-insight i-gold">
                 <div class="where">ICONSIAM · TOP POST 83,075 LIKES</div>
-                <div class="stat">A <em>฿100 fridge magnet</em> beat every ad you could buy</div>
-                <div class="what">The #1 post in your entire ecosystem is a handmade <strong>Thai-tea fridge magnet reel</strong>. Souvenir content — "must-buy in BKK" — is what makes ICONSIAM travel across borders.</div>
-                <div class="so">→ Own the <strong>souvenir-economy story</strong>: serialize "must-buy" content as an always-on franchise, not a one-off campaign.</div>
+                <div class="stat">A <em>฿100 fridge magnet</em> beat every ad</div>
+                <div class="what">One handmade souvenir reel = the <strong>#1 post in your whole ecosystem</strong>.</div>
+                <div class="so">→ Make <strong>"must-buy" content</strong> a series, not a one-off.</div>
             </div>
             <div class="sp-insight i-orange">
                 <div class="where">MANGO STICKY RICE · 1.06M VOLUME · 86% THREADS</div>
-                <div class="stat">The <em>cultural icon</em> out-talks every property — 2× ICONSIAM</div>
-                <div class="what">Tourists don't start with a mall — they start with <strong>a craving</strong>. Food-culture conversations are the real entry point into the Siam ecosystem, and they live on Threads, not Instagram.</div>
-                <div class="so">→ Ride cultural icons into your properties: map <strong>craving → destination</strong> journeys (SookSiam / Paragon food hall) on the platforms where they actually happen.</div>
+                <div class="stat">The <em>cultural icon</em> talks 2× louder than ICONSIAM</div>
+                <div class="what">Tourists start with <strong>a craving</strong>, not a mall — and it happens on Threads.</div>
+                <div class="so">→ Lead the <strong>craving → to your doors</strong>.</div>
             </div>
             <div class="sp-insight">
-                <div class="where">SIAM CENTER · SÚNDALO PERFUME POST · 4,028 COMMENTS</div>
+                <div class="where">SIAM CENTER · SÚNDALO PERFUME · 4,028 COMMENTS</div>
                 <div class="stat"><em>Thai local brands</em> are your engagement engine</div>
-                <div class="what">A local perfume post triggered <strong>4,028 comments</strong> — 100× the category average. Visitors treat Siam Center as the gateway to "Thai brands you can't get at home".</div>
-                <div class="so">→ Position Siam Center as the <strong>Thai-brand discovery destination</strong> for Chinese-speaking tourists — the demand signal is already screaming.</div>
+                <div class="what">One local perfume post = <strong>100× normal engagement</strong>.</div>
+                <div class="so">→ Own <strong>"Thai brands you can't get at home"</strong>.</div>
             </div>
             <div class="sp-insight i-violet">
                 <div class="where">NEXTOPIA · 39.6K VOLUME IN 5 MONTHS · FROM ZERO</div>
-                <div class="stat">Visitors already call it a <em>"future city"</em> — unprompted</div>
-                <div class="what">Organic posts describe NEXTOPIA as <strong>"sustainability as a lifestyle"</strong> and "a second in the future". The positioning landed — before heavy marketing.</div>
-                <div class="so">→ Amplify the organic vocabulary — let real visitor language write the campaign, and track it weekly as the story compounds.</div>
+                <div class="stat">Visitors already call it a <em>"future city"</em></div>
+                <div class="what">Unprompted — real posts say <strong>"sustainability as a lifestyle"</strong>.</div>
+                <div class="so">→ Let <strong>their words</strong> write the campaign.</div>
             </div>
         </div>
 
         <div class="meta">
             <span>Pandora — quant → qual → recommended action · every insight backed by a live report</span>
-            <span class="pg">10 / 27</span>
+            <span class="pg">11 / 28</span>
         </div>
     </div>
 </div>
@@ -3878,7 +3918,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta agent-meta">
         <span>Moana — Culture Listening × Fine-tuned Generation · MVP LIVE</span>
-        <span class="pg">11 / 27</span>
+        <span class="pg">12 / 28</span>
     </div>
 </div>
 
@@ -3924,7 +3964,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening integration architecture</span>
-        <span class="pg">12 / 27</span>
+        <span class="pg">13 / 28</span>
     </div>
 </div>
 
@@ -3985,7 +4025,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening Live Demo</span>
-        <span class="pg">13 / 27</span>
+        <span class="pg">14 / 28</span>
     </div>
 </div>
 
@@ -4060,7 +4100,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta agent-meta">
         <span>Banana — Visual Design · MVP LIVE</span>
-        <span class="pg">14 / 27</span>
+        <span class="pg">15 / 28</span>
     </div>
 </div>
 
@@ -4126,7 +4166,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta demo-meta">
         <span>Banana — Motion Lab · Video Generation Live</span>
-        <span class="pg">15 / 27</span>
+        <span class="pg">16 / 28</span>
     </div>
 </div>
 
@@ -4194,7 +4234,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta demo-meta">
         <span>Banana Split — Reels Studio · Agentic Editing</span>
-        <span class="pg">16 / 27</span>
+        <span class="pg">17 / 28</span>
     </div>
 </div>
 
@@ -4280,7 +4320,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta agent-meta">
         <span>Adriana — Personalization Agent · BUILDING</span>
-        <span class="pg">17 / 27</span>
+        <span class="pg">18 / 28</span>
     </div>
 </div>
 
@@ -4346,7 +4386,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta demo-meta">
         <span>Adriana — Conversational Ad Intelligence</span>
-        <span class="pg">18 / 27</span>
+        <span class="pg">19 / 28</span>
     </div>
 </div>
 
@@ -4420,7 +4460,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta agent-meta">
         <span>Stacey — Orchestrator · BUILDING</span>
-        <span class="pg">19 / 27</span>
+        <span class="pg">20 / 28</span>
     </div>
 </div>
 
@@ -4486,7 +4526,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta demo-meta">
         <span>Stacey × Pandora — Dr.Wu Sentiment Analysis Live</span>
-        <span class="pg">20 / 27</span>
+        <span class="pg">21 / 28</span>
     </div>
 </div>
 
@@ -4550,7 +4590,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta chapter-meta">
         <span>Part 02 — Our AIOS ecosystem · Raccoon · Rytho · Luna · CUHK</span>
-        <span class="pg">21 / 27</span>
+        <span class="pg">22 / 28</span>
     </div>
 </div>
 
@@ -4631,7 +4671,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta demo-meta">
         <span>First ecosystem partner — Raccoon AI · Conversation Agent specialist</span>
-        <span class="pg">22 / 27</span>
+        <span class="pg">23 / 28</span>
     </div>
 </div>
 
@@ -4712,7 +4752,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta demo-meta">
         <span>Second ecosystem partner — Rytho × Accucrazy · Music Agent OS · Rhyme Engine</span>
-        <span class="pg">23 / 27</span>
+        <span class="pg">24 / 28</span>
     </div>
 </div>
 
@@ -4793,7 +4833,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta demo-meta">
         <span>Third ecosystem partner — Luna AI · Viral Content Engine</span>
-        <span class="pg">24 / 27</span>
+        <span class="pg">25 / 28</span>
     </div>
 </div>
 
@@ -4802,60 +4842,60 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 <div class="slide bg-cyan" data-slide="siam_framework">
     <div class="slide-content">
         <div class="tag tag-cyan">THE PROPOSAL · CONTENT TECH × SIAM PIWAT</div>
-        <h2>A <span class="c">Content Tech flywheel</span> built on Siam Piwat's world</h2>
-        <p class="sub">Not an agency retainer, not a SaaS license ── a <strong>partnership</strong> where your destinations become a <strong>compounding content system</strong>, and the intelligence stays <strong>yours</strong>.</p>
+        <h2>A <span class="c">Content Tech flywheel</span>, built on your world</h2>
+        <p class="sub">Not an agency. Not a license. <strong>A partnership</strong> — and the intelligence stays <strong>yours</strong>.</p>
 
         <div class="sp-flywheel">
             <div class="sp-phase p1">
                 <div class="ph">01 · LISTEN</div>
                 <h5>Pandora</h5>
-                <p>Always-on monitor of your ecosystem — <strong>already live on 12 keywords</strong>, expandable to tenants, competitors & source markets (CN · TW · HK).</p>
+                <p><strong>Already live</strong> on 12 keywords — your market radar.</p>
             </div>
             <div class="sp-phase p2">
                 <div class="ph">02 · CREATE</div>
                 <h5>Moana × Banana</h5>
-                <p>Insight becomes multilingual content & visuals — the fridge-magnet story, the mango journey — <strong>from brief to asset in hours</strong>.</p>
+                <p>Insight → content & visuals, <strong>in hours</strong>.</p>
             </div>
             <div class="sp-phase p3">
                 <div class="ph">03 · ACTIVATE</div>
                 <h5>Adriana × Stacey</h5>
-                <p>Content deployed & optimized across platforms — every campaign <strong>reads the live signal</strong> instead of guessing.</p>
+                <p>Publish & optimize — <strong>with live signal</strong>, not guessing.</p>
             </div>
             <div class="sp-phase p4">
                 <div class="ph">04 · COMPOUND</div>
                 <h5>Your Intelligence Asset</h5>
-                <p>Every cycle feeds the next — a <strong>proprietary tourist-insight dataset</strong> no competitor can copy, growing every day.</p>
+                <p><strong>Your own dataset</strong> — growing every day.</p>
             </div>
         </div>
 
         <div class="s-body" style="flex: 0 0 auto;">
             <div class="s-col">
                 <div class="box b-cyan">
-                    <h4>Track 1 · Destination Intelligence</h4>
-                    <p>Pandora as Siam Piwat's <strong>Chinese-speaking market radar</strong> — weekly decision-ready reports for marketing, leasing & tenant relations. The proof already exists.</p>
+                    <h4>Track 1 · Intelligence</h4>
+                    <p>Weekly reports for <strong>marketing, leasing & tenants</strong>.</p>
                 </div>
             </div>
             <div class="s-col">
                 <div class="box b-orange">
                     <h4>Track 2 · Content Engine</h4>
-                    <p>Co-build the <strong>always-on content franchise</strong> — souvenir economy, craving-to-destination journeys, Thai-brand discovery — in TH / EN / CN, powered by the Agent workforce.</p>
+                    <p>Always-on content in <strong>TH / EN / CN</strong>.</p>
                 </div>
             </div>
             <div class="s-col">
                 <div class="box b-violet">
-                    <h4>Track 3 · Ecosystem Play</h4>
-                    <p>Open the flywheel to your <strong>tenants & partners</strong> as a service layer — Siam Piwat doesn't just host brands, it <strong>powers their growth</strong>.</p>
+                    <h4>Track 3 · Ecosystem</h4>
+                    <p>Offer it to your <strong>tenants</strong> — power their growth.</p>
                 </div>
             </div>
         </div>
 
         <div class="box b-green" style="margin-top: 1.4cqh;">
-            <p style="font-size: 2cqh; text-align: center; line-height: 1.5;"><strong>How we start · a 90-day pilot on what's already running</strong> ── Weeks 1–2: lock scope & keywords with your team · Weeks 3–12: weekly decision-ready reports + first content sprints on 2 properties · Day 90: <strong class="c">results on the table, then we decide how big this gets</strong>.</p>
+            <p style="font-size: 2.1cqh; text-align: center; line-height: 1.5;"><strong>Start: 90-day pilot</strong> ── Weeks 1–2: lock keywords · Weeks 3–12: weekly reports + content sprints · Day 90: <strong class="c">see results, decide together</strong>.</p>
         </div>
 
         <div class="meta">
             <span>Content Tech Partnership — start with a 90-day pilot on what's already running</span>
-            <span class="pg">25 / 27</span>
+            <span class="pg">26 / 28</span>
         </div>
     </div>
 </div>
@@ -4950,7 +4990,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
         <div class="meta">
             <span>Ian Wu · CEO Accucrazy — Enterprise AIOS · the ecosystem we grow up together</span>
-            <span class="pg">26 / 27</span>
+            <span class="pg">27 / 28</span>
         </div>
     </div>
 </div>
@@ -5013,7 +5053,7 @@ and it is <strong>already listening to your world</strong>: 2.18M conversations 
 
     <div class="meta redeem-meta">
         <span>Exclusive for live audience · Banana Split × The Pocket Company</span>
-        <span class="pg">27 / 27</span>
+        <span class="pg">28 / 28</span>
     </div>
 </div>
 
