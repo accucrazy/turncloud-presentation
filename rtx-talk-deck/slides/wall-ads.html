@@ -1,27 +1,67 @@
 <!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
 <style>
-.wall{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;flex:1;min-height:0;margin-top:30px;}
-.rvid{display:flex;flex-direction:column;gap:12px;min-height:0;}
-.rvid .box{flex:1;border-radius:18px;overflow:hidden;background:#000;border:1px solid rgba(251,191,36,.28);min-height:0;box-shadow:0 18px 40px rgba(0,0,0,.4);}
-.rvid .box video{width:100%;height:100%;object-fit:cover;display:block;}
-.rvid .cap{display:flex;align-items:center;justify-content:space-between;font-size:18px;color:var(--dim);}
-.rvid .cap b{color:var(--gold);font-weight:800;}
-.rvid .cap .mono{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--dim-2);letter-spacing:.08em;}
-.note{margin-top:20px;}
+.tsw{display:flex;flex-direction:column;gap:16px;flex:1;min-height:0;margin-top:18px;}
+/* ?? hero */
+.hero{display:grid;grid-template-columns:1fr 58px 1fr 58px 1fr;grid-template-rows:auto 1fr;gap:10px 8px;flex:1.55;min-height:0;}
+.hero .hd{align-self:end;padding-bottom:4px;}
+.hd .st{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;letter-spacing:.04em;}
+.hd .st .n{margin-right:8px;}
+.hd .sub{font-size:15px;color:var(--dim-2);margin-top:2px;}
+.st1 .st{color:#fff;} .st1 .st .n{color:var(--nv-light);}
+.st2 .st{color:#fff;} .st2 .st .n{color:var(--nv-light);}
+.st3 .st{color:var(--cyan);} .st3 .st .n{color:var(--cyan);}
+.cell{position:relative;border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--line-soft);min-height:0;box-shadow:0 14px 34px rgba(0,0,0,.4);}
+.cell img,.cell video{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;}
+.cell.prod img{object-fit:contain;background:#f4f4f2;}
+.cell.v{border-color:rgba(34,211,238,.45);}
+.cell .badge{position:absolute;top:12px;left:12px;width:36px;height:36px;border-radius:50%;background:rgba(7,16,10,.82);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:800;font-size:18px;color:var(--nv-light);}
+.cell.v .badge{color:var(--cyan);border-color:rgba(34,211,238,.5);}
+.arr{display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:900;color:var(--nv);}
+/* ????? strip */
+.strip{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;}
+.strip .lab{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;color:var(--gold);letter-spacing:.04em;}
+.strip .lab .n{color:var(--gold);margin-right:8px;}
+.strip .row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;flex:1;min-height:0;}
+.ad{position:relative;border-radius:14px;overflow:hidden;background:#000;border:1px solid rgba(251,191,36,.28);min-height:0;box-shadow:0 12px 30px rgba(0,0,0,.4);}
+.ad video{width:100%;height:100%;object-fit:cover;display:block;}
+.ad .cap{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:7px 12px;font-size:16px;font-weight:800;color:#fff;background:linear-gradient(0deg,rgba(7,16,10,.9),transparent);}
+.ad .cap .mono{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--gold);}
+.note{margin-top:14px;}
 </style></head>
 <body><div class="slide">
-  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI � RTX 5090 � On-Prem</div></div>
 
-  <div class="kicker" style="color:var(--gold);">Cloud Side · 成品度雲端補足</div>
-  <h1>同一件商品，<span style="color:var(--gold);">四種廣告情緒</span>，幾分鐘出片。</h1>
+  <div class="kicker">Showcase � Beryl � ?? workflow ??</div>
+  <h1>???????? <span class="g">????</span>?????????</h1>
 
-  <div class="wall">
-    <div class="rvid"><div class="box"><video src="../img/walls/ad_noir.mp4" poster="../img/walls/ad_noir.jpg" muted loop playsinline></video></div><div class="cap"><b>Noir</b><span class="mono">冷冽夜色</span></div></div>
-    <div class="rvid"><div class="box"><video src="../img/walls/ad_festive.mp4" poster="../img/walls/ad_festive.jpg" muted loop playsinline></video></div><div class="cap"><b>Festive</b><span class="mono">節慶暖光</span></div></div>
-    <div class="rvid"><div class="box"><video src="../img/walls/ad_sunlit.mp4" poster="../img/walls/ad_sunlit.jpg" muted loop playsinline></video></div><div class="cap"><b>Sunlit</b><span class="mono">日光通透</span></div></div>
-    <div class="rvid"><div class="box"><video src="../img/walls/ad_stillness.mp4" poster="../img/walls/ad_stillness.jpg" muted loop playsinline></video></div><div class="cap"><b>Stillness</b><span class="mono">靜物質感</span></div></div>
+  <div class="tsw">
+    <!-- ?? hero -->
+    <div class="hero">
+      <div class="hd st1" style="grid-column:1;"><div class="st"><span class="n">?</span>???</div><div class="sub">INPUT � ????</div></div>
+      <div class="hd" style="grid-column:2;"></div>
+      <div class="hd st2" style="grid-column:3;"><div class="st"><span class="n">?</span>????</div><div class="sub">Banana � RTX 5090</div></div>
+      <div class="hd" style="grid-column:4;"></div>
+      <div class="hd st3" style="grid-column:5;"><div class="st"><span class="n">?</span>?????</div><div class="sub">image-to-video � RTX 5090</div></div>
+
+      <div class="cell prod"><span class="badge">1</span><img src="../img/local/beryl_single.webp" alt="Beryl ???"></div>
+      <div class="arr">?</div>
+      <div class="cell"><span class="badge">2</span><img src="../img/local/beryl_young_hot_tryon.png" alt="Beryl ??"></div>
+      <div class="arr">?</div>
+      <div class="cell v"><span class="badge">3</span><video src="../img/local/pose_beryl.mp4" poster="../img/local/pose_beryl.jpg" muted loop playsinline></video></div>
+    </div>
+
+    <!-- ????? -->
+    <div class="strip">
+      <div class="lab"><span class="n">?</span>???????? Seedance????????? ?? ????????????</div>
+      <div class="row">
+        <div class="ad"><video src="../img/walls/ad_noir.mp4" poster="../img/walls/ad_noir.jpg" muted loop playsinline></video><div class="cap">Noir<span class="mono">????</span></div></div>
+        <div class="ad"><video src="../img/walls/ad_festive.mp4" poster="../img/walls/ad_festive.jpg" muted loop playsinline></video><div class="cap">Festive<span class="mono">????</span></div></div>
+        <div class="ad"><video src="../img/walls/ad_sunlit.mp4" poster="../img/walls/ad_sunlit.jpg" muted loop playsinline></video><div class="cap">Sunlit<span class="mono">????</span></div></div>
+        <div class="ad"><video src="../img/walls/ad_stillness.mp4" poster="../img/walls/ad_stillness.jpg" muted loop playsinline></video><div class="cap">Stillness<span class="mono">????</span></div></div>
+      </div>
+    </div>
   </div>
 
-  <div class="note">這批交給雲端 <span class="hl" style="color:var(--gold);">Seedance</span>：運鏡、光線、配樂一次到位 —— 能過審的成品走雲端，敏感與要控的走地端，<span class="hl">混合才是正解</span>。</div>
-  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · AD WALL</span></div>
+  <div class="note">??????<span class="hl">??? ? ???? ? ????</span>???????????<b style="color:var(--ink)">????????????</b> ?? ???????????</div>
+  <div class="foot"><span>Local Multimodal Workflow � ComfyUI � RTX 5090</span><span class="pg">CH 03 � PIPELINE WALL</span></div>
 </div></body></html>
