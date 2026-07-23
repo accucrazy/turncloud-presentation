@@ -75,10 +75,12 @@ const NEMO = ["chapter-nemo","nemo-about","nemo-clients","nemo-team","nemo-finet
 const POCKET = ["p02_overview","p03_aios_concept","p05_harness_skill","p06_pandora","p11_banana","p13_banana_video_edit","p18_ecosystem_chapter"];
 
 /* ── CH 03 · 地端多模態工作流（手刻暗色 HTML，1920x1080，slides/local.css）
-   chapter-local=章節過場；敘事：被擋 → 換腦 → 可控(pose→lipsync) → 【reel 牆】 → 誠實對照 → 【廣告牆】
+   chapter-local=章節過場；敘事：被擋 → 換腦 → 可控(pose→lipsync) → 誠實對照 → 【三態量產牆 wall-ads】
         → 混合實證(drama→agentic) → 【武俠 5 集牆】 → 算力主權 → Content Tech
-   wall-* = 新增三面影片牆（img/walls/），全 muted loop 自動播 */
-const LOCAL = ["chapter-local","local-intro","local-blocked","local-vin","local-pipeline","local-pandora","local-demo-a","local-demo-b","local-control","local-pose","local-lipsync","wall-reels","local-vs-cloud","wall-ads","local-drama","local-agentic","wall-drama","local-sovereignty","local-conclusion"];
+   wall-ads=beryl 三態(單品照→試穿→動起來)+雲端補情緒；wall-drama=武俠 5 集；全 muted loop 自動播
+   （wall-reels 已停用，仍留 img/walls/reel_*.mp4，可加回 local-lipsync 之後） */
+/* wall-reels 已移除（四位內衣模特兒短片牆，非-beryl 太性感）；影片檔仍在 img/walls/，要加回把 "wall-reels" 放回 local-lipsync 之後即可 */
+const LOCAL = ["chapter-local","local-intro","local-blocked","local-vin","local-pipeline","local-pandora","local-demo-a","local-demo-b","local-control","local-pose","local-lipsync","local-vs-cloud","wall-ads","local-drama","local-agentic","wall-drama","local-sovereignty","local-conclusion"];
 
 /* base used to resolve The Pocket Company assets (images/videos) from the live deployment */
 const POCKET_BASE = 'https://turncloud.thepocket.company/';
