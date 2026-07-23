@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.wrap{display:grid;grid-template-columns:0.95fr 1.05fr;gap:40px;flex:1;min-height:0;margin-top:26px;}
+.tg{background:#0b1f14;border:1px solid var(--line);border-radius:18px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;overflow:hidden;}
+.tg .hd{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line-soft);}
+.tg .hd .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--nv),#3f6212);display:flex;align-items:center;justify-content:center;font-weight:900;color:#0f2015;}
+.tg .hd .nm{font-weight:800;color:#fff;font-size:18px;} .tg .hd .st{font-size:13px;color:var(--nv-light);}
+.tg .sys{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim-2);line-height:1.7;background:#050b07;border-radius:10px;padding:12px 14px;}
+.tg .sys b{color:var(--nv-light);}
+.tg .ask{align-self:flex-end;background:#245c36;color:#eafbe6;border-radius:14px 14px 4px 14px;padding:12px 16px;font-size:17px;max-width:84%;font-weight:600;}
+.tg .rep{align-self:flex-start;background:var(--panel-2);border:1px solid var(--line-soft);border-radius:14px 14px 14px 4px;padding:14px 16px;font-size:15px;color:var(--dim);line-height:1.6;max-width:92%;}
+.tg .rep b{color:var(--ink);}
+.flow{display:flex;flex-direction:column;gap:0;justify-content:center;}
+.step{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;}
+.step .no{width:40px;height:40px;border-radius:50%;background:var(--panel);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--nv-light);font-family:'JetBrains Mono',monospace;}
+.step .tx{font-size:19px;color:var(--ink);line-height:1.5;padding-top:6px;}
+.step .tx b{color:var(--nv-light);} .step .tx .mono{font-family:'JetBrains Mono',monospace;color:#fff;}
+.step .bar{grid-column:1;justify-self:center;width:2px;height:26px;background:var(--line);}
+.step.last .no{background:rgba(118,185,0,.14);border-color:rgba(118,185,0,.5);}
+.step.last .tx{font-weight:800;color:#fff;}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>NemoClaw × Nemotron · The Pocket Company</div><div class="r">ONE SENTENCE</div></div>
+
+  <div class="kicker">One Sentence, Whole System</div>
+  <h1>小模型，<span class="g">一句話驅動整套系統</span>。</h1>
+
+  <div class="wrap">
+    <div class="tg">
+      <div class="hd"><div class="av">S</div><div><div class="nm">Stacey</div><div class="st">bot · online</div></div></div>
+      <div class="sys">OpenClaw 2026.5.27 · uptime 15m 32s<br>Model: <b>inference/nemotron-3-nano-30b</b><br>Cost: <b>$0.00</b> · Runtime: OpenClaw · Direct</div>
+      <div class="ask">近一個月肯德基的社群聲量如何？</div>
+      <div class="rep">近一個月（2026/06/15–07/15）肯德基社群討論如下：<br>· 討論總量 <b>5,447 篇</b>、互動 <b>192 萬次</b><br>· 討論高峰：<b>6/27 國際蛋撻日</b>，單日互動最激烈<br>· 蛋撻限定店官方 6/27 快閃、話題破表<br>· Threads「地表最強 WiFi 密碼」貼文瘋傳</div>
+    </div>
+
+    <div class="flow">
+      <div class="step"><div class="no">1</div><div class="tx">你在 <b>Telegram</b> 問一句：<br>「近一個月肯德基的社群聲量如何？」</div></div>
+      <div class="step"><div class="bar"></div></div>
+      <div class="step"><div class="no">2</div><div class="tx">sandbox 裡的 <span class="mono">Nemotron</span> 接手，讀懂需求、挑對手邊的工具</div></div>
+      <div class="step"><div class="bar"></div></div>
+      <div class="step"><div class="no">3</div><div class="tx">呼叫一個 <b>MCP 工具</b>，整套 <span class="mono">TPC-AI</span> 在後面分工開工</div></div>
+      <div class="step"><div class="bar"></div></div>
+      <div class="step"><div class="no">4</div><div class="tx">掃過 <b>5,447 篇</b>貼文、<b>192 萬次</b>互動，抓出 6/27 蛋撻日議題</div></div>
+      <div class="step"><div class="bar"></div></div>
+      <div class="step last"><div class="no">5</div><div class="tx">完整輿情分析回到聊天室 ── 一句話進去，一份報告回來</div></div>
+    </div>
+  </div>
+
+  <div class="foot"><span>NemoClaw × Nemotron · The Pocket Company</span><span class="pg">CH 01 · ONE SENTENCE</span></div>
+</div></body></html>

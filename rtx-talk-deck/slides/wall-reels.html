@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.wall{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;flex:1;min-height:0;margin-top:30px;}
+.rvid{display:flex;flex-direction:column;gap:12px;min-height:0;}
+.rvid .box{flex:1;border-radius:18px;overflow:hidden;background:#000;border:1px solid var(--line);min-height:0;box-shadow:0 18px 40px rgba(0,0,0,.4);}
+.rvid .box video{width:100%;height:100%;object-fit:cover;display:block;}
+.rvid .cap{display:flex;align-items:center;justify-content:space-between;font-size:17px;color:var(--dim);}
+.rvid .cap b{color:var(--nv-light);font-weight:800;}
+.rvid .cap .mono{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--dim-2);letter-spacing:.08em;}
+.note{margin-top:20px;}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+
+  <div class="kicker">Showcase · 一張產品照，一鏡到底的成片</div>
+  <h1>同一批模特兒，<span class="g">四支可上架</span>的品牌短片。</h1>
+
+  <div class="wall">
+    <div class="rvid"><div class="box"><video src="../img/walls/reel_eloise.mp4" poster="../img/walls/reel_eloise.jpg" muted loop playsinline></video></div><div class="cap"><b>Eloise</b><span class="mono">19s · 704×1280</span></div></div>
+    <div class="rvid"><div class="box"><video src="../img/walls/reel_faylinn.mp4" poster="../img/walls/reel_faylinn.jpg" muted loop playsinline></video></div><div class="cap"><b>Faylinn</b><span class="mono">19s · 704×1280</span></div></div>
+    <div class="rvid"><div class="box"><video src="../img/walls/reel_liora.mp4" poster="../img/walls/reel_liora.jpg" muted loop playsinline></video></div><div class="cap"><b>Liora</b><span class="mono">19s · 704×1280</span></div></div>
+    <div class="rvid"><div class="box"><video src="../img/walls/reel_vivian.mp4" poster="../img/walls/reel_vivian.jpg" muted loop playsinline></video></div><div class="cap"><b>Vivian</b><span class="mono">19s · 704×1280</span></div></div>
+  </div>
+
+  <div class="note">起點只有一張單品照 —— 地端試穿 → 動態生成 → 配樂剪輯，<span class="hl">整條 reel 產線都在自己的機器上</span>，換一個模特兒只是換一張參考圖。</div>
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · REEL WALL</span></div>
+</div></body></html>

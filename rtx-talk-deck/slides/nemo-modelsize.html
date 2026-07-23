@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;flex:1;min-height:0;margin-top:30px;}
+.mcard{background:var(--panel);border:1px solid var(--line-soft);border-radius:18px;padding:24px 24px;display:flex;flex-direction:column;}
+.mcard.win{border-color:rgba(118,185,0,.45);background:rgba(118,185,0,.06);}
+.mcard .top{font-family:'JetBrains Mono',monospace;color:var(--nv-light);font-size:16px;font-weight:700;letter-spacing:.06em;}
+.mcard .env{font-size:14px;color:var(--dim-2);margin-top:4px;}
+.mcard .score{font-size:82px;font-weight:900;color:#fff;line-height:1;margin:22px 0 4px;font-family:'JetBrains Mono',monospace;}
+.mcard.win .score{color:var(--nv-light);}
+.mcard .score span{font-size:24px;color:var(--dim-2);font-weight:700;}
+.mcard .lat{font-size:16px;color:var(--dim);margin-bottom:auto;}
+.mcard .lat b{color:var(--ink);font-family:'JetBrains Mono',monospace;}
+.mcard .qbar{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim-2);background:var(--bg);border:1px solid var(--line-soft);border-radius:8px;padding:9px 11px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.kick2{margin-top:24px;font-size:22px;color:var(--ink);font-weight:700;}
+.kick2 .g{color:var(--nv-light);}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>NemoClaw × Nemotron · The Pocket Company</div><div class="r">30B = 550B?</div></div>
+
+  <div class="kicker">Blind Eval · 0–100</div>
+  <h1>Pandora 的資料檢索與內容解析，<span class="g">需要大模型嗎？</span></h1>
+  <div class="sub">挑品牌輿情分析工具實測：<b>同一題、同一套檢索，只換模型</b>，30B 到 550B，盲評 0–100。</div>
+
+  <div class="four">
+    <div class="mcard win"><div class="top">Nemotron nano 30B</div><div class="env">地端 · Q4 量化</div><div class="score">98<span>/100</span></div><div class="lat">30B-A3B · <b>87.8s</b></div><div class="qbar">(肯德基 OR KFC) AND (蛋撻)</div></div>
+    <div class="mcard"><div class="top">Nemotron nano 30B</div><div class="env">NVIDIA API</div><div class="score">95<span>/100</span></div><div class="lat">30B-A3B · <b>40.6s</b></div><div class="qbar">(肯德基 OR KFC) AND (蛋撻)</div></div>
+    <div class="mcard"><div class="top">Nemotron super 120B</div><div class="env">NVIDIA API</div><div class="score">96<span>/100</span></div><div class="lat">120B-A12B · <b>118.1s</b></div><div class="qbar">(肯德基 OR KFC) AND (蛋撻)</div></div>
+    <div class="mcard win"><div class="top">Nemotron ultra 550B</div><div class="env">NVIDIA API</div><div class="score">98<span>/100</span></div><div class="lat">550B-A55B · <b>88.0s</b></div><div class="qbar">(肯德基 OR KFC) AND (蛋撻)</div></div>
+  </div>
+
+  <div class="kick2">像這樣簡單的工具調用，<span class="g">小模型其實就能做得很好</span> ── 本輪 30B 與 550B <span class="g">同分</span>。</div>
+  <div class="foot"><span>單輪示意 · 完整 110 輪盲評計分從下一段開始</span><span class="pg">CH 01 · MODEL SIZE</span></div>
+</div></body></html>

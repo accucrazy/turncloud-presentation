@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:30px;flex:1;min-height:0;margin-top:26px;}
+.term{background:#050b07;border:1px solid var(--line);border-radius:16px;padding:22px 24px;font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.75;color:#9fb3a4;overflow:hidden;display:flex;flex-direction:column;}
+.term .bar{display:flex;gap:7px;margin-bottom:16px;}
+.term .bar i{width:12px;height:12px;border-radius:50%;background:#334;}
+.term .bar i:nth-child(1){background:#ef4444;} .term .bar i:nth-child(2){background:#eab308;} .term .bar i:nth-child(3){background:#22c55e;}
+.term .g{color:var(--nv-light);} .term .c{color:var(--cyan);} .term .d{color:var(--dim-2);} .term .w{color:#fff;}
+.term .ttl{color:var(--dim);margin:12px 0 6px;font-size:12px;letter-spacing:.1em;}
+.right{display:flex;flex-direction:column;gap:16px;}
+.finding{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 28px;}
+.finding .lbl{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.14em;color:var(--dim-2);}
+.finding .big{font-size:76px;font-weight:900;color:var(--nv-light);line-height:1;font-family:'JetBrains Mono',monospace;margin:6px 0 18px;}
+.finding .big span{font-size:24px;color:var(--ink);font-weight:800;}
+.frow{display:flex;gap:12px;font-size:16px;color:var(--dim);line-height:1.5;padding:9px 0;border-top:1px solid var(--line-soft);}
+.frow .k{flex:0 0 52px;font-weight:800;color:var(--nv-light);}
+.frow b{color:var(--ink);}
+.recipe{background:rgba(118,185,0,.09);border:1px solid rgba(118,185,0,.4);border-radius:16px;padding:20px 26px;}
+.recipe .h{font-size:18px;font-weight:800;color:var(--nv-light);margin-bottom:6px;}
+.recipe .d{font-size:17px;color:var(--ink);line-height:1.55;}
+.chain{margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--dim);display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+.chain .n{background:var(--panel);border:1px solid var(--line-soft);border-radius:8px;padding:6px 12px;color:var(--ink);}
+.chain .a{color:var(--nv);}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>NemoClaw × Nemotron · The Pocket Company</div><div class="r">RTX 5090 · ON-PREM</div></div>
+
+  <div class="kicker">Back to the Edge</div>
+  <h1>搬回地端，<span class="g">跑得動嗎？</span></h1>
+
+  <div class="wrap">
+    <div class="term">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div><span class="g">OpenClaw 2026.6.19</span> <span class="d">[cal092]</span></div>
+      <div><span class="c">Model:</span> inference/nemotron-3-nano-30b <span class="d">· Q4</span></div>
+      <div><span class="c">Runtime:</span> Ollama <span class="d">· RTX 5090 24GB · direct</span></div>
+      <div><span class="c">Tokens:</span> 6.0k in / 2.4k out <span class="d">· Cost: <span class="g">$0.00</span></span></div>
+      <div class="d">Session: agent · Think: off · Fast: off</div>
+      <div class="ttl">▍任務：肯德基 VS 麥當勞 — 聲量差異與重點議題</div>
+      <div>· 蛋撻回歸帶動 KFC 聲量，<span class="w">6/27 國際蛋撻日</span> 為單日高峰</div>
+      <div>· 麥當勞主打 <span class="w">超值全餐 vs 早餐時段</span>，穩定但話題度低</div>
+      <div>· 綜合結論：<span class="g">品牌梗＞產品促銷</span>，蛋撻成文化符號</div>
+      <div class="d" style="margin-top:8px;">✓ 10 輪嚴格序列盲評 · 全程本機 GPU 推論</div>
+    </div>
+
+    <div class="right">
+      <div class="finding">
+        <div class="lbl">FINDING</div>
+        <div class="big">93.5<span> 分 · 品質不掉</span></div>
+        <div class="frow"><span class="k">品質</span><span>10 輪盲評：<b>平均 93.5、中位 95</b> · Q4 量化後品質不掉</span></div>
+        <div class="frow"><span class="k">穩定</span><span>十輪全 <b>≥88</b>、零災難輪</span></div>
+        <div class="frow"><span class="k">成本</span><span>本機 GPU 推論：<b>零 API 費用</b>、成本只剩電費</span></div>
+      </div>
+      <div class="recipe">
+        <div class="h">110 輪收斂出的配方</div>
+        <div class="d"><b>Nemotron nano 30B ＋ 開思考</b>：分數站進 SOTA 圈、時間不到一半、一張消費級 GPU 跑得動。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chain"><span class="n">NemoClaw 地端部署</span><span class="a">→</span><span class="n">sandbox 內 OpenClaw</span><span class="a">→</span><span class="n">Ollama 本機推論</span><span class="a">→</span><span class="n">nemotron-3-nano:30b</span></div>
+  <div class="foot"><span>NemoClaw × Nemotron · The Pocket Company</span><span class="pg">CH 01 · RTX 5090</span></div>
+</div></body></html>

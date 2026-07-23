@@ -63,26 +63,30 @@ html,body{height:100%;overflow:hidden;background:#0b1220;font-family:'Noto Sans 
    2) 騰雲產品發表會精選 — 正式 deck 拆頁（pocket/，素材吃線上 POCKET_BASE）
    3) 地端多模態工作流 — 全新手刻（slides/local-*.html）
    ────────────────────────────────────────────── */
-/* 精華 12 頁（完整 33 頁圖仍在 img/nemo/，要加回某頁把頁號塞回陣列即可） */
-const NEMO = ["p01","p02","p03","p04","p06","p09","p14","p16","p18","p19","p21","p32"];
+/* ── CH 01 · NemoClaw × Nemotron（全部改為暗色原生 HTML；原始 PDF 截圖仍留在 img/nemo/ p01..p33）
+   chapter-nemo=章節過場；nemo-* 對應原 PDF：about=p02 clients=p03 team=p04 finetune=p06
+   why-pandora=p09 culture=p14 modelsize=p16 task-matrix=p18 slm-paper=p19 rtx5090=p21 one-sentence=p32
+   要加回被砍的頁：讀 img/nemo/p*.png 內容，比照 slides/nemo-*.html 手法新做一頁再塞進 NEMO 陣列 */
+const NEMO = ["chapter-nemo","nemo-about","nemo-clients","nemo-team","nemo-finetune","nemo-why-pandora","nemo-culture","nemo-modelsize","nemo-task-matrix","nemo-slm-paper","nemo-rtx5090","nemo-one-sentence"];
 
-/* 騰雲發表會精選（要增減頁面：從 ai-talk-deck/pocket/ 複製對應 p*.html 進本 deck 的 pocket/ 再加進陣列）
-   完整清單：p02_overview p03_aios_concept p04_s4 p05_harness_skill p06_pandora p07_pandora_demo
-   p08_moana p09_moana_culture_flow p10_moana_culture_demo p11_banana p12_banana_split_demo
-   p13_banana_video_edit p14_adriana p15_adriana_demo p16_stacey p17_stacey_demo
-   p18_ecosystem_chapter p19_raccoon_partnership p20_rytho_partnership p21_luna_partnership p22_s22 p23_redeem */
+/* ── CH 02 · 騰雲發表會精選（唯一保留線上正式 deck 拆頁的一章；type=pocket，srcdoc + <base>）
+   要增減頁面：從 ai-talk-deck/pocket/ 複製對應 p*.html 進本 deck 的 pocket/ 再加進陣列
+   完整清單：p02_overview p03_aios_concept p05_harness_skill p06_pandora p11_banana p13_banana_video_edit p18_ecosystem_chapter … */
 const POCKET = ["p02_overview","p03_aios_concept","p05_harness_skill","p06_pandora","p11_banana","p13_banana_video_edit","p18_ecosystem_chapter"];
 
-/* 地端多模態工作流（手刻 HTML，1920x1080）
-   敘事：被雲端擋 → 換腦落地 → 可控（pose → lipsync 對嘴舞）→ 誠實對照（混合是正解）
-        → 混合實證（drama 短劇管線 → agentic 自癒工作流）→ 算力主權 → Content Tech */
-const LOCAL = ["local-intro","local-blocked","local-vin","local-pipeline","local-pandora","local-demo-a","local-demo-b","local-control","local-pose","local-lipsync","local-vs-cloud","local-drama","local-agentic","local-sovereignty","local-conclusion"];
+/* ── CH 03 · 地端多模態工作流（手刻暗色 HTML，1920x1080，slides/local.css）
+   chapter-local=章節過場；敘事：被擋 → 換腦 → 可控(pose→lipsync) → 【reel 牆】 → 誠實對照 → 【廣告牆】
+        → 混合實證(drama→agentic) → 【武俠 5 集牆】 → 算力主權 → Content Tech
+   wall-* = 新增三面影片牆（img/walls/），全 muted loop 自動播 */
+const LOCAL = ["chapter-local","local-intro","local-blocked","local-vin","local-pipeline","local-pandora","local-demo-a","local-demo-b","local-control","local-pose","local-lipsync","wall-reels","local-vs-cloud","wall-ads","local-drama","local-agentic","wall-drama","local-sovereignty","local-conclusion"];
 
 /* base used to resolve The Pocket Company assets (images/videos) from the live deployment */
 const POCKET_BASE = 'https://turncloud.thepocket.company/';
 
 const SLIDES = [];
-NEMO.forEach(n => SLIDES.push({ type:'image', src:'img/nemo/'+n+'.png', chap:'NemoClaw × Nemotron · The Pocket Company' }));
+SLIDES.push({ type:'html', src:'slides/cover.html', chap:'The Pocket Company · NemoClaw × Nemotron' });
+NEMO.forEach(n => SLIDES.push({ type:'html', src:'slides/'+n+'.html', chap:'NemoClaw × Nemotron · The Pocket Company' }));
+SLIDES.push({ type:'html', src:'slides/chapter-pocket.html', chap:'騰雲產品發表會 · TSpace 精選' });
 POCKET.forEach(n => SLIDES.push({ type:'pocket', src:'pocket/'+n+'.html', chap:'騰雲產品發表會 · TSpace 精選' }));
 LOCAL.forEach(n => SLIDES.push({ type:'html', src:'slides/'+n+'.html', chap:'地端多模態工作流 · ComfyUI × RTX 5090' }));
 

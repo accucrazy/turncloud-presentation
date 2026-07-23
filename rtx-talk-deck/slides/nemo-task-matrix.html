@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.matrix{display:grid;grid-template-columns:180px 1fr 1fr;grid-template-rows:auto 1fr 1fr;gap:16px;flex:1;min-height:0;margin-top:26px;}
+.mh{display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:var(--dim);}
+.mh .sm{color:var(--nv-light);} .mh .bg{color:var(--gold);}
+.mh .tag{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--dim-2);margin-left:8px;letter-spacing:.06em;}
+.rowh{display:flex;flex-direction:column;justify-content:center;}
+.rowh .t{font-size:24px;font-weight:900;color:#fff;}
+.rowh .d{font-size:14px;color:var(--dim-2);margin-top:6px;line-height:1.5;}
+.cell{border-radius:16px;padding:22px 26px;display:flex;flex-direction:column;justify-content:center;}
+.cell .v{font-size:24px;font-weight:800;margin-bottom:8px;}
+.cell .n{font-size:15px;color:var(--dim);line-height:1.5;}
+.cell.win{background:rgba(118,185,0,.08);border:1px solid rgba(118,185,0,.4);} .cell.win .v{color:var(--nv-light);}
+.cell.meh{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.2);} .cell.meh .v{color:var(--gold);}
+.cell.bad{background:rgba(248,113,113,.05);border:1px solid rgba(248,113,113,.22);} .cell.bad .v{color:#f87171;}
+.cell.hero{background:rgba(118,185,0,.1);border:1px solid rgba(118,185,0,.5);} .cell.hero .v{color:var(--nv-light);}
+.paper{margin-top:20px;display:flex;align-items:center;gap:20px;background:rgba(118,185,0,.05);border:1px solid var(--line);border-radius:14px;padding:16px 24px;}
+.paper .badge{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--nv-light);border:1px solid var(--line);border-radius:6px;padding:5px 10px;letter-spacing:.08em;white-space:nowrap;}
+.paper .txt{font-size:17px;color:var(--dim);}
+.paper .txt b{color:var(--ink);}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>NemoClaw × Nemotron · The Pocket Company</div><div class="r">TASK × MODEL</div></div>
+
+  <div class="kicker">Heterogeneous Agentic Systems</div>
+  <h1>什麼工作，交給<span class="g">多大的模型？</span></h1>
+
+  <div class="matrix">
+    <div class="mh"></div>
+    <div class="mh"><span class="sm">小模型</span><span class="tag">30B · 地端</span></div>
+    <div class="mh"><span class="bg">大模型</span><span class="tag">雲端 SOTA</span></div>
+
+    <div class="rowh"><div class="t">任務單純</div><div class="d">重複出現<br>範圍明確<br>格式固定</div></div>
+    <div class="cell win"><div class="v">又快又好</div><div class="n">稍微理解一下就動手，不糾結。工具調用盲評 300 vs 550 同分、關鍵字統計 14s vs 70s、快 5 倍</div></div>
+    <div class="cell meh"><div class="v">想太多</div><div class="n">在細節反覆糾結、越想越偏，時間翻倍 ── 60 輪實測：5,500 思考秒數、多花 46% 時間</div></div>
+
+    <div class="rowh"><div class="t">任務複雜</div><div class="d">多步推理與規劃<br>挑工具、派工<br>開放對話、跨領域</div></div>
+    <div class="cell bad"><div class="v">想再久，也做不好</div><div class="n">不知道該叫哪個工具、上下文一漏就亂交差。實測「找不到 Moana」→ 自己硬寫 100 篇一批 → 產爛、拿舊歷史列交差</div></div>
+    <div class="cell hero"><div class="v">這才是主場</div><div class="n">讀懂需求、挑對工具、派對人、罩得住上下文。拆解需求 → 挑工具 → 派 subagent → 收成結果，是 TPC-AI 主持人的日常</div></div>
+  </div>
+
+  <div class="paper"><div class="badge">NVIDIA RESEARCH · 2025</div><div class="txt"><b>Small Language Models are the Future of Agentic AI</b> ── 例行的窄任務設給小模型；涉及複雜推理或通用對話，才「選擇性且節省地」調用大模型。<b>大模型出深度，小模型出效率。</b></div></div>
+  <div class="foot"><span>窄的給小、複雜給大 ── 而且，這不只有我們的結論</span><span class="pg">CH 01 · TASK MATRIX</span></div>
+</div></body></html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.wall{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;flex:1;min-height:0;margin-top:30px;}
+.rvid{display:flex;flex-direction:column;gap:12px;min-height:0;}
+.rvid .box{flex:1;border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--line);min-height:0;box-shadow:0 16px 36px rgba(0,0,0,.4);}
+.rvid .box video{width:100%;height:100%;object-fit:cover;display:block;}
+.rvid .cap{display:flex;align-items:center;justify-content:space-between;font-size:17px;color:var(--dim);}
+.rvid .cap b{color:var(--violet);font-weight:800;}
+.rvid .cap .mono{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim-2);}
+.stats{display:flex;gap:20px;margin-top:20px;}
+.stats .s{flex:1;background:var(--panel);border:1px solid var(--line-soft);border-radius:14px;padding:14px 22px;}
+.stats .s .n{font-size:30px;font-weight:900;color:var(--nv-light);font-family:'JetBrains Mono',monospace;}
+.stats .s .l{font-size:16px;color:var(--dim);margin-top:2px;}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+
+  <div class="kicker" style="color:var(--violet);">Agentic Output · 同一條管線，整季完結</div>
+  <h1>《穿越者的資本江湖》<span style="color:var(--violet);">五集</span>，一次跑完。</h1>
+
+  <div class="wall">
+    <div class="rvid"><div class="box"><video src="../img/walls/wuxia_ep1.mp4" poster="../img/walls/wuxia_ep1.jpg" muted loop playsinline></video></div><div class="cap"><b>EP1</b><span class="mono">開局</span></div></div>
+    <div class="rvid"><div class="box"><video src="../img/walls/wuxia_ep2.mp4" poster="../img/walls/wuxia_ep2.jpg" muted loop playsinline></video></div><div class="cap"><b>EP2</b><span class="mono">佈局</span></div></div>
+    <div class="rvid"><div class="box"><video src="../img/walls/wuxia_ep3.mp4" poster="../img/walls/wuxia_ep3.jpg" muted loop playsinline></video></div><div class="cap"><b>EP3</b><span class="mono">反擊</span></div></div>
+    <div class="rvid"><div class="box"><video src="../img/walls/wuxia_ep4.mp4" poster="../img/walls/wuxia_ep4.jpg" muted loop playsinline></video></div><div class="cap"><b>EP4</b><span class="mono">翻盤</span></div></div>
+    <div class="rvid"><div class="box"><video src="../img/walls/wuxia_ep5.mp4" poster="../img/walls/wuxia_ep5.jpg" muted loop playsinline></video></div><div class="cap"><b>EP5</b><span class="mono">完結</span></div></div>
+  </div>
+
+  <div class="stats">
+    <div class="s"><div class="n">5 集</div><div class="l">同一條 agentic 管線完結實測</div></div>
+    <div class="s"><div class="n">NT$133</div><div class="l">30 秒成片 · 單集雲端成本</div></div>
+    <div class="s"><div class="n">9 條</div><div class="l">自癒護欄 · 踩過的坑全寫回程式</div></div>
+  </div>
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · DRAMA WALL</span></div>
+</div></body></html>

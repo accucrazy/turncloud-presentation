@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+h1{font-size:52px;}
+.wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:28px;flex:1;min-height:0;margin-top:26px;}
+.col{display:flex;flex-direction:column;gap:16px;}
+.icard{background:var(--panel);border:1px solid var(--line-soft);border-radius:16px;padding:22px 26px;flex:1;}
+.icard .h{font-size:20px;font-weight:800;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.icard.sm .h{color:var(--nv-light);} .icard.bg .h{color:var(--gold);}
+.icard .li{font-size:16px;color:var(--dim);line-height:1.85;}
+.icard .li b{color:var(--ink);}
+.agents{display:flex;flex-direction:column;gap:14px;}
+.ag{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--panel);border:1px solid var(--line-soft);border-radius:16px;padding:16px 24px;}
+.ag .pct{font-size:44px;font-weight:900;color:var(--nv-light);font-family:'JetBrains Mono',monospace;line-height:1;}
+.ag .nm{font-size:19px;font-weight:800;color:#fff;}
+.ag .nm span{font-size:14px;color:var(--dim-2);font-weight:500;margin-left:8px;}
+.ag .d{font-size:14px;color:var(--dim);margin-top:5px;line-height:1.5;}
+.ag .d b{color:var(--nv-light);} .ag .d em{font-style:normal;color:var(--gold);}
+.claim{margin-top:20px;background:rgba(118,185,0,.06);border:1px solid var(--line);border-radius:14px;padding:16px 26px;font-size:19px;color:var(--ink);}
+.claim b{color:var(--nv-light);}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>NemoClaw × Nemotron · The Pocket Company</div><div class="r">arXiv 2506.02153</div></div>
+
+  <div class="kicker">NVIDIA Research · 2025</div>
+  <h1><span class="g">Small Language Models</span> are the Future of Agentic AI</h1>
+
+  <div class="wrap">
+    <div class="col">
+      <div class="icard sm"><div class="h">◆ 小模型的主場</div><div class="li">· 重複出現、範圍明確的<b>窄任務</b><br>· 嚴格的格式化輸出（如 JSON）<br>· 低延遲、可離線、<b>裝置端執行</b><br>· 工具調用可達頂尖：8B 特化模型超越 GPT-4o / Claude 3.5</div></div>
+      <div class="icard bg"><div class="h">◆ 留給大模型</div><div class="li">· 多步推理與策略規劃<br>· 開放域對話、當系統的總入口<br>· 跨領域、跨規模的知識整合</div></div>
+    </div>
+    <div class="col">
+      <div class="agents">
+        <div class="ag"><div class="pct">60%</div><div><div class="nm">MetaGPT <span>軟體公司模擬</span></div><div class="d"><b>可換小模型</b>：例行代碼生成、模板任務 · <em>仍要 LLM</em>：策略推理、動態規劃除錯</div></div></div>
+        <div class="ag"><div class="pct">40%</div><div><div class="nm">Open Operator <span>工作流自動化</span></div><div class="d"><b>可換小模型</b>：簡單指令解析與路由 · <em>仍要 LLM</em>：多步推理、維持長對話</div></div></div>
+        <div class="ag"><div class="pct">70%</div><div><div class="nm">Cradle <span>電腦操作代理</span></div><div class="d"><b>可換小模型</b>：重複 GUI 操作、已學過的動作序列 · <em>仍要 LLM</em>：動態重適應、非預期錯誤</div></div></div>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim-2);margin-top:2px;">% ＝論文估算「可由特化小模型可靠接手」的 LLM 呼叫比例</div>
+    </div>
+  </div>
+
+  <div class="claim">核心主張 ＝ <b>異質混編（Heterogeneous Agentic Systems）</b>：預設用小模型跑窄任務；涉及複雜推理或通用對話，才「選擇性且節省地」調用大模型。</div>
+  <div class="foot"><span>NemoClaw × Nemotron · The Pocket Company</span><span class="pg">CH 01 · SLM PAPER</span></div>
+</div></body></html>

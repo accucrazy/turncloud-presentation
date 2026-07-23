@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+.golden{margin-top:30px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px 30px;}
+.golden .lbl{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.12em;color:var(--dim-2);margin-bottom:16px;}
+.golden .lbl b{color:var(--nv-light);}
+.cond{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.cond .c{background:var(--panel-2);border:1px solid var(--line-soft);border-radius:14px;padding:18px 22px;}
+.cond .c .h{font-size:22px;font-weight:800;color:#fff;}
+.cond .c .h span{color:var(--nv-light);}
+.cond .c .d{font-size:15px;color:var(--dim);margin-top:6px;line-height:1.5;}
+.pair2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;flex:1;min-height:0;}
+.pair2 .p{border-radius:16px;padding:24px 28px;display:flex;flex-direction:column;}
+.pair2 .p.bad{background:rgba(248,113,113,.06);border:1px solid rgba(248,113,113,.22);}
+.pair2 .p.good{background:rgba(118,185,0,.07);border:1px solid var(--line);}
+.pair2 .p .t{font-size:22px;font-weight:800;color:#fff;margin-bottom:12px;}
+.pair2 .p .t em{font-style:normal;font-size:16px;font-weight:700;}
+.pair2 .p.bad .t em{color:#f87171;} .pair2 .p.good .t em{color:var(--nv-light);}
+.pair2 .p .li{font-size:17px;color:var(--dim);line-height:1.7;}
+.pair2 .p .li b{color:var(--ink);}
+.kick2{margin-top:22px;font-size:22px;color:var(--ink);font-weight:700;}
+.kick2 .g{color:var(--nv-light);}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>NemoClaw × Nemotron · The Pocket Company</div><div class="r">WHY FINE-TUNE</div></div>
+
+  <div class="kicker">Golden Dataset</div>
+  <h1>LLM 越來越強，為什麼還要 <span class="g">fine-tune？</span></h1>
+  <div class="sub">通用模型寫社群貼文，一眼看得出是 AI；靠 prompt、skill 也只能「減少機味」。要它寫得像那個平台的人，只能靠訓練 ── 而<b>成敗全看你餵它什麼資料</b>。</div>
+
+  <div class="golden">
+    <div class="lbl">GOLDEN DATASET · <b>三個條件同時成立，才有資格進訓練</b></div>
+    <div class="cond">
+      <div class="c"><div class="h"><span>①</span> 已知是商業操作</div><div class="d">我們自己投的案子，來源可證，不是猜的</div></div>
+      <div class="c"><div class="h"><span>②</span> 沒有被識破</div><div class="d">整串留言沒有一則質疑它是業配</div></div>
+      <div class="c"><div class="h"><span>③</span> 創造了高聲量</div><div class="d">真的引發討論，達成品牌曝光</div></div>
+    </div>
+  </div>
+
+  <div class="pair2">
+    <div class="p bad"><div class="t">抓公開熱門貼文 <em>別人拿得到的資料</em></div><div class="li">聲量看得到，但<b>是不是商業操作、有沒有被識破，查不到，只能猜</b>。模型學到的是「熱門貼文長什麼樣」。</div></div>
+    <div class="p good"><div class="t">用自己做過的案子 <em>我們手上的資料</em></div><div class="li">每一篇都是自己投的，<b>提案、有沒有被抓包、聲量多少全是紀錄</b>。模型學到的是「怎麼把品牌藏進一篇會紅的文」。</div></div>
+  </div>
+
+  <div class="kick2">靠猜的資料，模型只學到<span class="g">口吻</span>；靠確定的資料，模型才學得到<span class="g">手法</span>。</div>
+  <div class="foot"><span>NemoClaw × Nemotron · The Pocket Company</span><span class="pg">CH 01 · FINE-TUNE</span></div>
+</div></body></html>
