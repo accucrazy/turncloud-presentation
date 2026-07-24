@@ -65,9 +65,10 @@ html,body{height:100%;overflow:hidden;background:#0b1220;font-family:'Noto Sans 
    ────────────────────────────────────────────── */
 /* ── CH 01 · NemoClaw × Nemotron（全部改為暗色原生 HTML；原始 PDF 截圖仍留在 img/nemo/ p01..p33）
    chapter-nemo=章節過場；nemo-* 對應原 PDF：about=p02 clients=p03 team=p04 finetune=p06
-   why-pandora=p09 culture=p14 modelsize=p16 task-matrix=p18 slm-paper=p19 rtx5090=p21 one-sentence=p32
+   why-pandora=p09(真UI截圖) pandora-answer=p10(真UI截圖,6148篇) culture=p14 modelsize=p15(真UI截圖)
+   task-matrix=p18 slm-paper=p19 rtx5090=p21 one-sentence=p32
    要加回被砍的頁：讀 img/nemo/p*.png 內容，比照 slides/nemo-*.html 手法新做一頁再塞進 NEMO 陣列 */
-const NEMO = ["chapter-nemo","nemo-about","nemo-clients","nemo-team","nemo-finetune","nemo-why-pandora","nemo-culture","nemo-modelsize","nemo-task-matrix","nemo-slm-paper","nemo-rtx5090","nemo-one-sentence"];
+const NEMO = ["chapter-nemo","nemo-about","nemo-clients","nemo-team","nemo-finetune","nemo-why-pandora","nemo-pandora-answer","nemo-culture","nemo-modelsize","nemo-task-matrix","nemo-slm-paper","nemo-rtx5090","nemo-one-sentence"];
 
 /* ── CH 02 · 騰雲發表會精選（唯一保留線上正式 deck 拆頁的一章；type=pocket，srcdoc + <base>）
    要增減頁面：從 ai-talk-deck/pocket/ 複製對應 p*.html 進本 deck 的 pocket/ 再加進陣列
