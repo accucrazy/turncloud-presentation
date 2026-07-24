@@ -34,6 +34,9 @@ html,body{height:100%;overflow:hidden;background:#0b1220;font-family:'Noto Sans 
 .nav:hover{background:rgba(255,255,255,.2);}
 #prev{left:14px;} #next{right:14px;}
 #hint{position:fixed;top:12px;right:14px;color:#94a3b8;font-size:12px;z-index:40;font-family:'JetBrains Mono',monospace;}
+/* 全域 Accucrazy 品牌浮水印（在 stage 內，蓋到每一頁，含 pocket iframe） */
+#brandmark{position:absolute;top:16px;left:28px;z-index:6;display:flex;align-items:center;background:rgba(6,12,8,.5);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.14);border-radius:9px;padding:7px 15px;pointer-events:none;}
+#brandmark img{height:28px;display:block;opacity:.96;}
 
 /* overview grid */
 #grid{position:fixed;inset:0;background:rgba(8,12,22,.97);z-index:60;display:none;grid-template-columns:repeat(5,1fr);gap:10px;padding:24px;overflow:auto;}
@@ -47,7 +50,7 @@ html,body{height:100%;overflow:hidden;background:#0b1220;font-family:'Noto Sans 
 </head>
 <body>
 <div id="bar"></div>
-<div id="viewport"><div id="stage"></div></div>
+<div id="viewport"><div id="stage"><div id="brandmark"><img src="img/misc/accucrazy_logo.webp" alt="Accucrazy"></div></div></div>
 <button class="nav" id="prev" aria-label="prev">‹</button>
 <button class="nav" id="next" aria-label="next">›</button>
 <div id="chrome"><span class="chap" id="chap"></span><span class="sp"></span><span class="count" id="count"></span></div>
@@ -73,7 +76,7 @@ const NEMO = ["chapter-nemo","nemo-about","nemo-clients","nemo-team","nemo-finet
 /* ── CH 02 · 騰雲發表會精選（唯一保留線上正式 deck 拆頁的一章；type=pocket，srcdoc + <base>）
    要增減頁面：從 ai-talk-deck/pocket/ 複製對應 p*.html 進本 deck 的 pocket/ 再加進陣列
    完整清單：p02_overview p03_aios_concept p05_harness_skill p06_pandora p11_banana p13_banana_video_edit p18_ecosystem_chapter … */
-const POCKET = ["p02_overview","p03_aios_concept","p05_harness_skill","p06_pandora","p11_banana","p13_banana_video_edit","p18_ecosystem_chapter"];
+const POCKET = ["p02_overview","p03_aios_concept","p05_harness_skill","p06_pandora","p11_banana","p13_banana_video_edit"];
 
 /* ── CH 03 · 地端多模態工作流（手刻暗色 HTML，1920x1080，slides/local.css）
    chapter-local=章節過場；敘事：被擋 → 換腦 → 可控(對嘴 WAN2.2 Beryl → 說話 地端vs雲端) → 誠實對照 → 【三態量產牆 wall-ads】
@@ -88,6 +91,7 @@ const POCKET_BASE = 'https://turncloud.thepocket.company/';
 
 const SLIDES = [];
 SLIDES.push({ type:'html', src:'slides/cover.html', chap:'The Pocket Company · NemoClaw × Nemotron' });
+SLIDES.push({ type:'html', src:'slides/speaker.html', chap:'The Pocket Company · Accucrazy × TurnCloud' });
 NEMO.forEach(n => SLIDES.push({ type:'html', src:'slides/'+n+'.html', chap:'NemoClaw × Nemotron · The Pocket Company' }));
 SLIDES.push({ type:'html', src:'slides/chapter-pocket.html', chap:'騰雲產品發表會 · TSpace 精選' });
 POCKET.forEach(n => {
@@ -96,6 +100,7 @@ POCKET.forEach(n => {
   if(n==='p06_pandora') SLIDES.push({ type:'html', src:'slides/pocket-pandora-video.html', chap:'騰雲產品發表會 · TSpace 精選' });
 });
 LOCAL.forEach(n => SLIDES.push({ type:'html', src:'slides/'+n+'.html', chap:'地端多模態工作流 · ComfyUI × RTX 5090' }));
+SLIDES.push({ type:'html', src:'slides/closing-qr.html', chap:'Thank You · The Pocket Company' });
 
 /* ── engine ── */
 const stage=document.getElementById('stage');

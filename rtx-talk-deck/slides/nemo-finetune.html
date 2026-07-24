@@ -5,9 +5,14 @@
 .golden .lbl b{color:var(--nv-light);}
 .cond{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .cond .c{background:var(--panel-2);border:1px solid var(--line-soft);border-radius:14px;padding:18px 22px;}
-.cond .c .h{font-size:22px;font-weight:800;color:#fff;}
+.cond .c .h{font-size:25px;font-weight:800;color:#fff;}
 .cond .c .h span{color:var(--nv-light);}
-.cond .c .d{font-size:15px;color:var(--dim);margin-top:6px;line-height:1.5;}
+.cond .c .d{font-size:18px;color:var(--dim);margin-top:8px;line-height:1.5;}
+.moana-badge{position:absolute;top:30px;right:120px;display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:10px 20px 10px 10px;z-index:3;}
+.moana-badge img{width:64px;height:64px;border-radius:12px;object-fit:cover;object-position:center top;background:#fff;}
+.moana-badge .t{font-size:15px;color:var(--dim);line-height:1.3;}
+.moana-badge .t b{display:block;font-size:22px;color:#fff;font-weight:900;}
+.moana-badge .t b span{color:var(--nv-light);}
 .pair2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;flex:1;min-height:0;}
 .pair2 .p{border-radius:16px;padding:24px 28px;display:flex;flex-direction:column;}
 .pair2 .p.bad{background:rgba(248,113,113,.06);border:1px solid rgba(248,113,113,.22);}
@@ -15,13 +20,15 @@
 .pair2 .p .t{font-size:22px;font-weight:800;color:#fff;margin-bottom:12px;}
 .pair2 .p .t em{font-style:normal;font-size:16px;font-weight:700;}
 .pair2 .p.bad .t em{color:#f87171;} .pair2 .p.good .t em{color:var(--nv-light);}
-.pair2 .p .li{font-size:17px;color:var(--dim);line-height:1.7;}
+.pair2 .p .li{font-size:19px;color:var(--dim);line-height:1.65;}
 .pair2 .p .li b{color:var(--ink);}
-.kick2{margin-top:22px;font-size:22px;color:var(--ink);font-weight:700;}
+.kick2{margin-top:22px;font-size:24px;color:var(--ink);font-weight:700;}
 .kick2 .g{color:var(--nv-light);}
 </style></head>
 <body><div class="slide">
   <div class="brand"><div class="l"><div class="dot"></div>NemoClaw × Nemotron · The Pocket Company</div><div class="r">WHY FINE-TUNE</div></div>
+
+  <div class="moana-badge"><img src="../img/misc/moana.png" alt="Moana"><div class="t">訓練對象<b>Moana<span> · 文案 AI</span></b></div></div>
 
   <div class="kicker">Golden Dataset</div>
   <h1>LLM 越來越強，為什麼還要 <span class="g">fine-tune？</span></h1>
