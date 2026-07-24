@@ -5,14 +5,34 @@
 .ch-rule{width:120px;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--nv),transparent);margin:26px 0 40px;}
 .ch-h{font-size:96px;line-height:1.05;font-weight:900;color:#fff;letter-spacing:-.01em;}
 .ch-h .g{color:var(--nv-light);}
-.ch-sub{font-size:28px;color:var(--dim);margin-top:34px;line-height:1.5;max-width:1320px;}
+.ch-sub{font-size:26px;color:var(--dim);margin-top:28px;line-height:1.5;max-width:1320px;}
 .ch-sub b{color:var(--ink);}
+.pipe{margin-top:40px;display:flex;align-items:stretch;gap:0;}
+.pipe .st{flex:1;background:linear-gradient(160deg,rgba(118,185,0,.14),rgba(118,185,0,.03));border:1px solid var(--line);border-radius:14px;padding:16px 8px;text-align:center;}
+.pipe .st .n{font-size:22px;font-weight:900;color:#fff;}
+.pipe .st .d{font-size:14px;color:var(--nv-light);margin-top:6px;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;}
+.pipe .ar{display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;color:var(--nv);padding:0 6px;}
+.pipe-cap{margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.14em;color:var(--nv-light);text-transform:uppercase;}
 </style></head>
 <body><div class="slide">
   <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow · ComfyUI × RTX 5090</div><div class="r">CHAPTER 03</div></div>
   <div class="ch-n">CH · 03</div>
   <div class="ch-rule"></div>
-  <h1 class="ch-h">地端<span class="g">多模態工作流</span><br>從產品照到成片</h1>
-  <div class="ch-sub">一個內衣品牌想出一批素材，卻被雲端擋下 —— 接下來全程<b>地端</b>：換腦落地、可控實證、混合管線，最後長出 <b>Content Tech</b> 的商機。</div>
+  <h1 class="ch-h">整條內容生成產線，<br><span class="g">通通搬到地端</span>。</h1>
+  <div class="ch-sub">一個內衣品牌想出一批素材，卻被雲端擋下 —— 我們把<b>從輿情到成片的一整條 workflow</b>，全部落到 RTX 5090：換腦落地、可控實證、混合管線，最後長出 <b>Content Tech</b> 的商機。</div>
+
+  <div class="pipe">
+    <div class="st"><div class="n">Pandora</div><div class="d">輿情洞察</div></div>
+    <div class="ar">→</div>
+    <div class="st"><div class="n">VIN / Nemotron</div><div class="d">地端 LLM</div></div>
+    <div class="ar">→</div>
+    <div class="st"><div class="n">Banana</div><div class="d">生圖 · 試穿</div></div>
+    <div class="ar">→</div>
+    <div class="st"><div class="n">ComfyUI</div><div class="d">生片 · 對嘴</div></div>
+    <div class="ar">→</div>
+    <div class="st"><div class="n">成片</div><div class="d">量產交付</div></div>
+  </div>
+  <div class="pipe-cap">All On-Prem · RTX 5090 · 一張卡跑完整條產線</div>
+
   <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · LOCAL</span></div>
 </div></body></html>

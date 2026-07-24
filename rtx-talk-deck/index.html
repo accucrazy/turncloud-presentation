@@ -81,7 +81,7 @@ const POCKET = ["p02_overview","p03_aios_concept","p05_harness_skill","p06_pando
    wall-ads=beryl 三態(單品照→試穿→動起來)+雲端補情緒；wall-drama=武俠 5 集；全 muted loop 自動播
    （wall-reels 已停用，仍留 img/walls/reel_*.mp4，可加回 local-lipsync 之後） */
 /* wall-reels 已移除（四位內衣模特兒短片牆，非-beryl 太性感）；影片檔仍在 img/walls/，要加回把 "wall-reels" 放回 local-lipsync 之後即可 */
-const LOCAL = ["chapter-local","local-intro","local-blocked","local-vin","local-pipeline","local-pandora","local-demo-a","local-demo-b","local-control","local-lipsync","local-talking","local-vs-cloud","wall-ads","local-drama","local-agentic","wall-drama","local-sovereignty","local-conclusion"];
+const LOCAL = ["chapter-local","local-intro","local-blocked","local-vin","local-pipeline","local-pandora","local-demo-a","local-demo-b","local-control","local-lipsync","local-talking","local-vs-cloud","wall-ads","wall-ads2","local-drama","local-agentic","wall-drama","local-sovereignty","local-conclusion"];
 
 /* base used to resolve The Pocket Company assets (images/videos) from the live deployment */
 const POCKET_BASE = 'https://turncloud.thepocket.company/';
@@ -90,7 +90,11 @@ const SLIDES = [];
 SLIDES.push({ type:'html', src:'slides/cover.html', chap:'The Pocket Company · NemoClaw × Nemotron' });
 NEMO.forEach(n => SLIDES.push({ type:'html', src:'slides/'+n+'.html', chap:'NemoClaw × Nemotron · The Pocket Company' }));
 SLIDES.push({ type:'html', src:'slides/chapter-pocket.html', chap:'騰雲產品發表會 · TSpace 精選' });
-POCKET.forEach(n => SLIDES.push({ type:'pocket', src:'pocket/'+n+'.html', chap:'騰雲產品發表會 · TSpace 精選' }));
+POCKET.forEach(n => {
+  SLIDES.push({ type:'pocket', src:'pocket/'+n+'.html', chap:'騰雲產品發表會 · TSpace 精選' });
+  // 騰雲段插入 Pandora 實機影片頁（緊接 p06_pandora 之後）
+  if(n==='p06_pandora') SLIDES.push({ type:'html', src:'slides/pocket-pandora-video.html', chap:'騰雲產品發表會 · TSpace 精選' });
+});
 LOCAL.forEach(n => SLIDES.push({ type:'html', src:'slides/'+n+'.html', chap:'地端多模態工作流 · ComfyUI × RTX 5090' }));
 
 /* ── engine ── */
