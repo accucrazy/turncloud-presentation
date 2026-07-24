@@ -1,7 +1,12 @@
 <!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
 <style>
 .wrap{display:grid;grid-template-columns:1fr 1.7fr;gap:26px;flex:1;min-height:0;margin-top:30px;}
+.lcol{display:flex;flex-direction:column;gap:16px;min-height:0;}
+.lcol .videobox{min-height:0;}
+.lcol .videobox.hook{flex:0 0 40%;}
+.lcol .videobox.out{flex:1;}
 .videobox{background:var(--panel);border:1px solid var(--line-soft);border-radius:20px;padding:18px;display:flex;flex-direction:column;min-height:0;}
+.videobox.hook .cap b{color:var(--cyan);}
 .videobox .cap{font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.14em;color:var(--dim);margin-bottom:14px;display:flex;justify-content:space-between;}
 .videobox .cap b{color:var(--gold);}
 .videobox .box{flex:1;border-radius:14px;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center;min-height:0;}
@@ -24,9 +29,15 @@
   <h1>Agent 不只會做，還會<span class="g">自我驗證、自我修復</span>。</h1>
 
   <div class="wrap">
-    <div class="videobox">
-      <div class="cap"><span>《穿越者的資本江湖》EP1 · 五集完結</span><b>🔊 點擊播放</b></div>
-      <div class="box"><video src="../img/local/wuxia_ep1.mp4" poster="../img/local/wuxia_ep1.jpg" controls playsinline preload="metadata"></video></div>
+    <div class="lcol">
+      <div class="videobox hook">
+        <div class="cap"><span>AI 講者：什麼是 Agentic</span><b>會規劃 · 動手 · 自我修正</b></div>
+        <div class="box"><video src="../img/local/avatar_seed.mp4" poster="../img/local/avatar_seed.jpg" muted loop playsinline></video></div>
+      </div>
+      <div class="videobox out">
+        <div class="cap"><span>《穿越者的資本江湖》EP1 · 五集完結</span><b>🔊 點擊播放</b></div>
+        <div class="box"><video src="../img/local/wuxia_ep1.mp4" poster="../img/local/wuxia_ep1.jpg" controls playsinline preload="metadata"></video></div>
+      </div>
     </div>
     <div class="side">
       <div class="loop">
