@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+h1{font-size:52px;}
+.wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;flex:1;min-height:0;margin-top:26px;}
+.videobox{background:var(--panel);border:1px solid var(--line-soft);border-radius:20px;padding:18px;display:flex;flex-direction:column;min-height:0;}
+.videobox.local{border-color:var(--line);background:linear-gradient(160deg,rgba(118,185,0,.12),rgba(118,185,0,.03));}
+.videobox.cloud{border-color:rgba(251,191,36,.4);}
+.videobox .cap{font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:.1em;color:var(--dim);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.videobox.local .cap .t{color:var(--nv-light);font-weight:800;} .videobox.cloud .cap .t{color:var(--gold);font-weight:800;}
+.videobox .cap b{color:#fff;font-weight:700;}
+.videobox .box{flex:1;border-radius:14px;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center;min-height:0;}
+.videobox .box video{width:100%;height:100%;object-fit:contain;display:block;}
+.videobox .tags{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
+.tagx{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;padding:6px 14px;border-radius:999px;}
+.videobox.local .tagx{background:rgba(118,185,0,.14);color:var(--nv-light);border:1px solid var(--line);}
+.videobox.cloud .tagx{background:rgba(251,191,36,.1);color:var(--gold);border:1px solid rgba(251,191,36,.3);}
+.note{margin-top:20px;}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>Local Multimodal Workflow</div><div class="r">ComfyUI × RTX 5090 · On-Prem</div></div>
+
+  <div class="kicker">Proof · 說話（對嘴 ＋ 合聲音）· 同一段話，兩種算法</div>
+  <h1>會說話的 AI 講者：<span class="g">地端</span>能跑，<span class="c">雲端</span>更細。</h1>
+
+  <div class="wrap">
+    <div class="videobox local">
+      <div class="cap"><span class="t">⚡ 地端 · On-Prem</span><b>🔊 點擊播放</b></div>
+      <div class="box"><video src="../img/local/avatar_seed.mp4" poster="../img/local/avatar_seed.jpg" controls playsinline preload="metadata"></video></div>
+      <div class="tags"><span class="tagx">聲線克隆</span><span class="tagx">嘴型同步</span><span class="tagx">零上傳 · 可控</span></div>
+    </div>
+    <div class="videobox cloud">
+      <div class="cap"><span class="t">☁️ 雲端 · Cloud</span><b>🔊 點擊播放</b></div>
+      <div class="box"><video src="../img/local/avatar_voice.mp4" poster="../img/local/avatar_voice.jpg" controls playsinline preload="metadata"></video></div>
+      <div class="tags"><span class="tagx">解析度更高</span><span class="tagx">成品度佳</span><span class="tagx">需上傳 · 難精修</span></div>
+    </div>
+  </div>
+
+  <div class="note">同一位講者、同一段台詞：<span class="hl">地端把聲線與嘴型握在自己手上</span>，資料不出門；<b style="color:var(--ink)">雲端畫質更漂亮，但要上傳、逐句難改</b> —— 敏感題材與要反覆調的，留地端。</div>
+  <div class="foot"><span>Local Multimodal Workflow · ComfyUI × RTX 5090</span><span class="pg">CH 03 · TALKING HEAD</span></div>
+</div></body></html>
