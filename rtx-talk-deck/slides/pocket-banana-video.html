@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><link rel="stylesheet" href="local.css">
+<style>
+h1{font-size:52px;}
+.wrap{display:grid;grid-template-columns:1.7fr 1fr;gap:26px;flex:1;min-height:0;margin-top:22px;}
+.videobox{background:var(--panel);border:1px solid var(--line-soft);border-radius:20px;padding:16px;display:flex;flex-direction:column;min-height:0;}
+.videobox .cap{font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.1em;color:var(--dim);margin-bottom:12px;display:flex;justify-content:space-between;gap:10px;}
+.videobox .cap b{color:var(--gold);}
+.videobox .box{flex:1;border-radius:14px;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center;min-height:0;}
+.videobox .box video{width:100%;height:100%;object-fit:contain;display:block;}
+.side{display:flex;flex-direction:column;gap:12px;min-height:0;}
+.side .lab{font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.1em;color:var(--nv-light);}
+.pipe{display:flex;flex-direction:column;gap:9px;flex:1;min-height:0;}
+.pstep{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;padding:12px 16px;}
+.pstep .n{width:34px;height:34px;flex:0 0 auto;border-radius:9px;background:rgba(251,191,36,.14);color:var(--gold);font-family:'JetBrains Mono',monospace;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.pstep .t{font-size:19px;font-weight:700;color:#fff;}
+.pstep .t span{display:block;font-size:14px;color:var(--dim);font-weight:400;margin-top:2px;}
+.note{margin-top:4px;}
+</style></head>
+<body><div class="slide">
+  <div class="brand"><div class="l"><div class="dot"></div>騰雲產品發表會 · TSpace 精選</div><div class="r">AGENT 03 · BANANA</div></div>
+
+  <div class="kicker">Banana Split · Reels Studio · 實機素材</div>
+  <h1>一句話，<span style="color:var(--gold)">Banana</span> 把成片<span class="g">剪出來</span>。</h1>
+
+  <div class="wrap">
+    <div class="videobox">
+      <div class="cap"><span>Banana · Agentic Reels Editing</span><b>▶ 實機錄影</b></div>
+      <div class="box"><video src="../img/local/banana_demo.mp4" poster="../img/local/banana_demo.jpg" muted loop playsinline></video></div>
+    </div>
+    <div class="side">
+      <div class="lab">5-AGENT REELS PIPELINE</div>
+      <div class="pipe">
+        <div class="pstep"><div class="n">1</div><div class="t">讀腳本<span>一句話丟進去，拆出分鏡</span></div></div>
+        <div class="pstep"><div class="n">2</div><div class="t">字幕生成<span>逐句對齊、上字卡</span></div></div>
+        <div class="pstep"><div class="n">3</div><div class="t">情緒段落<span>找節奏、抓高潮點</span></div></div>
+        <div class="pstep"><div class="n">4</div><div class="t">剪接 · 平滑轉場<span>多 Agent 各司其職</span></div></div>
+        <div class="pstep"><div class="n">5</div><div class="t">CTA · 輸出成片<span>直接可發佈的 Reels</span></div></div>
+      </div>
+      <div class="note">世界第一支 <span class="hl">Agentic Reels 剪輯</span> —— 一句話，多位 Agent 把整條 Reels pipeline 跑完。</div>
+    </div>
+  </div>
+
+  <div class="foot"><span>騰雲產品發表會 · TSpace 精選 · Banana Reels Studio</span><span class="pg">AGENT 03 · BANANA · DEMO</span></div>
+</div></body></html>

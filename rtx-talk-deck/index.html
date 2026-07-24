@@ -76,7 +76,7 @@ const NEMO = ["chapter-nemo","nemo-about","nemo-clients","nemo-team","nemo-finet
 /* ── CH 02 · 騰雲發表會精選（唯一保留線上正式 deck 拆頁的一章；type=pocket，srcdoc + <base>）
    要增減頁面：從 ai-talk-deck/pocket/ 複製對應 p*.html 進本 deck 的 pocket/ 再加進陣列
    完整清單：p02_overview p03_aios_concept p05_harness_skill p06_pandora p11_banana p13_banana_video_edit p18_ecosystem_chapter … */
-const POCKET = ["p02_overview","p03_aios_concept","p05_harness_skill","p06_pandora","p11_banana","p13_banana_video_edit"];
+const POCKET = ["p02_overview","p03_aios_concept","p05_harness_skill","p06_pandora","p11_banana"];
 
 /* ── CH 03 · 地端多模態工作流（手刻暗色 HTML，1920x1080，slides/local.css）
    chapter-local=章節過場；敘事：被擋 → 換腦 → 可控(對嘴 WAN2.2 Beryl → 說話 地端vs雲端) → 誠實對照 → 【三態量產牆 wall-ads】
@@ -99,6 +99,8 @@ POCKET.forEach(n => {
   // 騰雲段插入 Pandora 實機影片頁（緊接 p06_pandora 之後）
   if(n==='p06_pandora') SLIDES.push({ type:'html', src:'slides/pocket-pandora-video.html', chap:'騰雲產品發表會 · TSpace 精選' });
 });
+// Banana 剪輯頁改用實機素材影片（取代原 p13_banana_video_edit 線上頁），緊接 p11_banana 之後
+SLIDES.push({ type:'html', src:'slides/pocket-banana-video.html', chap:'騰雲產品發表會 · TSpace 精選' });
 LOCAL.forEach(n => SLIDES.push({ type:'html', src:'slides/'+n+'.html', chap:'地端多模態工作流 · ComfyUI × RTX 5090' }));
 SLIDES.push({ type:'html', src:'slides/closing-qr.html', chap:'Thank You · The Pocket Company' });
 
