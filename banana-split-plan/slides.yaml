@@ -391,6 +391,31 @@ slides:
     tagline: 'demo 網址：<strong>turncloud.thepocket.company/tspace-studio/</strong>'
     meta_left: "TSpace Studio — Banana Split Console"
 
+  # ─── 13b · Banana Split × Adriana ───────────────────────────
+  - id: adriana_loop
+    template: two_col
+    bg: dark
+    media: img/11_adriana.jpg
+    media_fit: cover
+    tag: { color: violet, text: "CHAPTER 07b · 閉環" }
+    title: 'Banana Split × <span class="v">Adriana</span>：素材出去，帳和報告自己回來'
+    subtitle: '這段不是規劃 —— Eddie 的 PandoraBQ-Adriana 已經寫好在跑（BigQuery 資料層 + Adriana AI）。Banana Split 管素材怎麼生出來，Adriana 管素材出去之後。'
+    boxes:
+      - color: violet
+        title: '<strong>KPI 跟著廣告目標走</strong>'
+        bullets:
+          - '導購看 <strong>ROAS</strong>、名單看 <strong>CPL</strong>、私訊看每次私訊成本、導流看 CTR/CPC'
+          - '趨勢圖第二指標跟著目標變 · 支援上期比較、日/月切換'
+      - color: cyan
+        title: '<strong>AI 月報一鍵出</strong>'
+        bullets:
+          - '本走期 overview 自動帶入 · AI 對話「畫重點」直接進月報 Insight'
+          - '匯出 PDF（Dashboard + Insight）· 釘選保存 · 各品牌各走期有自己的草稿'
+      - color: green
+        title: '<strong>同一套治理，閉環回 Pandora</strong>'
+        body: '多品牌權限（client 只看得到授權品牌、admin 看全部）跟 Banana Split 的 key/scope 是同一套邏輯。成效歸因回流 Pandora —— 哪張素材有效，變成下一輪 tpc run 的訊號。'
+    meta_left: "Adriana — github.com/eddie-1027/PandoraBQ-Adriana"
+
   # ─── 14 · Roadmap ───────────────────────────────────────────
   - id: roadmap
     template: stage

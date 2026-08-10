@@ -312,6 +312,16 @@ h2 { font-size: 28px; line-height: 1.25; font-weight: 700; margin: 8px 0 10px; }
 .plugin-foot code { flex: none; font-family: var(--mono); font-size: 10.5px; color: var(--gold); }
 .plugin-foot span { font-size: 11px; color: var(--mut); line-height: 1.7; }
 
+/* ── Banana Split × Adriana loop ── */
+.loop-panel { margin-top: 16px; padding: 18px 20px; border-color: rgba(167, 139, 250, .3); }
+.loop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 13px 0; }
+.aloop-step { padding: 12px 14px; border: 1px solid var(--line); border-radius: 11px; background: rgba(255, 255, 255, .025); }
+.aloop-step i { font-style: normal; font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; display: block; margin-bottom: 6px; }
+.aloop-step b { font-size: 12.5px; display: block; margin-bottom: 5px; }
+.aloop-step p { font-size: 10.5px; color: var(--mut); line-height: 1.65; }
+.loop-note { border-top: 1px solid var(--line); padding-top: 12px; font-size: 11px; color: var(--mut); line-height: 1.7; }
+.loop-note code { font-family: var(--mono); font-size: 10px; color: var(--cyan); }
+
 .outputs { display: flex; flex-direction: column; gap: 12px; max-height: 480px; overflow-y: auto; scrollbar-width: thin; }
 .out-card { border: 1px solid var(--line); border-radius: 13px; overflow: hidden; background: rgba(255, 255, 255, .02); opacity: 0; transform: translateY(10px); transition: .45s; }
 .out-card.show { opacity: 1; transform: none; }
@@ -501,7 +511,7 @@ h2 { font-size: 28px; line-height: 1.25; font-weight: 700; margin: 8px 0 10px; }
 @media (max-width: 1080px) {
   .signals-grid, .studio-grid, .keys-grid, .moat-grid, .lab-grid { grid-template-columns: 1fr; }
   .recipe-grid, .moat-cards, .eco-grid, .plugin-grid { grid-template-columns: 1fr 1fr; }
-  .learn-grid, .anatomy, .std-steps { grid-template-columns: 1fr 1fr; }
+  .learn-grid, .anatomy, .std-steps, .loop-grid { grid-template-columns: 1fr 1fr; }
   .street-wrap { grid-template-columns: 1fr; }
   h1 { font-size: 32px; }
 }

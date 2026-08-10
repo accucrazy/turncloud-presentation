@@ -116,8 +116,8 @@ const AGENTS = [
     skills: "product shot · scene gen · motion", tools: "gen model fleet · brand kit · asset store" },
   { code: "ADRIANA", name: "Adriana", tone: "var(--violet)", img: "assets/agent_adriana.jpg",
     shop: "Adriana 投放代理", sells: "賣觸及 · CRM × CAPI",
-    role: "DELIVERY · 投放回流", desc: "素材出去、數據回來：受眾標籤、CAPI 回傳、成效歸因。她讓「哪張素材有效」變成下一輪 Pandora 的輸入。",
-    skills: "audience tagging · CAPI sync · attribution", tools: "TCRM · TCDP · Meta CAPI" },
+    role: "DELIVERY · 投放回流", desc: "素材出去、數據回來。她的店已經開了：Eddie 的 PandoraBQ-Adriana — KPI 跟著廣告目標走、AI 月報一鍵出 PDF、成效歸因回流 Pandora。",
+    skills: "audience tagging · CAPI sync · attribution", tools: "PandoraBQ-Adriana · BigQuery · Meta CAPI" },
   { code: "STACEY", name: "Stacey", tone: "var(--green)", img: "assets/agent_stacey.jpg",
     shop: "Stacey 街公所", sells: "管排程 · 驗收與記帳",
     role: "ORCHESTRATOR · 總指揮", desc: "整條 run 的排程、驗收與記帳由她負責。每一步誰做了什麼、花了幾個 credit，全部留痕。",
@@ -286,9 +286,10 @@ const RUN_STEPS = [
     ["banana", "3 assets rendered · 4.2 credits", "cost"],
     ["banana", "a2a://adriana ← asset_bundle (3 img + 3 copy)", "a2a"],
   ]},
-  { agent: 3, dur: 2400, lines: [
+  { agent: 3, dur: 2800, lines: [
     ["adriana", "受眾規劃：互動過「超商咖啡」相關貼文的 lookalike"],
-    ["adriana", "CAPI mapping 就緒 · 投放後成效將回流 Pandora"],
+    ["adriana", "素材出去投放 → 成效進 BigQuery，PandoraBQ-Adriana dashboard 接手", "cost"],
+    ["adriana", "月報草稿已開：本走期 overview 自動帶入 · CAPI 回流 Pandora"],
     ["adriana", "a2a://stacey ← delivery_plan", "a2a"],
   ]},
   { agent: 4, dur: 2200, lines: [
@@ -321,12 +322,24 @@ const RUN_STEPS = [
     ["@moana/tw-slang", "官方 · 台灣語感庫", "890 安裝", "var(--orange)"],
     ["@ian/手搖飲套路", "個人開發者 · 飲料店哏圖", "312 安裝", "var(--gold)"],
     ["@cody/agent-bridge", "Cody 從這裡串進來 · MCP", "NEW", "var(--violet)"],
-    ["@bkk/thai-launch", "曼谷團隊 · 泰文素材", "97 安裝", "var(--green)"],
+    ["@eddie/adriana-report", "Eddie · 投放月報 → PDF", "LIVE", "var(--green)"],
     ["your-plugin", "你的套路 · tpc plugin publish", "—", "var(--dim)"],
   ];
   $("#pluginGrid").innerHTML = PLUGINS.map(([id, desc, meta, tone]) => `
     <div class="plugin-chip" style="--tone:${tone}">
       <code>${id}</code><em>${desc}</em><span>${meta}</span>
+    </div>`).join("");
+
+  /* Banana Split × Adriana closing loop — Eddie's real product */
+  const ALOOP = [
+    ["01 · 素材出去", "CLI 產的圖文直接投放", "受眾與 CAPI 由 Adriana 掛好 — 互動過相關貼文的 lookalike。", "var(--gold)"],
+    ["02 · 成效回來", "KPI 跟著廣告目標走", "PandoraBQ-Adriana（真的上線）：導購看 ROAS、名單看 CPL、私訊看每次私訊成本、導流看 CTR/CPC。", "var(--violet)"],
+    ["03 · 月報自己長", "AI 月報一鍵出 PDF", "本走期 overview 自動帶入、AI 對話「畫重點」直接進 Insight、匯出 PDF 可釘選保存。", "var(--cyan)"],
+    ["04 · 回流 Pandora", "哪張素材有效＝下一輪訊號", "成效歸因回到資料底座 — 下一次 tpc run 的 brief 比這一次準。", "var(--green)"],
+  ];
+  $("#adrianaLoop").innerHTML = ALOOP.map(([tag, b, p, c]) => `
+    <div class="aloop-step">
+      <i style="color:${c}">${tag}</i><b>${b}</b><p>${p}</p>
     </div>`).join("");
 
   let running = false;
