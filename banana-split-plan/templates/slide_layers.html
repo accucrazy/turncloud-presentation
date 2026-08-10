@@ -1,0 +1,38 @@
+{% import '_macros.html' as m %}
+<div class="slide bg-{{ bg | default('dark') }}{% if is_first %} active{% endif %}">
+    <div class="slide-content">
+        {% if tag %}<div class="tag tag-{{ tag.color }}">{{ tag.text }}</div>{% endif %}
+        <h2>{{ title | safe }}</h2>
+        {% if subtitle %}<p class="sub">{{ subtitle | safe }}</p>{% endif %}
+
+        <div class="s-body">
+            <div class="s-col">
+                <div class="illus-frame">{{ m.media_tag(media, media_alt | default(''), media_fit | default('cover')) }}</div>
+            </div>
+            <div class="s-col">
+                <div class="layer-stack">
+                    {% for layer in layers %}
+                    <div class="layer-row l-{{ layer.kind }}">
+                        <div>
+                            <div class="layer-label">{{ layer.label }}</div>
+                            <div class="layer-name {{ layer.name_class }}">{{ layer.name }}</div>
+                        </div>
+                        <div class="layer-desc">{{ layer.desc | safe }}</div>
+                    </div>
+                    {% if not loop.last %}<div class="layer-conn">↑</div>{% endif %}
+                    {% endfor %}
+                </div>
+                {% if footer_box %}
+                <div class="box{% if footer_box.color %} b-{{ footer_box.color }}{% endif %}" style="margin-top: 1cqh;">
+                    <p style="font-size: 2cqh; color: var(--text); text-align: center; line-height: 1.4;">{{ footer_box.body | safe }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>{{ meta_left }}</span>
+            <span class="pg">{{ page }} / {{ total }}</span>
+        </div>
+    </div>
+</div>

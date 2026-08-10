@@ -1,0 +1,88 @@
+{
+  "success": true,
+  "meta": {
+    "type": "runs",
+    "rowCount": 8,
+    "quota": {
+      "limit": 200,
+      "used": 4,
+      "remaining": 196
+    },
+    "runId": null,
+    "limit": 8
+  },
+  "data": [
+    {
+      "runId": "threads_trends_2026_08_11_02_48_06_013_hub8a1",
+      "status": "success",
+      "startedAt": "2026-08-10T18:48:06.013Z",
+      "finishedAt": "2026-08-10T18:49:21.016Z",
+      "discoveredEntries": 5,
+      "processedEntries": 5,
+      "totalPosts": 379
+    },
+    {
+      "runId": "threads_trends_2026_08_11_01_44_06_152_hp2ahc",
+      "status": "success",
+      "startedAt": "2026-08-10T17:44:06.152Z",
+      "finishedAt": "2026-08-10T17:45:19.945Z",
+      "discoveredEntries": 5,
+      "processedEntries": 5,
+      "totalPosts": 382
+    },
+    {
+      "runId": "threads_trends_2026_08_11_00_40_08_522_u0swl0",
+      "status": "success",
+      "startedAt": "2026-08-10T16:40:08.522Z",
+      "finishedAt": "2026-08-10T16:41:40.784Z",
+      "discoveredEntries": 5,
+      "processedEntries": 5,
+      "totalPosts": 311
+    },
+    {
+      "runId": "threads_trends_2026_08_10_23_36_07_422_olfinp",
+      "status": "success",
+      "startedAt": "2026-08-10T15:36:07.422Z",
+      "finishedAt": "2026-08-10T15:37:30.002Z",
+      "discoveredEntries": 5,
+      "processedEntries": 5,
+      "totalPosts": 344
+    },
+    {
+      "runId": "threads_trends_2026_08_10_22_32_07_279_87yfgz",
+      "status": "success",
+      "startedAt": "2026-08-10T14:32:07.279Z",
+      "finishedAt": "2026-08-10T14:33:26.839Z",
+      "discoveredEntries": 5,
+      "processedEntries": 5,
+      "totalPosts": 335
+    },
+    {
+      "runId": "threads_trends_2026_08_10_21_28_07_730_zih2zz",
+      "status": "success",
+      "startedAt": "2026-08-10T13:28:07.730Z",
+      "finishedAt": "2026-08-10T13:29:33.507Z",
+      "discoveredEntries": 5,
+      "processedEntries": 5,
+      "totalPosts": 358
+    },
+    {
+      "runId": "threads_trends_2026_08_10_20_23_06_874_t8iyo5",
+      "status": "success",
+      "startedAt": "2026-08-10T12:23:06.874Z",
+      "finishedAt": "2026-08-10T12:24:31.005Z",
+      "discoveredEntries": 5,
+      "processedEntries": 5,
+      "totalPosts": 345
+    },
+    {
+      "runId": "threads_trends_2026_08_10_19_18_07_455_od1u1z",
+      "status": "success",
+      "startedAt": "2026-08-10T11:18:07.455Z",
+      "finishedAt": "2026-08-10T11:19:54.114Z",
+      "discoveredEntries": 5,
+      "processedEntries": 5,
+      "totalPosts": 439
+    }
+  ]
+}

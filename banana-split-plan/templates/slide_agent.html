@@ -1,0 +1,70 @@
+{% import '_macros.html' as m %}
+{# Agent intro slide — large portrait + asymmetric typographic layout.
+   Variants:
+     • portraitL — portrait dominates left, codename + role on right
+     • portraitR — mirror of portraitL
+     • portraitC — portrait centered hero with stats fanned out on either side
+#}
+{% set v = variant | default('portraitL') %}
+<div class="slide agent agent-{{ v }} agent-tone-{{ tone | default('cyan') }}{% if is_first %} active{% endif %}"{% if id %} data-slide="{{ id }}"{% endif %}>
+    <div class="bg-image agent-bg" style="background-image: url('{{ backdrop | default('img/anim_backdrop.jpg') }}');"></div>
+
+    <div class="agent-stage">
+        {# ── PORTRAIT ── #}
+        <div class="agent-portrait">
+            <div class="agent-portrait-halo"></div>
+            <div class="agent-portrait-frame">
+                <img src="{{ portrait }}" alt="{{ codename }}">
+            </div>
+            {% if codename %}
+            <div class="agent-codename">
+                <span class="agent-codename-dot"></span>{{ codename }}
+            </div>
+            {% endif %}
+        </div>
+
+        {# ── TYPOGRAPHIC SIDE ── #}
+        <div class="agent-info">
+            {% if tag %}<div class="tag tag-{{ tag.color }}">{{ tag.text }}</div>{% endif %}
+            <h2 class="agent-title">{{ title | safe }}</h2>
+            {% if subtitle %}<p class="agent-sub">{{ subtitle | safe }}</p>{% endif %}
+
+            {% if stats %}
+            <div class="agent-stats">
+                {% for s in stats %}
+                <div class="agent-stat agent-stat-{{ s.tone | default('cyan') }}">
+                    <div class="agent-stat-num">{{ s.num | safe }}</div>
+                    <div class="agent-stat-label">{{ s.label | safe }}</div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if blocks %}
+            <div class="agent-blocks">
+                {% for b in blocks %}
+                <div class="agent-block agent-block-{{ b.tone | default('cyan') }}">
+                    {% if b.label %}<div class="agent-block-label">{{ b.label }}</div>{% endif %}
+                    {% if b.name %}<div class="agent-block-name">{{ b.name | safe }}</div>{% endif %}
+                    {% if b.bullets %}
+                    <ul class="agent-block-bullets">
+                        {% for line in b.bullets %}<li>{{ line | safe }}</li>{% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% if b.body %}<p class="agent-block-body">{{ b.body | safe }}</p>{% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if tagline %}
+            <div class="agent-tagline">{{ tagline | safe }}</div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="meta agent-meta">
+        <span>{{ meta_left }}</span>
+        <span class="pg">{{ page }} / {{ total }}</span>
+    </div>
+</div>

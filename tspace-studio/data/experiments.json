@@ -1,0 +1,337 @@
+{
+ "generatedAt": "2026-08-11 03:23",
+ "experiments": [
+  {
+   "id": "cvs_coffee",
+   "market": "TW",
+   "lang": "zh-Hant",
+   "brand": "超商咖啡（以全家為例）",
+   "keyword": "星巴克",
+   "hypothesis": "洞察常常藏在競品的討論串裡：搜「星巴克」反而找到超商咖啡的機會點。",
+   "postCount": 12,
+   "evidence": [
+    {
+     "author": "mussecle__money",
+     "content": "台積電目前的市值大約是兩兆多的美元，在全球公司可以排第六名，但這兩兆多的美元是什麼概念呢？ 給你幾個參考值： 1.台灣一年GDP大概8500億美元，大概三年全台灣才能創造出台積電的價值 2.costco、可口可樂、星巴克、nike、麥當勞、netflix加起來",
+     "likes": 0,
+     "sentiment": 0.07,
+     "url": "https://www.threads.com/@mussecle__money/post/Db2WRP2iVe1"
+    },
+    {
+     "author": "ttttiiinnnnnaaaaaa",
+     "content": "2026/07/29 Day44  早餐吃蔥抓餅+小籠包 愛了❤️‍🔥 比起漢堡炸雞薯條 我真的更喜歡亞洲食物  逛街的時候看到刮刮樂忍不住就買了一張 但這邊只能選款式但不能選哪張 走著走著遠遠看到星巴克架上有水壺 小菜邊走邊講：我對水壺的標準很高哦 結果這個",
+     "likes": 2,
+     "sentiment": -0.34,
+     "url": "https://www.threads.com/@ttttiiinnnnnaaaaaa/post/Db2Q5tEk3U4"
+    },
+    {
+     "author": "_.wyyyh_",
+     "content": "可能是我不懂喝吧 我覺得全家的冰美式跟星巴克的味道很像😳 都很好喝😋 7-11很特別，特別難喝（純個人意見）",
+     "likes": 6,
+     "sentiment": -0.73,
+     "url": "https://www.threads.com/@_.wyyyh_/post/Db2EzVkk8ot"
+    },
+    {
+     "author": "chenmiaofei7",
+     "content": "我們應該也要去麥當勞、星巴克、超商7-ELEVEN、Costco等等當一日CEO體驗一下",
+     "likes": 0,
+     "sentiment": 0.07,
+     "url": "https://www.threads.com/@chenmiaofei7/post/Db1zbQ5IG14"
+    },
+    {
+     "author": "sunfish3200",
+     "content": "順利從韓國回來終於可以可以來分享兩個真P人的首爾之旅（非雷包版😍）  行前check： ✅護照有帶 ✅入境表有填 ✅現金有在台灣換一點點，剩的在明洞換比較划算（但韓國現在真的用不太到現金，剩蠻多的） ✅稍微看一下每天要去哪裡，對應一下那個地區想吃的、想買的 ✅",
+     "likes": 23,
+     "sentiment": 0.81,
+     "url": "https://www.threads.com/@sunfish3200/post/Db08gsfifGu"
+    }
+   ],
+   "brief": {
+    "noise_ratio": 0.92,
+    "insight": "消費者認為全家咖啡的品質媲美星巴克，是平價的高級享受，且明顯優於主要競品7-11。",
+    "consumer_phrases": [
+     "可能是我不懂喝吧 我覺得全家的冰美式跟星巴克的味道很像😳",
+     "都很好喝😋",
+     "7-11很特別，特別難喝（純個人意見）"
+    ],
+    "pain_points": [
+     "想喝到有星巴克水準的好咖啡，但又不想花那麼多錢。",
+     "害怕花錢買到不好喝的超商咖啡，覺得踩雷很浪費。"
+    ],
+    "hooks": [
+     {
+      "angle": "平價星體驗",
+      "copy": "是我味覺失靈還是怎樣？我真心覺得全家冰美式喝起來跟星巴克有87%像欸… 有人也這樣覺得嗎？還是只有我？"
+     },
+     {
+      "angle": "聰明消費學",
+      "copy": "每天一杯星巴克真的太傷本，但又戒不掉咖啡因… 最近發現全家就是我的平價救星，用一半的價格喝到類似的快樂，CP值拉滿！"
+     },
+     {
+      "angle": "安心的選擇",
+      "copy": "每次想喝超商咖啡又怕踩雷的時候，最後還是會走進全家。至少他們家的咖啡有個穩定好喝的水平，不像有些… 特別難喝。"
+     }
+    ],
+    "visual_prompts": [
+     "A close-up shot from a first-person perspective. A hand holds a FamilyMart iced Americano cup, slightly out of focus in the background is a bustling Taipei street scene with a Starbucks logo visible in the distance. The lighting is bright, natural, and suggests a hot afternoon. Minimalist and candid style.",
+     "An overhead flat lay on a typical office desk in Taiwan. A FamilyMart coffee cup sits next to a laptop, a notebook, and a pair of glasses. The morning sun streams in from a window, creating soft shadows. The overall mood is calm, productive, and relatable. Shot on a smartphone."
+    ],
+    "workflow_note": "這次的貼文雜訊比例非常高，高達九成以上。多數貼文只是將品牌名列為地標或舉例，並非實際的消費體驗討論。這凸顯了前期資料清洗與篩選的重要性。然而，僅僅一則有價值的貼文就提供了『全家咖啡媲美星巴克，優於7-11』的清晰洞察，證明即使是微小的訊號也可能蘊含極高的策略價值。"
+   },
+   "images": [
+    "exp_cvs_coffee_1.jpg",
+    "exp_cvs_coffee_2.jpg"
+   ]
+  },
+  {
+   "id": "family_mart",
+   "market": "TW",
+   "lang": "zh-Hant",
+   "brand": "全家 FamilyMart",
+   "keyword": "全家",
+   "hypothesis": "品牌詞雜訊很高（政治文、生活文都會提到「全家」）— 測試工作流的過濾層。",
+   "postCount": 12,
+   "evidence": [
+    {
+     "author": "tab71608",
+     "content": "［男女有別］ 你有沒有發現 男生跟女生 連問個路都不一樣 很多人都以為 男生是不想講清楚 但我覺得不是這樣 男生習慣講的是方向 直走500公尺右轉 在走300公尺 女生習慣講是畫面 看到麥當勞右轉 再經過全家右手邊就是 所以不是誰比較厲害 而是思考方式本來就不",
+     "likes": 2,
+     "sentiment": 0.04,
+     "url": "https://www.threads.com/@tab71608/post/Db2ilHPD1ph"
+    },
+    {
+     "author": "changex.infinie",
+     "content": "看到一份TPP狂粉抵制名單，發現是很好鑑別誰是這些狂粉的標準：例如：抵制中華電信，台灣大哥大，只剩遠傳可以用⋯⋯抵制全家、萊爾富，OK，美聯社，便利商店只剩7-11可以去；抵制台積電，這樣可以用的手機只剩全中國製品牌，輝達相關AI大概都不能用⋯⋯",
+     "likes": 0,
+     "sentiment": 0.06,
+     "url": "https://www.threads.com/@changex.infinie/post/Db2bLj1DwTD"
+    },
+    {
+     "author": "wenyin.u",
+     "content": "昨天喝7-11的三合一覺得蠻好喝的 今天換全家的喝喝看 兩家都是賣$59  目前乍看之下 全家的豆腐感覺比較好吃 （7-11是凍豆腐）",
+     "likes": 0,
+     "sentiment": 0.43,
+     "url": "https://www.threads.com/@wenyin.u/post/Db2Yfjsj93j"
+    },
+    {
+     "author": "my.lattify",
+     "content": "最近想給布丁多一點時間 所以幾乎每週都出爐 有特別想訂購的時間也可以私訊討論 至少兩天前預定唷！ 因為我們都是製作當天早上採購新鮮雞蛋   8／13（四） 無鮮奶油的焦糖布丁出爐囉🎉 無鮮奶油 吉利丁 香精的焦糖嫩布丁 使用新鮮香草莢取出的香草籽熬煮 非香草精",
+     "likes": 1,
+     "sentiment": 0.38,
+     "url": "https://www.threads.com/@my.lattify/post/Db2X0o4kRLK"
+    },
+    {
+     "author": "annannchen0217",
+     "content": "我有一個朋友A  家裡成員有爸爸、媽媽跟姊姊 爸爸在30歲的時候失業了 失業之後全家靠媽媽一個人維持生計 失業後的爸爸很自卑 動不動就覺得別人看不起他 喝了酒脾氣上來就會打A、或是打A的姊姊 所以A在15歲的時候就偷偷去發傳單打工 從16歲開始就沒跟家裡拿過生",
+     "likes": 4,
+     "sentiment": -0.87,
+     "url": "https://www.threads.com/@annannchen0217/post/Db2Wu9pmXkb"
+    }
+   ],
+   "brief": {
+    "noise_ratio": 0.42,
+    "insight": "消費者將全家視為「手搖飲平替」的尋寶地，對新品的口味與健康價值高度敏感，同時也為搜集特定活動贈品而奔波。",
+    "consumer_phrases": [
+     "全家荔枝冰奶！ ！ 有點東西 familymart你確實有高人指點啊～",
+     "今天換全家的喝喝看...目前乍看之下 全家的豆腐感覺比較好吃",
+     "有人知道台中哪家店有粉紅色的嗎 我跑了十家都是紫色🙄"
+    ],
+    "pain_points": [
+     "渴望在超商喝到好喝又相對健康的手搖飲替代品。",
+     "為了特定活動贈品跑了很多家店卻找不到，感到挫折。",
+     "不確定全家和競品的同類商品哪個更好吃，需要實際比較。"
+    ],
+    "hooks": [
+     {
+      "angle": "手搖飲平價替代",
+      "copy": "最近被全家這杯荔枝冰奶嚇到，根本是無糖版的手搖飲吧？辦公室下午就靠這杯了，健康好喝還有點東西欸！"
+     },
+     {
+      "angle": "贈品尋寶地圖",
+      "copy": "為了那個粉紅色的OO跑了整個城市的全家...誰懂！拜託大家來回報一下，到底哪家店還有貨啦！#全家尋寶"
+     },
+     {
+      "angle": "超商盲測對決",
+      "copy": "不服來戰！聽說全家跟小七的XX鍋，豆腐完全不一樣？有沒有勇者兩個都買來PK一下，想知道哪個比較好吃！"
+     }
+    ],
+    "visual_prompts": [
+     "An overhead shot of a modern, slightly cluttered office desk in Taipei. A hand reaches for a plastic cup of lychee iced milk from FamilyMart, condensation on the cup. The background is soft-focused, showing a laptop and stationery. Natural morning light, social media style.",
+     "Point-of-view shot of a person's hands holding two identical promotional items, but in different colors, in front of a FamilyMart checkout counter. The background is slightly blurred. The photo has a candid, slightly grainy film look, capturing a moment of discovery."
+    ],
+    "workflow_note": "這次的貼文噪音比例偏高（約42%），因為「全家」一詞同時指品牌和「整個家庭」，未來在關鍵字設定上需要更精準，或是在後處理階段加強語意篩選。最有價值的洞察來自於消費者對特定新品（荔枝冰奶）的驚喜，以及對比競品的細節觀察（豆腐口感）。這顯示「手搖飲平替」和「產品細節對決」是很有潛力的溝通切角。"
+   },
+   "images": [
+    "exp_family_mart_1.jpg",
+    "exp_family_mart_2.jpg"
+   ]
+  },
+  {
+   "id": "paragon_th",
+   "market": "TH",
+   "lang": "th",
+   "brand": "Siam Paragon（泰國）",
+   "keyword": "พารากอน",
+   "hypothesis": "Pandora 已涵蓋泰國 Threads — 測海外市場：泰文貼文能否直出在地素材。",
+   "postCount": 12,
+   "evidence": [
+    {
+     "author": "cloud2sora",
+     "content": "ประกาศ สำหรับใครที่จองบัตรกับริทเรื่อง Spider-Man Brand New Day รอบ 12.00 Screen x ที่พารากอน   จะเริ่มแจกบัตรประมาณ 11 โมง ที่ลาน",
+     "likes": 0,
+     "sentiment": 0.14,
+     "url": "https://www.threads.com/@cloud2sora/post/DbYU7JuGG16"
+    },
+    {
+     "author": "bhat.bhat.bhat",
+     "content": "หลอกว่าจะพาไปพารากอน แต่ตอนนี้อยู่พัทยาสองคนพ่อลูก เป็นความสุขของคนเป็นพ่อ ที่ชิงตัวลูกจากแม่มัน มาเที่ยวสองต่อสอง 😍",
+     "likes": 0,
+     "sentiment": 0.32,
+     "url": "https://www.threads.com/@bhat.bhat.bhat/post/DbX1EonFnMn"
+    },
+    {
+     "author": "puhkie",
+     "content": "แซ่บปากเบิร์น @เบิร์นบุษบา พารากอน",
+     "likes": 0,
+     "sentiment": 0.36,
+     "url": "https://www.threads.com/@puhkie/post/DbXxo60gaYQ"
+    },
+    {
+     "author": "gqthailand",
+     "content": "#GQandA คุยกับกลัฟ - คณาวุฒิ @gulfkanawut ในงานเปิดตัวน้ำหอม Gucci Flora Gorgeous Orchid Intense ณ Hall of Fame ชั้น M สยามพารากอน",
+     "likes": 2,
+     "sentiment": 0.51,
+     "url": "https://www.threads.com/@gqthailand/post/DbXmiNJkov4"
+    },
+    {
+     "author": "tan.pan987",
+     "content": "ยังหาทางออกจากพารากอนไม่ได้  #perthsantaconcertd1  #PerthSanta #เพิร์ธแซนต้า",
+     "likes": 2,
+     "sentiment": 0.54,
+     "url": "https://www.threads.com/@tan.pan987/post/DbXZnAinbc_"
+    }
+   ],
+   "brief": {
+    "noise_ratio": 0.58,
+    "insight": "พารากอนไม่ใช่แค่ห้าง แต่เป็น ‘จุดหมาย’ ที่คนตั้งใจมาใช้เวลาทำภารกิจบางอย่างให้สำเร็จ ไม่ว่าจะต่อคิวร้านดัง, มาเดท, หรือแม้กระทั่งหลงทางจนหมดแรง",
+    "consumer_phrases": [
+     "หลอกว่าจะพาไปพารากอน แต่ตอนนี้อยู่พัทยาสองคนพ่อลูก",
+     "ยังหาทางออกจากพารากอนไม่ได้",
+     "มาต่อคิว PARAMETER ที่พารากอน ชั้น G มา 40 นาทีเพื่อสิ่งนี้ 🍦",
+     "หลับกลาง พารากอน 😅😅"
+    ],
+    "pain_points": [
+     "พารากอนใหญ่และมีอะไรให้ทำเยอะมากจนหลงทางและเหนื่อย",
+     "ต้องยอมต่อคิวนานเพื่อซื้อของกินหรือสินค้ายอดฮิต",
+     "เป็นสถานที่ที่ถูกคาดหวังว่าจะได้ไปทำกิจกรรมพิเศษกับคนสำคัญ"
+    ],
+    "hooks": [
+     {
+      "angle": "หลงอยู่ในดงของอร่อย",
+      "copy": "วันนี้ใครโดนพารากอนดูดเหมือนกันบ้าง? ตั้งใจมาแค่ร้านเดียว แต่ตอนนี้ของกินเต็มมือ หาทางออกไม่เจอซะแล้ว #พารากอนกินอะไรดี"
+     },
+     {
+      "angle": "ภารกิจพิชิตพารากอน",
+      "copy": "Mission complete! ✅ ต่อคิว 40 นาที ขาลากทั่วห้างจนอยากจะหลับกลางทาง แต่เพื่อสิ่งนี้แล้วยอม! ใครมีภารกิจที่พารากอนวันนี้มาแชร์กัน"
+     },
+     {
+      "angle": "รางวัลของคนเก่ง",
+      "copy": "เมื่อมีคนบอกว่า 'อยากไปพารากอน' จริงๆ แล้วมันคือโค้ดลับที่แปลว่า 'อยากได้ของอร่อย/ของขวัญ' ใช่ไหม? เฉลยหน่อย"
+     }
+    ],
+    "visual_prompts": [
+     "A candid, eye-level shot of a person happily holding a trendy cup of gourmet ice cream. In the soft-focus background, a stylish, minimalist interior of a high-end shopping mall is visible, with warm, ambient lighting.",
+     "A low-angle shot from the perspective of someone sitting on a comfortable bench inside a spacious, brightly lit mall. Their feet in trendy sneakers are in the foreground, surrounded by several shopping bags from different food brands. The background shows the bustling mall life."
+    ],
+    "workflow_note": "這次的貼文噪音比例偏高，主要來自活動或藝人粉絲的打卡文，他們提到了地點，但核心內容與商場體驗無關。真正的洞察藏在那些看似無關緊要的個人生活片段裡，例如「หลับกลาง พารากอน (在 Paragon 中間睡著了)」或「ยังหาทางออกจากพารากอนไม่ได้ (還找不到出口)」。這些極短的口語原文，反而比長篇大論的評論更能捕捉到消費者在空間中的真實感受——既疲憊又享受的矛盾狀態。"
+   },
+   "images": [
+    "exp_paragon_th_1.jpg",
+    "exp_paragon_th_2.jpg"
+   ]
+  },
+  {
+   "id": "fitness_tw",
+   "market": "TW",
+   "lang": "zh-Hant",
+   "brand": "健身／蛋白質品類",
+   "keyword": "健身",
+   "hypothesis": "不給品牌只給品類：測「品類聆聽」能不能自己長出切角（如早餐蛋白質）。",
+   "postCount": 12,
+   "evidence": [
+    {
+     "author": "global_burger105",
+     "content": "「環球956天尊盃」陀螺爭霸賽來啦🔥  16人開賽上限20人 報名費：450/人 報到繳費即可  🈲盜版、美版陀螺🈲  比賽日期：2026/8/14晚上 8：40報到~9：00開賽  比賽地點：高雄市三民區義華路105號 環球漢堡2F（冷氣場地飲料無限暢飲） ",
+     "likes": 3,
+     "sentiment": 0.52,
+     "url": "https://www.threads.com/@global_burger105/post/Db2Q-KbEYGl"
+    },
+    {
+     "author": "pharmachen0915",
+     "content": "AI時代越來越魔幻了 澳洲就發生一起 你請了一個AI代理人 幫你去預訂健身房的課程 結果他的AI代理人 發現了網站的漏洞可以提前預約之外 還發現了，可以藉由API自動取消￼ 其他人的預約讓自己順位再往前  這跟以前的一個老梗一模一樣 你的帳戶只要夠有錢錢的話 ",
+     "likes": 1,
+     "sentiment": 0.14,
+     "url": "https://www.threads.com/@pharmachen0915/post/Db2MLgwmm6C"
+    },
+    {
+     "author": "wa_wa_lll",
+     "content": "#早餐先吃蛋白質，真的有差嗎？？ 很多人早餐，看起來吃得很豐盛 麵包、蛋餅、漢堡、飯糰、鐵板麵、奶茶...都有了  但我第一個會看的反而是： 蛋白質在哪裡？ 蛋白質不只是健身的人才需要 它是身體維持肌肉、組織修復的重要營養素 而且，相較於只吃精製澱粉 搭配足夠",
+     "likes": 0,
+     "sentiment": -0.04,
+     "url": "https://www.threads.com/@wa_wa_lll/post/Db15Puvk6Bh"
+    },
+    {
+     "author": "huangqiaoba",
+     "content": "最近晚上意識到不能太晚吃東西 躺平睡覺會不太舒服睡不著 意識到自己老了 但重點是 每當我開始想認真面對調整體態這件事 我其實有個陰影  之前因為極度自律的減脂生活 健康餐 168 完全戒糖 戒油炸 戒醬汁  麥當勞只能一個月吃一次  每週運動至少四天每天一小時",
+     "likes": 5,
+     "sentiment": -0.58,
+     "url": "https://www.threads.com/@huangqiaoba/post/Db1Pm03kjuJ"
+    },
+    {
+     "author": "_yan_house8888",
+     "content": "🏡 2000萬內，買到全新4房＋邊間景觀戶！  還在看三房嗎？ 這間直接升級四房雙衛浴，空間更舒適，全家住得更自在。  ✨ 社區最大坪數 ✨ 邊間三面採光 ✨ 中高樓層公園景觀 ✨ 全新高規建材 ✨ 日本YKK AP氣密窗、免治馬桶、暖風乾燥機 ✨ 空中花園、",
+     "likes": 0,
+     "sentiment": 0.56,
+     "url": "https://www.threads.com/@_yan_house8888/post/Db0zfF7ihS2"
+    }
+   ],
+   "brief": {
+    "noise_ratio": 0.33,
+    "insight": "消費者渴望在健身與享受生活間找到平衡，對極端自律感到恐懼，並尋求健身帶來的心靈平靜而非僅是身體改變。",
+    "consumer_phrases": [
+     "我剛剛走了40分鐘的跑步機 吃了一個健身餐 但我餓了 我可以去麥當勞在吃一個漢堡🍔嗎",
+     "之前因為極度自律的減脂生活 健康餐 168 完全戒糖 戒油炸 戒醬汁...某一次無預警的在生日前一天腸阻塞住院",
+     "謝謝健身讓我一點一點找回自己 沒有雜念 專注在如何修正動作...偶爾還是會吃炸雞耍廢🫠"
+    ],
+    "pain_points": [
+     "健身後的飢餓感與想吃療癒食物的慾望產生強烈衝突。",
+     "害怕過度自律的飲食和運動計畫會傷害身體，甚至造成反效果。",
+     "追求一種可持續、不痛苦，且能兼顧心理健康的健身方式。"
+    ],
+    "hooks": [
+     {
+      "angle": "承認慾望的平衡學",
+      "copy": "練完超餓，腦中是不是只有雞排和漢堡？與其硬撐，不如先讓身體吃夠蛋白質。你會發現，那種失控的渴望，其實可以變得很溫和。"
+     },
+     {
+      "angle": "反對極端自律",
+      "copy": "聽過有人為了減脂，自律到腸阻塞住院嗎？身體不是機器，比起硬ㄍㄧㄥ，找到能舒服走一輩子的健康方式，可能更重要。"
+     },
+     {
+      "angle": "健身的心靈收穫",
+      "copy": "有時候走進健身房，不是為了數字，是為了把腦袋清空。專注在呼吸和動作上，那種平靜感很珍貴。練完吃對東西，穩定感更加倍。"
+     }
+    ],
+    "visual_prompts": [
+     "A young Taiwanese person in stylish workout clothes sits at a minimalist wooden table, enjoying a high-protein meal from a bento box. Through the window, the vibrant, slightly blurred lights of a Taipei street at dusk are visible. Candid, natural lighting, shot on a high-end smartphone.",
+     "Over-the-shoulder shot of a person sitting on a yoga mat in a quiet corner of a bright, airy gym in Taiwan, looking peacefully out a large window after a workout. A bottle of protein shake rests beside them. Serene, focused mood, shallow depth of field."
+    ],
+    "workflow_note": "這次的貼文顯示，消費者對『極端自律』的敘事已有警覺甚至反感。比起強調產品的『高效』，溝通『平衡』、『可持續』、『心理支持』等軟性價值，更能切中他們對健康生活的真實渴望。直接挑戰『健身=痛苦』的刻板印象，是個很有潛力的溝通機會點。"
+   },
+   "images": [
+    "exp_fitness_tw_1.jpg",
+    "exp_fitness_tw_2.jpg"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,352 @@
+# ════════════════════════════════════════════════════════════
+#  Banana Split — 圖文生成界的 Shopify · 計畫 deck
+#  改完跑 `python build.py` 重建 index.html
+#  素材：img/（demo 截圖 + 實驗產出 + 共用品牌資產）
+#  所有數字與引言都來自真實 API 回傳與實驗結果，不要自己加數字
+# ════════════════════════════════════════════════════════════
+
+meta:
+  title: "Banana Split — 圖文生成界的 Shopify · The Pocket Company"
+  brand: "BANANA SPLIT · TPC"
+  brand_full: "THE POCKET COMPANY · BANANA SPLIT PLAN · 2026"
+  year: "2026"
+
+slides:
+
+  # ─── 01 · 封面 ──────────────────────────────────────────────
+  - id: cover
+    template: cover
+    media: img/space_hero.jpg
+    logos:
+      left:  { src: "img/accucrazy-logo.webp", alt: "Accucrazy",  brand: "accucrazy" }
+      right: { src: "img/turncloud-logo.png",  alt: "TurnCloud",  brand: "turncloud" }
+    pre: "THE POCKET COMPANY · PLAN + LAB + DEMO · 2026"
+    title: 'Banana Split<br>圖文生成界的 <span class="c">Shopify</span>'
+    lede: |-
+      一份計畫、一組真實驗、一個能點的 demo。<br>
+      核心論點只有一句：<strong>輿情和素材，要長在同一條產線上。</strong>
+    signatures:
+      - { strong: "計畫", text: "三個介面 · 配方市集 · 計量治理" }
+      - { strong: "Demo", text: "TSpace Studio · 真資料驅動" }
+
+  # ─── 02 · 為什麼是 Shopify ──────────────────────────────────
+  - id: why_shopify
+    template: chapter
+    tone: cyan
+    eyebrow: "CHAPTER 01 · 定調"
+    title: 'Shopify 賣的從來不是網站，<br>是「<span class="c">開店這件事</span>」的基礎設施'
+    lede: |-
+      2006 年開網路商店要請工程師，Shopify 把它變成月費。
+      2026 年品牌要養一條 AI 內容產線，一樣貴、一樣難 —— 我們把它變成一把 API key。
+    bullets:
+      - { tone: cyan,   label: "SHOPIFY 給的", text: '後台（管理）＋ App Store（能力擴充）＋ Theme（開箱即用的店面）。' }
+      - { tone: orange, label: "我們給的",     text: 'Console（管理）＋ Recipe 市集（能力擴充）＋ UI SDK（開箱即用的 dashboard）。' }
+      - { tone: violet, label: "生意的本質",   text: '別人用我們的地基蓋自己的生意，每一次生成、每一次查詢，我們抽 credit。' }
+    tagline: '平台的定義：<strong>別人在上面賺錢，你才算贏。</strong>'
+    meta_left: "Banana Split Plan — 定調"
+
+  # ─── 03 · 三個介面 ──────────────────────────────────────────
+  - id: three_surfaces
+    template: stage
+    tone: cyan
+    arrows: false
+    tag: { color: cyan, text: "CHAPTER 01 · 產品架構" }
+    title: '同一組能力，<span class="c">三種接法</span>'
+    subtitle: '共用同一把金鑰、同一本帳。差別只是誰來接：工程師、AI agent、還是想快速上線的團隊。'
+    panels:
+      - tone: green
+        label: "SURFACE 01 · REST — 已上線"
+        name: 'Headless API'
+        bullets:
+          - '<code>x-api-key</code> 打 <code>pandora.thepocket.company/api/public</code>'
+          - 'query（聲量+情緒）· trends（熱點）· scrape（速爬）'
+          - '每個 response 內建 <strong>meta.quota</strong> —— 計量天生就有'
+        via: "本 deck 所有真資料都是這支打回來的"
+      - tone: violet
+        label: "SURFACE 02 · MCP — 建置中"
+        name: 'Agent 的接口'
+        bullets:
+          - 'Chris 的設計：<strong>全部包成 MCP、一律帶 key</strong>'
+          - '把技術文件跟 key 給 Claude / Cursor / 自家軟體就能用'
+          - '每一次 tool call 掛在 key 上 —— 可控、可計價'
+        via: "把「不可控的一直用」變成「每一筆都有帳」"
+      - tone: gold
+        label: "SURFACE 03 · UI SDK — 規劃"
+        name: '十行一個 dashboard'
+        bullets:
+          - '<code>&lt;banana-console&gt;</code> web component + pk_ key'
+          - '訊號、產線、計量的 UI 不用重做'
+          - 'demo 的 TSpace Studio 就是第一個 reference'
+        via: "Shopify 的 Theme 層"
+    tagline: 'REST 接工程師 · MCP 接 agent · SDK 接想「今天就上線」的人'
+    meta_left: "Banana Split — 三個介面"
+
+  # ─── 04 · Pandora 資料底座 ──────────────────────────────────
+  - id: pandora_base
+    template: two_col
+    bg: dark
+    media: img/08_pandora.jpg
+    media_fit: cover
+    tag: { color: cyan, text: "CHAPTER 02 · 資料底座" }
+    title: '底座已經在收錢邊上：<span class="c">Pandora Public API</span>'
+    subtitle: '不是 roadmap，是現在就打得通的服務 —— 以下每個數字都是這次實測的真實回傳。'
+    boxes:
+      - color: cyan
+        title: '<strong>真的打過了</strong>'
+        bullets:
+          - '一次 trends run 抓回 <strong>300–380 篇</strong>貼文，每小時自動跑'
+          - 'query 回傳含 <strong>sentiment 情緒分數</strong>、語言、國別欄位'
+          - '配額內建：<code>meta.quota</code> 每日 200 次、即時回報用量'
+      - color: orange
+        title: '<strong>多市場實測</strong>'
+        bullets:
+          - '台灣庫最深：熱點 + 品牌 + 品類都有，含情緒'
+          - '泰文關鍵字「พารากอน」→ 抓回<strong>真的泰國 Threads 貼文</strong>'
+          - '出海的資料底座已經開始長，先收料、後標註'
+      - color: violet
+        title: '<strong>對開發者的意義</strong>'
+        body: '別人要自建這個底座：爬蟲、反爬、BigQuery、情緒模型、日更維運。我們一把 key 全給 —— 這就是地基的租金。'
+    meta_left: "Pandora — 已上線的資料底座"
+
+  # ─── 05 · Culture Listening 方法論 ──────────────────────────
+  - id: culture_method
+    template: chapter
+    tone: orange
+    eyebrow: "CHAPTER 03 · 方法論"
+    title: 'Culture Listening：<br>不是翻譯，是<span class="o">語感</span>'
+    lede: |-
+      一般 AI 生成的起點是「想像中的消費者」。
+      我們的起點是 Pandora 今天抓回來的原話 —— 把「可能是我不懂喝吧」這種自嘲留在文案裡，才像真人。
+    bullets:
+      - { tone: cyan,   label: "聽 · VERBATIM", text: '抄下消費者原話，一字不改。原話裡有品牌自己想不到的梗和自嘲。' }
+      - { tone: orange, label: "懂 · CULTURE",  text: '從原話長出洞察與切角 —— 痛點、渴望、比較心理，全部有出處。' }
+      - { tone: gold,   label: "做 · CREATIVE", text: 'brief 直接變 visual prompt 與 hook，素材不經過想像，只經過證據。' }
+    tagline: '好 hook 幾乎都是<strong>消費者原話的變形</strong> —— 這是實驗跑出來的結論，不是口號。'
+    meta_left: "Culture Listening — 方法論"
+
+  # ─── 06 · 實驗工作流 ────────────────────────────────────────
+  - id: lab_flow
+    template: stage
+    tone: violet
+    arrows: true
+    tag: { color: violet, text: "CHAPTER 04 · LAB" }
+    title: '把品牌<span class="o">真的丟進去</span>：四個品牌、兩個市場、一條工作流'
+    subtitle: '每個實驗都走完整條產線，留下完整證據鏈：原話在哪、洞察是什麼、素材長怎樣、學到了什麼。'
+    panels:
+      - { tone: cyan,   label: "01 · SIGNAL",   name: 'Pandora<br>抓真貼文',  body: '品牌詞或品類詞，近 14 天，含情緒分數' }
+      - { tone: violet, label: "02 · FILTER",   name: '訊噪<br>分離',        body: '量測 noise ratio —— 品牌詞常常一半是雜訊' }
+      - { tone: orange, label: "03 · CULTURE",  name: 'Moana<br>聽語感',     body: '抄原話 → 痛點 → 在地語言的 hook' }
+      - { tone: gold,   label: "04 · CREATIVE", name: 'Banana<br>產素材',    body: 'brief 直接變 visual prompt，1:1 社群圖' }
+      - { tone: green,  label: "05 · VERDICT",  name: '工作流<br>結論',      body: '這種品牌該怎麼餵，才會產出好素材' }
+    tagline: '實驗跑的程式碼、資料、產出全部留檔 —— demo 的 Lab 頁就是報告本身'
+    meta_left: "Lab — Pandora × Banana 實驗工作流"
+
+  # ─── 07 · 實驗一 · 超商咖啡（TW）────────────────────────────
+  - id: exp_tw
+    template: demo
+    variant: spotL
+    tone: cyan
+    media: img/exp_cvs_coffee_1.jpg
+    media_fit: cover
+    marker: "● LAB 01 · TAIWAN"
+    tag: { color: cyan, text: "LAB 01 · TW" }
+    title: '雜訊 92%，但<span class="c">一則貼文</span>就值回票價'
+    subtitle: '搜「星巴克」，十二篇裡十一篇是雜訊 —— 但剩下那篇：「可能是我不懂喝吧，我覺得全家的冰美式跟星巴克的味道很像」。'
+    pills:
+      - tone: cyan
+        label: "INSIGHT"
+        name: "洞察藏在競品的討論串裡"
+        bullets:
+          - '消費者自己在幫超商咖啡打「媲美星巴克」的定位'
+          - '產出 hook：「我真心覺得全家冰美式跟星巴克有 87% 像欸…」'
+      - tone: orange
+        label: "VERDICT"
+        name: "微小訊號 ≠ 沒有價值"
+        bullets:
+          - '雜訊高達九成，前期過濾層是必要投資'
+          - '一則真原話的策略價值，勝過一百句想像的文案'
+    meta_left: "Lab 01 — 超商咖啡 · 台灣"
+
+  # ─── 08 · 實驗二 · 泰國 Paragon（海外）──────────────────────
+  - id: exp_th
+    template: demo
+    variant: spotR
+    tone: orange
+    media: img/exp_paragon_th_1.jpg
+    media_fit: cover
+    marker: "● LAB 02 · THAILAND"
+    tag: { color: orange, text: "LAB 02 · TH" }
+    title: '泰文進、泰文出：<span class="o">海外素材</span>同一條產線'
+    subtitle: '泰文原話「หลับกลาง พารากอน（在 Paragon 中間睡著了）」長出的洞察：Paragon 不只是商場，是一個「目的地」—— 人們帶著任務來，又累又享受。'
+    pills:
+      - tone: orange
+        label: "OVERSEAS"
+        name: "產出直接是泰文"
+        bullets:
+          - 'hook：「วันนี้ใครโดนพารากอนดูดเหมือนกันบ้าง?（今天誰也被 Paragon 吸進去了？）」'
+          - '視覺、文案、語感全部在地 —— 不是台灣素材翻譯版'
+      - tone: cyan
+        label: "MEANING"
+        name: "出海不是夢想，是複製"
+        bullets:
+          - '每開一個市場 = 多接一個語感庫，產線不用重建'
+          - '正好接上 Siam Paragon 這條商務線'
+    meta_left: "Lab 02 — Siam Paragon · 泰國"
+
+  # ─── 09 · 實驗三 · 品類聆聽（健身）───────────────────────────
+  - id: exp_category
+    template: demo
+    variant: spotL
+    tone: green
+    media: img/exp_fitness_tw_1.jpg
+    media_fit: cover
+    marker: "● LAB 03 · CATEGORY"
+    tag: { color: green, text: "LAB 03 · TW" }
+    title: '不給品牌只給品類，切角<span class="g">自己長出來</span>'
+    subtitle: '丟「健身」進去，聽到的不是「高效增肌」，是「之前極度自律減脂，生日前一天腸阻塞住院」—— 消費者對極端自律已經反感。'
+    pills:
+      - tone: green
+        label: "INSIGHT"
+        name: "反極端自律"
+        bullets:
+          - '溝通「平衡、可持續、心理支持」比「高效」更能切中渴望'
+          - 'hook：「練完超餓，腦中只有雞排？與其硬撐，不如先吃夠蛋白質」'
+      - tone: violet
+        label: "VERDICT"
+        name: "品類詞 > 品牌詞"
+        bullets:
+          - '品類詞雜訊只有三成，洞察密度遠高於品牌詞'
+          - '最好的餵法：品類進、品牌出'
+    meta_left: "Lab 03 — 健身品類 · 台灣"
+
+  # ─── 10 · 實驗總結 ──────────────────────────────────────────
+  - id: lab_verdict
+    template: chapter
+    tone: gold
+    eyebrow: "CHAPTER 04 · LAB 結論"
+    title: '什麼樣的品牌丟進去，<br>會產出<span class="o">好素材</span>'
+    lede: |-
+      四個實驗、兩個市場跑完，工作流的答案比想像簡單：
+      關鍵不在生成模型，在<strong>餵進去的是不是真話</strong>。
+    bullets:
+      - { tone: cyan,   label: "① 品類詞 > 品牌詞", text: '「全家」一半在講政治和日常；「超商咖啡」「健身早餐」長出來的洞察乾淨得多。' }
+      - { tone: orange, label: "② 洞察藏在競品串", text: '搜「星巴克」挖到超商咖啡的機會點。聆聽的邊界要畫在品類，不是自家品牌。' }
+      - { tone: gold,   label: "③ 原話就是文案",   text: '好 hook 都是原話的變形。Culture Listening 的產出是語感，不是摘要。' }
+    tagline: '第四個結論最重要：<strong>泰國已經收得到料</strong> —— 這套工作流，換語言就能出海。'
+    meta_left: "Lab — 工作流實驗結論"
+
+  # ─── 11 · 市場定位與護城河 ──────────────────────────────────
+  - id: moat
+    template: demo
+    variant: stacked
+    tone: cyan
+    media: img/demo_moat.jpg
+    media_fit: contain
+    marker: "● POSITIONING"
+    tag: { color: cyan, text: "CHAPTER 05 · 定位" }
+    title: '護城河：<span class="c">輿情</span>和<span class="o">素材</span>長在同一條產線上'
+    subtitle: '兩條軸看整個市場：有沒有自己的輿情資料 × 有沒有素材產線。生圖工具在右下、輿情公司在左上 —— 右上角目前只有我們。'
+    pills:
+      - tone: cyan
+        label: "MOAT 01 · 資料飛輪"
+        name: "素材從「今天的對話」長出來"
+        bullets: ['別人的 prompt 來自想像，我們的來自今天的原話；資料每天在長，領先每天在加大']
+      - tone: orange
+        label: "MOAT 02 · 方法論"
+        name: "Culture Listening 已跑成 recipe"
+        bullets: ['從原話到 hook 的萃取流程可複製、可販售 —— 方法論本身就是商品']
+      - tone: green
+        label: "MOAT 03 · 多市場產線"
+        name: "換語言就能出海"
+        bullets: ['台灣練深度、泰國先收料；每開一個市場只是多接一個語感庫']
+    meta_left: "Positioning — 輿情 × 素材"
+
+  # ─── 12 · 計量與治理 ────────────────────────────────────────
+  - id: governance
+    template: two_col
+    bg: dark
+    media: img/10_banana.jpg
+    media_fit: cover
+    tag: { color: green, text: "CHAPTER 06 · 治理" }
+    title: '可以開放，是因為<span class="g">算得清楚</span>'
+    subtitle: '「被人裝了之後不可控地一直用」的答案，不是把門關上，是把每一次呼叫變成一筆有主人、有額度、可以關掉的帳。'
+    boxes:
+      - color: green
+        title: '<strong>兩種金鑰，兩種信任</strong>'
+        bullets:
+          - '<code>pk_</code> publishable：進得了瀏覽器，只能讀、會限流、隨時可 revoke'
+          - '<code>sk_</code> secret：只住伺服器，能寫、能生成、能花錢'
+      - color: cyan
+        title: '<strong>計量天生就有</strong>'
+        bullets:
+          - 'Pandora 每個 response 都帶 <code>meta.quota</code>（本日用量/上限）'
+          - '生成類呼叫以 credit 計價 —— 抽成模式的地基'
+      - color: violet
+        title: '<strong>Scope 與夥伴</strong>'
+        body: '一把鑰匙只開一扇門：查詢、熱點、生成、CAPI 各自授權。生態系夥伴（如 Raccoon）拿 scoped key，用量各自記帳，超額降速不斷線。'
+    meta_left: "Governance — keys · quota · scopes"
+
+  # ─── 13 · DEMO · TSpace Studio ──────────────────────────────
+  - id: demo_studio
+    template: demo
+    variant: stacked
+    tone: violet
+    media: img/demo_space.jpg
+    media_fit: contain
+    marker: "● LIVE DEMO"
+    tag: { color: violet, text: "CHAPTER 07 · DEMO" }
+    title: 'TSpace Studio：你的 AI 員工<span class="v">住的地方</span>'
+    subtitle: '一個真的能點的 console —— 數位空間裡五位 Agent 環繞 AI OS，訊號、產線、實驗、金鑰全部在同一個介面。它同時是 UI SDK 的第一個 reference implementation。'
+    pills:
+      - tone: cyan
+        label: "REAL DATA"
+        name: "資料是真的"
+        bullets: ['熱點、貼文、情緒、配額全部來自 Pandora API 真實回傳，不是示意圖']
+      - tone: orange
+        label: "REAL RUN"
+        name: "產線看得見"
+        bullets: ['按下 Run：五位 Agent A2A 交棒、逐行 log、40 秒出 3 版圖文']
+      - tone: green
+        label: "REAL LAB"
+        name: "實驗看得見"
+        bullets: ['四個品牌實驗的完整證據鏈就在 Lab 頁 —— 原話、洞察、素材並排']
+    tagline: 'demo 網址：<strong>turncloud.thepocket.company/tspace-studio/</strong>'
+    meta_left: "TSpace Studio — Banana Split Console"
+
+  # ─── 14 · Roadmap ───────────────────────────────────────────
+  - id: roadmap
+    template: stage
+    tone: violet
+    arrows: true
+    tag: { color: violet, text: "CHAPTER 08 · ROADMAP" }
+    title: '四步，把產線變成<span class="v">平台</span>'
+    subtitle: '每一步都有可驗收的產出，而且第一步已經完成了。'
+    panels:
+      - tone: green
+        label: "PHASE 0 · 已完成"
+        name: 'REST 底座<br>+ 實驗驗證'
+        bullets: ['Pandora Public API 上線', '4 品牌 × 2 市場實驗跑通', 'TSpace Studio demo 可展示']
+      - tone: cyan
+        label: "PHASE 1"
+        name: 'MCP 打包<br>+ 金鑰治理'
+        bullets: ['query/trends/scrape 包成 MCP', 'pk/sk 雙鑰與 scope 上線', '用量帳單看得見']
+      - tone: orange
+        label: "PHASE 2"
+        name: 'Recipe 市集<br>+ Brand Kit'
+        bullets: ['signal-to-post 等配方上架', 'Brand Kit 掛載：換品牌不改配方', '夥伴 scoped key（Raccoon 先行）']
+      - tone: gold
+        label: "PHASE 3"
+        name: 'UI SDK<br>+ 海外市場'
+        bullets: ['<code>&lt;banana-console&gt;</code> 開放', '泰國語感庫正式化', '第一個外部開發者收費案例']
+    tagline: '驗收標準始終只有一條：<strong>有沒有別人開始在上面做自己的生意</strong>'
+    meta_left: "Roadmap — Phase 0 已完成"
+
+  # ─── 15 · Closing ───────────────────────────────────────────
+  - id: closing
+    template: closing
+    media: img/space_hero.jpg
+    quote: '<strong>素材是從今天的對話長出來的。</strong>'
+    lede: |-
+      會生圖的公司很多。
+      聽得懂人話、然後把它變成素材的產線，是我們的。
+    sig: 'THE POCKET COMPANY · BANANA SPLIT · 2026'

@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TSpace Studio — Banana Split Console · The Pocket Company</title>
+<meta name="description" content="TSpace Studio — the digital space where your AI agents work. A reference console built on Banana Split primitives, running on live Pandora signals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- ── ambient digital space ─────────────────────────────────── -->
+<div class="void">
+  <canvas id="starfield"></canvas>
+  <div class="grid-floor"></div>
+  <div class="aurora a1"></div>
+  <div class="aurora a2"></div>
+</div>
+
+<!-- ── top bar ───────────────────────────────────────────────── -->
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/tspace_logo.png" alt="TSpace" class="brand-mark">
+    <div class="brand-txt">
+      <b>TSpace Studio</b>
+      <span>Banana Split Console · The Pocket Company</span>
+    </div>
+  </div>
+
+  <div class="topbar-right">
+    <button class="mode-switch" id="modeSwitch" title="切換資料來源">
+      <span class="dot"></span><span id="modeLabel">CACHED</span>
+    </button>
+
+    <div class="quota" id="quotaWidget" title="Pandora API 每日配額">
+      <svg viewBox="0 0 36 36" class="quota-ring">
+        <circle cx="18" cy="18" r="15.5"></circle>
+        <circle cx="18" cy="18" r="15.5" id="quotaArc" class="arc"></circle>
+      </svg>
+      <div class="quota-txt">
+        <b id="quotaUsed">—</b><span id="quotaTotal">/ —</span>
+        <em>API quota</em>
+      </div>
+    </div>
+
+    <div class="keychip" title="這個 console 用 publishable key 呼叫，secret key 永遠留在伺服器">
+      <span class="k">pk_live</span><span class="v">••••9xrsQs</span>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <!-- ── left rail ───────────────────────────────────────────── -->
+  <nav class="rail">
+    <button class="rail-btn active" data-view="space">
+      <span class="ico">◎</span><b>Space</b><em>數位空間</em>
+    </button>
+    <button class="rail-btn" data-view="signals">
+      <span class="ico">◈</span><b>Signals</b><em>Pandora 訊號</em>
+    </button>
+    <button class="rail-btn" data-view="studio">
+      <span class="ico">✦</span><b>Studio</b><em>生成產線</em>
+    </button>
+    <button class="rail-btn" data-view="lab">
+      <span class="ico">⚗</span><b>Lab</b><em>品牌實驗</em>
+    </button>
+    <button class="rail-btn" data-view="moat">
+      <span class="ico">◆</span><b>Moat</b><em>定位與護城河</em>
+    </button>
+    <button class="rail-btn" data-view="recipes">
+      <span class="ico">▦</span><b>Recipes</b><em>配方市集</em>
+    </button>
+    <button class="rail-btn" data-view="keys">
+      <span class="ico">⌗</span><b>Keys</b><em>金鑰與計量</em>
+    </button>
+    <button class="rail-btn" data-view="develop">
+      <span class="ico">&lt;/&gt;</span><b>Develop</b><em>接上去</em>
+    </button>
+    <div class="rail-foot">
+      <span class="pulse"></span>
+      <em>5 agents online</em>
+    </div>
+  </nav>
+
+  <!-- ── views ───────────────────────────────────────────────── -->
+  <main class="stage">
+
+    <!-- ═══ SPACE ═══════════════════════════════════════════ -->
+    <section class="view active" id="view-space">
+      <div class="space-hero">
+        <img src="assets/space_hero.jpg" alt="" class="space-bg">
+        <div class="space-copy">
+          <span class="eyebrow">ONE OS · TWO SPACES</span>
+          <h1>你的 AI 員工<br>住在這個<span class="c">空間</span>裡</h1>
+          <p>TSpace 是 The Pocket Company 的數位空間。五位 Agent 在這裡上班、
+             用同一套 Harness（skill + tool）工作、透過 A2A 互相交接。
+             你看到的每一顆節點，都是一組可以被呼叫的 API。</p>
+          <div class="space-cta">
+            <button class="btn primary" data-goto="studio">走進產線 →</button>
+            <button class="btn ghost" data-goto="signals">先看今天的訊號</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="orbit-wrap">
+        <div class="orbit">
+          <div class="core">
+            <div class="core-ring"></div>
+            <div class="core-ring r2"></div>
+            <div class="core-orb"><b>TSpace</b><em>AI OS</em></div>
+          </div>
+          <div class="agents" id="agentRing"></div>
+        </div>
+        <aside class="agent-detail glass" id="agentDetail"></aside>
+      </div>
+
+      <div class="stat-strip" id="statStrip"></div>
+    </section>
+
+    <!-- ═══ SIGNALS ═════════════════════════════════════════ -->
+    <section class="view" id="view-signals">
+      <div class="view-head">
+        <div>
+          <span class="eyebrow">AGENT 01 · PANDORA</span>
+          <h2>今天，台灣正在<span class="c">討論什麼</span></h2>
+          <p class="sub">資料直接來自 <code>pandora.thepocket.company/api/public/trends</code>。
+             這不是示意圖，是真的抓回來的聲量。</p>
+        </div>
+        <div class="head-meta" id="signalMeta"></div>
+      </div>
+
+      <div class="signals-grid">
+        <div class="glass panel trend-panel">
+          <div class="panel-head">
+            <b>Top Trends</b><span class="tiny">近 7 天 · 依總聲量排序</span>
+          </div>
+          <div class="trend-list" id="trendList"></div>
+        </div>
+
+        <div class="glass panel post-panel">
+          <div class="panel-head" id="postPanelHead"><b>原始貼文</b></div>
+          <div class="post-list" id="postList"></div>
+          <button class="btn primary block" id="toStudio">把這個訊號送進產線 →</button>
+        </div>
+
+        <div class="glass panel brand-panel">
+          <div class="panel-head">
+            <b>Brand Pulse</b><span class="tiny">關鍵字 × 情緒</span>
+          </div>
+          <div class="brand-tabs" id="brandTabs"></div>
+          <div class="senti-bar" id="sentiBar"></div>
+          <div class="senti-legend" id="sentiLegend"></div>
+          <div class="brand-posts" id="brandPosts"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ STUDIO ══════════════════════════════════════════ -->
+    <section class="view" id="view-studio">
+      <div class="view-head">
+        <div>
+          <span class="eyebrow">BANANA SPLIT · RUN</span>
+          <h2>一則抱怨，<span class="o">四十秒</span>變成可以上架的內容</h2>
+          <p class="sub">同一個 run，五位 Agent 依序交棒。每一步都是 API、都被計量、都留紀錄。</p>
+        </div>
+        <div class="head-meta">
+          <button class="btn primary lg" id="runBtn">▶ 執行 Run</button>
+        </div>
+      </div>
+
+      <div class="studio-grid">
+        <div class="glass panel brief-panel">
+          <div class="panel-head"><b>Brief</b><span class="tiny">輸入</span></div>
+          <label class="fld"><em>訊號來源</em><div class="fld-val" id="briefSignal">星巴克 × 超商咖啡比較文</div></label>
+          <label class="fld"><em>Brand Kit</em>
+            <select id="brandKit">
+              <option value="bk_ncc_coffee">bk_ncc_coffee · 超商咖啡</option>
+              <option value="bk_tpc_default">bk_tpc_default · TPC 預設</option>
+            </select>
+          </label>
+          <label class="fld"><em>Recipe</em>
+            <select id="recipeSel">
+              <option value="signal-to-post">signal-to-post · 熱點轉社群圖文</option>
+              <option value="product-shot-pack">product-shot-pack · 商品情境包</option>
+            </select>
+          </label>
+          <label class="fld"><em>輸出</em><div class="fld-val">3 × 1:1 visual ＋ 3 × hook copy</div></label>
+          <div class="brief-cost">
+            <span>預估用量</span><b id="briefCost">6.4 credits</b>
+          </div>
+        </div>
+
+        <div class="glass panel run-panel">
+          <div class="panel-head">
+            <b>Pipeline</b><span class="tiny" id="runStatus">idle</span>
+          </div>
+          <div class="pipeline" id="pipeline"></div>
+          <div class="runlog" id="runlog">
+            <div class="log-empty">按下「執行 Run」開始。這裡會逐行印出 agent 之間的 A2A 交接。</div>
+          </div>
+        </div>
+
+        <div class="glass panel out-panel">
+          <div class="panel-head"><b>Outputs</b><span class="tiny" id="outMeta">尚未產出</span></div>
+          <div class="outputs" id="outputs"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ LAB ═════════════════════════════════════════════ -->
+    <section class="view" id="view-lab">
+      <div class="view-head">
+        <div>
+          <span class="eyebrow">EXPERIMENTS · PANDORA × BANANA</span>
+          <h2>把品牌<span class="o">真的丟進去</span>，看會長出什麼</h2>
+          <p class="sub">四個品牌、兩個市場、同一條工作流：Pandora 抓真貼文 → Moana 聽出語感 →
+             Banana 產素材。每張卡片都有完整證據鏈：原話在哪、洞察是什麼、素材長怎樣。</p>
+        </div>
+        <div class="head-meta" id="labMeta"></div>
+      </div>
+
+      <div class="glass panel lab-flow" id="labFlow"></div>
+      <div class="lab-grid" id="labGrid"></div>
+
+      <div class="glass panel lab-learn">
+        <b>工作流實驗結論 — 什麼樣的品牌丟進去會產出好素材</b>
+        <div class="learn-grid" id="learnGrid"></div>
+      </div>
+    </section>
+
+    <!-- ═══ MOAT ════════════════════════════════════════════ -->
+    <section class="view" id="view-moat">
+      <div class="view-head">
+        <div>
+          <span class="eyebrow">POSITIONING</span>
+          <h2>護城河：<span class="c">輿情</span>和<span class="o">素材</span>長在同一條產線上</h2>
+          <p class="sub">會生圖的公司很多，有輿情資料的公司也有 — 但把「今天大家真正在說的話」
+             直接接進素材產線的，目前只有我們。這個方法論叫 Culture Listening。</p>
+        </div>
+      </div>
+
+      <div class="moat-grid">
+        <div class="glass panel moat-map">
+          <div class="panel-head"><b>市場定位圖</b><span class="tiny">兩條軸：資料 × 產線</span></div>
+          <div class="posmap" id="posmap"></div>
+        </div>
+        <div class="glass panel moat-loop">
+          <div class="panel-head"><b>Culture Listening 閉環</b><span class="tiny">為什麼追不上</span></div>
+          <div class="loop" id="cultureLoop"></div>
+        </div>
+      </div>
+      <div class="moat-cards" id="moatCards"></div>
+    </section>
+
+    <!-- ═══ RECIPES ═════════════════════════════════════════ -->
+    <section class="view" id="view-recipes">
+      <div class="view-head">
+        <div>
+          <span class="eyebrow">RECIPE MARKET</span>
+          <h2>配方就是<span class="v">主題商店</span></h2>
+          <p class="sub">Shopify 賣的不是網站，是「別人已經幫你想好的一套做法」。
+             Banana Split 賣的是配方：一份 skill、幾個 tool、一組驗收標準，裝上就能跑。</p>
+        </div>
+        <div class="head-meta"><span class="pill cyan">6 recipes</span><span class="pill">4 partners</span></div>
+      </div>
+      <div class="recipe-grid" id="recipeGrid"></div>
+      <div class="glass panel recipe-anatomy">
+        <b>一個 Recipe 裡面裝什麼</b>
+        <div class="anatomy" id="anatomy"></div>
+      </div>
+    </section>
+
+    <!-- ═══ KEYS ════════════════════════════════════════════ -->
+    <section class="view" id="view-keys">
+      <div class="view-head">
+        <div>
+          <span class="eyebrow">METERING · GOVERNANCE</span>
+          <h2>可以開放，是因為<span class="g">算得清楚</span></h2>
+          <p class="sub">Chris 擔心的「被人裝了之後不可控地一直用」，答案不是把門關上，
+             是把每一次呼叫變成一筆有主人、有額度、可以關掉的帳。</p>
+        </div>
+        <div class="head-meta" id="keysMeta"></div>
+      </div>
+
+      <div class="keys-grid">
+        <div class="glass panel">
+          <div class="panel-head"><b>Keys</b><span class="tiny">兩種金鑰，兩種信任</span></div>
+          <div class="key-list" id="keyList"></div>
+        </div>
+        <div class="glass panel">
+          <div class="panel-head"><b>今日用量</b><span class="tiny">依介面拆分</span></div>
+          <div class="usage" id="usage"></div>
+          <div class="quota-note" id="quotaNote"></div>
+        </div>
+        <div class="glass panel">
+          <div class="panel-head"><b>Scopes</b><span class="tiny">一把鑰匙只開一扇門</span></div>
+          <div class="scopes" id="scopes"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ DEVELOP ═════════════════════════════════════════ -->
+    <section class="view" id="view-develop">
+      <div class="view-head">
+        <div>
+          <span class="eyebrow">THREE SURFACES</span>
+          <h2>同一組能力，<span class="c">三種接法</span></h2>
+          <p class="sub">Shopify 的厲害不在後台，在於它同時給了 API、App Store 和 Theme。
+             我們對應的是 REST、MCP、UI SDK — 共用同一把金鑰、同一本帳。</p>
+        </div>
+        <div class="head-meta" id="devMeta"></div>
+      </div>
+
+      <div class="dev-tabs" id="devTabs"></div>
+      <div class="dev-body">
+        <div class="glass panel code-panel">
+          <div class="code-head"><span id="codeTitle"></span>
+            <button class="btn tiny-btn" id="copyBtn">複製</button></div>
+          <pre id="codeBlock"></pre>
+        </div>
+        <div class="glass panel code-note" id="codeNote"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="data/snapshot.js"></script>
+<script src="data/experiments.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
