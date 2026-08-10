@@ -1,6 +1,6 @@
 // Real experiment results: Pandora -> Culture Listening -> Banana.
 window.LAB_DATA = {
- "generatedAt": "2026-08-11 03:23",
+ "generatedAt": "2026-08-11 04:47",
  "experiments": [
   {
    "id": "cvs_coffee",
@@ -333,6 +333,559 @@ window.LAB_DATA = {
     "exp_fitness_tw_1.jpg",
     "exp_fitness_tw_2.jpg"
    ]
+  },
+  {
+   "id": "elifemall",
+   "market": "TW",
+   "lang": "zh-Hant",
+   "brand": "全國電子",
+   "keyword": "全國電子",
+   "hypothesis": "家電通路的聲量長在「售後、安裝、老店人情」— 測通路品牌能不能聽出服務切角。",
+   "window_label": "近 14 天",
+   "group": null,
+   "postCount": 12,
+   "evidence": [
+    {
+     "author": "abee.taiwan",
+     "content": "【🔥AI終於殺進3C通路🎊iFLYTEKAI科技產品 全國電子、燦坤正式開玩📣】  敲碗成功！🎊 大家一直問「到底哪裡可以直接體驗？」 現在不用等、不用猜——全國電子、燦坤都能玩到了！ 👀  🎧 AI翻譯耳機 🗣️ AI翻譯機 📖 AINOTE Air2智慧筆",
+     "likes": 0,
+     "sentiment": 0.68,
+     "url": "https://www.threads.com/@abee.taiwan/post/Db2f-u3mJc_"
+    },
+    {
+     "author": "abee.taiwan",
+     "content": "【🔥AI終於殺進3C通路🎊iFLYTEKAI科技產品 全國電子、燦坤正式開玩📣】  敲碗成功！🎊 大家一直問「到底哪裡可以直接體驗？」 現在不用等、不用猜——全國電子、燦坤都能玩到了！ 👀  🎧 AI翻譯耳機 🗣️ AI翻譯機 📖 AINOTE Air2智慧筆",
+     "likes": 0,
+     "sentiment": 0.72,
+     "url": "https://www.instagram.com/p/Db2f-M0GNEQ/"
+    },
+    {
+     "author": "全國電子",
+     "content": "日曆已立秋，體感仍在盛夏☀️ 冷氣該開還是得開，安裝與保障也要一次顧好！  選購空調享： 🔧 總統級精緻安裝 🛡️ 八年免費延長保固 從安裝到後續使用都更安心！  💟了解更多： 📍到門市找優惠：  #全國電子 #這家電不只專業而已 #立秋還是熱 #空調安裝 #",
+     "likes": 0,
+     "sentiment": 0.43,
+     "url": "https://www.facebook.com/elifemall.com.tw/posts/pfbid0ru7v8PFmy7STqTDyvDPdrhSHpLJN8MWh9hkpuwGyKscTKZttz7BYZV6NgivuuptFl"
+    },
+    {
+     "author": "punpun99ee",
+     "content": "台灣人買Dyson 不要再去日本了！！！！ 今天官方特價四折起 有保固更方便🫣  原價18900的吸塵器 今天7162❗❗❗ 原價14600的吹風機 今天7989❗❗❗  比燦坤 全國電子便宜太多太划算~~~~",
+     "likes": 2,
+     "sentiment": -0.43,
+     "url": "https://www.threads.com/@punpun99ee/post/Db07lsME9gx"
+    },
+    {
+     "author": "mandy_11.13_",
+     "content": "謝謝全國電子",
+     "likes": 10135,
+     "sentiment": 0.62,
+     "url": "https://www.instagram.com/reel/Db0YhWmzuVe/"
+    }
+   ],
+   "brief": {
+    "noise_ratio": 0.75,
+    "insight": "消費者認為實體通路價格高於線上，但真正的交易成敗與品牌信任，決勝點在於安裝與售後服務的品質，一次失敗的服務經驗就足以摧毀信任。",
+    "consumer_phrases": [
+     "比燦坤 全國電子便宜太多太划算~~~~",
+     "透過全國電子請原廠技師來檢修...裝完當下一台馬上有狀況...排水器的水可以說是噴發出來，也淋濕了牆壁和電視。",
+     "謝謝全國電子"
+    ],
+    "pain_points": [
+     "感覺在實體通路買貴了的懊惱感",
+     "安裝師傅的專業度參差不齊，裝壞比不裝還慘",
+     "家電出問題時，在零售商和原廠之間被當皮球踢的無助感"
+    ],
+    "hooks": [
+     {
+      "angle": "安裝才是本體",
+      "copy": "買冷氣最怕的不是不冷，是裝完開始漏水... 家裡牆壁跟電視全毀真的會瘋掉。有沒有人家裡也發生過這種慘案？求過來人分享怎麼避雷😭"
+     },
+     {
+      "angle": "價差的心酸",
+      "copy": "剛在實體店買完，才滑到官網特價，那個心痛的感覺誰懂... 為了保固跟安裝多花的錢，真的值得嗎？大家買高單價家電會比價多久？"
+     },
+     {
+      "angle": "天使店員/師傅",
+      "copy": "網路上功課做到眼花，結果去門市被一個超懂的店員三兩句就點醒！有時候真的不是要最貴的，而是最適合的。有人遇過天使店員或師傅嗎？"
+     }
+    ],
+    "visual_prompts": [
+     "A realistic photo of a young Taiwanese person in their late 20s, sitting on the floor of a modern Taipei apartment living room, looking at their smartphone with a worried expression, surrounded by large cardboard boxes of new home appliances, natural light from the window, candid social media style.",
+     "Over-the-shoulder shot of a friendly Taiwanese technician in a clean uniform installing an air conditioner on an apartment balcony, the homeowner is visible in the background smiling with relief, bright sunny day, candid and authentic lifestyle photo."
+    ],
+    "workflow_note": "這次的貼文雜訊佔比高，多為品牌方自發內容。但一則詳盡的客訴貼文，其價值遠勝多則模糊的讚美。高讚數但無內容的貼文（如：謝謝全國電子）雖能反映正面聲量，但缺乏具體情境，難以提煉可執行的洞察。未來需注意，洞察的深度比聲量廣度更重要。"
+   },
+   "images": [
+    "exp_elifemall_1.jpg",
+    "exp_elifemall_2.jpg"
+   ],
+   "manifest": {
+    "runId": "run_elifemall_20260811",
+    "recipe": "signal-to-post@1.2",
+    "standard": "tpc.run-manifest/v1",
+    "window": {
+     "start": "2026-07-28",
+     "end": "2026-08-11"
+    },
+    "steps": [
+     {
+      "seq": 1,
+      "agent": "pandora",
+      "api": "POST /query",
+      "ms": 12577,
+      "credits": 1,
+      "status": "pass",
+      "out": "12 posts"
+     },
+     {
+      "seq": 2,
+      "agent": "moana",
+      "api": "moana.brief",
+      "ms": 25152,
+      "credits": 2,
+      "status": "pass",
+      "out": "noise 0.75 · 3 hooks"
+     },
+     {
+      "seq": 3,
+      "agent": "banana",
+      "api": "banana.render ×2",
+      "ms": 37542,
+      "credits": 8,
+      "status": "pass",
+      "out": "2 assets · 1:1"
+     },
+     {
+      "seq": 4,
+      "agent": "stacey",
+      "api": "stacey.qa + ledger",
+      "ms": 40,
+      "credits": 0,
+      "status": "pass",
+      "out": "11 credits booked"
+     }
+    ],
+    "totalCredits": 11,
+    "qa": {
+     "signal_gate": "pass",
+     "culture_gate": "pass",
+     "creative_gate": "pass"
+    }
+   }
+  },
+  {
+   "id": "skm",
+   "market": "TW",
+   "lang": "zh-Hant",
+   "brand": "新光三越",
+   "keyword": "新光三越",
+   "hypothesis": "百貨的討論跟「檔期、美食、約會場景」強綁定 — 測地點型品牌的訊號怎麼餵。",
+   "window_label": "近 14 天",
+   "group": null,
+   "postCount": 12,
+   "evidence": [
+    {
+     "author": "_imnotrongrong",
+     "content": "新光三越的同學看過來👀 上班日的午餐選擇＋1！  杉盒雞肉類餐盒 員工限定只要 150元／盒🍱  忙了一整個班，也要記得好好吃飯！ 活動只到 8/31，別錯過啦🔥  想要訂購再幫我們加入官方社群呦  您已被邀請加入「杉盒x新光杉寶」！請點選以下連結加入社群！ ",
+     "likes": 0,
+     "sentiment": 0.23,
+     "url": "https://www.threads.com/@_imnotrongrong/post/Db2iodJjwTo"
+    },
+    {
+     "author": "askafishwang",
+     "content": "前幾天去新光三越新天地看電影 看完從另一邊的電梯下樓 然後完全找不到西門路那邊的出口 在裡面繞來繞去甚至還走到晶英酒店再繞進來還是找不到 上上下下走來走去快半個小時 我已經開始冒冷汗覺得自己是不是遇到鬼打牆 好不容易找到出口我真是要哭😂😂 以前只聽過新天地很陰",
+     "likes": 0,
+     "sentiment": -0.42,
+     "url": "https://www.threads.com/@askafishwang/post/Db2gzDJkxqN"
+    },
+    {
+     "author": "246oi22",
+     "content": "想找人一起合買國家地理 兩件9折 但我只想買一個後背包 會在台中新光三越購入",
+     "likes": 0,
+     "sentiment": 0.17,
+     "url": "https://www.threads.com/@246oi22/post/Db2gTL9Glbk"
+    },
+    {
+     "author": "lujizi3",
+     "content": "店休一天喔～，今天星期一阿吉仔和家人來台南市新光三越的饗食天堂吃到飽餐廳吃飯，下午茶的時間竟然也超多人的ㄟ，畢竟現在是暑假，而且吃下午茶其實也很不錯哦！因為可以午餐和晚餐一起吃，省一餐😆難怪人那麽多，阿吉仔的朋友們，客人們，記得我今天店休喔！別白跑一趟了，感謝",
+     "likes": 5,
+     "sentiment": 0.53,
+     "url": "https://www.threads.com/@lujizi3/post/Db2gQmWmJHo"
+    },
+    {
+     "author": "mint_taiwan",
+     "content": "結合「香水級持香」與「專業級修護」，日本超人氣保養品牌 LOA 夏日快閃店於新光三越 A11 絕美亮相~ @loa_tw__   此次發表的限量新品 BEACH CLUB 珠光身體油，將閃耀的白金珍珠微粒完美融入質地中。不論是點綴在鎖骨、四肢還是髮尾，都能隨光",
+     "likes": 0,
+     "sentiment": 0.76,
+     "url": "https://www.threads.com/@mint_taiwan/post/Db2eV8HE7uh"
+    }
+   ],
+   "brief": {
+    "noise_ratio": 0.17,
+    "insight": "新光三越已不僅是購物場所，更是集結餐飲、策展、粉絲活動的「體驗目的地」，其複雜的空間本身，既是探索的樂趣也是迷航的痛點。",
+    "consumer_phrases": [
+     "在裡面繞來繞去甚至還走到晶英酒店再繞進來還是找不到 上上下下走來走去快半個小時 我已經開始冒冷汗覺得自己是不是遇到鬼打牆",
+     "病再不好我只能再去一趟新光三越了🫠",
+     "吃下午茶其實也很不錯哦！因為可以午餐和晚餐一起吃，省一餐😆難怪人那麽多"
+    ],
+    "pain_points": [
+     "商場空間大到像迷宮，動線複雜容易迷路，造成消費者的焦慮感。",
+     "渴望在單一地點滿足購物、餐飲、娛樂、藝文等多重體驗，而不僅僅是買東西。",
+     "需要一個情緒出口，將「逛街」作為一種療癒自己、轉換心情的有效方法。"
+    ],
+    "hooks": [
+     {
+      "angle": "百貨迷航記",
+      "copy": "承認吧，誰沒有在新光迷路過？每次都像在參加極限挑戰，繞到懷疑人生。留言分享你迷路最久的一次，看看誰才是真正的路痴冠軍！#新光無限城"
+     },
+     {
+      "angle": "購物是良藥",
+      "copy": "有些病，看醫生沒用，但逛街可以。心情BLUE的時候，真的需要走進新光三越吸一點快樂的空氣，什麼煩惱好像都變小了。#成年人的快樂很簡單"
+     },
+     {
+      "angle": "週末充電站",
+      "copy": "這週末要去哪？不是在去新光的路上，就是在新光裡面。吃飯、追星、看展覽，一個地方全部搞定，誰還說百貨公司只能買東西？"
+     }
+    ],
+    "visual_prompts": [
+     "A stylish young person looking comically confused at a minimalist, abstract mall directory map. Shot from a low angle, showing the vast, multi-leveled interior of a modern Taiwan department store. Soft, natural light. --ar 9:16",
+     "Point-of-view shot of hands holding several colorful shopping bags, with the blurred, bright, and warm background of a department store aisle. The focus is on the bags, symbolizing a successful hunt for happiness. --ar 9:16"
+    ],
+    "workflow_note": "本次分析發現，真實的消費者貼文常夾雜在品牌方（租戶）的促銷文和無關的地點標記（如房地產）中，需要先過濾才能觸及核心洞察。最有價值的內容往往是帶有強烈情緒和故事性的貼文（如迷路經驗），這些質化洞察比單純的提及次數更有創意潛力。"
+   },
+   "images": [
+    "exp_skm_1.jpg",
+    "exp_skm_2.jpg"
+   ],
+   "manifest": {
+    "runId": "run_skm_20260811",
+    "recipe": "signal-to-post@1.2",
+    "standard": "tpc.run-manifest/v1",
+    "window": {
+     "start": "2026-07-28",
+     "end": "2026-08-11"
+    },
+    "steps": [
+     {
+      "seq": 1,
+      "agent": "pandora",
+      "api": "POST /query",
+      "ms": 14718,
+      "credits": 1,
+      "status": "pass",
+      "out": "12 posts"
+     },
+     {
+      "seq": 2,
+      "agent": "moana",
+      "api": "moana.brief",
+      "ms": 22547,
+      "credits": 2,
+      "status": "pass",
+      "out": "noise 0.17 · 3 hooks"
+     },
+     {
+      "seq": 3,
+      "agent": "banana",
+      "api": "banana.render ×2",
+      "ms": 35494,
+      "credits": 8,
+      "status": "pass",
+      "out": "2 assets · 1:1"
+     },
+     {
+      "seq": 4,
+      "agent": "stacey",
+      "api": "stacey.qa + ledger",
+      "ms": 40,
+      "credits": 0,
+      "status": "pass",
+      "out": "11 credits booked"
+     }
+    ],
+    "totalCredits": 11,
+    "qa": {
+     "signal_gate": "pass",
+     "culture_gate": "pass",
+     "creative_gate": "pass"
+    }
+   }
+  },
+  {
+   "id": "kfc_d1",
+   "market": "TW",
+   "lang": "zh-Hant",
+   "brand": "肯德基",
+   "keyword": "肯德基",
+   "hypothesis": "產線是活的：同一個品牌，「今天」的訊號長出的素材，跟上週不一樣。",
+   "window_label": "近 3 天（2026-08-08 ~ 2026-08-11）",
+   "group": "kfc_days",
+   "postCount": 12,
+   "evidence": [
+    {
+     "author": "wawa_in_ad",
+     "content": "歐某歐某～就是明天了耶！ ​ 肯德基把青花椒融進蛋撻了，那個光聞就很有存在感的食材，這次直接跟花生流心、濃郁蛋奶湊在一起 ​ 8/11～8/24，「青花椒花生蛋撻」正式登場！ ​ 從前面的預熱、好奇到討論，到現在已經有人在問「好不好吃？」，一路看著這個新品慢慢",
+     "likes": 9,
+     "sentiment": 0.89,
+     "url": "https://www.threads.com/@wawa_in_ad/post/Db2mUwSk0yk"
+    },
+    {
+     "author": "kfc559s2",
+     "content": "口味不被看好，但吃過的人都覺得超搭？你吃過了嗎？快快來  肯德基全新 「青花椒花生蛋撻」 8/11 起開賣🔥  香麻青花椒醬 × 濃郁花生流心 × 酥香原味蛋撻 看似不搭，入口卻意外合拍🤤 甜、麻、香、辣一次入口，一口就上癮！  單顆嘗鮮價 $57 禮盒加點優",
+     "likes": 0,
+     "sentiment": 0.73,
+     "url": "https://www.threads.com/@kfc559s2/post/Db2jFUBknr0"
+    },
+    {
+     "author": "onessstar9991",
+     "content": "肯德基聯名泡泡魚有人需要嗎 一個$180 需要私訊～",
+     "likes": 2,
+     "sentiment": 0.07,
+     "url": "https://www.threads.com/@onessstar9991/post/Db2jDW6ksN2"
+    },
+    {
+     "author": "armandx_ac__",
+     "content": "新到貨肯德基蠟筆小新聯名 一個150$ 有人需要嗎",
+     "likes": 3,
+     "sentiment": 0.09,
+     "url": "https://www.threads.com/@armandx_ac__/post/Db2ib-BEeh6"
+    },
+    {
+     "author": "richardekko",
+     "content": "口味不被看好，但吃過的人都覺得超搭？你吃過了嗎？快快來  肯德基全新 「青花椒花生蛋撻」 8/11 起開賣🔥  香麻青花椒醬 × 濃郁花生流心 × 酥香原味蛋撻 看似不搭，入口卻意外合拍🤤 甜、麻、香、辣一次入口，一口就上癮！  單顆嘗鮮價 $57 禮盒加點優",
+     "likes": 0,
+     "sentiment": 0.63,
+     "url": "https://www.threads.com/@richardekko/post/Db2hyPymSGo"
+    }
+   ],
+   "brief": {
+    "noise_ratio": 0.42,
+    "insight": "消費者（或品牌方）預期新品蛋撻的「青花椒+花生」口味會引發爭議，並以此作為溝通核心，將「看似不搭，入口卻意外合拍」的衝突感轉化為好奇心與討論熱度。",
+    "consumer_phrases": [
+     "肯德基把青花椒融進蛋撻了，那個光聞就很有存在感的食材",
+     "口味不被看好，但吃過的人都覺得超搭？",
+     "看似不搭，入口卻意外合拍🤤 甜、麻、香、辣一次入口",
+     "好想吃肯德基"
+    ],
+    "pain_points": [
+     "想嚐鮮但又害怕踩到口味奇特的地雷",
+     "尋求甜點帶來的新奇、多層次味覺刺激",
+     "對一成不變的食物感到厭倦，需要有話題性的社交貨幣"
+    ],
+    "hooks": [
+     {
+      "angle": "挑戰味蕾",
+      "copy": "聽說肯德基這次玩很大，青花椒＋花生蛋撻？聽起來超地獄，但又有點好奇... 有沒有勇者已經試過了，快來分享一下到底能不能吃😂"
+     },
+     {
+      "angle": "意外組合",
+      "copy": "有些東西就是看似不搭但天生一對，就像夏天午後的雷陣雨，還有肯德基的青花椒花生蛋撻。甜中帶麻的感覺，有點上癮欸！"
+     },
+     {
+      "angle": "社交話題",
+      "copy": "朋友圈已經在問肯德基那個神秘蛋撻了。先不管好不好吃，光是這個組合就值得試一次吧？感覺不吃就跟不上話題了！#青花椒花生蛋撻"
+     }
+    ],
+    "visual_prompts": [
+     "A close-up, high-detail photo of a freshly baked egg tart with a glossy custard surface. A swirl of dark green peppercorn sauce and crushed peanuts is on top. The tart sits on a simple plate on a wooden table in a brightly lit, minimalist cafe in Taipei. Soft, natural morning light. Shot on a smartphone, social media style, shallow depth of field.",
+     "First-person perspective, holding a half-eaten 'Green Peppercorn Peanut Egg Tart'. The background is a slightly blurred, bustling night market scene in Taiwan with neon lights. The focus is on the surprising texture and layers inside the tart. The mood is curious and exciting. Shot with a high-end smartphone, vibrant colors."
+    ],
+    "workflow_note": "本次的貼文數據充滿大量重複的廣告文案、以及轉售聯名商品的貼文。這導致難以挖掘真實消費者的體驗回饋。洞察主要是從品牌方釋出的溝通角度反推而來，而非從消費者口中直接聽到。未來工作流需考慮如何標記或過濾廣告/轉售帳號，以聚焦在更原生的UGC上。"
+   },
+   "images": [
+    "exp_kfc_d1_1.jpg",
+    "exp_kfc_d1_2.jpg"
+   ],
+   "manifest": {
+    "runId": "run_kfc_d1_20260811",
+    "recipe": "signal-to-post@1.2",
+    "standard": "tpc.run-manifest/v1",
+    "window": {
+     "start": "2026-08-08",
+     "end": "2026-08-11"
+    },
+    "steps": [
+     {
+      "seq": 1,
+      "agent": "pandora",
+      "api": "POST /query",
+      "ms": 14160,
+      "credits": 1,
+      "status": "pass",
+      "out": "12 posts"
+     },
+     {
+      "seq": 2,
+      "agent": "moana",
+      "api": "moana.brief",
+      "ms": 29403,
+      "credits": 2,
+      "status": "pass",
+      "out": "noise 0.42 · 3 hooks"
+     },
+     {
+      "seq": 3,
+      "agent": "banana",
+      "api": "banana.render ×2",
+      "ms": 33070,
+      "credits": 8,
+      "status": "pass",
+      "out": "2 assets · 1:1"
+     },
+     {
+      "seq": 4,
+      "agent": "stacey",
+      "api": "stacey.qa + ledger",
+      "ms": 40,
+      "credits": 0,
+      "status": "pass",
+      "out": "11 credits booked"
+     }
+    ],
+    "totalCredits": 11,
+    "qa": {
+     "signal_gate": "pass",
+     "culture_gate": "pass",
+     "creative_gate": "pass"
+    }
+   }
+  },
+  {
+   "id": "kfc_d2",
+   "market": "TW",
+   "lang": "zh-Hant",
+   "brand": "肯德基",
+   "keyword": "肯德基",
+   "hypothesis": "對照組：上週的訊號窗。兩窗並排，看得出訊號在動、素材跟著動。",
+   "window_label": "上週（2026-08-01 ~ 2026-08-07）",
+   "group": "kfc_days",
+   "postCount": 12,
+   "evidence": [
+    {
+     "author": "bar_bie_q0218",
+     "content": "前幾天看到朋友分享這個影片。  我也忍不住跟著問咘咘和滾滾：  👩：「如果有一天媽媽掉到水裡， 你們會先吃麥當勞🍟還是肯德基🍗？」  原本以為她們會認真選套餐， 沒想到兩個人幾乎異口同聲地說：  👧👧：「不要吃！先救媽媽！」  聽到那一刻， 心裡真的暖暖的，也",
+     "likes": 1,
+     "sentiment": 0.84,
+     "url": "https://www.threads.com/@bar_bie_q0218/post/DbvfIz7GBew"
+    },
+    {
+     "author": "spirit199511",
+     "content": "那他媽叫肯德基",
+     "likes": 1,
+     "sentiment": -0.14,
+     "url": "https://www.threads.com/@spirit199511/post/DbvezypD0hF"
+    },
+    {
+     "author": "leopard.3052081",
+     "content": "265宜蘭縣羅東鎮公正里興東路 肯德基 羅東興東餐廳上班 休假在家 車車很久沒開了 需要被修理 各取所需 來修幹 能聽明白的來 有機車 可以去載你￼",
+     "likes": 0,
+     "sentiment": 0.05,
+     "url": "https://www.threads.com/@leopard.3052081/post/DbveJcemRS_"
+    },
+    {
+     "author": "_cos.tsukimi1121",
+     "content": "台灣肯德基聯名只有多給那個紅白沾醬的話我會有點失望欸",
+     "likes": 12,
+     "sentiment": -0.31,
+     "url": "https://www.threads.com/@_cos.tsukimi1121/post/Dbvd4XboN5s"
+    },
+    {
+     "author": "popyummy_mag",
+     "content": "#波波發胖 ➠ 肯德基「青花椒花生蛋撻」限時登場🌶️🥜    \\ 青花椒撞上濃醇花生流心！看似不搭入口竟瞬間上癮 /  肯德基這波創意真的無極限！這次大膽將「青花椒香麻脆雞」的帶勁椒麻、經典「花生熔岩堡」的濃醇花生，與招牌原味蛋撻完美結合，重磅推出全新「青花椒",
+     "likes": 516,
+     "sentiment": 0.88,
+     "url": "https://www.instagram.com/p/DbvdLdjEd3I/"
+    }
+   ],
+   "brief": {
+    "noise_ratio": 0.58,
+    "insight": "消費者對肯德基大膽的產品創新感到好奇，但門市極端的等候時間與服務問題正嚴重損害品牌體驗，同時，他們也渴望台灣能引進國外限定的美味產品。",
+    "consumer_phrases": [
+     "等了「30」分鐘連一句道歉也沒有就推給員工 客人的時間不是時間？",
+     "我真的笑死 9：13我還在等 在這邊罰站一個小時 正常我都可以回家再回來了 肯德基到底在幹嘛",
+     "辣味的小棒腿超好吃！ 台灣可以引進嗎🥹"
+    ],
+    "pain_points": [
+     "無法忍受的超長等待時間與糟糕的服務態度",
+     "渴望台灣也能吃到國外肯德基的限定特色產品",
+     "期待有誠意的聯名或新品，而不只是微不足道的點綴"
+    ],
+    "hooks": [
+     {
+      "angle": "等到天荒地老",
+      "copy": "聽說最近大家都在肯德基罰站…？點個餐等到懷疑人生，手機都滑到沒電了。大家的體感等待時間都是多久起跳啊？求解 #等到餓過頭 #時間小偷"
+     },
+     {
+      "angle": "別人的總比較好吃",
+      "copy": "每次滑到國外肯德基的菜單都好羨慕…泰國的辣味小棒腿、日本的OO…如果可以許願一樣，大家最想敲碗哪個夢幻逸品進台灣？ #許願池 #國外限定"
+     },
+     {
+      "angle": "暗黑料理還是神級美味",
+      "copy": "聽說肯德基最新的蛋撻口味很猛…青花椒尬花生？聽起來像在挑戰味蕾極限欸。有勇者試過了嗎？跪求真實心得，到底是驚喜還是驚嚇？ #蛋撻的無限可能"
+     }
+    ],
+    "visual_prompts": [
+     "A young person in their 20s, looking bored and tired, slumps against the wall inside a brightly lit but empty fast-food restaurant at night. They are scrolling on their phone, the glow illuminating their face. The perspective is from a low angle, emphasizing the long wait. Clean, candid, moody lighting. --ar 9:16",
+     "A flatlay shot of a classic KFC bucket of fried chicken on a simple wooden table, next to it is a smartphone displaying a vibrant, delicious-looking photo of exotic Thai street food. The contrast between the familiar and the desired is clear. Bright, natural lighting, foodie style. --ar 1:1"
+    ],
+    "workflow_note": "本次實驗發現，高價值洞察多來自於帶有強烈情緒的服務抱怨文，以及具體的跨國產品比較。必須有效過濾將品牌當作地標的無關貼文（如徵友、叫賣），這類雜訊比例偏高。另外，媒體或KOL發布的新品資訊雖非第一手消費者聲音，但可作為理解消費者後續討論的背景脈絡。"
+   },
+   "images": [
+    "exp_kfc_d2_1.jpg",
+    "exp_kfc_d2_2.jpg"
+   ],
+   "manifest": {
+    "runId": "run_kfc_d2_20260811",
+    "recipe": "signal-to-post@1.2",
+    "standard": "tpc.run-manifest/v1",
+    "window": {
+     "start": "2026-08-01",
+     "end": "2026-08-07"
+    },
+    "steps": [
+     {
+      "seq": 1,
+      "agent": "pandora",
+      "api": "POST /query",
+      "ms": 15434,
+      "credits": 1,
+      "status": "pass",
+      "out": "12 posts"
+     },
+     {
+      "seq": 2,
+      "agent": "moana",
+      "api": "moana.brief",
+      "ms": 32782,
+      "credits": 2,
+      "status": "pass",
+      "out": "noise 0.58 · 3 hooks"
+     },
+     {
+      "seq": 3,
+      "agent": "banana",
+      "api": "banana.render ×2",
+      "ms": 34156,
+      "credits": 8,
+      "status": "pass",
+      "out": "2 assets · 1:1"
+     },
+     {
+      "seq": 4,
+      "agent": "stacey",
+      "api": "stacey.qa + ledger",
+      "ms": 40,
+      "credits": 0,
+      "status": "pass",
+      "out": "11 credits booked"
+     }
+    ],
+    "totalCredits": 11,
+    "qa": {
+     "signal_gate": "pass",
+     "culture_gate": "pass",
+     "creative_gate": "pass"
+    }
+   }
   }
  ]
 };

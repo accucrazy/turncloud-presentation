@@ -368,8 +368,20 @@ const RUN_STEPS = [
       實驗結果生成中 — pipeline 正在跑「Pandora → Culture Listening → Banana」。完成後重新整理此頁。</div>`;
     return;
   }
+  const brands = new Set(LAB.map(e => e.brand)).size;
   $("#labMeta").innerHTML = `<span class="pill cyan">${LAB.length} experiments</span>
+    <span class="pill violet">${brands} brands</span>
     <span class="pill orange">TW + TH</span><span class="pill">全部真資料</span>`;
+
+  const maniTrace = m => !m ? "" : `
+      <div class="exp-mani">
+        <div class="em-head"><code>${m.runId}</code><span>${m.recipe}</span>
+          <b>${m.totalCredits} cr</b></div>
+        <div class="em-steps">${m.steps.map(s =>
+          `<span class="em-step ${s.status}" title="${s.out}">
+             <b>${s.agent}</b>${(s.ms / 1000).toFixed(1)}s · ${s.credits}cr</span>`).join("<i>▸</i>")}
+        </div>
+      </div>`;
 
   $("#labGrid").innerHTML = LAB.map(e => {
     const ev = (e.evidence || [])[0];
@@ -378,9 +390,11 @@ const RUN_STEPS = [
     const hooks = (brief.hooks || []).slice(0, 2);
     const noise = Math.round((brief.noise_ratio ?? 0) * 100);
     return `
-    <div class="exp-card">
+    <div class="exp-card ${e.group ? "grouped" : ""}">
       <div class="exp-head"><b>${e.brand}</b>
-        <span class="mk ${e.market.toLowerCase()}">${e.market} · ${e.lang}</span></div>
+        <span style="display:flex;gap:6px;align-items:center">
+          ${e.window_label ? `<span class="mk win">📅 ${e.window_label}</span>` : ""}
+          <span class="mk ${e.market.toLowerCase()}">${e.market} · ${e.lang}</span></span></div>
       <div class="exp-hypo">假設：${e.hypothesis}</div>
       <div class="exp-chain">
         <div class="chain-row"><b style="color:var(--cyan)">SIGNAL</b>
@@ -399,6 +413,7 @@ const RUN_STEPS = [
           <figure class="exp-out"><img src="assets/${img}" alt="" loading="lazy">
             <figcaption>${(hooks[i] && hooks[i].copy) ? hooks[i].copy : ""}</figcaption></figure>`).join("")}
       </div>
+      ${maniTrace(e.manifest)}
       <div class="exp-foot"><b>VERDICT</b> · ${brief.workflow_note || ""}</div>
     </div>`;
   }).join("");
@@ -408,6 +423,8 @@ const RUN_STEPS = [
     ["orange", "② 洞察藏在競品串", "搜對手，找到自己", "搜「星巴克」反而挖到超商咖啡的機會點。聆聽的邊界要畫在品類，不是品牌。"],
     ["gold", "③ 原話就是文案", "不要翻譯，要引用", "好 hook 幾乎都是消費者原話的變形。Culture Listening 的產出是語感，不是摘要。"],
     ["green", "④ 海外市場可複製", "TW 深度 · TH 已收料", "泰文貼文已經抓得到。同一條產線換語言就能出在地素材 — 這是出海的底氣。"],
+    ["violet", "⑤ 訊號有日期", "產線是活的", "肯德基「近 3 天」和「上週」兩個時間窗抓到的話不一樣，素材跟著換 — 這是模板做不到的。"],
+    ["cyan", "⑥ manifest 是標準", "每個 run 一張單據", "步驟、耗時、credit、QA 全記錄（tpc.run-manifest/v1）。有這張單據，別人才能基於我們的產線蓋自己的店。"],
   ];
   $("#learnGrid").innerHTML = learns.map(([c, b, i, p]) =>
     `<div class="learn"><i style="color:var(--${c})">${i}</i><b>${b}</b><p>${p}</p></div>`).join("");
@@ -448,6 +465,80 @@ const RUN_STEPS = [
      "實驗證明泰國 Threads 已經抓得到。台灣練深度、泰國先收料，之後每開一個市場，只是多接一個語感庫，不用重建產線。"],
   ].map(([c, i, b, p]) =>
     `<div class="moat-card"><i style="color:${c}">${i}</i><b>${b}</b><p>${p}</p></div>`).join("");
+})();
+
+/* ═══ ECOSYSTEM · 生態系街區 ═════════════════════════════════ */
+(() => {
+  const SHOPS = [
+    {
+      tone: "var(--cyan)", name: "TrendCafé 週報機", builder: "獨立顧問 · 1 人公司",
+      shape: "訂閱制輿情週報 SaaS",
+      story: "每週一早上自動跑一輪：品類訊號 → 文化 brief → 3 張圖，直接進客戶信箱。顧問睡覺，店在營業。",
+      prims: ["pandora.query", "moana.brief", "banana.render"],
+      biz: "月費 NT$6,000/品牌 · credit 成本約 1 成",
+    },
+    {
+      tone: "var(--violet)", name: "AdForge 白牌工作台", builder: "廣告代理商 · 30 個品牌客戶",
+      shape: "掛自己 logo 的 dashboard（UI SDK）",
+      story: "用 &lt;banana-console&gt; 拼一個自家品牌的介面，客戶以為是代理商自研 — 底層每一次呼叫都記在 TPC 的帳上。",
+      prims: ["ui-sdk", "全套 primitives", "adriana.capi"],
+      biz: "向客戶收月租 · 用量向 TPC 結算",
+    },
+    {
+      tone: "var(--gold)", name: "ShelfSnap 電商素材機", builder: "電商代營運公司",
+      shape: "商品照 → 在地場景 12 連拍",
+      story: "白底商品照上傳，套 product-shot-pack 配方長出 12 個生活場景，一鍵回寫 Shopify 商品頁。",
+      prims: ["banana.render", "brand kit", "recipe 市集"],
+      biz: "按 SKU 計件 · 量大月結",
+    },
+    {
+      tone: "var(--orange)", name: "TH Radar 曼谷站", builder: "出海顧問團隊",
+      shape: "泰文輿情 → 泰文素材的在地站",
+      story: "同一條產線換上泰文語感庫。台灣品牌要進曼谷，先來這間店看 Paragon 商圈這週在聊什麼。",
+      prims: ["pandora.query (geo=TH)", "moana.brief (th)", "banana.render"],
+      biz: "市場進入報告 + 素材包",
+    },
+    {
+      tone: "var(--green)", name: "ModelDrop 試模型店", builder: "模型社群玩家",
+      shape: "新模型上市當天就能開的店",
+      story: "新的生成模型今天發佈？掛進 banana.gen 的 model fleet，用同一份 run manifest 重跑昨天的實驗 — 新舊模型輸出並排給你看。產線不動，只換引擎。",
+      prims: ["banana.render (fleet)", "run manifest 重放", "stacey.ledger"],
+      biz: "評測訂閱 · 模型商贊助",
+    },
+    {
+      tone: "var(--cyan)", name: "CampusCreator 學生工作室", builder: "大學生 · 接案起步",
+      shape: "小店家的社群小編外包",
+      story: "一把 pk_ key、幾個 recipe，就能接住家巷口手搖店的案子。用多少 credit 付多少，沒有月費門檻。",
+      prims: ["pk_ key", "signal-to-post", "隨用隨付"],
+      biz: "按案計酬 · credit 隨用隨付",
+    },
+  ];
+  $("#ecoMeta").innerHTML = `<span class="pill green">6 種樣態</span>
+    <span class="pill">同一套標準</span><span class="pill cyan">同一本帳</span>`;
+  $("#ecoGrid").innerHTML = SHOPS.map(s => `
+    <div class="eco-shop" style="--tone:${s.tone}">
+      <span class="shop-awning"></span>
+      <div class="eco-head"><b>${s.name}</b><em>${s.builder}</em></div>
+      <div class="eco-shape">${s.shape}</div>
+      <p>${s.story}</p>
+      <div class="eco-prims">${s.prims.map(p => `<code>${p}</code>`).join("")}</div>
+      <div class="eco-biz">${s.biz}</div>
+    </div>`).join("");
+
+  const mani = (LAB.find(e => e.manifest) || {}).manifest;
+  const step = s => `<div class="std-step">
+      <b>${String(s.seq).padStart(2, "0")} · ${s.agent}</b><code>${s.api}</code>
+      <span>${s.ms.toLocaleString()} ms</span><span>${s.credits} cr</span>
+      <i class="${s.status}">${s.status === "pass" ? "✓ pass" : s.status}</i></div>`;
+  $("#ecoStandard").innerHTML = mani ? `
+    <div class="std-head"><code>${mani.runId}</code>
+      <span class="pill violet">${mani.recipe}</span>
+      <span class="pill">${mani.standard}</span>
+      <span class="pill cyan">window ${mani.window.start} → ${mani.window.end}</span></div>
+    <div class="std-steps">${mani.steps.map(step).join("")}</div>
+    <div class="std-foot">合計 <b>${mani.totalCredits} credits</b> 入帳 —
+      這張單據就是抽成、額度、稽核的共同語言。任何生態系產品跑的每一個 run，都會留下同樣格式的一張。</div>`
+    : `<div class="std-foot">run manifest 生成中 — pipeline v2 跑完後重新整理。</div>`;
 })();
 
 /* ═══ RECIPES ════════════════════════════════════════════════ */

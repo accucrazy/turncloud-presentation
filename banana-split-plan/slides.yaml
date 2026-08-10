@@ -130,8 +130,8 @@ slides:
     tone: violet
     arrows: true
     tag: { color: violet, text: "CHAPTER 04 · LAB" }
-    title: '把品牌<span class="o">真的丟進去</span>：四個品牌、兩個市場、一條工作流'
-    subtitle: '每個實驗都走完整條產線，留下完整證據鏈：原話在哪、洞察是什麼、素材長怎樣、學到了什麼。'
+    title: '把品牌<span class="o">真的丟進去</span>：七個品牌、兩個市場、一條產線'
+    subtitle: '每個實驗都走完整條產線，留下完整證據鏈與一張 run manifest（tpc.run-manifest/v1）：誰做了什麼、花了幾秒、記了幾個 credit、QA 過了沒。'
     panels:
       - { tone: cyan,   label: "01 · SIGNAL",   name: 'Pandora<br>抓真貼文',  body: '品牌詞或品類詞，近 14 天，含情緒分數' }
       - { tone: violet, label: "02 · FILTER",   name: '訊噪<br>分離',        body: '量測 noise ratio —— 品牌詞常常一半是雜訊' }
@@ -219,6 +219,58 @@ slides:
           - '最好的餵法：品類進、品牌出'
     meta_left: "Lab 03 — 健身品類 · 台灣"
 
+  # ─── 09b · 實驗四 · 通路與百貨（全國電子 × 新光三越）─────────
+  - id: exp_retail
+    template: demo
+    variant: spotR
+    tone: violet
+    media: img/exp_retail_pair.jpg
+    media_fit: cover
+    marker: "● LAB 04 · RETAIL"
+    tag: { color: violet, text: "LAB 04 · 全國電子 × 新光三越" }
+    title: '通路和百貨丟進去，聽到的是<span class="v">服務</span>和<span class="v">體驗</span>'
+    subtitle: '全國電子最有價值的一篇是客訴：「裝完當下一台馬上有狀況」—— 決勝點不在價格，在安裝與售後。新光三越雜訊只有 17%：它已經是「體驗目的地」，連迷路都是話題。'
+    pills:
+      - tone: violet
+        label: "全國電子"
+        name: "安裝才是本體"
+        bullets:
+          - 'hook：「買冷氣最怕的不是不冷，是裝完開始漏水… 求過來人分享怎麼避雷」'
+          - '一則詳盡客訴的價值，勝過十則「謝謝全國電子」'
+      - tone: cyan
+        label: "新光三越"
+        name: "迷路也是內容"
+        bullets:
+          - '原話：「繞來繞去…上上下下走了快半個小時」'
+          - 'hook：「承認吧，誰沒有在新光迷路過？留言分享你迷路最久的一次」'
+    meta_left: "Lab 04 — 通路 × 百貨 · 台灣"
+
+  # ─── 09c · 實驗五 · 肯德基雙時間窗 ───────────────────────────
+  - id: exp_windows
+    template: demo
+    variant: stacked
+    tone: gold
+    media: img/demo_lab_kfc.jpg
+    media_fit: contain
+    marker: "● LAB 05 · TIME WINDOWS"
+    tag: { color: gold, text: "LAB 05 · 肯德基 · 訊號有日期" }
+    title: '同一個品牌，<span class="o">不同日子</span>的訊號長出不同素材'
+    subtitle: '肯德基跑兩個時間窗：「近 3 天」聽到的是青花椒花生蛋撻的話題熱度；「上週」聽到的是門市等候的抱怨與海外限定的渴望 —— 訊號會動，素材跟著動，這是模板做不到的。'
+    pills:
+      - tone: gold
+        label: "近 3 天"
+        name: "新品爭議＝話題燃料"
+        bullets: ['hook：「青花椒＋花生蛋撻？聽起來超地獄，但又有點好奇…」— 衝突感轉成好奇心']
+      - tone: orange
+        label: "上週"
+        name: "等候體驗在扣分"
+        bullets: ['原話：「等了 30 分鐘連一句道歉也沒有」— 服務痛點與「國外限定」渴望並存']
+      - tone: violet
+        label: "MANIFEST"
+        name: "每個 run 一張單據"
+        bullets: ['兩個 run 各 11 credits、四步全過 QA — 圖中每張卡片下方就是 run manifest']
+    meta_left: "Lab 05 — 肯德基 · 雙時間窗對照"
+
   # ─── 10 · 實驗總結 ──────────────────────────────────────────
   - id: lab_verdict
     template: chapter
@@ -226,13 +278,13 @@ slides:
     eyebrow: "CHAPTER 04 · LAB 結論"
     title: '什麼樣的品牌丟進去，<br>會產出<span class="o">好素材</span>'
     lede: |-
-      四個實驗、兩個市場跑完，工作流的答案比想像簡單：
+      八個實驗、七個品牌、兩個市場跑完，答案比想像簡單：
       關鍵不在生成模型，在<strong>餵進去的是不是真話</strong>。
     bullets:
       - { tone: cyan,   label: "① 品類詞 > 品牌詞", text: '「全家」一半在講政治和日常；「超商咖啡」「健身早餐」長出來的洞察乾淨得多。' }
-      - { tone: orange, label: "② 洞察藏在競品串", text: '搜「星巴克」挖到超商咖啡的機會點。聆聽的邊界要畫在品類，不是自家品牌。' }
-      - { tone: gold,   label: "③ 原話就是文案",   text: '好 hook 都是原話的變形。Culture Listening 的產出是語感，不是摘要。' }
-    tagline: '第四個結論最重要：<strong>泰國已經收得到料</strong> —— 這套工作流，換語言就能出海。'
+      - { tone: orange, label: "② 一則客訴勝過十句讚美", text: '全國電子的安裝慘案、肯德基的 30 分鐘罰站 —— 帶情緒的具體故事才有素材價值。' }
+      - { tone: gold,   label: "③ 訊號有日期",   text: '肯德基「近 3 天」和「上週」長出完全不同的素材 —— 產線是活的，模板是死的。' }
+    tagline: '還有兩個：<strong>原話就是文案</strong>、<strong>泰國已經收得到料</strong> —— 換語言就能出海。'
     meta_left: "Lab — 工作流實驗結論"
 
   # ─── 11 · 市場定位與護城河 ──────────────────────────────────
@@ -260,6 +312,32 @@ slides:
         name: "換語言就能出海"
         bullets: ['台灣練深度、泰國先收料；每開一個市場只是多接一個語感庫']
     meta_left: "Positioning — 輿情 × 素材"
+
+  # ─── 11b · 生態系樣態 ───────────────────────────────────────
+  - id: ecosystem
+    template: demo
+    variant: stacked
+    tone: green
+    media: img/demo_eco.jpg
+    media_fit: contain
+    marker: "● ECOSYSTEM"
+    tag: { color: green, text: "CHAPTER 05b · 生態系" }
+    title: '新模型一上市，這條街就<span class="g">多開幾間店</span>'
+    subtitle: '任何人拿同一套標準 — 六個 primitives、run manifest、credit 帳本 — 加一把 key，就能開一間自己的「輿情 AI 生成平台」。顧問的週報機、代理商的白牌台、電商的素材機、出海的曼谷站、模型玩家的評測店、學生的接案工作室 — 樣態隨便長，底層都是 TPC 的 AI OS。'
+    pills:
+      - tone: green
+        label: "標準"
+        name: "tpc.run-manifest/v1"
+        bullets: ['每個 run 一張單據：步驟、耗時、credit、QA — 這是抽成、額度、稽核的共同語言']
+      - tone: gold
+        label: "新模型上市"
+        name: "產線不動，只換引擎"
+        bullets: ['新模型當天掛進 banana.gen fleet，用同一份 manifest 重跑昨天的實驗，新舊輸出並排']
+      - tone: violet
+        label: "生意"
+        name: "別人賺錢，我們抽成"
+        bullets: ['六種樣態各自收自己的錢，但每一次呼叫都記在同一本帳 — 平台的定義']
+    meta_left: "Ecosystem — 6 shapes · one OS"
 
   # ─── 12 · 計量與治理 ────────────────────────────────────────
   - id: governance
@@ -309,7 +387,7 @@ slides:
       - tone: green
         label: "REAL LAB"
         name: "實驗看得見"
-        bullets: ['四個品牌實驗的完整證據鏈就在 Lab 頁 —— 原話、洞察、素材並排']
+        bullets: ['八個實驗（含肯德基雙時間窗）的證據鏈與 run manifest 都在 Lab 頁']
     tagline: 'demo 網址：<strong>turncloud.thepocket.company/tspace-studio/</strong>'
     meta_left: "TSpace Studio — Banana Split Console"
 
@@ -325,7 +403,7 @@ slides:
       - tone: green
         label: "PHASE 0 · 已完成"
         name: 'REST 底座<br>+ 實驗驗證'
-        bullets: ['Pandora Public API 上線', '4 品牌 × 2 市場實驗跑通', 'TSpace Studio demo 可展示']
+        bullets: ['Pandora Public API 上線', '7 品牌 × 2 市場 × 雙時間窗實驗跑通', 'TSpace Studio demo 可展示']
       - tone: cyan
         label: "PHASE 1"
         name: 'MCP 打包<br>+ 金鑰治理'
