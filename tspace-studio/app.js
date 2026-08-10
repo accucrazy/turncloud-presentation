@@ -103,38 +103,53 @@ $("#modeSwitch").onclick = async function () {
 /* ═══ AGENTS ═════════════════════════════════════════════════ */
 const AGENTS = [
   { code: "PANDORA", name: "Pandora", tone: "var(--cyan)", img: "assets/agent_pandora.jpg",
+    shop: "Pandora 情報所", sells: "賣訊號 · 熱點與情緒",
     role: "SIGNAL · 市場訊號", desc: "每小時爬 Threads 熱點、品牌與品類聲量，附情緒分數。她是整條產線的耳朵 — 你看到的 Signals 頁就是她的工作台。",
     skills: "trend ranking · sentiment · brand pulse", tools: "BigQuery · Threads 速爬 (Cloud Run) · 精準表" },
   { code: "MOANA", name: "Moana", tone: "var(--orange)", img: "assets/agent_moana.jpg",
+    shop: "Moana 文化工作室", sells: "賣語感 · Culture Listening",
     role: "CULTURE · 語感萃取", desc: "把 Pandora 抓回來的原話聽懂：口語、梗、痛點。Culture Listening 是她的方法論 — 產出的不是翻譯，是語感。",
     skills: "culture brief · verbatim mining · hook writing", tools: "Pandora corpus · 在地詞庫 · LLM" },
   { code: "BANANA", name: "Banana", tone: "var(--gold)", img: "assets/agent_banana.jpg",
+    shop: "Banana 圖文工坊", sells: "賣素材 · 圖 / 文 / 影",
     role: "VISUAL · 圖文生成", desc: "拿著 Moana 的 brief 產視覺：商品照、情境圖、短影音。Banana Split 就是他的產線介面 — 也是我們要開放給開發者的那一層。",
     skills: "product shot · scene gen · motion", tools: "gen model fleet · brand kit · asset store" },
   { code: "ADRIANA", name: "Adriana", tone: "var(--violet)", img: "assets/agent_adriana.jpg",
+    shop: "Adriana 投放代理", sells: "賣觸及 · CRM × CAPI",
     role: "DELIVERY · 投放回流", desc: "素材出去、數據回來：受眾標籤、CAPI 回傳、成效歸因。她讓「哪張素材有效」變成下一輪 Pandora 的輸入。",
     skills: "audience tagging · CAPI sync · attribution", tools: "TCRM · TCDP · Meta CAPI" },
   { code: "STACEY", name: "Stacey", tone: "var(--green)", img: "assets/agent_stacey.jpg",
+    shop: "Stacey 街公所", sells: "管排程 · 驗收與記帳",
     role: "ORCHESTRATOR · 總指揮", desc: "整條 run 的排程、驗收與記帳由她負責。每一步誰做了什麼、花了幾個 credit，全部留痕。",
     skills: "run orchestration · QA · metering", tools: "A2A bus · policy engine · ledger" },
 ];
 
 (() => {
-  const ring = $("#agentRing");
-  const R = 158;
+  const row = $("#streetRow");
   AGENTS.forEach((a, i) => {
-    const ang = -90 + i * (360 / AGENTS.length);
-    const rad = ang * Math.PI / 180;
     const el = document.createElement("div");
-    el.className = "agent-node";
+    el.className = "shop-card";
     el.style.setProperty("--tone", a.tone);
-    el.style.transform = `translate(${Math.cos(rad) * R}px, ${Math.sin(rad) * R * .82}px)`;
-    el.innerHTML = `<img src="${a.img}" alt="${a.name}"><b>${a.code}</b>`;
+    el.innerHTML = `
+      <span class="shop-awning"></span>
+      <img src="${a.img}" alt="${a.name}">
+      <b>${a.shop}</b><em>${a.sells}</em>
+      <span class="shop-open">營業中</span>`;
     el.onclick = () => selectAgent(i);
-    ring.appendChild(el);
+    row.appendChild(el);
   });
+  const rent = document.createElement("div");
+  rent.className = "shop-card rent";
+  rent.innerHTML = `
+    <span class="shop-awning"></span>
+    <div class="rent-mark">＋</div>
+    <b>你的店</b><em>店面招租 · 一把 pk_ key 就能開店</em>
+    <span class="shop-open vacant">FOR RENT</span>`;
+  rent.onclick = () => goto("develop");
+  row.appendChild(rent);
+
   window.selectAgent = i => {
-    $$(".agent-node").forEach((n, j) => n.classList.toggle("sel", i === j));
+    $$(".shop-card").forEach((n, j) => n.classList.toggle("sel", i === j));
     const a = AGENTS[i];
     $("#agentDetail").innerHTML = `
       <div class="ad-head">

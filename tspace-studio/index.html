@@ -12,12 +12,13 @@
 </head>
 <body>
 
-<!-- ── ambient digital space ─────────────────────────────────── -->
+<!-- ── ambient: warm AI-town dusk ────────────────────────────── -->
 <div class="void">
   <canvas id="starfield"></canvas>
-  <div class="grid-floor"></div>
+  <div class="street-glow"></div>
   <div class="aurora a1"></div>
   <div class="aurora a2"></div>
+  <div class="aurora a3"></div>
 </div>
 
 <!-- ── top bar ───────────────────────────────────────────────── -->
@@ -88,32 +89,26 @@
   <!-- ── views ───────────────────────────────────────────────── -->
   <main class="stage">
 
-    <!-- ═══ SPACE ═══════════════════════════════════════════ -->
+    <!-- ═══ SPACE · AI 商店街 ═══════════════════════════════ -->
     <section class="view active" id="view-space">
       <div class="space-hero">
-        <img src="assets/space_hero.jpg" alt="" class="space-bg">
+        <img src="assets/street_hero.jpg" alt="" class="space-bg">
         <div class="space-copy">
-          <span class="eyebrow">ONE OS · TWO SPACES</span>
-          <h1>你的 AI 員工<br>住在這個<span class="c">空間</span>裡</h1>
-          <p>TSpace 是 The Pocket Company 的數位空間。五位 Agent 在這裡上班、
-             用同一套 Harness（skill + tool）工作、透過 A2A 互相交接。
-             你看到的每一顆節點，都是一組可以被呼叫的 API。</p>
+          <span class="eyebrow">THE POCKET COMPANY · AI 商店街</span>
+          <h1>這是一條<span class="o">商店街</span>，<br>五位 AI 已經開好店了</h1>
+          <p>Pandora 開情報所、Moana 開文化工作室、Banana 開圖文工坊、
+             Adriana 做投放代理、Stacey 管整條街。
+             地基（API）、水電（計量）、金流（credit）都鋪好了 —
+             帶著品牌來逛，或直接來開一間自己的店。</p>
           <div class="space-cta">
             <button class="btn primary" data-goto="studio">走進產線 →</button>
-            <button class="btn ghost" data-goto="signals">先看今天的訊號</button>
+            <button class="btn ghost" data-goto="recipes">逛逛配方市集</button>
           </div>
         </div>
       </div>
 
-      <div class="orbit-wrap">
-        <div class="orbit">
-          <div class="core">
-            <div class="core-ring"></div>
-            <div class="core-ring r2"></div>
-            <div class="core-orb"><b>TSpace</b><em>AI OS</em></div>
-          </div>
-          <div class="agents" id="agentRing"></div>
-        </div>
+      <div class="street-wrap">
+        <div class="street-row" id="streetRow"></div>
         <aside class="agent-detail glass" id="agentDetail"></aside>
       </div>
 
