@@ -160,50 +160,68 @@
     <section class="view" id="view-studio">
       <div class="view-head">
         <div>
-          <span class="eyebrow">BANANA SPLIT · RUN</span>
-          <h2>一則抱怨，<span class="o">四十秒</span>變成可以上架的內容</h2>
-          <p class="sub">同一個 run，五位 Agent 依序交棒。每一步都是 API、都被計量、都留紀錄。</p>
+          <span class="eyebrow">BANANA SPLIT · CLI</span>
+          <h2>產線就是<span class="o">一行指令</span>，套路就是 plugin</h2>
+          <p class="sub">接下來流行的是 CLI：裝上就能跑、plugin 隨插隨用。你的素材設計套路是一個 plugin，
+             Cody、Claude Code、Cursor 這些 agent 也從同一條 CLI 串進來 —— 人人都能把自己的套路放上來。</p>
         </div>
         <div class="head-meta">
-          <button class="btn primary lg" id="runBtn">▶ 執行 Run</button>
+          <button class="btn primary lg" id="runBtn">▶ 執行指令</button>
         </div>
       </div>
 
       <div class="studio-grid">
-        <div class="glass panel brief-panel">
-          <div class="panel-head"><b>Brief</b><span class="tiny">輸入</span></div>
-          <label class="fld"><em>訊號來源</em><div class="fld-val" id="briefSignal">星巴克 × 超商咖啡比較文</div></label>
+        <div class="glass panel brief-panel cli-panel">
+          <div class="panel-head"><b>指令</b><span class="tiny">tpc cli</span></div>
+          <div class="cli-install">
+            <span class="cm"># 兩行就開好產線</span>
+            <span>$ npm i -g @tpc/cli</span>
+            <span>$ tpc login <i class="cm"># 貼上你的 pk_ key</i></span>
+          </div>
+          <label class="fld"><em>Recipe（套路）</em>
+            <select id="recipeSel">
+              <option value="signal-to-post">signal-to-post · 熱點轉社群圖文</option>
+              <option value="product-shot-pack">product-shot-pack · 商品情境包</option>
+            </select>
+          </label>
           <label class="fld"><em>Brand Kit</em>
             <select id="brandKit">
               <option value="bk_ncc_coffee">bk_ncc_coffee · 超商咖啡</option>
               <option value="bk_tpc_default">bk_tpc_default · TPC 預設</option>
             </select>
           </label>
-          <label class="fld"><em>Recipe</em>
-            <select id="recipeSel">
-              <option value="signal-to-post">signal-to-post · 熱點轉社群圖文</option>
-              <option value="product-shot-pack">product-shot-pack · 商品情境包</option>
-            </select>
-          </label>
-          <label class="fld"><em>輸出</em><div class="fld-val">3 × 1:1 visual ＋ 3 × hook copy</div></label>
+          <div class="cli-cmd" id="cliCmd"></div>
           <div class="brief-cost">
             <span>預估用量</span><b id="briefCost">6.4 credits</b>
           </div>
         </div>
 
-        <div class="glass panel run-panel">
-          <div class="panel-head">
-            <b>Pipeline</b><span class="tiny" id="runStatus">idle</span>
+        <div class="glass panel run-panel term-panel">
+          <div class="term-head">
+            <span class="td r"></span><span class="td y"></span><span class="td g"></span>
+            <em>ian@tpc — tpc run</em>
+            <span class="tiny" id="runStatus">idle</span>
           </div>
           <div class="pipeline" id="pipeline"></div>
           <div class="runlog" id="runlog">
-            <div class="log-empty">按下「執行 Run」開始。這裡會逐行印出 agent 之間的 A2A 交接。</div>
+            <div class="log-empty">$ 按「執行指令」開始 —— 這裡會像真的 terminal 一樣逐行輸出五位 agent 的交接。</div>
           </div>
         </div>
 
         <div class="glass panel out-panel">
           <div class="panel-head"><b>Outputs</b><span class="tiny" id="outMeta">尚未產出</span></div>
           <div class="outputs" id="outputs"></div>
+        </div>
+      </div>
+
+      <div class="glass panel plugin-panel">
+        <div class="panel-head"><b>$ tpc plugin ls —— 套路就是 plugin，誰都能寫、誰都能上架</b>
+          <span class="tiny">裝上就出現在 recipe 下拉選單 · 被別人執行就分潤</span></div>
+        <div class="plugin-grid" id="pluginGrid"></div>
+        <div class="plugin-foot">
+          <code>$ tpc plugin publish ./我的手搖飲套路</code>
+          <span>寫一份 SKILL.md（語感原則 + 驗收標準）就是一個 plugin。上架到市集後，
+          任何品牌、任何 agent（含 Cody）執行你的套路，你就抽一份 —— App Store 開發者的邏輯。</span>
         </div>
       </div>
     </section>
@@ -258,11 +276,11 @@
     <section class="view" id="view-ecosystem">
       <div class="view-head">
         <div>
-          <span class="eyebrow">BUILT ON TPC AI OS · tpc.run-manifest/v1</span>
-          <h2>新模型一上市，這條街就<span class="g">多開幾間店</span></h2>
-          <p class="sub">商店街不是只有我們的五間店。任何人拿同一套標準 — 六個 primitives、
-             run manifest、credit 帳本 — 加一把 key，就能開一間自己的「輿情 AI 生成平台」。
-             樣態隨便長，但底層都是 The Pocket Company 的 AI OS，每一次呼叫都記在同一本帳。</p>
+          <span class="eyebrow">ECOSYSTEM · 台灣就有的六種生意</span>
+          <h2>一把 key、一條 CLI，<span class="g">就是一間公司</span></h2>
+          <p class="sub">這六間不是想像的科幻公司，是台灣現在就存在的團隊：小編工作室、電商代營運、
+             廣告代理商、KOL 電商、獨立開發者。他們不用懂 AI，把自己的套路裝上這條 CLI，
+             原本的生意直接變快、變便宜 —— 而每一次執行，都記在我們的帳上。</p>
         </div>
         <div class="head-meta" id="ecoMeta"></div>
       </div>
@@ -270,8 +288,8 @@
       <div class="eco-grid" id="ecoGrid"></div>
 
       <div class="glass panel eco-standard">
-        <div class="panel-head"><b>他們共同依循的標準 — 一份 run manifest 長什麼樣</b>
-          <span class="tiny">tpc.run-manifest/v1 · 每一個 run 都留下這張單據</span></div>
+        <div class="panel-head"><b>不管哪一間公司，跑一次都留下同一張單據</b>
+          <span class="tiny">這就是敢把生意掛上來的原因 · 花多少、誰跑的、過沒過驗收，一張看完</span></div>
         <div class="eco-std-body" id="ecoStandard"></div>
       </div>
     </section>

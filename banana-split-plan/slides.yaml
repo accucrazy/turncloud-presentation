@@ -71,14 +71,14 @@ slides:
           - '每一次 tool call 掛在 key 上 —— 可控、可計價'
         via: "把「不可控的一直用」變成「每一筆都有帳」"
       - tone: gold
-        label: "SURFACE 03 · UI SDK — 規劃"
-        name: '十行一個 dashboard'
+        label: "SURFACE 03 · CLI + PLUGIN — 主打"
+        name: '一行指令的產線'
         bullets:
-          - '<code>&lt;banana-console&gt;</code> web component + pk_ key'
-          - '訊號、產線、計量的 UI 不用重做'
-          - 'demo 的 TSpace Studio 就是第一個 reference'
-        via: "Shopify 的 Theme 層"
-    tagline: 'REST 接工程師 · MCP 接 agent · SDK 接想「今天就上線」的人'
+          - '<code>npm i -g @tpc/cli</code> → <code>tpc run</code>，兩行開好產線'
+          - '素材套路 = plugin：<code>tpc plugin publish</code> 上架，被執行就分潤'
+          - 'Cody / Claude Code 這類 agent 直接串同一條 CLI'
+        via: "接下來會流行的入口 —— demo 的 Studio 頁就是照這個做的"
+    tagline: 'REST 接工程師 · MCP 接 agent · CLI 接每一個有套路的人（UI SDK 之後補 dashboard 層）'
     meta_left: "Banana Split — 三個介面"
 
   # ─── 04 · Pandora 資料底座 ──────────────────────────────────
@@ -322,22 +322,22 @@ slides:
     media_fit: contain
     marker: "● ECOSYSTEM"
     tag: { color: green, text: "CHAPTER 05b · 生態系" }
-    title: '新模型一上市，這條街就<span class="g">多開幾間店</span>'
-    subtitle: '任何人拿同一套標準 — 六個 primitives、run manifest、credit 帳本 — 加一把 key，就能開一間自己的「輿情 AI 生成平台」。顧問的週報機、代理商的白牌台、電商的素材機、出海的曼谷站、模型玩家的評測店、學生的接案工作室 — 樣態隨便長，底層都是 TPC 的 AI OS。'
+    title: '一把 key、一條 CLI，<span class="g">就是一間公司</span>'
+    subtitle: '這六間不是科幻公司，是台灣現在就存在的團隊：小編工作室（20 間手搖飲變 50 間，人沒有多）、電商代營運（雙 11 前 300 個 SKU 一週交付）、廣告代理商（比稿當天用真輿情出三套方向）、KOL 電商（粉絲留言原話變團購文案）、獨立開發者（把套路上架 plugin，312 間店裝了，睡覺也分潤）、AI 新創（新模型上市當天換 --model 就開賣）。'
     pills:
       - tone: green
-        label: "標準"
-        name: "tpc.run-manifest/v1"
-        bullets: ['每個 run 一張單據：步驟、耗時、credit、QA — 這是抽成、額度、稽核的共同語言']
+        label: "不用懂 AI"
+        name: "套路裝上去，生意變快"
+        bullets: ['他們做的還是原本的生意 — 只是把自己的做法變成 plugin 裝上這條 CLI']
       - tone: gold
         label: "新模型上市"
-        name: "產線不動，只換引擎"
-        bullets: ['新模型當天掛進 banana.gen fleet，用同一份 manifest 重跑昨天的實驗，新舊輸出並排']
+        name: "換個 --model 參數就開賣"
+        bullets: ['昨天的 run 全部重跑一遍，新舊輸出並排 — 比別人快一週；Cody 這類 agent 也串同一條 CLI']
       - tone: violet
-        label: "生意"
-        name: "別人賺錢，我們抽成"
-        bullets: ['六種樣態各自收自己的錢，但每一次呼叫都記在同一本帳 — 平台的定義']
-    meta_left: "Ecosystem — 6 shapes · one OS"
+        label: "我們賺什麼"
+        name: "每一次執行都記在同一本帳"
+        bullets: ['六間公司各賺各的，但每個 run 都留下同一張單據（credit、QA、耗時）— 平台的定義']
+    meta_left: "Ecosystem — 台灣就有的六種生意"
 
   # ─── 12 · 計量與治理 ────────────────────────────────────────
   - id: governance
@@ -369,12 +369,12 @@ slides:
     template: demo
     variant: stacked
     tone: violet
-    media: img/demo_space.jpg
+    media: img/demo_cli.jpg
     media_fit: contain
     marker: "● LIVE DEMO"
     tag: { color: violet, text: "CHAPTER 07 · DEMO" }
-    title: 'TSpace Studio：五位 AI 開好店的<span class="v">商店街</span>'
-    subtitle: '一個真的能點的 console —— 不是冷冰冰的後台，是一條 The Pocket Company IP 商店街：五位 Agent 各開一間店，還留了一格「店面招租」給開發者。它同時是 UI SDK 的第一個 reference implementation。'
+    title: 'TSpace Studio：前台是商店街，後台是<span class="v">一行指令</span>'
+    subtitle: '一個真的能點的 console：門面是 The Pocket Company IP 商店街，走進 Studio 就是一個 terminal —— npm 裝好 CLI、tpc run 跑產線、套路用 plugin 隨插隨用，Cody 這類 agent 也從同一條 CLI 串進來。'
     pills:
       - tone: cyan
         label: "REAL DATA"
@@ -382,8 +382,8 @@ slides:
         bullets: ['熱點、貼文、情緒、配額全部來自 Pandora API 真實回傳，不是示意圖']
       - tone: orange
         label: "REAL RUN"
-        name: "產線看得見"
-        bullets: ['按下 Run：五位 Agent A2A 交棒、逐行 log、40 秒出 3 版圖文']
+        name: "產線是一行指令"
+        bullets: ['Studio 頁就是一個 terminal：tpc run 一行指令，五位 Agent 交棒、40 秒出 3 版圖文，套路用 plugin 隨插隨用']
       - tone: green
         label: "REAL LAB"
         name: "實驗看得見"

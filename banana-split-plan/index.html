@@ -2660,16 +2660,16 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="stg-panel stg-step-3 stg-tone-gold stg-text-only">
                 
                 <div class="stg-body">
-                    <div class="stg-label">SURFACE 03 · UI SDK — 規劃</div>
-                    <div class="stg-name">十行一個 dashboard</div>
+                    <div class="stg-label">SURFACE 03 · CLI + PLUGIN — 主打</div>
+                    <div class="stg-name">一行指令的產線</div>
                     
                     
                     <ul class="stg-bullets">
-                        <li><code>&lt;banana-console&gt;</code> web component + pk_ key</li><li>訊號、產線、計量的 UI 不用重做</li><li>demo 的 TSpace Studio 就是第一個 reference</li>
+                        <li><code>npm i -g @tpc/cli</code> → <code>tpc run</code>，兩行開好產線</li><li>素材套路 = plugin：<code>tpc plugin publish</code> 上架，被執行就分潤</li><li>Cody / Claude Code 這類 agent 直接串同一條 CLI</li>
                     </ul>
                     
                     
-                    <div class="stg-via">Shopify 的 Theme 層</div>
+                    <div class="stg-via">接下來會流行的入口 —— demo 的 Studio 頁就是照這個做的</div>
                 </div>
             </div>
             
@@ -2678,7 +2678,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
         
         <div class="stg-reveal">
-            <span class="stg-r-line">REST 接工程師 · MCP 接 agent · SDK 接想「今天就上線」的人</span>
+            <span class="stg-r-line">REST 接工程師 · MCP 接 agent · CLI 接每一個有套路的人（UI SDK 之後補 dashboard 層）</span>
         </div>
         
 
@@ -3423,8 +3423,8 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
         
         <div class="demo-info">
             <div class="tag tag-green">CHAPTER 05b · 生態系</div>
-            <h2 class="demo-title">新模型一上市，這條街就<span class="g">多開幾間店</span></h2>
-            <p class="demo-sub">任何人拿同一套標準 — 六個 primitives、run manifest、credit 帳本 — 加一把 key，就能開一間自己的「輿情 AI 生成平台」。顧問的週報機、代理商的白牌台、電商的素材機、出海的曼谷站、模型玩家的評測店、學生的接案工作室 — 樣態隨便長，底層都是 TPC 的 AI OS。</p>
+            <h2 class="demo-title">一把 key、一條 CLI，<span class="g">就是一間公司</span></h2>
+            <p class="demo-sub">這六間不是科幻公司，是台灣現在就存在的團隊：小編工作室（20 間手搖飲變 50 間，人沒有多）、電商代營運（雙 11 前 300 個 SKU 一週交付）、廣告代理商（比稿當天用真輿情出三套方向）、KOL 電商（粉絲留言原話變團購文案）、獨立開發者（把套路上架 plugin，312 間店裝了，睡覺也分潤）、AI 新創（新模型上市當天換 --model 就開賣）。</p>
         </div>
 
         
@@ -3432,11 +3432,11 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
         <div class="demo-pills">
             
             <div class="demo-pill demo-pill-1 demo-pill-green">
-                <div class="demo-pill-label">標準</div>
-                <div class="demo-pill-name">tpc.run-manifest/v1</div>
+                <div class="demo-pill-label">不用懂 AI</div>
+                <div class="demo-pill-name">套路裝上去，生意變快</div>
                 
                 <ul class="demo-pill-bullets">
-                    <li>每個 run 一張單據：步驟、耗時、credit、QA — 這是抽成、額度、稽核的共同語言</li>
+                    <li>他們做的還是原本的生意 — 只是把自己的做法變成 plugin 裝上這條 CLI</li>
                 </ul>
                 
                 
@@ -3444,21 +3444,21 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             
             <div class="demo-pill demo-pill-2 demo-pill-gold">
                 <div class="demo-pill-label">新模型上市</div>
-                <div class="demo-pill-name">產線不動，只換引擎</div>
+                <div class="demo-pill-name">換個 --model 參數就開賣</div>
                 
                 <ul class="demo-pill-bullets">
-                    <li>新模型當天掛進 banana.gen fleet，用同一份 manifest 重跑昨天的實驗，新舊輸出並排</li>
+                    <li>昨天的 run 全部重跑一遍，新舊輸出並排 — 比別人快一週；Cody 這類 agent 也串同一條 CLI</li>
                 </ul>
                 
                 
             </div>
             
             <div class="demo-pill demo-pill-3 demo-pill-violet">
-                <div class="demo-pill-label">生意</div>
-                <div class="demo-pill-name">別人賺錢，我們抽成</div>
+                <div class="demo-pill-label">我們賺什麼</div>
+                <div class="demo-pill-name">每一次執行都記在同一本帳</div>
                 
                 <ul class="demo-pill-bullets">
-                    <li>六種樣態各自收自己的錢，但每一次呼叫都記在同一本帳 — 平台的定義</li>
+                    <li>六間公司各賺各的，但每個 run 都留下同一張單據（credit、QA、耗時）— 平台的定義</li>
                 </ul>
                 
                 
@@ -3471,7 +3471,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
 
     <div class="meta demo-meta">
-        <span>Ecosystem — 6 shapes · one OS</span>
+        <span>Ecosystem — 台灣就有的六種生意</span>
         <span class="pg">14 / 18</span>
     </div>
 </div>
@@ -3546,7 +3546,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             <div class="demo-media-halo"></div>
             <div class="demo-media-frame">
                 
-                <img src="img/demo_space.jpg" alt="">
+                <img src="img/demo_cli.jpg" alt="">
                 
             </div>
             
@@ -3557,8 +3557,8 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
         
         <div class="demo-info">
             <div class="tag tag-violet">CHAPTER 07 · DEMO</div>
-            <h2 class="demo-title">TSpace Studio：五位 AI 開好店的<span class="v">商店街</span></h2>
-            <p class="demo-sub">一個真的能點的 console —— 不是冷冰冰的後台，是一條 The Pocket Company IP 商店街：五位 Agent 各開一間店，還留了一格「店面招租」給開發者。它同時是 UI SDK 的第一個 reference implementation。</p>
+            <h2 class="demo-title">TSpace Studio：前台是商店街，後台是<span class="v">一行指令</span></h2>
+            <p class="demo-sub">一個真的能點的 console：門面是 The Pocket Company IP 商店街，走進 Studio 就是一個 terminal —— npm 裝好 CLI、tpc run 跑產線、套路用 plugin 隨插隨用，Cody 這類 agent 也從同一條 CLI 串進來。</p>
         </div>
 
         
@@ -3578,10 +3578,10 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             
             <div class="demo-pill demo-pill-2 demo-pill-orange">
                 <div class="demo-pill-label">REAL RUN</div>
-                <div class="demo-pill-name">產線看得見</div>
+                <div class="demo-pill-name">產線是一行指令</div>
                 
                 <ul class="demo-pill-bullets">
-                    <li>按下 Run：五位 Agent A2A 交棒、逐行 log、40 秒出 3 版圖文</li>
+                    <li>Studio 頁就是一個 terminal：tpc run 一行指令，五位 Agent 交棒、40 秒出 3 版圖文，套路用 plugin 隨插隨用</li>
                 </ul>
                 
                 

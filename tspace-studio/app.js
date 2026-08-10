@@ -303,13 +303,39 @@ const RUN_STEPS = [
        <img src="${a.img}" alt=""><b>${a.code}</b>
      </div>${i < AGENTS.length - 1 ? '<span class="pipe-arrow">▸</span>' : ""}`).join("");
 
+  /* CLI command preview — built from the selects */
+  const buildCmd = () => {
+    const r = $("#recipeSel").value, k = $("#brandKit").value;
+    return `tpc run ${r} --brand "超商咖啡" --kit ${k} --days 14 --out 3`;
+  };
+  const renderCmd = () => {
+    $("#cliCmd").innerHTML = `<span class="ps">$</span> ${buildCmd()}`;
+  };
+  $("#recipeSel").onchange = renderCmd;
+  $("#brandKit").onchange = renderCmd;
+  renderCmd();
+
+  /* plugin market strip — 套路就是 plugin */
+  const PLUGINS = [
+    ["@tpc/signal-to-post", "官方 · 熱點轉圖文", "1.2K 安裝", "var(--cyan)"],
+    ["@moana/tw-slang", "官方 · 台灣語感庫", "890 安裝", "var(--orange)"],
+    ["@ian/手搖飲套路", "個人開發者 · 飲料店哏圖", "312 安裝", "var(--gold)"],
+    ["@cody/agent-bridge", "Cody 從這裡串進來 · MCP", "NEW", "var(--violet)"],
+    ["@bkk/thai-launch", "曼谷團隊 · 泰文素材", "97 安裝", "var(--green)"],
+    ["your-plugin", "你的套路 · tpc plugin publish", "—", "var(--dim)"],
+  ];
+  $("#pluginGrid").innerHTML = PLUGINS.map(([id, desc, meta, tone]) => `
+    <div class="plugin-chip" style="--tone:${tone}">
+      <code>${id}</code><em>${desc}</em><span>${meta}</span>
+    </div>`).join("");
+
   let running = false;
   $("#runBtn").onclick = async () => {
     if (running) return;
     running = true;
     $("#runBtn").textContent = "⏳ Running…";
     $("#runStatus").textContent = "running";
-    $("#runlog").innerHTML = "";
+    $("#runlog").innerHTML = `<div class="ln cmd"><span class="ps">$</span><span class="m">${buildCmd()}</span></div>`;
     $("#outputs").innerHTML = "";
     $("#outMeta").textContent = "產出中…";
     $$(".pipe-node").forEach(n => n.classList.remove("run", "done"));
@@ -343,6 +369,11 @@ const RUN_STEPS = [
         <div class="oc-body"><em>HOOK ${i + 1} · ${h.angle}</em><p>${h.copy}</p></div>
       </div>`).join("");
     $$(".out-card").forEach((c, i) => setTimeout(() => c.classList.add("show"), 150 * i));
+    const receipt = document.createElement("div");
+    receipt.className = "ln receipt";
+    receipt.innerHTML = `<span class="ps">✓</span><span class="m">run 完成 —— manifest 已寫入 <b>~/.tpc/runs/r_8f2c.json</b>（4 steps · 6.4 credits · QA pass）</span>`;
+    $("#runlog").appendChild(receipt);
+    $("#runlog").scrollTop = 1e6;
     $("#outMeta").textContent = "3 assets · 6.4 credits";
     $("#runStatus").textContent = "done · ledger #r_8f2c";
     $("#runBtn").textContent = "▶ 再跑一次";
@@ -471,50 +502,50 @@ const RUN_STEPS = [
 (() => {
   const SHOPS = [
     {
-      tone: "var(--cyan)", name: "TrendCafé 週報機", builder: "獨立顧問 · 1 人公司",
-      shape: "訂閱制輿情週報 SaaS",
-      story: "每週一早上自動跑一輪：品類訊號 → 文化 brief → 3 張圖，直接進客戶信箱。顧問睡覺，店在營業。",
-      prims: ["pandora.query", "moana.brief", "banana.render"],
-      biz: "月費 NT$6,000/品牌 · credit 成本約 1 成",
+      tone: "var(--cyan)", name: "小編代操工作室", builder: "台北 · 3 個人 · 客戶 20 間手搖飲和餐酒館",
+      shape: "痛：一間店一週要花 8 小時想哏做圖",
+      story: "現在早上跑一次 <code>tpc run</code>，抓昨晚大家真的在聊什麼，套自己寫的「餐飲哏套路」plugin，一間店 10 分鐘出一週的圖文。接案量從 20 間變 50 間，人沒有多。",
+      prims: ["餐飲哏套路 plugin", "每天的輿情訊號", "一鍵出圖"],
+      biz: "月費 1.5 萬/店 · 素材成本剩零頭",
     },
     {
-      tone: "var(--violet)", name: "AdForge 白牌工作台", builder: "廣告代理商 · 30 個品牌客戶",
-      shape: "掛自己 logo 的 dashboard（UI SDK）",
-      story: "用 &lt;banana-console&gt; 拼一個自家品牌的介面，客戶以為是代理商自研 — 底層每一次呼叫都記在 TPC 的帳上。",
-      prims: ["ui-sdk", "全套 primitives", "adriana.capi"],
-      biz: "向客戶收月租 · 用量向 TPC 結算",
+      tone: "var(--gold)", name: "電商代營運公司", builder: "幫 momo／蝦皮品牌操盤 · 雙 11 是生死線",
+      shape: "痛：檔期前 300 個 SKU 素材做不完",
+      story: "以前排攝影棚排三週；現在白底商品照丟進去，一個 SKU 長 12 張生活情境圖，雙 11 素材一週內全數交付。客戶問「你們哪來這麼多攝影師」。",
+      prims: ["商品情境包套路", "品牌色票自動套", "批量出圖"],
+      biz: "按 SKU 計件收費 · 毛利翻倍",
     },
     {
-      tone: "var(--gold)", name: "ShelfSnap 電商素材機", builder: "電商代營運公司",
-      shape: "商品照 → 在地場景 12 連拍",
-      story: "白底商品照上傳，套 product-shot-pack 配方長出 12 個生活場景，一鍵回寫 Shopify 商品頁。",
-      prims: ["banana.render", "brand kit", "recipe 市集"],
-      biz: "按 SKU 計件 · 量大月結",
+      tone: "var(--violet)", name: "廣告代理商", builder: "30 個品牌客戶 · 提案就是戰場",
+      shape: "痛：pitch 一次要兩週生 mockup",
+      story: "現在比稿當天，用客戶品類「真實的輿情」跑出三套方向 — 客戶看到的第一句話是消費者自己說的。介面掛代理商的 logo，客戶以為是自研系統。",
+      prims: ["白牌介面", "即時輿情", "提案級素材"],
+      biz: "向客戶收月租 · 用量跟我們結算",
     },
     {
-      tone: "var(--orange)", name: "TH Radar 曼谷站", builder: "出海顧問團隊",
-      shape: "泰文輿情 → 泰文素材的在地站",
-      story: "同一條產線換上泰文語感庫。台灣品牌要進曼谷，先來這間店看 Paragon 商圈這週在聊什麼。",
-      prims: ["pandora.query (geo=TH)", "moana.brief (th)", "banana.render"],
-      biz: "市場進入報告 + 素材包",
+      tone: "var(--orange)", name: "KOL 電商團隊", builder: "網紅團購 · 每檔期 72 小時決勝負",
+      shape: "痛：團購素材永遠趕不上開團",
+      story: "開團前一天，把粉絲留言區的原話抓出來變文案 —「這就是我上次問的那個！」— 素材當天出，語感是粉絲自己的話，轉單率看得見。",
+      prims: ["留言原話轉文案", "開團倒數排程", "分潤報表"],
+      biz: "每檔團購按成效抽成",
     },
     {
-      tone: "var(--green)", name: "ModelDrop 試模型店", builder: "模型社群玩家",
-      shape: "新模型上市當天就能開的店",
-      story: "新的生成模型今天發佈？掛進 banana.gen 的 model fleet，用同一份 run manifest 重跑昨天的實驗 — 新舊模型輸出並排給你看。產線不動，只換引擎。",
-      prims: ["banana.render (fleet)", "run manifest 重放", "stacey.ledger"],
-      biz: "評測訂閱 · 模型商贊助",
+      tone: "var(--green)", name: "獨立開發者", builder: "一個人 · 老婆開手搖店 · 晚上寫 code",
+      shape: "賺：把自己的套路上架，睡覺也分潤",
+      story: "幫老婆的店練出一套「飲料店哏圖套路」，<code>tpc plugin publish</code> 上架。現在全台 312 間飲料店裝了他的 plugin，每次被執行他抽一份 — App Store 開發者的邏輯。",
+      prims: ["SKILL.md 就是產品", "plugin 市集", "被執行就分潤"],
+      biz: "312 安裝 · 被動收入",
     },
     {
-      tone: "var(--cyan)", name: "CampusCreator 學生工作室", builder: "大學生 · 接案起步",
-      shape: "小店家的社群小編外包",
-      story: "一把 pk_ key、幾個 recipe，就能接住家巷口手搖店的案子。用多少 credit 付多少，沒有月費門檻。",
-      prims: ["pk_ key", "signal-to-post", "隨用隨付"],
-      biz: "按案計酬 · credit 隨用隨付",
+      tone: "var(--cyan)", name: "AI 新創", builder: "兩個工程師 · 追著新模型跑",
+      shape: "賺：新模型上市當天就開賣",
+      story: "新的生成模型今天發佈？CLI 換個 <code>--model</code> 參數，昨天的 run 全部重跑一遍，新舊輸出並排 — 當天就能賣「新模型素材包」，比別人快一週。Cody 這類 agent 也直接串同一條 CLI。",
+      prims: ["--model 一鍵換引擎", "舊 run 重放", "agent 直連"],
+      biz: "評測訂閱 + 首發素材包",
     },
   ];
-  $("#ecoMeta").innerHTML = `<span class="pill green">6 種樣態</span>
-    <span class="pill">同一套標準</span><span class="pill cyan">同一本帳</span>`;
+  $("#ecoMeta").innerHTML = `<span class="pill green">6 種台灣生意</span>
+    <span class="pill">不用懂 AI</span><span class="pill cyan">同一本帳</span>`;
   $("#ecoGrid").innerHTML = SHOPS.map(s => `
     <div class="eco-shop" style="--tone:${s.tone}">
       <span class="shop-awning"></span>
@@ -536,8 +567,8 @@ const RUN_STEPS = [
       <span class="pill">${mani.standard}</span>
       <span class="pill cyan">window ${mani.window.start} → ${mani.window.end}</span></div>
     <div class="std-steps">${mani.steps.map(step).join("")}</div>
-    <div class="std-foot">合計 <b>${mani.totalCredits} credits</b> 入帳 —
-      這張單據就是抽成、額度、稽核的共同語言。任何生態系產品跑的每一個 run，都會留下同樣格式的一張。</div>`
+    <div class="std-foot">上面這張是真的 — 全國電子那次實驗留下的單據：四步、各花幾秒、記幾個 credit、驗收過沒過。
+      合計 <b>${mani.totalCredits} credits</b> 入帳。生意要掛上來之前，老闆想看的就是這張。</div>`
     : `<div class="std-foot">run manifest 生成中 — pipeline v2 跑完後重新整理。</div>`;
 })();
 

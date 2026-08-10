@@ -281,6 +281,36 @@ h2 { font-size: 28px; line-height: 1.25; font-weight: 700; margin: 8px 0 10px; }
 .runlog .ln .m { color: #b9c2d8; word-break: break-all; }
 .runlog .ln.a2a .m { color: var(--violet); }
 .runlog .ln.cost .m { color: var(--gold); }
+.runlog .ln .ps { color: var(--green); flex: none; font-weight: 700; }
+.runlog .ln.cmd .m { color: var(--ink); font-weight: 600; }
+.runlog .ln.receipt { margin-top: 6px; padding-top: 8px; border-top: 1px dashed var(--line); }
+.runlog .ln.receipt .m { color: var(--green); }
+.runlog .ln.receipt .m b { color: var(--ink); }
+
+/* ── CLI panel ── */
+.cli-install { display: flex; flex-direction: column; gap: 3px; font-family: var(--mono); font-size: 10.5px; color: #b9c2d8; background: rgba(3, 5, 12, .7); border: 1px solid var(--line); border-radius: 10px; padding: 11px 13px; margin-bottom: 14px; }
+.cli-install .cm, .cli-install i.cm { color: var(--dim); font-style: normal; }
+.cli-cmd { font-family: var(--mono); font-size: 11px; line-height: 1.7; color: var(--ink); background: rgba(3, 5, 12, .8); border: 1px solid rgba(34, 211, 238, .3); border-radius: 10px; padding: 11px 13px; margin-top: 3px; word-break: break-all; }
+.cli-cmd .ps { color: var(--green); font-weight: 700; margin-right: 7px; }
+
+/* ── terminal window chrome ── */
+.term-panel { padding-top: 0; }
+.term-head { display: flex; align-items: center; gap: 7px; padding: 12px 2px 12px; border-bottom: 1px solid var(--line); margin-bottom: 13px; }
+.term-head .td { width: 11px; height: 11px; border-radius: 50%; }
+.term-head .td.r { background: #ff5f57; } .term-head .td.y { background: #febc2e; } .term-head .td.g { background: #28c840; }
+.term-head em { font-style: normal; font-family: var(--mono); font-size: 10.5px; color: var(--mut); letter-spacing: .04em; }
+.term-head .tiny { margin-left: auto; }
+
+/* ── plugin market strip ── */
+.plugin-panel { margin-top: 16px; padding: 18px 20px; }
+.plugin-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 13px 0; }
+.plugin-chip { display: flex; flex-direction: column; gap: 3px; padding: 11px 13px; border: 1px solid color-mix(in srgb, var(--tone, var(--cyan)) 30%, var(--line)); border-radius: 11px; background: rgba(8, 11, 22, .55); }
+.plugin-chip code { font-family: var(--mono); font-size: 11px; color: color-mix(in srgb, var(--tone, var(--cyan)) 85%, #fff); }
+.plugin-chip em { font-style: normal; font-size: 10.5px; color: var(--mut); }
+.plugin-chip span { font-family: var(--mono); font-size: 9px; color: var(--dim); }
+.plugin-foot { display: flex; gap: 14px; align-items: baseline; border-top: 1px solid var(--line); padding-top: 12px; }
+.plugin-foot code { flex: none; font-family: var(--mono); font-size: 10.5px; color: var(--gold); }
+.plugin-foot span { font-size: 11px; color: var(--mut); line-height: 1.7; }
 
 .outputs { display: flex; flex-direction: column; gap: 12px; max-height: 480px; overflow-y: auto; scrollbar-width: thin; }
 .out-card { border: 1px solid var(--line); border-radius: 13px; overflow: hidden; background: rgba(255, 255, 255, .02); opacity: 0; transform: translateY(10px); transition: .45s; }
@@ -383,6 +413,7 @@ h2 { font-size: 28px; line-height: 1.25; font-weight: 700; margin: 8px 0 10px; }
 .eco-head em { font-style: normal; font-size: 10px; font-family: var(--mono); color: var(--dim); letter-spacing: .06em; }
 .eco-shape { display: inline-block; align-self: flex-start; margin-bottom: 8px; padding: 3px 10px; border-radius: 999px; font-size: 10.5px; color: color-mix(in srgb, var(--tone, var(--cyan)) 85%, #fff); border: 1px solid color-mix(in srgb, var(--tone, var(--cyan)) 40%, transparent); background: color-mix(in srgb, var(--tone, var(--cyan)) 10%, transparent); }
 .eco-shop p { font-size: 11.5px; color: var(--mut); line-height: 1.7; min-height: 74px; }
+.eco-shop p code { font-family: var(--mono); font-size: 10px; color: var(--cyan); background: rgba(34, 211, 238, .08); padding: 1px 5px; border-radius: 5px; }
 .eco-prims { display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0; }
 .eco-prims code { font-family: var(--mono); font-size: 9px; padding: 3px 8px; border-radius: 6px; background: rgba(255, 255, 255, .04); border: 1px solid var(--line); color: #b9c2d8; }
 .eco-biz { font-size: 10.5px; color: var(--gold); border-top: 1px solid var(--line); padding-top: 9px; font-family: var(--mono); }
@@ -469,7 +500,7 @@ h2 { font-size: 28px; line-height: 1.25; font-weight: 700; margin: 8px 0 10px; }
 
 @media (max-width: 1080px) {
   .signals-grid, .studio-grid, .keys-grid, .moat-grid, .lab-grid { grid-template-columns: 1fr; }
-  .recipe-grid, .moat-cards, .eco-grid { grid-template-columns: 1fr 1fr; }
+  .recipe-grid, .moat-cards, .eco-grid, .plugin-grid { grid-template-columns: 1fr 1fr; }
   .learn-grid, .anatomy, .std-steps { grid-template-columns: 1fr 1fr; }
   .street-wrap { grid-template-columns: 1fr; }
   h1 { font-size: 32px; }
