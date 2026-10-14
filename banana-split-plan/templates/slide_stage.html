@@ -1,0 +1,59 @@
+{% import '_macros.html' as m %}
+<div class="slide stage{% if is_first %} active{% endif %}"{% if id %} data-slide="{{ id }}"{% endif %}>
+    <div class="bg-image stg-bg" style="background-image: url('{{ backdrop | default('img/anim_backdrop.jpg') }}');"></div>
+    <div class="slide-content stg-content">
+        {% if tag %}<div class="tag tag-{{ tag.color }}{% if tag.pulse %} tag-launch{% endif %}">{{ tag.text }}</div>{% endif %}
+        <h2 class="stg-title">{{ title | safe }}</h2>
+        {% if subtitle %}<p class="stg-sub">{{ subtitle | safe }}</p>{% endif %}
+
+        <div class="stg-stack stg-cols-{{ panels | length }}">
+            {% for panel in panels %}
+            <div class="stg-panel stg-step-{{ loop.index }} stg-tone-{{ panel.tone | default('cyan') }}{% if panel.wide %} stg-wide{% endif %}{% if not panel.art %} stg-text-only{% endif %}">
+                {% if panel.art %}
+                <div class="stg-art{% if panel.art_fit == 'contain' %} stg-art-contain{% endif %}">
+                    <div class="stg-glow"></div>
+                    {% if panel.art.endswith('.mp4') or panel.art.endswith('.mov') or panel.art.endswith('.webm') %}
+                    <video src="{{ panel.art }}" autoplay loop muted playsinline></video>
+                    {% else %}
+                    <img src="{{ panel.art }}" alt="{{ panel.label | default('') }}">
+                    {% endif %}
+                </div>
+                {% endif %}
+                <div class="stg-body">
+                    {% if panel.label %}<div class="stg-label">{{ panel.label }}</div>{% endif %}
+                    {% if panel.name %}<div class="stg-name">{{ panel.name | safe }}</div>{% endif %}
+                    {% if panel.tagline %}<div class="stg-tag-line">{{ panel.tagline | safe }}</div>{% endif %}
+                    {% if panel.bullets %}
+                    <ul class="stg-bullets">
+                        {% for b in panel.bullets %}<li>{{ b | safe }}</li>{% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% if panel.body %}<p class="stg-text">{{ panel.body | safe }}</p>{% endif %}
+                    {% if panel.via %}<div class="stg-via">{{ panel.via | safe }}</div>{% endif %}
+                </div>
+            </div>
+            {% if arrows and not loop.last %}
+            <div class="stg-arrow stg-arrow-{{ loop.index }}">
+                <span class="stg-arrow-dot"></span>
+                <span class="stg-arrow-dot"></span>
+                <span class="stg-arrow-dot"></span>
+                <svg viewBox="0 0 24 24" width="100%" height="100%" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        {% if tagline %}
+        <div class="stg-reveal">
+            <span class="stg-r-line">{{ tagline | safe }}</span>
+        </div>
+        {% endif %}
+
+        <div class="meta">
+            <span>{{ meta_left }}</span>
+            <span class="pg">{{ page }} / {{ total }}</span>
+        </div>
+    </div>
+</div>

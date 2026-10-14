@@ -1,0 +1,64 @@
+{% import '_macros.html' as m %}
+{# Video / image demo slide — video / image gets maximum stage real estate.
+   Supports four variants for visual variety:
+     • cinema   — media is the slide; text floats as glass cards over a dark gradient
+     • spotL    — media takes ~66% on the left, sleek text column on the right
+     • spotR    — mirror of spotL (media on right, text left)
+     • stacked  — eyebrow + title top, huge media in the middle, pill strip below
+#}
+{% set v = variant | default('cinema') %}
+{% set is_video = media.endswith('.mp4') or media.endswith('.mov') or media.endswith('.webm') %}
+<div class="slide demo demo-{{ v }} demo-tone-{{ tone | default('cyan') }}{% if is_first %} active{% endif %}"{% if id %} data-slide="{{ id }}"{% endif %}>
+    <div class="bg-image demo-bg" style="background-image: url('{{ backdrop | default('img/anim_backdrop.jpg') }}');"></div>
+
+    {# ── HERO MEDIA ── #}
+    <div class="demo-stage">
+        <div class="demo-media{% if media_fit == 'contain' %} demo-media-contain{% endif %}">
+            <div class="demo-media-halo"></div>
+            <div class="demo-media-frame">
+                {% if is_video %}
+                <video src="{{ media }}" autoplay loop {% if not audio %}muted{% endif %} playsinline {% if audio %}controls{% endif %}></video>
+                {% else %}
+                <img src="{{ media }}" alt="{{ media_alt | default('') }}">
+                {% endif %}
+            </div>
+            {% if v == 'cinema' %}<div class="demo-media-scrim"></div>{% endif %}
+            {% if marker %}<div class="demo-marker">● {{ marker }}</div>{% endif %}
+            {% if audio %}<div class="demo-audio-hint" data-audio-hint>♪ 點影片開聲</div>{% endif %}
+        </div>
+
+        {# ── TEXT HEADER ── #}
+        <div class="demo-info">
+            {% if tag %}<div class="tag tag-{{ tag.color }}{% if tag.pulse %} tag-launch{% endif %}">{{ tag.text }}</div>{% endif %}
+            <h2 class="demo-title">{{ title | safe }}</h2>
+            {% if subtitle %}<p class="demo-sub">{{ subtitle | safe }}</p>{% endif %}
+        </div>
+
+        {# ── PILLS ── #}
+        {% if pills %}
+        <div class="demo-pills">
+            {% for p in pills %}
+            <div class="demo-pill demo-pill-{{ loop.index }} demo-pill-{{ p.tone | default('cyan') }}">
+                {% if p.label %}<div class="demo-pill-label">{{ p.label }}</div>{% endif %}
+                {% if p.name %}<div class="demo-pill-name">{{ p.name | safe }}</div>{% endif %}
+                {% if p.bullets %}
+                <ul class="demo-pill-bullets">
+                    {% for b in p.bullets %}<li>{{ b | safe }}</li>{% endfor %}
+                </ul>
+                {% endif %}
+                {% if p.body %}<p class="demo-pill-body">{{ p.body | safe }}</p>{% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if tagline %}
+        <div class="demo-tagline">{{ tagline | safe }}</div>
+        {% endif %}
+    </div>
+
+    <div class="meta demo-meta">
+        <span>{{ meta_left }}</span>
+        <span class="pg">{{ page }} / {{ total }}</span>
+    </div>
+</div>

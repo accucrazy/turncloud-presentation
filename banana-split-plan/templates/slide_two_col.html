@@ -1,0 +1,24 @@
+{% import '_macros.html' as m %}
+<div class="slide bg-{{ bg | default('dark') }}{% if is_first %} active{% endif %}"{% if id %} data-slide="{{ id }}"{% endif %}>
+    <div class="slide-content">
+        {% if tag %}<div class="tag tag-{{ tag.color }}{% if tag.pulse %} tag-launch{% endif %}">{{ tag.text }}</div>{% endif %}
+        <h2>{{ title | safe }}</h2>
+        {% if subtitle %}<p class="sub">{{ subtitle | safe }}</p>{% endif %}
+
+        <div class="s-body">
+            <div class="s-col"{% if media_flex %} style="flex: {{ media_flex }};"{% endif %}>
+                <div class="illus-frame">{{ m.media_tag(media, media_alt | default(''), media_fit | default('cover')) }}</div>
+            </div>
+            <div class="s-col">
+                {% for box in boxes %}
+                {{ m.render_box(box) }}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="meta">
+            <span>{{ meta_left }}</span>
+            <span class="pg">{{ page }} / {{ total }}</span>
+        </div>
+    </div>
+</div>

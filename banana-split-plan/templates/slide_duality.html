@@ -1,0 +1,102 @@
+{% import '_macros.html' as m %}
+<div class="slide duality{% if is_first %} active{% endif %}"{% if id %} data-slide="{{ id }}"{% endif %}>
+    <div class="bg-image dual-bg" style="background-image: url('{{ backdrop }}');"></div>
+    <div class="slide-content dual-content">
+        {% if tag %}<div class="tag tag-{{ tag.color }}">{{ tag.text }}</div>{% endif %}
+        <h2 class="dual-title">{{ title | safe }}</h2>
+        {% if subtitle %}<p class="dual-sub">{{ subtitle | safe }}</p>{% endif %}
+
+        <div class="dual-stage">
+            <!-- TOP: AI OS Orchestrator card -->
+            <div class="dual-os">
+                <div class="dual-os-inner">
+                    <div class="dual-os-hex">
+                        <svg viewBox="0 0 100 100" width="100%" height="100%">
+                            <polygon points="50,8 88,30 88,70 50,92 12,70 12,30"
+                                fill="rgba(6,182,212,0.18)"
+                                stroke="rgba(6,182,212,0.9)"
+                                stroke-width="2.4" stroke-linejoin="round"/>
+                            <polygon points="50,22 78,38 78,62 50,78 22,62 22,38"
+                                fill="rgba(6,182,212,0.35)"
+                                stroke="none"/>
+                        </svg>
+                    </div>
+                    <div class="dual-os-body">
+                        <div class="dual-os-name">{{ os.title | safe }}</div>
+                        <div class="dual-os-sub">{{ os.subtitle | safe }}</div>
+                        <div class="dual-chips">
+                            {% for chip in os.chips %}
+                            <span class="dual-chip dual-chip-{{ loop.index }}">{{ chip }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="dual-os-glow"></div>
+            </div>
+
+            <!-- BRANCHING ARROWS down to two spaces -->
+            <svg class="dual-branch" viewBox="0 0 600 80" preserveAspectRatio="none">
+                <defs>
+                    <marker id="dArrowL" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
+                        <path d="M0,0 L9,4.5 L0,9 Z" fill="rgba(217,119,6,0.85)"/>
+                    </marker>
+                    <marker id="dArrowR" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
+                        <path d="M0,0 L9,4.5 L0,9 Z" fill="rgba(168,85,247,0.85)"/>
+                    </marker>
+                </defs>
+                <path class="dual-branch-line dual-branch-l"
+                    d="M 300 0 C 300 30, 200 40, 130 72"
+                    stroke="rgba(217,119,6,0.85)" stroke-width="2.6"
+                    fill="none" stroke-linecap="round"
+                    marker-end="url(#dArrowL)"/>
+                <path class="dual-branch-line dual-branch-r"
+                    d="M 300 0 C 300 30, 400 40, 470 72"
+                    stroke="rgba(168,85,247,0.85)" stroke-width="2.6"
+                    fill="none" stroke-linecap="round"
+                    marker-end="url(#dArrowR)"/>
+            </svg>
+
+            <!-- BOTTOM: two space cards -->
+            <div class="dual-spaces">
+                <!-- PHYSICAL -->
+                <div class="dual-space dual-space-physical">
+                    <div class="dual-space-art">
+                        <img src="{{ physical.art }}" alt="{{ physical.label }}">
+                    </div>
+                    <div class="dual-space-body">
+                        <div class="dual-space-label">{{ physical.label }}</div>
+                        <div class="dual-space-name">{{ physical.name | safe }}</div>
+                        <div class="dual-space-tag">{{ physical.tag | safe }}</div>
+                        <ul>
+                            {% for line in physical.bullets %}<li>{{ line | safe }}</li>{% endfor %}
+                        </ul>
+                        <div class="dual-space-via">{{ physical.via | safe }}</div>
+                    </div>
+                </div>
+
+                <!-- VIRTUAL -->
+                <div class="dual-space dual-space-virtual">
+                    <div class="dual-space-art">
+                        <img src="{{ virtual.art }}" alt="{{ virtual.label }}">
+                    </div>
+                    <div class="dual-space-body">
+                        <div class="dual-space-label">{{ virtual.label }}</div>
+                        <div class="dual-space-name">{{ virtual.name | safe }}</div>
+                        <div class="dual-space-tag">{{ virtual.tag | safe }}</div>
+                        <ul>
+                            {% for line in virtual.bullets %}<li>{{ line | safe }}</li>{% endfor %}
+                        </ul>
+                        <div class="dual-space-via">{{ virtual.via | safe }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-tagline">{{ tagline | safe }}</div>
+
+        <div class="meta">
+            <span>{{ meta_left }}</span>
+            <span class="pg">{{ page }} / {{ total }}</span>
+        </div>
+    </div>
+</div>

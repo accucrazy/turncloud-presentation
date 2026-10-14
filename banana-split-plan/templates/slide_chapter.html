@@ -1,0 +1,49 @@
+{% import '_macros.html' as m %}
+{# Chapter / Section break slide — large eyebrow + monumental title + lede + bullets row.
+   Used for narrative pivots (e.g. moving from internal product into open ecosystem)
+   and for spotlight/achievement reveals (e.g. Madrid paper acceptance).
+   Optional fields:
+     hero_image   — full-bleed background illustration (text overlaid left)
+     audio        — path to audio (mp4 / mp3) that auto-plays only on this slide
+#}
+<div class="slide chapter chapter-tone-{{ tone | default('cyan') }}{% if hero_image %} chapter-hero{% endif %}{% if is_first %} active{% endif %}"{% if id %} data-slide="{{ id }}"{% endif %}>
+    <div class="bg-image chapter-bg" style="background-image: url('{{ hero_image | default(backdrop | default('img/anim_backdrop.jpg')) }}');"></div>
+    {% if hero_image %}<div class="chapter-hero-veil"></div>{% endif %}
+
+    <div class="chapter-aura chapter-aura-1"></div>
+    <div class="chapter-aura chapter-aura-2"></div>
+
+    <div class="chapter-stage">
+        {% if eyebrow %}<div class="chapter-eyebrow">{{ eyebrow }}</div>{% endif %}
+        {% if pre %}<div class="chapter-pre">{{ pre | safe }}</div>{% endif %}
+
+        <h2 class="chapter-title">{{ title | safe }}</h2>
+
+        {% if lede %}<p class="chapter-lede">{{ lede | safe }}</p>{% endif %}
+
+        {% if bullets %}
+        <div class="chapter-bullets">
+            {% for b in bullets %}
+            <div class="chapter-bullet chapter-bullet-{{ loop.index }} chapter-bullet-{{ b.tone | default('cyan') }}">
+                {% if b.label %}<div class="chapter-bullet-label">{{ b.label }}</div>{% endif %}
+                <div class="chapter-bullet-text">{{ b.text | safe }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if tagline %}<div class="chapter-tagline">{{ tagline | safe }}</div>{% endif %}
+    </div>
+
+    {% if audio %}
+    <audio data-slide-audio preload="auto" loop>
+        <source src="{{ audio }}" type="video/mp4">
+    </audio>
+    <div class="chapter-audio-hint" data-audio-hint>♪ 點一下開聲 · Tap for sound</div>
+    {% endif %}
+
+    <div class="meta chapter-meta">
+        <span>{{ meta_left }}</span>
+        <span class="pg">{{ page }} / {{ total }}</span>
+    </div>
+</div>

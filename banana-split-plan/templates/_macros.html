@@ -1,0 +1,33 @@
+{# 共用 macro：判斷 media 是圖片還是影片，輸出對應 tag
+   fit: cover (預設，會裁切以填滿) / contain (完整顯示，可能留白) #}
+{% macro media_tag(media, alt='', fit='cover') %}
+{%- set fit_style = '' if fit == 'cover' else ' style="object-fit: ' ~ fit ~ ';"' -%}
+{%- if media.endswith('.mp4') or media.endswith('.webm') or media.endswith('.mov') -%}
+<video src="{{ media }}"{{ fit_style | safe }} muted loop playsinline preload="metadata"></video>
+{%- else -%}
+<img src="{{ media }}" alt="{{ alt }}"{{ fit_style | safe }}>
+{%- endif %}
+{% endmacro %}
+
+{# 全幅背景（cover / closing）：影片用 .bg-video，圖片用 .bg-image #}
+{% macro bg_media(media) %}
+{%- if media.endswith('.mp4') or media.endswith('.webm') or media.endswith('.mov') -%}
+<div class="bg-video"><video src="{{ media }}" autoplay muted loop playsinline></video></div>
+{%- else -%}
+<div class="bg-image" style="background-image: url('{{ media }}');"></div>
+{%- endif %}
+{% endmacro %}
+
+{# 共用 box 渲染。注意：在 YAML 用 `bullets:` 而非 `items:` —— 避免撞到 dict.items 方法 #}
+{% macro render_box(box) %}
+<div class="box{% if box.color %} b-{{ box.color }}{% endif %}">
+    <h4{% if box.title_class %} class="{{ box.title_class }}"{% endif %}>{{ box.title | safe }}</h4>
+    {% if box.bullets %}
+    <ul>
+        {% for item in box.bullets %}<li>{{ item | safe }}</li>{% endfor %}
+    </ul>
+    {% elif box.body %}
+    <p{% if box.body_style %} style="{{ box.body_style }}"{% endif %}>{{ box.body | safe }}</p>
+    {% endif %}
+</div>
+{% endmacro %}

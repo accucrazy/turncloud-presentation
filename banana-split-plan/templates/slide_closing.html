@@ -1,0 +1,13 @@
+{% import '_macros.html' as m %}
+<div class="slide closing{% if is_first %} active{% endif %}">
+    {{ m.bg_media(media) }}
+    <div class="slide-content">
+        <div class="closing-quote">
+            {{ quote | safe }}
+        </div>
+        <p class="lede" style="max-width: 70%; font-size: 2.2vh; line-height: 1.7; color: var(--dim); margin-bottom: 3vh;">
+            {{ lede | safe }}
+        </p>
+        <div class="closing-sig">{{ sig }}</div>
+    </div>
+</div>
