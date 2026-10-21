@@ -3722,6 +3722,31 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .mm-second b { color: #b45309; font-size: 1.35cqh; }
 .mm-wrap .sc-ins-row { grid-template-columns: 10cqh 1fr; }
 .mm-wrap .sc-ins-row strong { color: var(--text); }
+
+/* results page */
+.rs-wrap { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.5fr 1fr; gap: 2cqh; }
+.rs-left { display: flex; flex-direction: column; gap: 1.6cqh; min-height: 0; }
+.rs-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4cqh; }
+.rs-kpi { padding: 1.8cqh 2cqh; }
+.rs-kpi .op-label { color: #047857; }
+.rs-num { font-family: 'JetBrains Mono', monospace; font-size: 5.4cqh; font-weight: 800; color: var(--text); line-height: 1.1; }
+.rs-num small { font-size: 2.2cqh; color: var(--dim-2); margin-left: 0.4cqh; }
+.rs-kpi .op-body { font-size: 1.7cqh; margin-top: 0.3cqh; }
+.rs-chart { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 1.8cqh 2.2cqh 1.4cqh; }
+.rs-chart .op-label { color: #047857; }
+.rs-bars { flex: 1; min-height: 0; display: flex; align-items: flex-end; gap: 1.2cqh; margin-top: 3cqh; }
+.rs-bar { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 0.4cqh; position: relative; }
+.rs-bar i { display: block; width: 100%; height: calc(var(--h) * 1%); min-height: 3px; border-radius: 6px 6px 2px 2px; background: #a7f3d0; }
+.rs-hot i { background: var(--green); }
+.rs-part i { background: #e2e8f0; }
+.rs-bar span { font-family: 'JetBrains Mono', monospace; font-size: 1.4cqh; color: var(--dim-2); }
+.rs-bar em { font-style: normal; font-family: 'JetBrains Mono', monospace; font-size: 1.35cqh; font-weight: 800; color: #fff; background: #334155; border-radius: 6px; padding: 0.2cqh 0.7cqh; }
+.rs-bar b { position: absolute; top: -2.8cqh; font-family: 'JetBrains Mono', monospace; font-size: 1.9cqh; color: #047857; white-space: nowrap; }
+.rs-side { display: flex; flex-direction: column; gap: 1.4cqh; justify-content: center; }
+.rs-side .op-card { padding: 1.8cqh 2.1cqh; }
+.rs-side .op-label { color: #047857; }
+.rs-side .op-name { font-size: 2.4cqh; }
+.rs-side .op-body { font-size: 1.85cqh; }
 </style>
 </head>
 <body>
@@ -3809,7 +3834,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Speaker — Ian Wu · Founder &amp; CEO, Accucrazy / The Pocket Company</span>
-        <span class="pg">02 / 21</span>
+        <span class="pg">02 / 22</span>
     </div>
 </div>
 
@@ -3842,7 +3867,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>About Accucrazy — 2017 → 2026 · A TurnCloud Company (TWSE:6870)</span>
-        <span class="pg">03 / 21</span>
+        <span class="pg">03 / 22</span>
     </div>
 </div>
 
@@ -3859,7 +3884,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     
     <div class="meta fullbleed-meta">
         <span>The Pocket Company Framework · powered by TSpace · Turncloud VIN</span>
-        <span class="pg">04 / 21</span>
+        <span class="pg">04 / 22</span>
     </div>
     
 </div>
@@ -3926,7 +3951,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Pandora — AI Native Social Listening Agent · quant → qual</span>
-        <span class="pg">05 / 21</span>
+        <span class="pg">05 / 22</span>
     </div>
 </div>
 
@@ -3997,7 +4022,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Pandora — Auto Insight Report</span>
-        <span class="pg">06 / 21</span>
+        <span class="pg">06 / 22</span>
     </div>
 </div>
 
@@ -4074,7 +4099,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Moana — Culture Listening × Fine-tuned Generation · MVP LIVE</span>
-        <span class="pg">07 / 21</span>
+        <span class="pg">07 / 22</span>
     </div>
 </div>
 
@@ -4138,7 +4163,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening Live Demo</span>
-        <span class="pg">08 / 21</span>
+        <span class="pg">08 / 22</span>
     </div>
 </div>
 
@@ -4191,7 +4216,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Culture Listening — from "what they said" to "how they live" · 7-layer CL report</span>
-        <span class="pg">09 / 21</span>
+        <span class="pg">09 / 22</span>
     </div>
 </div>
 
@@ -4229,7 +4254,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Pandora Trends — /api/public/trends type:top · days 7 · top 40 · snapshot 2026-10-15</span>
-        <span class="pg">10 / 21</span>
+        <span class="pg">10 / 22</span>
     </div>
 </div>
 
@@ -4272,7 +4297,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Live example — 好肖嗎 · "開會開到一半腦袋突然響起洗腦歌" · Pandora → Moana → Banana</span>
-        <span class="pg">11 / 21</span>
+        <span class="pg">11 / 22</span>
     </div>
 </div>
 
@@ -4312,12 +4337,58 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Flywheel proof — four trends · four shorts · four styles · one day · youtube.com/@好肖嗎</span>
-        <span class="pg">12 / 21</span>
+        <span class="pg">12 / 22</span>
     </div>
 </div>
 
 
 
+
+
+<!-- ══════════ haoxiao_results (op) ══════════ -->
+<div class="slide op" data-slide="haoxiao_results">
+    <div class="bg-image" style="background-image: url('img/anim_backdrop.jpg');"></div>
+    <div class="op-stage">
+        <div class="op-head op-anim op-d1">
+            <div class="tag tag-green">成績 · 好肖嗎 · YOUTUBE STUDIO · 2026/10/11–10/19</div>
+            <h2 class="op-title">一台地端電腦,<span class="g">一週 2.3 萬次觀看</span></h2>
+        </div>
+
+        <div class="rs-wrap">
+            <div class="rs-left">
+                <div class="rs-kpis op-anim op-d2">
+                    <div class="op-card rs-kpi"><div class="op-label">觀看次數</div><div class="rs-num">22,641</div><div class="op-body">9 天累積</div></div>
+                    <div class="op-card rs-kpi"><div class="op-label">觀看時間</div><div class="rs-num">82.4<small>hr</small></div><div class="op-body">短影音 30 秒一支</div></div>
+                    <div class="op-card rs-kpi"><div class="op-label">訂閱</div><div class="rs-num">+21</div><div class="op-body">從零開始</div></div>
+                </div>
+                <div class="op-card rs-chart op-anim op-d3">
+                    <div class="op-label">每日觀看 · 下排是當天上架支數</div>
+                    <div class="rs-bars">
+                        <div class="rs-bar"><i style="--h:1"></i><span>10/11</span><em>—</em></div>
+                        <div class="rs-bar"><i style="--h:10"></i><span>12</span><em>9+</em></div>
+                        <div class="rs-bar"><i style="--h:48"></i><span>13</span><em>4</em></div>
+                        <div class="rs-bar"><i style="--h:28"></i><span>14</span><em>2</em></div>
+                        <div class="rs-bar"><i style="--h:72"></i><span>15</span><em>4</em></div>
+                        <div class="rs-bar"><i style="--h:68"></i><span>16</span><em>3</em></div>
+                        <div class="rs-bar"><i style="--h:52"></i><span>17</span><em>6</em></div>
+                        <div class="rs-bar rs-hot"><i style="--h:64"></i><span>18</span><em>9+</em><b>3,865</b></div>
+                        <div class="rs-bar rs-part"><i style="--h:2"></i><span>19</span><em>7</em></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rs-side">
+                <div class="op-card op-anim op-d3"><div class="op-label">產量</div><div class="op-name">8 天 44+ 支短影音</div><div class="op-body">每天 2 到 9 支,全部由<strong>同一台地端電腦</strong>生成、剪輯、上字幕;人只做選題和點上架。</div></div>
+                <div class="op-card op-anim op-d4"><div class="op-label">成本</div><div class="op-name">算力一次買斷,邊際成本是電費</div><div class="op-body">沒有雲端生成的單片費、沒有審查退件 ── <strong>多出一支片,成本幾乎是零</strong>。</div></div>
+                <div class="op-card op-anim op-d5"><div class="op-label">飛輪</div><div class="op-name">第 5 天開始,曲線就不靠運氣</div><div class="op-body">10/15 起每天穩定 3–4 千次 ── 題目從 Pandora 來,成效寫回下一圈,<strong>越做越知道什麼會中</strong>。</div></div>
+            </div>
+        </div>
+    </div>
+    <div class="meta op-meta">
+        <span>Results — one on-prem box · 9 days · 22,641 views · 82.4 watch-hours · youtube.com/@好肖嗎</span>
+        <span class="pg">13 / 22</span>
+    </div>
+</div>
 
 <!-- ══════════ content_flywheel (op) ══════════ -->
 <div class="slide op" data-slide="content_flywheel">
@@ -4366,7 +4437,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Content flywheel — Trends → filter → evidence → Moana → Banana → measure → repeat</span>
-        <span class="pg">13 / 21</span>
+        <span class="pg">14 / 22</span>
     </div>
 </div>
 
@@ -4444,7 +4515,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Banana — Visual Design · MVP LIVE</span>
-        <span class="pg">14 / 21</span>
+        <span class="pg">15 / 22</span>
     </div>
 </div>
 
@@ -4513,7 +4584,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Banana — Motion Lab · Video Generation Live</span>
-        <span class="pg">15 / 21</span>
+        <span class="pg">16 / 22</span>
     </div>
 </div>
 
@@ -4590,7 +4661,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Stacey — Orchestrator · BUILDING</span>
-        <span class="pg">16 / 21</span>
+        <span class="pg">17 / 22</span>
     </div>
 </div>
 
@@ -4639,7 +4710,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>On-Prem AIOS — Why on-prem · Cloud blocks, local controls, hybrid wins</span>
-        <span class="pg">17 / 21</span>
+        <span class="pg">18 / 22</span>
     </div>
 </div>
 
@@ -4689,7 +4760,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>BananaRTX — Banana × Turncloud VIN on NVIDIA DGX Spark · 44s product film (1.6x)</span>
-        <span class="pg">18 / 21</span>
+        <span class="pg">19 / 22</span>
     </div>
 </div>
 
@@ -4721,7 +4792,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>BananaRTX control proof II — dance + lip-sync · WAN 2.2 Animate on-prem</span>
-        <span class="pg">19 / 21</span>
+        <span class="pg">20 / 22</span>
     </div>
 </div>
 
@@ -4786,7 +4857,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>On-Prem AIOS — BananaRTX / Pandora on DGX Spark · 4-week rollout</span>
-        <span class="pg">20 / 21</span>
+        <span class="pg">21 / 22</span>
     </div>
 </div>
 
@@ -4818,7 +4889,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Compute Sovereignty — TurnCloud × The Pocket Company × NVIDIA</span>
-        <span class="pg">21 / 21</span>
+        <span class="pg">22 / 22</span>
     </div>
 </div>
 
