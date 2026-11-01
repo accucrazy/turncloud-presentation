@@ -1,2 +1,6 @@
 
 __pycache__/
+
+# 新光三越:明文只留本機,repo 只放加密後的 skm*.html
+*.preview.html
+img/skm/
