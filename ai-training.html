@@ -3954,6 +3954,30 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .cv-link { position: absolute; left: 23%; top: 45%; width: 52%; height: 17%; z-index: 3; cursor: pointer; border-radius: 1cqh; }
 .cv-link:hover { background: rgba(255,255,255,.06); }
 body:has(.cv-slide.active) .brand-corner { display: none; }
+/* AI training: chapter title "我與 AI 的第一次接觸" */
+.slide.fc-slide { padding: 0; background: radial-gradient(ellipse at 30% 40%, #2a2a2e 0%, #161618 55%, #0d0d0f 100%); }
+body:has(.fc-slide.active) .brand-corner { display: none; }
+.fc-stage { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 12cqh; }
+.fc-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 2cqh; letter-spacing: 0.6cqh; color: rgba(255,255,255,.55); margin-bottom: 3cqh; }
+.fc-title { font-size: 12cqh; font-weight: 900; line-height: 1.12; color: #fff; margin: 0; }
+.fc-title span { color: #fff; border-left: 2.2cqh solid #e5262e; padding-left: 3cqh; margin-left: -5.2cqh; }
+.fc-bar { width: 22cqh; height: 0.6cqh; background: #e5262e; margin-top: 5cqh; border-radius: 1cqh; }
+.fc-meta { position: absolute; left: 12cqh; right: 4cqh; bottom: 2.4cqh; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.4); }
+.fc-meta .pg { color: rgba(255,255,255,.6); }
+/* API vs MCP slide */
+.mc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4cqh; }
+.mc-vs .op-card { padding: 1.6cqh 1.9cqh; }
+.mc-api { border: 1px dashed var(--border); }
+.mc-api .op-label { color: var(--dim-2); }
+.mc-mcp { border: 2px solid var(--violet); background: linear-gradient(180deg, var(--violet-bg), #fff); }
+.mc-mcp .op-label { color: var(--violet); }
+.mc-vs .op-body, .mc-pandora .op-body { font-size: 1.85cqh; margin-top: 0.4cqh; }
+.mc-vs strong, .mc-pandora strong { color: var(--text); }
+.mc-pandora { padding: 1.6cqh 1.9cqh; border-left: 4px solid var(--cyan); }
+.mc-pandora .op-label { color: var(--cyan); }
+.mc-tools { display: flex; flex-wrap: wrap; gap: 0.7cqh; margin-top: 1cqh; }
+.mc-tools code { font-family: 'JetBrains Mono', monospace; font-size: 1.45cqh; background: #0f172a; color: #a5f3fc; border-radius: 7px; padding: 0.35cqh 0.9cqh; }
+.fc-title span { border-left: 0; padding-left: 0; margin-left: 0; color: #fff; }
 </style>
 </head>
 <body>
@@ -4043,33 +4067,9 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>Speaker — Ian Wu · Founder &amp; CEO, Accucrazy / The Pocket Company</span>
-        <span class="pg">02 / 31</span>
+        <span class="pg">02 / 33</span>
     </div>
 </div>
-
-
-<div class="slide cv-slide" data-slide="canva_12"><img class="cv-img" src="img/canva/ai-talk-12.jpg" alt="AI Talk p.12"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">03 / 31</span></div></div>
-
-
-<div class="slide cv-slide" data-slide="canva_13"><img class="cv-img" src="img/canva/ai-talk-13.jpg" alt="AI Talk p.13"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">04 / 31</span></div></div>
-
-
-<div class="slide cv-slide" data-slide="canva_14"><img class="cv-img" src="img/canva/ai-talk-14.jpg" alt="AI Talk p.14"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">05 / 31</span></div></div>
-
-
-<div class="slide cv-slide" data-slide="canva_15"><img class="cv-img" src="img/canva/ai-talk-15.jpg" alt="AI Talk p.15"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">06 / 31</span></div></div>
-
-
-<div class="slide cv-slide" data-slide="canva_16"><img class="cv-img" src="img/canva/ai-talk-16.jpg" alt="AI Talk p.16"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">07 / 31</span></div></div>
-
-
-<div class="slide cv-slide" data-slide="canva_17"><img class="cv-img" src="img/canva/ai-talk-17.jpg" alt="AI Talk p.17"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">08 / 31</span></div></div>
-
-
-<div class="slide cv-slide" data-slide="canva_18"><img class="cv-img" src="img/canva/ai-talk-18.jpg" alt="AI Talk p.18"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">09 / 31</span></div></div>
-
-
-<div class="slide cv-slide" data-slide="canva_19"><img class="cv-img" src="img/canva/ai-talk-19.jpg" alt="AI Talk p.19"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">10 / 31</span></div></div>
 
 
 
@@ -4101,7 +4101,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>About Accucrazy — 2017 → 2026 · A TurnCloud Company (TWSE:6870)</span>
-        <span class="pg">11 / 31</span>
+        <span class="pg">03 / 33</span>
     </div>
 </div>
 
@@ -4137,7 +4137,84 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>Accucrazy × NVIDIA — Inception startup · Computex 2026 keynote partner wall · RTX AI PC talk · DGX Spark launch</span>
-        <span class="pg">12 / 31</span>
+        <span class="pg">04 / 33</span>
+    </div>
+</div>
+
+
+<!-- ══════════ ai_first_contact (chapter title) ══════════ -->
+<div class="slide fc-slide" data-slide="ai_first_contact">
+    <div class="fc-stage">
+        <div class="fc-eyebrow op-anim op-d1">PART 01 · BEFORE AI AGENTS</div>
+        <h2 class="fc-title op-anim op-d2">我與 AI 的<br><span>第一次接觸</span></h2>
+        <div class="fc-bar op-anim op-d3"></div>
+    </div>
+    <div class="meta fc-meta">
+        <span>My first contact with AI</span>
+        <span class="pg">05 / 33</span>
+    </div>
+</div>
+
+
+<div class="slide cv-slide" data-slide="canva_12"><img class="cv-img" src="img/canva/ai-talk-12.jpg" alt="AI Talk p.12"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">06 / 33</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_13"><img class="cv-img" src="img/canva/ai-talk-13.jpg" alt="AI Talk p.13"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">07 / 33</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_14"><img class="cv-img" src="img/canva/ai-talk-14.jpg" alt="AI Talk p.14"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">08 / 33</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_15"><img class="cv-img" src="img/canva/ai-talk-15.jpg" alt="AI Talk p.15"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">09 / 33</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_16"><img class="cv-img" src="img/canva/ai-talk-16.jpg" alt="AI Talk p.16"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">10 / 33</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_17"><img class="cv-img" src="img/canva/ai-talk-17.jpg" alt="AI Talk p.17"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">11 / 33</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_18"><img class="cv-img" src="img/canva/ai-talk-18.jpg" alt="AI Talk p.18"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">12 / 33</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_19"><img class="cv-img" src="img/canva/ai-talk-19.jpg" alt="AI Talk p.19"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">13 / 33</span></div></div>
+
+
+<!-- ══════════ mcp_vs_api (op reveal) ══════════ -->
+<div class="slide op op-reveal" data-slide="mcp_vs_api">
+    <div class="bg-image" style="background-image: url('img/anim_backdrop.jpg');"></div>
+    <div class="op-stage">
+        <div class="op-reveal-media op-anim op-d1">
+            <div class="op-phone">
+                <video src="img/mcp/pandora-mcp-vs-api.mp4" poster="img/mcp/pandora-mcp-vs-api.jpg" playsinline preload="metadata" controls></video>
+            </div>
+            <div class="op-audio-hint" data-audio-hint>♪ 點影片開聲</div>
+        </div>
+        <div class="op-reveal-info">
+            <div class="op-anim op-d1">
+                <div class="tag tag-violet">AI AGENT 怎麼做事 · API vs MCP</div>
+                <h2 class="op-title">從照表操課,<br>到 AI <span class="v">自己挑工具</span></h2>
+            </div>
+            <div class="mc-vs op-anim op-d2">
+                <div class="op-card mc-api">
+                    <div class="op-label">API · 照事先設定的流程走</div>
+                    <div class="op-body">每一步呼叫什麼、順序怎麼走都要先寫好;<strong>需求一換,就要重新設定流程</strong>。</div>
+                </div>
+                <div class="op-card mc-mcp">
+                    <div class="op-label">MCP · 工具會自我介紹</div>
+                    <div class="op-body">AI 先問有哪些工具,<strong>再自己決定下一步</strong>;一個助理能同時接好幾台伺服器,一句話跑完。</div>
+                </div>
+            </div>
+            <div class="op-card mc-pandora op-anim op-d3">
+                <div class="op-label">PANDORA 現在支援 MCP</div>
+                <div class="op-body">在 Claude、Cursor、Codex 裡直接問:「這個品牌最近聲量怎麼樣?」── AI 自己去查<strong>貼文、Threads 趨勢、即時爬文</strong>,不用寫程式。</div>
+                <div class="mc-tools"><code>search_posts</code><code>get_trends</code><code>quick_scrape_threads</code><code>scrape_threads_post</code></div>
+            </div>
+        </div>
+    </div>
+    <div class="meta op-meta">
+        <span>API vs MCP — fixed pipelines vs self-describing tools · Pandora MCP (@accucrazy/pandora-mcp)</span>
+        <span class="pg">14 / 33</span>
     </div>
 </div>
 
@@ -4155,7 +4232,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     
     <div class="meta fullbleed-meta">
         <span>The Pocket Company Framework · powered by TSpace · Turncloud VIN</span>
-        <span class="pg">13 / 31</span>
+        <span class="pg">15 / 33</span>
     </div>
     
 </div>
@@ -4223,7 +4300,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
 
     <div class="meta agent-meta">
         <span>Pandora — AI Native Social Listening Agent · quant → qual</span>
-        <span class="pg">14 / 31</span>
+        <span class="pg">16 / 33</span>
     </div>
 </div>
 
@@ -4295,7 +4372,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
 
     <div class="meta demo-meta">
         <span>Pandora — Auto Insight Report</span>
-        <span class="pg">15 / 31</span>
+        <span class="pg">17 / 33</span>
     </div>
 </div>
 
@@ -4373,7 +4450,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
 
     <div class="meta agent-meta">
         <span>Moana — Culture Listening × Fine-tuned Generation · MVP LIVE</span>
-        <span class="pg">16 / 31</span>
+        <span class="pg">18 / 33</span>
     </div>
 </div>
 
@@ -4438,7 +4515,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening Live Demo</span>
-        <span class="pg">17 / 31</span>
+        <span class="pg">19 / 33</span>
     </div>
 </div>
 
@@ -4492,7 +4569,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>Culture Listening — from "what they said" to "how they live" · 7-layer CL report</span>
-        <span class="pg">18 / 31</span>
+        <span class="pg">20 / 33</span>
     </div>
 </div>
 
@@ -4531,7 +4608,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>Pandora Trends — /api/public/trends type:top · days 7 · top 40 · snapshot 2026-10-15</span>
-        <span class="pg">19 / 31</span>
+        <span class="pg">21 / 33</span>
     </div>
 </div>
 
@@ -4575,7 +4652,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>Live example — 好肖嗎 · "開會開到一半腦袋突然響起洗腦歌" · Pandora → Moana → Banana</span>
-        <span class="pg">20 / 31</span>
+        <span class="pg">22 / 33</span>
     </div>
 </div>
 
@@ -4616,7 +4693,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>Flywheel proof — four trends · four shorts · four styles · one day · youtube.com/@好肖嗎</span>
-        <span class="pg">21 / 31</span>
+        <span class="pg">23 / 33</span>
     </div>
 </div>
 
@@ -4666,7 +4743,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>Results — one on-prem box · 9 days · 22,641 views · 82.4 watch-hours · youtube.com/@好肖嗎</span>
-        <span class="pg">22 / 31</span>
+        <span class="pg">24 / 33</span>
     </div>
 </div>
 
@@ -4718,7 +4795,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>Content flywheel — Trends → filter → evidence → Moana → Banana → measure → repeat</span>
-        <span class="pg">23 / 31</span>
+        <span class="pg">25 / 33</span>
     </div>
 </div>
 
@@ -4797,7 +4874,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
 
     <div class="meta agent-meta">
         <span>Banana — Visual Design · MVP LIVE</span>
-        <span class="pg">24 / 31</span>
+        <span class="pg">26 / 33</span>
     </div>
 </div>
 
@@ -4867,7 +4944,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
 
     <div class="meta demo-meta">
         <span>Banana — Motion Lab · Video Generation Live</span>
-        <span class="pg">25 / 31</span>
+        <span class="pg">27 / 33</span>
     </div>
 </div>
 
@@ -4945,7 +5022,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
 
     <div class="meta agent-meta">
         <span>Stacey — Orchestrator · BUILDING</span>
-        <span class="pg">26 / 31</span>
+        <span class="pg">28 / 33</span>
     </div>
 </div>
 
@@ -4995,7 +5072,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>On-Prem AIOS — Why on-prem · Cloud blocks, local controls, hybrid wins</span>
-        <span class="pg">27 / 31</span>
+        <span class="pg">29 / 33</span>
     </div>
 </div>
 
@@ -5046,7 +5123,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>BananaRTX — Banana × Turncloud VIN on NVIDIA DGX Spark · 44s product film (1.6x)</span>
-        <span class="pg">28 / 31</span>
+        <span class="pg">30 / 33</span>
     </div>
 </div>
 
@@ -5079,7 +5156,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>BananaRTX control proof II — dance + lip-sync · WAN 2.2 Animate on-prem</span>
-        <span class="pg">29 / 31</span>
+        <span class="pg">31 / 33</span>
     </div>
 </div>
 
@@ -5145,7 +5222,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>On-Prem AIOS — BananaRTX / Pandora on DGX Spark · 4-week rollout</span>
-        <span class="pg">30 / 31</span>
+        <span class="pg">32 / 33</span>
     </div>
 </div>
 
@@ -5178,7 +5255,7 @@ body:has(.cv-slide.active) .brand-corner { display: none; }
     </div>
     <div class="meta op-meta">
         <span>Compute Sovereignty — TurnCloud × The Pocket Company × NVIDIA</span>
-        <span class="pg">31 / 31</span>
+        <span class="pg">33 / 33</span>
     </div>
 </div>
 
