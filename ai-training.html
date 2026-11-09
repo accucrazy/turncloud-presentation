@@ -3944,12 +3944,16 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .nv-photos figure { margin: 0; display: flex; flex-direction: column; gap: 0.5cqh; min-height: 0; }
 .nv-photos img { flex: 1; min-height: 0; width: 100%; object-fit: cover; object-position: center 30%; border-radius: 12px; box-shadow: var(--shadow-md); }
 .nv-photos figcaption { font-size: 1.45cqh; color: var(--dim); text-align: center; }
-/* Canva embed slide */
-.slide.cv-slide { padding: 0; background: #0e1116; }
-.cv-frame { position: absolute; left: 0; top: 0; width: 100%; height: calc(100% - 5cqh); border: 0; background: #0e1116; }
-.cv-hint { position: absolute; left: 4cqh; bottom: 1.4cqh; font-size: 1.5cqh; color: rgba(255,255,255,.6); z-index: 2; }
-.cv-meta { position: absolute; right: 4cqh; bottom: 1.2cqh; left: auto; border: 0; padding: 0; margin: 0; gap: 2cqh; color: rgba(255,255,255,.5); z-index: 2; }
+/* Canva pages as full-bleed images */
+.slide.cv-slide { padding: 0; background: #000; }
+.cv-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+.cv-meta { position: absolute; right: 2cqh; bottom: 1cqh; left: auto; border: 0; padding: 0.3cqh 1cqh; margin: 0; gap: 1cqh;
+  color: rgba(255,255,255,.75); background: rgba(0,0,0,.35); border-radius: 100px; z-index: 2; }
 .cv-meta span:first-child { display: none; }
+.cv-meta .pg { color: rgba(255,255,255,.85); }
+.cv-link { position: absolute; left: 23%; top: 45%; width: 52%; height: 17%; z-index: 3; cursor: pointer; border-radius: 1cqh; }
+.cv-link:hover { background: rgba(255,255,255,.06); }
+body:has(.cv-slide.active) .brand-corner { display: none; }
 </style>
 </head>
 <body>
@@ -4039,20 +4043,33 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Speaker — Ian Wu · Founder &amp; CEO, Accucrazy / The Pocket Company</span>
-        <span class="pg">02 / 24</span>
+        <span class="pg">02 / 31</span>
     </div>
 </div>
 
 
-<!-- ══════════ canva_ai_talk (embed) ══════════ -->
-<div class="slide cv-slide" data-slide="canva_ai_talk">
-    <iframe class="cv-frame" src="https://www.canva.com/design/DAGrFDlSPwo/STM7vwPI8CpE3eUeCWHuJg/view?embed" title="AI Talk — The AI that Actually works" allow="fullscreen" allowfullscreen loading="lazy"></iframe>
-    <div class="cv-hint">點進畫面用 ← → 翻 Canva 頁面 · 點右側 › 回到簡報</div>
-    <div class="meta cv-meta">
-        <span>AI Talk — The AI that Actually works · Canva</span>
-        <span class="pg">03 / 24</span>
-    </div>
-</div>
+<div class="slide cv-slide" data-slide="canva_12"><img class="cv-img" src="img/canva/ai-talk-12.jpg" alt="AI Talk p.12"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">03 / 31</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_13"><img class="cv-img" src="img/canva/ai-talk-13.jpg" alt="AI Talk p.13"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">04 / 31</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_14"><img class="cv-img" src="img/canva/ai-talk-14.jpg" alt="AI Talk p.14"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">05 / 31</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_15"><img class="cv-img" src="img/canva/ai-talk-15.jpg" alt="AI Talk p.15"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">06 / 31</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_16"><img class="cv-img" src="img/canva/ai-talk-16.jpg" alt="AI Talk p.16"><a class="cv-link" href="https://turncloud.thepocket.company/" target="_blank" rel="noopener" title="開啟 turncloud.thepocket.company"></a><div class="meta cv-meta"><span>AI Talk</span><span class="pg">07 / 31</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_17"><img class="cv-img" src="img/canva/ai-talk-17.jpg" alt="AI Talk p.17"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">08 / 31</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_18"><img class="cv-img" src="img/canva/ai-talk-18.jpg" alt="AI Talk p.18"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">09 / 31</span></div></div>
+
+
+<div class="slide cv-slide" data-slide="canva_19"><img class="cv-img" src="img/canva/ai-talk-19.jpg" alt="AI Talk p.19"><div class="meta cv-meta"><span>AI Talk</span><span class="pg">10 / 31</span></div></div>
 
 
 
@@ -4084,7 +4101,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>About Accucrazy — 2017 → 2026 · A TurnCloud Company (TWSE:6870)</span>
-        <span class="pg">04 / 24</span>
+        <span class="pg">11 / 31</span>
     </div>
 </div>
 
@@ -4120,7 +4137,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Accucrazy × NVIDIA — Inception startup · Computex 2026 keynote partner wall · RTX AI PC talk · DGX Spark launch</span>
-        <span class="pg">05 / 24</span>
+        <span class="pg">12 / 31</span>
     </div>
 </div>
 
@@ -4138,7 +4155,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     
     <div class="meta fullbleed-meta">
         <span>The Pocket Company Framework · powered by TSpace · Turncloud VIN</span>
-        <span class="pg">06 / 24</span>
+        <span class="pg">13 / 31</span>
     </div>
     
 </div>
@@ -4206,7 +4223,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Pandora — AI Native Social Listening Agent · quant → qual</span>
-        <span class="pg">07 / 24</span>
+        <span class="pg">14 / 31</span>
     </div>
 </div>
 
@@ -4278,7 +4295,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Pandora — Auto Insight Report</span>
-        <span class="pg">08 / 24</span>
+        <span class="pg">15 / 31</span>
     </div>
 </div>
 
@@ -4356,7 +4373,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Moana — Culture Listening × Fine-tuned Generation · MVP LIVE</span>
-        <span class="pg">09 / 24</span>
+        <span class="pg">16 / 31</span>
     </div>
 </div>
 
@@ -4421,7 +4438,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening Live Demo</span>
-        <span class="pg">10 / 24</span>
+        <span class="pg">17 / 31</span>
     </div>
 </div>
 
@@ -4475,7 +4492,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Culture Listening — from "what they said" to "how they live" · 7-layer CL report</span>
-        <span class="pg">11 / 24</span>
+        <span class="pg">18 / 31</span>
     </div>
 </div>
 
@@ -4514,7 +4531,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Pandora Trends — /api/public/trends type:top · days 7 · top 40 · snapshot 2026-10-15</span>
-        <span class="pg">12 / 24</span>
+        <span class="pg">19 / 31</span>
     </div>
 </div>
 
@@ -4558,7 +4575,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Live example — 好肖嗎 · "開會開到一半腦袋突然響起洗腦歌" · Pandora → Moana → Banana</span>
-        <span class="pg">13 / 24</span>
+        <span class="pg">20 / 31</span>
     </div>
 </div>
 
@@ -4599,7 +4616,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Flywheel proof — four trends · four shorts · four styles · one day · youtube.com/@好肖嗎</span>
-        <span class="pg">14 / 24</span>
+        <span class="pg">21 / 31</span>
     </div>
 </div>
 
@@ -4649,7 +4666,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Results — one on-prem box · 9 days · 22,641 views · 82.4 watch-hours · youtube.com/@好肖嗎</span>
-        <span class="pg">15 / 24</span>
+        <span class="pg">22 / 31</span>
     </div>
 </div>
 
@@ -4701,7 +4718,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Content flywheel — Trends → filter → evidence → Moana → Banana → measure → repeat</span>
-        <span class="pg">16 / 24</span>
+        <span class="pg">23 / 31</span>
     </div>
 </div>
 
@@ -4780,7 +4797,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Banana — Visual Design · MVP LIVE</span>
-        <span class="pg">17 / 24</span>
+        <span class="pg">24 / 31</span>
     </div>
 </div>
 
@@ -4850,7 +4867,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Banana — Motion Lab · Video Generation Live</span>
-        <span class="pg">18 / 24</span>
+        <span class="pg">25 / 31</span>
     </div>
 </div>
 
@@ -4928,7 +4945,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Stacey — Orchestrator · BUILDING</span>
-        <span class="pg">19 / 24</span>
+        <span class="pg">26 / 31</span>
     </div>
 </div>
 
@@ -4978,7 +4995,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>On-Prem AIOS — Why on-prem · Cloud blocks, local controls, hybrid wins</span>
-        <span class="pg">20 / 24</span>
+        <span class="pg">27 / 31</span>
     </div>
 </div>
 
@@ -5029,7 +5046,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>BananaRTX — Banana × Turncloud VIN on NVIDIA DGX Spark · 44s product film (1.6x)</span>
-        <span class="pg">21 / 24</span>
+        <span class="pg">28 / 31</span>
     </div>
 </div>
 
@@ -5062,7 +5079,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>BananaRTX control proof II — dance + lip-sync · WAN 2.2 Animate on-prem</span>
-        <span class="pg">22 / 24</span>
+        <span class="pg">29 / 31</span>
     </div>
 </div>
 
@@ -5128,7 +5145,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>On-Prem AIOS — BananaRTX / Pandora on DGX Spark · 4-week rollout</span>
-        <span class="pg">23 / 24</span>
+        <span class="pg">30 / 31</span>
     </div>
 </div>
 
@@ -5161,7 +5178,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Compute Sovereignty — TurnCloud × The Pocket Company × NVIDIA</span>
-        <span class="pg">24 / 24</span>
+        <span class="pg">31 / 31</span>
     </div>
 </div>
 
