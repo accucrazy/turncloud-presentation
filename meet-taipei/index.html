@@ -3842,6 +3842,55 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .mt-sbs-cap { display: grid; grid-template-columns: 1fr 1fr; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 1.9cqh; font-weight: 800; color: var(--dim); margin-top: 1cqh; letter-spacing: 1px; }
 .content-fw-big .fw-t { font-size: 2.7cqh; padding: 1.3cqh 0; grid-template-columns: 19cqh 1fr; }
 .content-fw-big .op-label { font-size: 1.9cqh; }
+/* ─── Culture Listening pipeline: 15-second animation (clp-) ─── */
+.clp { flex: 1; min-height: 0; display: grid; grid-template-columns: 31fr 5fr 24fr 5fr 35fr; align-items: center; gap: 0; margin-top: 1.5cqh; }
+.clp-in { display: flex; flex-direction: column; gap: 1.3cqh; }
+.clp-chip { background: var(--card); border: 1px solid var(--border-soft); border-left: 0.8cqh solid var(--cyan); border-radius: 14px; box-shadow: var(--shadow-sm); padding: 1.2cqh 1.8cqh; opacity: 0; transform: translateX(-4cqh); }
+.clp-chip b { display: block; font-size: 2.9cqh; font-weight: 900; color: var(--text); line-height: 1.2; }
+.clp-chip span { display: block; font-size: 2.05cqh; color: var(--dim); line-height: 1.35; margin-top: 0.2cqh; }
+.clp-chip:nth-child(2) { border-left-color: var(--orange); } .clp-chip:nth-child(3) { border-left-color: var(--pink); }
+.clp-chip:nth-child(4) { border-left-color: var(--violet); } .clp-chip:nth-child(5) { border-left-color: var(--green); }
+.clp-arrow { text-align: center; font-size: 5cqh; font-weight: 900; color: var(--cyan); opacity: 0; letter-spacing: -0.6cqh; }
+.clp-core { background: linear-gradient(160deg, #0f172a, #164e63); color: #fff; border-radius: 22px; padding: 2.4cqh 2.2cqh; box-shadow: var(--shadow-lg); opacity: 0; transform: scale(0.85); text-align: center; }
+.clp-core small { display: block; font-family: 'JetBrains Mono', monospace; font-size: 1.6cqh; letter-spacing: 2px; color: #67e8f9; }
+.clp-core h3 { color: #fff; font-size: 3.4cqh; font-weight: 900; margin: 0.6cqh 0 1.4cqh; line-height: 1.2; }
+.clp-step { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1cqh 1.2cqh; font-size: 2.3cqh; font-weight: 700; margin-top: 0.9cqh; opacity: 0; transform: translateY(1.5cqh); }
+.clp-step i { font-style: normal; color: #fbbf24; font-weight: 900; }
+.clp-out { display: flex; flex-direction: column; gap: 1.6cqh; }
+.clp-card { background: var(--card); border: 1px solid var(--border-soft); border-radius: 18px; box-shadow: var(--shadow-md); padding: 1.8cqh 2.2cqh; opacity: 0; transform: translateY(3cqh); }
+.clp-card .op-label { font-size: 1.7cqh; }
+.clp-insight { border-top: 0.7cqh solid var(--orange); }
+.clp-insight b { display: block; font-size: 3.5cqh; font-weight: 900; color: var(--text); line-height: 1.25; }
+.clp-insight b i { font-style: normal; color: #d97706; }
+.clp-insight span { display: block; font-size: 2.2cqh; color: var(--dim); margin-top: 0.5cqh; line-height: 1.4; }
+.clp-post { border-top: 0.7cqh solid var(--green); }
+.clp-post p { font-size: 2.35cqh; line-height: 1.5; color: var(--text-soft); margin: 0.5cqh 0 0; opacity: 0; }
+.clp-post p strong { color: var(--text); font-weight: 900; }
+.clp-bar { height: 0.7cqh; border-radius: 99px; background: var(--border); overflow: hidden; margin-top: 1.4cqh; position: relative; }
+.clp-bar i { position: absolute; inset: 0; background: linear-gradient(90deg, var(--cyan), var(--green)); transform-origin: left; transform: scaleX(0); }
+.clp-foot { display: flex; align-items: center; justify-content: space-between; gap: 2cqh; margin-top: 1cqh; }
+.clp-tag { font-size: 2.6cqh; font-weight: 900; color: var(--text); opacity: 0; }
+.clp-tag span { color: #047857; }
+.clp-replay { font-family: 'JetBrains Mono', monospace; font-size: 1.7cqh; font-weight: 800; color: var(--dim); background: var(--card); border: 1px solid var(--border); border-radius: 99px; padding: 0.6cqh 1.6cqh; cursor: pointer; }
+@keyframes clp-in { to { opacity: 1; transform: none; } }
+@keyframes clp-fade { to { opacity: 1; } }
+@keyframes clp-bar { to { transform: scaleX(1); } }
+@keyframes clp-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(6,182,212,0.5); } 50% { box-shadow: 0 0 0 2.2cqh rgba(6,182,212,0); } }
+.slide.active .clp-chip { animation: clp-in 0.5s ease-out forwards; }
+.slide.active .clp-chip:nth-child(1) { animation-delay: 0.3s; } .slide.active .clp-chip:nth-child(2) { animation-delay: 0.8s; }
+.slide.active .clp-chip:nth-child(3) { animation-delay: 1.3s; } .slide.active .clp-chip:nth-child(4) { animation-delay: 1.8s; }
+.slide.active .clp-chip:nth-child(5) { animation-delay: 2.3s; }
+.slide.active .clp-a1 { animation: clp-fade 0.5s ease-out 3.1s forwards; }
+.slide.active .clp-core { animation: clp-in 0.6s cubic-bezier(0.34,1.56,0.64,1) 3.5s forwards, clp-pulse 1.6s ease-in-out 4.1s 3; }
+.slide.active .clp-step { animation: clp-in 0.5s ease-out forwards; }
+.slide.active .clp-s1 { animation-delay: 4.3s; } .slide.active .clp-s2 { animation-delay: 5.4s; } .slide.active .clp-s3 { animation-delay: 6.5s; }
+.slide.active .clp-a2 { animation: clp-fade 0.5s ease-out 7.6s forwards; }
+.slide.active .clp-insight { animation: clp-in 0.6s ease-out 8.1s forwards; }
+.slide.active .clp-post { animation: clp-in 0.6s ease-out 10.4s forwards; }
+.slide.active .clp-post p:nth-of-type(1) { animation: clp-fade 0.5s ease-out 11s forwards; }
+.slide.active .clp-post p:nth-of-type(2) { animation: clp-fade 0.5s ease-out 12s forwards; }
+.slide.active .clp-tag { animation: clp-fade 0.6s ease-out 13.3s forwards; }
+.slide.active .clp-bar i { animation: clp-bar 15s linear forwards; }
 
 </style>
 </head>
@@ -3931,7 +3980,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Speaker — Ian Wu · Founder &amp; CEO, Accucrazy / The Pocket Company</span>
-        <span class="pg">02 / 25</span>
+        <span class="pg">02 / 26</span>
     </div>
 </div>
 
@@ -3964,7 +4013,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>About Accucrazy — 2017 → 2026 · A TurnCloud Company (TWSE:6870)</span>
-        <span class="pg">03 / 25</span>
+        <span class="pg">03 / 26</span>
     </div>
 </div>
 
@@ -3977,7 +4026,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     <img class="fullbleed-media" src="https://accucrazy.github.io/turncloud-presentation/img/accucrazy-nvidia.png" alt="Accucrazy 登上 NVIDIA 官方生態系夥伴牆 — NVIDIA Inception Startup · Computex 2026">
     <div class="meta fullbleed-meta">
         <span>Accucrazy × NVIDIA Inception · 輝達生態系夥伴牆</span>
-        <span class="pg">04 / 25</span>
+        <span class="pg">04 / 26</span>
     </div>
 </div>
 
@@ -3989,7 +4038,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     
     <div class="meta fullbleed-meta">
         <span>The Pocket Company Framework · powered by TSpace · Turncloud VIN</span>
-        <span class="pg">05 / 25</span>
+        <span class="pg">05 / 26</span>
     </div>
     
 </div>
@@ -4056,7 +4105,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Pandora — AI Native Social Listening Agent · quant → qual</span>
-        <span class="pg">06 / 25</span>
+        <span class="pg">06 / 26</span>
     </div>
 </div>
 
@@ -4127,7 +4176,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Pandora — Auto Insight Report</span>
-        <span class="pg">07 / 25</span>
+        <span class="pg">07 / 26</span>
     </div>
 </div>
 
@@ -4204,7 +4253,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Moana — Culture Listening × Fine-tuned Generation · MVP LIVE</span>
-        <span class="pg">08 / 25</span>
+        <span class="pg">08 / 26</span>
     </div>
 </div>
 
@@ -4268,7 +4317,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Moana — Culture Listening Live Demo</span>
-        <span class="pg">09 / 25</span>
+        <span class="pg">09 / 26</span>
     </div>
 </div>
 
@@ -4321,13 +4370,59 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Culture Listening — from "what they said" to "how they live" · 7-layer CL report</span>
-        <span class="pg">10 / 25</span>
+        <span class="pg">10 / 26</span>
     </div>
 </div>
 
 
 
 <!-- ══════════ trend_daily (op) ══════════ -->
+<div class="slide op" data-slide="cl_pipeline">
+    <div class="bg-image" style="background-image: url('https://accucrazy.github.io/turncloud-presentation/img/anim_backdrop.jpg');"></div>
+    <div class="op-stage">
+        <div class="op-head">
+            <div class="tag tag-cyan">CULTURE LISTENING PIPELINE · 示範組:麥當勞 · 15 秒</div>
+            <h2 class="op-title mt-bigtitle">AI 看懂了:<span class="c">大家是跨店拼著吃</span></h2>
+        </div>
+        <div class="clp">
+            <div class="clp-in">
+                <div class="clp-chip"><b>產品</b><span>速食 = 快速無痛解決一餐</span></div>
+                <div class="clp-chip"><b>品牌</b><span>套餐逼近 200 元,開始被嫌貴</span></div>
+                <div class="clp-chip"><b>競品</b><span>肯德基聯名動漫、漢堡王拚肉感</span></div>
+                <div class="clp-chip"><b>KOL</b><span>IG 開箱新品,Threads 碎念門市</span></div>
+                <div class="clp-chip"><b>在地文化</b><span>「加薯答禮」、拿麥當勞拜拜</span></div>
+            </div>
+            <div class="clp-arrow clp-a1">›››</div>
+            <div class="clp-core">
+                <small>PANDORA</small>
+                <h3>Culture<br>Listening</h3>
+                <div class="clp-step clp-s1">讀 <i>840 篇</i>真實貼文</div>
+                <div class="clp-step clp-s2">每一類找出<i>洞察</i></div>
+                <div class="clp-step clp-s3"><i>跨品牌</i>交叉比對</div>
+            </div>
+            <div class="clp-arrow clp-a2">›››</div>
+            <div class="clp-out">
+                <div class="clp-card clp-insight">
+                    <div class="op-label">洞察 · 只看單一品牌看不到</div>
+                    <b>大家在玩<i>「速食拼圖」</i></b>
+                    <span>漢堡吃漢堡王、蛋塔吃肯德基,薯條只認麥當勞</span>
+                </div>
+                <div class="clp-card clp-post">
+                    <div class="op-label">MOANA 寫成貼文 · 示範稿</div>
+                    <p>套餐快 200 了,我下班都自己拼:漢堡一家、蛋塔一家,<strong>但薯條一定回麥當勞。</strong></p>
+                    <p><strong>你心中最頂的速食拼圖長怎樣?</strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="clp-bar"><i></i></div>
+        <div class="clp-foot">
+            <div class="clp-tag">AI 讀懂的不是一個品牌,<span>是消費者怎麼把幾家店拼在一起</span></div>
+            <div class="clp-replay" onclick="var s=this.closest('.slide');s.classList.remove('active');void s.offsetWidth;s.classList.add('active');event.stopPropagation();">↻ 重播</div>
+        </div>
+    </div>
+    <div class="meta op-meta"><span>Demo data — Pandora Culture Listening report「麥當勞品牌與台灣速食產業競品及文化洞察分析」2026-10-15, via MCP · 5 sections, 840 cited posts</span><span class="pg">11 / 26</span></div>
+</div>
+
 <div class="slide op" data-slide="trend_daily">
     <div class="bg-image" style="background-image: url('https://accucrazy.github.io/turncloud-presentation/img/anim_backdrop.jpg');"></div>
     <div class="op-stage">
@@ -4354,7 +4449,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             </div>
         </div>
     </div>
-    <div class="meta op-meta"><span>Pandora Trends — /api/public/trends type:top · 2026-11-10 → 11-12</span><span class="pg">11 / 25</span></div>
+    <div class="meta op-meta"><span>Pandora Trends — /api/public/trends type:top · 2026-11-10 → 11-12</span><span class="pg">12 / 26</span></div>
 </div>
 
 <div class="slide op op-reveal" data-slide="case_taitie">
@@ -4378,7 +4473,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
             </div>
         </div>
     </div>
-    <div class="meta op-meta"><span>Live example — 好肖嗎「霸位倚老賣老,補票送警察管束?」· 16-second cut of the 30 s short</span><span class="pg">12 / 25</span></div>
+    <div class="meta op-meta"><span>Live example — 好肖嗎「霸位倚老賣老,補票送警察管束?」· 16-second cut of the 30 s short</span><span class="pg">13 / 26</span></div>
 </div>
 
 <div class="slide op" data-slide="day">
@@ -4406,7 +4501,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 </div>
 </div>
 </div>
-<div class="meta op-meta"><span>One box, 24 hours — timers and services, zero hands on</span><span class="pg">13 / 25</span></div>
+<div class="meta op-meta"><span>One box, 24 hours — timers and services, zero hands on</span><span class="pg">14 / 26</span></div>
 </div>
 
 <div class="slide op" data-slide="results">
@@ -4444,7 +4539,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 </div>
 </div>
 </div>
-<div class="meta op-meta"><span>Views: platform APIs, 2026-11-18 · CPM NT$300 assumed (high end) · Seedance 2.5 ≈ $0.23/s at 720p (estimate) · power: 60 W measured under load × 912 h = 55 kWh</span><span class="pg">14 / 25</span></div>
+<div class="meta op-meta"><span>Views: platform APIs, 2026-11-18 · CPM NT$300 assumed (high end) · Seedance 2.5 ≈ $0.23/s at 720p (estimate) · power: 60 W measured under load × 912 h = 55 kWh</span><span class="pg">15 / 26</span></div>
 </div>
 
 <div class="slide op" data-slide="longtail">
@@ -4472,7 +4567,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 </div>
 </div>
 </div>
-<div class="meta op-meta"><span>The long tail — top 15% of videos take 68% of views</span><span class="pg">15 / 25</span></div>
+<div class="meta op-meta"><span>The long tail — top 15% of videos take 68% of views</span><span class="pg">16 / 26</span></div>
 </div>
 
 <div class="slide op" data-slide="content_flywheel">
@@ -4521,7 +4616,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Content flywheel — Trends → filter → evidence → script → render → post to 3 platforms → measure → repeat, unattended</span>
-        <span class="pg">16 / 25</span>
+        <span class="pg">17 / 26</span>
     </div>
 </div>
 
@@ -4593,7 +4688,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Banana — Visual Design · MVP LIVE</span>
-        <span class="pg">17 / 25</span>
+        <span class="pg">18 / 26</span>
     </div>
 </div>
 
@@ -4662,7 +4757,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta demo-meta">
         <span>Banana — Motion Lab · Video Generation Live</span>
-        <span class="pg">18 / 25</span>
+        <span class="pg">19 / 26</span>
     </div>
 </div>
 
@@ -4739,7 +4834,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 
     <div class="meta agent-meta">
         <span>Stacey — Orchestrator · BUILDING</span>
-        <span class="pg">19 / 25</span>
+        <span class="pg">20 / 26</span>
     </div>
 </div>
 
@@ -4788,7 +4883,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>On-Prem AIOS — Why on-prem · Cloud blocks, local controls, hybrid wins</span>
-        <span class="pg">20 / 25</span>
+        <span class="pg">21 / 26</span>
     </div>
 </div>
 
@@ -4838,7 +4933,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>BananaRTX — Banana × Turncloud VIN on NVIDIA DGX Spark · 44s product film (1.6x)</span>
-        <span class="pg">21 / 25</span>
+        <span class="pg">22 / 26</span>
     </div>
 </div>
 
@@ -4870,7 +4965,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>BananaRTX control proof II — dance + lip-sync · WAN 2.2 Animate on-prem</span>
-        <span class="pg">22 / 25</span>
+        <span class="pg">23 / 26</span>
     </div>
 </div>
 
@@ -4895,7 +4990,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 </div>
 </div>
 </div>
-<div class="meta op-meta"><span>Price: open.higgsfield.ai list rate, Genjutsu 720p $0.3446/s, checked 2026-11-18 · on-prem: MiniMax H3 + swap LoRA + FLUX edit · joints 15.8° vs 10.5°</span><span class="pg">23 / 25</span></div>
+<div class="meta op-meta"><span>Price: open.higgsfield.ai list rate, Genjutsu 720p $0.3446/s, checked 2026-11-18 · on-prem: MiniMax H3 + swap LoRA + FLUX edit · joints 15.8° vs 10.5°</span><span class="pg">24 / 26</span></div>
 </div>
 
 <div class="slide op" data-slide="onprem_offer">
@@ -4955,7 +5050,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>On-Prem AIOS — BananaRTX / Pandora on DGX Spark · 4-week rollout</span>
-        <span class="pg">24 / 25</span>
+        <span class="pg">25 / 26</span>
     </div>
 </div>
 
@@ -4987,7 +5082,7 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     </div>
     <div class="meta op-meta">
         <span>Compute Sovereignty — TurnCloud × The Pocket Company × NVIDIA</span>
-        <span class="pg">25 / 25</span>
+        <span class="pg">26 / 26</span>
     </div>
 </div>
 

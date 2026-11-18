@@ -1,9 +1,9 @@
 # MEET TAIPEI 2026 — The Pocket Company · 內容飛輪六週之後
 
-根目錄正式 deck（介紹 The Pocket Company 的 22 頁）原封不動，只把「內容飛輪」那段（原第 10–14 頁）換成六週後的實證版，共 25 頁。線上：https://accucrazy.github.io/turncloud-presentation/meet-taipei/
+根目錄正式 deck（介紹 The Pocket Company 的 22 頁）原封不動，只把「內容飛輪」那段（原第 10–14 頁）換成六週後的實證版，共 26 頁。線上：https://accucrazy.github.io/turncloud-presentation/meet-taipei/
 
 - `index.html` ─ 正式 deck（產出物，請勿手改；版型沿用根目錄正式 deck 的 CSS/JS）
-- `src/deck-body.html` ─ 25 頁的內容，改字改這裡；`{B}` 會換成根目錄 `img/` 的 GitHub Pages 絕對網址；頁碼由 build 自動重排
+- `src/deck-body.html` ─ 26 頁的內容，改字改這裡；`{B}` 會換成根目錄 `img/` 的 GitHub Pages 絕對網址；頁碼由 build 自動重排
 - `src/mt.css` ─ 這份 deck 新增的版型（`mt-` 前綴）
 - `src/build.py` ─ `python src/build.py` 重建 `index.html`（讀根目錄 `index.html` 的 `<style>` 與 `<script>`）
 - `img/` ─ 新素材：案例短片 `case-taitie.mp4`（台鐵霸位伯，3.2 MB）、地端 Genjutsu 並排影片 `genjutsu-sbs.mp4`（8 MB）與封面圖
