@@ -3842,54 +3842,83 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
 .mt-sbs-cap { display: grid; grid-template-columns: 1fr 1fr; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 1.9cqh; font-weight: 800; color: var(--dim); margin-top: 1cqh; letter-spacing: 1px; }
 .content-fw-big .fw-t { font-size: 2.7cqh; padding: 1.3cqh 0; grid-template-columns: 19cqh 1fr; }
 .content-fw-big .op-label { font-size: 1.9cqh; }
-/* ─── Culture Listening pipeline: 15-second animation (clp-) ─── */
-.clp { flex: 1; min-height: 0; display: grid; grid-template-columns: 31fr 5fr 24fr 5fr 35fr; align-items: center; gap: 0; margin-top: 1.5cqh; }
-.clp-in { display: flex; flex-direction: column; gap: 1.3cqh; }
-.clp-chip { background: var(--card); border: 1px solid var(--border-soft); border-left: 0.8cqh solid var(--cyan); border-radius: 14px; box-shadow: var(--shadow-sm); padding: 1.2cqh 1.8cqh; opacity: 0; transform: translateX(-4cqh); }
-.clp-chip b { display: block; font-size: 2.9cqh; font-weight: 900; color: var(--text); line-height: 1.2; }
-.clp-chip span { display: block; font-size: 2.05cqh; color: var(--dim); line-height: 1.35; margin-top: 0.2cqh; }
-.clp-chip:nth-child(2) { border-left-color: var(--orange); } .clp-chip:nth-child(3) { border-left-color: var(--pink); }
-.clp-chip:nth-child(4) { border-left-color: var(--violet); } .clp-chip:nth-child(5) { border-left-color: var(--green); }
-.clp-arrow { text-align: center; font-size: 5cqh; font-weight: 900; color: var(--cyan); opacity: 0; letter-spacing: -0.6cqh; }
-.clp-core { background: linear-gradient(160deg, #0f172a, #164e63); color: #fff; border-radius: 22px; padding: 2.4cqh 2.2cqh; box-shadow: var(--shadow-lg); opacity: 0; transform: scale(0.85); text-align: center; }
-.clp-core small { display: block; font-family: 'JetBrains Mono', monospace; font-size: 1.6cqh; letter-spacing: 2px; color: #67e8f9; }
-.clp-core h3 { color: #fff; font-size: 3.4cqh; font-weight: 900; margin: 0.6cqh 0 1.4cqh; line-height: 1.2; }
-.clp-step { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 1cqh 1.2cqh; font-size: 2.3cqh; font-weight: 700; margin-top: 0.9cqh; opacity: 0; transform: translateY(1.5cqh); }
-.clp-step i { font-style: normal; color: #fbbf24; font-weight: 900; }
-.clp-out { display: flex; flex-direction: column; gap: 1.6cqh; }
-.clp-card { background: var(--card); border: 1px solid var(--border-soft); border-radius: 18px; box-shadow: var(--shadow-md); padding: 1.8cqh 2.2cqh; opacity: 0; transform: translateY(3cqh); }
-.clp-card .op-label { font-size: 1.7cqh; }
-.clp-insight { border-top: 0.7cqh solid var(--orange); }
-.clp-insight b { display: block; font-size: 3.5cqh; font-weight: 900; color: var(--text); line-height: 1.25; }
-.clp-insight b i { font-style: normal; color: #d97706; }
-.clp-insight span { display: block; font-size: 2.2cqh; color: var(--dim); margin-top: 0.5cqh; line-height: 1.4; }
-.clp-post { border-top: 0.7cqh solid var(--green); }
-.clp-post p { font-size: 2.35cqh; line-height: 1.5; color: var(--text-soft); margin: 0.5cqh 0 0; opacity: 0; }
-.clp-post p strong { color: var(--text); font-weight: 900; }
+/* ─── Culture Listening: 15-second animation, four scenes (cl2-) ─── */
+.cl2-steps { display: flex; align-items: center; gap: 1.2cqh; margin-top: 1.4cqh; }
+.cl2-steps u { text-decoration: none; font-size: 3cqh; font-weight: 900; color: var(--border); }
+.cl2-st { display: flex; align-items: center; gap: 0.9cqh; font-size: 2.5cqh; font-weight: 900; color: var(--dim); background: var(--card); border: 2px solid var(--border-soft); border-radius: 99px; padding: 0.7cqh 2cqh 0.7cqh 0.8cqh; opacity: 0.45; }
+.cl2-st i { font-style: normal; font-family: 'JetBrains Mono', monospace; width: 3.4cqh; height: 3.4cqh; border-radius: 50%; display: grid; place-items: center; background: var(--border); color: #fff; font-size: 2cqh; }
+.cl2 { flex: 1; min-height: 0; position: relative; margin-top: 1.6cqh; }
+.cl2-wall { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 1.3cqh; overflow: hidden; }
+.cl2-p { background: var(--card); border: 1px solid var(--border-soft); border-radius: 14px; box-shadow: var(--shadow-sm); padding: 1.3cqh 1.7cqh; opacity: 0; transform: translateY(2.5cqh) scale(0.94); min-height: 0; overflow: hidden; }
+.cl2-ph { display: flex; align-items: center; gap: 1cqh; font-size: 1.6cqh; color: var(--dim); font-family: 'JetBrains Mono', monospace; font-weight: 700; }
+.cl2-ph b { font-family: inherit; font-size: 1.6cqh; font-weight: 900; color: #fff; border-radius: 6px; padding: 0.15cqh 0.9cqh; font-family: 'Noto Sans TC', sans-serif; }
+.cl2-ph em { font-style: normal; margin-left: auto; color: #e11d48; }
+.t-c { background: var(--cyan); } .t-o { background: var(--orange); } .t-p { background: var(--pink); } .t-v { background: var(--violet); } .t-g { background: var(--green); }
+.cl2-p p { font-size: 2.3cqh; line-height: 1.42; color: var(--text-soft); margin: 0.7cqh 0 0; font-weight: 500; }
+.cl2-p mark { color: var(--text); font-weight: 900; background: linear-gradient(#fde047, #fde047) no-repeat 0 88% / 0% 62%; padding: 0 0.2cqh; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.cl2-scan { position: absolute; top: 0; bottom: 0; left: 0; width: 22%; background: linear-gradient(90deg, transparent, rgba(6,182,212,0.28), transparent); transform: translateX(-110%); pointer-events: none; }
+.cl2-layer { position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+.cl2-b { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4cqh; align-items: center; padding: 0 2cqh; }
+.cl2-u { background: var(--card); border: 1px solid var(--border-soft); border-top: 0.8cqh solid var(--cyan); border-radius: 20px; box-shadow: var(--shadow-lg); padding: 2.6cqh 2.4cqh; text-align: center; opacity: 0; transform: translateY(3cqh); }
+.cl2-u.u2 { border-top-color: var(--orange); } .cl2-u.u3 { border-top-color: var(--pink); }
+.cl2-u q { display: block; quotes: '「' '」'; font-size: 2.4cqh; color: var(--dim); line-height: 1.5; font-weight: 700; }
+.cl2-u s { display: block; text-decoration: none; font-size: 3.4cqh; color: var(--cyan); font-weight: 900; margin: 0.8cqh 0; }
+.cl2-u b { display: block; font-size: 4.6cqh; font-weight: 900; color: var(--text); line-height: 1.2; }
+.cl2-u b i { font-style: normal; color: #d97706; }
+.cl2-c { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.6cqh; }
+.cl2-clabel { font-family: 'JetBrains Mono', 'Noto Sans TC', monospace; font-size: 2.4cqh; font-weight: 800; letter-spacing: 2px; color: var(--cyan); }
+.cl2-angle { font-size: 13cqh; font-weight: 900; line-height: 1.05; color: var(--text); transform: scale(0.6); opacity: 0; }
+.cl2-pieces { display: flex; gap: 1.6cqh; margin-top: 1.4cqh; }
+.cl2-pc { background: var(--card); border: 2px solid var(--border-soft); border-radius: 18px; box-shadow: var(--shadow-md); padding: 1.6cqh 3.6cqh; text-align: center; opacity: 0; transform: translateY(3cqh); }
+.cl2-pc b { display: block; font-size: 4.4cqh; font-weight: 900; color: var(--text); line-height: 1.2; }
+.cl2-pc span { display: block; font-size: 2.6cqh; font-weight: 700; color: var(--dim); }
+.cl2-pc.pc3 { border-color: #f59e0b; background: #fffbeb; } .cl2-pc.pc3 span { color: #b45309; font-weight: 900; }
+.cl2-d { display: grid; place-items: center; }
+.cl2-made { display: grid; grid-template-columns: auto 1fr; gap: 3cqh; align-items: center; background: var(--card); border: 1px solid var(--border-soft); border-radius: 24px; box-shadow: var(--shadow-lg); padding: 2.2cqh; width: 88%; height: 96%; transform: scale(0.9); }
+.cl2-made img { height: 100%; min-height: 0; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; display: block; max-height: 48cqh; }
+.cl2-mh { display: flex; flex-direction: column; gap: 0.3cqh; margin-bottom: 1.6cqh; }
+.cl2-mh b { font-size: 2.8cqh; font-weight: 900; color: var(--text); }
+.cl2-mh span { font-family: 'JetBrains Mono', 'Noto Sans TC', monospace; font-size: 2.2cqh; font-weight: 800; color: #047857; }
+.cl2-copy p { font-size: 4.3cqh; line-height: 1.5; color: var(--text-soft); margin: 0; opacity: 0; font-weight: 500; }
+.cl2-copy p strong { color: var(--text); font-weight: 900; }
+.cl2-copy p.l4 { margin-top: 1.2cqh; color: #b45309; } .cl2-copy p.l4 strong { color: #b45309; }
 .clp-bar { height: 0.7cqh; border-radius: 99px; background: var(--border); overflow: hidden; margin-top: 1.4cqh; position: relative; }
 .clp-bar i { position: absolute; inset: 0; background: linear-gradient(90deg, var(--cyan), var(--green)); transform-origin: left; transform: scaleX(0); }
 .clp-foot { display: flex; align-items: center; justify-content: space-between; gap: 2cqh; margin-top: 1cqh; }
-.clp-tag { font-size: 2.6cqh; font-weight: 900; color: var(--text); opacity: 0; }
+.clp-tag { font-size: 2.8cqh; font-weight: 900; color: var(--text); opacity: 0; }
 .clp-tag span { color: #047857; }
 .clp-replay { font-family: 'JetBrains Mono', monospace; font-size: 1.7cqh; font-weight: 800; color: var(--dim); background: var(--card); border: 1px solid var(--border); border-radius: 99px; padding: 0.6cqh 1.6cqh; cursor: pointer; }
 @keyframes clp-in { to { opacity: 1; transform: none; } }
 @keyframes clp-fade { to { opacity: 1; } }
+@keyframes clp-out { to { opacity: 0; } }
 @keyframes clp-bar { to { transform: scaleX(1); } }
-@keyframes clp-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(6,182,212,0.5); } 50% { box-shadow: 0 0 0 2.2cqh rgba(6,182,212,0); } }
-.slide.active .clp-chip { animation: clp-in 0.5s ease-out forwards; }
-.slide.active .clp-chip:nth-child(1) { animation-delay: 0.3s; } .slide.active .clp-chip:nth-child(2) { animation-delay: 0.8s; }
-.slide.active .clp-chip:nth-child(3) { animation-delay: 1.3s; } .slide.active .clp-chip:nth-child(4) { animation-delay: 1.8s; }
-.slide.active .clp-chip:nth-child(5) { animation-delay: 2.3s; }
-.slide.active .clp-a1 { animation: clp-fade 0.5s ease-out 3.1s forwards; }
-.slide.active .clp-core { animation: clp-in 0.6s cubic-bezier(0.34,1.56,0.64,1) 3.5s forwards, clp-pulse 1.6s ease-in-out 4.1s 3; }
-.slide.active .clp-step { animation: clp-in 0.5s ease-out forwards; }
-.slide.active .clp-s1 { animation-delay: 4.3s; } .slide.active .clp-s2 { animation-delay: 5.4s; } .slide.active .clp-s3 { animation-delay: 6.5s; }
-.slide.active .clp-a2 { animation: clp-fade 0.5s ease-out 7.6s forwards; }
-.slide.active .clp-insight { animation: clp-in 0.6s ease-out 8.1s forwards; }
-.slide.active .clp-post { animation: clp-in 0.6s ease-out 10.4s forwards; }
-.slide.active .clp-post p:nth-of-type(1) { animation: clp-fade 0.5s ease-out 11s forwards; }
-.slide.active .clp-post p:nth-of-type(2) { animation: clp-fade 0.5s ease-out 12s forwards; }
-.slide.active .clp-tag { animation: clp-fade 0.6s ease-out 13.3s forwards; }
+@keyframes cl2-step { to { opacity: 1; border-color: var(--cyan); color: var(--text); } }
+@keyframes cl2-stepi { to { background: var(--cyan); } }
+@keyframes cl2-mark { to { background-size: 100% 62%; } }
+@keyframes cl2-dimp { to { opacity: 0.38; } }
+@keyframes cl2-scan { to { transform: translateX(480%); } }
+@keyframes cl2-walldim { to { opacity: 0.13; filter: blur(3px); } }
+.slide.active .cl2-st { animation: cl2-step 0.4s ease-out forwards; } .slide.active .cl2-st i { animation: cl2-stepi 0.4s ease-out forwards; }
+.slide.active .st1, .slide.active .st1 i { animation-delay: 0.2s; } .slide.active .st2, .slide.active .st2 i { animation-delay: 2.6s; }
+.slide.active .st3, .slide.active .st3 i { animation-delay: 8.3s; } .slide.active .st4, .slide.active .st4 i { animation-delay: 11.1s; }
+.slide.active .cl2-p { animation: clp-in 0.4s cubic-bezier(0.34,1.4,0.64,1) calc(0.3s + var(--i) * 0.15s) forwards; }
+.slide.active .cl2-p:not(.key) { animation: clp-in 0.4s cubic-bezier(0.34,1.4,0.64,1) calc(0.3s + var(--i) * 0.15s) forwards, cl2-dimp 0.6s ease-out 3.3s forwards; }
+.slide.active .cl2-scan { animation: cl2-scan 2.2s ease-in-out 2.5s forwards; }
+.slide.active .cl2-p mark { animation: cl2-mark 0.5s ease-out calc(2.8s + var(--i) * 0.15s) forwards; }
+.slide.active .cl2-wall { animation: cl2-walldim 0.6s ease-out 5.1s forwards; }
+.slide.active .cl2-b { animation: clp-fade 0.3s linear 5.2s forwards, clp-out 0.4s ease-in 8s forwards; }
+.slide.active .cl2-u { animation: clp-in 0.5s ease-out forwards; }
+.slide.active .u1 { animation-delay: 5.4s; } .slide.active .u2 { animation-delay: 6.2s; } .slide.active .u3 { animation-delay: 7s; }
+.slide.active .cl2-c { animation: clp-fade 0.3s linear 8.3s forwards, clp-out 0.4s ease-in 10.8s forwards; }
+.slide.active .cl2-angle { animation: clp-in 0.6s cubic-bezier(0.34,1.56,0.64,1) 8.4s forwards; }
+.slide.active .cl2-pc { animation: clp-in 0.45s ease-out forwards; }
+.slide.active .pc1 { animation-delay: 9.1s; } .slide.active .pc2 { animation-delay: 9.5s; } .slide.active .pc3 { animation-delay: 9.9s; }
+.slide.active .cl2-d { animation: clp-fade 0.4s linear 11.1s forwards; }
+.slide.active .cl2-made { animation: clp-in 0.6s cubic-bezier(0.34,1.3,0.64,1) 11.1s forwards; }
+.slide.active .cl2-copy p { animation: clp-fade 0.45s ease-out forwards; }
+.slide.active .cl2-copy .l1 { animation-delay: 11.8s; } .slide.active .cl2-copy .l2 { animation-delay: 12.3s; }
+.slide.active .cl2-copy .l3 { animation-delay: 12.8s; } .slide.active .cl2-copy .l4 { animation-delay: 13.4s; }
+.slide.active .clp-tag { animation: clp-fade 0.6s ease-out 14s forwards; }
 .slide.active .clp-bar i { animation: clp-bar 15s linear forwards; }
 
 </style>
@@ -4381,46 +4410,65 @@ h3 { font-size: 3cqh; font-weight: 700; color: var(--text); }
     <div class="bg-image" style="background-image: url('https://accucrazy.github.io/turncloud-presentation/img/anim_backdrop.jpg');"></div>
     <div class="op-stage">
         <div class="op-head">
-            <div class="tag tag-cyan">CULTURE LISTENING PIPELINE · 示範組:麥當勞 · 15 秒</div>
-            <h2 class="op-title mt-bigtitle">AI 看懂了:<span class="c">大家是跨店拼著吃</span></h2>
+            <div class="tag tag-cyan">CULTURE LISTENING · 示範組:麥當勞 · 15 秒</div>
+            <h2 class="op-title mt-bigtitle">AI 讀完 417 篇貼文,<span class="c">自己想到切角</span></h2>
         </div>
-        <div class="clp">
-            <div class="clp-in">
-                <div class="clp-chip"><b>產品</b><span>速食 = 快速無痛解決一餐</span></div>
-                <div class="clp-chip"><b>品牌</b><span>套餐逼近 200 元,開始被嫌貴</span></div>
-                <div class="clp-chip"><b>競品</b><span>肯德基聯名動漫、漢堡王拚肉感</span></div>
-                <div class="clp-chip"><b>KOL</b><span>IG 開箱新品,Threads 碎念門市</span></div>
-                <div class="clp-chip"><b>在地文化</b><span>「加薯答禮」、拿麥當勞拜拜</span></div>
+        <div class="cl2-steps">
+            <div class="cl2-st st1"><i>1</i>聽:417 篇真實貼文</div><u>›</u>
+            <div class="cl2-st st2"><i>2</i>讀懂文化</div><u>›</u>
+            <div class="cl2-st st3"><i>3</i>想到切角</div><u>›</u>
+            <div class="cl2-st st4"><i>4</i>做成內容</div>
+        </div>
+        <div class="cl2">
+            <div class="cl2-wall">
+                <div class="cl2-p key" style="--i:0"><div class="cl2-ph"><b class="t-g">在地文化</b><span>Threads</span><em>♥ 1.5 萬</em></div><p>店員問我薯條要不要加大,我說好!店員很大聲說謝謝。我知道那是<mark>加薯答禮</mark></p></div>
+                <div class="cl2-p key" style="--i:1"><div class="cl2-ph"><b class="t-p">競品</b><span>Instagram</span><em>♥ 1,217</em></div><p>今天吃漢堡王!外送套餐好划算,<mark>但我還是麥當勞薯條派</mark></p></div>
+                <div class="cl2-p" style="--i:2"><div class="cl2-ph"><b class="t-o">品牌</b><span>Instagram</span><em>♥ 2.1 萬</em></div><p>CHIIKAWA × 麥當勞聯名即將登場,萌度直接爆表</p></div>
+                <div class="cl2-p key" style="--i:3"><div class="cl2-ph"><b class="t-c">產品</b><span>Threads</span><em>♥ 1.8 萬</em></div><p><mark>去麥當勞沒有買到薯條</mark>簡直要了我的命</p></div>
+                <div class="cl2-p key" style="--i:4"><div class="cl2-ph"><b class="t-p">競品</b><span>Threads</span></div><p>想吃<mark>麥當勞薯條、肯德基蛋塔、漢堡王漢堡</mark>、摩斯紅茶</p></div>
+                <div class="cl2-p" style="--i:5"><div class="cl2-ph"><b class="t-v">KOL</b><span>Instagram</span><em>♥ 171</em></div><p>減脂期可以吃的速食清單:頂呱呱、漢堡王、麥當勞、肯德基、摩斯…</p></div>
+                <div class="cl2-p key" style="--i:6"><div class="cl2-ph"><b class="t-o">品牌</b><span>Threads</span><em>♥ 2,100</em></div><p>可以理解為什麼麥當勞這麼多人了,因為<mark>隨便吃都比麥當勞貴</mark></p></div>
+                <div class="cl2-p" style="--i:7"><div class="cl2-ph"><b class="t-p">競品</b><span>PTT</span><em>♥ 26</em></div><p>麥當勞 肯德基 摩斯 漢堡王 請排名</p></div>
+                <div class="cl2-p key" style="--i:8"><div class="cl2-ph"><b class="t-p">競品</b><span>Threads</span></div><p>我現在<mark>買漢堡主要去漢堡王</mark>,買炸雞去頂呱呱,肯德基<mark>會買蛋塔</mark></p></div>
+                <div class="cl2-p" style="--i:9"><div class="cl2-ph"><b class="t-v">KOL</b><span>Instagram</span><em>♥ 286</em></div><p>麥當勞 App 默默藏神券!大薯買一送一,薯條控先衝</p></div>
+                <div class="cl2-p" style="--i:10"><div class="cl2-ph"><b class="t-c">產品</b><span>Threads</span><em>♥ 3,700</em></div><p>看棒球多了一個外帶選擇,真的已吃膩麥當勞摩斯跟披薩</p></div>
+                <div class="cl2-p" style="--i:11"><div class="cl2-ph"><b class="t-g">在地文化</b><span>Threads</span><em>♥ 7</em></div><p>為什麼同樣是速食,麥當勞、肯德基備餐很快,摩斯這麼慢?</p></div>
+                <div class="cl2-scan"></div>
             </div>
-            <div class="clp-arrow clp-a1">›››</div>
-            <div class="clp-core">
-                <small>PANDORA</small>
-                <h3>Culture<br>Listening</h3>
-                <div class="clp-step clp-s1">讀 <i>840 篇</i>真實貼文</div>
-                <div class="clp-step clp-s2">每一類找出<i>洞察</i></div>
-                <div class="clp-step clp-s3"><i>跨品牌</i>交叉比對</div>
+            <div class="cl2-layer cl2-b">
+                <div class="cl2-u u1"><q>加薯答禮</q><q>沒買到薯條要了我的命</q><s>↓</s><b>薯條是<i>信仰</i></b></div>
+                <div class="cl2-u u2"><q>隨便吃都比麥當勞貴</q><s>↓</s><b>大家對<i>價格</i>很有感</b></div>
+                <div class="cl2-u u3"><q>買漢堡主要去漢堡王</q><q>肯德基會買蛋塔</q><s>↓</s><b>一餐<i>拼好幾家</i></b></div>
             </div>
-            <div class="clp-arrow clp-a2">›››</div>
-            <div class="clp-out">
-                <div class="clp-card clp-insight">
-                    <div class="op-label">洞察 · 只看單一品牌看不到</div>
-                    <b>大家在玩<i>「速食拼圖」</i></b>
-                    <span>漢堡吃漢堡王、蛋塔吃肯德基,薯條只認麥當勞</span>
+            <div class="cl2-layer cl2-c">
+                <div class="cl2-clabel">AI 想到的切角</div>
+                <div class="cl2-angle">「速食拼圖」</div>
+                <div class="cl2-pieces">
+                    <div class="cl2-pc pc1"><b>漢堡</b><span>去漢堡王</span></div>
+                    <div class="cl2-pc pc2"><b>蛋塔</b><span>去肯德基</span></div>
+                    <div class="cl2-pc pc3"><b>薯條</b><span>只認麥當勞</span></div>
                 </div>
-                <div class="clp-card clp-post">
-                    <div class="op-label">MOANA 寫成貼文 · 示範稿</div>
-                    <p>套餐快 200 了,我下班都自己拼:漢堡一家、蛋塔一家,<strong>但薯條一定回麥當勞。</strong></p>
-                    <p><strong>你心中最頂的速食拼圖長怎樣?</strong></p>
+            </div>
+            <div class="cl2-layer cl2-d">
+                <div class="cl2-made">
+                    <img src="img/cl-puzzle.jpg" alt="">
+                    <div class="cl2-copy">
+                        <div class="cl2-mh"><b>Threads 貼文</b><span>Moana 寫文 · Banana 產圖</span></div>
+                        <p class="l1">下班又在速食拼圖</p>
+                        <p class="l2">漢堡王買漢堡、肯德基買蛋塔</p>
+                        <p class="l3"><strong>薯條沒得商量,永遠麥當勞</strong></p>
+                        <p class="l4"><strong>你心中最頂的速食拼圖長怎樣?</strong></p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="clp-bar"><i></i></div>
         <div class="clp-foot">
-            <div class="clp-tag">AI 讀懂的不是一個品牌,<span>是消費者怎麼把幾家店拼在一起</span></div>
+            <div class="clp-tag">AI 讀懂的不是一個品牌,<span>是大家怎麼把幾家店拼在一起</span></div>
             <div class="clp-replay" onclick="var s=this.closest('.slide');s.classList.remove('active');void s.offsetWidth;s.classList.add('active');event.stopPropagation();">↻ 重播</div>
         </div>
     </div>
-    <div class="meta op-meta"><span>Demo data — Pandora Culture Listening report「麥當勞品牌與台灣速食產業競品及文化洞察分析」2026-10-15, via MCP · 5 sections, 840 cited posts</span><span class="pg">11 / 26</span></div>
+    <div class="meta op-meta"><span>Pandora Culture Listening 報告「麥當勞品牌與台灣速食產業競品及文化洞察分析」2026-10-15 · 417 篇引用貼文原文 · 貼文為 Moana 實際產出(節錄)· 配圖為 Banana 產生</span><span class="pg">11 / 26</span></div>
 </div>
 
 <div class="slide op" data-slide="trend_daily">
