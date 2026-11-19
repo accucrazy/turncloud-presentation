@@ -94,7 +94,7 @@
         </div>
         <div class="op-logos op-anim op-d3">
             <div class="op-label">300+ BRANDS · 這些品牌,早就跑在我們的服務上</div>
-            <div class="op-logos-img" style="background-image: url('{B}clients_logos.jpg');"></div>
+            <div class="op-logos-img" style="background-image: url('img/clients-logos-v2.jpg');"></div>
         </div>
     </div>
     <div class="meta op-meta">
@@ -266,6 +266,44 @@
     </div>
 </div>
 
+<!-- ══════════ mcp_vs_api (op reveal) — from ai-training.html ══════════ -->
+<div class="slide op op-reveal" data-slide="mcp_vs_api">
+    <div class="bg-image" style="background-image: url('{B}anim_backdrop.jpg');"></div>
+    <div class="op-stage">
+        <div class="op-reveal-media op-anim op-d1">
+            <div class="op-phone">
+                <video src="{B}mcp/pandora-mcp-vs-api.mp4" poster="{B}mcp/pandora-mcp-vs-api.jpg" playsinline preload="metadata" controls></video>
+            </div>
+            <div class="op-audio-hint" data-audio-hint>♪ 點影片開聲</div>
+        </div>
+        <div class="op-reveal-info">
+            <div class="op-anim op-d1">
+                <div class="tag tag-violet">AI AGENT 怎麼做事 · API vs MCP</div>
+                <h2 class="op-title">從照表操課,<br>到 AI <span class="v">自己挑工具</span></h2>
+            </div>
+            <div class="mc-vs op-anim op-d2">
+                <div class="op-card mc-api">
+                    <div class="op-label">API · 照事先設定的流程走</div>
+                    <div class="op-body">每一步呼叫什麼、順序怎麼走都要先寫好;<strong>需求一換,就要重新設定流程</strong>。</div>
+                </div>
+                <div class="op-card mc-mcp">
+                    <div class="op-label">MCP · 工具會自我介紹</div>
+                    <div class="op-body">AI 先問有哪些工具,<strong>再自己決定下一步</strong>;一個助理能同時接好幾台伺服器,一句話跑完。</div>
+                </div>
+            </div>
+            <div class="op-card mc-pandora op-anim op-d3">
+                <div class="op-label">PANDORA MCP · 後面的 AGENT 都接在這裡</div>
+                <div class="op-body">同一個 MCP 裡,查貼文、看趨勢之外,也能直接叫 <strong>Culture Listening 報告、Moana 寫文、Banana 出圖</strong> ── 接下來的每個應用,都是從這裡串出去。</div>
+                <div class="mc-tools"><code>search_posts</code><code>get_trends</code><code>cl_run</code><code>moana_content</code><code>banana_generate</code><code>quick_scrape_instagram</code></div>
+            </div>
+        </div>
+    </div>
+    <div class="meta op-meta">
+        <span>API vs MCP — fixed pipelines vs self-describing tools · Pandora MCP (@accucrazy/pandora-mcp) · tool names as listed by the server</span>
+        <span class="pg">00 / 00</span>
+    </div>
+</div>
+
 
 
 
@@ -351,181 +389,123 @@
 
 
 
-<div class="slide demo demo-cinema demo-tone-orange" data-slide="moana_culture_demo">
-    <div class="bg-image demo-bg" style="background-image: url('{B}anim_backdrop.jpg');"></div>
-
-    
-    
-
-    
-    <div class="demo-stage">
-        <div class="demo-media demo-media-contain">
-            <div class="demo-media-halo"></div>
-            <div class="demo-media-frame">
-                
-                <video src="{B}culture_listening.mov" loop muted playsinline preload="metadata" ></video>
-                
-            </div>
-            <div class="demo-media-scrim"></div>
-            <div class="demo-marker">● ● LIVE DEMO</div>
-            
-        </div>
-
-        
-        <div class="demo-info">
-            <div class="tag tag-orange">MOANA · CULTURE LISTENING LIVE</div>
-            <h2 class="demo-title"><span class="o">Culture Listening</span> — 實戰 Demo</h2>
-            <p class="demo-sub">看 Moana 從<strong>次文化訊號</strong> → 拆解語境 → 產出<strong>有 Culture Fit 的內容腳本</strong>。</p>
-        </div>
-
-        
-        
-        <div class="demo-pills">
-            
-            <div class="demo-pill demo-pill-1 demo-pill-orange">
-                <div class="demo-pill-label">DEMO 看點</div>
-                <div class="demo-pill-name">演示重點</div>
-                
-                <ul class="demo-pill-bullets">
-                    <li>抓出<strong>社群話題</strong>與真實情緒</li><li>解析<strong>受眾語感</strong>與品牌調性</li><li>產出<strong>可上線的內容腳本</strong></li>
-                </ul>
-                
-                
-            </div>
-            
-        </div>
-        
-
-        
-        <div class="demo-tagline">從聽見話題到拿下訂單 ── <span class="o">Culture Fit</span> 真的可以閉環。</div>
-        
-    </div>
-
-    <div class="meta demo-meta">
-        <span>Moana — Culture Listening Live Demo</span>
-        <span class="pg">08 / 22</span>
-    </div>
-</div>
-
-
-
-
-<!-- ══════════ cl_concept (op) ══════════ -->
-<div class="slide op" data-slide="cl_concept">
+<div class="slide op" data-slide="cl_origin">
     <div class="bg-image" style="background-image: url('{B}anim_backdrop.jpg');"></div>
-    <div class="op-stage cl-spread">
-        <div class="op-head op-anim op-d1">
-            <div class="tag tag-orange">MOANA × PANDORA · CULTURE LISTENING</div>
-            <h2 class="op-title">不只聽他們<span class="dim-t">說了什麼</span>,要聽他們<span class="o">怎麼過日子</span></h2>
+    <div class="op-stage">
+        <div class="op-head">
+            <div class="tag tag-orange">CULTURE LISTENING · 方法論 · 20 秒</div>
+            <h2 class="op-title mt-bigtitle">先聽懂文化,<span class="o">再做內容</span></h2>
         </div>
-
-        <div class="cl-vs">
-            <div class="op-card cl-vs-a op-anim op-d2">
-                <div class="op-label">SOCIAL LISTENING · 傳統輿情</div>
-                <div class="op-name">聲量、情緒、關鍵字</div>
-                <ul class="cl-list">
-                    <li>「這週提到我們 3,000 次,正面 62%」</li>
-                    <li>答案是一張<strong>儀表板</strong></li>
-                    <li>告訴你<strong>發生了什麼</strong></li>
-                </ul>
+        <div class="clo">
+            <div class="clo-layer clo-a">
+                <div class="clo-who"><b>Unilever 聯合利華</b><span>全球前幾大廣告主 · 2025 起數位預算一半轉向 social-first</span></div>
+                <blockquote class="clo-en">“First of all, by listening — using innovative tools to uncover emerging conversations and cultural shifts.”</blockquote>
+                <p class="clo-zh">第一步是<b>聽</b>:找出正在冒出來的對話和<b>文化轉變</b></p>
+                <div class="clo-src">Unilever 官方新聞稿 · 2025</div>
             </div>
-            <div class="cl-vs-arrow op-anim op-d2">→</div>
-            <div class="op-card cl-vs-b op-anim op-d3">
-                <div class="op-label">CULTURE LISTENING · 文化聆聽</div>
-                <div class="op-name">情境、習慣、在地共鳴</div>
-                <ul class="cl-list">
-                    <li>「排隊太久,轉身進超商拿一盒」── <strong>這才是購買理由</strong></li>
-                    <li>答案是一份<strong>可以直接拍的 brief</strong></li>
-                    <li>告訴你<strong>下一支內容該講什麼</strong></li>
-                </ul>
+            <div class="clo-layer clo-b">
+                <div class="clo-case">案例 · 凡士林 <b>#VaselineVerified</b></div>
+                <div class="clo-pics">
+                    <figure class="clo-pic p1"><img src="img/vas-hacks.jpg" alt="Vaseline Verified — 網友的凡士林用法"><figcaption>網友自己發明的用法</figcaption></figure>
+                    <figure class="clo-pic p2"><img src="img/vas-kv.jpg" alt="Vaseline Verified 主視覺"><figcaption>科學家實測、蓋章認證</figcaption></figure>
+                    <figure class="clo-pic p3"><img src="img/vas-trophy.jpg" alt="通過認證的創作者收到 Verified 獎座"><figcaption>通過的創作者收到認證獎座</figcaption></figure>
+                </div>
+                <div class="clo-flow">
+                    <div class="clo-st s1"><small>聽到</small><b>TikTok、IG 上<br>大家自己發明凡士林用法</b></div>
+                    <i class="a1">›</i>
+                    <div class="clo-st s2"><small>聽懂</small><b>有的真有用,<br>有的可能傷皮膚</b></div>
+                    <i class="a2">›</i>
+                    <div class="clo-st s3"><small>做</small><b>請科學家一條條實測,<br>有效的蓋章認證</b></div>
+                    <i class="a3">›</i>
+                    <div class="clo-st s4 win"><small>結果</small><b>坎城 2025<br>兩座全場大獎</b><span>頭 3 個月 1.36 億次觀看</span></div>
+                </div>
+            </div>
+            <div class="clo-layer clo-c">
+                <div class="clo-case">我們把這四步,做成一組 Agent</div>
+                <div class="clo-map">
+                    <div class="clo-m m1"><b>聽</b><span>Pandora</span><small>每天收社群貼文</small></div>
+                    <div class="clo-m m2"><b>懂</b><span>Culture Listening</span><small>七層報告讀懂在地語境</small></div>
+                    <div class="clo-m m3"><b>做</b><span>Moana · Banana</span><small>切角、文案、圖、影片</small></div>
+                    <div class="clo-m m4"><b>放大</b><span>內容飛輪</span><small>每天三平台上架、看成效</small></div>
+                </div>
             </div>
         </div>
-
-        <div class="cl-layers op-anim op-d4">
-            <div class="op-label">一份 CL 報告 = 七層分析,最後一層直接交給 Moana 寫內容</div>
-            <div class="cl-layer-row">
-                <div class="cl-layer"><b>01</b>產品洞察<small>需求與判斷標準</small></div>
-                <div class="cl-layer"><b>02</b>品牌口碑<small>定位與缺口</small></div>
-                <div class="cl-layer"><b>03</b>競品觀察<small>對手怎麼玩</small></div>
-                <div class="cl-layer"><b>04</b>KOL 生態<small>誰在說、怎麼說</small></div>
-                <div class="cl-layer cl-layer-hl"><b>05</b>在地共鳴<small>文化 moment</small></div>
-                <div class="cl-layer"><b>06</b>總結<small>跨層統整</small></div>
-                <div class="cl-layer cl-layer-moana"><b>07</b>Moana 內容<small>brief + 文案 + 圖</small></div>
-            </div>
+        <div class="clp-bar"><i></i></div>
+        <div class="clp-foot">
+            <div class="clp-tag">聯合利華用一整個組織在做的事,<span>一台機器每天在跑</span></div>
+            <div class="clp-replay" onclick="var s=this.closest('.slide');s.classList.remove('active');void s.offsetWidth;s.classList.add('active');event.stopPropagation();">↻ 重播</div>
         </div>
     </div>
-    <div class="meta op-meta">
-        <span>Culture Listening — from "what they said" to "how they live" · 7-layer CL report</span>
-        <span class="pg">09 / 22</span>
-    </div>
+    <div class="meta op-meta"><span>Sources: unilever.com 2025 · Digiday 2026-03-23 · Cannes Lions 2025 · 136 M views (Unilever) · images: Ogilvy Singapore / Ads of the World / WPP</span><span class="pg">09 / 26</span></div>
 </div>
-
-
 
 <!-- ══════════ trend_daily (op) ══════════ -->
 <div class="slide op" data-slide="cl_pipeline">
     <div class="bg-image" style="background-image: url('{B}anim_backdrop.jpg');"></div>
     <div class="op-stage">
         <div class="op-head">
-            <div class="tag tag-cyan">CULTURE LISTENING · 示範組:麥當勞 · 15 秒</div>
-            <h2 class="op-title mt-bigtitle">AI 讀完 417 篇貼文,<span class="c">自己想到切角</span></h2>
+            <div class="tag tag-cyan">CULTURE LISTENING · 示範組:麥當勞 · 20 秒</div>
+            <h2 class="op-title mt-bigtitle">417 篇網友貼文,<span class="c">變成一篇 Dcard 文</span></h2>
         </div>
         <div class="cl2-steps">
-            <div class="cl2-st st1"><i>1</i>聽:417 篇真實貼文</div><u>›</u>
-            <div class="cl2-st st2"><i>2</i>讀懂文化</div><u>›</u>
-            <div class="cl2-st st3"><i>3</i>想到切角</div><u>›</u>
-            <div class="cl2-st st4"><i>4</i>做成內容</div>
+            <div class="cl2-st st1"><i>1</i>Pandora 收貼文</div><u>›</u>
+            <div class="cl2-st st2"><i>2</i>CL 報告讀懂</div><u>›</u>
+            <div class="cl2-st st3"><i>3</i>Moana 找切角</div><u>›</u>
+            <div class="cl2-st st4"><i>4</i>Moana 寫 · Banana 配圖</div>
         </div>
         <div class="cl2">
             <div class="cl2-wall">
-                <div class="cl2-p key" style="--i:0"><div class="cl2-ph"><b class="t-g">在地文化</b><span>Threads</span><em>♥ 1.5 萬</em></div><p>店員問我薯條要不要加大,我說好!店員很大聲說謝謝。我知道那是<mark>加薯答禮</mark></p></div>
-                <div class="cl2-p key" style="--i:1"><div class="cl2-ph"><b class="t-p">競品</b><span>Instagram</span><em>♥ 1,217</em></div><p>今天吃漢堡王!外送套餐好划算,<mark>但我還是麥當勞薯條派</mark></p></div>
-                <div class="cl2-p" style="--i:2"><div class="cl2-ph"><b class="t-o">品牌</b><span>Instagram</span><em>♥ 2.1 萬</em></div><p>CHIIKAWA × 麥當勞聯名即將登場,萌度直接爆表</p></div>
-                <div class="cl2-p key" style="--i:3"><div class="cl2-ph"><b class="t-c">產品</b><span>Threads</span><em>♥ 1.8 萬</em></div><p><mark>去麥當勞沒有買到薯條</mark>簡直要了我的命</p></div>
-                <div class="cl2-p key" style="--i:4"><div class="cl2-ph"><b class="t-p">競品</b><span>Threads</span></div><p>想吃<mark>麥當勞薯條、肯德基蛋塔、漢堡王漢堡</mark>、摩斯紅茶</p></div>
-                <div class="cl2-p" style="--i:5"><div class="cl2-ph"><b class="t-v">KOL</b><span>Instagram</span><em>♥ 171</em></div><p>減脂期可以吃的速食清單:頂呱呱、漢堡王、麥當勞、肯德基、摩斯…</p></div>
-                <div class="cl2-p key" style="--i:6"><div class="cl2-ph"><b class="t-o">品牌</b><span>Threads</span><em>♥ 2,100</em></div><p>可以理解為什麼麥當勞這麼多人了,因為<mark>隨便吃都比麥當勞貴</mark></p></div>
-                <div class="cl2-p" style="--i:7"><div class="cl2-ph"><b class="t-p">競品</b><span>PTT</span><em>♥ 26</em></div><p>麥當勞 肯德基 摩斯 漢堡王 請排名</p></div>
-                <div class="cl2-p key" style="--i:8"><div class="cl2-ph"><b class="t-p">競品</b><span>Threads</span></div><p>我現在<mark>買漢堡主要去漢堡王</mark>,買炸雞去頂呱呱,肯德基<mark>會買蛋塔</mark></p></div>
-                <div class="cl2-p" style="--i:9"><div class="cl2-ph"><b class="t-v">KOL</b><span>Instagram</span><em>♥ 286</em></div><p>麥當勞 App 默默藏神券!大薯買一送一,薯條控先衝</p></div>
-                <div class="cl2-p" style="--i:10"><div class="cl2-ph"><b class="t-c">產品</b><span>Threads</span><em>♥ 3,700</em></div><p>看棒球多了一個外帶選擇,真的已吃膩麥當勞摩斯跟披薩</p></div>
-                <div class="cl2-p" style="--i:11"><div class="cl2-ph"><b class="t-g">在地文化</b><span>Threads</span><em>♥ 7</em></div><p>為什麼同樣是速食,麥當勞、肯德基備餐很快,摩斯這麼慢?</p></div>
+                <div class="cl2-p key" style="--i:0"><div class="cl2-ph"><b class="t-g">在地共鳴</b><span>Threads</span><em>♥ 1.5 萬</em></div><p>剛剛買麥當勞 店員問我薯條要不要加大 我回答:好! 店員很大聲的說聲謝謝 我知道那其實不是謝謝 那是<mark>加薯答禮</mark> 🍟</p></div>
+                <div class="cl2-p key" style="--i:1"><div class="cl2-ph"><b class="t-p">競品觀察</b><span>Instagram</span><em>♥ 1,217</em></div><p>今天吃漢堡王! 外送優惠的套餐好划算 <mark>但我還是麥當勞薯條派</mark>哈哈哈哈哈</p></div>
+                <div class="cl2-p key" style="--i:2"><div class="cl2-ph"><b class="t-o">品牌口碑</b><span>Threads</span><em>♥ 1,800</em></div><p>麥當勞加油好嗎 <mark>這一個套餐要兩百多塊</mark> 漢堡長這樣😑</p></div>
+                <div class="cl2-p key" style="--i:3"><div class="cl2-ph"><b class="t-g">在地共鳴</b><span>Threads</span><em>♥ 1.8 萬</em></div><p><mark>去麥當勞沒有買到薯條簡直要了我的命</mark>🫩</p></div>
+                <div class="cl2-p key" style="--i:4"><div class="cl2-ph"><b class="t-p">競品觀察</b><span>Threads</span></div><p>想吃<mark>麥當勞薯條肯德基蛋塔漢堡王漢堡</mark>摩斯紅茶</p></div>
+                <div class="cl2-p key" style="--i:5"><div class="cl2-ph"><b class="t-o">品牌口碑</b><span>Threads</span><em>♥ 1,200</em></div><p>水喔 <mark>麥當勞點數降價了</mark> 取消套餐改為全單點⋯ 各位保重</p></div>
+                <div class="cl2-p" style="--i:6"><div class="cl2-ph"><b class="t-v">KOL 生態</b><span>Threads</span><em>♥ 1,000</em></div><p>頂呱呱這波真的有狂⋯ 九塊炸雞$399!?😳</p></div>
+                <div class="cl2-p" style="--i:7"><div class="cl2-ph"><b class="t-p">競品觀察</b><span>PTT</span><em>♥ 26</em></div><p>麥當勞 肯德基 摩斯 漢堡王 請排名</p></div>
+                <div class="cl2-p key" style="--i:8"><div class="cl2-ph"><b class="t-p">競品觀察</b><span>Threads</span></div><p>我現在 <mark>買漢堡主要去漢堡王</mark> 買炸雞主要去三商(拿波里)⋯ 然後<mark>會買蛋塔</mark>⋯</p></div>
+                <div class="cl2-p" style="--i:9"><div class="cl2-ph"><b class="t-o">品牌口碑</b><span>Instagram</span><em>♥ 2,323</em></div><p>誰是你心中「薯一薯二」的薯條🍟?</p></div>
+                <div class="cl2-p" style="--i:10"><div class="cl2-ph"><b class="t-g">在地共鳴</b><span>Threads</span><em>♥ 1,100</em></div><p>剛剛有人要點摩斯漢堡 我說:「那我要月亮薯條」 他說:「那只有晚上才有」⋯</p></div>
+                <div class="cl2-p" style="--i:11"><div class="cl2-ph"><b class="t-c">產品洞察</b><span>Threads</span><em>♥ 7</em></div><p>為什麼同樣是速食,麥當勞、肯德基備餐很快,但是摩斯漢堡這麼慢?</p></div>
                 <div class="cl2-scan"></div>
             </div>
             <div class="cl2-layer cl2-b">
-                <div class="cl2-u u1"><q>加薯答禮</q><q>沒買到薯條要了我的命</q><s>↓</s><b>薯條是<i>信仰</i></b></div>
-                <div class="cl2-u u2"><q>隨便吃都比麥當勞貴</q><s>↓</s><b>大家對<i>價格</i>很有感</b></div>
-                <div class="cl2-u u3"><q>買漢堡主要去漢堡王</q><q>肯德基會買蛋塔</q><s>↓</s><b>一餐<i>拼好幾家</i></b></div>
+                <div class="cl2-u u1"><small>報告 · 競品觀察</small><b>漢堡吃漢堡王、炸雞與甜點去肯德基、輕食飲料去摩斯、<i>薯條選麥當勞</i></b></div>
+                <div class="cl2-u u2"><small>報告 · 品牌口碑</small><b>社群開始出現<i>『隨便吃都要兩百元』</i>的抱怨</b></div>
+                <div class="cl2-u u3"><small>報告 · 在地共鳴</small><b>網友常以<i>『沒買到薯條要了我的命』</i>來表達熱愛</b></div>
             </div>
             <div class="cl2-layer cl2-c">
-                <div class="cl2-clabel">AI 想到的切角</div>
-                <div class="cl2-angle">「速食拼圖」</div>
+                <div class="cl2-clabel">Moana 的切角</div>
+                <div class="cl2-angle">「速食拼圖邪教」</div>
+                <div class="cl2-q">大家現在吃速食還會乖乖點整套嗎?</div>
                 <div class="cl2-pieces">
-                    <div class="cl2-pc pc1"><b>漢堡</b><span>去漢堡王</span></div>
-                    <div class="cl2-pc pc2"><b>蛋塔</b><span>去肯德基</span></div>
-                    <div class="cl2-pc pc3"><b>薯條</b><span>只認麥當勞</span></div>
+                    <div class="cl2-pc pc1"><b>漢堡</b><span>吃漢堡王</span></div>
+                    <div class="cl2-pc pc2"><b>蛋塔</b><span>吃肯德基</span></div>
+                    <div class="cl2-pc pc3"><b>薯條、鷄塊</b><span>非麥當勞不吃</span></div>
                 </div>
             </div>
             <div class="cl2-layer cl2-d">
                 <div class="cl2-made">
-                    <img src="img/cl-puzzle.jpg" alt="">
+                    <img src="img/cl-dcard.jpg" alt="">
                     <div class="cl2-copy">
-                        <div class="cl2-mh"><b>Threads 貼文</b><span>Moana 寫文 · Banana 產圖</span></div>
-                        <p class="l1">下班又在速食拼圖</p>
-                        <p class="l2">漢堡王買漢堡、肯德基買蛋塔</p>
-                        <p class="l3"><strong>薯條沒得商量,永遠麥當勞</strong></p>
-                        <p class="l4"><strong>你心中最頂的速食拼圖長怎樣?</strong></p>
+                        <div class="cl2-mh"><b>Dcard 美食板</b><span>Moana 寫文 · Banana 配圖</span></div>
+                        <h4>大家現在吃速食還會乖乖點整套嗎?</h4>
+                        <p class="l1">麥當勞套餐隨便點一份就逼近兩百了!!!</p>
+                        <p class="l2">所以,我正式投入『速食拼圖邪教』的懷抱</p>
+                        <p class="l3">漢堡吃漢堡王的起司培根牛肉堡<br>甜點奔肯德基買蛋塔</p>
+                        <p class="l4"><strong>但...有一個東西,無論我再怎麼嫌,都無法割捨<br>就是麥當勞的薯條跟鷄塊</strong></p>
+                        <p class="l5">麥當勞薯條到底要軟的還是脆的?(我站偏軟派)</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="clp-bar"><i></i></div>
         <div class="clp-foot">
-            <div class="clp-tag">AI 讀懂的不是一個品牌,<span>是大家怎麼把幾家店拼在一起</span></div>
+            <div class="clp-tag">報告結論:<span>「大家肚子餓依然最先想到麥當勞,但點餐時更愛拆開各家強項比 CP 值」</span></div>
             <div class="clp-replay" onclick="var s=this.closest('.slide');s.classList.remove('active');void s.offsetWidth;s.classList.add('active');event.stopPropagation();">↻ 重播</div>
         </div>
     </div>
-    <div class="meta op-meta"><span>Pandora Culture Listening 報告「麥當勞品牌與台灣速食產業競品及文化洞察分析」2026-10-15 · 417 篇引用貼文原文 · 貼文為 Moana 實際產出(節錄)· 配圖為 Banana 產生</span><span class="pg">11 / 26</span></div>
+    <div class="meta op-meta"><span>Pandora Culture Listening 報告「麥當勞品牌與台灣速食產業競品及文化洞察分析」2026-10-15 · 貼文、洞察、切角、Dcard 文皆為原文節錄 · 配圖由 Banana 依報告的圖片方向產生</span><span class="pg">11 / 26</span></div>
 </div>
 
 <div class="slide op" data-slide="trend_daily">
@@ -623,16 +603,55 @@
 <div class="op-card rs-kpi"><div class="op-label">Instagram</div><div class="rs-num">63,621</div><div class="op-body">115 支 · 21 天</div></div>
 <div class="op-card rs-kpi"><div class="op-label">Threads</div><div class="rs-num">48,500</div><div class="op-body">290 則</div></div>
 </div>
-<div class="op-card rs-chart op-anim op-d3">
-<div class="op-label">YouTube 每週觀看 · 下排是當週上架支數</div>
-<div class="rs-bars">
-<div class="rs-bar rs-hot"><i style="--h:100"></i><span>10/12–</span><em>36</em><b>20,852</b></div>
-<div class="rs-bar"><i style="--h:44"></i><span>10/19–</span><em>34</em></div>
-<div class="rs-bar"><i style="--h:69"></i><span>10/26–</span><em>56</em></div>
-<div class="rs-bar"><i style="--h:86"></i><span>11/2–</span><em>70</em></div>
-<div class="rs-bar"><i style="--h:80"></i><span>11/9–</span><em>70</em></div>
-<div class="rs-bar rs-part"><i style="--h:35"></i><span>11/16–</span><em>27</em></div>
-</div>
+<div class="op-card rs-chart rs-cum op-anim op-d3">
+<div class="op-label">YouTube 累積觀看 · 依上架日累加 · 下排是累積支數</div>
+<svg class="rs-cum-svg" viewBox="0 0 860 420" preserveAspectRatio="xMidYMid meet" aria-label="YouTube 累積觀看">
+<defs><linearGradient id="rsCumFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10b981" stop-opacity=".38"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs>
+<line class="rs-grid" x1="70" y1="281.1" x2="805" y2="281.1"/><text class="rs-ytick" x="58" y="286.1">2 萬</text>
+<line class="rs-grid" x1="70" y1="212.2" x2="805" y2="212.2"/><text class="rs-ytick" x="58" y="217.2">4 萬</text>
+<line class="rs-grid" x1="70" y1="143.3" x2="805" y2="143.3"/><text class="rs-ytick" x="58" y="148.3">6 萬</text>
+<line class="rs-grid" x1="70" y1="74.4" x2="805" y2="74.4"/><text class="rs-ytick" x="58" y="79.4">8 萬</text>
+<line class="rs-axis" x1="70" y1="350" x2="805" y2="350"/>
+<path class="rs-area" d="M70.0,350.0 L189.2,278.2 L328.2,246.6 L467.3,197.0 L606.4,135.2 L745.4,77.8 L805.0,52.5 L805.0,350 L70.0,350 Z"/>
+<path class="rs-line" d="M70.0,350.0 L189.2,278.2 L328.2,246.6 L467.3,197.0 L606.4,135.2 L745.4,77.8 L805.0,52.5" pathLength="1"/>
+<g class="rs-pt" style="--k:0">
+<text class="rs-x" x="70.0" y="380">10/12</text>
+</g>
+<g class="rs-pt" style="--k:1">
+<circle cx="189.2" cy="278.2" r="7"/>
+<text class="rs-v" x="189.2" y="260.2">2.1 萬</text>
+<text class="rs-x" x="189.2" y="380">10/18</text>
+<text class="rs-n" x="189.2" y="405">36 支</text>
+</g>
+<g class="rs-pt" style="--k:2">
+<circle cx="328.2" cy="246.6" r="7"/>
+<text class="rs-v" x="328.2" y="228.6">3.0 萬</text>
+<text class="rs-x" x="328.2" y="380">10/25</text>
+<text class="rs-n" x="328.2" y="405">70 支</text>
+</g>
+<g class="rs-pt" style="--k:3">
+<circle cx="467.3" cy="197.0" r="7"/>
+<text class="rs-v" x="467.3" y="179.0">4.4 萬</text>
+<text class="rs-x" x="467.3" y="380">11/1</text>
+<text class="rs-n" x="467.3" y="405">126 支</text>
+</g>
+<g class="rs-pt" style="--k:4">
+<circle cx="606.4" cy="135.2" r="7"/>
+<text class="rs-v" x="606.4" y="117.19999999999999">6.2 萬</text>
+<text class="rs-x" x="606.4" y="380">11/8</text>
+<text class="rs-n" x="606.4" y="405">196 支</text>
+</g>
+<g class="rs-pt" style="--k:5">
+<circle cx="745.4" cy="77.8" r="7"/>
+<text class="rs-v" x="745.4" y="59.8">7.9 萬</text>
+</g>
+<g class="rs-pt" style="--k:6">
+<circle cx="805.0" cy="52.5" r="7"/>
+<text class="rs-x" x="805.0" y="380">11/18</text>
+<text class="rs-n" x="805.0" y="405">293 支</text>
+</g>
+<g class="rs-end"><text class="rs-endv" x="809.0" y="28.5">86,358</text></g>
+</svg>
 </div>
 </div>
 <div class="mt-side op-anim op-d4">
@@ -644,35 +663,49 @@
 </div>
 </div>
 </div>
-<div class="meta op-meta"><span>Views: platform APIs, 2026-11-18 · CPM NT$300 assumed (high end) · Seedance 2.5 ≈ $0.23/s at 720p (estimate) · power: 60 W measured under load × 912 h = 55 kWh</span><span class="pg">14 / 25</span></div>
+<div class="meta op-meta"><span>Views: platform APIs 2026-11-18 · CPM NT$300 assumed · Seedance 2.5 ≈ $0.23/s 720p (est.) · 60 W × 912 h = 55 kWh</span><span class="pg">14 / 25</span></div>
 </div>
 
 <div class="slide op" data-slide="longtail">
 <div class="bg-image" style="background-image: url('{B}anim_backdrop.jpg');"></div>
 <div class="op-stage">
 <div class="op-head op-anim op-d1">
-<div class="tag tag-orange">飛輪心得 · 293 支的分布</div>
-<h2 class="op-title mt-bigtitle">15% 的片,<span class="o">拿走三分之二的觀看</span></h2>
+<div class="tag tag-orange">飛輪心得 · 38 天 293 支</div>
+<h2 class="op-title mt-bigtitle">不賭一個好點子:<span class="o">廣打、看哪個重、再投資</span></h2>
 </div>
-<div class="mt-two mt-two-wide">
-<div class="op-card op-anim op-d2">
-<div class="mt-dist">
-<div class="mt-dist-row"><b>45 支破千</b><i style="--w:68"></i><span>68%</span></div>
-<div class="mt-dist-row"><b>27 支 500–999</b><i style="--w:26"></i><span>26%</span></div>
-<div class="mt-dist-row"><b>22 支 50–499</b><i style="--w:4"></i><span>4%</span></div>
-<div class="mt-dist-row mt-dim"><b>199 支不到 50</b><i style="--w:2"></i><span>2%</span></div>
+<div class="lt">
+<div class="lt-old op-anim op-d2">
+<div class="lt-k">以前 · 一群人在會議室</div>
+<div class="lt-bet"><div class="lt-ball">?</div><span>全押在一個點子上</span></div>
+<ol class="lt-flow">
+<li><span>想一個<b>好點子</b></span></li>
+<li><span>砸錢製作、<b>買曝光</b></span></li>
+<li><span>上線才知道<b>中不中</b></span></li>
+</ol>
+<div class="lt-chips bad"><span>風險高</span><span>成本高</span></div>
+</div>
+<div class="lt-vs op-anim op-d2">→</div>
+<div class="lt-new op-anim op-d3">
+<div class="lt-k g">現在 · 內容飛輪</div>
+<div class="lt-steps">
+<div class="lt-st s1"><i>1</i><b>廣打</b><span>38 天做 293 支</span></div>
+<u>›</u>
+<div class="lt-st s2"><i>2</i><b>看哪個重</b><span>45 支拿走 68% 觀看</span></div>
+<u>›</u>
+<div class="lt-st s3"><i>3</i><b>再投資</b><span>中的格式加碼做</span></div>
+</div>
+<div class="lt-waffle"><i class="w4" style="--i:0"></i><i class="w1" style="--i:1"></i><i class="w3" style="--i:2"></i><i class="w4" style="--i:3"></i><i class="w1" style="--i:4"></i><i class="w3" style="--i:5"></i><i class="w4" style="--i:6"></i><i class="w4" style="--i:7"></i><i class="w4" style="--i:8"></i><i class="w4" style="--i:9"></i><i class="w4" style="--i:10"></i><i class="w4" style="--i:11"></i><i class="w2" style="--i:12"></i><i class="w1" style="--i:13"></i><i class="w4" style="--i:14"></i><i class="w4" style="--i:15"></i><i class="w1" style="--i:16"></i><i class="w4" style="--i:17"></i><i class="w4" style="--i:18"></i><i class="w4" style="--i:19"></i><i class="w4" style="--i:20"></i><i class="w4" style="--i:21"></i><i class="w4" style="--i:22"></i><i class="w4" style="--i:23"></i><i class="w4" style="--i:24"></i><i class="w4" style="--i:25"></i><i class="w4" style="--i:26"></i><i class="w4" style="--i:27"></i><i class="w4" style="--i:28"></i><i class="w3" style="--i:29"></i><i class="w4" style="--i:30"></i><i class="w1" style="--i:31"></i><i class="w2" style="--i:32"></i><i class="w4" style="--i:33"></i><i class="w1" style="--i:34"></i><i class="w4" style="--i:35"></i><i class="w4" style="--i:36"></i><i class="w4" style="--i:37"></i><i class="w4" style="--i:38"></i><i class="w4" style="--i:39"></i><i class="w3" style="--i:40"></i><i class="w2" style="--i:41"></i><i class="w4" style="--i:42"></i><i class="w3" style="--i:43"></i><i class="w2" style="--i:44"></i><i class="w4" style="--i:45"></i><i class="w4" style="--i:46"></i><i class="w4" style="--i:47"></i><i class="w4" style="--i:48"></i><i class="w1" style="--i:49"></i><i class="w4" style="--i:50"></i><i class="w1" style="--i:51"></i><i class="w4" style="--i:52"></i><i class="w2" style="--i:53"></i><i class="w4" style="--i:54"></i><i class="w4" style="--i:55"></i><i class="w4" style="--i:56"></i><i class="w2" style="--i:57"></i><i class="w2" style="--i:58"></i><i class="w1" style="--i:59"></i><i class="w1" style="--i:60"></i><i class="w4" style="--i:61"></i><i class="w4" style="--i:62"></i><i class="w3" style="--i:63"></i><i class="w3" style="--i:64"></i><i class="w1" style="--i:65"></i><i class="w4" style="--i:66"></i><i class="w4" style="--i:67"></i><i class="w4" style="--i:68"></i><i class="w3" style="--i:69"></i><i class="w4" style="--i:70"></i><i class="w4" style="--i:71"></i><i class="w1" style="--i:72"></i><i class="w4" style="--i:73"></i><i class="w4" style="--i:74"></i><i class="w4" style="--i:75"></i><i class="w4" style="--i:76"></i><i class="w4" style="--i:77"></i><i class="w3" style="--i:78"></i><i class="w1" style="--i:79"></i><i class="w4" style="--i:80"></i><i class="w4" style="--i:81"></i><i class="w4" style="--i:82"></i><i class="w1" style="--i:83"></i><i class="w2" style="--i:84"></i><i class="w4" style="--i:85"></i><i class="w1" style="--i:86"></i><i class="w4" style="--i:87"></i><i class="w2" style="--i:88"></i><i class="w1" style="--i:89"></i><i class="w1" style="--i:90"></i><i class="w4" style="--i:91"></i><i class="w4" style="--i:92"></i><i class="w3" style="--i:93"></i><i class="w4" style="--i:94"></i><i class="w4" style="--i:95"></i><i class="w2" style="--i:96"></i><i class="w4" style="--i:97"></i><i class="w2" style="--i:98"></i><i class="w1" style="--i:99"></i><i class="w3" style="--i:100"></i><i class="w4" style="--i:101"></i><i class="w3" style="--i:102"></i><i class="w4" style="--i:103"></i><i class="w4" style="--i:104"></i><i class="w4" style="--i:105"></i><i class="w4" style="--i:106"></i><i class="w2" style="--i:107"></i><i class="w4" style="--i:108"></i><i class="w4" style="--i:109"></i><i class="w4" style="--i:110"></i><i class="w4" style="--i:111"></i><i class="w4" style="--i:112"></i><i class="w4" style="--i:113"></i><i class="w4" style="--i:114"></i><i class="w4" style="--i:115"></i><i class="w4" style="--i:116"></i><i class="w4" style="--i:117"></i><i class="w1" style="--i:118"></i><i class="w4" style="--i:119"></i><i class="w1" style="--i:120"></i><i class="w4" style="--i:121"></i><i class="w3" style="--i:122"></i><i class="w1" style="--i:123"></i><i class="w4" style="--i:124"></i><i class="w4" style="--i:125"></i><i class="w4" style="--i:126"></i><i class="w4" style="--i:127"></i><i class="w4" style="--i:128"></i><i class="w4" style="--i:129"></i><i class="w1" style="--i:130"></i><i class="w4" style="--i:131"></i><i class="w4" style="--i:132"></i><i class="w4" style="--i:133"></i><i class="w4" style="--i:134"></i><i class="w4" style="--i:135"></i><i class="w4" style="--i:136"></i><i class="w4" style="--i:137"></i><i class="w4" style="--i:138"></i><i class="w4" style="--i:139"></i><i class="w4" style="--i:140"></i><i class="w4" style="--i:141"></i><i class="w4" style="--i:142"></i><i class="w4" style="--i:143"></i><i class="w4" style="--i:144"></i><i class="w3" style="--i:145"></i><i class="w4" style="--i:146"></i><i class="w4" style="--i:147"></i><i class="w4" style="--i:148"></i><i class="w4" style="--i:149"></i><i class="w1" style="--i:150"></i><i class="w4" style="--i:151"></i><i class="w3" style="--i:152"></i><i class="w2" style="--i:153"></i><i class="w4" style="--i:154"></i><i class="w4" style="--i:155"></i><i class="w4" style="--i:156"></i><i class="w4" style="--i:157"></i><i class="w4" style="--i:158"></i><i class="w4" style="--i:159"></i><i class="w4" style="--i:160"></i><i class="w4" style="--i:161"></i><i class="w1" style="--i:162"></i><i class="w4" style="--i:163"></i><i class="w4" style="--i:164"></i><i class="w4" style="--i:165"></i><i class="w4" style="--i:166"></i><i class="w3" style="--i:167"></i><i class="w4" style="--i:168"></i><i class="w1" style="--i:169"></i><i class="w4" style="--i:170"></i><i class="w4" style="--i:171"></i><i class="w3" style="--i:172"></i><i class="w1" style="--i:173"></i><i class="w4" style="--i:174"></i><i class="w1" style="--i:175"></i><i class="w4" style="--i:176"></i><i class="w4" style="--i:177"></i><i class="w4" style="--i:178"></i><i class="w4" style="--i:179"></i><i class="w4" style="--i:180"></i><i class="w4" style="--i:181"></i><i class="w1" style="--i:182"></i><i class="w2" style="--i:183"></i><i class="w2" style="--i:184"></i><i class="w2" style="--i:185"></i><i class="w4" style="--i:186"></i><i class="w4" style="--i:187"></i><i class="w4" style="--i:188"></i><i class="w1" style="--i:189"></i><i class="w4" style="--i:190"></i><i class="w2" style="--i:191"></i><i class="w4" style="--i:192"></i><i class="w2" style="--i:193"></i><i class="w4" style="--i:194"></i><i class="w2" style="--i:195"></i><i class="w2" style="--i:196"></i><i class="w4" style="--i:197"></i><i class="w4" style="--i:198"></i><i class="w4" style="--i:199"></i><i class="w4" style="--i:200"></i><i class="w4" style="--i:201"></i><i class="w4" style="--i:202"></i><i class="w4" style="--i:203"></i><i class="w4" style="--i:204"></i><i class="w4" style="--i:205"></i><i class="w4" style="--i:206"></i><i class="w4" style="--i:207"></i><i class="w4" style="--i:208"></i><i class="w4" style="--i:209"></i><i class="w4" style="--i:210"></i><i class="w4" style="--i:211"></i><i class="w4" style="--i:212"></i><i class="w1" style="--i:213"></i><i class="w1" style="--i:214"></i><i class="w2" style="--i:215"></i><i class="w4" style="--i:216"></i><i class="w4" style="--i:217"></i><i class="w4" style="--i:218"></i><i class="w1" style="--i:219"></i><i class="w4" style="--i:220"></i><i class="w4" style="--i:221"></i><i class="w4" style="--i:222"></i><i class="w4" style="--i:223"></i><i class="w3" style="--i:224"></i><i class="w4" style="--i:225"></i><i class="w1" style="--i:226"></i><i class="w4" style="--i:227"></i><i class="w4" style="--i:228"></i><i class="w4" style="--i:229"></i><i class="w2" style="--i:230"></i><i class="w2" style="--i:231"></i><i class="w4" style="--i:232"></i><i class="w4" style="--i:233"></i><i class="w4" style="--i:234"></i><i class="w4" style="--i:235"></i><i class="w4" style="--i:236"></i><i class="w4" style="--i:237"></i><i class="w2" style="--i:238"></i><i class="w4" style="--i:239"></i><i class="w4" style="--i:240"></i><i class="w4" style="--i:241"></i><i class="w1" style="--i:242"></i><i class="w1" style="--i:243"></i><i class="w4" style="--i:244"></i><i class="w4" style="--i:245"></i><i class="w1" style="--i:246"></i><i class="w2" style="--i:247"></i><i class="w3" style="--i:248"></i><i class="w4" style="--i:249"></i><i class="w4" style="--i:250"></i><i class="w4" style="--i:251"></i><i class="w4" style="--i:252"></i><i class="w4" style="--i:253"></i><i class="w4" style="--i:254"></i><i class="w4" style="--i:255"></i><i class="w4" style="--i:256"></i><i class="w4" style="--i:257"></i><i class="w4" style="--i:258"></i><i class="w4" style="--i:259"></i><i class="w1" style="--i:260"></i><i class="w4" style="--i:261"></i><i class="w4" style="--i:262"></i><i class="w4" style="--i:263"></i><i class="w1" style="--i:264"></i><i class="w4" style="--i:265"></i><i class="w1" style="--i:266"></i><i class="w4" style="--i:267"></i><i class="w3" style="--i:268"></i><i class="w3" style="--i:269"></i><i class="w4" style="--i:270"></i><i class="w4" style="--i:271"></i><i class="w4" style="--i:272"></i><i class="w4" style="--i:273"></i><i class="w4" style="--i:274"></i><i class="w4" style="--i:275"></i><i class="w1" style="--i:276"></i><i class="w4" style="--i:277"></i><i class="w1" style="--i:278"></i><i class="w2" style="--i:279"></i><i class="w1" style="--i:280"></i><i class="w2" style="--i:281"></i><i class="w4" style="--i:282"></i><i class="w4" style="--i:283"></i><i class="w3" style="--i:284"></i><i class="w4" style="--i:285"></i><i class="w1" style="--i:286"></i><i class="w4" style="--i:287"></i><i class="w1" style="--i:288"></i><i class="w4" style="--i:289"></i><i class="w4" style="--i:290"></i><i class="w1" style="--i:291"></i><i class="w4" style="--i:292"></i></div>
+<div class="lt-legend">
+<span class="l1"><i></i><b>45 支破千</b>68%</span>
+<span class="l2"><i></i>27 支 500–999 · 26%</span>
+<span class="l3"><i></i>22 支 50–499 · 4%</span>
+<span class="l4"><i></i>199 支不到 50 · 2%</span>
+</div>
+<div class="lt-chips good"><span>風險低</span><span>一支電費不到 NT$1</span><span>中的是:打臉 + 當天熱點</span></div>
 </div>
 </div>
-<div class="mt-side op-anim op-d3">
-<div class="mt-pts">
-<div class="mt-pt"><b>量產不是每支都中</b><span>是<strong>用量把會中的格式找出來</strong></span></div>
-<div class="mt-pt"><b>中的是:<i>打臉 + 當天熱點</i></b><span>0–3 秒衝突、每 10 秒一個反轉</span></div>
-<div class="mt-pt"><b>同時發七支 = <i>每支 3 次</i></b><span>平台罰的不是內容,是節奏</span></div>
 </div>
-</div>
-</div>
-</div>
-<div class="meta op-meta"><span>The long tail — top 15% of videos take 68% of views</span><span class="pg">15 / 25</span></div>
+<div class="meta op-meta"><span>YouTube Data API 2026-11-18 · each square = one short (layout illustrative, counts exact) · NT$270 electricity ÷ 293 shorts</span><span class="pg">16 / 26</span></div>
 </div>
 
 <div class="slide op" data-slide="content_flywheel">
@@ -680,11 +713,12 @@
     <div class="op-stage">
         <div class="op-head op-anim op-d1">
             <div class="tag tag-green">CONTENT FLYWHEEL · 六週之後 · 機器全天在轉</div>
-            <h2 class="op-title">每天跟風,<span class="g">越轉越準</span>的內容飛輪</h2>
+            <h2 class="op-title mt-bigtitle">每天跟風,<span class="g">越轉越準</span>的內容飛輪</h2>
         </div>
 
         <div class="fw-wrap">
             <div class="fw-wheel op-anim op-d2">
+                <div class="fw-rot">
                 <svg viewBox="0 0 520 520" class="fw-svg" aria-hidden="true">
                     <defs>
                         <marker id="fwArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#10b981"/></marker>
@@ -692,13 +726,14 @@
                     <circle cx="260" cy="260" r="190" fill="none" stroke="#d1fae5" stroke-width="26"/>
                     <path d="M260,70 A190,190 0 1,1 95.5,165" fill="none" stroke="#10b981" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round" marker-end="url(#fwArrow)"/>
                 </svg>
-                <div class="fw-center"><b>全天</b>在轉<small>GPU 一空就做下一支</small></div>
                 <div class="fw-node fw-n1"><span>01</span>看趨勢<small>Pandora 每小時快照</small></div>
                 <div class="fw-node fw-n2"><span>02</span>篩題目<small>品牌安全 × 能換成你的</small></div>
                 <div class="fw-node fw-n3"><span>03</span>找證據<small>/query 原文 + 聲量驗證(lift)</small></div>
                 <div class="fw-node fw-n4"><span>04</span>寫腳本<small>三個打臉點 · 原文逐字核對</small></div>
                 <div class="fw-node fw-n5"><span>05</span>出素材<small>ComfyUI · 地端不限量</small></div>
                 <div class="fw-node fw-n6"><span>06</span>收成效<small>YouTube Data API 寫回下一圈</small></div>
+                </div>
+                <div class="fw-center"><b>全天</b>在轉<small>GPU 一空就做下一支</small></div>
             </div>
 
             <div class="fw-side content-fw-big">
@@ -805,70 +840,6 @@
 
 
 
-<div class="slide demo demo-spotL demo-tone-gold" data-slide="banana_split_demo">
-    <div class="bg-image demo-bg" style="background-image: url('{B}anim_backdrop.jpg');"></div>
-
-    
-    
-
-    
-    <div class="demo-stage">
-        <div class="demo-media demo-media-contain">
-            <div class="demo-media-halo"></div>
-            <div class="demo-media-frame">
-                
-                <video src="{B}motion_lab.mov"  playsinline preload="metadata" controls></video>
-                
-            </div>
-            
-            <div class="demo-marker">● ● LIVE DEMO</div>
-            <div class="demo-audio-hint" data-audio-hint>♪ 點影片開聲</div>
-        </div>
-
-        
-        <div class="demo-info">
-            <div class="tag tag-orange">BANANA · LIVE DEMO · MOTION LAB</div>
-            <h2 class="demo-title"><span class="o">Motion Lab</span> — 短影音生成實戰</h2>
-            <p class="demo-sub">從一段文字到一支可上線的短影音 ── 看 Banana 把<strong>創意意圖直接變成動態素材</strong>。</p>
-        </div>
-
-        
-        
-        <div class="demo-pills">
-            
-            <div class="demo-pill demo-pill-1 demo-pill-gold">
-                <div class="demo-pill-label">DEMO 看點</div>
-                <div class="demo-pill-name">演示重點</div>
-                
-                <ul class="demo-pill-bullets">
-                    <li><strong>文字 → 短影音</strong>一鍵生成</li><li>自動套用<strong>品牌規範</strong></li><li><strong>口頭迭代</strong> ── 秒級出新版</li>
-                </ul>
-                
-                
-            </div>
-            
-            <div class="demo-pill demo-pill-2 demo-pill-violet">
-                <div class="demo-pill-label">WHY</div>
-                <div class="demo-pill-name">瓶頸轉移</div>
-                
-                <p class="demo-pill-body">傳統<strong>一天三版</strong>;Banana <strong>一分鐘三十版</strong>。瓶頸從「等出圖」變成「選方向」。</p>
-            </div>
-            
-        </div>
-        
-
-        
-    </div>
-
-    <div class="meta demo-meta">
-        <span>Banana — Motion Lab · Video Generation Live</span>
-        <span class="pg">16 / 22</span>
-    </div>
-</div>
-
-
-
-
 <!-- ══════════ SLIDE 17: stacey (agent) ══════════ -->
 
 
@@ -943,58 +914,47 @@
     </div>
 </div>
 
-
-
-
-<!-- ══════════ onprem_why (op) ══════════ -->
-<div class="slide op" data-slide="onprem_why">
-    <div class="bg-image" style="background-image: url('{B}anim_backdrop.jpg');"></div>
-    <div class="op-stage">
-        <div class="op-head op-anim op-d1">
-            <div class="tag tag-orange">ON-PREM · 為什麼要地端</div>
-            <h2 class="op-title">雲端說 <span class="p">NO</span>,那就把產線<span class="o">搬回家</span></h2>
-        </div>
-
-        <div class="op-why">
-            <div class="op-blocked op-anim op-d2">
-                <div class="op-label">真實實測 · 內衣品牌的試穿素材</div>
-                <div class="op-blocked-num">5/5<small>BLOCKED</small></div>
-                <p>5 件商品的真人試穿圖送進雲端影片生成 ── <strong>5 件全部在輸入端被擋</strong>。不是做不好,是連跑都不讓你跑。</p>
-                <div class="op-codes">
-                    <span class="op-code">⛔ PrivacyInformation</span>
-                    <span class="op-code">⛔ OutputVideoSensitiveContentDetected</span>
-                </div>
-                <p class="op-blocked-quote">你的正當商品,在別人的機器上,<br>是<span>「違規內容」</span>。</p>
+<!-- ══════════ stacey_demo (demo) — restored from the canonical parked slides ══════════ -->
+<div class="slide demo demo-spotL demo-tone-green" data-slide="stacey_demo">
+    <div class="bg-image demo-bg" style="background-image: url('{B}anim_backdrop.jpg');"></div>
+    <div class="demo-stage">
+        <div class="demo-media demo-media-contain">
+            <div class="demo-media-halo"></div>
+            <div class="demo-media-frame">
+                <video src="img/stacey-demo.mp4" poster="img/stacey-demo-poster.jpg" loop muted playsinline preload="metadata" ></video>
             </div>
-
-            <div class="op-sov">
-                <div class="op-sov-head op-anim op-d2">同一件商品實測對照 ── <strong>各有所長</strong></div>
-                <div class="op-card op-sov-row op-anim op-d3">
-                    <div class="op-icon cy">☁️</div>
-                    <div><div class="op-name">雲端勝在成品度</div><div class="op-body">配樂、運鏡一次到位;但動作只能用文字許願,<strong>敏感款輸出照樣被擋</strong>。</div></div>
-                </div>
-                <div class="op-card op-sov-row op-anim op-d4">
-                    <div class="op-icon gr">🖥</div>
-                    <div><div class="op-name">地端勝在可控</div><div class="op-body">骨架指揮、逐幀修、<strong>零審查、零單片費</strong> ── 敏感款只有這條路。</div></div>
-                </div>
-                <div class="op-card op-sov-row op-anim op-d5">
-                    <div class="op-icon">🤝</div>
-                    <div><div class="op-name">正解是混合</div><div class="op-body">能過審的走雲端出成品,<strong>敏感與要控的走地端</strong> ── 這就是商機。</div></div>
-                </div>
+            <div class="demo-marker">● ● STACEY × PANDORA LIVE</div>
+        </div>
+        <div class="demo-info">
+            <div class="tag tag-green">STACEY · LIVE DEMO</div>
+            <h2 class="demo-title"><span class="g">一句話</span> → 完整分析報告</h2>
+            <p class="demo-sub">看 Stacey <strong>派 Pandora 跑 SQL</strong>、產出趨勢圖與三大主題 ── 全程 <strong>幾秒鐘</strong>。</p>
+        </div>
+        <div class="demo-pills">
+            <div class="demo-pill demo-pill-1 demo-pill-green">
+                <div class="demo-pill-label">DEMO 看點</div>
+                <div class="demo-pill-name">演示重點</div>
+                <ul class="demo-pill-bullets">
+                    <li>「分析 Dr.Wu 近兩週熱門話題」</li><li>Stacey <strong>派 Pandora</strong></li><li><strong>92 篇 / 6,000+ 字</strong> · 趨勢圖 · 摘要</li>
+                </ul>
+            </div>
+            <div class="demo-pill demo-pill-2 demo-pill-violet">
+                <div class="demo-pill-label">WHY</div>
+                <div class="demo-pill-name">從<span class="v">工作</span>變成<span class="v">對話</span></div>
+                <p class="demo-pill-body">過去分析師要花<strong>幾小時</strong>跑 SQL、清資料、做圖、寫摘要。現在<strong>一句話</strong>跑完。</p>
             </div>
         </div>
-
-        <div class="op-tagline op-anim op-d5">內衣、醫美、保健、金融…… 每一個被雲端說 NO 的需求,<strong>都是一門等著落地的生意</strong>。</div>
     </div>
-    <div class="meta op-meta">
-        <span>On-Prem AIOS — Why on-prem · Cloud blocks, local controls, hybrid wins</span>
-        <span class="pg">18 / 22</span>
+    <div class="meta demo-meta">
+        <span>Stacey × Pandora — Dr.Wu Sentiment Analysis Live</span>
+        <span class="pg">00 / 00</span>
     </div>
 </div>
 
 
 
 
+<!-- ══════════ onprem_why (op) ══════════ -->
 <!-- ══════════ bananartx (op reveal) ══════════ -->
 <div class="slide op op-reveal" data-slide="bananartx">
     <div class="bg-image" style="background-image: url('{B}anim_backdrop.jpg');"></div>
@@ -1046,37 +1006,6 @@
 
 
 <!-- ══════════ bananartx_lipsync (op) ══════════ -->
-<div class="slide op" data-slide="bananartx_lipsync">
-    <div class="bg-image" style="background-image: url('{B}anim_backdrop.jpg');"></div>
-    <div class="op-stage">
-        <div class="op-head op-anim op-d1">
-            <div class="tag tag-green">BANANARTX · 可控實證 ② · 跳舞＋對嘴</div>
-            <h2 class="op-title">一支 driver,<span class="g">身體、手勢、嘴型</span>一次對上</h2>
-        </div>
-        <div class="op-ctrl">
-            <div class="op-ctrl-media op-anim op-d2">
-                <div class="op-vid op-vid-sbs">
-                    <div class="op-vid-cap"><span>左＝DRIVER ｜ 右＝AI 生成 BERYL</span><b>WAN 2.2 Animate 14B</b></div>
-                    <div class="op-vid-box"><video src="{B}onprem_lipsync_sbs.mp4" poster="img/onprem_lipsync_sbs.jpg" playsinline preload="metadata" controls></video><div class="op-audio-hint" data-audio-hint>♪ 點影片開聲</div></div>
-                </div>
-            </div>
-            <div class="op-ctrl-side">
-                <div class="op-card op-anim op-d3"><div class="op-label">原生能力 · 不用外掛</div><div class="op-name">一條 workflow 全包</div><div class="op-body">driver 一次驅動<strong>身體＋手勢＋嘴型</strong>,身份由參考圖鎖定。</div></div>
-                <div class="op-card op-anim op-d4"><div class="op-label">嘴真的跟著動</div><div class="op-name">「張嘴＋舉手」同一拍對上</div><div class="op-body">逐格比對,嘴型跟著 driver 開合 ── <strong>短影音等級夠用</strong>。</div></div>
-                <div class="op-card op-anim op-d5"><div class="op-label">③ 所以能做什麼</div><div class="op-name">你的 AI model 穿你家的產品,跟你跳</div><div class="op-body">舞步、嘴型都對得上 ── 一支 driver 影片,<strong>換上商品,整個系列都能跳同一支舞</strong>;敏感款、要反覆調的,留地端。</div></div>
-                <div class="op-card op-cost op-anim op-d5"><div class="op-label">誠實成本</div><div class="op-body">14B 模型塞不進單張 24GB 顯卡,得 offload ── 這正是換上 <strong>DGX Spark 128GB 統一記憶體</strong>的理由。</div></div>
-            </div>
-        </div>
-    </div>
-    <div class="meta op-meta">
-        <span>BananaRTX control proof II — dance + lip-sync · WAN 2.2 Animate on-prem</span>
-        <span class="pg">20 / 22</span>
-    </div>
-</div>
-
-
-
-
 <!-- ══════════ onprem_offer (op) ══════════ -->
 <div class="slide op" data-slide="onprem_genjutsu">
 <div class="bg-image" style="background-image: url('{B}anim_backdrop.jpg');"></div>
@@ -1090,7 +1019,7 @@
 <h2 class="op-title mt-bigtitle op-anim op-d1">雲端最紅的換人換景,<br><span class="o">搬回自己的機器跑</span></h2>
 <div class="mt-pts">
 <div class="mt-pt op-anim op-d2"><b>換人、換景,<i>動作照原片</i></b><span>動作準度約雲端的七成,嘴型還輸</span></div>
-<div class="mt-pt op-anim op-d3"><b>雲端 API 一版 <i>US$8.96</i>,地端 <i>0</i></b><span>Genjutsu API 720p $0.3446/秒 × 26 秒;我們改了 13 版</span></div>
+<div class="mt-pt op-anim op-d3"><b>雲端 API 一版 <i>US$8.96</i>,地端 <i>0</i></b><span>Genjutsu API 720p $0.3446/秒 × 26 秒</span></div>
 <div class="mt-pt op-anim op-d4"><b>肖像和素材<i>不出機房</i></b><span>換成你的代言人、你的門市</span></div>
 </div>
 </div>
@@ -1169,20 +1098,26 @@
         <div class="op-close-txt">
             <div class="op-anim op-d1">
                 <div class="tag tag-green">THE CONCEPT · 最後,這件事有個名字</div>
-                <h2 class="op-close-title">這叫<br><span class="g">算力主權</span></h2>
+                <h2 class="op-close-title">這叫<span class="g">算力主權</span></h2>
             </div>
-            <div class="op-pillars">
-                <div class="op-card op-pillar op-anim op-d2"><div class="op-icon">🔒</div><div><div class="op-name">素材是我的</div><div class="op-body">商品照、客戶名單、原始資料<strong>不出機房</strong>,沒有人審核我。</div></div></div>
-                <div class="op-card op-pillar op-anim op-d3"><div class="op-icon gr">⚡</div><div><div class="op-name">算力是我的</div><div class="op-body">一次買斷的硬體,<strong>跑越多越便宜</strong>,不看漲價臉色。</div></div></div>
-                <div class="op-card op-pillar op-anim op-d4"><div class="op-icon vi">🧠</div><div><div class="op-name">能力是我的</div><div class="op-body">模型版本自己釘,<strong>沒人能一夕收回</strong>。</div></div></div>
+            <div class="sv-chips op-anim op-d2"><span>🔒 素材是我的</span><span>⚡ 算力是我的</span><span>🧠 能力是我的</span></div>
+            <div class="op-card sv-edge op-anim op-d3">
+                <div class="sv-k">邊緣運算,<b>不只在製造業的產線</b></div>
+                <div class="sv-mix">
+                    <div class="sv-m cloud"><i>☁️</i><b>雲端的大模型</b></div>
+                    <span class="sv-x">＋</span>
+                    <div class="sv-m desk"><i>🖥</i><b>桌面邊緣的小模型</b></div>
+                    <span class="sv-eq">搭配著一起算</span>
+                </div>
+                <div class="sv-big">以後<b>每個人的辦公桌</b>,都能導入邊緣運算</div>
             </div>
             <div class="op-close-line op-anim op-d5">
                 Runtime 讓 AI 運行空間,AI OS 讓企業管理 AI,<br><strong>地端,讓企業真正擁有 AI。</strong>
             </div>
         </div>
-        <div class="op-close-photo op-anim op-d2">
-            <img src="{B}onprem_sovereignty.jpg" alt="DGX Spark 搭配 The Pocket Company 五位 AI Agent">
-            <div class="op-photo-cap">一台 DGX Spark,就是主權的最小單位</div>
+        <div class="sv-ig op-anim op-d2">
+            <div class="sv-ig-k"><b>INSTAGRAM</b><span>掃我追蹤</span></div>
+            <img src="img/ig-qr.png" alt="Instagram @accucrazy.eth QR code">
         </div>
     </div>
     <div class="meta op-meta">
